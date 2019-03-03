@@ -27,9 +27,9 @@ Notification.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.object,
+  color: PropTypes.oneOf(colors),
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  color: PropTypes.oneOf(colors)
+  style: PropTypes.object
 };
 
 Notification.defaultProps = {

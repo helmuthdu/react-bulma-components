@@ -8,24 +8,8 @@ import { Element } from '../../element';
 const colors = Object.values(CONSTANTS.COLORS);
 
 export const InputFile = React.forwardRef(
-  (
-    {
-      className,
-      style, // eslint-disable-next-line no-unused-vars
-      onChange,
-      color,
-      size,
-      hasName,
-      fullWidth,
-      right,
-      boxed,
-      name,
-      label,
-      icon,
-      ...props
-    },
-    ref
-  ) => {
+  // eslint-disable-next-line no-unused-vars
+  ({ boxed, className, color, fullwidth, hasName, icon, label, name, onChange, right, size, style, ...props }, ref) => {
     const [fileName, setFileName] = useState(null);
 
     const handleSelect = event => {
@@ -46,7 +30,7 @@ export const InputFile = React.forwardRef(
           'has-name': !hasName,
           'is-right': right,
           'is-boxed': boxed,
-          'is-fullwidth': fullWidth
+          'is-fullwidth': fullwidth
         })}
       >
         <label className="file-label">
@@ -76,25 +60,24 @@ export const InputFile = React.forwardRef(
 
 InputFile.propTypes = {
   ...modifiers.propTypes,
-  className: PropTypes.string,
-  style: PropTypes.object,
-  onChange: PropTypes.func,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
-  hasName: PropTypes.bool,
-  fullWidth: PropTypes.bool,
-  right: PropTypes.bool,
   boxed: PropTypes.bool,
-  name: PropTypes.string,
+  className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
+  fullwidth: PropTypes.bool,
+  hasName: PropTypes.bool,
+  icon: PropTypes.element,
   label: PropTypes.string,
-  icon: PropTypes.element
+  name: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  right: PropTypes.bool,
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
+  style: PropTypes.object
 };
 
 InputFile.defaultProps = {
   ...modifiers.defaultProps,
-  onChange: () => {},
   hasName: true,
-  fullWidth: false,
+  fullwidth: false,
   right: false,
   boxed: false,
   label: 'Choose a file...'

@@ -39,7 +39,7 @@ storiesOf('Tag', module)
   ))
   .add('Group Tags without gap multiline', () => (
     <div>
-      <Field multiline kind="group">
+      <Field multiline context="group">
         <Control>
           <Tag.Group gapless>
             <Tag color="dark">npm</Tag>

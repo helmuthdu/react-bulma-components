@@ -20,6 +20,17 @@ export default {
     BLACK: 'black',
     LINK: 'link'
   },
+  GREY_COLORS: {
+    BLACK_BIS: 'black-bis',
+    BLACK_TER: 'black-ter',
+    GREY_DARKER: 'grey-darker',
+    GREY_DARK: 'grey-dark',
+    GREY: 'grey',
+    GREY_LIGHT: 'grey-light',
+    GREY_LIGHTER: 'grey-lighter',
+    WHITE_TER: 'white-ter',
+    WHITE_BIS: 'white-bis'
+  },
   SIZES: {
     SMALL: 'small',
     MEDIUM: 'medium',

@@ -29,6 +29,5 @@ NavbarMenu.propTypes = {
 };
 
 NavbarMenu.defaultProps = {
-  ...modifiers.defaultProps,
-  children: null
+  ...modifiers.defaultProps
 };

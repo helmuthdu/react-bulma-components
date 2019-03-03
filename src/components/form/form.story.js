@@ -151,7 +151,7 @@ storiesOf('Form', module)
         <RadioGroup />
       </Field>
 
-      <Field kind="group">
+      <Field context="group">
         <Control>
           <Button type="primary">Submit</Button>
         </Control>

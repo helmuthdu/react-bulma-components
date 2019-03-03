@@ -28,9 +28,10 @@ Progress.propTypes = {
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   value: PropTypes.number,
-  max: PropTypes.number.isRequired
+  max: PropTypes.number
 };
 
 Progress.defaultProps = {
-  ...modifiers.defaultProps
+  ...modifiers.defaultProps,
+  max: 100
 };

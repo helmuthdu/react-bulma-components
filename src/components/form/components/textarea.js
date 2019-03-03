@@ -31,15 +31,15 @@ export const Textarea = React.forwardRef(
 Textarea.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
-  style: PropTypes.object,
-  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   color: PropTypes.oneOf(colors),
-  readOnly: PropTypes.bool,
   disabled: PropTypes.bool,
+  name: PropTypes.string,
   placeholder: PropTypes.string,
+  readOnly: PropTypes.bool,
   rows: PropTypes.number,
-  value: PropTypes.string,
-  name: PropTypes.string
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
+  style: PropTypes.object,
+  value: PropTypes.string
 };
 
 Textarea.defaultProps = {

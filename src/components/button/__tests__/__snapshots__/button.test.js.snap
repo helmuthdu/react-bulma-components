@@ -193,10 +193,10 @@ exports[`Button component should render as a html button 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Button component should render as a static Button 1`] = `
+exports[`Button component should render as a inactive Button 1`] = `
 <DocumentFragment>
   <span
-    class="is-primary is-static button"
+    class="is-static is-primary button"
     tabindex="0"
   />
 </DocumentFragment>

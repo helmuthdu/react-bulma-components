@@ -27,8 +27,8 @@ describe('Button component', () => {
     const { asFragment } = render(<Button color="primary" size="large" />);
     expect(asFragment()).toMatchSnapshot();
   });
-  it('should render as a static Button', () => {
-    const { asFragment } = render(<Button isStatic color="primary" />);
+  it('should render as a inactive Button', () => {
+    const { asFragment } = render(<Button inactive color="primary" />);
     expect(asFragment()).toMatchSnapshot();
   });
   it('should render as a html button', () => {
@@ -68,11 +68,11 @@ describe('Button component', () => {
     expect(onClick).toHaveBeenCalledTimes(0);
   });
   it('should have a call default onClick is no listener is set', () => {
-    const onChange = jest.spyOn(Button.defaultProps, 'onClick');
+    const onClick = jest.spyOn(Button.defaultProps, 'onClick');
     const { container } = render(<Button>Action</Button>);
     fireEvent.click(container.firstChild);
     fireEvent.click(container.firstChild);
-    expect(onChange).toHaveBeenCalledTimes(2);
+    expect(onClick).toHaveBeenCalledTimes(2);
     Button.defaultProps.onClick.mockRestore();
   });
   it('should forward ref', () => {

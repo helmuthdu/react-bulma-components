@@ -4,15 +4,16 @@ import React from 'react';
 import modifiers from '../../modifiers';
 import { Element } from '../element';
 
-export const Table = React.forwardRef(({ children, className, size, striped, bordered, ...props }, ref) => (
+export const Table = React.forwardRef(({ children, className, hoverable, size, striped, bordered, ...props }, ref) => (
   <Element
     renderAs="table"
     {...props}
     ref={ref}
     className={cn('table', className, {
-      [`is-${size}`]: size,
       'is-bordered': bordered,
-      'is-striped': striped
+      'is-hoverable': hoverable,
+      'is-striped': striped,
+      [`is-${size}`]: size
     })}
   >
     {children}
@@ -21,17 +22,19 @@ export const Table = React.forwardRef(({ children, className, size, striped, bor
 
 Table.propTypes = {
   ...modifiers.propTypes,
+  bordered: PropTypes.bool,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.object,
   size: PropTypes.oneOf(['fullwidth', 'narrow']),
   striped: PropTypes.bool,
-  bordered: PropTypes.bool
+  hoverable: PropTypes.bool,
+  style: PropTypes.object
 };
 
 Table.defaultProps = {
   ...modifiers.defaultProps,
   size: 'fullwidth',
   striped: true,
+  hoverable: false,
   bordered: false
 };

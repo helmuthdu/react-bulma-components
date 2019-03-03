@@ -8,13 +8,13 @@ import { Element } from '../element';
 const colors = Object.values(CONSTANTS.COLORS);
 
 export const Tile = React.forwardRef(
-  ({ children, className, kind, vertical, size, color, notification, ...props }, ref) => (
+  ({ children, className, context, vertical, size, color, notification, ...props }, ref) => (
     <Element
       {...props}
       ref={ref}
       className={cn('tile', className, {
         notification,
-        [`is-${kind}`]: kind,
+        [`is-${context}`]: context,
         [`is-${size}`]: size,
         [`is-${color}`]: color,
         'is-vertical': vertical
@@ -31,7 +31,7 @@ Tile.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  kind: PropTypes.oneOf(['ancestor', 'parent', 'child']),
+  context: PropTypes.oneOf(['ancestor', 'parent', 'child']),
   vertical: PropTypes.bool,
   size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
   color: PropTypes.oneOf(colors),

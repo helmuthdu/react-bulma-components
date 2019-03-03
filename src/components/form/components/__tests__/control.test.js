@@ -33,7 +33,7 @@ describe('Control component', () => {
   });
   it('should be fullwidth, loading and size = large', () => {
     const { asFragment } = render(
-      <Control fullWidth loading size="large">
+      <Control fullwidth loading size="large">
         <p>Default</p>
       </Control>
     );

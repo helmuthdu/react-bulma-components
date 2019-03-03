@@ -8,7 +8,7 @@ import { Element } from '../../element';
 const colors = Object.values(CONSTANTS.COLORS);
 
 export const Input = React.forwardRef(
-  ({ className, type, size, color, readOnly, isStatic, disabled, placeholder, value, name, ...props }, ref) => (
+  ({ className, type, size, color, readOnly, inactive, disabled, placeholder, value, name, ...props }, ref) => (
     <Element
       {...props}
       ref={ref}
@@ -17,10 +17,10 @@ export const Input = React.forwardRef(
       value={value}
       type={type}
       placeholder={placeholder}
-      readOnly={readOnly || isStatic}
+      readOnly={readOnly || inactive}
       disabled={disabled}
       className={cn('input', className, {
-        'is-static': isStatic,
+        'is-static': inactive,
         [`is-${size}`]: size,
         [`is-${color}`]: color
       })}
@@ -31,6 +31,13 @@ export const Input = React.forwardRef(
 Input.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
+  disabled: PropTypes.bool,
+  inactive: PropTypes.bool,
+  name: PropTypes.string,
+  placeholder: PropTypes.string,
+  readOnly: PropTypes.bool,
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   style: PropTypes.object,
   type: PropTypes.oneOf([
     'text',
@@ -44,20 +51,11 @@ Input.propTypes = {
     'time',
     'datetime-local'
   ]),
-  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
-  color: PropTypes.oneOf(colors),
-  readOnly: PropTypes.bool,
-  isStatic: PropTypes.bool,
-  disabled: PropTypes.bool,
-  placeholder: PropTypes.string,
-  value: PropTypes.string,
-  name: PropTypes.string
+  value: PropTypes.string
 };
 
 Input.defaultProps = {
   ...modifiers.defaultProps,
-  value: '',
   type: 'text',
-  isStatic: false,
-  placeholder: ''
+  value: ''
 };

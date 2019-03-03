@@ -18,6 +18,5 @@ NavbarBrand.propTypes = {
 };
 
 NavbarBrand.defaultProps = {
-  ...modifiers.defaultProps,
-  children: null
+  ...modifiers.defaultProps
 };

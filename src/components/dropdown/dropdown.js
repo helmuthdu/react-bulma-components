@@ -93,28 +93,27 @@ export const Dropdown = ({ className, children, value, color, right, up, label, 
   );
 };
 
+Dropdown.Item = DropdownItem;
+Dropdown.Divider = DropdownDivider;
+
 Dropdown.propTypes = {
   ...modifiers.propTypes,
-  className: PropTypes.string,
-  style: PropTypes.object,
   children: PropTypes.node,
-  value: PropTypes.any,
-  onChange: PropTypes.func,
+  className: PropTypes.string,
   color: PropTypes.oneOf(colors),
-  right: PropTypes.bool,
-  up: PropTypes.bool,
   hoverable: PropTypes.bool,
-  label: PropTypes.string
+  label: PropTypes.string,
+  onChange: PropTypes.func,
+  right: PropTypes.bool,
+  style: PropTypes.object,
+  up: PropTypes.bool,
+  value: PropTypes.any
 };
 
 Dropdown.defaultProps = {
   ...modifiers.defaultProps,
-  value: null,
   children: [],
+  label: '',
   onChange: () => {},
-  label: ''
+  value: null
 };
-
-Dropdown.Item = DropdownItem;
-
-Dropdown.Divider = DropdownDivider;

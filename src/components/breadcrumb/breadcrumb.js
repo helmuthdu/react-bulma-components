@@ -42,25 +42,25 @@ export const Breadcrumb = React.forwardRef(
 
 Breadcrumb.propTypes = {
   ...modifiers.propTypes,
-  className: PropTypes.string,
-  style: PropTypes.object,
-  separator: PropTypes.oneOf(['arrow', 'bullet', 'dot', 'succeeds']),
-  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   align: PropTypes.oneOf(['right', 'center']),
+  className: PropTypes.string,
+  hrefAttr: PropTypes.string,
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      url: PropTypes.string.isRequired,
       active: PropTypes.bool,
-      name: PropTypes.node
+      name: PropTypes.node,
+      url: PropTypes.string.isRequired
     })
   ),
   renderAs: PropTypes.oneOfType([PropTypes.oneOf(['a']), PropTypes.func]),
-  hrefAttr: PropTypes.string
+  separator: PropTypes.oneOf(['arrow', 'bullet', 'dot', 'succeeds']),
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
+  style: PropTypes.object
 };
 
 Breadcrumb.defaultProps = {
   ...modifiers.defaultProps,
-  items: [],
   hrefAttr: 'href',
+  items: [],
   renderAs: 'a'
 };

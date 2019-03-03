@@ -58,25 +58,6 @@ export const Navbar = React.forwardRef(({ children, className, fixed, transparen
   );
 });
 
-Navbar.propTypes = {
-  ...modifiers.propTypes,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  style: PropTypes.object,
-  transparent: PropTypes.bool,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  fixed: PropTypes.oneOf(['top', 'bottom']),
-  color: PropTypes.oneOf(colors),
-  active: PropTypes.bool
-};
-
-Navbar.defaultProps = {
-  ...modifiers.defaultProps,
-  renderAs: 'nav',
-  transparent: false,
-  active: false
-};
-
 Navbar.Brand = NavbarBrand;
 Navbar.Burger = NavbarBurger;
 Navbar.Container = NavbarContainer;
@@ -85,3 +66,22 @@ Navbar.Dropdown = NavbarDropdown;
 Navbar.Item = NavbarItem;
 Navbar.Link = NavbarLink;
 Navbar.Menu = NavbarMenu;
+
+Navbar.propTypes = {
+  ...modifiers.propTypes,
+  active: PropTypes.bool,
+  children: PropTypes.node,
+  className: PropTypes.string,
+  color: PropTypes.oneOf(colors),
+  fixed: PropTypes.oneOf(['top', 'bottom']),
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  style: PropTypes.object,
+  transparent: PropTypes.bool
+};
+
+Navbar.defaultProps = {
+  ...modifiers.defaultProps,
+  active: false,
+  renderAs: 'nav',
+  transparent: false
+};

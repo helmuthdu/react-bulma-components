@@ -6,22 +6,22 @@ import { Element } from '../../../element';
 import { FieldBody } from './field-body';
 import { FieldLabel } from './field-label';
 
-export const Field = ({ className, align, multiline, horizontal, kind, ...props }) => {
-  let k = null;
+export const Field = ({ className, align, multiline, horizontal, context, ...props }) => {
+  let ctx = null;
 
-  if (kind === 'addons') {
-    k = 'has-addons';
-  } else if (kind === 'group') {
-    k = 'is-grouped';
+  if (context === 'addons') {
+    ctx = 'has-addons';
+  } else if (context === 'group') {
+    ctx = 'is-grouped';
   }
 
   return (
     <Element
       {...props}
       className={cn('field', className, {
-        [`${k}`]: k,
-        [`${k}-${align}`]: k && align,
-        [`${k}-multiline`]: k === 'is-grouped' && multiline,
+        [`${ctx}`]: ctx,
+        [`${ctx}-${align}`]: ctx && align,
+        [`${ctx}-multiline`]: ctx === 'is-grouped' && multiline,
         'is-horizontal': horizontal
       })}
     />
@@ -29,7 +29,6 @@ export const Field = ({ className, align, multiline, horizontal, kind, ...props 
 };
 
 Field.Label = FieldLabel;
-
 Field.Body = FieldBody;
 
 Field.propTypes = {
@@ -39,7 +38,7 @@ Field.propTypes = {
   style: PropTypes.object,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   align: PropTypes.oneOf(['centered', 'right']),
-  kind: PropTypes.oneOf(['addons', 'group']),
+  context: PropTypes.oneOf(['addons', 'group']),
   multiline: PropTypes.bool,
   horizontal: PropTypes.bool
 };

@@ -16,11 +16,8 @@ export const ModalCard = React.forwardRef(({ className, onClose, children, ...pr
 ));
 
 ModalCard.Head = ModalCardHead;
-
 ModalCard.Body = ModalCardBody;
-
 ModalCard.Foot = ModalCardFoot;
-
 ModalCard.Title = ModalCardTitle;
 
 ModalCard.propTypes = {
@@ -32,6 +29,5 @@ ModalCard.propTypes = {
 };
 
 ModalCard.defaultProps = {
-  ...modifiers.defaultProps,
-  onClose: null
+  ...modifiers.defaultProps
 };

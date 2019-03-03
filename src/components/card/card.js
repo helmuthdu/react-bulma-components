@@ -15,19 +15,16 @@ export const Card = React.forwardRef(({ className, children, ...props }, ref) =>
 ));
 
 Card.Image = CardImage;
-
 Card.Content = CardContent;
-
 Card.Header = CardHeader;
-
 Card.Footer = CardFooter;
 
 Card.propTypes = {
   ...modifiers.propTypes,
-  className: PropTypes.string,
   children: PropTypes.node,
-  style: PropTypes.object,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+  className: PropTypes.string,
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  style: PropTypes.object
 };
 
 Card.defaultProps = {

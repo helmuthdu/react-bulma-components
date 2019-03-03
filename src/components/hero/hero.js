@@ -25,9 +25,7 @@ export const Hero = React.forwardRef(({ children, className, color, gradient, si
 ));
 
 Hero.Head = HeroHead;
-
 Hero.Body = HeroBody;
-
 Hero.Footer = HeroFooter;
 
 Hero.propTypes = {
@@ -38,7 +36,7 @@ Hero.propTypes = {
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   color: PropTypes.oneOf(colors),
   gradient: PropTypes.bool,
-  size: PropTypes.oneOf(['small', 'medium', 'large', 'fullheight'])
+  size: PropTypes.oneOf([...Object.values(CONSTANTS.COLORS), 'fullheight'])
 };
 
 Hero.defaultProps = {

@@ -21,9 +21,9 @@ export const Help = React.forwardRef(({ className, children, color, ...props }, 
 
 Help.propTypes = {
   ...modifiers.propTypes,
+  children: PropTypes.node,
   className: PropTypes.string,
-  color: PropTypes.oneOf(colors),
-  children: PropTypes.node
+  color: PropTypes.oneOf(colors)
 };
 
 Help.defaultProps = {

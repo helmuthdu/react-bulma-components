@@ -6,12 +6,12 @@ import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 
 export const Control = React.forwardRef(
-  ({ children, className, fullWidth, iconLeft, iconRight, loading, size, ...props }, ref) => (
+  ({ children, className, fullwidth, iconLeft, iconRight, loading, size, ...props }, ref) => (
     <Element
       {...props}
       ref={ref}
       className={cn('control', className, {
-        'is-expanded': fullWidth,
+        'is-expanded': fullwidth,
         'has-icons-left': iconLeft,
         'has-icons-right': iconRight,
         'is-loading': loading,
@@ -27,20 +27,20 @@ Control.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.object,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  fullWidth: PropTypes.bool,
+  fullwidth: PropTypes.bool,
   iconLeft: PropTypes.bool,
   iconRight: PropTypes.bool,
   loading: PropTypes.bool,
-  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES))
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
+  style: PropTypes.object
 };
 
 Control.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'div',
-  fullWidth: false,
+  fullwidth: false,
   iconLeft: false,
   iconRight: false,
-  loading: false
+  loading: false,
+  renderAs: 'div'
 };

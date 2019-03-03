@@ -9,7 +9,7 @@ describe('Field component', () => {
   });
   it('should have field classname with grouped classname', () => {
     const { asFragment } = render(
-      <Field kind="group">
+      <Field context="group">
         <div className="bd-notification is-success">
           <p>Default</p>
           <p>Container</p>
@@ -20,7 +20,7 @@ describe('Field component', () => {
   });
   it('should have field classname with addons classname', () => {
     const { asFragment } = render(
-      <Field kind="addons">
+      <Field context="addons">
         <div className="bd-notification is-success">
           <p>Default</p>
           <p>Container</p>

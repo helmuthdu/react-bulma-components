@@ -29,10 +29,7 @@ export default {
     textColor: PropTypes.oneOf(colors),
     backgroundColor: PropTypes.oneOf(colors)
   },
-  defaultProps: {
-    textColor: null,
-    backgroundColor: null
-  },
+  defaultProps: {},
   getClassName: props =>
     cn({
       [`has-text-${props.textColor}`]: props.textColor,

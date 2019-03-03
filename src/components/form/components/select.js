@@ -59,24 +59,24 @@ Select.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.object,
-  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   color: PropTypes.oneOf(colors),
-  readOnly: PropTypes.bool,
   disabled: PropTypes.bool,
-  multiple: PropTypes.bool,
-  rounded: PropTypes.bool,
   empty: PropTypes.bool,
   loading: PropTypes.bool,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  name: PropTypes.string
+  multiple: PropTypes.bool,
+  name: PropTypes.string,
+  readOnly: PropTypes.bool,
+  rounded: PropTypes.bool,
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
+  style: PropTypes.object,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
 Select.defaultProps = {
   ...modifiers.defaultProps,
-  value: '',
+  empty: false,
+  loading: false,
   multiple: false,
   rounded: false,
-  empty: false,
-  loading: false
+  value: ''
 };

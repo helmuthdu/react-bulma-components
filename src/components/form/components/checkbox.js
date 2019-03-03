@@ -42,21 +42,21 @@ export const Checkbox = React.forwardRef(
 
 Checkbox.propTypes = {
   ...modifiers.propTypes,
+  checked: PropTypes.bool,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.object,
   color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   disabled: PropTypes.bool,
-  value: PropTypes.string,
-  checked: PropTypes.bool,
   indeterminate: PropTypes.bool,
-  name: PropTypes.string
+  name: PropTypes.string,
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
+  style: PropTypes.object,
+  value: PropTypes.string
 };
 
 Checkbox.defaultProps = {
   ...modifiers.defaultProps,
-  value: '',
   checked: false,
-  indeterminate: false
+  indeterminate: false,
+  value: ''
 };

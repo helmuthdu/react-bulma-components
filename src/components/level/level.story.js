@@ -30,7 +30,7 @@ storiesOf('Level', module)
               </Heading>
             </Level.Item>
             <Level.Item>
-              <Field kind="addons">
+              <Field context="addons">
                 <Control>
                   <Input placeholder="Find a post" />
                 </Control>

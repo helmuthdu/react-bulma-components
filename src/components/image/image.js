@@ -44,13 +44,13 @@ export const Image = React.forwardRef(({ className, alt, size, fallback, rounded
 
 Image.propTypes = {
   ...modifiers.propTypes,
-  className: PropTypes.string,
-  src: PropTypes.string.isRequired,
   alt: PropTypes.string,
+  className: PropTypes.string,
+  fallback: PropTypes.string,
   rounded: PropTypes.bool,
-  style: PropTypes.object,
   size: PropTypes.oneOf(CONSTANTS.SIZES),
-  fallback: PropTypes.string
+  src: PropTypes.string.isRequired,
+  style: PropTypes.object
 };
 
 Image.defaultProps = {

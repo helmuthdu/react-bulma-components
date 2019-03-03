@@ -27,19 +27,18 @@ Heading.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
+  heading: PropTypes.bool,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   size: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
-  weight: PropTypes.oneOf(['light', 'normal', 'semibold', 'bold']),
+  spaced: PropTypes.bool,
   subtitle: PropTypes.bool,
-  heading: PropTypes.bool,
-  spaced: PropTypes.bool
+  weight: PropTypes.oneOf(['light', 'normal', 'semibold', 'bold'])
 };
 
 Heading.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'h1',
-  weight: null,
-  subtitle: false,
   heading: false,
-  spaced: false
+  renderAs: 'h1',
+  spaced: false,
+  subtitle: false
 };

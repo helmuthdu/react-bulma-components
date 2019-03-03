@@ -23,9 +23,9 @@ Label.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.object,
   htmlFor: PropTypes.string,
-  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES))
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
+  style: PropTypes.object
 };
 
 Label.defaultProps = {

@@ -5,7 +5,6 @@ Object {
   "Box": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -18,11 +17,6 @@ Object {
       "renderAs": "div",
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -55,7 +49,6 @@ Object {
   "Breadcrumb": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -70,11 +63,6 @@ Object {
       "renderAs": "a",
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -112,15 +100,13 @@ Object {
     "$$typeof": Symbol(react.forward_ref),
     "Group": [Function],
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "fullwidth": false,
       "hidden": false,
+      "inactive": false,
       "inverted": false,
       "invisible": false,
-      "isSelected": false,
-      "isStatic": false,
       "italic": false,
       "loading": false,
       "marginless": false,
@@ -134,14 +120,10 @@ Object {
       "reset": false,
       "responsive": undefined,
       "rounded": false,
+      "selected": false,
       "shadowless": false,
       "submit": false,
       "text": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -154,10 +136,9 @@ Object {
       "disabled": [Function],
       "fullwidth": [Function],
       "hidden": [Function],
+      "inactive": [Function],
       "inverted": [Function],
       "invisible": [Function],
-      "isSelected": [Function],
-      "isStatic": [Function],
       "italic": [Function],
       "loading": [Function],
       "marginless": [Function],
@@ -172,6 +153,7 @@ Object {
       "reset": [Function],
       "responsive": [Function],
       "rounded": [Function],
+      "selected": [Function],
       "shadowless": [Function],
       "size": [Function],
       "state": [Function],
@@ -192,7 +174,6 @@ Object {
     "Content": Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -205,11 +186,6 @@ Object {
         "renderAs": "div",
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -242,7 +218,6 @@ Object {
       "Item": Object {
         "$$typeof": Symbol(react.forward_ref),
         "defaultProps": Object {
-          "backgroundColor": null,
           "clearfix": false,
           "clipped": false,
           "hidden": false,
@@ -255,11 +230,6 @@ Object {
           "renderAs": "div",
           "responsive": undefined,
           "shadowless": false,
-          "textAlignment": null,
-          "textColor": null,
-          "textSize": null,
-          "textTransform": null,
-          "textWeight": null,
           "unselectable": false,
         },
         "propTypes": Object {
@@ -288,7 +258,6 @@ Object {
         "render": [Function],
       },
       "defaultProps": Object {
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -301,11 +270,6 @@ Object {
         "renderAs": "div",
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -338,7 +302,6 @@ Object {
       "Icon": Object {
         "$$typeof": Symbol(react.forward_ref),
         "defaultProps": Object {
-          "backgroundColor": null,
           "clearfix": false,
           "clipped": false,
           "hidden": false,
@@ -351,11 +314,6 @@ Object {
           "renderAs": "div",
           "responsive": undefined,
           "shadowless": false,
-          "textAlignment": null,
-          "textColor": null,
-          "textSize": null,
-          "textTransform": null,
-          "textWeight": null,
           "unselectable": false,
         },
         "propTypes": Object {
@@ -386,7 +344,6 @@ Object {
       "Title": Object {
         "$$typeof": Symbol(react.forward_ref),
         "defaultProps": Object {
-          "backgroundColor": null,
           "clearfix": false,
           "clipped": false,
           "hidden": false,
@@ -399,11 +356,6 @@ Object {
           "renderAs": "div",
           "responsive": undefined,
           "shadowless": false,
-          "textAlignment": null,
-          "textColor": null,
-          "textSize": null,
-          "textTransform": null,
-          "textWeight": null,
           "unselectable": false,
         },
         "propTypes": Object {
@@ -432,7 +384,6 @@ Object {
         "render": [Function],
       },
       "defaultProps": Object {
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -445,11 +396,6 @@ Object {
         "renderAs": "div",
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -480,7 +426,6 @@ Object {
     "Image": Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "fallback": "http//bulma.io/images/placeholders/480x480.png",
@@ -494,11 +439,6 @@ Object {
         "responsive": undefined,
         "rounded": false,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -532,7 +472,6 @@ Object {
       "render": [Function],
     },
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -545,11 +484,6 @@ Object {
       "renderAs": "div",
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -582,7 +516,6 @@ Object {
   "Checkbox": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "checked": false,
       "clearfix": false,
       "clipped": false,
@@ -596,11 +529,6 @@ Object {
       "radiusless": false,
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
       "value": "",
     },
@@ -655,7 +583,6 @@ Object {
     "Column": Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "desktop": Object {
@@ -680,11 +607,6 @@ Object {
         "tablet": Object {
           "narrow": false,
         },
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "touch": Object {
           "narrow": false,
         },
@@ -729,7 +651,6 @@ Object {
       "render": [Function],
     },
     "defaultProps": Object {
-      "backgroundColor": null,
       "centered": false,
       "clearfix": false,
       "clipped": false,
@@ -744,11 +665,6 @@ Object {
       "radiusless": false,
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -784,7 +700,6 @@ Object {
   "Container": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "fluid": false,
@@ -798,11 +713,6 @@ Object {
       "renderAs": "div",
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -837,7 +747,6 @@ Object {
   "Content": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -850,11 +759,6 @@ Object {
       "renderAs": "div",
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -888,10 +792,9 @@ Object {
   "Control": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
-      "fullWidth": false,
+      "fullwidth": false,
       "hidden": false,
       "iconLeft": false,
       "iconRight": false,
@@ -905,11 +808,6 @@ Object {
       "renderAs": "div",
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -918,7 +816,7 @@ Object {
       "className": [Function],
       "clearfix": [Function],
       "clipped": [Function],
-      "fullWidth": [Function],
+      "fullwidth": [Function],
       "hidden": [Function],
       "iconLeft": [Function],
       "iconRight": [Function],
@@ -948,7 +846,6 @@ Object {
   "Element": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -961,11 +858,6 @@ Object {
       "renderAs": "div",
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -998,7 +890,6 @@ Object {
   "Heading": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "heading": false,
@@ -1014,13 +905,7 @@ Object {
       "shadowless": false,
       "spaced": false,
       "subtitle": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
-      "weight": null,
     },
     "propTypes": Object {
       "backgroundColor": [Function],
@@ -1056,7 +941,6 @@ Object {
   "Help": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -1069,11 +953,6 @@ Object {
       "renderAs": "p",
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -1108,7 +987,6 @@ Object {
     "Footer": [Function],
     "Head": [Function],
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "gradient": false,
@@ -1122,11 +1000,6 @@ Object {
       "renderAs": "section",
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -1162,7 +1035,6 @@ Object {
   "Icon": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -1176,11 +1048,6 @@ Object {
       "radiusless": false,
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -1218,7 +1085,6 @@ Object {
   "Image": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "fallback": "http//bulma.io/images/placeholders/480x480.png",
@@ -1232,11 +1098,6 @@ Object {
       "responsive": undefined,
       "rounded": false,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -1272,25 +1133,17 @@ Object {
   "Input": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
       "invisible": false,
-      "isStatic": false,
       "italic": false,
       "marginless": false,
       "overlay": false,
       "paddingless": false,
-      "placeholder": "",
       "radiusless": false,
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "type": "text",
       "unselectable": false,
       "value": "",
@@ -1303,8 +1156,8 @@ Object {
       "color": [Function],
       "disabled": [Function],
       "hidden": [Function],
+      "inactive": [Function],
       "invisible": [Function],
-      "isStatic": [Function],
       "italic": [Function],
       "marginless": [Function],
       "name": [Function],
@@ -1332,29 +1185,22 @@ Object {
   "InputFile": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "boxed": false,
       "clearfix": false,
       "clipped": false,
-      "fullWidth": false,
+      "fullwidth": false,
       "hasName": true,
       "hidden": false,
       "invisible": false,
       "italic": false,
       "label": "Choose a file...",
       "marginless": false,
-      "onChange": [Function],
       "overlay": false,
       "paddingless": false,
       "radiusless": false,
       "responsive": undefined,
       "right": false,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -1364,7 +1210,7 @@ Object {
       "clearfix": [Function],
       "clipped": [Function],
       "color": [Function],
-      "fullWidth": [Function],
+      "fullwidth": [Function],
       "hasName": [Function],
       "hidden": [Function],
       "icon": [Function],
@@ -1395,7 +1241,6 @@ Object {
   "Label": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -1408,11 +1253,6 @@ Object {
       "radiusless": false,
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -1448,7 +1288,6 @@ Object {
     "Item": Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -1461,11 +1300,6 @@ Object {
         "renderAs": "div",
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -1499,7 +1333,6 @@ Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
         "align": "left",
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -1512,11 +1345,6 @@ Object {
         "renderAs": "div",
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -1548,7 +1376,6 @@ Object {
       "render": [Function],
     },
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -1561,11 +1388,6 @@ Object {
       "renderAs": "div",
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -1599,7 +1421,6 @@ Object {
   "Loader": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -1612,11 +1433,6 @@ Object {
       "renderAs": "div",
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -1651,7 +1467,6 @@ Object {
     "Content": Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -1664,11 +1479,6 @@ Object {
         "renderAs": "div",
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -1701,7 +1511,6 @@ Object {
     "Item": Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -1715,11 +1524,6 @@ Object {
         "renderAs": "div",
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -1751,7 +1555,6 @@ Object {
       "render": [Function],
     },
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -1764,11 +1567,6 @@ Object {
       "renderAs": "article",
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -1806,7 +1604,6 @@ Object {
         "$$typeof": Symbol(react.forward_ref),
         "defaultProps": Object {
           "active": false,
-          "backgroundColor": null,
           "clearfix": false,
           "clipped": false,
           "hidden": false,
@@ -1819,11 +1616,6 @@ Object {
           "renderAs": "a",
           "responsive": undefined,
           "shadowless": false,
-          "textAlignment": null,
-          "textColor": null,
-          "textSize": null,
-          "textTransform": null,
-          "textWeight": null,
           "unselectable": false,
         },
         "propTypes": Object {
@@ -1854,7 +1646,6 @@ Object {
         "render": [Function],
       },
       "defaultProps": Object {
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -1866,11 +1657,6 @@ Object {
         "radiusless": false,
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -1899,7 +1685,6 @@ Object {
       "render": [Function],
     },
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -1912,11 +1697,6 @@ Object {
       "renderAs": "aside",
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -1949,7 +1729,6 @@ Object {
     "Body": Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -1962,11 +1741,6 @@ Object {
         "renderAs": "div",
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -1998,7 +1772,6 @@ Object {
     "Header": Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -2011,11 +1784,6 @@ Object {
         "renderAs": "div",
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -2045,7 +1813,6 @@ Object {
       "render": [Function],
     },
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -2058,11 +1825,6 @@ Object {
       "renderAs": "article",
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -2101,7 +1863,6 @@ Object {
       "Body": Object {
         "$$typeof": Symbol(react.forward_ref),
         "defaultProps": Object {
-          "backgroundColor": null,
           "clearfix": false,
           "clipped": false,
           "hidden": false,
@@ -2114,11 +1875,6 @@ Object {
           "renderAs": "section",
           "responsive": undefined,
           "shadowless": false,
-          "textAlignment": null,
-          "textColor": null,
-          "textSize": null,
-          "textTransform": null,
-          "textWeight": null,
           "unselectable": false,
         },
         "propTypes": Object {
@@ -2151,7 +1907,6 @@ Object {
       "Foot": Object {
         "$$typeof": Symbol(react.forward_ref),
         "defaultProps": Object {
-          "backgroundColor": null,
           "clearfix": false,
           "clipped": false,
           "hidden": false,
@@ -2164,11 +1919,6 @@ Object {
           "renderAs": "footer",
           "responsive": undefined,
           "shadowless": false,
-          "textAlignment": null,
-          "textColor": null,
-          "textSize": null,
-          "textTransform": null,
-          "textWeight": null,
           "unselectable": false,
         },
         "propTypes": Object {
@@ -2200,7 +1950,6 @@ Object {
       "Head": Object {
         "$$typeof": Symbol(react.forward_ref),
         "defaultProps": Object {
-          "backgroundColor": null,
           "clearfix": false,
           "clipped": false,
           "hidden": false,
@@ -2213,11 +1962,6 @@ Object {
           "renderAs": "header",
           "responsive": undefined,
           "shadowless": false,
-          "textAlignment": null,
-          "textColor": null,
-          "textSize": null,
-          "textTransform": null,
-          "textWeight": null,
           "unselectable": false,
         },
         "propTypes": Object {
@@ -2250,7 +1994,6 @@ Object {
       "Title": Object {
         "$$typeof": Symbol(react.forward_ref),
         "defaultProps": Object {
-          "backgroundColor": null,
           "clearfix": false,
           "clipped": false,
           "hidden": false,
@@ -2263,11 +2006,6 @@ Object {
           "renderAs": "p",
           "responsive": undefined,
           "shadowless": false,
-          "textAlignment": null,
-          "textColor": null,
-          "textSize": null,
-          "textTransform": null,
-          "textWeight": null,
           "unselectable": false,
         },
         "propTypes": Object {
@@ -2297,24 +2035,17 @@ Object {
         "render": [Function],
       },
       "defaultProps": Object {
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
         "invisible": false,
         "italic": false,
         "marginless": false,
-        "onClose": null,
         "overlay": false,
         "paddingless": false,
         "radiusless": false,
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -2347,7 +2078,6 @@ Object {
     "Content": Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -2360,11 +2090,6 @@ Object {
         "renderAs": "div",
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -2415,8 +2140,6 @@ Object {
     "Brand": Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
-        "backgroundColor": null,
-        "children": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -2428,11 +2151,6 @@ Object {
         "radiusless": false,
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -2464,7 +2182,6 @@ Object {
     "Burger": Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -2477,11 +2194,6 @@ Object {
         "radiusless": false,
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -2513,7 +2225,6 @@ Object {
     "Container": Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -2527,11 +2238,6 @@ Object {
         "renderAs": "div",
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -2565,7 +2271,6 @@ Object {
     "Divider": Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -2577,11 +2282,6 @@ Object {
         "radiusless": false,
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -2612,7 +2312,6 @@ Object {
     "Dropdown": Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
-        "backgroundColor": null,
         "boxed": false,
         "clearfix": false,
         "clipped": false,
@@ -2627,11 +2326,6 @@ Object {
         "responsive": undefined,
         "right": false,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -2667,7 +2361,6 @@ Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
         "active": false,
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "dropdown": false,
@@ -2683,11 +2376,6 @@ Object {
         "renderAs": "a",
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -2724,7 +2412,6 @@ Object {
     "Link": Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -2737,11 +2424,6 @@ Object {
         "renderAs": "span",
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -2774,8 +2456,6 @@ Object {
     "Menu": Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
-        "backgroundColor": null,
-        "children": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -2787,11 +2467,6 @@ Object {
         "radiusless": false,
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -2822,7 +2497,6 @@ Object {
     },
     "defaultProps": Object {
       "active": false,
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -2835,11 +2509,6 @@ Object {
       "renderAs": "nav",
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "transparent": false,
       "unselectable": false,
     },
@@ -2877,7 +2546,6 @@ Object {
   "Notification": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -2890,11 +2558,6 @@ Object {
       "renderAs": "div",
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -2928,7 +2591,6 @@ Object {
   "Pagination": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "current": 0,
@@ -2948,11 +2610,6 @@ Object {
       "rounded": false,
       "shadowless": false,
       "showPrevNext": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "total": 1,
       "unselectable": false,
     },
@@ -2997,7 +2654,6 @@ Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
         "active": false,
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -3010,11 +2666,6 @@ Object {
         "renderAs": "div",
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -3046,7 +2697,6 @@ Object {
     "Header": Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -3059,11 +2709,6 @@ Object {
         "renderAs": "div",
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -3094,7 +2739,6 @@ Object {
     "Icon": Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -3107,11 +2751,6 @@ Object {
         "renderAs": "span",
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -3145,7 +2784,6 @@ Object {
         "$$typeof": Symbol(react.forward_ref),
         "defaultProps": Object {
           "active": false,
-          "backgroundColor": null,
           "clearfix": false,
           "clipped": false,
           "hidden": false,
@@ -3158,11 +2796,6 @@ Object {
           "renderAs": "a",
           "responsive": undefined,
           "shadowless": false,
-          "textAlignment": null,
-          "textColor": null,
-          "textSize": null,
-          "textTransform": null,
-          "textWeight": null,
           "unselectable": false,
         },
         "propTypes": Object {
@@ -3192,7 +2825,6 @@ Object {
         "render": [Function],
       },
       "defaultProps": Object {
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -3205,11 +2837,6 @@ Object {
         "renderAs": "div",
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -3238,7 +2865,6 @@ Object {
       "render": [Function],
     },
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -3251,11 +2877,6 @@ Object {
       "renderAs": "nav",
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -3286,23 +2907,18 @@ Object {
   "Progress": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
       "invisible": false,
       "italic": false,
       "marginless": false,
+      "max": 100,
       "overlay": false,
       "paddingless": false,
       "radiusless": false,
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -3337,7 +2953,6 @@ Object {
   "Radio": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "checked": false,
       "clearfix": false,
       "clipped": false,
@@ -3350,11 +2965,6 @@ Object {
       "radiusless": false,
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
       "value": "",
     },
@@ -3393,7 +3003,6 @@ Object {
   "Section": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -3406,11 +3015,6 @@ Object {
       "renderAs": "section",
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -3444,7 +3048,6 @@ Object {
   "Select": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "empty": false,
@@ -3460,11 +3063,6 @@ Object {
       "responsive": undefined,
       "rounded": false,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
       "value": "",
     },
@@ -3508,11 +3106,11 @@ Object {
   "Table": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "bordered": false,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
+      "hoverable": false,
       "invisible": false,
       "italic": false,
       "marginless": false,
@@ -3523,11 +3121,6 @@ Object {
       "shadowless": false,
       "size": "fullwidth",
       "striped": true,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -3538,6 +3131,7 @@ Object {
       "clearfix": [Function],
       "clipped": [Function],
       "hidden": [Function],
+      "hoverable": [Function],
       "invisible": [Function],
       "italic": [Function],
       "marginless": [Function],
@@ -3565,7 +3159,6 @@ Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
         "active": false,
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "hidden": false,
@@ -3578,11 +3171,6 @@ Object {
         "renderAs": "a",
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -3614,10 +3202,9 @@ Object {
       "render": [Function],
     },
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
-      "fullWidth": false,
+      "fullwidth": false,
       "hidden": false,
       "invisible": false,
       "italic": false,
@@ -3628,11 +3215,6 @@ Object {
       "renderAs": "div",
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -3642,7 +3224,7 @@ Object {
       "className": [Function],
       "clearfix": [Function],
       "clipped": [Function],
-      "fullWidth": [Function],
+      "fullwidth": [Function],
       "hidden": [Function],
       "invisible": [Function],
       "italic": [Function],
@@ -3671,7 +3253,6 @@ Object {
     "Group": Object {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
-        "backgroundColor": null,
         "clearfix": false,
         "clipped": false,
         "gapless": false,
@@ -3684,11 +3265,6 @@ Object {
         "radiusless": false,
         "responsive": undefined,
         "shadowless": false,
-        "textAlignment": null,
-        "textColor": null,
-        "textSize": null,
-        "textTransform": null,
-        "textWeight": null,
         "unselectable": false,
       },
       "propTypes": Object {
@@ -3708,6 +3284,7 @@ Object {
         "radiusless": [Function],
         "responsive": [Function],
         "shadowless": [Function],
+        "size": [Function],
         "style": [Function],
         "textAlignment": [Function],
         "textColor": [Function],
@@ -3719,7 +3296,6 @@ Object {
       "render": [Function],
     },
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "close": false,
@@ -3737,11 +3313,6 @@ Object {
       "responsive": undefined,
       "rounded": false,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
     },
     "propTypes": Object {
@@ -3781,7 +3352,6 @@ Object {
   "Textarea": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -3794,11 +3364,6 @@ Object {
       "responsive": undefined,
       "rows": 4,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
       "value": "",
     },
@@ -3838,7 +3403,6 @@ Object {
   "Tile": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
-      "backgroundColor": null,
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -3852,11 +3416,6 @@ Object {
       "renderAs": "div",
       "responsive": undefined,
       "shadowless": false,
-      "textAlignment": null,
-      "textColor": null,
-      "textSize": null,
-      "textTransform": null,
-      "textWeight": null,
       "unselectable": false,
       "vertical": false,
     },
@@ -3867,10 +3426,10 @@ Object {
       "clearfix": [Function],
       "clipped": [Function],
       "color": [Function],
+      "context": [Function],
       "hidden": [Function],
       "invisible": [Function],
       "italic": [Function],
-      "kind": [Function],
       "marginless": [Function],
       "notification": [Function],
       "overlay": [Function],

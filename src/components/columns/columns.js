@@ -23,35 +23,22 @@ export const Columns = React.forwardRef(({ className, breakpoint, gapless, multi
 ));
 
 Columns.Column = Column;
-
 Columns.CONSTANTS = COLUMN_CONSTANTS;
 
 Columns.propTypes = {
   ...modifiers.propTypes,
+  breakpoint: PropTypes.oneOf(breakpoints),
+  centered: PropTypes.bool,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.object,
-  /**
-   * Breakpoint where columns become stacked.
-   */
-  breakpoint: PropTypes.oneOf(breakpoints),
-  /**
-   * `true` to remove space between columns
-   */
   gapless: PropTypes.bool,
-  /**
-   * `true` if you want to use more than one line if you add more column elements that would fit in a single row.
-   */
   multiline: PropTypes.bool,
-  /**
-   * `true` you want the columns inside to be horizontaly centered
-   */
-  centered: PropTypes.bool
+  style: PropTypes.object
 };
 
 Columns.defaultProps = {
   ...modifiers.defaultProps,
-  gapless: false,
   centered: false,
+  gapless: false,
   multiline: true
 };

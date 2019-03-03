@@ -51,7 +51,7 @@ storiesOf('Panel', module)
         remember me
       </Panel.Block>
       <Panel.Block>
-        <Button fullWidth color="link" outlined>
+        <Button fullwidth color="link" outlined>
           reset all filters
         </Button>
       </Panel.Block>

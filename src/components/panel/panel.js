@@ -13,11 +13,8 @@ export const Panel = React.forwardRef(({ className, ...props }, ref) => (
 ));
 
 Panel.Header = PanelHeader;
-
 Panel.Tabs = PanelTabs;
-
 Panel.Block = PanelBlock;
-
 Panel.Icon = PanelIcon;
 
 Panel.propTypes = {

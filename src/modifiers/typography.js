@@ -11,10 +11,6 @@ export default {
     italic: PropTypes.bool
   },
   defaultProps: {
-    textSize: null,
-    textAlignment: null,
-    textTransform: null,
-    textWeight: null,
     italic: false
   },
   getClassName: props =>

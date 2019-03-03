@@ -6,7 +6,7 @@ exports[`Table component should concat classname in props with classname 1`] = `
     Default
   </p>
   <table
-    class="table other-class this-is-a-test is-fullwidth is-striped"
+    class="table other-class this-is-a-test is-striped is-fullwidth"
   />
 </DocumentFragment>
 `;
@@ -14,7 +14,7 @@ exports[`Table component should concat classname in props with classname 1`] = `
 exports[`Table component should render 1`] = `
 <DocumentFragment>
   <table
-    class="table is-fullwidth is-striped"
+    class="table is-striped is-fullwidth"
   />
 </DocumentFragment>
 `;
@@ -25,7 +25,7 @@ exports[`Table component should use inline styles 1`] = `
     Default
   </p>
   <table
-    class="table is-fullwidth is-striped"
+    class="table is-striped is-fullwidth"
     style="height: 250px;"
   />
 </DocumentFragment>

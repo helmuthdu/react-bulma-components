@@ -33,7 +33,7 @@ storiesOf('Button', module)
     <Section>
       <Box>Play with the button props using the knobs addon panel at the bottom</Box>
       <Button
-        fullWidth={boolean('Full width', false)}
+        fullwidth={boolean('Full width', false)}
         color={select('Color', colors)}
         loading={boolean('Loading', false)}
         outlined={boolean('Outlined', false)}
@@ -41,7 +41,7 @@ storiesOf('Button', module)
         disabled={boolean('Disabled', false)}
         text={boolean('Text', false)}
         remove={boolean('Remove', false)}
-        isStatic={boolean('Static', false)}
+        inactive={boolean('Static', false)}
         rounded={boolean('Rounded', false)}
         onClick={action('Button Click')}
         onMouseEnter={action('Hover')}

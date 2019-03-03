@@ -22,7 +22,6 @@ export const Level = React.forwardRef(({ children, className, breakpoint, ...pro
 ));
 
 Level.Side = LevelSide;
-
 Level.Item = LevelItem;
 
 Level.propTypes = {

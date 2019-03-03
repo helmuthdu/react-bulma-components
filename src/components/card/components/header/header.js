@@ -11,7 +11,6 @@ export const CardHeader = React.forwardRef(({ className, ...props }, ref) => (
 ));
 
 CardHeader.Title = CardHeaderTitle;
-
 CardHeader.Icon = CardHeaderIcon;
 
 CardHeader.propTypes = {

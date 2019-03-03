@@ -43,29 +43,29 @@ export const Pagination = React.forwardRef(
 
 Pagination.propTypes = {
   ...modifiers.propTypes,
-  current: PropTypes.number,
-  total: PropTypes.number,
-  delta: PropTypes.number,
-  onChange: PropTypes.func,
-  next: PropTypes.node,
-  previous: PropTypes.node,
-  position: PropTypes.oneOf(['centered', 'right']),
-  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
-  showPrevNext: PropTypes.bool,
-  rounded: PropTypes.bool,
   autoHide: PropTypes.bool,
-  className: PropTypes.string
+  className: PropTypes.string,
+  current: PropTypes.number,
+  delta: PropTypes.number,
+  next: PropTypes.node,
+  onChange: PropTypes.func,
+  position: PropTypes.oneOf(['centered', 'right']),
+  previous: PropTypes.node,
+  rounded: PropTypes.bool,
+  showPrevNext: PropTypes.bool,
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
+  total: PropTypes.number
 };
 
 Pagination.defaultProps = {
   ...modifiers.defaultProps,
-  total: 1,
   current: 0,
   delta: 5,
-  onChange: () => {},
   next: 'Next',
+  onChange: () => {},
   previous: 'Previous',
-  showPrevNext: false,
+  renderAs: 'nav',
   rounded: false,
-  renderAs: 'nav'
+  showPrevNext: false,
+  total: 1
 };

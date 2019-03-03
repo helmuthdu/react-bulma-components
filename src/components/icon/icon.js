@@ -55,14 +55,14 @@ export const Icon = React.forwardRef(
 Icon.propTypes = {
   ...modifiers.propTypes,
   icon: PropTypes.string,
-  iconSize: PropTypes.oneOf(['small', 'medium', 'large', 'big']),
+  align: PropTypes.oneOf(['left', 'right']),
   children: PropTypes.element,
   className: PropTypes.string,
-  style: PropTypes.object,
-  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
-  align: PropTypes.oneOf(['left', 'right']),
+  color: PropTypes.oneOf(colors),
+  iconSize: PropTypes.oneOf(['small', 'medium', 'large', 'big']),
   pack: PropTypes.oneOf(['mdi', 'fas']),
-  color: PropTypes.oneOf(colors)
+  size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
+  style: PropTypes.object
 };
 
 Icon.defaultProps = {

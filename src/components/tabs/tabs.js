@@ -6,7 +6,7 @@ import modifiers from '../../modifiers';
 import { Element } from '../element';
 import { Tab } from './components/tab';
 
-export const Tabs = React.forwardRef(({ children, className, align, size, type, fullWidth, ...props }, ref) => (
+export const Tabs = React.forwardRef(({ children, className, align, size, type, fullwidth, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
@@ -15,7 +15,7 @@ export const Tabs = React.forwardRef(({ children, className, align, size, type, 
       [`is-${size}`]: size,
       'is-toggle': type === 'toggle-rounded',
       [`is-${type}`]: type,
-      'is-fullwidth': fullWidth
+      'is-fullwidth': fullwidth
     })}
   >
     <ul>{children}</ul>
@@ -33,11 +33,11 @@ Tabs.propTypes = {
   align: PropTypes.oneOf(['centered', 'right']),
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   type: PropTypes.oneOf(['toggle', 'boxed', 'toggle-rounded']),
-  fullWidth: PropTypes.bool
+  fullwidth: PropTypes.bool
 };
 
 Tabs.defaultProps = {
   ...modifiers.defaultProps,
   renderAs: 'div',
-  fullWidth: false
+  fullwidth: false
 };

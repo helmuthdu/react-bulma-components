@@ -11,8 +11,8 @@ export const Media = React.forwardRef(({ children, className, ...props }, ref) =
     {children}
   </Element>
 ));
-Media.Item = MediaItem;
 
+Media.Item = MediaItem;
 Media.Content = MediaContent;
 
 Media.propTypes = {

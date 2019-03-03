@@ -90,7 +90,6 @@ export const Modal = React.forwardRef((props, ref) => {
 });
 
 Modal.Content = ModalContent;
-
 Modal.Card = ModalCard;
 
 Modal.propTypes = {

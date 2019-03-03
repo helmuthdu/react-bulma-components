@@ -34,15 +34,15 @@ Tag.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.object,
-  color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf(['medium', 'large']),
-  rounded: PropTypes.bool,
-  remove: PropTypes.bool,
   close: PropTypes.bool,
+  color: PropTypes.oneOf(colors),
   ellipsis: PropTypes.bool,
   onClick: PropTypes.func,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+  remove: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  rounded: PropTypes.bool,
+  size: PropTypes.oneOf(['medium', 'large']),
+  style: PropTypes.object
 };
 
 Tag.defaultProps = {
