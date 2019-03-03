@@ -31,7 +31,7 @@ export const Input = React.forwardRef(
 Input.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   type: PropTypes.oneOf([
     'text',
     'email',
@@ -51,23 +51,13 @@ Input.propTypes = {
   disabled: PropTypes.bool,
   placeholder: PropTypes.string,
   value: PropTypes.string,
-  /**
-   * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
-   */
   name: PropTypes.string
 };
 
 Input.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
   value: '',
-  style: {},
   type: 'text',
-  size: null,
-  color: null,
-  readOnly: false,
   isStatic: false,
-  disabled: false,
-  placeholder: '',
-  name: ''
+  placeholder: ''
 };

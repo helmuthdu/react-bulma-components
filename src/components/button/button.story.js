@@ -33,7 +33,7 @@ storiesOf('Button', module)
     <Section>
       <Box>Play with the button props using the knobs addon panel at the bottom</Box>
       <Button
-        fullwidth={boolean('Full width', false)}
+        fullWidth={boolean('Full width', false)}
         color={select('Color', colors)}
         loading={boolean('Loading', false)}
         outlined={boolean('Outlined', false)}

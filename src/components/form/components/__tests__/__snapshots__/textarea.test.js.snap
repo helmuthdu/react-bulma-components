@@ -5,7 +5,6 @@ exports[`Textarea component should be disabled with placeholder and value 1`] = 
   <textarea
     class="textarea"
     disabled=""
-    name=""
     placeholder="hello tests"
     rows="4"
   >
@@ -18,8 +17,6 @@ exports[`Textarea component should be large with 10 rows and readOnly 1`] = `
 <DocumentFragment>
   <textarea
     class="textarea is-large"
-    name=""
-    placeholder=""
     readonly=""
     rows="10"
   />
@@ -30,8 +27,6 @@ exports[`Textarea component should concat classname in props with classname 1`] 
 <DocumentFragment>
   <textarea
     class="textarea other-class this-is-a-test"
-    name=""
-    placeholder=""
     rows="4"
   />
 </DocumentFragment>
@@ -41,8 +36,6 @@ exports[`Textarea component should render 1`] = `
 <DocumentFragment>
   <textarea
     class="textarea"
-    name=""
-    placeholder=""
     rows="4"
   />
 </DocumentFragment>
@@ -52,8 +45,6 @@ exports[`Textarea component should use inline styles 1`] = `
 <DocumentFragment>
   <textarea
     class="textarea"
-    name=""
-    placeholder=""
     rows="4"
     style="height: 250px;"
   />

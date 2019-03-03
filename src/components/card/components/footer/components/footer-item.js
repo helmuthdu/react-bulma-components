@@ -16,6 +16,5 @@ CardFooterItem.propTypes = {
 
 CardFooterItem.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
   renderAs: 'div'
 };

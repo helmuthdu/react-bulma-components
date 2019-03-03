@@ -72,18 +72,6 @@ exports[`Notification component Should use use color link 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Notification component Should use use color null 1`] = `
-<DocumentFragment>
-  <div
-    class="notification"
-  >
-    <p>
-      Default
-    </p>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`Notification component Should use use color primary 1`] = `
 <DocumentFragment>
   <div

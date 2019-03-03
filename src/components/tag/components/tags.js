@@ -22,14 +22,11 @@ Tags.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   gapless: PropTypes.bool
 };
 
 Tags.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
-  style: {},
   gapless: false
 };

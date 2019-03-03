@@ -29,16 +29,12 @@ Level.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   breakpoint: PropTypes.oneOf(breakpoints),
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 
 Level.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
-  style: {},
-  breakpoint: null,
   renderAs: 'div'
 };

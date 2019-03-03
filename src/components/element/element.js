@@ -17,7 +17,5 @@ Element.propTypes = {
 
 Element.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
-  style: {},
   renderAs: 'div'
 };

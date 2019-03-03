@@ -96,7 +96,7 @@ export const Dropdown = ({ className, children, value, color, right, up, label, 
 Dropdown.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   children: PropTypes.node,
   value: PropTypes.any,
   onChange: PropTypes.func,
@@ -109,13 +109,9 @@ Dropdown.propTypes = {
 
 Dropdown.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
-  style: {},
   value: null,
   children: [],
   onChange: () => {},
-  color: null,
-  hoverable: false,
   label: ''
 };
 

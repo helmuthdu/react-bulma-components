@@ -30,7 +30,7 @@ Message.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   color: PropTypes.oneOf(colors)
@@ -38,10 +38,5 @@ Message.propTypes = {
 
 Message.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
-  style: {},
-  renderAs: 'article',
-  color: null,
-  size: null
+  renderAs: 'article'
 };

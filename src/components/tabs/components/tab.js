@@ -20,16 +20,13 @@ Tab.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   active: PropTypes.bool
 };
 
 Tab.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
-  style: {},
   renderAs: 'a',
   active: false
 };

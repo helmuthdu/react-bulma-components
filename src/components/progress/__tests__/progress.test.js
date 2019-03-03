@@ -4,10 +4,7 @@ import { Progress } from '..';
 import CONSTANTS from '../../../constants';
 
 describe('Progress component', () => {
-  it('should exist', () => {
-    expect(Progress).toMatchSnapshot();
-  });
-  it('should have notification classname', () => {
+  it('should render', () => {
     const { asFragment } = render(<Progress value={30} max={100} />);
     expect(asFragment()).toMatchSnapshot();
   });

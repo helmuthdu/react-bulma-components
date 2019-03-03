@@ -16,14 +16,11 @@ ModalCardHead.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   onClose: PropTypes.func
 };
 
 ModalCardHead.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
-  style: {},
   renderAs: 'header'
 };

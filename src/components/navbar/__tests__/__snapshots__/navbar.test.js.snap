@@ -120,7 +120,7 @@ exports[`Navbar component should render 2`] = `
 exports[`Navbar component should render 3`] = `
 <DocumentFragment>
   <div
-    class="navbar-burger is-active"
+    class="navbar-burger"
     role="button"
     style="outline: none;"
     tabindex="0"
@@ -175,7 +175,7 @@ exports[`Navbar component should render 8`] = `
 exports[`Navbar component should render 9`] = `
 <DocumentFragment>
   <div
-    class="navbar-menu is-active"
+    class="navbar-menu"
   />
 </DocumentFragment>
 `;

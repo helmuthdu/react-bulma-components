@@ -19,6 +19,5 @@ Menu.propTypes = {
 
 Menu.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
   renderAs: 'aside'
 };

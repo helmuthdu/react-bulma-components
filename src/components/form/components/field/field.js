@@ -36,22 +36,17 @@ Field.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  align: PropTypes.oneOf([null, 'centered', 'right']),
-  kind: PropTypes.oneOf([null, 'addons', 'group']),
+  align: PropTypes.oneOf(['centered', 'right']),
+  kind: PropTypes.oneOf(['addons', 'group']),
   multiline: PropTypes.bool,
   horizontal: PropTypes.bool
 };
 
 Field.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
-  style: {},
   renderAs: 'div',
-  align: null,
-  kind: null,
   multiline: false,
   horizontal: false
 };

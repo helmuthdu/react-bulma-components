@@ -24,7 +24,7 @@ export const Progress = React.forwardRef(({ className, value, max, color, size, 
 Progress.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   value: PropTypes.number,
@@ -32,9 +32,5 @@ Progress.propTypes = {
 };
 
 Progress.defaultProps = {
-  ...modifiers.defaultProps,
-  className: '',
-  style: {},
-  color: null,
-  size: null
+  ...modifiers.defaultProps
 };

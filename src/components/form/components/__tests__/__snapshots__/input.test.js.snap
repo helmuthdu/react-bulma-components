@@ -5,7 +5,6 @@ exports[`Input component should be disabled with placeholder and value 1`] = `
   <input
     class="input"
     disabled=""
-    name=""
     placeholder="hello tests"
     type="text"
     value="TEST"
@@ -17,7 +16,6 @@ exports[`Input component should be large and readOnly 1`] = `
 <DocumentFragment>
   <input
     class="input is-large"
-    name=""
     placeholder=""
     readonly=""
     type="text"
@@ -30,7 +28,6 @@ exports[`Input component should be type email and a with success colors 1`] = `
 <DocumentFragment>
   <input
     class="input is-success"
-    name=""
     placeholder=""
     type="email"
     value=""
@@ -42,7 +39,6 @@ exports[`Input component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <input
     class="input other-class this-is-a-test"
-    name=""
     placeholder=""
     type="text"
     value=""
@@ -54,7 +50,6 @@ exports[`Input component should render 1`] = `
 <DocumentFragment>
   <input
     class="input"
-    name=""
     placeholder=""
     type="text"
     value=""
@@ -66,7 +61,6 @@ exports[`Input component should use inline styles 1`] = `
 <DocumentFragment>
   <input
     class="input"
-    name=""
     placeholder=""
     style="height: 250px;"
     type="text"

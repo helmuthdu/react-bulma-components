@@ -32,27 +32,17 @@ Radio.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   disabled: PropTypes.bool,
   value: PropTypes.string,
   checked: PropTypes.bool,
-  /**
-   * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
-   */
   name: PropTypes.string
 };
 
 Radio.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
   value: '',
-  style: {},
-  color: null,
-  size: null,
-  disabled: false,
-  checked: false,
-  name: null
+  checked: false
 };

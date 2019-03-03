@@ -1,7 +1,6 @@
 export default {
   IS_CLIENT: !!(typeof window !== 'undefined' && window.document && window.document.createElement),
   BREAKPOINTS: {
-    NONE: null,
     DESKTOP: 'desktop',
     TABLET: 'tablet',
     MOBILE: 'mobile',
@@ -10,7 +9,6 @@ export default {
     TOUCH: 'touch'
   },
   COLORS: {
-    NONE: null,
     PRIMARY: 'primary',
     SUCCESS: 'success',
     INFO: 'info',
@@ -23,7 +21,6 @@ export default {
     LINK: 'link'
   },
   SIZES: {
-    AUTO: null,
     SMALL: 'small',
     MEDIUM: 'medium',
     LARGE: 'large'

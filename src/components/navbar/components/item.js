@@ -30,7 +30,7 @@ export const NavbarItem = React.forwardRef(
 
 NavbarItem.propTypes = {
   ...modifiers.propTypes,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   className: PropTypes.string,
   active: PropTypes.bool,
   dropdown: PropTypes.bool,
@@ -42,10 +42,7 @@ NavbarItem.propTypes = {
 
 NavbarItem.defaultProps = {
   ...modifiers.defaultProps,
-  style: {},
-  className: '',
   active: false,
-  children: null,
   dropdown: false,
   hoverable: false,
   dropdownUp: false,

@@ -59,7 +59,7 @@ Select.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   color: PropTypes.oneOf(colors),
   readOnly: PropTypes.bool,
@@ -74,17 +74,9 @@ Select.propTypes = {
 
 Select.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
   value: '',
-  style: {},
-  size: null,
-  color: null,
-  readOnly: false,
-  disabled: false,
   multiple: false,
   rounded: false,
   empty: false,
-  loading: false,
-  name: ''
+  loading: false
 };

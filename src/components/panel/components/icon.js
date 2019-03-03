@@ -16,7 +16,6 @@ PanelIcon.propTypes = {
 
 PanelIcon.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
   renderAs: 'span'
 };
 

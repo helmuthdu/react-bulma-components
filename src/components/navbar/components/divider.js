@@ -10,12 +10,10 @@ export const NavbarDivider = React.forwardRef(({ className, ...props }, ref) => 
 
 NavbarDivider.propTypes = {
   ...modifiers.propTypes,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   className: PropTypes.string
 };
 
 NavbarDivider.defaultProps = {
-  ...modifiers.defaultProps,
-  style: {},
-  className: ''
+  ...modifiers.defaultProps
 };

@@ -12,14 +12,12 @@ export const NavbarBrand = React.forwardRef(({ className, children, ...props }, 
 
 NavbarBrand.propTypes = {
   ...modifiers.propTypes,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   className: PropTypes.string,
   children: PropTypes.node
 };
 
 NavbarBrand.defaultProps = {
   ...modifiers.defaultProps,
-  style: {},
-  className: '',
   children: null
 };

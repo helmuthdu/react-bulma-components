@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 export default {
   propTypes: {
     clearfix: PropTypes.bool,
-    pull: PropTypes.oneOf([null, 'right', 'left']),
+    pull: PropTypes.oneOf(['right', 'left']),
     marginless: PropTypes.bool,
     paddingless: PropTypes.bool,
     overlay: PropTypes.bool,
@@ -18,7 +18,6 @@ export default {
   },
   defaultProps: {
     clearfix: false,
-    pull: null,
     marginless: false,
     paddingless: false,
     overlay: false,

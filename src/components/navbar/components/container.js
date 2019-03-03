@@ -21,7 +21,7 @@ export const NavbarContainer = React.forwardRef(({ className, children, position
 
 NavbarContainer.propTypes = {
   ...modifiers.propTypes,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   className: PropTypes.string,
   children: PropTypes.node,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
@@ -30,9 +30,6 @@ NavbarContainer.propTypes = {
 
 NavbarContainer.defaultProps = {
   ...modifiers.defaultProps,
-  style: {},
-  className: '',
-  children: null,
   renderAs: 'div',
   position: 'start'
 };

@@ -14,14 +14,11 @@ ModalCardBody.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   renderAs: PropTypes.string
 };
 
 ModalCardBody.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
-  style: {},
   renderAs: 'section'
 };

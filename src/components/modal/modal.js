@@ -89,6 +89,9 @@ export const Modal = React.forwardRef((props, ref) => {
   );
 });
 
+Modal.Content = ModalContent;
+Modal.Card = ModalCard;
+
 Modal.propTypes = {
   show: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
@@ -102,9 +105,5 @@ Modal.propTypes = {
 Modal.defaultProps = {
   closeOnEsc: true,
   showClose: true,
-  closeOnBlur: false,
-  className: ''
+  closeOnBlur: false
 };
-
-Modal.Content = ModalContent;
-Modal.Card = ModalCard;

@@ -45,7 +45,7 @@ Switch.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   disabled: PropTypes.bool,
@@ -56,13 +56,6 @@ Switch.propTypes = {
 
 Switch.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
   value: '',
-  style: {},
-  color: null,
-  size: null,
-  disabled: false,
-  checked: false,
-  name: null
+  checked: false
 };

@@ -21,16 +21,12 @@ Content.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 
 Content.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
-  style: {},
-  size: null,
   renderAs: 'div'
 };

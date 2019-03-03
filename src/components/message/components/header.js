@@ -19,7 +19,5 @@ MessageHeader.propTypes = {
 
 MessageHeader.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
   renderAs: 'div'
 };

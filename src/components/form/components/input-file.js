@@ -46,7 +46,7 @@ export const InputFile = React.forwardRef(
           'has-name': !hasName,
           'is-right': right,
           'is-boxed': boxed,
-          'is-fullWidth': fullWidth
+          'is-fullwidth': fullWidth
         })}
       >
         <label className="file-label">
@@ -77,7 +77,7 @@ export const InputFile = React.forwardRef(
 InputFile.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   onChange: PropTypes.func,
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
@@ -85,9 +85,6 @@ InputFile.propTypes = {
   fullWidth: PropTypes.bool,
   right: PropTypes.bool,
   boxed: PropTypes.bool,
-  /**
-   * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
-   */
   name: PropTypes.string,
   label: PropTypes.string,
   icon: PropTypes.element
@@ -95,16 +92,10 @@ InputFile.propTypes = {
 
 InputFile.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
-  style: {},
   onChange: () => {},
-  color: null,
-  size: null,
   hasName: true,
   fullWidth: false,
   right: false,
   boxed: false,
-  name: '',
-  icon: null,
   label: 'Choose a file...'
 };

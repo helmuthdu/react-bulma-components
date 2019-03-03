@@ -34,7 +34,7 @@ Hero.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   color: PropTypes.oneOf(colors),
   gradient: PropTypes.bool,
@@ -43,11 +43,6 @@ Hero.propTypes = {
 
 Hero.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
-  style: {},
   renderAs: 'section',
-  color: null,
-  gradient: false,
-  size: null
+  gradient: false
 };

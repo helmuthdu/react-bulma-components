@@ -6,10 +6,8 @@ exports[`Select component should be large, red, disabled and multioption 1`] = `
     class="select is-large is-danger is-multiple"
   >
     <select
-      aria-readonly="false"
       disabled=""
       multiple=""
-      name=""
     >
       <option>
         1
@@ -30,10 +28,7 @@ exports[`Select component should concat classname in props with classname 1`] = 
   <div
     class="select other-class this-is-a-test"
   >
-    <select
-      aria-readonly="false"
-      name=""
-    >
+    <select>
       <option>
         1
       </option>
@@ -53,10 +48,7 @@ exports[`Select component should render 1`] = `
   <div
     class="select"
   >
-    <select
-      aria-readonly="false"
-      name=""
-    >
+    <select>
       <option>
         1
       </option>
@@ -71,10 +63,7 @@ exports[`Select component should use inline styles 1`] = `
     class="select"
     style="width: 100%;"
   >
-    <select
-      aria-readonly="false"
-      name=""
-    >
+    <select>
       <option>
         1
       </option>

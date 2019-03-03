@@ -49,7 +49,7 @@ Pagination.propTypes = {
   onChange: PropTypes.func,
   next: PropTypes.node,
   previous: PropTypes.node,
-  position: PropTypes.oneOf([null, 'centered', 'right']),
+  position: PropTypes.oneOf(['centered', 'right']),
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   showPrevNext: PropTypes.bool,
   rounded: PropTypes.bool,
@@ -65,10 +65,7 @@ Pagination.defaultProps = {
   onChange: () => {},
   next: 'Next',
   previous: 'Previous',
-  position: null,
-  size: null,
   showPrevNext: false,
   rounded: false,
-  className: '',
   renderAs: 'nav'
 };

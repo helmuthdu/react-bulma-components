@@ -19,16 +19,12 @@ FieldLabel.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   size: PropTypes.oneOf(['small', 'normal', 'medium', 'large'])
 };
 
 FieldLabel.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
-  style: {},
-  renderAs: 'div',
-  size: null
+  renderAs: 'div'
 };

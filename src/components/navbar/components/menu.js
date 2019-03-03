@@ -23,14 +23,12 @@ export const NavbarMenu = React.forwardRef(({ className, children, ...props }, r
 
 NavbarMenu.propTypes = {
   ...modifiers.propTypes,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   className: PropTypes.string,
   children: PropTypes.node
 };
 
 NavbarMenu.defaultProps = {
   ...modifiers.defaultProps,
-  style: {},
-  className: '',
   children: null
 };

@@ -23,7 +23,7 @@ Table.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   size: PropTypes.oneOf(['fullwidth', 'narrow']),
   striped: PropTypes.bool,
   bordered: PropTypes.bool
@@ -31,9 +31,6 @@ Table.propTypes = {
 
 Table.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
-  style: {},
   size: 'fullwidth',
   striped: true,
   bordered: false

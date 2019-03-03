@@ -14,13 +14,10 @@ ModalCardFoot.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({})
+  style: PropTypes.object
 };
 
 ModalCardFoot.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
-  style: {},
   renderAs: 'footer'
 };

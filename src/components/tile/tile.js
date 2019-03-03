@@ -29,24 +29,18 @@ Tile.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  kind: PropTypes.oneOf([null, 'ancestor', 'parent', 'child']),
+  kind: PropTypes.oneOf(['ancestor', 'parent', 'child']),
   vertical: PropTypes.bool,
-  size: PropTypes.oneOf([null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
+  size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
   color: PropTypes.oneOf(colors),
   notification: PropTypes.bool
 };
 
 Tile.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
-  style: {},
   renderAs: 'div',
-  kind: null,
   vertical: false,
-  size: null,
-  color: null,
   notification: false
 };

@@ -45,21 +45,16 @@ export const Image = React.forwardRef(({ className, alt, size, fallback, rounded
 Image.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
-  src: PropTypes.string,
+  src: PropTypes.string.isRequired,
   alt: PropTypes.string,
   rounded: PropTypes.bool,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   size: PropTypes.oneOf(CONSTANTS.SIZES),
   fallback: PropTypes.string
 };
 
 Image.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
-  src: '',
-  alt: '',
   rounded: false,
-  style: {},
-  size: null,
   fallback: 'http//bulma.io/images/placeholders/480x480.png'
 };

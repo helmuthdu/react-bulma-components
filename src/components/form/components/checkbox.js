@@ -44,7 +44,7 @@ Checkbox.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   color: PropTypes.oneOf(colors),
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   disabled: PropTypes.bool,
@@ -56,14 +56,7 @@ Checkbox.propTypes = {
 
 Checkbox.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
   value: '',
-  style: {},
-  color: null,
-  size: null,
-  disabled: false,
   checked: false,
-  indeterminate: false,
-  name: null
+  indeterminate: false
 };

@@ -6,17 +6,16 @@ import modifiers from '../../modifiers';
 import { Element } from '../element';
 import { Tab } from './components/tab';
 
-export const Tabs = React.forwardRef(({ children, className, align, size, type, fullwidth, ...props }, ref) => (
+export const Tabs = React.forwardRef(({ children, className, align, size, type, fullWidth, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
     className={cn('tabs', className, {
       [`is-${align}`]: align,
       [`is-${size}`]: size,
-      // Bulma 0.6.2 is not releaset ATM
       'is-toggle': type === 'toggle-rounded',
       [`is-${type}`]: type,
-      'is-fullwidth': fullwidth
+      'is-fullwidth': fullWidth
     })}
   >
     <ul>{children}</ul>
@@ -29,22 +28,16 @@ Tabs.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  align: PropTypes.oneOf([null, 'centered', 'right']),
+  align: PropTypes.oneOf(['centered', 'right']),
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
-  type: PropTypes.oneOf([null, 'toggle', 'boxed', 'toggle-rounded']),
-  fullwidth: PropTypes.bool
+  type: PropTypes.oneOf(['toggle', 'boxed', 'toggle-rounded']),
+  fullWidth: PropTypes.bool
 };
 
 Tabs.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
-  style: {},
   renderAs: 'div',
-  align: null,
-  size: null,
-  type: null,
-  fullwidth: false
+  fullWidth: false
 };

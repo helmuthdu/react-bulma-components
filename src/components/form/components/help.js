@@ -28,8 +28,5 @@ Help.propTypes = {
 
 Help.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
-  color: null,
   renderAs: 'p'
 };

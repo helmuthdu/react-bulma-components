@@ -31,15 +31,13 @@ export const NavbarBurger = React.forwardRef(({ style, className, ...allProps },
 
 NavbarBurger.propTypes = {
   ...modifiers.propTypes,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   className: PropTypes.string,
   onClick: PropTypes.func
 };
 
 NavbarBurger.defaultProps = {
   ...modifiers.defaultProps,
-  style: {},
-  className: '',
   onClick: () => {}
 };
 

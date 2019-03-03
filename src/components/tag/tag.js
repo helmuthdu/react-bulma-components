@@ -34,9 +34,9 @@ Tag.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   color: PropTypes.oneOf(colors),
-  size: PropTypes.oneOf([null, 'medium', 'large']),
+  size: PropTypes.oneOf(['medium', 'large']),
   rounded: PropTypes.bool,
   remove: PropTypes.bool,
   close: PropTypes.bool,
@@ -47,11 +47,6 @@ Tag.propTypes = {
 
 Tag.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
-  style: {},
-  color: null,
-  size: null,
   rounded: false,
   remove: false,
   close: false,

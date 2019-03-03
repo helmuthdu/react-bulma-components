@@ -28,7 +28,6 @@ Panel.propTypes = {
 
 Panel.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
   renderAs: 'nav'
 };
 

@@ -30,7 +30,7 @@ Columns.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   /**
    * Breakpoint where columns become stacked.
    */
@@ -51,10 +51,6 @@ Columns.propTypes = {
 
 Columns.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
-  style: {},
-  breakpoint: null,
   gapless: false,
   centered: false,
   multiline: true

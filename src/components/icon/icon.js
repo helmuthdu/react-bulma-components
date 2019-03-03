@@ -8,15 +8,13 @@ const colors = Object.values(CONSTANTS.COLORS);
 
 const iconSizes = {
   mdi: {
-    auto: null,
     small: 'mdi-18px',
     medium: 'mdi-24px',
     large: 'mdi-36px',
     big: 'mdi-48px'
   },
   fas: {
-    auto: null,
-    small: null,
+    small: '',
     medium: 'fa-lg',
     large: 'fa-2x',
     big: 'fa-3x'
@@ -57,25 +55,18 @@ export const Icon = React.forwardRef(
 Icon.propTypes = {
   ...modifiers.propTypes,
   icon: PropTypes.string,
-  iconSize: PropTypes.oneOf([null, 'small', 'medium', 'large', 'big', 'auto']),
+  iconSize: PropTypes.oneOf(['small', 'medium', 'large', 'big']),
   children: PropTypes.element,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
-  align: PropTypes.oneOf([null, 'left', 'right']),
+  align: PropTypes.oneOf(['left', 'right']),
   pack: PropTypes.oneOf(['mdi', 'fas']),
   color: PropTypes.oneOf(colors)
 };
 
 Icon.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
-  style: {},
-  size: null,
-  color: null,
-  children: null,
-  align: null,
   icon: '',
-  iconSize: null,
   pack: 'mdi'
 };

@@ -26,14 +26,11 @@ Card.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
   children: PropTypes.node,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 
 Card.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
-  children: null,
-  style: {},
   renderAs: 'div'
 };

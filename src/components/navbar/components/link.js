@@ -12,7 +12,7 @@ export const NavbarLink = React.forwardRef(({ className, children, ...props }, r
 
 NavbarLink.propTypes = {
   ...modifiers.propTypes,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   className: PropTypes.string,
   children: PropTypes.node,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
@@ -20,8 +20,5 @@ NavbarLink.propTypes = {
 
 NavbarLink.defaultProps = {
   ...modifiers.defaultProps,
-  style: {},
-  className: '',
-  children: null,
   renderAs: 'span'
 };

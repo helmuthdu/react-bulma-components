@@ -21,7 +21,5 @@ MenuList.propTypes = {
 };
 
 MenuList.defaultProps = {
-  ...modifiers.defaultProps,
-  className: '',
-  title: null
+  ...modifiers.defaultProps
 };

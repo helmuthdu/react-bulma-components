@@ -27,14 +27,11 @@ ModalCard.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   onClose: PropTypes.func
 };
 
 ModalCard.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
-  style: {},
   onClose: null
 };

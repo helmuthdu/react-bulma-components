@@ -62,24 +62,19 @@ Navbar.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   transparent: PropTypes.bool,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  fixed: PropTypes.oneOf([null, 'top', 'bottom']),
+  fixed: PropTypes.oneOf(['top', 'bottom']),
   color: PropTypes.oneOf(colors),
   active: PropTypes.bool
 };
 
 Navbar.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
-  style: {},
   renderAs: 'nav',
   transparent: false,
-  active: false,
-  fixed: null,
-  color: null
+  active: false
 };
 
 Navbar.Brand = NavbarBrand;

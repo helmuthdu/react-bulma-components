@@ -25,7 +25,7 @@ Container.propTypes = {
   children: PropTypes.node,
   fluid: PropTypes.bool,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   breakpoint: PropTypes.oneOf(breakpoints),
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
@@ -33,9 +33,5 @@ Container.propTypes = {
 Container.defaultProps = {
   ...modifiers.defaultProps,
   fluid: false,
-  children: null,
-  breakpoint: null,
-  className: '',
-  style: {},
   renderAs: 'div'
 };

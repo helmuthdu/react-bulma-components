@@ -16,6 +16,5 @@ CardHeaderTitle.propTypes = {
 
 CardHeaderTitle.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
   renderAs: 'div'
 };

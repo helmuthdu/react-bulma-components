@@ -31,7 +31,7 @@ export const Textarea = React.forwardRef(
 Textarea.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   color: PropTypes.oneOf(colors),
   readOnly: PropTypes.bool,
@@ -39,22 +39,11 @@ Textarea.propTypes = {
   placeholder: PropTypes.string,
   rows: PropTypes.number,
   value: PropTypes.string,
-  /**
-   * The name of the input field Commonly used for [multi-input handling](https://reactjs.org/docs/forms.html#handling-multiple-inputs)
-   */
   name: PropTypes.string
 };
 
 Textarea.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
-  style: {},
-  size: null,
-  color: null,
-  readOnly: false,
-  disabled: false,
-  placeholder: '',
   rows: 4,
-  value: '',
-  name: ''
+  value: ''
 };

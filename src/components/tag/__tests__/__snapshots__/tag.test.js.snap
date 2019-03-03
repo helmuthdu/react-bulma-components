@@ -90,21 +90,6 @@ exports[`Tag component Should use use color link 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Tag component Should use use color null 1`] = `
-<DocumentFragment>
-  <span
-    class="tag"
-    data-testid="tag"
-  >
-    <span
-      class=""
-    >
-      tag
-    </span>
-  </span>
-</DocumentFragment>
-`;
-
 exports[`Tag component Should use use color primary 1`] = `
 <DocumentFragment>
   <span

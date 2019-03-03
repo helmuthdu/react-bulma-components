@@ -19,7 +19,7 @@ export const NavbarDropdown = React.forwardRef(({ className, boxed, right, child
 
 NavbarDropdown.propTypes = {
   ...modifiers.propTypes,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   className: PropTypes.string,
   children: PropTypes.node,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
@@ -29,9 +29,6 @@ NavbarDropdown.propTypes = {
 
 NavbarDropdown.defaultProps = {
   ...modifiers.defaultProps,
-  style: {},
-  className: '',
-  children: null,
   renderAs: 'span',
   boxed: false,
   right: false

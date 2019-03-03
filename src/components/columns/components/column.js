@@ -5,7 +5,7 @@ import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 import CONSTANTS from '../constants';
 
-const sizes = [null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].concat(Object.values(CONSTANTS.SIZES));
+const sizes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].concat(Object.values(CONSTANTS.SIZES));
 
 export const Column = React.forwardRef(
   (
@@ -48,7 +48,7 @@ Column.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   /**
    * The size of the column. the maximum size of a row is 12
    */
@@ -113,40 +113,23 @@ Column.propTypes = {
 
 Column.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
-  style: {},
-  size: null,
-  offset: null,
   narrow: false,
   mobile: {
-    size: null,
-    offset: null,
     narrow: false
   },
   touch: {
-    size: null,
-    offset: null,
     narrow: false
   },
   tablet: {
-    size: null,
-    offset: null,
     narrow: false
   },
   desktop: {
-    size: null,
-    offset: null,
     narrow: false
   },
   widescreen: {
-    size: null,
-    offset: null,
     narrow: false
   },
   fullhd: {
-    size: null,
-    offset: null,
     narrow: false
   }
 };

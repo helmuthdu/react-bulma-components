@@ -10,12 +10,10 @@ export const DropdownDivider = ({ className, ...allProps }) => {
 
 DropdownDivider.propTypes = {
   ...modifiers.propTypes,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   className: PropTypes.string
 };
 
 DropdownDivider.defaultProps = {
-  ...modifiers.defaultProps,
-  style: {},
-  className: ''
+  ...modifiers.defaultProps
 };

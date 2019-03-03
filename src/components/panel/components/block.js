@@ -23,7 +23,6 @@ PanelBlock.propTypes = {
 
 PanelBlock.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
   renderAs: 'div',
   active: false
 };

@@ -22,6 +22,5 @@ CardHeader.propTypes = {
 
 CardHeader.defaultProps = {
   ...modifiers.defaultProps,
-  className: '',
   renderAs: 'div'
 };

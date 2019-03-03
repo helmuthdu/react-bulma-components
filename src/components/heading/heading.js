@@ -37,10 +37,7 @@ Heading.propTypes = {
 
 Heading.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
   renderAs: 'h1',
-  size: null,
   weight: null,
   subtitle: false,
   heading: false,

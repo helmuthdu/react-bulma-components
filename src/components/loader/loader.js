@@ -21,14 +21,12 @@ Loader.propTypes = {
   ...modifiers.propTypes,
   onClick: PropTypes.func,
   className: PropTypes.string,
-  style: PropTypes.shape({}),
+  style: PropTypes.object,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 
 Loader.defaultProps = {
   ...modifiers.defaultProps,
   overlay: false,
-  className: '',
-  style: {},
   renderAs: 'div'
 };

@@ -14,13 +14,10 @@ ModalCardTitle.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.shape({})
+  style: PropTypes.object
 };
 
 ModalCardTitle.defaultProps = {
   ...modifiers.defaultProps,
-  children: null,
-  className: '',
-  style: {},
   renderAs: 'p'
 };

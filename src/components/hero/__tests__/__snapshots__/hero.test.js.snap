@@ -72,18 +72,6 @@ exports[`Hero component Should use use color link 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Hero component Should use use color null 1`] = `
-<DocumentFragment>
-  <section
-    class="hero"
-  >
-    <p>
-      Default
-    </p>
-  </section>
-</DocumentFragment>
-`;
-
 exports[`Hero component Should use use color primary 1`] = `
 <DocumentFragment>
   <section
