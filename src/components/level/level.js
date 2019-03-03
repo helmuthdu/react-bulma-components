@@ -4,8 +4,8 @@ import React from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import { Element } from '../element';
-import LevelItem from './components/level-item';
-import LevelSide from './components/level-side';
+import { LevelItem } from './components/level-item';
+import { LevelSide } from './components/level-side';
 
 const breakpoints = Object.values(CONSTANTS.BREAKPOINTS);
 

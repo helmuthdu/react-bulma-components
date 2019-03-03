@@ -4,7 +4,7 @@ import React from 'react';
 import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 
-const LevelSide = React.forwardRef(({ children, className, align, ...props }, ref) => (
+export const LevelSide = React.forwardRef(({ children, className, align, ...props }, ref) => (
   <Element
     {...props}
     ref={ref}
@@ -29,5 +29,3 @@ LevelSide.defaultProps = {
   renderAs: 'div',
   align: 'left'
 };
-
-export default LevelSide;

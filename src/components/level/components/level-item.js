@@ -4,7 +4,7 @@ import React from 'react';
 import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 
-const LevelItem = React.forwardRef(({ children, className, ...props }, ref) => (
+export const LevelItem = React.forwardRef(({ children, className, ...props }, ref) => (
   <Element {...props} ref={ref} className={cn('level-item', className)}>
     {children}
   </Element>
@@ -22,5 +22,3 @@ LevelItem.defaultProps = {
   ...modifiers.defaultProps,
   renderAs: 'div'
 };
-
-export default LevelItem;

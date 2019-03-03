@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
-import ButtonGroup from './components/button-group';
+import { ButtonGroup } from './components/button-group';
 
 const colors = Object.values(CONSTANTS.COLORS);
 

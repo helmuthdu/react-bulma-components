@@ -5,7 +5,7 @@ import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 
-const ButtonGroup = ({ children, className, hasAddons, position, size, renderAs, ...props }) => (
+export const ButtonGroup = ({ children, className, hasAddons, position, size, renderAs, ...props }) => (
   <Element
     {...props}
     renderAs={renderAs}
@@ -33,5 +33,3 @@ ButtonGroup.defaultProps = {
   hasAddons: false,
   renderAs: 'div'
 };
-
-export default ButtonGroup;

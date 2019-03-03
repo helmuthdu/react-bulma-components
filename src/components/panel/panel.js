@@ -30,5 +30,3 @@ Panel.defaultProps = {
   ...modifiers.defaultProps,
   renderAs: 'nav'
 };
-
-export default Panel;

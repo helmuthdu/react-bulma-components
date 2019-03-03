@@ -40,5 +40,3 @@ NavbarBurger.defaultProps = {
   ...modifiers.defaultProps,
   onClick: () => {}
 };
-
-export default NavbarBurger;

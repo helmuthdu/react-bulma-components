@@ -27,5 +27,3 @@ Media.defaultProps = {
   ...modifiers.defaultProps,
   renderAs: 'article'
 };
-
-export default Media;

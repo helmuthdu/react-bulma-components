@@ -55,5 +55,3 @@ Columns.defaultProps = {
   centered: false,
   multiline: true
 };
-
-export default Columns;

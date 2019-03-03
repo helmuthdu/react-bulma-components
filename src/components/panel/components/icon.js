@@ -18,5 +18,3 @@ PanelIcon.defaultProps = {
   ...modifiers.defaultProps,
   renderAs: 'span'
 };
-
-export default PanelIcon;
