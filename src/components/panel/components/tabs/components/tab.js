@@ -4,15 +4,15 @@ import React from 'react';
 import modifiers from '../../../../../modifiers';
 import { Element } from '../../../../element';
 
-export const PanelTabsTab = React.forwardRef(({ className, active, ...props }, ref) => (
+export const PanelTabsTab = ({ className, active, ...props }) => (
   <Element
     {...props}
-    ref={ref}
     className={cn(className, {
       'is-active': active
     })}
   />
-));
+);
+
 PanelTabsTab.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,

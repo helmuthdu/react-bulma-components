@@ -7,25 +7,34 @@ import { Element } from '../../element';
 
 const colors = Object.values(CONSTANTS.COLORS);
 
-export const Input = React.forwardRef(
-  ({ className, type, size, color, readOnly, inactive, disabled, placeholder, value, name, ...props }, ref) => (
-    <Element
-      {...props}
-      ref={ref}
-      renderAs="input"
-      name={name}
-      value={value}
-      type={type}
-      placeholder={placeholder}
-      readOnly={readOnly || inactive}
-      disabled={disabled}
-      className={cn('input', className, {
-        'is-static': inactive,
-        [`is-${size}`]: size,
-        [`is-${color}`]: color
-      })}
-    />
-  )
+export const Input = ({
+  className,
+  color,
+  disabled,
+  inactive,
+  name,
+  placeholder,
+  readOnly,
+  size,
+  type,
+  value,
+  ...props
+}) => (
+  <Element
+    {...props}
+    renderAs="input"
+    name={name}
+    value={value}
+    type={type}
+    placeholder={placeholder}
+    readOnly={readOnly || inactive}
+    disabled={disabled}
+    className={cn('input', className, {
+      'is-static': inactive,
+      [`is-${size}`]: size,
+      [`is-${color}`]: color
+    })}
+  />
 );
 
 Input.propTypes = {

@@ -1,16 +1,16 @@
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { Fragment } from 'react';
 import modifiers from '../../../../modifiers';
 import { Element } from '../../../element';
 import { MenuListItem } from './components/item';
 
-export const MenuList = React.forwardRef(({ className, title, ...props }, ref) => (
-  <React.Fragment>
+export const MenuList = ({ className, title, ...props }) => (
+  <Fragment>
     {title && <p className="menu-label">{title}</p>}
-    <Element ref={ref} renderAs="ul" className={cn('menu-list', className)} {...props} />
-  </React.Fragment>
-));
+    <Element renderAs="ul" className={cn('menu-list', className)} {...props} />
+  </Fragment>
+);
 
 MenuList.Item = MenuListItem;
 

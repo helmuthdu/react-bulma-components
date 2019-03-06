@@ -4,12 +4,11 @@ import React from 'react';
 import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 
-export const MediaItem = React.forwardRef(({ children, className, position, ...props }, ref) => {
+export const MediaItem = ({ children, className, position, ...props }) => {
   const p = position === 'center' ? 'content' : position;
   return (
     <Element
       {...props}
-      ref={ref}
       className={cn(className, {
         [`media-${p}`]: p
       })}
@@ -17,7 +16,7 @@ export const MediaItem = React.forwardRef(({ children, className, position, ...p
       {children}
     </Element>
   );
-});
+};
 
 MediaItem.propTypes = {
   ...modifiers.propTypes,

@@ -4,11 +4,11 @@ import React from 'react';
 import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 
-export const MessageBody = React.forwardRef(({ children, className, ...props }, ref) => (
-  <Element {...props} ref={ref} className={cn('message-body', className)}>
+export const MessageBody = ({ children, className, ...props }) => (
+  <Element {...props} className={cn('message-body', className)}>
     {children}
   </Element>
-));
+);
 
 MessageBody.propTypes = {
   ...modifiers.propTypes,

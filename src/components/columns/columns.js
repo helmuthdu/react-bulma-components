@@ -9,10 +9,9 @@ import COLUMN_CONSTANTS from './constants';
 
 const breakpoints = Object.values(CONSTANTS.BREAKPOINTS);
 
-export const Columns = React.forwardRef(({ className, breakpoint, gapless, multiline, centered, ...props }, ref) => (
+export const Columns = ({ className, breakpoint, gapless, multiline, centered, ...props }) => (
   <Element
     {...props}
-    ref={ref}
     className={cn(className, 'columns', {
       [`is-${breakpoint}`]: breakpoint,
       'is-gapless': gapless,
@@ -20,7 +19,7 @@ export const Columns = React.forwardRef(({ className, breakpoint, gapless, multi
       'is-centered': centered
     })}
   />
-));
+);
 
 Columns.Column = Column;
 Columns.CONSTANTS = COLUMN_CONSTANTS;

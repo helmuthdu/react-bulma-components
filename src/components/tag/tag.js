@@ -8,24 +8,21 @@ import { Tags } from './components/tags';
 
 const colors = Object.values(CONSTANTS.COLORS);
 
-export const Tag = React.forwardRef(
-  ({ children, className, color, close, size, ellipsis, rounded, remove, onClick, ...props }, ref) => (
-    <Element
-      {...props}
-      ref={ref}
-      onClick={() => remove && onClick()}
-      data-testid="tag"
-      className={cn('tag', className, {
-        [`is-${size}`]: size,
-        [`is-${color}`]: color,
-        'is-rounded': rounded,
-        'is-delete': remove
-      })}
-    >
-      {!remove && <span className={cn({ 'has-ellipsis': ellipsis })}>{children}</span>}
-      {!remove && close && <button onClick={onClick} className="delete is-small" data-testid="tag-delete" />}
-    </Element>
-  )
+export const Tag = ({ children, className, color, close, size, ellipsis, rounded, remove, onClick, ...props }) => (
+  <Element
+    {...props}
+    onClick={() => remove && onClick()}
+    data-testid="tag"
+    className={cn('tag', className, {
+      [`is-${size}`]: size,
+      [`is-${color}`]: color,
+      'is-rounded': rounded,
+      'is-delete': remove
+    })}
+  >
+    {!remove && <span className={cn({ 'has-ellipsis': ellipsis })}>{children}</span>}
+    {!remove && close && <button onClick={onClick} className="delete is-small" data-testid="tag-delete" />}
+  </Element>
 );
 
 Tag.Group = Tags;

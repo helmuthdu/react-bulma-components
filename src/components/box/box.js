@@ -4,11 +4,11 @@ import React from 'react';
 import modifiers from '../../modifiers';
 import { Element } from '../element';
 
-export const Box = React.forwardRef(({ children, className, ...props }, ref) => (
-  <Element ref={ref} {...props} className={cn('box', className)}>
+export const Box = ({ children, className, ...props }) => (
+  <Element {...props} className={cn('box', className)}>
     {children}
   </Element>
-));
+);
 
 Box.propTypes = {
   ...modifiers.propTypes,

@@ -4,11 +4,11 @@ import React from 'react';
 import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 
-export const NavbarLink = React.forwardRef(({ className, children, ...props }, ref) => (
-  <Element {...props} ref={ref} className={cn('navbar-link', className)}>
+export const NavbarLink = ({ className, children, ...props }) => (
+  <Element {...props} className={cn('navbar-link', className)}>
     {children}
   </Element>
-));
+);
 
 NavbarLink.propTypes = {
   ...modifiers.propTypes,

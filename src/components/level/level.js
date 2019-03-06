@@ -9,17 +9,16 @@ import { LevelSide } from './components/level-side';
 
 const breakpoints = Object.values(CONSTANTS.BREAKPOINTS);
 
-export const Level = React.forwardRef(({ children, className, breakpoint, ...props }, ref) => (
+export const Level = ({ children, className, breakpoint, ...props }) => (
   <Element
     {...props}
-    ref={ref}
     className={cn('level', className, {
       [`is-${breakpoint}`]: breakpoint
     })}
   >
     {children}
   </Element>
-));
+);
 
 Level.Side = LevelSide;
 Level.Item = LevelItem;

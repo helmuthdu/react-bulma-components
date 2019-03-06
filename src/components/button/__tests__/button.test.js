@@ -75,11 +75,6 @@ describe('Button component', () => {
     expect(onClick).toHaveBeenCalledTimes(2);
     Button.defaultProps.onClick.mockRestore();
   });
-  it('should forward ref', () => {
-    const testRef = React.createRef();
-    render(<Button ref={testRef} />);
-    expect(testRef.current).not.toBeNull();
-  });
   describe('Button Group component', () => {
     it('should be a default list of buttons', () => {
       const { asFragment } = render(

@@ -6,27 +6,25 @@ import modifiers from '../../../modifiers';
 
 const colors = Object.values(CONSTANTS.COLORS);
 
-export const Radio = React.forwardRef(
-  ({ className, style, disabled, value, children, checked, color, size, name, ...allProps }, ref) => {
-    const props = modifiers.clean(allProps);
-    return (
-      <label
-        disabled={disabled}
-        className={cn('b-radio radio', modifiers.getClassName(allProps), className)}
-        style={style}
-      >
-        <input {...props} ref={ref} name={name} type="radio" value={value} disabled={disabled} checked={checked} />
-        <span
-          className={cn('check', {
-            [`is-${color}`]: color,
-            [`is-${size}`]: size
-          })}
-        />
-        <span className="control-label">{children}</span>
-      </label>
-    );
-  }
-);
+export const Radio = ({ className, style, disabled, value, children, checked, color, size, name, ...allProps }) => {
+  const props = modifiers.clean(allProps);
+  return (
+    <label
+      disabled={disabled}
+      className={cn('b-radio radio', modifiers.getClassName(allProps), className)}
+      style={style}
+    >
+      <input {...props} name={name} type="radio" value={value} disabled={disabled} checked={checked} />
+      <span
+        className={cn('check', {
+          [`is-${color}`]: color,
+          [`is-${size}`]: size
+        })}
+      />
+      <span className="control-label">{children}</span>
+    </label>
+  );
+};
 
 Radio.propTypes = {
   ...modifiers.propTypes,

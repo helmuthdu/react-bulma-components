@@ -4,10 +4,9 @@ import React from 'react';
 import modifiers from '../../modifiers';
 import { Element } from '../element';
 
-export const Loader = React.forwardRef(({ overlay, onClick, className, ...props }, ref) => (
+export const Loader = ({ overlay, onClick, className, ...props }) => (
   <Element
     {...props}
-    ref={ref}
     className={cn('loader', className, {
       'is-overlay': overlay
     })}
@@ -15,7 +14,7 @@ export const Loader = React.forwardRef(({ overlay, onClick, className, ...props 
     <div className="loader-background" onClick={onClick} />
     <div className="loader-icon" />
   </Element>
-));
+);
 
 Loader.propTypes = {
   ...modifiers.propTypes,

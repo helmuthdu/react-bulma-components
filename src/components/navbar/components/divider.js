@@ -4,9 +4,9 @@ import React from 'react';
 import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 
-export const NavbarDivider = React.forwardRef(({ className, ...props }, ref) => (
-  <Element {...props} ref={ref} className={cn('navbar-divider', className)} />
-));
+export const NavbarDivider = ({ className, ...props }) => (
+  <Element {...props} className={cn('navbar-divider', className)} />
+);
 
 NavbarDivider.propTypes = {
   ...modifiers.propTypes,

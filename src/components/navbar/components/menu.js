@@ -5,12 +5,11 @@ import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 import { ShowContext } from '../context';
 
-export const NavbarMenu = React.forwardRef(({ className, children, ...props }, ref) => (
+export const NavbarMenu = ({ className, children, ...props }) => (
   <ShowContext.Consumer>
     {active => (
       <Element
         {...props}
-        ref={ref}
         className={cn('navbar-menu', className, {
           'is-active': active
         })}
@@ -19,7 +18,7 @@ export const NavbarMenu = React.forwardRef(({ className, children, ...props }, r
       </Element>
     )}
   </ShowContext.Consumer>
-));
+);
 
 NavbarMenu.propTypes = {
   ...modifiers.propTypes,

@@ -9,7 +9,7 @@ const KEYCODES = {
   ESCAPE: 27
 };
 
-export const Modal = React.forwardRef((props, ref) => {
+export const Modal = props => {
   const { closeOnEsc, closeOnBlur, show, className } = props;
   let { children } = props;
 
@@ -62,7 +62,6 @@ export const Modal = React.forwardRef((props, ref) => {
 
   return ReactDOM.createPortal(
     <div
-      ref={ref}
       data-testid="modal-container"
       className={cn('modal', className, {
         'is-active': show
@@ -87,7 +86,7 @@ export const Modal = React.forwardRef((props, ref) => {
     </div>,
     portalElement
   );
-});
+};
 
 Modal.Content = ModalContent;
 Modal.Card = ModalCard;

@@ -7,56 +7,66 @@ import { Element } from '../../element';
 
 const colors = Object.values(CONSTANTS.COLORS);
 
-export const InputFile = React.forwardRef(
-  // eslint-disable-next-line no-unused-vars
-  ({ boxed, className, color, fullwidth, hasName, icon, label, name, onChange, right, size, style, ...props }, ref) => {
-    const [fileName, setFileName] = useState(null);
+export const InputFile = ({
+  boxed,
+  className,
+  color,
+  fullwidth,
+  hasName,
+  icon,
+  label,
+  name,
+  onChange,
+  right,
+  size,
+  style,
+  ...props
+}) => {
+  const [fileName, setFileName] = useState(null);
 
-    const handleSelect = event => {
-      const { files } = event.target;
-      setFileName(files.length > 0 ? files[0].name : undefined);
-      if (onChange) {
-        onChange(event);
-      }
-    };
+  const handleSelect = event => {
+    const { files } = event.target;
+    setFileName(files.length > 0 ? files[0].name : undefined);
+    if (onChange) {
+      onChange(event);
+    }
+  };
 
-    return (
-      <Element
-        style={style}
-        {...props}
-        className={cn('file', className, {
-          [`is-${size}`]: size,
-          [`is-${color}`]: color,
-          'has-name': !hasName,
-          'is-right': right,
-          'is-boxed': boxed,
-          'is-fullwidth': fullwidth
-        })}
-      >
-        <label className="file-label">
-          <input
-            ref={ref}
-            name={name}
-            value=""
-            type="file"
-            className="file-input"
-            onChange={handleSelect}
-            data-testid="file-input"
-          />
-          <span className="file-cta">
-            {icon && <span className="file-icon">{icon}</span>}
-            <span className="file-label">{label}</span>
+  return (
+    <Element
+      style={style}
+      {...props}
+      className={cn('file', className, {
+        [`is-${size}`]: size,
+        [`is-${color}`]: color,
+        'has-name': !hasName,
+        'is-right': right,
+        'is-boxed': boxed,
+        'is-fullwidth': fullwidth
+      })}
+    >
+      <label className="file-label">
+        <input
+          name={name}
+          value=""
+          type="file"
+          className="file-input"
+          onChange={handleSelect}
+          data-testid="file-input"
+        />
+        <span className="file-cta">
+          {icon && <span className="file-icon">{icon}</span>}
+          <span className="file-label">{label}</span>
+        </span>
+        {hasName && fileName && (
+          <span data-testid="file-name" className="file-name">
+            {fileName}
           </span>
-          {hasName && fileName && (
-            <span data-testid="file-name" className="file-name">
-              {fileName}
-            </span>
-          )}
-        </label>
-      </Element>
-    );
-  }
-);
+        )}
+      </label>
+    </Element>
+  );
+};
 
 InputFile.propTypes = {
   ...modifiers.propTypes,

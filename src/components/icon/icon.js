@@ -21,36 +21,34 @@ const iconSizes = {
   }
 };
 
-export const Icon = React.forwardRef(
-  ({ icon, iconSize, size, color, className, align, children, pack, ...allProps }, ref) => {
-    const props = modifiers.clean(allProps);
-    const iconSizeOf = iconSize ? iconSizes[pack][iconSize] : size ? iconSizes[pack][size] : undefined;
-    const iconPack =
-      pack === 'mdi'
-        ? cn('mdi', {
-            [`mdi-${icon}`]: icon,
-            [`mdi-${iconSizeOf}`]: iconSizeOf
-          })
-        : pack === 'fas'
-        ? cn('fas', {
-            [`fa-${icon}`]: icon,
-            [`fa-${iconSizeOf}`]: iconSizeOf
-          })
-        : '';
-    return (
-      <span
-        {...props}
-        className={cn('icon', modifiers.getClassName(allProps), className, {
-          [`is-${size}`]: size,
-          [`is-${align}`]: align,
-          [`has-text-${color}`]: color
-        })}
-      >
-        {children || <i ref={ref} className={iconPack} />}
-      </span>
-    );
-  }
-);
+export const Icon = ({ icon, iconSize, size, color, className, align, children, pack, ...allProps }) => {
+  const props = modifiers.clean(allProps);
+  const iconSizeOf = iconSize ? iconSizes[pack][iconSize] : size ? iconSizes[pack][size] : undefined;
+  const iconPack =
+    pack === 'mdi'
+      ? cn('mdi', {
+          [`mdi-${icon}`]: icon,
+          [`mdi-${iconSizeOf}`]: iconSizeOf
+        })
+      : pack === 'fas'
+      ? cn('fas', {
+          [`fa-${icon}`]: icon,
+          [`fa-${iconSizeOf}`]: iconSizeOf
+        })
+      : '';
+  return (
+    <span
+      {...props}
+      className={cn('icon', modifiers.getClassName(allProps), className, {
+        [`is-${size}`]: size,
+        [`is-${align}`]: align,
+        [`has-text-${color}`]: color
+      })}
+    >
+      {children || <i className={iconPack} />}
+    </span>
+  );
+};
 
 Icon.propTypes = {
   ...modifiers.propTypes,

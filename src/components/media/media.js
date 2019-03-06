@@ -6,11 +6,11 @@ import { Element } from '../element';
 import { MediaContent } from './components/media-content';
 import { MediaItem } from './components/media-item';
 
-export const Media = React.forwardRef(({ children, className, ...props }, ref) => (
-  <Element {...props} ref={ref} className={cn('media', className)}>
+export const Media = ({ children, className, ...props }) => (
+  <Element {...props} className={cn('media', className)}>
     {children}
   </Element>
-));
+);
 
 Media.Item = MediaItem;
 Media.Content = MediaContent;

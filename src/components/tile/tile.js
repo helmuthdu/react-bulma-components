@@ -7,22 +7,19 @@ import { Element } from '../element';
 
 const colors = Object.values(CONSTANTS.COLORS);
 
-export const Tile = React.forwardRef(
-  ({ children, className, context, vertical, size, color, notification, ...props }, ref) => (
-    <Element
-      {...props}
-      ref={ref}
-      className={cn('tile', className, {
-        notification,
-        [`is-${context}`]: context,
-        [`is-${size}`]: size,
-        [`is-${color}`]: color,
-        'is-vertical': vertical
-      })}
-    >
-      {children}
-    </Element>
-  )
+export const Tile = ({ children, className, context, vertical, size, color, notification, ...props }) => (
+  <Element
+    {...props}
+    className={cn('tile', className, {
+      notification,
+      [`is-${context}`]: context,
+      [`is-${size}`]: size,
+      [`is-${color}`]: color,
+      'is-vertical': vertical
+    })}
+  >
+    {children}
+  </Element>
 );
 
 Tile.propTypes = {

@@ -6,10 +6,9 @@ import modifiers from '../../modifiers';
 import { Element } from '../element';
 import { Tab } from './components/tab';
 
-export const Tabs = React.forwardRef(({ children, className, align, size, type, fullwidth, ...props }, ref) => (
+export const Tabs = ({ children, className, align, size, type, fullwidth, ...props }) => (
   <Element
     {...props}
-    ref={ref}
     className={cn('tabs', className, {
       [`is-${align}`]: align,
       [`is-${size}`]: size,
@@ -20,7 +19,7 @@ export const Tabs = React.forwardRef(({ children, className, align, size, type, 
   >
     <ul>{children}</ul>
   </Element>
-));
+);
 
 Tabs.Tab = Tab;
 

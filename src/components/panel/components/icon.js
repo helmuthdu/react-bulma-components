@@ -4,9 +4,7 @@ import React from 'react';
 import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 
-export const PanelIcon = React.forwardRef(({ className, ...props }, ref) => (
-  <Element {...props} ref={ref} className={cn('panel-icon', className)} />
-));
+export const PanelIcon = ({ className, ...props }) => <Element {...props} className={cn('panel-icon', className)} />;
 
 PanelIcon.propTypes = {
   ...modifiers.propTypes,

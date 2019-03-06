@@ -4,9 +4,9 @@ import React from 'react';
 import modifiers from '../../../../../modifiers';
 import { Element } from '../../../../element';
 
-export const CardHeaderIcon = React.forwardRef(({ className, ...props }, ref) => (
-  <Element {...props} ref={ref} className={cn('card-header-icon', className)} />
-));
+export const CardHeaderIcon = ({ className, ...props }) => (
+  <Element {...props} className={cn('card-header-icon', className)} />
+);
 
 CardHeaderIcon.propTypes = {
   ...modifiers.propTypes,

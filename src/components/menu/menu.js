@@ -5,9 +5,7 @@ import modifiers from '../../modifiers';
 import { Element } from '../element';
 import { MenuList } from './components/list';
 
-export const Menu = React.forwardRef(({ className, ...props }, ref) => (
-  <Element {...props} ref={ref} className={cn('menu', className)} />
-));
+export const Menu = ({ className, ...props }) => <Element {...props} className={cn('menu', className)} />;
 
 Menu.List = MenuList;
 

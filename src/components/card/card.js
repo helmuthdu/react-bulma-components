@@ -8,11 +8,11 @@ import { CardFooter } from './components/footer';
 import { CardHeader } from './components/header';
 import { CardImage } from './components/image';
 
-export const Card = React.forwardRef(({ className, children, ...props }, ref) => (
-  <Element ref={ref} className={cn('card', className)} {...props}>
+export const Card = ({ className, children, ...props }) => (
+  <Element className={cn('card', className)} {...props}>
     {children}
   </Element>
-));
+);
 
 Card.Image = CardImage;
 Card.Content = CardContent;

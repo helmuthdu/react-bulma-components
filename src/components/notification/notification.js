@@ -7,10 +7,9 @@ import { Element } from '../element';
 
 const colors = Object.values(CONSTANTS.COLORS);
 
-export const Notification = React.forwardRef(({ children, className, color, ...props }, ref) => (
+export const Notification = ({ children, className, color, ...props }) => (
   <Element
     {...props}
-    ref={ref}
     className={cn(
       'notification',
       {
@@ -21,7 +20,7 @@ export const Notification = React.forwardRef(({ children, className, color, ...p
   >
     {children}
   </Element>
-));
+);
 
 Notification.propTypes = {
   ...modifiers.propTypes,

@@ -6,39 +6,46 @@ import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import { Element } from '../element';
 
-export const Pagination = React.forwardRef(
-  (
-    { current, total, delta, showPrevNext, next, previous, position, size, rounded, className, onChange, ...props },
-    ref
-  ) => (
-    <Element
-      {...props}
-      ref={ref}
-      className={cn('pagination', className, {
-        [`is-rounded`]: rounded,
-        [`is-${size}`]: size,
-        [`is-${position}`]: position
-      })}
-      aria-label="pagination"
-    >
-      <ReactPaginate
-        previousLabel={showPrevNext && previous}
-        previousLinkClassName={showPrevNext ? 'pagination-previous' : ''}
-        nextLabel={showPrevNext && next}
-        nextLinkClassName={showPrevNext ? 'pagination-next' : ''}
-        breakLinkClassName={'pagination-ellipsis'}
-        activeLinkClassName={'is-current'}
-        pageCount={total}
-        forcePage={current}
-        marginPagesDisplayed={2}
-        pageRangeDisplayed={delta}
-        onPageChange={onChange}
-        pageLinkClassName={'pagination-link'}
-        containerClassName={'pagination-list'}
-        activeClassName={'active'}
-      />
-    </Element>
-  )
+export const Pagination = ({
+  className,
+  current,
+  delta,
+  next,
+  onChange,
+  position,
+  previous,
+  rounded,
+  showPrevNext,
+  size,
+  total,
+  ...props
+}) => (
+  <Element
+    {...props}
+    className={cn('pagination', className, {
+      [`is-rounded`]: rounded,
+      [`is-${size}`]: size,
+      [`is-${position}`]: position
+    })}
+    aria-label="pagination"
+  >
+    <ReactPaginate
+      previousLabel={showPrevNext && previous}
+      previousLinkClassName={showPrevNext ? 'pagination-previous' : ''}
+      nextLabel={showPrevNext && next}
+      nextLinkClassName={showPrevNext ? 'pagination-next' : ''}
+      breakLinkClassName={'pagination-ellipsis'}
+      activeLinkClassName={'is-current'}
+      pageCount={total}
+      forcePage={current}
+      marginPagesDisplayed={2}
+      pageRangeDisplayed={delta}
+      onPageChange={onChange}
+      pageLinkClassName={'pagination-link'}
+      containerClassName={'pagination-list'}
+      activeClassName={'active'}
+    />
+  </Element>
 );
 
 Pagination.propTypes = {

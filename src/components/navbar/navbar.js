@@ -20,7 +20,7 @@ let htmlClass = '';
 
 export const getHtmlClasses = () => htmlClass;
 
-export const Navbar = React.forwardRef(({ children, className, fixed, transparent, color, active, ...props }, ref) => {
+export const Navbar = ({ children, className, fixed, transparent, color, active, ...props }) => {
   useEffect(() => {
     if (!CONSTANTS.IS_CLIENT) {
       return null;
@@ -44,7 +44,6 @@ export const Navbar = React.forwardRef(({ children, className, fixed, transparen
     <ShowContext.Provider value={active}>
       <Element
         {...props}
-        ref={ref}
         role="navigation"
         className={cn('navbar', modifiers.getClassName(props), className, {
           'is-transparent': transparent,
@@ -56,7 +55,7 @@ export const Navbar = React.forwardRef(({ children, className, fixed, transparen
       </Element>
     </ShowContext.Provider>
   );
-});
+};
 
 Navbar.Brand = NavbarBrand;
 Navbar.Burger = NavbarBurger;

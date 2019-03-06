@@ -7,17 +7,16 @@ import { Element } from '../../element';
 
 const colors = Object.values(CONSTANTS.COLORS);
 
-export const Help = React.forwardRef(({ className, children, color, ...props }, ref) => (
+export const Help = ({ className, children, color, ...props }) => (
   <Element
     {...props}
-    ref={ref}
     className={cn('help', className, {
       [`is-${color}`]: color
     })}
   >
     {children}
   </Element>
-));
+);
 
 Help.propTypes = {
   ...modifiers.propTypes,

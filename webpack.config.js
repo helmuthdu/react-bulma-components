@@ -122,7 +122,11 @@ exports.default = {
             ],
             '@babel/preset-react'
           ],
-          plugins: ['transform-class-properties']
+          plugins: [
+            '@babel/plugin-proposal-object-rest-spread',
+            '@babel/plugin-proposal-class-properties',
+            '@babel/transform-runtime'
+          ]
         }
       },
       {

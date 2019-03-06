@@ -5,10 +5,10 @@ import modifiers from '../../../../../modifiers';
 import { Element } from '../../../../element';
 import { MenuList } from '../list';
 
-export const MenuListItem = React.forwardRef(({ children, active, className, ...props }, ref) => {
+export const MenuListItem = ({ children, active, className, ...props }) => {
   if (typeof children === 'string') {
     return (
-      <li ref={ref}>
+      <li>
         <Element className={cn(className, { 'is-active': active })} {...props}>
           {children}
         </Element>
@@ -19,7 +19,7 @@ export const MenuListItem = React.forwardRef(({ children, active, className, ...
   if (React.Children.only(children).type === MenuList) {
     const child = React.Children.only(children);
     return (
-      <li ref={ref}>
+      <li>
         <Element className={cn(className, { 'is-active': active })} {...props}>
           {child.props.title}
         </Element>
@@ -28,8 +28,8 @@ export const MenuListItem = React.forwardRef(({ children, active, className, ...
     );
   }
 
-  return <li ref={ref}>{children}</li>;
-});
+  return <li>{children}</li>;
+};
 
 MenuListItem.propTypes = {
   ...modifiers.propTypes,

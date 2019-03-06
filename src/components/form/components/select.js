@@ -6,54 +6,41 @@ import modifiers from '../../../modifiers';
 
 const colors = Object.values(CONSTANTS.COLORS);
 
-export const Select = React.forwardRef(
-  (
-    {
-      className,
-      style,
-      size,
-      color,
-      loading,
-      rounded,
-      empty,
-      readOnly,
-      disabled,
-      value,
-      multiple,
-      children,
-      name,
-      ...allProps
-    },
-    ref
-  ) => {
-    const props = modifiers.clean(allProps);
-    return (
-      <div
-        className={cn('select', modifiers.getClassName(allProps), className, {
-          [`is-${size}`]: size,
-          [`is-${color}`]: color,
-          'is-loading': loading,
-          'is-rounded': rounded,
-          'is-empty': empty,
-          'is-multiple': multiple
-        })}
-        style={style}
-      >
-        <select
-          {...props}
-          ref={ref}
-          multiple={multiple}
-          value={value}
-          aria-readonly={readOnly}
-          disabled={disabled}
-          name={name}
-        >
-          {children}
-        </select>
-      </div>
-    );
-  }
-);
+export const Select = ({
+  children,
+  className,
+  color,
+  disabled,
+  empty,
+  loading,
+  multiple,
+  name,
+  readOnly,
+  rounded,
+  size,
+  style,
+  value,
+  ...allProps
+}) => {
+  const props = modifiers.clean(allProps);
+  return (
+    <div
+      className={cn('select', modifiers.getClassName(allProps), className, {
+        [`is-${size}`]: size,
+        [`is-${color}`]: color,
+        'is-loading': loading,
+        'is-rounded': rounded,
+        'is-empty': empty,
+        'is-multiple': multiple
+      })}
+      style={style}
+    >
+      <select {...props} multiple={multiple} value={value} aria-readonly={readOnly} disabled={disabled} name={name}>
+        {children}
+      </select>
+    </div>
+  );
+};
 
 Select.propTypes = {
   ...modifiers.propTypes,

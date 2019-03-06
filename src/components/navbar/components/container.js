@@ -4,10 +4,9 @@ import React from 'react';
 import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 
-export const NavbarContainer = React.forwardRef(({ className, children, position, ...props }, ref) => (
+export const NavbarContainer = ({ className, children, position, ...props }) => (
   <Element
     {...props}
-    ref={ref}
     className={cn(
       {
         [`navbar-${position}`]: position
@@ -17,7 +16,7 @@ export const NavbarContainer = React.forwardRef(({ className, children, position
   >
     {children}
   </Element>
-));
+);
 
 NavbarContainer.propTypes = {
   ...modifiers.propTypes,

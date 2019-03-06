@@ -4,11 +4,11 @@ import React from 'react';
 import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 
-export const MediaContent = React.forwardRef(({ children, className, ...props }, ref) => (
-  <Element {...props} ref={ref} className={cn(className, 'content')}>
+export const MediaContent = ({ children, className, ...props }) => (
+  <Element {...props} className={cn(className, 'content')}>
     {children}
   </Element>
-));
+);
 
 MediaContent.propTypes = {
   ...modifiers.propTypes,

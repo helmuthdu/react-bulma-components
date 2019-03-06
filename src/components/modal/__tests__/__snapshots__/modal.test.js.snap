@@ -37,12 +37,6 @@ exports[`Modal component should open the modal 1`] = `
       </p>
     </header>
   </div>
-  <button
-    aria-label="close"
-    class="modal-close is-large"
-    data-testid="modal-close-button"
-    type="button"
-  />
 </div>
 `;
 

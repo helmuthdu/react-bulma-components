@@ -4,17 +4,16 @@ import React from 'react';
 import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 
-export const LevelSide = React.forwardRef(({ children, className, align, ...props }, ref) => (
+export const LevelSide = ({ children, className, align, ...props }) => (
   <Element
     {...props}
-    ref={ref}
     className={cn(className, {
       [`level-${align}`]: align
     })}
   >
     {children}
   </Element>
-));
+);
 LevelSide.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,

@@ -4,10 +4,9 @@ import React from 'react';
 import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 
-export const NavbarDropdown = React.forwardRef(({ className, boxed, right, children, ...props }, ref) => (
+export const NavbarDropdown = ({ className, boxed, right, children, ...props }) => (
   <Element
     {...props}
-    ref={ref}
     className={cn('navbar-dropdown', className, {
       'is-boxed': boxed,
       'is-right': right
@@ -15,7 +14,7 @@ export const NavbarDropdown = React.forwardRef(({ className, boxed, right, child
   >
     {children}
   </Element>
-));
+);
 
 NavbarDropdown.propTypes = {
   ...modifiers.propTypes,

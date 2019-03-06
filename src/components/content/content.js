@@ -5,17 +5,16 @@ import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 import { Element } from '../element';
 
-export const Content = React.forwardRef(({ children, className, size, ...props }, ref) => (
+export const Content = ({ children, className, size, ...props }) => (
   <Element
     {...props}
-    ref={ref}
     className={cn('content', className, {
       [`is-${size}`]: size
     })}
   >
     {children}
   </Element>
-));
+);
 
 Content.propTypes = {
   ...modifiers.propTypes,

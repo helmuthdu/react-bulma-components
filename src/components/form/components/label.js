@@ -4,12 +4,11 @@ import React from 'react';
 import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
 
-export const Label = React.forwardRef(({ children, className, size, ...allProps }, ref) => {
+export const Label = ({ children, className, size, ...allProps }) => {
   const props = modifiers.clean(allProps);
   return (
     <label
       {...props}
-      ref={ref}
       className={cn('label', modifiers.getClassName(allProps), className, {
         [`is-${size}`]: size
       })}
@@ -17,7 +16,7 @@ export const Label = React.forwardRef(({ children, className, size, ...allProps 
       {children}
     </label>
   );
-});
+};
 
 Label.propTypes = {
   ...modifiers.propTypes,

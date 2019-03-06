@@ -7,10 +7,9 @@ import { Element } from '../element';
 
 const breakpoints = Object.values(CONSTANTS.BREAKPOINTS);
 
-export const Container = React.forwardRef(({ children, fluid, breakpoint, className, ...props }, ref) => (
+export const Container = ({ children, fluid, breakpoint, className, ...props }) => (
   <Element
     {...props}
-    ref={ref}
     className={cn('container', className, {
       'is-fluid': fluid,
       [`is-${breakpoint}`]: breakpoint
@@ -18,7 +17,7 @@ export const Container = React.forwardRef(({ children, fluid, breakpoint, classN
   >
     {children}
   </Element>
-));
+);
 
 Container.propTypes = {
   ...modifiers.propTypes,

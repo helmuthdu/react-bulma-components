@@ -5,7 +5,7 @@ import modifiers from '../../modifiers';
 import { Element } from '../element';
 import CONSTANTS from './constants';
 
-export const Image = React.forwardRef(({ className, alt, size, fallback, rounded, src, ...props }, ref) => {
+export const Image = ({ className, alt, size, fallback, rounded, src, ...props }) => {
   const [image, setImage] = useState({ src, default: src });
 
   useEffect(() => {
@@ -29,7 +29,6 @@ export const Image = React.forwardRef(({ className, alt, size, fallback, rounded
       })}
     >
       <img
-        ref={ref}
         className={cn({
           'is-rounded': rounded
         })}
@@ -40,7 +39,7 @@ export const Image = React.forwardRef(({ className, alt, size, fallback, rounded
       />
     </Element>
   );
-});
+};
 
 Image.propTypes = {
   ...modifiers.propTypes,

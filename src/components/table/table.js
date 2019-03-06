@@ -4,11 +4,10 @@ import React from 'react';
 import modifiers from '../../modifiers';
 import { Element } from '../element';
 
-export const Table = React.forwardRef(({ children, className, hoverable, size, striped, bordered, ...props }, ref) => (
+export const Table = ({ children, className, hoverable, size, striped, bordered, ...props }) => (
   <Element
     renderAs="table"
     {...props}
-    ref={ref}
     className={cn('table', className, {
       'is-bordered': bordered,
       'is-hoverable': hoverable,
@@ -18,7 +17,7 @@ export const Table = React.forwardRef(({ children, className, hoverable, size, s
   >
     {children}
   </Element>
-));
+);
 
 Table.propTypes = {
   ...modifiers.propTypes,

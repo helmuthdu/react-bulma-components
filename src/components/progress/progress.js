@@ -7,9 +7,8 @@ import { Element } from '../element';
 
 const colors = Object.values(CONSTANTS.COLORS);
 
-export const Progress = React.forwardRef(({ className, value, max, color, size, ...props }, ref) => (
+export const Progress = ({ className, value, max, color, size, ...props }) => (
   <Element
-    ref={ref}
     renderAs="progress"
     {...props}
     value={value}
@@ -19,7 +18,7 @@ export const Progress = React.forwardRef(({ className, value, max, color, size, 
       [`is-${size}`]: size
     })}
   />
-));
+);
 
 Progress.propTypes = {
   ...modifiers.propTypes,

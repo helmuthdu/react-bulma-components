@@ -4,11 +4,11 @@ import React from 'react';
 import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 
-export const MessageHeader = React.forwardRef(({ children, className, ...props }, ref) => (
-  <Element {...props} ref={ref} className={cn('message-header', className)}>
+export const MessageHeader = ({ children, className, ...props }) => (
+  <Element {...props} className={cn('message-header', className)}>
     {children}
   </Element>
-));
+);
 
 MessageHeader.propTypes = {
   ...modifiers.propTypes,

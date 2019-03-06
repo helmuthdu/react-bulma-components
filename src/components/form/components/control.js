@@ -5,22 +5,19 @@ import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 
-export const Control = React.forwardRef(
-  ({ children, className, fullwidth, iconLeft, iconRight, loading, size, ...props }, ref) => (
-    <Element
-      {...props}
-      ref={ref}
-      className={cn('control', className, {
-        'is-expanded': fullwidth,
-        'has-icons-left': iconLeft,
-        'has-icons-right': iconRight,
-        'is-loading': loading,
-        [`is-${size}`]: size
-      })}
-    >
-      {children}
-    </Element>
-  )
+export const Control = ({ children, className, fullwidth, iconLeft, iconRight, loading, size, ...props }) => (
+  <Element
+    {...props}
+    className={cn('control', className, {
+      'is-expanded': fullwidth,
+      'has-icons-left': iconLeft,
+      'has-icons-right': iconRight,
+      'is-loading': loading,
+      [`is-${size}`]: size
+    })}
+  >
+    {children}
+  </Element>
 );
 
 Control.propTypes = {

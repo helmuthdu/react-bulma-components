@@ -10,10 +10,9 @@ import { HeroHead } from './components/hero-head';
 
 const colors = Object.values(CONSTANTS.COLORS);
 
-export const Hero = React.forwardRef(({ children, className, color, gradient, size, ...props }, ref) => (
+export const Hero = ({ children, className, color, gradient, size, ...props }) => (
   <Element
     {...props}
-    ref={ref}
     className={cn('hero', className, {
       [`is-${color}`]: color,
       [`is-${size}`]: size,
@@ -22,7 +21,7 @@ export const Hero = React.forwardRef(({ children, className, color, gradient, si
   >
     {children}
   </Element>
-));
+);
 
 Hero.Head = HeroHead;
 Hero.Body = HeroBody;

@@ -7,77 +7,71 @@ import { ButtonGroup } from './components/button-group';
 
 const colors = Object.values(CONSTANTS.COLORS);
 
-export const Button = React.forwardRef(
-  (
-    {
-      children,
-      className,
-      color,
-      disabled,
-      fullwidth,
-      inactive,
-      inverted,
-      loading,
-      onClick,
-      onChange,
-      outlined,
-      remove,
-      renderAs,
-      reset,
-      rounded,
-      selected,
-      size,
-      state,
-      submit,
-      text,
-      ...allProps
-    },
-    ref
-  ) => {
-    let Element = inactive ? 'span' : renderAs;
-    const props = modifiers.clean(allProps);
-    const otherProps = {};
+export const Button = ({
+  children,
+  className,
+  color,
+  disabled,
+  fullwidth,
+  inactive,
+  inverted,
+  loading,
+  onClick,
+  onChange,
+  outlined,
+  remove,
+  renderAs,
+  reset,
+  rounded,
+  selected,
+  size,
+  state,
+  submit,
+  text,
+  ...allProps
+}) => {
+  let Element = inactive ? 'span' : renderAs;
+  const props = modifiers.clean(allProps);
+  const otherProps = {};
 
-    if (submit) {
-      Element = 'button';
-      otherProps.type = 'submit';
-    }
-
-    if (reset) {
-      Element = 'button';
-      otherProps.type = 'reset';
-    }
-
-    return (
-      <Element
-        ref={ref}
-        tabIndex={disabled ? -1 : 0}
-        {...props}
-        {...otherProps}
-        disabled={disabled}
-        onClick={disabled ? undefined : onClick}
-        onChange={disabled ? undefined : onChange}
-        className={cn(className, modifiers.getClassName(allProps), {
-          'is-fullwidth': fullwidth,
-          'is-inverted': inverted,
-          'is-loading': loading,
-          'is-outlined': outlined,
-          'is-rounded': rounded,
-          'is-selected': selected,
-          'is-static': inactive,
-          'is-text': text,
-          [`is-${color}`]: color,
-          [`is-${size}`]: size,
-          [`is-${state}`]: state,
-          button: !remove,
-          delete: remove
-        })}
-      >
-        {children}
-      </Element>
-    );
+  if (submit) {
+    Element = 'button';
+    otherProps.type = 'submit';
   }
-);
+
+  if (reset) {
+    Element = 'button';
+    otherProps.type = 'reset';
+  }
+
+  return (
+    <Element
+      tabIndex={disabled ? -1 : 0}
+      {...props}
+      {...otherProps}
+      disabled={disabled}
+      onClick={disabled ? undefined : onClick}
+      onChange={disabled ? undefined : onChange}
+      className={cn(className, modifiers.getClassName(allProps), {
+        'is-fullwidth': fullwidth,
+        'is-inverted': inverted,
+        'is-loading': loading,
+        'is-outlined': outlined,
+        'is-rounded': rounded,
+        'is-selected': selected,
+        'is-static': inactive,
+        'is-text': text,
+        [`is-${color}`]: color,
+        [`is-${size}`]: size,
+        [`is-${state}`]: state,
+        button: !remove,
+        delete: remove
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
 Button.Group = ButtonGroup;
 

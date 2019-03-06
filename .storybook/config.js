@@ -1,9 +1,9 @@
-import React from 'react';
-import { configure, addDecorator } from '@storybook/react';
-import { setOptions } from '@storybook/addon-options';
 import { withInfo } from '@storybook/addon-info';
-import { select, withKnobs } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-knobs';
+import { setOptions } from '@storybook/addon-options';
 import { configureViewport, INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { addDecorator, configure } from '@storybook/react';
+import React from 'react';
 import extraViewports from './extra-viewports.json';
 
 import 'index.sass';

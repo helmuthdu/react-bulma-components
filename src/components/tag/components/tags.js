@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../modifiers';
 
-export const Tags = React.forwardRef(({ children, className, gapless, size, ...allProps }, ref) => {
+export const Tags = ({ children, className, gapless, size, ...allProps }) => {
   const props = modifiers.clean(allProps);
   return (
     <span
       {...props}
-      ref={ref}
       className={cn('tags', modifiers.getClassName(allProps), className, {
         'has-addons': gapless,
         [`are-${size}`]: size
@@ -17,7 +16,7 @@ export const Tags = React.forwardRef(({ children, className, gapless, size, ...a
       {children}
     </span>
   );
-});
+};
 
 Tags.propTypes = {
   ...modifiers.propTypes,

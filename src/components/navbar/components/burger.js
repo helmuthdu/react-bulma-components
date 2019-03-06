@@ -5,13 +5,12 @@ import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 import { ShowContext } from '../context';
 
-export const NavbarBurger = React.forwardRef(({ style, className, ...allProps }, ref) => {
+export const NavbarBurger = ({ style, className, ...allProps }) => {
   const props = modifiers.clean(allProps);
   return (
     <ShowContext.Consumer>
       {active => (
         <Element
-          ref={ref}
           role="button"
           tabIndex="0"
           style={{ outline: 'none', ...style }}
@@ -27,7 +26,7 @@ export const NavbarBurger = React.forwardRef(({ style, className, ...allProps },
       )}
     </ShowContext.Consumer>
   );
-});
+};
 
 NavbarBurger.propTypes = {
   ...modifiers.propTypes,

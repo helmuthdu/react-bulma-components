@@ -5,9 +5,7 @@ import modifiers from '../../../../modifiers';
 import { Element } from '../../../element';
 import { PanelTabsTab } from './components/tab';
 
-export const PanelTabs = React.forwardRef(({ className, ...props }, ref) => (
-  <Element {...props} ref={ref} className={cn('panel-tabs', className)} />
-));
+export const PanelTabs = ({ className, ...props }) => <Element {...props} className={cn('panel-tabs', className)} />;
 
 PanelTabs.Tab = PanelTabsTab;
 

@@ -6,39 +6,48 @@ import modifiers from '../../../modifiers';
 
 const colors = Object.values(CONSTANTS.COLORS);
 
-export const Checkbox = React.forwardRef(
-  ({ className, style, disabled, value, children, checked, color, size, indeterminate, name, ...allProps }, ref) => {
-    const props = modifiers.clean(allProps);
-    return (
-      <label
+export const Checkbox = ({
+  checked,
+  children,
+  className,
+  color,
+  disabled,
+  indeterminate,
+  name,
+  size,
+  style,
+  value,
+  ...allProps
+}) => {
+  const props = modifiers.clean(allProps);
+  return (
+    <label
+      disabled={disabled}
+      className={cn('b-checkbox checkbox', modifiers.getClassName(allProps), className)}
+      style={style}
+      data-testid="checkbox-label"
+    >
+      <input
+        {...props}
+        name={name}
+        type="checkbox"
+        value={value}
         disabled={disabled}
-        className={cn('b-checkbox checkbox', modifiers.getClassName(allProps), className)}
-        style={style}
-        data-testid="checkbox-label"
-      >
-        <input
-          {...props}
-          ref={ref}
-          name={name}
-          type="checkbox"
-          value={value}
-          disabled={disabled}
-          checked={checked}
-          indeterminate={indeterminate}
-          data-testid="checkbox-input"
-        />
-        <span
-          className={cn('check', {
-            [`is-${color}`]: color,
-            [`is-${size}`]: size
-          })}
-          data-testid="checkbox-check"
-        />
-        <span className="control-label">{children}</span>
-      </label>
-    );
-  }
-);
+        checked={checked}
+        indeterminate={indeterminate}
+        data-testid="checkbox-input"
+      />
+      <span
+        className={cn('check', {
+          [`is-${color}`]: color,
+          [`is-${size}`]: size
+        })}
+        data-testid="checkbox-check"
+      />
+      <span className="control-label">{children}</span>
+    </label>
+  );
+};
 
 Checkbox.propTypes = {
   ...modifiers.propTypes,

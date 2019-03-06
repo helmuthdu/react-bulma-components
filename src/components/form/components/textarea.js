@@ -6,28 +6,35 @@ import modifiers from '../../../modifiers';
 
 const colors = Object.values(CONSTANTS.COLORS);
 
-export const Textarea = React.forwardRef(
-  ({ className, size, color, readOnly, disabled, placeholder, rows, value, name, ...allProps }, ref) => {
-    const props = modifiers.clean(allProps);
-    return (
-      <textarea
-        name={name}
-        {...props}
-        ref={ref}
-        value={value}
-        rows={rows}
-        placeholder={placeholder}
-        readOnly={readOnly}
-        disabled={disabled}
-        className={cn('textarea', modifiers.getClassName(allProps), className, {
-          [`is-${size}`]: size,
-          [`is-${color}`]: color
-        })}
-      />
-    );
-  }
-);
-
+export const Textarea = ({
+  className,
+  color,
+  disabled,
+  name,
+  placeholder,
+  readOnly,
+  rows,
+  size,
+  value,
+  ...allProps
+}) => {
+  const props = modifiers.clean(allProps);
+  return (
+    <textarea
+      name={name}
+      {...props}
+      value={value}
+      rows={rows}
+      placeholder={placeholder}
+      readOnly={readOnly}
+      disabled={disabled}
+      className={cn('textarea', modifiers.getClassName(allProps), className, {
+        [`is-${size}`]: size,
+        [`is-${color}`]: color
+      })}
+    />
+  );
+};
 Textarea.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,

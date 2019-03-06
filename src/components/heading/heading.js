@@ -4,23 +4,20 @@ import React from 'react';
 import modifiers from '../../modifiers';
 import { Element } from '../element';
 
-export const Heading = React.forwardRef(
-  ({ children, className, size, subtitle, weight, spaced, heading, ...props }, ref) => (
-    <Element
-      {...props}
-      ref={ref}
-      className={cn(className, {
-        title: !subtitle && !heading,
-        subtitle,
-        heading,
-        [`is-${size}`]: size,
-        [`has-text-weight-${weight}`]: weight,
-        'is-spaced': spaced && !subtitle
-      })}
-    >
-      {children}
-    </Element>
-  )
+export const Heading = ({ children, className, size, subtitle, weight, spaced, heading, ...props }) => (
+  <Element
+    {...props}
+    className={cn(className, {
+      title: !subtitle && !heading,
+      subtitle,
+      heading,
+      [`is-${size}`]: size,
+      [`has-text-weight-${weight}`]: weight,
+      'is-spaced': spaced && !subtitle
+    })}
+  >
+    {children}
+  </Element>
 );
 
 Heading.propTypes = {

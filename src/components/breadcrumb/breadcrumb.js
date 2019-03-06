@@ -4,41 +4,38 @@ import React from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
 
-export const Breadcrumb = React.forwardRef(
-  ({ className, items, renderAs, hrefAttr, separator, size, align, ...allProps }, ref) => {
-    const Element = renderAs;
-    const props = modifiers.clean(allProps);
-    return (
-      <nav
-        {...props}
-        ref={ref}
-        className={cn('breadcrumb', className, modifiers.getClassName(allProps), {
-          [`has-${separator}-separator`]: separator,
-          [`is-${size}`]: size,
-          [`is-${align}`]: align
+export const Breadcrumb = ({ className, items, renderAs, hrefAttr, separator, size, align, ...allProps }) => {
+  const Element = renderAs;
+  const props = modifiers.clean(allProps);
+  return (
+    <nav
+      {...props}
+      className={cn('breadcrumb', className, modifiers.getClassName(allProps), {
+        [`has-${separator}-separator`]: separator,
+        [`is-${size}`]: size,
+        [`is-${align}`]: align
+      })}
+    >
+      <ul>
+        {items.map(item => {
+          const p = {
+            [renderAs === 'a' ? 'href' : hrefAttr]: item.url
+          };
+          return (
+            <li
+              key={item.url}
+              className={cn({
+                'is-active': item.active
+              })}
+            >
+              <Element {...p}>{item.name}</Element>
+            </li>
+          );
         })}
-      >
-        <ul>
-          {items.map(item => {
-            const p = {
-              [renderAs === 'a' ? 'href' : hrefAttr]: item.url
-            };
-            return (
-              <li
-                key={item.url}
-                className={cn({
-                  'is-active': item.active
-                })}
-              >
-                <Element {...p}>{item.name}</Element>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
-    );
-  }
-);
+      </ul>
+    </nav>
+  );
+};
 
 Breadcrumb.propTypes = {
   ...modifiers.propTypes,

@@ -5,9 +5,7 @@ import modifiers from '../../../../modifiers';
 import { Element } from '../../../element';
 import { CardFooterItem } from './components/footer-item';
 
-export const CardFooter = React.forwardRef(({ className, ...props }, ref) => (
-  <Element {...props} ref={ref} className={cn('card-footer', className)} />
-));
+export const CardFooter = ({ className, ...props }) => <Element {...props} className={cn('card-footer', className)} />;
 
 CardFooter.Item = CardFooterItem;
 

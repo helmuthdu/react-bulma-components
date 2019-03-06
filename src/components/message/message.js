@@ -9,10 +9,9 @@ import { MessageHeader } from './components/header';
 
 const colors = Object.values(CONSTANTS.COLORS);
 
-export const Message = React.forwardRef(({ children, className, color, size, ...props }, ref) => (
+export const Message = ({ children, className, color, size, ...props }) => (
   <Element
     {...props}
-    ref={ref}
     className={cn('message', className, {
       [`is-${color}`]: color,
       [`is-${size}`]: size
@@ -20,10 +19,9 @@ export const Message = React.forwardRef(({ children, className, color, size, ...
   >
     {children}
   </Element>
-));
+);
 
 Message.Body = MessageBody;
-
 Message.Header = MessageHeader;
 
 Message.propTypes = {

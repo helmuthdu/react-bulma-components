@@ -9,11 +9,11 @@ import { ModalCardHead } from './head';
 import { ModalCardTitle } from './title';
 
 // eslint-disable-next-line no-unused-vars
-export const ModalCard = React.forwardRef(({ className, onClose, children, ...props }, ref) => (
-  <Element {...props} ref={ref} className={cn('modal-card', className)}>
+export const ModalCard = ({ className, onClose, children, ...props }) => (
+  <Element {...props} className={cn('modal-card', className)}>
     {children}
   </Element>
-));
+);
 
 ModalCard.Head = ModalCardHead;
 ModalCard.Body = ModalCardBody;

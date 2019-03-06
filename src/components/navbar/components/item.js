@@ -4,29 +4,26 @@ import React from 'react';
 import modifiers from '../../../modifiers';
 import { Element } from '../../element';
 
-export const NavbarItem = React.forwardRef(
-  ({ className, active, children, dropdown, dropdownUp, hoverable, renderAs, ...props }, ref) => {
-    let as = renderAs;
-    if (dropdown && renderAs === 'a') {
-      as = 'span';
-    }
-    return (
-      <Element
-        {...props}
-        ref={ref}
-        renderAs={as}
-        className={cn('navbar-item', className, {
-          'is-active': active,
-          'has-dropdown': dropdown,
-          'is-hoverable': hoverable,
-          'has-dropdown-up': dropdownUp
-        })}
-      >
-        {children}
-      </Element>
-    );
+export const NavbarItem = ({ className, active, children, dropdown, dropdownUp, hoverable, renderAs, ...props }) => {
+  let as = renderAs;
+  if (dropdown && renderAs === 'a') {
+    as = 'span';
   }
-);
+  return (
+    <Element
+      {...props}
+      renderAs={as}
+      className={cn('navbar-item', className, {
+        'is-active': active,
+        'has-dropdown': dropdown,
+        'is-hoverable': hoverable,
+        'has-dropdown-up': dropdownUp
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
 NavbarItem.propTypes = {
   ...modifiers.propTypes,

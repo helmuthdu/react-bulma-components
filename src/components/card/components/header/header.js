@@ -6,9 +6,7 @@ import { Element } from '../../../element';
 import { CardHeaderIcon } from './components/header-icon';
 import { CardHeaderTitle } from './components/header-title';
 
-export const CardHeader = React.forwardRef(({ className, ...props }, ref) => (
-  <Element {...props} ref={ref} className={cn('card-header', className)} />
-));
+export const CardHeader = ({ className, ...props }) => <Element {...props} className={cn('card-header', className)} />;
 
 CardHeader.Title = CardHeaderTitle;
 CardHeader.Icon = CardHeaderIcon;

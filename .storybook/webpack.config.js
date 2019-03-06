@@ -2,12 +2,12 @@ const path = require('path');
 const { DefinePlugin } = require('webpack');
 
 
-module.exports = (baseConfig, env, defaultConfig) => {
-  const config = ({
-    ...defaultConfig,
+module.exports = ({ config, mode }) => {
+  return {
+    ...config,
     mode: 'development',
     module: {
-      ...defaultConfig.module,
+      ...config.module,
       rules: [
         {
           test: /\.story\.js?$/,
@@ -18,26 +18,24 @@ module.exports = (baseConfig, env, defaultConfig) => {
           test: /\.s[ca]ss$/,
           loader: 'style-loader!css-loader!resolve-url-loader!sass-loader',
         },
-        ...defaultConfig.module.rules,
+        ...config.module.rules,
       ],
     },
     resolve: {
-      ...defaultConfig.resolve,
-      modules: ['node_modules', 'src', ...defaultConfig.resolve.modules],
+      ...config.resolve,
+      modules: ['node_modules', 'src', ...config.resolve.modules],
       alias: {
-        ...defaultConfig.resolve.alias,
-        '~_variables.sass': path.resolve(__dirname, '../src/components/_variables.sass'),
+        ...config.resolve.alias,
         '@': path.resolve(__dirname, '../src'),
       }
       // https://github.com/graphql/graphql-js#using-in-a-browser
     },
     plugins: [
-      ...defaultConfig.plugins,
+      ...config.plugins,
       // graphql sources check process variable
       new DefinePlugin({
         process: JSON.stringify(true),
       }),
     ],
-  });
-  return config;
+  };
 };
