@@ -1,28 +1,9 @@
 /* eslint-disable no-unused-vars */
 import cn from 'classnames';
 import PropTypes from 'prop-types';
+import CONSTANTS from '../constants';
 
-const colors = [
-  'white',
-  'black',
-  'light',
-  'dark',
-  'primary',
-  'info',
-  'link',
-  'success',
-  'warning',
-  'danger',
-  'black-bis',
-  'black-ter',
-  'grey-darker',
-  'grey-dark',
-  'grey',
-  'grey-light',
-  'grey-lighter',
-  'white-ter',
-  'white-bis'
-];
+const colors = [...Object.values(CONSTANTS.COLORS), ...Object.values(CONSTANTS.GREY_COLORS)];
 
 export default {
   propTypes: {
