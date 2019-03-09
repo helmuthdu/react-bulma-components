@@ -6,11 +6,6 @@ import { Container } from '../container';
 import { Dropdown } from '../dropdown';
 import { Section } from '../section';
 
-const alignment = {
-  Default: '',
-  right: 'right'
-};
-
 class Wrapper extends React.Component {
   state = {
     selected: ''

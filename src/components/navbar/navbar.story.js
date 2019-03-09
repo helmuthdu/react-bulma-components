@@ -6,7 +6,7 @@ import { Box } from '../box';
 import { Navbar } from '../navbar';
 
 const colors = {
-  Default: '',
+  default: '',
   primary: 'primary',
   info: 'info',
   danger: 'danger',

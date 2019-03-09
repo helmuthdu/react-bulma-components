@@ -107,7 +107,7 @@ exports.default = {
   module: {
     rules: [
       {
-        test: /\.js?$/,
+        test: /\.jsx?$/,
         loader: 'babel-loader',
         query: {
           cacheDirectory: true,

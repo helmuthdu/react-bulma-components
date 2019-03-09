@@ -15,7 +15,7 @@ module.exports = {
     }
   },
   transform: {
-    '^.+\\.js$': 'babel-jest'
+    '^.+\\.jsx?$': 'babel-jest'
   },
   watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
   moduleNameMapper: {

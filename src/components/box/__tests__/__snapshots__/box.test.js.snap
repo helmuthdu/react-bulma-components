@@ -31,6 +31,14 @@ exports[`Box component should have custom inline styles 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Box component should render 1`] = `
+<DocumentFragment>
+  <div
+    class="box"
+  />
+</DocumentFragment>
+`;
+
 exports[`Box component should render as an html section 1`] = `
 <DocumentFragment>
   <section
@@ -38,13 +46,5 @@ exports[`Box component should render as an html section 1`] = `
   >
     This should be a section
   </section>
-</DocumentFragment>
-`;
-
-exports[`Box component should render 1`] = `
-<DocumentFragment>
-  <div
-    class="box"
-  />
 </DocumentFragment>
 `;

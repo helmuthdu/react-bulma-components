@@ -8,7 +8,7 @@ import { Button } from '../button';
 import { Section } from '../section';
 
 const colors = {
-  Default: '',
+  default: '',
   primary: 'primary',
   info: 'info',
   danger: 'danger',

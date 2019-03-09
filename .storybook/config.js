@@ -1,17 +1,17 @@
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs } from '@storybook/addon-knobs';
-import { setOptions } from '@storybook/addon-options';
 import { configureViewport, INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import { addDecorator, configure } from '@storybook/react';
+import { addDecorator, addParameters, configure } from '@storybook/react';
+import { themes } from '@storybook/theming';
 import React from 'react';
 import extraViewports from './extra-viewports.json';
 
-import 'index.sass';
-
-setOptions({
-  name: 'React Bulma Components',
-  url: 'https://github.com/couds/react-bulma-components',
-  showAddonPanel: true,
+addParameters({
+  options: {
+    name: 'React Bulma Components',
+    url: 'https://github.com/couds/react-bulma-components',
+    theme: themes.dark,
+  },
 });
 
 addDecorator(withKnobs);
@@ -30,7 +30,7 @@ configureViewport({
 // automatically import all files ending in *.stories.js
 const req = require.context('../src', true, /.story.js$/);
 function loadStories() {
-  req.keys().forEach(filename => req(filename));
+  req.keys().forEach(req);
 }
 
 configure(loadStories, module);
