@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../modifiers';
 import { Element } from '../element';
-import { MenuList } from './components/list';
+import { MenuList } from './components/menu-list';
 
 export const Menu = ({ className, ...props }) => <Element {...props} className={cn('menu', className)} />;
 
