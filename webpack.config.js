@@ -32,7 +32,6 @@ const options =
                 options: {
                   // If you are having trouble with urls not resolving add this setting.
                   // See https://github.com/webpack-contrib/css-loader#url
-                  minimize: false,
                   sourceMap: true
                 }
               },
