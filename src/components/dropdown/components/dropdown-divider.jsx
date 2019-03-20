@@ -10,8 +10,8 @@ export const DropdownDivider = ({ className, ...allProps }) => {
 
 DropdownDivider.propTypes = {
   ...modifiers.propTypes,
-  style: PropTypes.object,
-  className: PropTypes.string
+  className: PropTypes.string,
+  style: PropTypes.object
 };
 
 DropdownDivider.defaultProps = {

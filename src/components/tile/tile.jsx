@@ -12,10 +12,10 @@ export const Tile = ({ children, className, context, vertical, size, color, noti
     {...props}
     className={cn('tile', className, {
       notification,
-      [`is-${context}`]: context,
-      [`is-${size}`]: size,
+      'is-vertical': vertical,
       [`is-${color}`]: color,
-      'is-vertical': vertical
+      [`is-${context}`]: context,
+      [`is-${size}`]: size
     })}
   >
     {children}
@@ -26,18 +26,18 @@ Tile.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.object,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  context: PropTypes.oneOf(['ancestor', 'parent', 'child']),
-  vertical: PropTypes.bool,
-  size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
   color: PropTypes.oneOf(colors),
-  notification: PropTypes.bool
+  context: PropTypes.oneOf(['ancestor', 'parent', 'child']),
+  notification: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
+  style: PropTypes.object,
+  vertical: PropTypes.bool
 };
 
 Tile.defaultProps = {
   ...modifiers.defaultProps,
+  notification: false,
   renderAs: 'div',
-  vertical: false,
-  notification: false
+  vertical: false
 };

@@ -2,12 +2,17 @@
 
 exports[`Table component should concat classname in props with classname 1`] = `
 <DocumentFragment>
-  <p>
-    Default
-  </p>
   <table
     class="table other-class this-is-a-test is-striped is-fullwidth"
-  />
+  >
+    <tbody>
+      <tr>
+        <td>
+          Default
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </DocumentFragment>
 `;
 
@@ -21,12 +26,17 @@ exports[`Table component should render 1`] = `
 
 exports[`Table component should use inline styles 1`] = `
 <DocumentFragment>
-  <p>
-    Default
-  </p>
   <table
     class="table is-striped is-fullwidth"
     style="height: 250px;"
-  />
+  >
+    <tbody>
+      <tr>
+        <td>
+          Default
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </DocumentFragment>
 `;

@@ -7,6 +7,7 @@ describe('Control component', () => {
     const { asFragment } = render(<Control />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should concat classname in props with classname', () => {
     const { asFragment } = render(
       <Control className="other-class this-is-a-test">
@@ -15,6 +16,7 @@ describe('Control component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should use inline styles', () => {
     const { asFragment } = render(
       <Control style={{ height: 250 }}>
@@ -23,6 +25,7 @@ describe('Control component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should render as a html section element', () => {
     const { asFragment } = render(
       <Control renderAs="section">
@@ -31,6 +34,7 @@ describe('Control component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should be fullwidth, loading and size = large', () => {
     const { asFragment } = render(
       <Control fullwidth loading size="large">

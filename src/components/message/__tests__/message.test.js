@@ -8,6 +8,7 @@ describe('Message component', () => {
     const { asFragment } = render(<Component>Content</Component>);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should render with all', () => {
     const { asFragment } = render(
       <Message>
@@ -17,6 +18,7 @@ describe('Message component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should concat classname in props with classname', () => {
     const { asFragment } = render(
       <Message className="other-class">
@@ -26,10 +28,12 @@ describe('Message component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should render as an html section', () => {
     const { asFragment } = render(<Message renderAs="section">This should be a section</Message>);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should have custom inline styles', () => {
     const { asFragment } = render(
       <Message renderAs="section" style={{ width: 200, zIndex: 1 }}>
@@ -38,6 +42,7 @@ describe('Message component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should accept a react Element as renderAs prop', () => {
     const Custom = props => (
       <p {...props}>

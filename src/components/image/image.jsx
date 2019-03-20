@@ -29,13 +29,11 @@ export const Image = ({ className, alt, size, fallback, rounded, src, ...props }
       })}
     >
       <img
-        className={cn({
-          'is-rounded': rounded
-        })}
+        data-testid="image-img"
+        alt={alt}
         onError={handleError}
         src={image.src}
-        alt={alt}
-        data-testid="image-img"
+        className={cn({ 'is-rounded': rounded })}
       />
     </Element>
   );

@@ -22,9 +22,9 @@ export const NavbarMenu = ({ className, children, ...props }) => (
 
 NavbarMenu.propTypes = {
   ...modifiers.propTypes,
-  style: PropTypes.object,
+  children: PropTypes.node,
   className: PropTypes.string,
-  children: PropTypes.node
+  style: PropTypes.object
 };
 
 NavbarMenu.defaultProps = {

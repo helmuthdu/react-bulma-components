@@ -2,31 +2,27 @@
 
 exports[`Help component should be displayed as a successful message 1`] = `
 <DocumentFragment>
-  <p
+  <span
     class="help is-success"
-  />
-  <p>
+  >
     Default
-  </p>
-  <p />
+  </span>
 </DocumentFragment>
 `;
 
 exports[`Help component should concat classname in props with classname 1`] = `
 <DocumentFragment>
-  <p
+  <span
     class="help other-class this-is-a-test"
-  />
-  <p>
+  >
     Default
-  </p>
-  <p />
+  </span>
 </DocumentFragment>
 `;
 
 exports[`Help component should render 1`] = `
 <DocumentFragment>
-  <p
+  <span
     class="help"
   />
 </DocumentFragment>
@@ -34,13 +30,11 @@ exports[`Help component should render 1`] = `
 
 exports[`Help component should use inline styles 1`] = `
 <DocumentFragment>
-  <p
+  <span
     class="help"
     style="height: 250px;"
-  />
-  <p>
+  >
     Default
-  </p>
-  <p />
+  </span>
 </DocumentFragment>
 `;

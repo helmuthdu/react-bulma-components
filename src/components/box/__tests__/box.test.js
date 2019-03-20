@@ -8,14 +8,17 @@ describe('Box component', () => {
     const { asFragment } = render(<Box />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should concat classname in props with classname', () => {
     const { asFragment } = render(<Box className="other-class test">Facebook</Box>);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should render as an html section', () => {
     const { asFragment } = render(<Box renderAs="section">This should be a section</Box>);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should have custom inline styles', () => {
     const { asFragment } = render(
       <Box renderAs="section" style={{ width: 200, zIndex: 1 }}>
@@ -24,6 +27,7 @@ describe('Box component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should accept a react Element as renderAs prop', () => {
     // eslint-disable-next-line react/prop-types
     const Custom = props => (

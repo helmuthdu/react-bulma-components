@@ -7,6 +7,7 @@ describe('Breadcrumb component', () => {
     const { asFragment } = render(<Breadcrumb />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should render list of items', () => {
     const { asFragment } = render(
       <Breadcrumb
@@ -29,7 +30,8 @@ describe('Breadcrumb component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
-  [null, 'arrow', 'dot', 'bullet', 'succeeds'].map(separator =>
+
+  ['arrow', 'dot', 'bullet', 'succeeds'].map(separator =>
     it(`should use separator ${separator}`, () => {
       const { asFragment } = render(
         <Breadcrumb
@@ -54,6 +56,7 @@ describe('Breadcrumb component', () => {
       expect(asFragment()).toMatchSnapshot();
     })
   );
+
   it('should use inline style and custom size', () => {
     const { asFragment } = render(
       <Breadcrumb

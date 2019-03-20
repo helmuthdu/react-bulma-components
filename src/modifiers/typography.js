@@ -17,8 +17,8 @@ export default {
     cn({
       [`has-text-${props.textAlignment}`]: props.textAlignment,
       [`has-text-weight-${props.textWeight}`]: props.textWeight,
-      [`is-size-${props.textSize}`]: props.textSize,
       [`is-${props.textTransform}`]: props.textTransform,
+      [`is-size-${props.textSize}`]: props.textSize,
       'is-italic': props.italic
     }),
   clean: ({ textWeight, textTransform, italic, textSize, textAlignment, ...props }) => props

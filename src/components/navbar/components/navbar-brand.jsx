@@ -12,9 +12,9 @@ export const NavbarBrand = ({ className, children, ...props }) => (
 
 NavbarBrand.propTypes = {
   ...modifiers.propTypes,
-  style: PropTypes.object,
+  children: PropTypes.node,
   className: PropTypes.string,
-  children: PropTypes.node
+  style: PropTypes.object
 };
 
 NavbarBrand.defaultProps = {

@@ -10,12 +10,22 @@ export const Radio = ({ className, style, disabled, value, children, checked, co
   const props = modifiers.clean(allProps);
   return (
     <label
+      data-testid="radio-label"
       disabled={disabled}
       className={cn('b-radio radio', modifiers.getClassName(allProps), className)}
       style={style}
     >
-      <input {...props} name={name} type="radio" value={value} disabled={disabled} checked={checked} />
+      <input
+        {...props}
+        data-testid="radio-input"
+        name={name}
+        type="radio"
+        value={value}
+        disabled={disabled}
+        checked={checked}
+      />
       <span
+        data-testid="radio-check"
         className={cn('check', {
           [`is-${color}`]: color,
           [`is-${size}`]: size
@@ -34,6 +44,7 @@ Radio.propTypes = {
   color: PropTypes.oneOf(colors),
   disabled: PropTypes.bool,
   name: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   style: PropTypes.object,
   value: PropTypes.string
@@ -41,6 +52,5 @@ Radio.propTypes = {
 
 Radio.defaultProps = {
   ...modifiers.defaultProps,
-  checked: false,
-  value: ''
+  checked: false
 };

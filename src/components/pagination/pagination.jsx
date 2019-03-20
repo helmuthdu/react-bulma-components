@@ -30,20 +30,20 @@ export const Pagination = ({
     aria-label="pagination"
   >
     <ReactPaginate
-      previousLabel={showPrevNext && previous}
-      previousLinkClassName={showPrevNext ? 'pagination-previous' : ''}
-      nextLabel={showPrevNext && next}
-      nextLinkClassName={showPrevNext ? 'pagination-next' : ''}
-      breakLinkClassName={'pagination-ellipsis'}
+      activeClassName={'active'}
       activeLinkClassName={'is-current'}
-      pageCount={total}
+      breakLinkClassName={'pagination-ellipsis'}
+      containerClassName={'pagination-list'}
       forcePage={current}
       marginPagesDisplayed={2}
-      pageRangeDisplayed={delta}
+      nextLabel={showPrevNext && next}
+      nextLinkClassName={showPrevNext ? 'pagination-next' : ''}
       onPageChange={onChange}
+      pageCount={total}
       pageLinkClassName={'pagination-link'}
-      containerClassName={'pagination-list'}
-      activeClassName={'active'}
+      pageRangeDisplayed={delta}
+      previousLabel={showPrevNext && previous}
+      previousLinkClassName={showPrevNext ? 'pagination-previous' : ''}
     />
   </Element>
 );

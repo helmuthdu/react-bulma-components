@@ -27,5 +27,5 @@ Help.propTypes = {
 
 Help.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'p'
+  renderAs: 'span'
 };

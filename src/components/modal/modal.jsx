@@ -60,26 +60,21 @@ export const Modal = props => {
   }
 
   return ReactDOM.createPortal(
-    <div
-      data-testid="modal-container"
-      className={cn('modal', className, {
-        'is-active': show
-      })}
-    >
+    <div data-testid="modal-container" className={cn('modal', className, { 'is-active': show })}>
       <div
-        role="presentation"
-        data-testid="modal-background"
         className="modal-background"
+        data-testid="modal-background"
         onClick={closeOnBlur ? props.onClose : null}
+        role="presentation"
       />
       {children}
       {showClose && (
         <button
-          data-testid="modal-close-button"
-          type="button"
-          onClick={props.onClose}
-          className="modal-close is-large"
           aria-label="close"
+          className="modal-close is-large"
+          data-testid="modal-close-button"
+          onClick={props.onClose}
+          type="button"
         />
       )}
     </div>,

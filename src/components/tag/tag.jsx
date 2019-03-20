@@ -14,10 +14,10 @@ export const Tag = ({ children, className, color, close, size, ellipsis, rounded
     onClick={() => remove && onClick()}
     data-testid="tag"
     className={cn('tag', className, {
-      [`is-${size}`]: size,
-      [`is-${color}`]: color,
+      'is-delete': remove,
       'is-rounded': rounded,
-      'is-delete': remove
+      [`is-${color}`]: color,
+      [`is-${size}`]: size
     })}
   >
     {!remove && <span className={cn({ 'has-ellipsis': ellipsis })}>{children}</span>}
@@ -44,10 +44,10 @@ Tag.propTypes = {
 
 Tag.defaultProps = {
   ...modifiers.defaultProps,
-  rounded: false,
-  remove: false,
   close: false,
   ellipsis: false,
   onClick: () => {},
-  renderAs: 'span'
+  remove: false,
+  renderAs: 'span',
+  rounded: false
 };

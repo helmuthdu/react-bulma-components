@@ -3,7 +3,7 @@
 exports[`Select component should be large, red, disabled and multioption 1`] = `
 <DocumentFragment>
   <div
-    class="select is-large is-danger is-multiple"
+    class="select is-multiple is-danger is-large"
   >
     <select
       disabled=""

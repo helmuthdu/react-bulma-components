@@ -15,13 +15,13 @@ export const PanelBlock = ({ className, active, ...props }) => (
 
 PanelBlock.propTypes = {
   ...modifiers.propTypes,
+  active: PropTypes.bool,
   className: PropTypes.string,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  active: PropTypes.bool
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 
 PanelBlock.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'div',
-  active: false
+  active: false,
+  renderAs: 'div'
 };

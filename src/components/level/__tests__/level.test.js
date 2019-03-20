@@ -7,6 +7,7 @@ describe('Level component', () => {
     const { asFragment } = render(<Component />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should concat classname in props with classname', () => {
     const { asFragment } = render(
       <Level className="other-class this-is-a-test">
@@ -15,6 +16,7 @@ describe('Level component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should use inline styles', () => {
     const { asFragment } = render(
       <Level style={{ height: 250 }}>
@@ -23,6 +25,7 @@ describe('Level component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should render Levels with right and left side', () => {
     const { asFragment } = render(
       <Level>

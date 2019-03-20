@@ -8,14 +8,14 @@ const getSizeClassFromProp = sizes =>
   Object.keys(sizes).reduce((classes, size) => {
     const display = sizes[size].display || {};
     const hide = sizes[size].hide || {};
-    const textSize = sizes[size].textSize || {};
     const textAlignment = sizes[size].textAlignment || {};
+    const textSize = sizes[size].textSize || {};
 
     const obj = {
       ...classes,
+      [`has-text-${textAlignment.value}-${size}${textAlignment.only ? '-only' : ''}`]: textAlignment.value,
       [`is-${display.value}-${size}${display.only ? '-only' : ''}`]: display.value,
       [`is-hidden-${size}${hide.only ? '-only' : ''}`]: hide.value,
-      [`has-text-${textAlignment.value}-${size}${textAlignment.only ? '-only' : ''}`]: textAlignment.value,
       [`is-size-${textSize.value}-${size}`]: textSize.value > 0
     };
 

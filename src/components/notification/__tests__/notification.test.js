@@ -8,6 +8,7 @@ describe('Notification component', () => {
     const { asFragment } = render(<Notification />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should have notification classname', () => {
     const { asFragment } = render(
       <Notification>
@@ -16,6 +17,7 @@ describe('Notification component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should concat classname in props with classname', () => {
     const { asFragment } = render(
       <Notification className="other-class this-is-a-test">
@@ -24,6 +26,7 @@ describe('Notification component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should use inline styles', () => {
     const { asFragment } = render(
       <Notification style={{ height: 250 }}>
@@ -32,6 +35,7 @@ describe('Notification component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should render as Section', () => {
     const { asFragment } = render(
       <Notification renderAs="section">

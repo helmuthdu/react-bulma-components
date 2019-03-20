@@ -21,16 +21,16 @@ export const Textarea = ({
   const props = modifiers.clean(allProps);
   return (
     <textarea
-      name={name}
       {...props}
-      value={value}
-      rows={rows}
+      disabled={disabled}
+      name={name}
       placeholder={placeholder}
       readOnly={readOnly}
-      disabled={disabled}
+      rows={rows}
+      value={value}
       className={cn('textarea', modifiers.getClassName(allProps), className, {
-        [`is-${size}`]: size,
-        [`is-${color}`]: color
+        [`is-${color}`]: color,
+        [`is-${size}`]: size
       })}
     />
   );
@@ -41,6 +41,7 @@ Textarea.propTypes = {
   color: PropTypes.oneOf(colors),
   disabled: PropTypes.bool,
   name: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
   readOnly: PropTypes.bool,
   rows: PropTypes.number,
@@ -51,6 +52,5 @@ Textarea.propTypes = {
 
 Textarea.defaultProps = {
   ...modifiers.defaultProps,
-  rows: 4,
-  value: ''
+  rows: 4
 };

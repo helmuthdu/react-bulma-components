@@ -64,16 +64,19 @@ describe('Navbar component', () => {
     expect(asFragment()).toMatchSnapshot();
     unmount();
   });
+
   it('should concat Bulma class with classes in props', () => {
     const { asFragment, unmount } = render(<Navbar className="other-class test" />);
     expect(asFragment()).toMatchSnapshot();
     unmount();
   });
+
   it('should render as an html section', () => {
     const { asFragment, unmount } = render(<Navbar renderAs="section" />);
     expect(asFragment()).toMatchSnapshot();
     unmount();
   });
+
   it('should have custom inline styles', () => {
     const { asFragment, unmount } = render(<Navbar style={{ width: 200, zIndex: 1 }} />);
     expect(asFragment()).toMatchSnapshot();

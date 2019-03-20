@@ -11,30 +11,30 @@ export const Switch = ({ className, style, disabled, value, children, checked, c
   const [isMouseDown, setMouseDown] = useState(false);
   return (
     <label
-      className={cn('switch', modifiers.getClassName(allProps), className)}
-      style={style}
-      onMouseDown={() => setMouseDown(true)}
-      onMouseUp={() => setMouseDown(false)}
-      onMouseOut={() => setMouseDown(false)}
-      disabled={disabled}
       data-testid="switch-label"
+      className={cn('switch', modifiers.getClassName(allProps), className)}
+      disabled={disabled}
+      onMouseDown={() => setMouseDown(true)}
+      onMouseOut={() => setMouseDown(false)}
+      onMouseUp={() => setMouseDown(false)}
+      style={style}
     >
       <input
         {...props}
+        data-testid="switch-input"
+        checked={checked}
+        disabled={disabled}
         name={name}
         type="checkbox"
         value={value}
-        disabled={disabled}
-        checked={checked}
-        data-testid="switch-input"
       />
       <span
+        data-testid="switch-check"
         className={cn('check', {
           'is-elastic': isMouseDown && !disabled,
           [`is-${color}`]: color,
           [`is-${size}`]: size
         })}
-        data-testid="switch-check"
       />
       <span className="control-label">{children}</span>
     </label>
@@ -49,6 +49,7 @@ Switch.propTypes = {
   color: PropTypes.oneOf(colors),
   disabled: PropTypes.bool,
   name: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   style: PropTypes.object,
   value: PropTypes.string
@@ -56,6 +57,5 @@ Switch.propTypes = {
 
 Switch.defaultProps = {
   ...modifiers.defaultProps,
-  checked: false,
-  value: ''
+  checked: false
 };

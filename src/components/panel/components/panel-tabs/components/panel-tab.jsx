@@ -15,13 +15,13 @@ export const PanelTabsTab = ({ className, active, ...props }) => (
 
 PanelTabsTab.propTypes = {
   ...modifiers.propTypes,
+  active: PropTypes.bool,
   className: PropTypes.string,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  active: PropTypes.bool
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 
 PanelTabsTab.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'a',
-  active: false
+  active: false,
+  renderAs: 'a'
 };

@@ -195,7 +195,7 @@ exports[`Hero component should render Hero with hero head, body and footer 1`] =
 exports[`Hero component should use gradient style 1`] = `
 <DocumentFragment>
   <section
-    class="hero is-primary is-bold"
+    class="hero is-bold is-primary"
   />
 </DocumentFragment>
 `;

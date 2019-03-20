@@ -10,11 +10,11 @@ export const Tabs = ({ children, className, align, size, type, fullwidth, ...pro
   <Element
     {...props}
     className={cn('tabs', className, {
+      'is-fullwidth': fullwidth,
+      'is-toggle': type === 'toggle-rounded',
       [`is-${align}`]: align,
       [`is-${size}`]: size,
-      'is-toggle': type === 'toggle-rounded',
-      [`is-${type}`]: type,
-      'is-fullwidth': fullwidth
+      [`is-${type}`]: type
     })}
   >
     <ul>{children}</ul>
@@ -25,18 +25,18 @@ Tabs.Tab = Tab;
 
 Tabs.propTypes = {
   ...modifiers.propTypes,
+  align: PropTypes.oneOf(['centered', 'right']),
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.object,
+  fullwidth: PropTypes.bool,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  align: PropTypes.oneOf(['centered', 'right']),
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
-  type: PropTypes.oneOf(['toggle', 'boxed', 'toggle-rounded']),
-  fullwidth: PropTypes.bool
+  style: PropTypes.object,
+  type: PropTypes.oneOf(['toggle', 'boxed', 'toggle-rounded'])
 };
 
 Tabs.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'div',
-  fullwidth: false
+  fullwidth: false,
+  renderAs: 'div'
 };

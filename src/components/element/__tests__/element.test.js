@@ -12,6 +12,7 @@ describe('Element component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should accept a react Element as renderAs prop', () => {
     const Custom = props => (
       <p {...props}>

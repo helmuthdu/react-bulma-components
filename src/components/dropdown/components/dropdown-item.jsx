@@ -21,8 +21,8 @@ DropdownItem.propTypes = {
   ...modifiers.propTypes,
   active: PropTypes.bool,
   children: PropTypes.node,
-  value: PropTypes.any.isRequired,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  value: PropTypes.any.isRequired
 };
 
 DropdownItem.defaultProps = {

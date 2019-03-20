@@ -37,22 +37,22 @@ export const InputFile = ({
       style={style}
       {...props}
       className={cn('file', className, {
-        [`is-${size}`]: size,
-        [`is-${color}`]: color,
         'has-name': !hasName,
-        'is-right': right,
         'is-boxed': boxed,
-        'is-fullwidth': fullwidth
+        'is-fullwidth': fullwidth,
+        'is-right': right,
+        [`is-${color}`]: color,
+        [`is-${size}`]: size
       })}
     >
       <label className="file-label">
         <input
-          name={name}
-          value=""
-          type="file"
           className="file-input"
-          onChange={handleSelect}
           data-testid="file-input"
+          name={name}
+          onChange={handleSelect}
+          type="file"
+          value=""
         />
         <span className="file-cta">
           {icon && <span className="file-icon">{icon}</span>}

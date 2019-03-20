@@ -11,9 +11,9 @@ export const Heading = ({ children, className, size, subtitle, weight, spaced, h
       title: !subtitle && !heading,
       subtitle,
       heading,
-      [`is-${size}`]: size,
+      'is-spaced': spaced && !subtitle,
       [`has-text-weight-${weight}`]: weight,
-      'is-spaced': spaced && !subtitle
+      [`is-${size}`]: size
     })}
   >
     {children}

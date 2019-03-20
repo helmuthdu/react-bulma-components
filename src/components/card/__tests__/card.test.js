@@ -7,10 +7,12 @@ describe('Card component', () => {
     const { asFragment } = render(<Component />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should render card-image', () => {
     const { asFragment } = render(<Card.Image size="4by3" src="http://bulma.io/images/placeholders/1280x960.png" />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('Should render card-header', () => {
     const { asFragment } = render(
       <Card>
@@ -24,6 +26,7 @@ describe('Card component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should render card-footer', () => {
     const { asFragment } = render(
       <Card>

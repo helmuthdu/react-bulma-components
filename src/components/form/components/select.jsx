@@ -26,12 +26,12 @@ export const Select = ({
   return (
     <div
       className={cn('select', modifiers.getClassName(allProps), className, {
-        [`is-${size}`]: size,
-        [`is-${color}`]: color,
-        'is-loading': loading,
-        'is-rounded': rounded,
         'is-empty': empty,
-        'is-multiple': multiple
+        'is-loading': loading,
+        'is-multiple': multiple,
+        'is-rounded': rounded,
+        [`is-${color}`]: color,
+        [`is-${size}`]: size
       })}
       style={style}
     >
@@ -52,11 +52,12 @@ Select.propTypes = {
   loading: PropTypes.bool,
   multiple: PropTypes.bool,
   name: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
   readOnly: PropTypes.bool,
   rounded: PropTypes.bool,
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   style: PropTypes.object,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.array])
 };
 
 Select.defaultProps = {

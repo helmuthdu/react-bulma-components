@@ -30,9 +30,9 @@ export const NavbarBurger = ({ style, className, ...allProps }) => {
 
 NavbarBurger.propTypes = {
   ...modifiers.propTypes,
-  style: PropTypes.object,
   className: PropTypes.string,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  style: PropTypes.object
 };
 
 NavbarBurger.defaultProps = {

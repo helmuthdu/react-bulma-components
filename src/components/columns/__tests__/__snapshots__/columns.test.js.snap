@@ -76,29 +76,29 @@ exports[`Columns component should render 2`] = `
 
 exports[`Columns component should render as paragraph 1`] = `
 <DocumentFragment>
-  <p
+  <div
     class="columns is-multiline"
-  />
-  <p
-    class="column is-half"
   >
-    1
-  </p>
-  <p
-    class="column"
-  >
-    2
-  </p>
-  <p
-    class="column"
-  >
-    3
-  </p>
-  <p
-    class="column"
-  >
-    4
-  </p>
-  <p />
+    <p
+      class="column is-half"
+    >
+      1
+    </p>
+    <p
+      class="column"
+    >
+      2
+    </p>
+    <p
+      class="column"
+    >
+      3
+    </p>
+    <p
+      class="column"
+    >
+      4
+    </p>
+  </div>
 </DocumentFragment>
 `;

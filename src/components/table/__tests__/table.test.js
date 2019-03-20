@@ -7,18 +7,28 @@ describe('Table component', () => {
     const { asFragment } = render(<Table />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should concat classname in props with classname', () => {
     const { asFragment } = render(
       <Table className="other-class this-is-a-test">
-        <p>Default</p>
+        <tbody>
+          <tr>
+            <td>Default</td>
+          </tr>
+        </tbody>
       </Table>
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should use inline styles', () => {
     const { asFragment } = render(
       <Table style={{ height: 250 }}>
-        <p>Default</p>
+        <tbody>
+          <tr>
+            <td>Default</td>
+          </tr>
+        </tbody>
       </Table>
     );
     expect(asFragment()).toMatchSnapshot();

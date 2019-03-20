@@ -22,27 +22,27 @@ export const Checkbox = ({
   const props = modifiers.clean(allProps);
   return (
     <label
-      disabled={disabled}
-      className={cn('b-checkbox checkbox', modifiers.getClassName(allProps), className)}
-      style={style}
       data-testid="checkbox-label"
+      className={cn('b-checkbox checkbox', modifiers.getClassName(allProps), className)}
+      disabled={disabled}
+      style={style}
     >
       <input
         {...props}
+        data-testid="checkbox-input"
+        checked={checked}
+        disabled={disabled}
+        indeterminate={indeterminate}
         name={name}
         type="checkbox"
         value={value}
-        disabled={disabled}
-        checked={checked}
-        indeterminate={indeterminate}
-        data-testid="checkbox-input"
       />
       <span
+        data-testid="checkbox-check"
         className={cn('check', {
           [`is-${color}`]: color,
           [`is-${size}`]: size
         })}
-        data-testid="checkbox-check"
       />
       <span className="control-label">{children}</span>
     </label>
@@ -58,6 +58,7 @@ Checkbox.propTypes = {
   disabled: PropTypes.bool,
   indeterminate: PropTypes.bool,
   name: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   style: PropTypes.object,
   value: PropTypes.string
@@ -66,6 +67,5 @@ Checkbox.propTypes = {
 Checkbox.defaultProps = {
   ...modifiers.defaultProps,
   checked: false,
-  indeterminate: false,
-  value: ''
+  indeterminate: false
 };

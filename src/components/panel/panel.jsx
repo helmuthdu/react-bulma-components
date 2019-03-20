@@ -7,10 +7,10 @@ import { PanelBlock, PanelHeader, PanelIcon, PanelTabs } from './components';
 
 export const Panel = ({ className, ...props }) => <Element {...props} className={cn('panel', className)} />;
 
-Panel.Header = PanelHeader;
-Panel.Tabs = PanelTabs;
 Panel.Block = PanelBlock;
+Panel.Header = PanelHeader;
 Panel.Icon = PanelIcon;
+Panel.Tabs = PanelTabs;
 
 Panel.propTypes = {
   ...modifiers.propTypes,

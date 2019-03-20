@@ -201,44 +201,6 @@ exports[`Breadcrumb component should use separator dot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Breadcrumb component should use separator null 1`] = `
-<DocumentFragment>
-  <nav
-    class="breadcrumb"
-  >
-    <ul>
-      <li
-        class=""
-      >
-        <a
-          href="#1"
-        >
-          Storybook
-        </a>
-      </li>
-      <li
-        class=""
-      >
-        <a
-          href="#2"
-        >
-          Breadcrumb
-        </a>
-      </li>
-      <li
-        class="is-active"
-      >
-        <a
-          href="#3"
-        >
-          Breadcrumb Types
-        </a>
-      </li>
-    </ul>
-  </nav>
-</DocumentFragment>
-`;
-
 exports[`Breadcrumb component should use separator succeeds 1`] = `
 <DocumentFragment>
   <nav

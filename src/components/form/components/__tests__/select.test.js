@@ -3,17 +3,24 @@ import { render } from 'react-testing-library';
 import { Select } from '../select';
 
 describe('Select component', () => {
+  let onChange;
+
+  beforeEach(() => {
+    onChange = jest.fn();
+  });
+
   it('should render', () => {
     const { asFragment } = render(
-      <Select>
+      <Select onChange={onChange}>
         <option>1</option>
       </Select>
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should concat classname in props with classname', () => {
     const { asFragment } = render(
-      <Select className="other-class this-is-a-test">
+      <Select onChange={onChange} className="other-class this-is-a-test">
         <option>1</option>
         <option>2</option>
         <option>3</option>
@@ -21,9 +28,10 @@ describe('Select component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should use inline styles', () => {
     const { asFragment } = render(
-      <Select style={{ width: '100%' }}>
+      <Select onChange={onChange} style={{ width: '100%' }}>
         <option>1</option>
         <option>2</option>
         <option>3</option>
@@ -31,9 +39,10 @@ describe('Select component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should be large, red, disabled and multioption', () => {
     const { asFragment } = render(
-      <Select color="danger" size="large" multiple disabled>
+      <Select onChange={onChange} value={[]} color="danger" size="large" multiple disabled>
         <option>1</option>
         <option>2</option>
         <option>3</option>

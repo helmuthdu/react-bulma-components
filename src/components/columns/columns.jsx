@@ -13,10 +13,10 @@ export const Columns = ({ className, breakpoint, gapless, multiline, centered, .
   <Element
     {...props}
     className={cn(className, 'columns', {
-      [`is-${breakpoint}`]: breakpoint,
+      'is-centered': centered,
       'is-gapless': gapless,
       'is-multiline': multiline,
-      'is-centered': centered
+      [`is-${breakpoint}`]: breakpoint
     })}
   />
 );

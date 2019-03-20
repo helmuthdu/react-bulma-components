@@ -8,6 +8,7 @@ describe('Menu component', () => {
     const { asFragment } = render(<Component>Content</Component>);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should have render all', () => {
     const { asFragment } = render(
       <Menu>
@@ -19,6 +20,7 @@ describe('Menu component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should concat Menu.List to display as submenus', () => {
     const { asFragment } = render(
       <Menu>
@@ -38,6 +40,7 @@ describe('Menu component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should accept a react Element as renderAs prop', () => {
     const Custom = props => (
       <span {...props}>
@@ -58,6 +61,7 @@ describe('Menu component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should render custom item child', () => {
     const { asFragment } = render(
       <Menu>

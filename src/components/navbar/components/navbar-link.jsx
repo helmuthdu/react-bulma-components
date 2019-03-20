@@ -12,10 +12,10 @@ export const NavbarLink = ({ className, children, ...props }) => (
 
 NavbarLink.propTypes = {
   ...modifiers.propTypes,
-  style: PropTypes.object,
-  className: PropTypes.string,
   children: PropTypes.node,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+  className: PropTypes.string,
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  style: PropTypes.object
 };
 
 NavbarLink.defaultProps = {

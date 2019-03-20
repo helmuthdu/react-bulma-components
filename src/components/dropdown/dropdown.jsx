@@ -74,9 +74,9 @@ export const Dropdown = ({ className, children, value, color, right, up, label, 
       data-testid="dropdown-container"
       className={cn('dropdown', modifiers.getClassName(allProps), className, {
         'is-active': open,
-        'is-up': up,
+        'is-hoverable': hoverable,
         'is-right': right,
-        'is-hoverable': hoverable
+        'is-up': up
       })}
     >
       <div data-testid="dropdown-trigger" role="presentation" onClick={toggle}>
@@ -92,8 +92,8 @@ export const Dropdown = ({ className, children, value, color, right, up, label, 
   );
 };
 
-Dropdown.Item = DropdownItem;
 Dropdown.Divider = DropdownDivider;
+Dropdown.Item = DropdownItem;
 
 Dropdown.propTypes = {
   ...modifiers.propTypes,

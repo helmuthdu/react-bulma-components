@@ -12,18 +12,18 @@ export const Hero = ({ children, className, color, gradient, size, ...props }) =
   <Element
     {...props}
     className={cn('hero', className, {
+      'is-bold': gradient,
       [`is-${color}`]: color,
-      [`is-${size}`]: size,
-      'is-bold': gradient
+      [`is-${size}`]: size
     })}
   >
     {children}
   </Element>
 );
 
-Hero.Head = HeroHead;
 Hero.Body = HeroBody;
 Hero.Footer = HeroFooter;
+Hero.Head = HeroHead;
 
 Hero.propTypes = {
   ...modifiers.propTypes,
@@ -38,6 +38,6 @@ Hero.propTypes = {
 
 Hero.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'section',
-  gradient: false
+  gradient: false,
+  renderAs: 'section'
 };

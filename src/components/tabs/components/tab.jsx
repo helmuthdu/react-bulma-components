@@ -17,15 +17,15 @@ export const Tab = ({ children, className, style, active, ...props }) => (
 
 Tab.propTypes = {
   ...modifiers.propTypes,
+  active: PropTypes.bool,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.object,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  active: PropTypes.bool
+  style: PropTypes.object
 };
 
 Tab.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'a',
-  active: false
+  active: false,
+  renderAs: 'a'
 };

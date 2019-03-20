@@ -20,15 +20,15 @@ export const NavbarContainer = ({ className, children, position, ...props }) => 
 
 NavbarContainer.propTypes = {
   ...modifiers.propTypes,
-  style: PropTypes.object,
-  className: PropTypes.string,
   children: PropTypes.node,
+  className: PropTypes.string,
+  position: PropTypes.oneOf(['start', 'end']),
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  position: PropTypes.oneOf(['start', 'end'])
+  style: PropTypes.object
 };
 
 NavbarContainer.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'div',
-  position: 'start'
+  position: 'start',
+  renderAs: 'div'
 };

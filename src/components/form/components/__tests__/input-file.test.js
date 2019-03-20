@@ -8,6 +8,7 @@ describe('Input file component', () => {
   beforeEach(() => {
     global.window = new JSDOM('<body><div id="app-root"></div></body>').window;
   });
+
   it('should render', () => {
     const { asFragment } = render(<InputFile onChange={() => {}} />);
     expect(asFragment()).toMatchSnapshot();

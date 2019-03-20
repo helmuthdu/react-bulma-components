@@ -16,15 +16,15 @@ export const LevelSide = ({ children, className, align, ...props }) => (
 );
 LevelSide.propTypes = {
   ...modifiers.propTypes,
+  align: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.object,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  align: PropTypes.string
+  style: PropTypes.object
 };
 
 LevelSide.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'div',
-  align: 'left'
+  align: 'left',
+  renderAs: 'div'
 };

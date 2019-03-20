@@ -14,8 +14,8 @@ ModalContent.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.object,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  style: PropTypes.object
 };
 
 ModalContent.defaultProps = {

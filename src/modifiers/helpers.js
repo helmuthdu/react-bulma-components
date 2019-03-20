@@ -5,55 +5,55 @@ import PropTypes from 'prop-types';
 export default {
   propTypes: {
     clearfix: PropTypes.bool,
-    pull: PropTypes.oneOf(['right', 'left']),
-    marginless: PropTypes.bool,
-    paddingless: PropTypes.bool,
-    overlay: PropTypes.bool,
     clipped: PropTypes.bool,
+    hidden: PropTypes.bool,
+    invisible: PropTypes.bool,
+    marginless: PropTypes.bool,
+    overlay: PropTypes.bool,
+    paddingless: PropTypes.bool,
+    pull: PropTypes.oneOf(['right', 'left']),
     radiusless: PropTypes.bool,
     shadowless: PropTypes.bool,
-    unselectable: PropTypes.bool,
-    invisible: PropTypes.bool,
-    hidden: PropTypes.bool
+    unselectable: PropTypes.bool
   },
   defaultProps: {
     clearfix: false,
-    marginless: false,
-    paddingless: false,
-    overlay: false,
     clipped: false,
+    hidden: false,
+    invisible: false,
+    marginless: false,
+    overlay: false,
+    paddingless: false,
     radiusless: false,
     shadowless: false,
-    unselectable: false,
-    invisible: false,
-    hidden: false
+    unselectable: false
   },
   getClassName: props =>
     cn({
       'is-clearfix': props.clearfix,
-      [`is-pulled-${props.pull}`]: props.pull,
-      'is-marginless': props.marginless,
-      'is-paddingless': props.paddingless,
-      'is-overlay': props.overlay,
       'is-clipped': props.clipped,
+      'is-hidden': props.hidden,
+      'is-invisible': props.invisible,
+      'is-marginless': props.marginless,
+      'is-overlay': props.overlay,
+      'is-paddingless': props.paddingless,
       'is-radiusless': props.radiusless,
       'is-shadowless': props.shadowless,
       'is-unselectable': props.unselectable,
-      'is-invisible': props.invisible,
-      'is-hidden': props.hidden
+      [`is-pulled-${props.pull}`]: props.pull
     }),
   clean: ({
-    hidden,
     clearfix,
-    paddingless,
-    pull,
+    clipped,
+    hidden,
+    invisible,
     marginless,
     overlay,
-    clipped,
+    paddingless,
+    pull,
     radiusless,
     shadowless,
     unselectable,
-    invisible,
     ...props
   }) => props
 };

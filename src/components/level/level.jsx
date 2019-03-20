@@ -19,16 +19,16 @@ export const Level = ({ children, className, breakpoint, ...props }) => (
   </Element>
 );
 
-Level.Side = LevelSide;
 Level.Item = LevelItem;
+Level.Side = LevelSide;
 
 Level.propTypes = {
   ...modifiers.propTypes,
+  breakpoint: PropTypes.oneOf(breakpoints),
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.object,
-  breakpoint: PropTypes.oneOf(breakpoints),
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  style: PropTypes.object
 };
 
 Level.defaultProps = {

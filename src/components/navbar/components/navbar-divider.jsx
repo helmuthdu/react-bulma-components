@@ -10,8 +10,8 @@ export const NavbarDivider = ({ className, ...props }) => (
 
 NavbarDivider.propTypes = {
   ...modifiers.propTypes,
-  style: PropTypes.object,
-  className: PropTypes.string
+  className: PropTypes.string,
+  style: PropTypes.object
 };
 
 NavbarDivider.defaultProps = {

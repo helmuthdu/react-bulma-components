@@ -33,9 +33,9 @@ export const MenuListItem = ({ children, active, className, ...props }) => {
 
 MenuListItem.propTypes = {
   ...modifiers.propTypes,
-  className: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   active: PropTypes.bool,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  className: PropTypes.string,
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 

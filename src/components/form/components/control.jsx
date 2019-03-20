@@ -9,9 +9,9 @@ export const Control = ({ children, className, fullwidth, iconLeft, iconRight, l
   <Element
     {...props}
     className={cn('control', className, {
-      'is-expanded': fullwidth,
       'has-icons-left': iconLeft,
       'has-icons-right': iconRight,
+      'is-expanded': fullwidth,
       'is-loading': loading,
       [`is-${size}`]: size
     })}

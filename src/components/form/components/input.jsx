@@ -22,17 +22,17 @@ export const Input = ({
 }) => (
   <Element
     {...props}
-    renderAs="input"
+    disabled={disabled}
     name={name}
-    value={value}
-    type={type}
     placeholder={placeholder}
     readOnly={readOnly || inactive}
-    disabled={disabled}
+    renderAs="input"
+    type={type}
+    value={value}
     className={cn('input', className, {
       'is-static': inactive,
-      [`is-${size}`]: size,
-      [`is-${color}`]: color
+      [`is-${color}`]: color,
+      [`is-${size}`]: size
     })}
   />
 );
@@ -45,20 +45,21 @@ Input.propTypes = {
   inactive: PropTypes.bool,
   name: PropTypes.string,
   placeholder: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
   readOnly: PropTypes.bool,
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   style: PropTypes.object,
   type: PropTypes.oneOf([
-    'text',
-    'email',
-    'tel',
-    'password',
-    'number',
-    'search',
     'color',
     'date',
-    'time',
-    'datetime-local'
+    'datetime-local',
+    'email',
+    'number',
+    'password',
+    'search',
+    'tel',
+    'text',
+    'time'
   ]),
   value: PropTypes.string
 };

@@ -12,10 +12,12 @@ describe('Tile component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should concat classname in props with classname', () => {
     const { asFragment } = render(<Tile className="other-class this-is-a-test" />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should use inline styles', () => {
     const { asFragment } = render(
       <Tile style={{ height: 250 }}>
@@ -24,6 +26,7 @@ describe('Tile component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should render as Section', () => {
     const { asFragment } = render(
       <Tile renderAs="section">
@@ -32,6 +35,7 @@ describe('Tile component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   Object.values(CONSTANTS.COLORS)
     .filter(c => c)
     .map(color =>

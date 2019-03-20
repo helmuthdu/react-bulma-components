@@ -11,8 +11,8 @@ export const Progress = ({ className, value, max, color, size, ...props }) => (
   <Element
     renderAs="progress"
     {...props}
-    value={value}
     max={max}
+    value={value}
     className={cn('progress', className, {
       [`is-${color}`]: color,
       [`is-${size}`]: size
@@ -23,11 +23,11 @@ export const Progress = ({ className, value, max, color, size, ...props }) => (
 Progress.propTypes = {
   ...modifiers.propTypes,
   className: PropTypes.string,
-  style: PropTypes.object,
   color: PropTypes.oneOf(colors),
+  max: PropTypes.number,
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
-  value: PropTypes.number,
-  max: PropTypes.number
+  style: PropTypes.object,
+  value: PropTypes.number
 };
 
 Progress.defaultProps = {

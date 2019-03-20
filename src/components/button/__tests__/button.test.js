@@ -15,26 +15,32 @@ describe('Button component', () => {
     const { asFragment } = render(<Component>Content</Component>);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should be an anchor button', () => {
     const { asFragment } = render(<Button renderAs="a" href="https://github.com/couds/react-bulma-components" />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should be a Primary Button', () => {
     const { asFragment } = render(<Button color="primary" />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should be a Large Primary Button', () => {
     const { asFragment } = render(<Button color="primary" size="large" />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should render as a inactive Button', () => {
     const { asFragment } = render(<Button inactive color="primary" />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should render as a html button', () => {
     const { asFragment } = render(<Button renderAs="button" color="danger" />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should render as a React element link with to prop', () => {
     const { asFragment } = render(
       <Button renderAs={Link} to="http://google.com" color="danger">
@@ -43,30 +49,36 @@ describe('Button component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should render be disabled', () => {
     const { asFragment } = render(<Button disabled />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should be a submit form button', () => {
     const { asFragment } = render(<Button submit />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should be a reset form button', () => {
     const { asFragment } = render(<Button reset />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should have a Click listener', () => {
     const onClick = jest.fn();
     const { container } = render(<Button onClick={onClick} />);
     fireEvent.click(container.firstChild);
     expect(onClick).toHaveBeenCalledTimes(1);
   });
+
   it('should have no dispatch click handler if disabled', () => {
     const onClick = jest.fn();
     const { container } = render(<Button disabled onClick={onClick} />);
     fireEvent.click(container.firstChild);
     expect(onClick).toHaveBeenCalledTimes(0);
   });
+
   it('should have a call default onClick is no listener is set', () => {
     const onClick = jest.spyOn(Button.defaultProps, 'onClick');
     const { container } = render(<Button>Action</Button>);
@@ -85,6 +97,7 @@ describe('Button component', () => {
       );
       expect(asFragment()).toMatchSnapshot();
     });
+
     it('should concat classname in props with classname', () => {
       const { asFragment } = render(
         <Button.Group className="super-class-1 dope-class-2">
@@ -94,6 +107,7 @@ describe('Button component', () => {
       );
       expect(asFragment()).toMatchSnapshot();
     });
+
     it('should group buttons together', () => {
       const { asFragment } = render(
         <Button.Group hasAddons>
@@ -103,6 +117,7 @@ describe('Button component', () => {
       );
       expect(asFragment()).toMatchSnapshot();
     });
+
     it('should be centered', () => {
       const { asFragment } = render(
         <Button.Group position="centered">
@@ -112,6 +127,7 @@ describe('Button component', () => {
       );
       expect(asFragment()).toMatchSnapshot();
     });
+
     it('should align to the right', () => {
       const { asFragment } = render(
         <Button.Group position="right">

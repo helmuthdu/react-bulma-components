@@ -7,6 +7,7 @@ describe('Field component', () => {
     const { asFragment } = render(<Component />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should have field classname with grouped classname', () => {
     const { asFragment } = render(
       <Field context="group">
@@ -18,6 +19,7 @@ describe('Field component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should have field classname with addons classname', () => {
     const { asFragment } = render(
       <Field context="addons">

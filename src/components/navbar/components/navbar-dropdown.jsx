@@ -18,17 +18,17 @@ export const NavbarDropdown = ({ className, boxed, right, children, ...props }) 
 
 NavbarDropdown.propTypes = {
   ...modifiers.propTypes,
-  style: PropTypes.object,
-  className: PropTypes.string,
-  children: PropTypes.node,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   boxed: PropTypes.bool,
-  right: PropTypes.bool
+  children: PropTypes.node,
+  className: PropTypes.string,
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  right: PropTypes.bool,
+  style: PropTypes.object
 };
 
 NavbarDropdown.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'span',
   boxed: false,
+  renderAs: 'span',
   right: false
 };

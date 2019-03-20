@@ -21,12 +21,12 @@ export const Container = ({ children, fluid, breakpoint, className, ...props }) 
 
 Container.propTypes = {
   ...modifiers.propTypes,
-  children: PropTypes.node,
-  fluid: PropTypes.bool,
-  className: PropTypes.string,
-  style: PropTypes.object,
   breakpoint: PropTypes.oneOf(breakpoints),
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+  children: PropTypes.node,
+  className: PropTypes.string,
+  fluid: PropTypes.bool,
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  style: PropTypes.object
 };
 
 Container.defaultProps = {

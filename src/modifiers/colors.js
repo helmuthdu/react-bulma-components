@@ -7,14 +7,14 @@ const colors = [...Object.values(CONSTANTS.COLORS), ...Object.values(CONSTANTS.G
 
 export default {
   propTypes: {
-    textColor: PropTypes.oneOf(colors),
-    backgroundColor: PropTypes.oneOf(colors)
+    backgroundColor: PropTypes.oneOf(colors),
+    textColor: PropTypes.oneOf(colors)
   },
   defaultProps: {},
   getClassName: props =>
     cn({
-      [`has-text-${props.textColor}`]: props.textColor,
-      [`has-background-${props.backgroundColor}`]: props.backgroundColor
+      [`has-background-${props.backgroundColor}`]: props.backgroundColor,
+      [`has-text-${props.textColor}`]: props.textColor
     }),
   clean: ({ textColor, backgroundColor, ...props }) => props
 };

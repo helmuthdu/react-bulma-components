@@ -22,13 +22,13 @@ MediaItem.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.object,
+  position: PropTypes.oneOf(['center', 'right', 'left']),
   renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  position: PropTypes.oneOf(['center', 'right', 'left'])
+  style: PropTypes.object
 };
 
 MediaItem.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'div',
-  position: 'center'
+  position: 'center',
+  renderAs: 'div'
 };

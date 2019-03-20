@@ -11,10 +11,10 @@ export const Card = ({ className, children, ...props }) => (
   </Element>
 );
 
-Card.Image = CardImage;
 Card.Content = CardContent;
-Card.Header = CardHeader;
 Card.Footer = CardFooter;
+Card.Header = CardHeader;
+Card.Image = CardImage;
 
 Card.propTypes = {
   ...modifiers.propTypes,

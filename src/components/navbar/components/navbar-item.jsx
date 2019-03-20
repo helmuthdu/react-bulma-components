@@ -14,10 +14,10 @@ export const NavbarItem = ({ className, active, children, dropdown, dropdownUp, 
       {...props}
       renderAs={as}
       className={cn('navbar-item', className, {
-        'is-active': active,
         'has-dropdown': dropdown,
-        'is-hoverable': hoverable,
-        'has-dropdown-up': dropdownUp
+        'has-dropdown-up': dropdownUp,
+        'is-active': active,
+        'is-hoverable': hoverable
       })}
     >
       {children}
@@ -27,21 +27,21 @@ export const NavbarItem = ({ className, active, children, dropdown, dropdownUp, 
 
 NavbarItem.propTypes = {
   ...modifiers.propTypes,
-  style: PropTypes.object,
-  className: PropTypes.string,
   active: PropTypes.bool,
+  children: PropTypes.node,
+  className: PropTypes.string,
   dropdown: PropTypes.bool,
   dropdownUp: PropTypes.bool,
   hoverable: PropTypes.bool,
-  children: PropTypes.node,
-  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+  renderAs: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  style: PropTypes.object
 };
 
 NavbarItem.defaultProps = {
   ...modifiers.defaultProps,
   active: false,
   dropdown: false,
-  hoverable: false,
   dropdownUp: false,
+  hoverable: false,
   renderAs: 'a'
 };

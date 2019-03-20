@@ -7,6 +7,7 @@ describe('Columns component', () => {
     const { asFragment } = render(<Component />);
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should have columns one column half width and 3 other as default', () => {
     const { asFragment } = render(
       <Columns>
@@ -18,9 +19,10 @@ describe('Columns component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should render as paragraph', () => {
     const { asFragment } = render(
-      <Columns renderAs="p">
+      <Columns renderAs="div">
         <Columns.Column renderAs="p" size="half">
           1
         </Columns.Column>
@@ -31,6 +33,7 @@ describe('Columns component', () => {
     );
     expect(asFragment()).toMatchSnapshot();
   });
+
   it('should have columns one column half width, other narrow and 2 other as default', () => {
     const { asFragment } = render(
       <Columns>

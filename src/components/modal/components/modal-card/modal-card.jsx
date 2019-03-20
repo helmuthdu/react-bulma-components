@@ -12,17 +12,17 @@ export const ModalCard = ({ className, onClose, children, ...props }) => (
   </Element>
 );
 
-ModalCard.Head = ModalCardHead;
 ModalCard.Body = ModalCardBody;
 ModalCard.Foot = ModalCardFoot;
+ModalCard.Head = ModalCardHead;
 ModalCard.Title = ModalCardTitle;
 
 ModalCard.propTypes = {
   ...modifiers.propTypes,
   children: PropTypes.node,
   className: PropTypes.string,
-  style: PropTypes.object,
-  onClose: PropTypes.func
+  onClose: PropTypes.func,
+  style: PropTypes.object
 };
 
 ModalCard.defaultProps = {
