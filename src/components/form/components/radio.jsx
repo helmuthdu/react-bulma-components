@@ -47,7 +47,7 @@ Radio.propTypes = {
   onChange: PropTypes.func.isRequired,
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   style: PropTypes.object,
-  value: PropTypes.string
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
 Radio.defaultProps = {

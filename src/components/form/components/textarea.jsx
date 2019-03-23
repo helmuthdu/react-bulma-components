@@ -47,7 +47,7 @@ Textarea.propTypes = {
   rows: PropTypes.number,
   size: PropTypes.oneOf(Object.values(CONSTANTS.SIZES)),
   style: PropTypes.object,
-  value: PropTypes.string
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
 Textarea.defaultProps = {

@@ -201,8 +201,7 @@ interface ColumnsModifierProps {
 interface ColumnsProps
   extends ElementProps,
     ColumnsModifierProps,
-    Partial<Omit<React.ComponentProps<'div'>, 'unselectable'>> {
-}
+    Partial<Omit<React.ComponentProps<'div'>, 'unselectable'>> {}
 interface Columns extends React.FunctionComponent<ColumnsProps> {
   Column: typeof Column;
 }
@@ -250,8 +249,7 @@ interface ColumnProps
   extends ElementProps,
     ColumnModifierProps,
     ColumnSizeModifierProps,
-    Partial<Omit<React.ComponentProps<'div'>, 'unselectable'>> {
-}
+    Partial<Omit<React.ComponentProps<'div'>, 'unselectable'>> {}
 declare const Column: React.FunctionComponent<ColumnProps>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/container/container.js
@@ -282,8 +280,7 @@ interface DropdownModifierProps {
 interface DropdownProps
   extends ElementProps,
     DropdownModifierProps,
-    Partial<Omit<React.ComponentProps<'div'>, 'color' | 'onChange' | 'unselectable'>> {
-}
+    Partial<Omit<React.ComponentProps<'div'>, 'color' | 'onChange' | 'unselectable'>> {}
 interface Dropdown extends React.FunctionComponent<DropdownProps> {
   Divider: typeof DropdownDivider;
   Item: typeof DropdownItem;
@@ -291,8 +288,7 @@ interface Dropdown extends React.FunctionComponent<DropdownProps> {
 declare const Dropdown: Dropdown;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/dropdown/components/divider.js
-interface DropdownDividerProps extends ElementProps, Partial<Omit<React.ComponentProps<'hr'>, 'unselectable'>> {
-}
+interface DropdownDividerProps extends ElementProps, Partial<Omit<React.ComponentProps<'hr'>, 'unselectable'>> {}
 declare const DropdownDivider: React.FunctionComponent<DropdownDividerProps>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/dropdown/components/item.js
@@ -425,7 +421,7 @@ interface InputProps
   placeholder?: string;
   readOnly?: boolean;
   type?: 'text' | 'email' | 'tel' | 'password' | 'number' | 'search' | 'color' | 'date' | 'time' | 'datetime-local';
-  value?: string;
+  value?: string | number;
 }
 declare const Input: React.FunctionComponent<InputProps>;
 
@@ -437,8 +433,7 @@ interface LabelModifierProps {
 interface LabelProps
   extends ElementProps,
     LabelModifierProps,
-    Partial<Omit<React.ComponentProps<'label'>, 'unselectable'>> {
-}
+    Partial<Omit<React.ComponentProps<'label'>, 'unselectable'>> {}
 declare const Label: React.FunctionComponent<LabelProps>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/form/components/radio.js
@@ -446,7 +441,7 @@ interface RadioProps extends ElementProps, Partial<Omit<React.ComponentProps<'in
   checked?: boolean;
   disabled?: boolean;
   name: string;
-  value?: string;
+  value?: string | number;
 }
 declare const Radio: React.FunctionComponent<RadioProps>;
 
@@ -455,7 +450,7 @@ interface SwitchProps extends ElementProps, Partial<Omit<React.ComponentProps<'i
   name: string;
   disabled?: boolean;
   checked?: boolean;
-  value?: string;
+  value?: string | number;
 }
 declare const Switch: React.FunctionComponent<SwitchProps>;
 
@@ -475,7 +470,7 @@ interface SelectProps
   readOnly?: boolean;
   rounded?: boolean;
   size?: Size;
-  value?: string | number;
+  value?: string | number | Array<any>;
 }
 declare const Select: React.FunctionComponent<SelectProps>;
 
@@ -493,7 +488,7 @@ interface TextareaProps
   placeholder?: string;
   readOnly?: boolean;
   rows?: number;
-  value?: string;
+  value?: string | number;
 }
 declare const Textarea: React.FunctionComponent<TextareaProps>;
 
@@ -549,8 +544,7 @@ interface IconModifierProps {
 interface IconProps
   extends ElementProps,
     IconModifierProps,
-    Partial<Omit<React.ComponentProps<'span'>, 'color' | 'unselectable'>> {
-}
+    Partial<Omit<React.ComponentProps<'span'>, 'color' | 'unselectable'>> {}
 declare const Icon: React.FunctionComponent<IconProps>;
 
 /*** Image ***/
@@ -590,8 +584,7 @@ interface ImageModifierProps {
 interface ImageProps
   extends ElementProps,
     ImageModifierProps,
-    Partial<Omit<React.ComponentProps<'figure'>, 'unselectable'>> {
-}
+    Partial<Omit<React.ComponentProps<'figure'>, 'unselectable'>> {}
 declare const Image: React.FunctionComponent<ImageProps>;
 
 /*** Level ***/
@@ -656,8 +649,7 @@ interface MenuListModifierProps {
 interface MenuListProps
   extends ElementProps,
     MenuListModifierProps,
-    Partial<Omit<React.ComponentProps<'ul'>, 'unselectable'>> {
-}
+    Partial<Omit<React.ComponentProps<'ul'>, 'unselectable'>> {}
 interface MenuList extends React.FunctionComponent<MenuListProps> {
   Item: typeof MenuListItem;
 }
@@ -667,8 +659,7 @@ declare const MenuList: MenuList;
 interface MenuListItemModifierProps {
   active?: boolean;
 }
-interface MenuListItemProps extends ElementProps, MenuListItemModifierProps {
-}
+interface MenuListItemProps extends ElementProps, MenuListItemModifierProps {}
 declare const MenuListItem: React.FunctionComponent<MenuListItemProps>;
 
 /*** Message ***/
@@ -716,8 +707,7 @@ interface ModalCardModifierProps {
 interface ModalCardProps
   extends ElementProps,
     ModalCardModifierProps,
-    Partial<Omit<React.ComponentProps<'div'>, 'unselectable'>> {
-}
+    Partial<Omit<React.ComponentProps<'div'>, 'unselectable'>> {}
 interface ModalCard extends React.FunctionComponent<ModalCardProps> {
   Body: typeof ModalCardBody;
   Foot: typeof ModalCardFoot;
@@ -731,8 +721,7 @@ interface ModalCardBodyProps extends ElementProps {}
 declare const ModalCardBody: React.FunctionComponent<ModalCardBodyProps>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/modal/components/card/foot.js
-interface ModalCardFootProps extends ElementProps, Partial<Omit<React.ComponentProps<'footer'>, 'unselectable'>> {
-}
+interface ModalCardFootProps extends ElementProps, Partial<Omit<React.ComponentProps<'footer'>, 'unselectable'>> {}
 declare const ModalCardFoot: React.FunctionComponent<ModalCardFootProps>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/modal/components/card/head.js
@@ -743,13 +732,11 @@ interface ModalCardHeadModifierProps {
 interface ModalCardHeadProps
   extends ElementProps,
     ModalCardHeadModifierProps,
-    Partial<Omit<React.ComponentProps<'header'>, 'unselectable'>> {
-}
+    Partial<Omit<React.ComponentProps<'header'>, 'unselectable'>> {}
 declare const ModalCardHead: React.FunctionComponent<ModalCardHeadProps>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/modal/components/card/title.js
-interface ModalCardTitleProps extends ElementProps, Partial<Omit<React.ComponentProps<'p'>, 'unselectable'>> {
-}
+interface ModalCardTitleProps extends ElementProps, Partial<Omit<React.ComponentProps<'p'>, 'unselectable'>> {}
 declare const ModalCardTitle: React.FunctionComponent<ModalCardTitleProps>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/modal/components/content.js
@@ -778,8 +765,7 @@ interface Navbar extends React.FunctionComponent<NavbarProps> {
 declare const Navbar: Navbar;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/navbar/components/brand.js
-interface NavbarBrandProps extends ElementProps, Partial<Omit<React.ComponentProps<'div'>, 'unselectable'>> {
-}
+interface NavbarBrandProps extends ElementProps, Partial<Omit<React.ComponentProps<'div'>, 'unselectable'>> {}
 declare const NavbarBrand: React.FunctionComponent<NavbarBrandProps>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/navbar/components/burger.js
@@ -796,8 +782,7 @@ interface NavbarContainerProps extends ElementProps, NavbarContainerModifierProp
 declare const NavbarContainer: React.FunctionComponent<NavbarContainerProps>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/navbar/components/divider.js
-interface NavbarDividerProps extends ElementProps, Partial<Omit<React.ComponentProps<'div'>, 'unselectable'>> {
-}
+interface NavbarDividerProps extends ElementProps, Partial<Omit<React.ComponentProps<'div'>, 'unselectable'>> {}
 declare const NavbarDivider: React.FunctionComponent<NavbarDividerProps>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/navbar/components/container.js
@@ -823,8 +808,7 @@ interface NavbarLinkProps extends ElementProps {}
 declare const NavbarLink: React.FunctionComponent<NavbarLinkProps>;
 
 // https://github.com/couds/react-bulma-components/blob/master/src/components/navbar/components/menu.js
-interface NavbarMenuProps extends ElementProps, Partial<Omit<React.ComponentProps<'div'>, 'unselectable'>> {
-}
+interface NavbarMenuProps extends ElementProps, Partial<Omit<React.ComponentProps<'div'>, 'unselectable'>> {}
 declare const NavbarMenu: React.FunctionComponent<NavbarMenuProps>;
 
 /*** Notification ***/
@@ -853,8 +837,7 @@ interface PaginationModifierProps {
 interface PaginationProps
   extends ElementProps,
     PaginationModifierProps,
-    Partial<Omit<React.ComponentProps<'nav'>, 'onChange' | 'unselectable'>> {
-}
+    Partial<Omit<React.ComponentProps<'nav'>, 'onChange' | 'unselectable'>> {}
 declare const Pagination: React.FunctionComponent<PaginationProps>;
 
 /*** Panel ***/
@@ -908,8 +891,7 @@ interface ProgressModifierProps {
 interface ProgressProps
   extends ElementProps,
     ProgressModifierProps,
-    Partial<Omit<React.ComponentProps<'progress'>, 'color' | 'max' | 'value' | 'unselectable'>> {
-}
+    Partial<Omit<React.ComponentProps<'progress'>, 'color' | 'max' | 'value' | 'unselectable'>> {}
 declare const Progress: React.FunctionComponent<ProgressProps>;
 
 /*** Section ***/
@@ -930,8 +912,7 @@ interface TableModifierProps {
 interface TableProps
   extends ElementProps,
     TableModifierProps,
-    Partial<Omit<React.ComponentProps<'table'>, 'unselectable'>> {
-}
+    Partial<Omit<React.ComponentProps<'table'>, 'unselectable'>> {}
 declare const Table: React.FunctionComponent<TableProps>;
 
 /*** Tabs ***/
@@ -976,8 +957,7 @@ interface TagGroupModifierProps {
 interface TagGroupProps
   extends ElementProps,
     TagGroupModifierProps,
-    Partial<Omit<React.ComponentProps<'span'>, 'unselectable'>> {
-}
+    Partial<Omit<React.ComponentProps<'span'>, 'unselectable'>> {}
 declare const TagGroup: React.FunctionComponent<TagGroupProps>;
 
 /*** Tile ***/
