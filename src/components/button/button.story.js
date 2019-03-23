@@ -3,8 +3,8 @@ import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Button } from '.';
 import { Box } from '../box';
-import { Button } from '../button';
 import { Section } from '../section';
 
 const colors = {

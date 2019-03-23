@@ -6,7 +6,7 @@ exports[`Container component should have helper classnames 1`] = `
     class="container is-paddingless is-block-widescreen-only is-flex-touch is-hidden-desktop"
   >
     <div
-      class="bd-notification is-success"
+      class="has-background-success"
     >
       <p>
         Default

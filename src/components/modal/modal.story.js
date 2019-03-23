@@ -1,12 +1,12 @@
 import { storiesOf } from '@storybook/react';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Modal } from '.';
 import { Button } from '../button';
 import { Content } from '../content';
 import { Image } from '../image';
 import { Level } from '../level';
 import { Media } from '../media';
-import { Modal } from '../modal';
 import { Section } from '../section';
 
 class OpenModal extends React.Component {

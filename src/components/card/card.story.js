@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { Card } from '../card';
+import { Card } from '.';
 import { Content } from '../content';
 import { Heading } from '../heading';
 import { Image } from '../image';

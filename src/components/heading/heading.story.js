@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
+import { Heading } from '.';
 import { Box } from '../box';
-import { Heading } from '../heading';
 
 storiesOf('Heading', module).add('Default', () => (
   <div>

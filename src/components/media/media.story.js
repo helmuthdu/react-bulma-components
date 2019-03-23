@@ -1,12 +1,12 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
+import { Media } from '.';
 import { Box } from '../box';
 import { Button } from '../button';
 import { Content } from '../content';
 import { Control, Field, Textarea } from '../form';
 import { Image } from '../image';
 import { Level } from '../level';
-import { Media } from '../media';
 import { Section } from '../section';
 
 const style = { background: '#e6e6e6', width: 64, height: 64 };

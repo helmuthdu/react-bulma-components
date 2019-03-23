@@ -1,7 +1,7 @@
 import '@mdi/font/css/materialdesignicons.css';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { Icon } from '../icon';
+import { Icon } from '.';
 
 storiesOf('Icon', module)
   .add('Default', () => (

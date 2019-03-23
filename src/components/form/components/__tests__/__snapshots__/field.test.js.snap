@@ -6,7 +6,7 @@ exports[`Field component should have field classname with addons classname 1`] =
     class="field has-addons"
   >
     <div
-      class="bd-notification is-success"
+      class="has-background-success"
     >
       <p>
         Default
@@ -25,7 +25,7 @@ exports[`Field component should have field classname with grouped classname 1`] 
     class="field is-grouped"
   >
     <div
-      class="bd-notification is-success"
+      class="has-background-success"
     >
       <p>
         Default

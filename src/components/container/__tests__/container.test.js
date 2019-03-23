@@ -31,7 +31,7 @@ describe('Container component', () => {
           }
         }}
       >
-        <div className="bd-notification is-success">
+        <div className="has-background-success">
           <p>Default</p>
           <p>Container</p>
         </div>

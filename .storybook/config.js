@@ -6,6 +6,8 @@ import { themes } from '@storybook/theming';
 import React from 'react';
 import extraViewports from './extra-viewports.json';
 
+import 'index.sass';
+
 addParameters({
   options: {
     name: 'React Bulma Components',

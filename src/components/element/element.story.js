@@ -1,7 +1,7 @@
 import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { Element } from '../element';
+import { Element } from '.';
 
 storiesOf('Element', module).add('Default', () => (
   <Element

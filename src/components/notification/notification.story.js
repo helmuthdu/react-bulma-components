@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
+import { Notification } from '.';
 import { Button } from '../button';
-import { Notification } from '../notification';
 import { Section } from '../section';
 
 storiesOf('Notification', module).add('Default', () => (

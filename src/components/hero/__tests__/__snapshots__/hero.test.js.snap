@@ -169,7 +169,7 @@ exports[`Hero component should render Hero with hero head, body and footer 1`] =
       class="hero-head"
     >
       <div
-        class="bd-notification is-info"
+        class="has-background-info"
       >
         Header
       </div>
@@ -183,7 +183,7 @@ exports[`Hero component should render Hero with hero head, body and footer 1`] =
       class="hero-foot"
     >
       <div
-        class="bd-notification is-danger"
+        class="has-background-danger"
       >
         Footer
       </div>

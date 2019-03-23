@@ -28,11 +28,11 @@ describe('Hero component', () => {
     const { asFragment } = render(
       <Hero size="fullheight" color="primary">
         <Hero.Head renderAs="header">
-          <div className="bd-notification is-info">Header</div>
+          <div className="has-background-info">Header</div>
         </Hero.Head>
         <Hero.Body>Body</Hero.Body>
         <Hero.Footer renderAs="footer">
-          <div className="bd-notification is-danger">Footer</div>
+          <div className="has-background-danger">Footer</div>
         </Hero.Footer>
       </Hero>
     );

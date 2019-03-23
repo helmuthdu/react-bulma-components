@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { Progress } from '../progress';
+import { Progress } from '.';
 
 storiesOf('Progress', module)
   .add('Default', () => (

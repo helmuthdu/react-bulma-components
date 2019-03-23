@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
+import { Footer } from '.';
 import { Container } from '../container';
 import { Content } from '../content';
-import { Footer } from '../footer';
 import { Hero } from '../hero';
 
 storiesOf('Footer', module).add('Default', () => (

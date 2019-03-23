@@ -1,24 +1,39 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
+import { Columns } from '.';
 import { Box } from '../box';
-import { Columns } from '../columns';
 import { Heading } from '../heading';
 import CONSTANTS from './constants';
+
+const style = {
+  borderRadius: '3px',
+  padding: '1rem 0',
+  position: 'relative',
+  textAlign: 'center'
+};
 
 storiesOf('Columns', module)
   .add('Basic', () => (
     <Columns>
       <Columns.Column>
-        <p className="bd-notification is-success">First Column</p>
+        <div className="has-background-grey-lighter" style={style}>
+          First Column
+        </div>
       </Columns.Column>
       <Columns.Column>
-        <p className="bd-notification is-info">Second Column</p>
+        <div className="has-background-grey-lighter" style={style}>
+          Second Column
+        </div>
       </Columns.Column>
       <Columns.Column>
-        <p className="bd-notification is-warning">Third Column</p>
+        <div className="has-background-grey-lighter" style={style}>
+          Third Column
+        </div>
       </Columns.Column>
       <Columns.Column>
-        <p className="bd-notification is-warning">Fourth Column</p>
+        <div className="has-background-grey-lighter" style={style}>
+          Fourth Column
+        </div>
       </Columns.Column>
     </Columns>
   ))
@@ -27,10 +42,14 @@ storiesOf('Columns', module)
       {Object.keys(CONSTANTS.SIZES).map(size => (
         <Columns key={size}>
           <Columns.Column size={CONSTANTS.SIZES[size]}>
-            <p className="bd-notification is-success">{CONSTANTS.SIZES[size]}</p>
+            <div className="has-background-grey-lighter" style={style}>
+              {CONSTANTS.SIZES[size]}
+            </div>
           </Columns.Column>
           <Columns.Column>
-            <p className="bd-notification is-info">Auto</p>
+            <div className="has-background-grey-lighter" style={style}>
+              Auto
+            </div>
           </Columns.Column>
         </Columns>
       ))}
@@ -40,263 +59,419 @@ storiesOf('Columns', module)
     <div>
       <Columns>
         <Columns.Column size={1}>
-          <p className="bd-notification is-success">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-info">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-warning">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-danger">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-white">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-light">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-dark">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-black">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-dark">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-light">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-white">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-danger">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
       </Columns>
 
       <Columns>
         <Columns.Column size={2}>
-          <p className="bd-notification is-success">size-2</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-2
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-warning">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-danger">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-white">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-light">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-dark">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-black">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-dark">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-light">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-white">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-danger">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
       </Columns>
 
       <Columns>
         <Columns.Column size={3}>
-          <p className="bd-notification is-success">size-3</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-3
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-danger">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-white">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-light">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-dark">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-black">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-dark">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-light">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-white">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-danger">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
       </Columns>
 
       <Columns>
         <Columns.Column size={4}>
-          <p className="bd-notification is-success">size-4</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-4
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-white">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-light">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-dark">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-black">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-dark">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-light">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-white">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-danger">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
       </Columns>
       <Columns>
         <Columns.Column size={5}>
-          <p className="bd-notification is-success">size-5</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-5
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-light">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-dark">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-black">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-dark">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-light">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-white">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-danger">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
       </Columns>
       <Columns>
         <Columns.Column size={6}>
-          <p className="bd-notification is-success">size-6</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-6
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-dark">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-black">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-dark">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-light">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-white">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-danger">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
       </Columns>
       <Columns>
         <Columns.Column size={7}>
-          <p className="bd-notification is-success">size-7</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-7
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-black">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-dark">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-light">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-white">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-danger">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
       </Columns>
       <Columns>
         <Columns.Column size={8}>
-          <p className="bd-notification is-success">size-8</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-8
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-dark">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-light">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-white">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-danger">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
       </Columns>
       <Columns>
         <Columns.Column size={9}>
-          <p className="bd-notification is-success">size-9</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-9
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-light">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-white">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-danger">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
       </Columns>
       <Columns>
         <Columns.Column size={10}>
-          <p className="bd-notification is-success">size-10</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-10
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-white">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-danger">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
       </Columns>
       <Columns>
         <Columns.Column size={11}>
-          <p className="bd-notification is-success">size-11</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-11
+          </div>
         </Columns.Column>
         <Columns.Column size={1}>
-          <p className="bd-notification is-danger">size-1</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-1
+          </div>
         </Columns.Column>
       </Columns>
       <Columns>
         <Columns.Column size={12}>
-          <p className="bd-notification is-success">size-12</p>
+          <div className="has-background-grey-lighter" style={style}>
+            size-12
+          </div>
         </Columns.Column>
       </Columns>
     </div>
@@ -305,30 +480,30 @@ storiesOf('Columns', module)
     <div>
       <Columns mobile>
         <Columns.Column size="half" offset="one-quarter">
-          <p className="bd-notification is-info">
+          <div className="has-background-grey-lighter" style={style}>
             size half
             <br />
             offset one-quarter
-          </p>
+          </div>
         </Columns.Column>
       </Columns>
 
       <Columns mobile>
         <Columns.Column size={4} offset={8}>
-          <p className="bd-notification is-info">
+          <div className="has-background-grey-lighter" style={style}>
             size 4<br />
             offset 8
-          </p>
+          </div>
         </Columns.Column>
       </Columns>
 
       <Columns mobile>
         <Columns.Column size={11} offset={1}>
-          <p className="bd-notification is-info">
+          <div className="has-background-grey-lighter" style={style}>
             size 11
             <br />
             offset 1
-          </p>
+          </div>
         </Columns.Column>
       </Columns>
     </div>
@@ -337,22 +512,14 @@ storiesOf('Columns', module)
     <Columns>
       <Columns.Column narrow>
         <Box style={{ width: 200 }}>
-          <Heading size={5} renderAs="p">
-            Narrow column
-          </Heading>
-          <Heading subtitle renderAs="p">
-            This column is only 200px wide.
-          </Heading>
+          <Heading size={5}>Narrow column</Heading>
+          <Heading subtitle>This column is only 200px wide.</Heading>
         </Box>
       </Columns.Column>
       <Columns.Column>
         <Box>
-          <Heading size={5} renderAs="p">
-            Flexible column
-          </Heading>
-          <Heading subtitle renderAs="p">
-            This column will take up the remaining space available.
-          </Heading>
+          <Heading size={5}>Flexible column</Heading>
+          <Heading subtitle>This column will take up the remaining space available.</Heading>
         </Box>
       </Columns.Column>
     </Columns>
@@ -360,59 +527,77 @@ storiesOf('Columns', module)
   .add('Responsive', () => (
     <div>
       <Box>
-        <Heading size={5} renderAs="p">
-          Mobile
-        </Heading>
+        <Heading size={5}>Mobile</Heading>
         <Columns breakpoint="mobile">
           <Columns.Column>
-            <p className="bd-notification is-success">First Column</p>
+            <div className="has-background-grey-lighter" style={style}>
+              First Column
+            </div>
           </Columns.Column>
           <Columns.Column>
-            <p className="bd-notification is-info">Second Column</p>
+            <div className="has-background-grey-lighter" style={style}>
+              Second Column
+            </div>
           </Columns.Column>
           <Columns.Column>
-            <p className="bd-notification is-warning">Third Column</p>
+            <div className="has-background-grey-lighter" style={style}>
+              Third Column
+            </div>
           </Columns.Column>
           <Columns.Column>
-            <p className="bd-notification is-warning">Fourth Column</p>
+            <div className="has-background-grey-lighter" style={style}>
+              Fourth Column
+            </div>
           </Columns.Column>
         </Columns>
       </Box>
       <Box>
-        <Heading renderAs="p" size={5}>
-          Tablet
-        </Heading>
+        <Heading size={5}>Tablet</Heading>
         <Columns breakpoint="tablet">
           <Columns.Column>
-            <p className="bd-notification is-success">First Column</p>
+            <div className="has-background-grey-lighter" style={style}>
+              First Column
+            </div>
           </Columns.Column>
           <Columns.Column>
-            <p className="bd-notification is-info">Second Column</p>
+            <div className="has-background-grey-lighter" style={style}>
+              Second Column
+            </div>
           </Columns.Column>
           <Columns.Column>
-            <p className="bd-notification is-warning">Third Column</p>
+            <div className="has-background-grey-lighter" style={style}>
+              Third Column
+            </div>
           </Columns.Column>
           <Columns.Column>
-            <p className="bd-notification is-warning">Fourth Column</p>
+            <div className="has-background-grey-lighter" style={style}>
+              Fourth Column
+            </div>
           </Columns.Column>
         </Columns>
       </Box>
       <Box>
-        <Heading renderAs="p" size={5}>
-          Desktop
-        </Heading>
+        <Heading size={5}>Desktop</Heading>
         <Columns breakpoint="desktop">
           <Columns.Column>
-            <p className="bd-notification is-success">First Column</p>
+            <div className="has-background-grey-lighter" style={style}>
+              First Column
+            </div>
           </Columns.Column>
           <Columns.Column>
-            <p className="bd-notification is-info">Second Column</p>
+            <div className="has-background-grey-lighter" style={style}>
+              Second Column
+            </div>
           </Columns.Column>
           <Columns.Column>
-            <p className="bd-notification is-warning">Third Column</p>
+            <div className="has-background-grey-lighter" style={style}>
+              Third Column
+            </div>
           </Columns.Column>
           <Columns.Column>
-            <p className="bd-notification is-warning">Fourth Column</p>
+            <div className="has-background-grey-lighter" style={style}>
+              Fourth Column
+            </div>
           </Columns.Column>
         </Columns>
       </Box>
@@ -437,46 +622,64 @@ storiesOf('Columns', module)
           size: 'one-quarter'
         }}
       >
-        <p className="bd-notification is-success">
+        <div className="has-background-grey-lighter" style={style}>
           is-three-quarters-mobile
           <br />
           is-two-thirds-tablet
           <br />
           is-half-desktop is-one-third-widescreen is-one-quarter-fullhd
-        </p>
+        </div>
       </Columns.Column>
       <Columns.Column className="column">
-        <p className="bd-notification is-info">1</p>
+        <div className="has-background-grey-lighter" style={style}>
+          1
+        </div>
       </Columns.Column>
       <Columns.Column className="column">
-        <p className="bd-notification is-warning">1</p>
+        <div className="has-background-grey-lighter" style={style}>
+          1
+        </div>
       </Columns.Column>
     </Columns>
   ))
   .add('Nested', () => (
     <Columns>
       <Columns.Column size="half">
-        <p className="bd-notification is-success">First Column</p>
+        <div className="has-background-grey-lighter" style={style}>
+          First Column
+        </div>
         <Columns>
           <Columns.Column size="one-third">
-            <p className="bd-notification is-info">First Nested Column</p>
+            <div className="has-background-grey-lighter" style={style}>
+              First Nested Column
+            </div>
           </Columns.Column>
           <Columns.Column>
-            <p className="bd-notification is-warning">Second Nested Column (auto)</p>
+            <div className="has-background-grey-lighter" style={style}>
+              Second Nested Column (auto)
+            </div>
           </Columns.Column>
         </Columns>
       </Columns.Column>
       <Columns.Column size="half">
-        <p className="bd-notification is-success">Second Column</p>
+        <div className="has-background-grey-lighter" style={style}>
+          Second Column
+        </div>
         <Columns>
           <Columns.Column size="half">
-            <p className="bd-notification is-info">First Nested Column (Half)</p>
+            <div className="has-background-grey-lighter" style={style}>
+              First Nested Column (Half)
+            </div>
           </Columns.Column>
           <Columns.Column size="one-quarter">
-            <p className="bd-notification is-warning">Second Nested Column (one-quarter)</p>
+            <div className="has-background-grey-lighter" style={style}>
+              Second Nested Column (one-quarter)
+            </div>
           </Columns.Column>
           <Columns.Column>
-            <p className="bd-notification is-warning">Third Nested Column (auto)</p>
+            <div className="has-background-grey-lighter" style={style}>
+              Third Nested Column (auto)
+            </div>
           </Columns.Column>
         </Columns>
       </Columns.Column>
@@ -485,13 +688,22 @@ storiesOf('Columns', module)
   .add('gapless columns', () => (
     <Columns gapless>
       <Columns.Column>
-        <p className="bd-notification is-success"> First Column</p>
+        <div className="has-background-grey-lighter" style={style}>
+          {' '}
+          First Column
+        </div>
       </Columns.Column>
       <Columns.Column>
-        <p className="bd-notification is-info"> Middle Column</p>
+        <div className="has-background-grey-lighter" style={style}>
+          {' '}
+          Middle Column
+        </div>
       </Columns.Column>
       <Columns.Column>
-        <p className="bd-notification is-warning"> Last Column</p>
+        <div className="has-background-grey-lighter" style={style}>
+          {' '}
+          Last Column
+        </div>
       </Columns.Column>
     </Columns>
   ));

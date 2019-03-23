@@ -1,12 +1,12 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
+import { Level } from '.';
 import { Box } from '../box';
 import { Button } from '../button';
 import { Container } from '../container';
 import { Control, Field, Input } from '../form';
 import { Heading } from '../heading';
 import { Hero } from '../hero';
-import { Level } from '../level';
 import { Section } from '../section';
 
 const style = { textAlign: 'center' };

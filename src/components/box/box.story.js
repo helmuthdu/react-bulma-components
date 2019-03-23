@@ -1,7 +1,7 @@
 import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { Box } from '../box';
+import { Box } from '.';
 import { Content } from '../content';
 import { Image } from '../image';
 import { Media } from '../media';
