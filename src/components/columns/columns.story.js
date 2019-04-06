@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { Columns } from '.';
-import { Box } from '../box';
-import { Heading } from '../heading';
+import { Box } from '../elements/box';
+import { Heading } from '../elements/heading';
 import CONSTANTS from './constants';
 
 const style = {

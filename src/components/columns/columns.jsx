@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CONSTANTS from '../../constants';
 import modifiers from '../../modifiers';
-import { Element } from '../element';
+import { Element } from '../layout/element';
 import { Column } from './components/column';
 import COLUMN_CONSTANTS from './constants';
 
