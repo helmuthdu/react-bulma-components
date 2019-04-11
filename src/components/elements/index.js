@@ -1,6 +1,7 @@
 export * from './box';
 export * from './button';
 export * from './content';
+export * from './element';
 export * from './heading';
 export * from './icon';
 export * from './image';

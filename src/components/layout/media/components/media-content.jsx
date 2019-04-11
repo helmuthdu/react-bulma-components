@@ -2,7 +2,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../../modifiers';
-import { Element } from '../../element';
+import { Element } from '../../../elements';
 
 export const MediaContent = ({ children, className, ...props }) => (
   <Element {...props} className={cn(className, 'content')}>

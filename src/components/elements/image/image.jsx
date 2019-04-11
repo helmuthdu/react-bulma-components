@@ -2,7 +2,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import modifiers from '../../../modifiers';
-import { Element } from '../../layout/element';
+import { Element } from '../element';
 import CONSTANTS from './constants';
 
 export const Image = ({ className, alt, size, fallback, rounded, src, ...props }) => {

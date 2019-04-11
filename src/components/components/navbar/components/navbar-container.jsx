@@ -2,7 +2,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../../modifiers';
-import { Element } from '../../../layout/element';
+import { Element } from '../../../elements';
 
 export const NavbarContainer = ({ className, children, position, ...props }) => (
   <Element

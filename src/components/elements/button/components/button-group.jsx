@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CONSTANTS from '../../../../constants';
 import modifiers from '../../../../modifiers';
-import { Element } from '../../../layout/element';
+import { Element } from '../../element';
 
 export const ButtonGroup = ({ children, className, hasAddons, position, size, renderAs, ...props }) => (
   <Element

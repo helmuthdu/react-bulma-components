@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
-import { Element } from '../element';
+import { Element } from '../../elements';
 import { LevelItem, LevelSide } from './components';
 
 const breakpoints = Object.values(CONSTANTS.BREAKPOINTS);

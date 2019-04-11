@@ -2,7 +2,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../modifiers';
-import { Element } from '../../layout/element';
+import { Element } from '../../elements';
 import CONSTANTS from '../constants';
 
 const sizes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].concat(Object.values(CONSTANTS.SIZES));
