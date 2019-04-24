@@ -2,7 +2,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../../modifiers';
-import { Element } from '../../../layout/element';
+import { Element } from '../../../elements';
 import { FieldBody, FieldLabel } from './components';
 
 export const Field = ({ className, align, multiline, horizontal, context, ...props }) => {

@@ -4,7 +4,7 @@ import React from 'react';
 import ReactPaginate from 'react-paginate';
 import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
-import { Element } from '../../layout/element';
+import { Element } from '../../elements';
 
 export const Pagination = ({
   className,

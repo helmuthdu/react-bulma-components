@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
-import { Element } from '../../layout/element';
+import { Element } from '../../elements';
 import { Tab } from './components/tab';
 
 export const Tabs = ({ children, className, align, size, type, fullwidth, ...props }) => (

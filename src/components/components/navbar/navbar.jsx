@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
-import { Element } from '../../layout/element';
+import { Element } from '../../elements';
 import {
   NavbarBrand,
   NavbarBurger,

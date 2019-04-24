@@ -2,8 +2,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../../../../modifiers';
-import { Button } from '../../../../../elements/button';
-import { Element } from '../../../../../layout/element';
+import { Button, Element } from '../../../../../elements';
 
 export const ModalCardHead = ({ children, className, onClose, ...props }) => (
   <Element {...props} className={cn('modal-card-head', className)}>

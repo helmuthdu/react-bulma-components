@@ -2,7 +2,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import modifiers from '../../../../../modifiers';
-import { Element } from '../../../../layout/element';
+import { Element } from '../../../../elements';
 import { MenuListItem } from './components/menu-list-item';
 
 export const MenuList = ({ className, title, ...props }) => (

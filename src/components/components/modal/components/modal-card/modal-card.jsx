@@ -2,7 +2,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../../../modifiers';
-import { Element } from '../../../../layout/element';
+import { Element } from '../../../../elements';
 import { ModalCardBody, ModalCardFoot, ModalCardHead, ModalCardTitle } from './components';
 
 // eslint-disable-next-line no-unused-vars

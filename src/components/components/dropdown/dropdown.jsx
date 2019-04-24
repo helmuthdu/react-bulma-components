@@ -26,7 +26,6 @@ export const Dropdown = ({ className, children, value, color, right, up, label, 
   let htmlElement;
 
   const close = evt => {
-    // IDK yet how to test using the ref in enzime
     if (hoverable || (evt && htmlElement.contains(evt.target))) {
       return;
     }

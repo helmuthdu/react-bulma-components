@@ -2,7 +2,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../../modifiers';
-import { Element } from '../../../layout/element';
+import { Element } from '../../../elements';
 import { ShowContext } from '../context';
 
 export const NavbarMenu = ({ className, children, ...props }) => (

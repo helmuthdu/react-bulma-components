@@ -1,8 +1,7 @@
 import cn from 'classnames';
 import React from 'react';
 import modifiers from '../../../../modifiers';
-import { Element } from '../../../layout/element';
-import { Image } from '../../../elements/image';
+import { Element, Image } from '../../../elements';
 
 export const CardImage = ({ className, ...props }) => (
   <Element className={cn('card-image', className)}>

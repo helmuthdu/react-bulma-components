@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
-import { Element } from '../../layout/element';
+import { Element } from '../element';
 import { Tags } from './components/tags';
 
 const colors = Object.values(CONSTANTS.COLORS);

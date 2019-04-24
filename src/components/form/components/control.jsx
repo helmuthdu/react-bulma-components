@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CONSTANTS from '../../../constants';
 import modifiers from '../../../modifiers';
-import { Element } from '../../layout/element';
+import { Element } from '../../elements';
 
 export const Control = ({ children, className, fullwidth, iconLeft, iconRight, loading, size, ...props }) => (
   <Element

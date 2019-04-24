@@ -2,7 +2,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../../../../modifiers';
-import { Element } from '../../../../../layout/element';
+import { Element } from '../../../../../elements';
 import { MenuList } from '../menu-list';
 
 export const MenuListItem = ({ children, active, className, ...props }) => {

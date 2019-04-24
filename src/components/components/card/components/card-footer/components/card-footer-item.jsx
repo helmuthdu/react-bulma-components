@@ -2,7 +2,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import modifiers from '../../../../../../modifiers';
-import { Element } from '../../../../../layout/element';
+import { Element } from '../../../../../elements';
 
 export const CardFooterItem = ({ className, ...props }) => (
   <Element {...props} className={cn('card-footer-item', className)} />
