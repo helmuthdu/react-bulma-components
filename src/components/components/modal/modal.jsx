@@ -15,6 +15,12 @@ export const Modal = props => {
   const portalElement = document.createElement('div');
   portalElement.setAttribute('class', 'modal-container');
 
+  const handleKeydown = e => {
+    if (e.keyCode === KEYCODES.ESCAPE && props.show) {
+      props.onClose();
+    }
+  };
+
   useEffect(() => {
     document.body.appendChild(portalElement);
 
@@ -33,12 +39,6 @@ export const Modal = props => {
   if (!show) {
     return null;
   }
-
-  const handleKeydown = e => {
-    if (e.keyCode === KEYCODES.ESCAPE && props.show) {
-      props.onClose();
-    }
-  };
 
   let isCard;
 

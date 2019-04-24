@@ -1,11 +1,11 @@
 module.exports = {
-  setupFilesAfterEnv: ['./__tests__/setup.js'],
-  rootDir: 'src',
-  testMatch: ['**/*.test.js'],
-  coverageDirectory: '<rootDir>/../.coverage',
-  collectCoverageFrom: ['**/*.js', '!**/node_modules/**', '!**/*.story.js', '!**/*.test.js'],
+  setupFiles: ['react-app-polyfill/jsdom'],
+  setupFilesAfterEnv: ['<rootDir>/src/setupTests.js'],
+  testMatch: ['<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}', '<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}'],
+  testEnvironment: 'jest-environment-jsdom-fourteen',
+  coverageDirectory: '<rootDir>/.coverage',
+  collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/**/*.story.js'],
   coverageReporters: ['lcov', 'text', 'text-summary'],
-  moduleDirectories: ['node_modules', '<rootDir>'],
   coverageThreshold: {
     global: {
       branches: 90,
@@ -15,11 +15,11 @@ module.exports = {
     }
   },
   transform: {
-    '^.+\\.jsx?$': 'babel-jest'
+    '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest'
   },
+  transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$', '^.+\\.module\\.(css|sass|scss)$'],
   watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
   moduleNameMapper: {
-    '\\.(css|less|s(c|a)ss)$': '<rootDir>/../__mocks__/style.js',
-    'services(.*)$': '<rootDir>/services$1'
+    '^.+\\.(css|less|s(c|a)ss)$': 'identity-obj-proxy'
   }
 };
