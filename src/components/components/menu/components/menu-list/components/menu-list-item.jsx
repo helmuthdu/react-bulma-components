@@ -6,17 +6,11 @@ import { Element } from '../../../../../layout/element';
 import { MenuList } from '../menu-list';
 
 export const MenuListItem = ({ children, active, className, ...props }) => {
-  if (typeof children === 'string') {
-    return (
-      <li>
-        <Element className={cn(className, { 'is-active': active })} {...props}>
-          {children}
-        </Element>
-      </li>
-    );
-  }
-
-  if (React.Children.only(children).type === MenuList) {
+  if (
+    typeof children !== 'string' &&
+    React.Children.toArray(children).length === 1 &&
+    React.Children.only(children).type === MenuList
+  ) {
     const child = React.Children.only(children);
     return (
       <li>
@@ -28,7 +22,13 @@ export const MenuListItem = ({ children, active, className, ...props }) => {
     );
   }
 
-  return <li>{children}</li>;
+  return (
+    <li>
+      <Element className={cn(className, { 'is-active': active })} {...props}>
+        {children}
+      </Element>
+    </li>
+  );
 };
 
 MenuListItem.propTypes = {

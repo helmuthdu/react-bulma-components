@@ -46,7 +46,9 @@ exports[`Menu component should concat Menu.List to display as submenus 1`] = `
           Dashboard
         </a>
       </li>
-      <li />
+      <li>
+        <a />
+      </li>
       <li>
         <a
           class="is-active"
@@ -152,11 +154,14 @@ exports[`Menu component should render custom item child 1`] = `
       class="menu-list"
     >
       <li>
-        <p>
-          Custom children 1
-        </p>
+        <a>
+          <p>
+            Custom children 1
+          </p>
+        </a>
       </li>
       <li>
+        <a />
         <a>
           Custom children 2
         </a>
