@@ -1,5 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Input file component should pass file attributes 1`] = `
+<DocumentFragment>
+  <div
+    class="file"
+  >
+    <label
+      class="file-label"
+    >
+      <input
+        accept="image/*"
+        capture="source"
+        class="file-input"
+        data-testid="file-input"
+        multiple=""
+        type="file"
+        value=""
+      />
+      <span
+        class="file-cta"
+      >
+        <span
+          class="file-label"
+        >
+          Choose a file...
+        </span>
+      </span>
+    </label>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Input file component should render 1`] = `
 <DocumentFragment>
   <div

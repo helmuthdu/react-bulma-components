@@ -45,4 +45,14 @@ describe('Input file component', () => {
     expect(container.querySelector('[data-testid="file-name"]')).toBeNull();
     expect(onChange).toHaveBeenCalled();
   });
+
+  it('should pass file attributes', () => {
+    const props = {
+      accept: 'image/*',
+      capture: 'source',
+      multiple: true
+    };
+    const { asFragment } = render(<InputFile onChange={() => {}} {...props} />);
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

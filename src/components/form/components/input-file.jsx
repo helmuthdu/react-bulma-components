@@ -8,13 +8,16 @@ import { Element } from '../../elements';
 const colors = Object.values(CONSTANTS.COLORS);
 
 export const InputFile = ({
+  accept,
   boxed,
+  capture,
   className,
   color,
   fullwidth,
   hasName,
   icon,
   label,
+  multiple,
   name,
   onChange,
   right,
@@ -47,8 +50,11 @@ export const InputFile = ({
     >
       <label className="file-label">
         <input
+          accept={accept}
+          capture={capture}
           className="file-input"
           data-testid="file-input"
+          multiple={multiple}
           name={name}
           onChange={handleSelect}
           type="file"
@@ -70,13 +76,16 @@ export const InputFile = ({
 
 InputFile.propTypes = {
   ...modifiers.propTypes,
+  accept: PropTypes.string,
   boxed: PropTypes.bool,
+  capture: PropTypes.string,
   className: PropTypes.string,
   color: PropTypes.oneOf(colors),
   fullwidth: PropTypes.bool,
   hasName: PropTypes.bool,
   icon: PropTypes.element,
   label: PropTypes.string,
+  multiple: PropTypes.bool,
   name: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   right: PropTypes.bool,
