@@ -1,11 +1,11 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { Level } from '.';
-import { Box } from '../box';
-import { Button } from '../button';
-import { Container } from '../layout/container';
-import { Control, Field, Input } from '../form';
-import { Heading } from '../heading';
+import { Box } from '../../elements/box';
+import { Button } from '../../elements/button';
+import { Container } from '../../layout/container';
+import { Control, Field, Input } from '../../form';
+import { Heading } from '../../elements/heading';
 import { Hero } from '../hero';
 import { Section } from '../section';
 
