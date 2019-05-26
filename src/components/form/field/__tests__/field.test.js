@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-testing-library';
-import { Field } from '../field';
+import { Field } from '../index';
 
 describe('Field component', () => {
   it.each([[Field], [Field.Label], [Field.Body]])('should render', Component => {

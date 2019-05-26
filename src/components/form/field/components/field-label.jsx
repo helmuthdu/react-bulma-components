@@ -1,8 +1,8 @@
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import modifiers from '../../../../../modifiers';
-import { Element } from '../../../../elements';
+import modifiers from '../../../../modifiers';
+import { Element } from '../../../elements';
 
 export const FieldLabel = ({ children, className, size, ...props }) => (
   <Element
