@@ -100,7 +100,7 @@ Dropdown.propTypes = {
   className: PropTypes.string,
   color: PropTypes.oneOf(colors),
   hoverable: PropTypes.bool,
-  label: PropTypes.string,
+  label: PropTypes.node,
   onChange: PropTypes.func,
   right: PropTypes.bool,
   style: PropTypes.object,
