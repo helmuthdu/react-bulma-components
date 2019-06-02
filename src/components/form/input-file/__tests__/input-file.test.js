@@ -1,6 +1,6 @@
 import { JSDOM } from 'jsdom';
 import React from 'react';
-import { fireEvent, render } from 'react-testing-library';
+import { fireEvent, render } from '@testing-library/react';
 
 import { InputFile } from '../input-file';
 

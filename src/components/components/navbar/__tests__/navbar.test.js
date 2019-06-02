@@ -1,7 +1,7 @@
 import { JSDOM } from 'jsdom';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 import { getHtmlClasses, Navbar } from '..';
 
 describe('Navbar component', () => {
