@@ -23,7 +23,7 @@ Currently there are two ways to use this library depending of your needs and con
 This configuration will allow you to start fast but with one drawback, by default will include all components (no treeshaking) and will use the default variables of Bulma.
 
 ```javascript
-import React from 'react';
+import * as React from 'react';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Button } from 'react-bulma-components';
 
@@ -46,7 +46,7 @@ In your main scss/sass file you will need to include the generic css classes bul
 You can start using the library like this
 
 ```javascript
-import React from 'react';
+import * as React from 'react';
 import { Button } from '@/components/button';
 
 export default () => <Button color="primary">My Bulma button</Button>;

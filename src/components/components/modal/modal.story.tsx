@@ -1,0 +1,112 @@
+import { storiesOf } from '@storybook/react';
+import PropTypes from 'prop-types';
+import * as React from 'react';
+import { Modal } from '.';
+import { Button } from '../../elements/button';
+import { Content } from '../../elements/content';
+import { Image } from '../../elements/image';
+import { Level } from '../../layout/level';
+import { LevelSide } from '../../layout/level/components';
+import { Media } from '../../layout/media';
+import { MediaItem } from '../../layout/media/components';
+import { Section } from '../../layout/section';
+import { ModalCard, ModalContent } from './components';
+import { ModalCardBody, ModalCardFoot, ModalCardHead, ModalCardTitle } from './components/modal-card/components';
+
+class OpenModal extends React.Component {
+  static propTypes = {
+    modal: PropTypes.object,
+    children: PropTypes.node.isRequired,
+    show: PropTypes.bool
+  };
+
+  static defaultProps = {
+    modal: {},
+    show: false
+  };
+
+  state = {
+    show: (this.props as any).show
+  };
+
+  open = () => this.setState({ show: true });
+  close = () => this.setState({ show: false });
+
+  render() {
+    return (
+      <div>
+        <Button onClick={this.open}>Open</Button>
+        <Modal show={this.state.show} onClose={this.close} {...(this.props as any).modal}>
+          {this.props.children}
+        </Modal>
+      </div>
+    );
+  }
+}
+
+storiesOf('Modal', module)
+  .add('Default', () => (
+    <OpenModal modal={{ closeOnEsc: false }}>
+      <ModalContent>
+        <Section style={{ backgroundColor: 'white' }}>
+          Click on the {'"X"'} button on the top-right button to close the Modal (pass closeOnEsc=false to the modal to
+          avoid closing it with the keyboard)
+        </Section>
+      </ModalContent>
+    </OpenModal>
+  ))
+  .add('Close with keyboard', () => (
+    <OpenModal show modal={{ showClose: false }}>
+      <ModalContent>
+        <Section style={{ backgroundColor: 'white' }}>
+          Press ESC on your keyboard to close this modal, Pass showClose: false if you want to hide the close button
+        </Section>
+      </ModalContent>
+    </OpenModal>
+  ))
+  .add('Close on click outside', () => (
+    <OpenModal show modal={{ closeOnBlur: true, showClose: false }}>
+      <ModalContent>
+        <Section style={{ backgroundColor: 'white' }}>
+          Pass closeOnBlur: true to enable to close the Modal when the user click outside the main modal container
+        </Section>
+      </ModalContent>
+    </OpenModal>
+  ))
+  .add('Modal Card', () => (
+    <OpenModal modal={{ closeOnBlur: true }}>
+      <ModalCard>
+        <ModalCardHead onClose={() => {}}>
+          <ModalCardTitle>Title</ModalCardTitle>
+        </ModalCardHead>
+        <ModalCardBody>
+          <Media>
+            <MediaItem renderAs="figure" position="left">
+              <Image size={64} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
+            </MediaItem>
+            <MediaItem>
+              <Content>
+                <p>
+                  <strong>John Smith</strong>
+                  <small>@johnsmith</small>
+                  <small>31m</small>
+                  <br />
+                  If the children of the Modal is a card, the close button will be on the Card Head instead than the
+                  top-right corner You can also pass showClose = false to Card.Head to hide the close button
+                </p>
+              </Content>
+              <Level breakpoint="mobile">
+                <LevelSide align="left">
+                  <Button link>Like</Button>
+                  <Button link>Share</Button>
+                </LevelSide>
+              </Level>
+            </MediaItem>
+          </Media>
+        </ModalCardBody>
+        <ModalCardFoot style={{ alignItems: 'center', justifyContent: 'center' }}>
+          <p>Lorem Ipsum...</p>
+        </ModalCardFoot>
+      </ModalCard>
+    </OpenModal>
+  ));

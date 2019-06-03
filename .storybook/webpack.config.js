@@ -15,6 +15,14 @@ module.exports = ({ config }) => {
           enforce: 'pre',
         },
         {
+          test: /\.(ts|tsx)$/,
+          use: [
+            {
+              loader: require.resolve('awesome-typescript-loader'),
+            },
+          ],
+        },
+        {
           test: /\.s[ca]ss$/,
           loader: 'style-loader!css-loader!resolve-url-loader!sass-loader',
         },

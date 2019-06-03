@@ -2,6 +2,7 @@
 
 .loader
   position: relative
+
   &.is-overlay
     +overlay
     display: flex
@@ -11,6 +12,7 @@
     flex-direction: column
     justify-content: center
     overflow: hidden
+
     .loader-icon
       &:after
         top: calc(50% - 2.5em)
@@ -19,10 +21,12 @@
         height: 5em
         position: absolute
         border-width: 0.25em
+
   .loader-background
     +overlay
     background: #7f7f7f
     background: rgba(255, 255, 255, 0.5)
+
   .loader-icon
     &:after
       +loader
