@@ -1,15 +1,12 @@
 import cn from 'classnames';
 import React from 'react';
-import modifiers from '../../../../modifiers';
-import { HelpersModifier } from '../../../../modifiers/helpers';
+import modifiers, { Modifiers } from '../../../../modifiers';
 import { Element } from '../../../elements';
 
 type MediaItemProps = Partial<Modifiers> & {
-  className?: string;
   position?: 'center' | 'right' | 'left';
-  renderAs?: string | ((...args: any[]) => any);
-  style?: object;
 };
+
 export const MediaItem: React.FunctionComponent<MediaItemProps> = ({
   children,
   className,

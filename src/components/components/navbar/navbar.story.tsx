@@ -5,9 +5,9 @@ import * as React from 'react';
 import { Navbar } from '.';
 import { Box } from '../../elements/box';
 import { NavbarMenu, NavbarContainer, NavbarItem, NavbarBrand, NavbarBurger } from './components';
+import { Colors } from '../../../constants';
 
-const colors = {
-  default: '',
+const colors: { [id: string]: Colors } = {
   primary: 'primary',
   info: 'info',
   danger: 'danger',
@@ -32,7 +32,7 @@ storiesOf('Navbar', module)
   .add('Default', () => {
     return (
       <Navbar
-        color={select('Color', colors, colors.default)}
+        color={select('Color', colors, colors.primary)}
         fixed={select('Fixed', { top: 'top', bottom: 'bottom' }, 'top')}
         active={boolean('Active', false)}
         transparent={boolean('Transparent', false)}

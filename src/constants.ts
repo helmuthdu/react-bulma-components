@@ -27,7 +27,7 @@ export type Greyscale =
 
 export type Sizes = 'small' | 'medium' | 'large';
 
-export type Propportions =
+export type Proportions =
   | 16
   | 24
   | 32

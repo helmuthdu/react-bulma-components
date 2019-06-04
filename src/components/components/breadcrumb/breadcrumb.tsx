@@ -1,7 +1,6 @@
 import cn from 'classnames';
 import React from 'react';
-import modifiers from '../../../modifiers';
-import { HelpersModifier } from '../../../modifiers/helpers';
+import modifiers, { Modifiers } from '../../../modifiers';
 
 type BreadcrumbProps = Partial<Modifiers> & {
   align?: 'right' | 'center';

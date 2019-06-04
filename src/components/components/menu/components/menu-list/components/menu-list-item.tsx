@@ -1,14 +1,13 @@
 import cn from 'classnames';
 import React from 'react';
-import modifiers from '../../../../../../modifiers';
+import modifiers, { Modifiers } from '../../../../../../modifiers';
 import { Element } from '../../../../../elements';
 import { MenuList } from '../menu-list';
 
-type MenuListItemProps = {
+type MenuListItemProps = Partial<Modifiers> & {
   active?: boolean;
-  className?: string;
-  renderAs?: string | ((...args: any[]) => any);
 };
+
 export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
   children,
   active,
@@ -38,6 +37,7 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
     </li>
   );
 };
+
 MenuListItem.defaultProps = {
   ...modifiers.defaultProps,
   active: false,

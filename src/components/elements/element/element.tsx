@@ -2,7 +2,11 @@ import cn from 'classnames';
 import React from 'react';
 import modifiers, { Modifiers } from '../../../modifiers';
 
-type ElementProps = Partial<Modifiers>;
+type ElementProps = Partial<Modifiers> & {
+  max?: number;
+  min?: number;
+  value?: string | number;
+};
 
 export const Element: React.FunctionComponent<ElementProps> = ({ className, renderAs, ...allProps }: ElementProps) => {
   const RenderAs: any = renderAs;

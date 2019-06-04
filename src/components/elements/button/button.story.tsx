@@ -6,6 +6,7 @@ import * as React from 'react';
 import { Button } from '.';
 import { Section } from '../../layout/section';
 import { Box } from '../box';
+import { ButtonGroup } from './components';
 
 const colors = {
   default: '',
@@ -27,6 +28,7 @@ const positions = {
   right: 'right'
 };
 
+// @ts-ignore
 storiesOf('Button', module)
   .addDecorator(story => <div className="button-display">{story()}</div>)
   .add('Default', () => (
@@ -34,7 +36,8 @@ storiesOf('Button', module)
       <Box>Play with the button props using the knobs addon panel at the bottom</Box>
       <Button
         fullwidth={boolean('Full width', false)}
-        color={select('Color', colors)}
+        // @ts-ignore
+        color={select('Color', colors, 'primary')}
         loading={boolean('Loading', false)}
         outlined={boolean('Outlined', false)}
         inverted={boolean('Inverted', false)}
@@ -65,7 +68,7 @@ storiesOf('Button', module)
 
     return (
       <Section>
-        <Button color="info" renderAs={CustomComponent} customProp="https://github.com/couds/react-bulma-components">
+        <Button color="info" renderAs={CustomComponent}>
           Button rendered using another React Component with props
         </Button>
       </Section>
@@ -73,7 +76,11 @@ storiesOf('Button', module)
   })
   .add('Button group', () => (
     <Section>
-      <Button.Group hasAddons={boolean('hasAddons', false)} position={select('Position', positions)}>
+      <ButtonGroup
+        hasAddons={boolean('hasAddons', false)}
+        // @ts-ignore
+        position={select('Position', positions, 'top')}
+      >
         <Button renderAs="span" color="success">
           Save changes
         </Button>
@@ -83,6 +90,6 @@ storiesOf('Button', module)
         <Button renderAs="span" color="danger">
           Cancel
         </Button>
-      </Button.Group>
+      </ButtonGroup>
     </Section>
   ));

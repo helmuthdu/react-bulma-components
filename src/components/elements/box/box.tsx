@@ -5,7 +5,7 @@ import { Element } from '../element';
 
 type BoxProps = Partial<Modifiers>;
 
-export const Box: React.FunctionComponent<BoxProps> = ({ children, className, ...props }: any) => (
+export const Box: React.FunctionComponent<BoxProps> = ({ children, className, ...props }: BoxProps) => (
   <Element {...props} className={cn('box', className)}>
     {children}
   </Element>

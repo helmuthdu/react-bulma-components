@@ -480,7 +480,7 @@ storiesOf('Columns', module)
   ))
   .add('With Offset', () => (
     <div>
-      <Columns mobile>
+      <Columns>
         <Column size="half" offset="one-quarter">
           <div className="has-background-grey-lighter" style={style}>
             size half
@@ -490,7 +490,7 @@ storiesOf('Columns', module)
         </Column>
       </Columns>
 
-      <Columns mobile>
+      <Columns>
         <Column size={4} offset={8}>
           <div className="has-background-grey-lighter" style={style}>
             size 4<br />
@@ -499,7 +499,7 @@ storiesOf('Columns', module)
         </Column>
       </Columns>
 
-      <Columns mobile>
+      <Columns>
         <Column size={11} offset={1}>
           <div className="has-background-grey-lighter" style={style}>
             size 11

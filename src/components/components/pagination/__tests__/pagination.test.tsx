@@ -41,9 +41,9 @@ describe('Pagination component', () => {
   it('should call to onChange event on click on navigation button', () => {
     const onChange = jest.fn();
     const { container } = render(<Pagination total={5} current={0} showPrevNext onChange={onChange} />);
-    fireEvent.click(container.querySelector('a.pagination-next'));
+    fireEvent.click(container.querySelector('a.pagination-next') as Element);
     expect(onChange).toHaveBeenCalledTimes(1);
-    fireEvent.click(container.querySelector('a.pagination-previous'));
+    fireEvent.click(container.querySelector('a.pagination-previous') as Element);
     expect(onChange).toHaveBeenCalledTimes(2);
     fireEvent.click(container.querySelectorAll('a.pagination-link')[1]);
     expect(onChange).toHaveBeenCalledTimes(3);

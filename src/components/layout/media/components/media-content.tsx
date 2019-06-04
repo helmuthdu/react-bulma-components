@@ -1,14 +1,10 @@
 import cn from 'classnames';
 import React from 'react';
-import modifiers from '../../../../modifiers';
-import { HelpersModifier } from '../../../../modifiers/helpers';
+import modifiers, { Modifiers } from '../../../../modifiers';
 import { Element } from '../../../elements';
 
-type MediaContentProps = Partial<Modifiers> & {
-  className?: string;
-  style?: object;
-  renderAs?: string | ((...args: any[]) => any);
-};
+type MediaContentProps = Partial<Modifiers>;
+
 export const MediaContent: React.FunctionComponent<MediaContentProps> = ({ children, className, ...props }: any) => (
   <Element {...props} className={cn(className, 'content')}>
     {children}

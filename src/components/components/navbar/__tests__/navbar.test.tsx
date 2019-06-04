@@ -54,7 +54,7 @@ describe('Navbar component', () => {
     const { asFragment, unmount } = render(
       <Navbar>
         <NavbarBrand>
-          <NavbarItem renderAs="a" href="#">
+          <NavbarItem renderAs="a">
             <img src="/" alt="" />
           </NavbarItem>
           <NavbarBurger className="trigger-menu" />
@@ -65,9 +65,9 @@ describe('Navbar component', () => {
             <NavbarItem dropdown hoverable>
               <NavbarLink>Docs</NavbarLink>
               <NavbarDropdown boxed>
-                <NavbarItem href="#">Home</NavbarItem>
+                <NavbarItem>Home</NavbarItem>
                 <NavbarDivider />
-                <NavbarItem href="#">Home</NavbarItem>
+                <NavbarItem>Home</NavbarItem>
               </NavbarDropdown>
             </NavbarItem>
           </NavbarContainer>

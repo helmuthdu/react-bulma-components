@@ -1,11 +1,11 @@
 import cn from 'classnames';
 import React from 'react';
-import { Propportions } from '../../../../constants';
+import { Proportions } from '../../../../constants';
 import modifiers, { Modifiers } from '../../../../modifiers';
 import { Element, Image } from '../../../elements';
 
 type CardImageProps = Partial<Modifiers> & {
-  size?: Propportions;
+  size?: Proportions;
   src?: string;
 };
 

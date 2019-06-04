@@ -35,7 +35,7 @@ describe('Breadcrumb component', () => {
     it(`should use separator ${separator}`, () => {
       const { asFragment } = render(
         <Breadcrumb
-          separator={separator}
+          separator={separator as any}
           items={[
             {
               name: 'Storybook',

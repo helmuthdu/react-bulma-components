@@ -1,9 +1,11 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
 import { Tabs } from '..';
+import { Tab } from '../components/tab';
 
 describe('Tabs component', () => {
-  it.each([[Tabs], [Tabs.Tab]])('should render', Component => {
+  // @ts-ignore
+  it.each([[Tabs], [Tab]])('should render', Component => {
     const { asFragment } = render(<Component>Content</Component>);
     expect(asFragment()).toMatchSnapshot();
   });
@@ -42,9 +44,9 @@ describe('Tabs component', () => {
   it('should render propertly Inside Tabs', () => {
     const { asFragment } = render(
       <Tabs>
-        <Tabs.Tab>Tab 1</Tabs.Tab>
-        <Tabs.Tab>Tab 2</Tabs.Tab>
-        <Tabs.Tab>Tab 3</Tabs.Tab>
+        <Tab>Tab 1</Tab>
+        <Tab>Tab 2</Tab>
+        <Tab>Tab 3</Tab>
       </Tabs>
     );
     expect(asFragment()).toMatchSnapshot();
