@@ -1,14 +1,15 @@
 import cn from 'classnames';
 import React, { useEffect, useState } from 'react';
+import { Proportions } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 import { Element } from '../element';
 
-type ImageProps = Partial<Modifiers> & {
+export type ImageProps = Partial<Modifiers> & {
   alt?: string;
   fallback?: string;
   rounded?: boolean;
-  size?: any;
-  src: string;
+  size?: Proportions;
+  src?: string;
 };
 
 export const Image: React.FunctionComponent<ImageProps> = ({
@@ -24,15 +25,11 @@ export const Image: React.FunctionComponent<ImageProps> = ({
 
   useEffect(() => {
     setImage({ src: image.default !== src ? src : image.src, default: src });
-  });
+  }, [image.default, image.src, src]);
 
   const handleError = () => {
     setImage({ ...image, src: fallback as string });
   };
-
-  if (typeof size === 'number') {
-    size = `${size}x${size}`;
-  }
 
   return (
     <Element

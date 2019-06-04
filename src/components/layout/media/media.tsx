@@ -6,7 +6,7 @@ import { MediaContent, MediaItem } from './components';
 
 type MediaProps = Partial<Modifiers>;
 
-export const Media: React.FunctionComponent<MediaProps> = ({ children, className, ...props }: any) => (
+export const Media: React.FunctionComponent<MediaProps> = ({ children, className, ...props }: MediaProps) => (
   <Element {...props} className={cn('media', className)}>
     {children}
   </Element>

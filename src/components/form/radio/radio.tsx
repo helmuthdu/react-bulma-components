@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import React from 'react';
-import { Colors } from '../../../constants';
+import { Colors, Sizes } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 
 type RadioProps = Partial<Modifiers> & {
@@ -9,7 +9,7 @@ type RadioProps = Partial<Modifiers> & {
   disabled?: boolean;
   name?: string;
   onChange: (...args: any[]) => any;
-  size?: any;
+  size?: Sizes;
   value?: string | number;
 };
 

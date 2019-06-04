@@ -13,7 +13,7 @@ import { Section } from '../../layout/section';
 import { ModalCard, ModalContent } from './components';
 import { ModalCardBody, ModalCardFoot, ModalCardHead, ModalCardTitle } from './components/modal-card/components';
 
-class OpenModal extends React.Component {
+class OpenModal extends React.Component<any> {
   static propTypes = {
     modal: PropTypes.object,
     children: PropTypes.node.isRequired,
@@ -26,7 +26,7 @@ class OpenModal extends React.Component {
   };
 
   state = {
-    show: (this.props as any).show
+    show: this.props.show
   };
 
   open = () => this.setState({ show: true });
@@ -36,7 +36,7 @@ class OpenModal extends React.Component {
     return (
       <div>
         <Button onClick={this.open}>Open</Button>
-        <Modal show={this.state.show} onClose={this.close} {...(this.props as any).modal}>
+        <Modal show={this.state.show} onClose={this.close} {...this.props.modal}>
           {this.props.children}
         </Modal>
       </div>

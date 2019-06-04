@@ -1,15 +1,15 @@
 import cn from 'classnames';
 import React from 'react';
-import modifiers from '../../../../modifiers';
+import { Sizes } from '../../../../constants';
+import modifiers, { Modifiers } from '../../../../modifiers';
 import { Element } from '../../element';
 
-type ButtonGroupProps = {
-  className?: string;
+type ButtonGroupProps = Partial<Modifiers> & {
   hasAddons?: boolean;
   position?: 'centered' | 'right';
-  size?: any;
-  renderAs?: string | ((...args: any[]) => any);
+  size?: Sizes;
 };
+
 export const ButtonGroup: React.FunctionComponent<ButtonGroupProps> = ({
   children,
   className,
@@ -18,7 +18,7 @@ export const ButtonGroup: React.FunctionComponent<ButtonGroupProps> = ({
   size,
   renderAs,
   ...props
-}: any) => (
+}: ButtonGroupProps) => (
   <Element
     {...props}
     renderAs={renderAs}
@@ -31,6 +31,7 @@ export const ButtonGroup: React.FunctionComponent<ButtonGroupProps> = ({
     {children}
   </Element>
 );
+
 ButtonGroup.defaultProps = {
   ...modifiers.defaultProps,
   hasAddons: false,

@@ -5,7 +5,7 @@ import modifiers, { Modifiers } from '../../../modifiers';
 import { Element } from '../../elements';
 
 type DisplayType = {
-  size?: any;
+  size?: Sizes | 'three-quarters' | 'two-thirds' | 'half' | 'one-third' | 'one-quarter';
   offset?: any;
   narrow?: boolean;
 };

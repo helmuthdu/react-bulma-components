@@ -8,7 +8,12 @@ type ContentProps = Partial<Modifiers> & {
   size?: Sizes;
 };
 
-export const Content: React.FunctionComponent<ContentProps> = ({ children, className, size, ...props }: ContentProps) => (
+export const Content: React.FunctionComponent<ContentProps> = ({
+  children,
+  className,
+  size,
+  ...props
+}: ContentProps) => (
   <Element
     {...props}
     className={cn('content', className, {

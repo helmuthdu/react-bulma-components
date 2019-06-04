@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import React from 'react';
-import { Colors } from '../../../constants';
+import { Colors, Sizes } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 import { ButtonGroup } from './components';
 
@@ -14,13 +14,14 @@ type ButtonProps = Partial<Modifiers> & {
   loading?: boolean;
   onClick?: (...args: any[]) => any;
   onChange?: (...args: any[]) => any;
+  onMouseEnter?: (...args: any[]) => any;
   outlined?: boolean;
   remove?: boolean;
   renderAs?: ('a' | 'button' | 'span') | ((...args: any[]) => any);
   reset?: boolean;
   rounded?: boolean;
   selected?: boolean;
-  size?: any;
+  size?: Sizes;
   state?: 'hover' | 'focus' | 'active' | 'loading';
   submit?: boolean;
   text?: boolean;
@@ -92,7 +93,9 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
     </Element>
   );
 };
+
 (Button as any).Group = ButtonGroup;
+
 Button.defaultProps = {
   ...modifiers.defaultProps,
   fullwidth: false,

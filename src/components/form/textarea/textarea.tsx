@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import * as React from 'react';
-import { Colors } from '../../../constants';
+import { Colors, Sizes } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 
 type TextareaProps = Partial<Modifiers> & {
@@ -11,7 +11,7 @@ type TextareaProps = Partial<Modifiers> & {
   placeholder?: string;
   readOnly?: boolean;
   rows?: number;
-  size?: any;
+  size?: Sizes;
   value?: string | number;
 };
 

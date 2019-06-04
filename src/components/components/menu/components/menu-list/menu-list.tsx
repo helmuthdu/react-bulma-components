@@ -5,7 +5,7 @@ import { Element } from '../../../../elements';
 import { MenuListItem } from './components/menu-list-item';
 
 type MenuListProps = Partial<Modifiers> & {
-  title?: React.ReactNode;
+  title?: string;
 };
 
 export const MenuList: React.FunctionComponent<MenuListProps> = ({ className, title, ...props }: MenuListProps) => (

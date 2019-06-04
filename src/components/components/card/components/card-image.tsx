@@ -1,15 +1,11 @@
 import cn from 'classnames';
 import React from 'react';
-import { Proportions } from '../../../../constants';
 import modifiers, { Modifiers } from '../../../../modifiers';
-import { Element, Image } from '../../../elements';
+import { Element, Image, ImageProps } from '../../../elements';
 
-type CardImageProps = Partial<Modifiers> & {
-  size?: Proportions;
-  src?: string;
-};
+type CardImageProps = Partial<Modifiers> & Partial<ImageProps>;
 
-export const CardImage: React.FunctionComponent<CardImageProps> = ({ className, ...props }: any) => (
+export const CardImage: React.FunctionComponent<CardImageProps> = ({ className, ...props }: CardImageProps) => (
   <Element className={cn('card-image', className)}>
     <Image {...props} />
   </Element>

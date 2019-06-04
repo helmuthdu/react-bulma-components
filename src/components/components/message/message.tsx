@@ -1,13 +1,13 @@
 import cn from 'classnames';
 import React from 'react';
-import { Colors } from '../../../constants';
+import { Colors, Sizes } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 import { Element } from '../../elements';
 import { MessageBody, MessageHeader } from './components';
 
 type MessageProps = Partial<Modifiers> & {
   color?: Colors;
-  size?: any;
+  size?: Sizes;
 };
 
 export const Message: React.FunctionComponent<MessageProps> = ({

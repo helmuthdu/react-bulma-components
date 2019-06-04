@@ -12,7 +12,7 @@ export type Modifiers = ColorsModifier &
   TypographyModifier & {
     className?: any;
     children?: React.ReactNode;
-    renderAs?: string | ((...args: any[]) => any);
+    renderAs?: string | ((...args: any | any[]) => any);
     style?: React.CSSProperties;
   };
 

@@ -1,6 +1,6 @@
 import cn from 'classnames';
 
-export type HelpersModifier = {
+export type HelpersModifier = Partial<{
   clearfix: boolean;
   clipped: boolean;
   hidden: boolean;
@@ -12,7 +12,7 @@ export type HelpersModifier = {
   radiusless: boolean;
   shadowless: boolean;
   unselectable: boolean;
-};
+}>;
 
 export default {
   defaultProps: {
@@ -54,5 +54,5 @@ export default {
     shadowless,
     unselectable,
     ...props
-  }: any) => props
+  }: HelpersModifier) => props
 };

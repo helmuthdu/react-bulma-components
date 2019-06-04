@@ -1,10 +1,11 @@
 import cn from 'classnames';
 import React from 'react';
+import { Sizes } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
+import { Element } from '../../elements';
 
 type BreadcrumbProps = Partial<Modifiers> & {
   align?: 'right' | 'center';
-  className?: string;
   hrefAttr?: string;
   items?: {
     active?: boolean;
@@ -13,9 +14,9 @@ type BreadcrumbProps = Partial<Modifiers> & {
   }[];
   renderAs?: 'a' | ((...args: any[]) => any);
   separator?: 'arrow' | 'bullet' | 'dot' | 'succeeds';
-  size?: any;
-  style?: object;
+  size?: Sizes;
 };
+
 export const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
   className,
   items,
@@ -25,8 +26,7 @@ export const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
   size,
   align,
   ...allProps
-}: any) => {
-  const Element = renderAs;
+}: BreadcrumbProps) => {
   const props = modifiers.clean(allProps);
   return (
     <nav
@@ -38,21 +38,19 @@ export const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
       })}
     >
       <ul>
-        {items.map((item: any) => {
-          const p = {
-            [renderAs === 'a' ? 'href' : hrefAttr]: item.url
-          };
-          return (
-            <li
-              key={item.url}
-              className={cn({
-                'is-active': item.active
-              })}
-            >
-              <Element {...p}>{item.name}</Element>
-            </li>
-          );
-        })}
+        {items &&
+          items.map((item: any) => {
+            return (
+              <li
+                key={item.url}
+                className={cn({
+                  'is-active': item.active
+                })}
+              >
+                <Element renderAs={renderAs}>{item.name}</Element>
+              </li>
+            );
+          })}
       </ul>
     </nav>
   );

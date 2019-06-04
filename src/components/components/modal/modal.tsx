@@ -15,7 +15,6 @@ type ModalProps = Partial<Modifiers> & {
   closeOnEsc?: boolean;
   closeOnBlur?: boolean;
   showClose?: boolean;
-  className?: string;
 };
 
 export const Modal: React.FunctionComponent<ModalProps> = (props: ModalProps) => {

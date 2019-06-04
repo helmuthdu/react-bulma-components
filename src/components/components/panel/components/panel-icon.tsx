@@ -7,7 +7,7 @@ type PanelIconProps = Partial<Modifiers> & {
   icon?: string;
 };
 
-export const PanelIcon: React.FunctionComponent<PanelIconProps> = ({ className, ...props }: any) => (
+export const PanelIcon: React.FunctionComponent<PanelIconProps> = ({ className, ...props }: PanelIconProps) => (
   <Element {...props} className={cn('panel-icon', className)} />
 );
 

@@ -1,13 +1,13 @@
 /* eslint-disable no-unused-vars */
 import cn from 'classnames';
 
-export type TypographyModifier = {
+export type TypographyModifier = Partial<{
   textSize: 1 | 2 | 3 | 4 | 5 | 6;
   textAlignment: 'centered' | 'justified' | 'left' | 'right';
   textTransform: 'capitalized' | 'lowercase' | 'uppercase';
   textWeight: 'light' | 'normal' | 'semibold' | 'bold';
   italic: boolean;
-};
+}>;
 
 export default {
   defaultProps: {
@@ -21,5 +21,5 @@ export default {
       [`is-size-${props.textSize}`]: props.textSize,
       'is-italic': props.italic
     }),
-  clean: ({ textWeight, textTransform, italic, textSize, textAlignment, ...props }: any) => props
+  clean: ({ textWeight, textTransform, italic, textSize, textAlignment, ...props }: TypographyModifier) => props
 };

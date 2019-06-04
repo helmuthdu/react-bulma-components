@@ -6,6 +6,7 @@ type ElementProps = Partial<Modifiers> & {
   max?: number;
   min?: number;
   value?: string | number;
+  title?: string;
 };
 
 export const Element: React.FunctionComponent<ElementProps> = ({ className, renderAs, ...allProps }: ElementProps) => {

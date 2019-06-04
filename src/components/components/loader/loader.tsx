@@ -7,7 +7,12 @@ type LoaderProps = Partial<Modifiers> & {
   onClick?: (...args: any[]) => any;
 };
 
-export const Loader: React.FunctionComponent<LoaderProps> = ({ overlay, onClick, className, ...props }: LoaderProps) => (
+export const Loader: React.FunctionComponent<LoaderProps> = ({
+  overlay,
+  onClick,
+  className,
+  ...props
+}: LoaderProps) => (
   <Element
     {...props}
     className={cn('loader', className, {

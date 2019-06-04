@@ -13,7 +13,7 @@ export const Notification: React.FunctionComponent<NotificationProps> = ({
   className,
   color,
   ...props
-}: any) => (
+}: NotificationProps) => (
   <Element
     {...props}
     className={cn(

@@ -37,8 +37,8 @@ type SizeShape = {
   }>;
 };
 
-export type ResponsiveModifier = {
-  responsive?: Partial<{
+export type ResponsiveModifier = Partial<{
+  responsive: Partial<{
     mobile: SizeShape;
     tablet: SizeShape;
     desktop: SizeShape;
@@ -46,7 +46,7 @@ export type ResponsiveModifier = {
     fullhd: SizeShape;
     touch: SizeShape;
   }>;
-};
+}>;
 
 export default {
   defaultProps: {
@@ -56,5 +56,5 @@ export default {
     cn({
       ...getSizeClassFromProp(props.responsive || {})
     }),
-  clean: ({ responsive, hide, ...props }: any) => props
+  clean: ({ responsive, ...props }: ResponsiveModifier) => props
 };

@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import React from 'react';
-import { Colors } from '../../../constants';
+import { Colors, Sizes } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 
 type SelectProps = Partial<Modifiers> & {
@@ -13,7 +13,7 @@ type SelectProps = Partial<Modifiers> & {
   onChange: (...args: any[]) => any;
   readOnly?: boolean;
   rounded?: boolean;
-  size?: any;
+  size?: Sizes;
   value?: string | number | any[];
 };
 

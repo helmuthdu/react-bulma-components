@@ -3,10 +3,7 @@ import * as React from 'react';
 import modifiers, { Modifiers } from '../../../../modifiers';
 import { Element } from '../../../elements';
 
-type NavbarBrandProps = Partial<Modifiers> & {
-  className?: string;
-  style?: object;
-};
+type NavbarBrandProps = Partial<Modifiers>;
 
 export const NavbarBrand: React.FunctionComponent<NavbarBrandProps> = ({
   className,

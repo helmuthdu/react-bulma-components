@@ -6,7 +6,7 @@ import { CardHeaderIcon, CardHeaderTitle } from './components';
 
 type CardHeaderProps = Partial<Modifiers>;
 
-export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({ className, ...props }: any) => (
+export const CardHeader: React.FunctionComponent<CardHeaderProps> = ({ className, ...props }: CardHeaderProps) => (
   <Element {...props} className={cn('card-header', className)} />
 );
 

@@ -2,6 +2,7 @@ import { boolean } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Image } from '.';
+import { Proportions } from '../../../constants';
 import { Table } from '../table';
 import CONSTANTS from './constants';
 
@@ -22,7 +23,7 @@ storiesOf('Image', module)
         </tr>
       </thead>
       <tbody>
-        {CONSTANTS.SIZES.filter(size => typeof size === 'number').map(size => (
+        {CONSTANTS.SIZES.filter(size => typeof size === 'number').map((size: any) => (
           <tr key={size}>
             <td />
             <td style={{ width: 100 }}>{size}</td>
@@ -49,7 +50,7 @@ storiesOf('Image', module)
         </tr>
       </thead>
       <tbody>
-        {CONSTANTS.SIZES.filter(size => typeof size === 'string').map(size => (
+        {CONSTANTS.SIZES.filter(size => typeof size === 'string').map((size: any) => (
           <tr key={size}>
             <td />
             <td style={{ width: 100 }}>{size}</td>

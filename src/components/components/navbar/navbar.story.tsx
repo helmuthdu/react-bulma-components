@@ -7,7 +7,7 @@ import { Box } from '../../elements/box';
 import { NavbarMenu, NavbarContainer, NavbarItem, NavbarBrand, NavbarBurger } from './components';
 import { Colors } from '../../../constants';
 
-const colors: { [id: string]: Colors } = {
+const colors: { [key: string]: Colors } = {
   primary: 'primary',
   info: 'info',
   danger: 'danger',

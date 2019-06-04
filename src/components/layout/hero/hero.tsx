@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import React from 'react';
-import { Colors } from '../../../constants';
+import { Colors, Sizes } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 import { Element } from '../../elements';
 import { HeroBody, HeroFooter, HeroHead } from './components';
@@ -8,7 +8,7 @@ import { HeroBody, HeroFooter, HeroHead } from './components';
 type HeroProps = Partial<Modifiers> & {
   color?: Colors;
   gradient?: boolean;
-  size?: string;
+  size?: Sizes | 'fullheight';
 };
 
 export const Hero: React.FunctionComponent<HeroProps> = ({

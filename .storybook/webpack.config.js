@@ -10,17 +10,11 @@ module.exports = ({ config }) => {
       ...config.module,
       rules: [
         {
-          test: /\.story\.js?$/,
-          loaders: [require.resolve('@storybook/addon-storysource/loader')],
-          enforce: 'pre',
-        },
-        {
           test: /\.(ts|tsx)$/,
-          use: [
-            {
-              loader: require.resolve('awesome-typescript-loader'),
-            },
-          ],
+          loader: require.resolve('babel-loader'),
+          options: {
+            presets: [['react-app', { flow: false, typescript: true }]],
+          },
         },
         {
           test: /\.s[ca]ss$/,
@@ -31,12 +25,16 @@ module.exports = ({ config }) => {
     },
     resolve: {
       ...config.resolve,
+      extensions: [
+        ...config.resolve.extensions,
+        '.ts',
+        '.tsx'
+      ],
       modules: ['node_modules', 'src', ...config.resolve.modules],
       alias: {
         ...config.resolve.alias,
         '@': path.resolve(__dirname, '../src'),
       }
-      // https://github.com/graphql/graphql-js#using-in-a-browser
     },
     plugins: [
       ...config.plugins,

@@ -4,12 +4,12 @@ import { storiesOf } from '@storybook/react';
 import PropTypes from 'prop-types';
 import * as React from 'react';
 import { Button } from '.';
+import { Colors } from '../../../constants';
 import { Section } from '../../layout/section';
 import { Box } from '../box';
 import { ButtonGroup } from './components';
 
-const colors = {
-  default: '',
+const colors: { [key: string]: Colors } = {
   primary: 'primary',
   info: 'info',
   danger: 'danger',
@@ -28,7 +28,6 @@ const positions = {
   right: 'right'
 };
 
-// @ts-ignore
 storiesOf('Button', module)
   .addDecorator(story => <div className="button-display">{story()}</div>)
   .add('Default', () => (
@@ -36,7 +35,6 @@ storiesOf('Button', module)
       <Box>Play with the button props using the knobs addon panel at the bottom</Box>
       <Button
         fullwidth={boolean('Full width', false)}
-        // @ts-ignore
         color={select('Color', colors, 'primary')}
         loading={boolean('Loading', false)}
         outlined={boolean('Outlined', false)}
@@ -76,11 +74,7 @@ storiesOf('Button', module)
   })
   .add('Button group', () => (
     <Section>
-      <ButtonGroup
-        hasAddons={boolean('hasAddons', false)}
-        // @ts-ignore
-        position={select('Position', positions, 'top')}
-      >
+      <ButtonGroup hasAddons={boolean('hasAddons', false)} position={select('Position', positions, 'top' as any)}>
         <Button renderAs="span" color="success">
           Save changes
         </Button>

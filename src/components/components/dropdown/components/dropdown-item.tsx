@@ -15,7 +15,6 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   value,
   ...props
 }: DropdownItemProps) => (
-  // @ts-ignore
   <Element
     title={value}
     {...props}

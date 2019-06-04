@@ -1,5 +1,6 @@
 import cn from 'classnames';
 import React from 'react';
+import { Sizes } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 import { Element } from '../../elements';
 
@@ -8,7 +9,7 @@ type ControlProps = Partial<Modifiers> & {
   iconLeft?: boolean;
   iconRight?: boolean;
   loading?: boolean;
-  size?: any;
+  size?: Sizes;
 };
 
 export const Control: React.FunctionComponent<ControlProps> = ({

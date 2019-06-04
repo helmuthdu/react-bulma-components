@@ -1,15 +1,18 @@
 import cn from 'classnames';
 import React from 'react';
-import modifiers from '../../../../modifiers';
+import modifiers, { Modifiers } from '../../../../modifiers';
 import { Element } from '../../../elements';
 
-type LevelSideProps = {
+type LevelSideProps = Partial<Modifiers> & {
   align?: string;
-  className?: string;
-  renderAs?: string | ((...args: any[]) => any);
-  style?: object;
 };
-export const LevelSide: React.FunctionComponent<LevelSideProps> = ({ children, className, align, ...props }: any) => (
+
+export const LevelSide: React.FunctionComponent<LevelSideProps> = ({
+  children,
+  className,
+  align,
+  ...props
+}: LevelSideProps) => (
   <Element
     {...props}
     className={cn(className, {
@@ -19,6 +22,7 @@ export const LevelSide: React.FunctionComponent<LevelSideProps> = ({ children, c
     {children}
   </Element>
 );
+
 LevelSide.defaultProps = {
   ...modifiers.defaultProps,
   align: 'left',

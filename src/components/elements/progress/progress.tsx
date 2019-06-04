@@ -1,13 +1,13 @@
 import cn from 'classnames';
 import React from 'react';
-import { Colors } from '../../../constants';
+import { Colors, Sizes } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 import { Element } from '../element';
 
 type ProgressProps = Partial<Modifiers> & {
   color?: Colors;
   max?: number;
-  size?: any;
+  size?: Sizes;
   value?: number;
 };
 

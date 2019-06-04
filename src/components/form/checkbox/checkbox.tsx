@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import React from 'react';
-import { Colors } from '../../../constants';
+import { Colors, Sizes } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 
 type CheckboxProps = Partial<Modifiers> & {
@@ -10,7 +10,7 @@ type CheckboxProps = Partial<Modifiers> & {
   indeterminate?: boolean;
   name?: string;
   onChange: (...args: any[]) => any;
-  size?: any;
+  size?: Sizes;
   value?: string | number;
 };
 

@@ -12,8 +12,9 @@ export const MediaItem: React.FunctionComponent<MediaItemProps> = ({
   className,
   position,
   ...props
-}: any) => {
+}: MediaItemProps) => {
   const pos = position === 'center' ? 'content' : position;
+
   return (
     <Element
       {...props}
@@ -25,6 +26,7 @@ export const MediaItem: React.FunctionComponent<MediaItemProps> = ({
     </Element>
   );
 };
+
 MediaItem.defaultProps = {
   ...modifiers.defaultProps,
   position: 'center',

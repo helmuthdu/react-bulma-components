@@ -5,11 +5,10 @@ import modifiers, { Modifiers } from '../../../modifiers';
 import { Element } from '../../elements';
 
 type HelpProps = Partial<Modifiers> & {
-  className?: string;
   color?: Colors;
 };
 
-export const Help: React.FunctionComponent<HelpProps> = ({ className, children, color, ...props }: any) => (
+export const Help: React.FunctionComponent<HelpProps> = ({ className, children, color, ...props }: HelpProps) => (
   <Element
     {...props}
     className={cn('help', className, {

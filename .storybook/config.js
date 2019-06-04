@@ -12,7 +12,7 @@ addParameters({
   options: {
     name: 'React Bulma Components',
     url: 'https://github.com/couds/react-bulma-components',
-    theme: themes.dark,
+    theme: themes.light,
   },
 });
 

@@ -6,7 +6,13 @@ import { Element } from '../../elements';
 type SectionProps = Partial<Modifiers> & {
   size?: 'medium' | 'large';
 };
-export const Section: React.FunctionComponent<SectionProps> = ({ children, className, size, ...props }: any) => (
+
+export const Section: React.FunctionComponent<SectionProps> = ({
+  children,
+  className,
+  size,
+  ...props
+}: SectionProps) => (
   <Element
     {...props}
     className={cn('section', className, {
@@ -16,6 +22,7 @@ export const Section: React.FunctionComponent<SectionProps> = ({ children, class
     {children}
   </Element>
 );
+
 Section.defaultProps = {
   ...modifiers.defaultProps,
   renderAs: 'section'

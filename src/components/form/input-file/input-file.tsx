@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import React, { useState } from 'react';
-import { Colors } from '../../../constants';
+import { Colors, Sizes } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 import { Element } from '../../elements';
 
@@ -17,7 +17,7 @@ type InputFileProps = Partial<Modifiers> & {
   name?: string;
   onChange: (...args: any[]) => any;
   right?: boolean;
-  size?: any;
+  size?: Sizes;
 };
 
 export const InputFile: React.FunctionComponent<InputFileProps> = ({

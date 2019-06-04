@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import React from 'react';
-import { Colors } from '../../../constants';
+import { Colors, Sizes } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 
 const iconSizes = {
@@ -24,7 +24,7 @@ type IconProps = Partial<Modifiers> & {
   color?: Colors;
   iconSize?: 'small' | 'medium' | 'large' | 'big';
   pack?: 'mdi' | 'fas';
-  size?: any;
+  size?: Sizes;
 };
 
 export const Icon: React.FunctionComponent<IconProps> = ({
@@ -37,9 +37,13 @@ export const Icon: React.FunctionComponent<IconProps> = ({
   children,
   pack,
   ...allProps
-}: any) => {
+}: IconProps) => {
   const props = modifiers.clean(allProps);
-  const iconSizeOf = iconSize ? (iconSizes as any)[pack][iconSize] : size ? (iconSizes as any)[pack][size] : undefined;
+  const iconSizeOf = iconSize
+    ? (iconSizes as any)[pack as any][iconSize]
+    : size
+    ? (iconSizes as any)[pack as any][size]
+    : undefined;
   const iconPack =
     pack === 'mdi'
       ? cn('mdi', {

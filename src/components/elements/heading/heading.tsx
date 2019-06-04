@@ -20,7 +20,7 @@ export const Heading: React.FunctionComponent<HeadingProps> = ({
   spaced,
   heading,
   ...props
-}: any) => (
+}: HeadingProps) => (
   <Element
     {...props}
     className={cn(className, {

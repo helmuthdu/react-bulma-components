@@ -12,7 +12,7 @@ import { HeroHead } from '../hero/components';
 import { Section } from '../section';
 import { LevelItem, LevelSide } from './components';
 
-const style = { textAlign: 'center' };
+const style: React.CSSProperties = { textAlign: 'center' };
 
 storiesOf('Level', module)
   .addDecorator(story => (

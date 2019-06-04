@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import React from 'react';
 import ReactPaginate from 'react-paginate';
+import { Sizes } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 import { Element } from '../../elements';
 
@@ -14,7 +15,7 @@ type PaginationProps = Partial<Modifiers> & {
   previous?: React.ReactNode;
   rounded?: boolean;
   showPrevNext?: boolean;
-  size?: any;
+  size?: Sizes;
   total?: number;
 };
 

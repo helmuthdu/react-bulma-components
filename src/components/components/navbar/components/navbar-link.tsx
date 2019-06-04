@@ -3,11 +3,7 @@ import * as React from 'react';
 import modifiers, { Modifiers } from '../../../../modifiers';
 import { Element } from '../../../elements';
 
-type NavbarLinkProps = Partial<Modifiers> & {
-  className?: string;
-  renderAs?: string | ((...args: any[]) => any);
-  style?: object;
-};
+type NavbarLinkProps = Partial<Modifiers>;
 
 export const NavbarLink: React.FunctionComponent<NavbarLinkProps> = ({
   className,

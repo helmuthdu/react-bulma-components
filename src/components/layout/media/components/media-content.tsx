@@ -5,11 +5,16 @@ import { Element } from '../../../elements';
 
 type MediaContentProps = Partial<Modifiers>;
 
-export const MediaContent: React.FunctionComponent<MediaContentProps> = ({ children, className, ...props }: any) => (
+export const MediaContent: React.FunctionComponent<MediaContentProps> = ({
+  children,
+  className,
+  ...props
+}: MediaContentProps) => (
   <Element {...props} className={cn(className, 'content')}>
     {children}
   </Element>
 );
+
 MediaContent.defaultProps = {
   ...modifiers.defaultProps,
   renderAs: 'div'

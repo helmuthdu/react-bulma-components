@@ -13,13 +13,15 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
   active,
   className,
   ...props
-}: any) => {
+}: MenuListItemProps) => {
   if (
+    children &&
     typeof children !== 'string' &&
     React.Children.toArray(children).length === 1 &&
+    // @ts-ignore
     React.Children.only(children).type === MenuList
   ) {
-    const child = React.Children.only(children);
+    const child: any = React.Children.only(children);
     return (
       <li>
         <Element className={cn(className, { 'is-active': active })} {...props}>
