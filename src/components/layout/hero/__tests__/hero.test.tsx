@@ -1,11 +1,11 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
 import { Hero } from '..';
-import { HeroBody, HeroFooter, HeroHead } from '../components';
+import { HeroBody, HeroFooter, HeroHeader } from '../components';
 
 describe('Hero component', () => {
   // @ts-ignore
-  it.each([[Hero], [HeroHead], [HeroBody], [HeroFooter]])('should render', Component => {
+  it.each([[Hero], [HeroHeader], [HeroBody], [HeroFooter]])('should render', Component => {
     const { asFragment } = render(<Component />);
     expect(asFragment()).toMatchSnapshot();
   });
@@ -28,9 +28,9 @@ describe('Hero component', () => {
   it('should render Hero with hero head, body and footer', () => {
     const { asFragment } = render(
       <Hero size="fullheight" color="primary">
-        <HeroHead renderAs="header">
+        <HeroHeader renderAs="header">
           <div className="has-background-info">Header</div>
-        </HeroHead>
+        </HeroHeader>
         <HeroBody>Body</HeroBody>
         <HeroFooter renderAs="footer">
           <div className="has-background-danger">Footer</div>

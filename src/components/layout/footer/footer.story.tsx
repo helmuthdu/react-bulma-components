@@ -3,11 +3,11 @@ import * as React from 'react';
 import { Footer } from '.';
 import { Content } from '../../elements/content';
 import { Container } from '../container';
-import { Hero, HeroHead, HeroBody, HeroFooter } from '../hero';
+import { Hero, HeroHeader, HeroBody, HeroFooter } from '../hero';
 
 storiesOf('Footer', module).add('Default', () => (
   <Hero size="fullheight">
-    <HeroHead renderAs="header" />
+    <HeroHeader renderAs="header" />
     <HeroBody />
     <HeroFooter>
       <Footer>

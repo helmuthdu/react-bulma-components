@@ -3,7 +3,7 @@ import React from 'react';
 import { Colors, Sizes } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 
-export * from './components';
+export * from './button-group';
 
 type ButtonProps = Partial<Modifiers> & {
   color?: Colors;

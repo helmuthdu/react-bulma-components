@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 import * as React from 'react';
 import { Tag } from '..';
-import { Tags } from '../components/tags';
+import { Tags } from '../tags/tags';
 
 describe('Tag component', () => {
   // @ts-ignore

@@ -4,8 +4,6 @@ import { Breakpoints } from '../../constants';
 import modifiers, { Modifiers } from '../../modifiers';
 import { Element } from '../elements';
 
-export * from './components';
-
 type ColumnsProps = Partial<Modifiers> & {
   breakpoint?: Breakpoints;
   centered?: boolean;

@@ -2,7 +2,7 @@ import { fireEvent, render } from '@testing-library/react';
 import PropTypes from 'prop-types';
 import * as React from 'react';
 import { Button } from '..';
-import { ButtonGroup } from '../components';
+import { ButtonGroup } from '../button-group';
 
 const Link = ({ to, children }: any) => <a href={to}>{children}</a>;
 

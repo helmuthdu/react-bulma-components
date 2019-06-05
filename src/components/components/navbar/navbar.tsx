@@ -6,8 +6,6 @@ import modifiers, { Modifiers } from '../../../modifiers';
 import { Element } from '../../elements';
 import { ShowContext } from './context';
 
-export * from './components';
-
 type NavbarProps = Partial<Modifiers> & {
   active?: boolean;
   color?: Colors;

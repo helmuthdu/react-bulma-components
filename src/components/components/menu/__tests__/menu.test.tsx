@@ -1,9 +1,7 @@
 import { render } from '@testing-library/react';
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import { Menu } from '..';
-import { MenuList } from '../components/menu-list';
-import { MenuListItem } from '../components/menu-list/components/menu-list-item';
+import { Menu, MenuList, MenuListItem } from '..';
 
 describe('Menu component', () => {
   // @ts-ignore

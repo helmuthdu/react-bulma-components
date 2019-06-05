@@ -3,8 +3,6 @@ import React from 'react';
 import modifiers, { Modifiers } from '../../../modifiers';
 import { Element } from '../../elements';
 
-export * from './components';
-
 type MenuProps = Partial<Modifiers>;
 
 export const Menu: React.FunctionComponent<MenuProps> = ({ className, ...props }: MenuProps) => (

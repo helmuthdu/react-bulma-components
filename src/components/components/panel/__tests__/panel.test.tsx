@@ -1,11 +1,9 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
-import { PanelBlock, PanelHeader, PanelIcon, PanelTabs } from '../components';
-import { PanelTabsTab } from '../components/panel-tabs/components';
-import { Panel } from '../panel';
+import { Panel, PanelBlock, PanelHeader, PanelIcon, PanelTabs, PanelTab } from '..';
 
 describe('Panel component', () => {
-  it.each([[Panel], [PanelBlock], [PanelHeader], [PanelIcon], [PanelTabs], [PanelTabsTab]])(
+  it.each([[Panel], [PanelBlock], [PanelHeader], [PanelIcon], [PanelTabs], [PanelTab]])(
     'should render',
     // @ts-ignore
     Component => {
@@ -21,11 +19,11 @@ describe('Panel component', () => {
           <div>Control</div>
         </PanelBlock>
         <PanelTabs className="panel-tabs">
-          <PanelTabsTab active>all</PanelTabsTab>
-          <PanelTabsTab>public</PanelTabsTab>
-          <PanelTabsTab>private</PanelTabsTab>
-          <PanelTabsTab>sources</PanelTabsTab>
-          <PanelTabsTab>forks</PanelTabsTab>
+          <PanelTab active>all</PanelTab>
+          <PanelTab>public</PanelTab>
+          <PanelTab>private</PanelTab>
+          <PanelTab>sources</PanelTab>
+          <PanelTab>forks</PanelTab>
         </PanelTabs>
         <PanelBlock renderAs="a" active>
           <PanelIcon>

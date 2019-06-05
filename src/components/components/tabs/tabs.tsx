@@ -4,7 +4,7 @@ import { Sizes } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 import { Element } from '../../elements';
 
-export * from './components';
+export * from './tab';
 
 type TabsProps = Partial<Modifiers> & {
   align?: null | 'centered' | 'right';

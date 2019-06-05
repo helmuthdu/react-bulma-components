@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
-import { Tabs } from '..';
-import { Tab } from '../components/tab';
+import { Tab, Tabs } from '..';
 
 describe('Tabs component', () => {
   // @ts-ignore

@@ -1,8 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 import { JSDOM } from 'jsdom';
 import * as React from 'react';
-import { DropdownDivider, DropdownItem } from '../components';
-import { Dropdown } from '../dropdown';
+import { Dropdown, DropdownDivider, DropdownItem } from '..';
 
 declare const global: any;
 

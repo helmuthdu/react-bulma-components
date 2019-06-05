@@ -5,9 +5,7 @@ import { Colors } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 import { Button } from '../../elements/button';
 import { Icon } from '../../elements/icon';
-import { DropdownItem } from './components';
-
-export * from './components';
+import { DropdownItem } from './dropdown-item';
 
 type DropdownProps = Partial<Modifiers> & {
   color?: Colors;

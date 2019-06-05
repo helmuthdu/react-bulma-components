@@ -1,9 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
 import * as React from 'react';
-import { Modal } from '..';
-import { ModalContent } from '../components';
-import { ModalCard } from '../components/modal-card';
-import { ModalCardHead, ModalCardTitle } from '../components/modal-card/components';
+import { Modal, ModalContent, ModalCard, ModalCardHead, ModalCardTitle } from '..';
 
 describe('Modal component', () => {
   it('should render modal-card-head', () => {

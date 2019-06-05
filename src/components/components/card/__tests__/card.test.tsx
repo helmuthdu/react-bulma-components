@@ -1,12 +1,18 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
-import { Card } from '..';
-import { CardContent, CardFooter, CardImage } from '../components';
-import { CardFooterItem } from '../components/card-footer/components';
-import { CardHeader } from '../components/card-header';
-import { CardHeaderIcon, CardHeaderTitle } from '../components/card-header/components';
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardImage,
+  CardFooterItem,
+  CardHeader,
+  CardHeaderIcon,
+  CardHeaderTitle
+} from '..';
 
 describe('Card component', () => {
+  // @ts-ignore
   it.each([[Card], [CardContent], [CardFooter], [CardHeader]])('should render', Component => {
     const { asFragment } = render(<Component />);
     expect(asFragment()).toMatchSnapshot();

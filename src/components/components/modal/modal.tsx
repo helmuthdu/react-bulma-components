@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { Modifiers } from '../../../modifiers';
 
-export * from './components';
+export * from './modal-content';
 
 const KEYCODES = {
   ESCAPE: 27

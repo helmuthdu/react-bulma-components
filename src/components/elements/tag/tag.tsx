@@ -4,7 +4,7 @@ import { Colors } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 import { Element } from '../element';
 
-export * from './components';
+export * from './tags';
 
 type TagProps = Partial<Modifiers> & {
   close?: boolean;

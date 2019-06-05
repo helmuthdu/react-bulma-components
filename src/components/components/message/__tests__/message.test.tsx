@@ -1,8 +1,7 @@
 import { render } from '@testing-library/react';
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import { Message } from '..';
-import { MessageBody, MessageHeader } from '../components';
+import { Message, MessageBody, MessageHeader } from '..';
 
 describe('Message component', () => {
   // @ts-ignore

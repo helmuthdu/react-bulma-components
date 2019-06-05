@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { Panel, PanelBlock, PanelHeader, PanelIcon, PanelTabs, PanelTabsTab } from '.';
+import { Panel, PanelBlock, PanelHeader, PanelIcon, PanelTabs, PanelTab } from '.';
 import { Button } from '../../elements/button';
 import { Icon } from '../../elements/icon';
 import { Checkbox, Control, Input } from '../../form';
@@ -16,11 +16,11 @@ storiesOf('Panel', module)
         </Control>
       </PanelBlock>
       <PanelTabs className="panel-tabs">
-        <PanelTabsTab active>all</PanelTabsTab>
-        <PanelTabsTab>public</PanelTabsTab>
-        <PanelTabsTab>private</PanelTabsTab>
-        <PanelTabsTab>sources</PanelTabsTab>
-        <PanelTabsTab>forks</PanelTabsTab>
+        <PanelTab active>all</PanelTab>
+        <PanelTab>public</PanelTab>
+        <PanelTab>private</PanelTab>
+        <PanelTab>sources</PanelTab>
+        <PanelTab>forks</PanelTab>
       </PanelTabs>
       <PanelBlock renderAs="a" active>
         <PanelIcon renderAs={Icon} icon="angle-down" />
