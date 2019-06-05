@@ -24,6 +24,5 @@ export const FieldLabel: React.FunctionComponent<FieldLabelProps> = ({
 );
 
 FieldLabel.defaultProps = {
-  ...modifiers.defaultProps,
-  renderAs: 'div'
+  ...modifiers.defaultProps
 };

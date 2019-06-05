@@ -10,6 +10,5 @@ export const CardContent: React.FunctionComponent<CardContentProps> = ({ classNa
 );
 
 CardContent.defaultProps = {
-  ...modifiers.defaultProps,
-  renderAs: 'div'
+  ...modifiers.defaultProps
 };

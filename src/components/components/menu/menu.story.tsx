@@ -1,8 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { Menu } from '.';
-import { MenuList } from './components/menu-list';
-import { MenuListItem } from './components/menu-list/components/menu-list-item';
+import { Menu, MenuList, MenuListItem } from '.';
 
 storiesOf('Menu', module).add('Default', () => (
   <Menu>
@@ -10,7 +8,6 @@ storiesOf('Menu', module).add('Default', () => (
       <MenuListItem>Dashboard</MenuListItem>
       <MenuListItem>Customer</MenuListItem>
     </MenuList>
-
     <MenuList title="Administration">
       <MenuListItem>Team Settings</MenuListItem>
       <MenuListItem active>

@@ -1,8 +1,7 @@
 import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { Tabs } from '.';
-import { Tab } from './components/tab';
+import { Tab, Tabs } from '.';
 
 storiesOf('Tabs', module)
   .addDecorator(story => <div style={{ margin: 10 }}>{story()}</div>)

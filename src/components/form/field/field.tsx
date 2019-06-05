@@ -2,7 +2,8 @@ import cn from 'classnames';
 import React from 'react';
 import modifiers, { Modifiers } from '../../../modifiers';
 import { Element } from '../../elements';
-import { FieldBody, FieldLabel } from './components';
+
+export * from './components';
 
 type FieldProps = Partial<Modifiers> & {
   align?: 'centered' | 'right';
@@ -38,12 +39,8 @@ export const Field: React.FunctionComponent<FieldProps> = ({
   );
 };
 
-(Field as any).Label = FieldLabel;
-(Field as any).Body = FieldBody;
-
 Field.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'div',
   multiline: false,
   horizontal: false
 };

@@ -1,28 +1,17 @@
 import cn from 'classnames';
-import React, { useEffect } from 'react';
-import { Colors, IS_CLIENT } from '../../../constants';
+import * as React from 'react';
+import { useEffect } from 'react';
+import { Colors, isServer } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 import { Element } from '../../elements';
-import {
-  NavbarBrand,
-  NavbarBurger,
-  NavbarContainer,
-  NavbarDivider,
-  NavbarDropdown,
-  NavbarItem,
-  NavbarLink,
-  NavbarMenu
-} from './components';
 import { ShowContext } from './context';
 
-let htmlClass = '';
-
-export const getHtmlClasses = () => htmlClass;
+export * from './components';
 
 type NavbarProps = Partial<Modifiers> & {
   active?: boolean;
   color?: Colors;
-  fixed?: 'top' | 'bottom';
+  fixed?: null | 'top' | 'bottom';
   transparent?: boolean;
 };
 
@@ -37,8 +26,8 @@ export const Navbar: React.FunctionComponent<NavbarProps> = ({
 }: NavbarProps) => {
   // @ts-ignore
   useEffect(() => {
-    if (!IS_CLIENT) {
-      return null;
+    if (isServer) {
+      return;
     }
 
     const html = window.document.querySelector('html') as HTMLElement;
@@ -46,7 +35,6 @@ export const Navbar: React.FunctionComponent<NavbarProps> = ({
     html.classList.remove('has-navbar-fixed-bottom');
 
     if (fixed) {
-      htmlClass = `has-navbar-fixed-${fixed}`;
       html.classList.add(`has-navbar-fixed-${fixed}`);
     }
 
@@ -71,15 +59,6 @@ export const Navbar: React.FunctionComponent<NavbarProps> = ({
     </ShowContext.Provider>
   );
 };
-
-(Navbar as any).Brand = NavbarBrand;
-(Navbar as any).Burger = NavbarBurger;
-(Navbar as any).Container = NavbarContainer;
-(Navbar as any).Divider = NavbarDivider;
-(Navbar as any).Dropdown = NavbarDropdown;
-(Navbar as any).Item = NavbarItem;
-(Navbar as any).Link = NavbarLink;
-(Navbar as any).Menu = NavbarMenu;
 
 Navbar.defaultProps = {
   ...modifiers.defaultProps,

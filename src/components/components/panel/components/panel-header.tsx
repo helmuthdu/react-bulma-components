@@ -10,6 +10,5 @@ export const PanelHeader: React.FunctionComponent<PanelHeaderProps> = ({ classNa
 );
 
 PanelHeader.defaultProps = {
-  ...modifiers.defaultProps,
-  renderAs: 'div'
+  ...modifiers.defaultProps
 };

@@ -2,12 +2,11 @@ import { action } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { Dropdown } from '.';
+import { Dropdown, DropdownDivider, DropdownItem } from '.';
 import { Colors } from '../../../constants';
 import { Modifiers } from '../../../modifiers';
 import { Container } from '../../layout/container';
 import { Section } from '../../layout/section';
-import { DropdownDivider, DropdownItem } from './components';
 
 class Wrapper extends React.Component<Partial<Modifiers> & { hoverable?: boolean; color?: Colors }> {
   state = {

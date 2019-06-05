@@ -2,7 +2,8 @@ import cn from 'classnames';
 import React from 'react';
 import { Colors, Sizes } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
-import { ButtonGroup } from './components';
+
+export * from './components';
 
 type ButtonProps = Partial<Modifiers> & {
   color?: Colors;
@@ -93,8 +94,6 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
     </Element>
   );
 };
-
-(Button as any).Group = ButtonGroup;
 
 Button.defaultProps = {
   ...modifiers.defaultProps,

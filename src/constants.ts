@@ -1,8 +1,9 @@
-export const IS_CLIENT = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+export const isServer = !(typeof window !== 'undefined' && window.document && window.document.createElement);
 
 export type Breakpoints = 'mobile' | 'tablet' | 'desktop' | 'widescreen' | 'fullhd' | 'touch';
 
 export type Colors =
+  | null
   | 'black'
   | 'danger'
   | 'dark'

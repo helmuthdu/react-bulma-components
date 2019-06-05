@@ -11,6 +11,5 @@ export const CardHeaderTitle: React.FunctionComponent<CardHeaderTitleProps> = ({
 }: CardHeaderTitleProps) => <Element {...props} className={cn('card-header-title', className)} />;
 
 CardHeaderTitle.defaultProps = {
-  ...modifiers.defaultProps,
-  renderAs: 'div'
+  ...modifiers.defaultProps
 };

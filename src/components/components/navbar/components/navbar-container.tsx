@@ -28,6 +28,5 @@ export const NavbarContainer: React.FunctionComponent<NavbarContainerProps> = ({
 
 NavbarContainer.defaultProps = {
   ...modifiers.defaultProps,
-  position: 'start',
-  renderAs: 'div'
+  position: 'start'
 };

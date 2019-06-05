@@ -3,8 +3,7 @@ import * as React from 'react';
 import { Footer } from '.';
 import { Content } from '../../elements/content';
 import { Container } from '../container';
-import { Hero } from '../hero';
-import { HeroHead, HeroBody, HeroFooter } from '../hero/components';
+import { Hero, HeroHead, HeroBody, HeroFooter } from '../hero';
 
 storiesOf('Footer', module).add('Default', () => (
   <Hero size="fullheight">

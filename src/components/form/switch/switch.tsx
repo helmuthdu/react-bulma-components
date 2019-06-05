@@ -1,5 +1,6 @@
 import cn from 'classnames';
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 import { Colors, Sizes } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 

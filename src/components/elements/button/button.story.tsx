@@ -3,11 +3,10 @@ import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import { Button } from '.';
+import { Button, ButtonGroup } from '.';
 import { Colors } from '../../../constants';
 import { Section } from '../../layout/section';
 import { Box } from '../box';
-import { ButtonGroup } from './components';
 
 const colors: { [key: string]: Colors } = {
   primary: 'primary',

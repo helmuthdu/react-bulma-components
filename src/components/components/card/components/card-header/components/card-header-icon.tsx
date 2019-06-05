@@ -11,6 +11,5 @@ export const CardHeaderIcon: React.FunctionComponent<CardHeaderIconProps> = ({
 }: CardHeaderIconProps) => <Element {...props} className={cn('card-header-icon', className)} />;
 
 CardHeaderIcon.defaultProps = {
-  ...modifiers.defaultProps,
-  renderAs: 'div'
+  ...modifiers.defaultProps
 };

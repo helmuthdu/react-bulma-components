@@ -3,7 +3,8 @@ import React from 'react';
 import { Sizes } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 import { Element } from '../../elements';
-import { Tab } from './components/tab';
+
+export * from './components';
 
 type TabsProps = Partial<Modifiers> & {
   align?: null | 'centered' | 'right';
@@ -35,10 +36,7 @@ export const Tabs: React.FunctionComponent<TabsProps> = ({
   </Element>
 );
 
-(Tabs as any).Tab = Tab;
-
 Tabs.defaultProps = {
   ...modifiers.defaultProps,
-  fullwidth: false,
-  renderAs: 'div'
+  fullwidth: false
 };

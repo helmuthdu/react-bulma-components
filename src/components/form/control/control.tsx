@@ -41,6 +41,5 @@ Control.defaultProps = {
   fullwidth: false,
   iconLeft: false,
   iconRight: false,
-  loading: false,
-  renderAs: 'div'
+  loading: false
 };

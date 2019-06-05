@@ -16,6 +16,5 @@ export const HeroFooter: React.FunctionComponent<HeroFooterProps> = ({
 );
 
 HeroFooter.defaultProps = {
-  ...modifiers.defaultProps,
-  renderAs: 'div'
+  ...modifiers.defaultProps
 };

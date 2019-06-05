@@ -16,6 +16,5 @@ export const LevelItem: React.FunctionComponent<LevelItemProps> = ({
 );
 
 LevelItem.defaultProps = {
-  ...modifiers.defaultProps,
-  renderAs: 'div'
+  ...modifiers.defaultProps
 };

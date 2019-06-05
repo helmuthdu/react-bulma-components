@@ -1,10 +1,9 @@
 import { storiesOf } from '@storybook/react';
 import { CSSProperties } from 'react';
 import * as React from 'react';
-import { Columns } from '.';
+import { Column, Columns } from '.';
 import { Box } from '../elements/box';
 import { Heading } from '../elements/heading';
-import { Column } from './components/column';
 import CONSTANTS from './constants';
 
 const style: CSSProperties = {

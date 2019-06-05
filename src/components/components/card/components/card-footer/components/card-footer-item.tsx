@@ -11,6 +11,5 @@ export const CardFooterItem: React.FunctionComponent<CardFooterItemProps> = ({
 }: CardFooterItemProps) => <Element {...props} className={cn('card-footer-item', className)} />;
 
 CardFooterItem.defaultProps = {
-  ...modifiers.defaultProps,
-  renderAs: 'div'
+  ...modifiers.defaultProps
 };

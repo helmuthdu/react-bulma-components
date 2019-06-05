@@ -16,6 +16,5 @@ export const FieldBody: React.FunctionComponent<FieldBodyProps> = ({
 );
 
 FieldBody.defaultProps = {
-  ...modifiers.defaultProps,
-  renderAs: 'div'
+  ...modifiers.defaultProps
 };

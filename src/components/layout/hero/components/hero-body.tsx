@@ -12,6 +12,5 @@ export const HeroBody: React.FunctionComponent<HeroBodyProps> = ({ children, cla
 );
 
 HeroBody.defaultProps = {
-  ...modifiers.defaultProps,
-  renderAs: 'div'
+  ...modifiers.defaultProps
 };

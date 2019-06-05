@@ -16,6 +16,5 @@ export const MessageHeader: React.FunctionComponent<MessageHeaderProps> = ({
 );
 
 MessageHeader.defaultProps = {
-  ...modifiers.defaultProps,
-  renderAs: 'div'
+  ...modifiers.defaultProps
 };

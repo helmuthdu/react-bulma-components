@@ -34,6 +34,5 @@ export const ButtonGroup: React.FunctionComponent<ButtonGroupProps> = ({
 
 ButtonGroup.defaultProps = {
   ...modifiers.defaultProps,
-  hasAddons: false,
-  renderAs: 'div'
+  hasAddons: false
 };

@@ -1,10 +1,13 @@
 import cn from 'classnames';
-import React, { useEffect, useState } from 'react';
+import * as React from 'react';
+import { useEffect, useState } from 'react';
 import { Colors } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 import { Button } from '../../elements/button';
 import { Icon } from '../../elements/icon';
-import { DropdownDivider, DropdownItem } from './components';
+import { DropdownItem } from './components';
+
+export * from './components';
 
 type DropdownProps = Partial<Modifiers> & {
   color?: Colors;
@@ -106,9 +109,6 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
     </div>
   );
 };
-
-(Dropdown as any).Divider = DropdownDivider;
-(Dropdown as any).Item = DropdownItem;
 
 Dropdown.defaultProps = {
   ...modifiers.defaultProps,

@@ -16,6 +16,5 @@ export const MessageBody: React.FunctionComponent<MessageBodyProps> = ({
 );
 
 MessageBody.defaultProps = {
-  ...modifiers.defaultProps,
-  renderAs: 'div'
+  ...modifiers.defaultProps
 };

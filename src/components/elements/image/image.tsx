@@ -1,5 +1,6 @@
 import cn from 'classnames';
-import React, { useEffect, useState } from 'react';
+import * as React from 'react';
+import { useEffect, useState } from 'react';
 import { Proportions } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 import { Element } from '../element';

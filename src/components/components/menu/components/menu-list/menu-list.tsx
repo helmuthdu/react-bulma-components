@@ -1,8 +1,10 @@
 import cn from 'classnames';
-import React, { Fragment } from 'react';
+import * as React from 'react';
+import { Fragment } from 'react';
 import modifiers, { Modifiers } from '../../../../../modifiers';
 import { Element } from '../../../../elements';
-import { MenuListItem } from './components/menu-list-item';
+
+export * from './components';
 
 type MenuListProps = Partial<Modifiers> & {
   title?: string;
@@ -14,8 +16,6 @@ export const MenuList: React.FunctionComponent<MenuListProps> = ({ className, ti
     <Element renderAs="ul" className={cn('menu-list', className)} {...props} />
   </Fragment>
 );
-
-(MenuList as any).Item = MenuListItem;
 
 MenuList.defaultProps = {
   ...modifiers.defaultProps

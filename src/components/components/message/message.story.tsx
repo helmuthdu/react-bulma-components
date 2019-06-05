@@ -1,8 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { Message } from '.';
+import { Message, MessageHeader, MessageBody } from '.';
 import { Button } from '../../elements/button';
-import { MessageHeader, MessageBody } from './components';
 
 storiesOf('Message', module)
   .add('Default', () => (

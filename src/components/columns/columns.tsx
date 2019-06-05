@@ -3,8 +3,8 @@ import React from 'react';
 import { Breakpoints } from '../../constants';
 import modifiers, { Modifiers } from '../../modifiers';
 import { Element } from '../elements';
-import { Column } from './components/column';
-import COLUMN_CONSTANTS from './constants';
+
+export * from './components';
 
 type ColumnsProps = Partial<Modifiers> & {
   breakpoint?: Breakpoints;
@@ -31,9 +31,6 @@ export const Columns: React.FunctionComponent<ColumnsProps> = ({
     })}
   />
 );
-
-(Columns as any).Column = Column;
-(Columns as any).CONSTANTS = COLUMN_CONSTANTS;
 
 Columns.defaultProps = {
   ...modifiers.defaultProps,

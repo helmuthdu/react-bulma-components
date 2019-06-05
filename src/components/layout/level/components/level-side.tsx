@@ -25,6 +25,5 @@ export const LevelSide: React.FunctionComponent<LevelSideProps> = ({
 
 LevelSide.defaultProps = {
   ...modifiers.defaultProps,
-  align: 'left',
-  renderAs: 'div'
+  align: 'left'
 };

@@ -1,14 +1,10 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { Card } from '.';
+import { Card, CardContent, CardFooter, CardFooterItem, CardHeader, CardHeaderTitle, CardImage } from '.';
 import { Content } from '../../elements/content';
 import { Heading } from '../../elements/heading';
 import { Image } from '../../elements/image';
-import { Media } from '../../layout/media';
-import { MediaItem } from '../../layout/media/components';
-import { CardContent, CardFooter, CardHeader, CardImage } from './components';
-import { CardFooterItem } from './components/card-footer/components';
-import { CardHeaderTitle } from './components/card-header/components';
+import { Media, MediaItem } from '../../layout/media';
 
 storiesOf('Card', module)
   .addDecorator(story => <div style={{ margin: '0px auto', width: 450 }}>{story()}</div>)

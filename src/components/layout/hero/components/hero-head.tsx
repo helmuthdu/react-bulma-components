@@ -12,6 +12,5 @@ export const HeroHead: React.FunctionComponent<HeroHeadProps> = ({ children, cla
 );
 
 HeroHead.defaultProps = {
-  ...modifiers.defaultProps,
-  renderAs: 'div'
+  ...modifiers.defaultProps
 };

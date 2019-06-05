@@ -3,7 +3,8 @@ import React from 'react';
 import { Colors, Sizes } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 import { Element } from '../../elements';
-import { MessageBody, MessageHeader } from './components';
+
+export * from './components';
 
 type MessageProps = Partial<Modifiers> & {
   color?: Colors;
@@ -27,9 +28,6 @@ export const Message: React.FunctionComponent<MessageProps> = ({
     {children}
   </Element>
 );
-
-(Message as any).Body = MessageBody;
-(Message as any).Header = MessageHeader;
 
 Message.defaultProps = {
   ...modifiers.defaultProps,

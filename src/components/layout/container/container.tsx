@@ -29,6 +29,5 @@ export const Container: React.FunctionComponent<ContainerProps> = ({
 
 Container.defaultProps = {
   ...modifiers.defaultProps,
-  fluid: false,
-  renderAs: 'div'
+  fluid: false
 };

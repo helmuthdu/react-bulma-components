@@ -25,6 +25,5 @@ export const Content: React.FunctionComponent<ContentProps> = ({
 );
 
 Content.defaultProps = {
-  ...modifiers.defaultProps,
-  renderAs: 'div'
+  ...modifiers.defaultProps
 };

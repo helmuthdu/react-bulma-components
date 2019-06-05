@@ -12,6 +12,5 @@ export const Box: React.FunctionComponent<BoxProps> = ({ children, className, ..
 );
 
 Box.defaultProps = {
-  ...modifiers.defaultProps,
-  renderAs: 'div'
+  ...modifiers.defaultProps
 };

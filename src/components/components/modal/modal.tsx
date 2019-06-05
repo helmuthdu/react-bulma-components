@@ -3,7 +3,8 @@ import * as React from 'react';
 import { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { Modifiers } from '../../../modifiers';
-import { ModalCard, ModalContent } from './components';
+
+export * from './components';
 
 const KEYCODES = {
   ESCAPE: 27
@@ -86,9 +87,6 @@ export const Modal: React.FunctionComponent<ModalProps> = (props: ModalProps) =>
     portalElement
   );
 };
-
-(Modal as any).Content = ModalContent;
-(Modal as any).Card = ModalCard;
 
 Modal.defaultProps = {
   closeOnEsc: true,

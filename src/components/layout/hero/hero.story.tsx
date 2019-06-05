@@ -1,10 +1,9 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { Hero } from '.';
+import { Hero, HeroBody, HeroFooter, HeroHead } from '.';
 import { Heading } from '../../elements/heading';
 import { Container } from '../container';
 import { Section } from '../section';
-import { HeroBody, HeroFooter, HeroHead } from './components';
 
 storiesOf('Hero', module)
   .add('Default with color', () => (

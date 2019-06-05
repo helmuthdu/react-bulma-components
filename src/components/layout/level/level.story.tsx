@@ -1,16 +1,14 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { Level } from '.';
+import { Level, LevelItem, LevelSide } from '.';
 import { Breakpoints } from '../../../constants';
 import { Box } from '../../elements/box';
 import { Button } from '../../elements/button';
 import { Heading } from '../../elements/heading';
 import { Control, Field, Input } from '../../form';
 import { Container } from '../container';
-import { Hero } from '../hero';
-import { HeroHead } from '../hero/components';
+import { Hero, HeroHead } from '../hero';
 import { Section } from '../section';
-import { LevelItem, LevelSide } from './components';
 
 const style: React.CSSProperties = { textAlign: 'center' };
 

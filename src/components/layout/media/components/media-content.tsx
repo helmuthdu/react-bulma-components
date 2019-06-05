@@ -16,6 +16,5 @@ export const MediaContent: React.FunctionComponent<MediaContentProps> = ({
 );
 
 MediaContent.defaultProps = {
-  ...modifiers.defaultProps,
-  renderAs: 'div'
+  ...modifiers.defaultProps
 };

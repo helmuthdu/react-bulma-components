@@ -22,6 +22,5 @@ export const PanelBlock: React.FunctionComponent<PanelBlockProps> = ({
 
 PanelBlock.defaultProps = {
   ...modifiers.defaultProps,
-  active: false,
-  renderAs: 'div'
+  active: false
 };

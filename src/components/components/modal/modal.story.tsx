@@ -1,17 +1,13 @@
 import { storiesOf } from '@storybook/react';
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import { Modal } from '.';
+import { Modal, ModalCard, ModalContent, ModalCardBody, ModalCardFoot, ModalCardHead, ModalCardTitle } from '.';
 import { Button } from '../../elements/button';
 import { Content } from '../../elements/content';
 import { Image } from '../../elements/image';
-import { Level } from '../../layout/level';
-import { LevelSide } from '../../layout/level/components';
-import { Media } from '../../layout/media';
-import { MediaItem } from '../../layout/media/components';
+import { Level, LevelSide } from '../../layout/level';
+import { Media, MediaItem } from '../../layout/media';
 import { Section } from '../../layout/section';
-import { ModalCard, ModalContent } from './components';
-import { ModalCardBody, ModalCardFoot, ModalCardHead, ModalCardTitle } from './components/modal-card/components';
 
 class OpenModal extends React.Component<any> {
   static propTypes = {

@@ -38,6 +38,5 @@ export const Tile: React.FunctionComponent<TileProps> = ({
 Tile.defaultProps = {
   ...modifiers.defaultProps,
   notification: false,
-  renderAs: 'div',
   vertical: false
 };

@@ -3,7 +3,8 @@ import React from 'react';
 import { Colors, Sizes } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 import { Element } from '../../elements';
-import { HeroBody, HeroFooter, HeroHead } from './components';
+
+export * from './components';
 
 type HeroProps = Partial<Modifiers> & {
   color?: Colors;
@@ -30,10 +31,6 @@ export const Hero: React.FunctionComponent<HeroProps> = ({
     {children}
   </Element>
 );
-
-(Hero as any).Body = HeroBody;
-(Hero as any).Footer = HeroFooter;
-(Hero as any).Head = HeroHead;
 
 Hero.defaultProps = {
   ...modifiers.defaultProps,

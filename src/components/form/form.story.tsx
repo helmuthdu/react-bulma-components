@@ -1,5 +1,6 @@
 import { storiesOf } from '@storybook/react';
-import React, { PureComponent } from 'react';
+import * as React from 'react';
+import { PureComponent } from 'react';
 import { Button } from '../elements/button';
 import { Icon } from '../elements/icon';
 import { Checkbox, Control, Field, Help, Input, InputFile, Label, Radio, Select, Switch, Textarea } from '../form';

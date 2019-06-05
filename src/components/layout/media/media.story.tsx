@@ -1,15 +1,13 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { Media } from '.';
+import { Media, MediaItem } from '.';
 import { Box } from '../../elements/box';
 import { Button } from '../../elements/button';
 import { Content } from '../../elements/content';
 import { Image } from '../../elements/image';
 import { Control, Field, Textarea } from '../../form';
-import { Level } from '../level';
-import { LevelSide } from '../level/components';
+import { Level, LevelSide } from '../level';
 import { Section } from '../section';
-import { MediaItem } from './components';
 
 const style = { background: '#e6e6e6', width: 64, height: 64 };
 

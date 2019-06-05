@@ -2,9 +2,8 @@
 import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { Navbar } from '.';
+import { Navbar, NavbarMenu, NavbarContainer, NavbarItem, NavbarBrand, NavbarBurger } from '.';
 import { Box } from '../../elements/box';
-import { NavbarMenu, NavbarContainer, NavbarItem, NavbarBrand, NavbarBurger } from './components';
 import { Colors } from '../../../constants';
 
 const colors: { [key: string]: Colors } = {
@@ -33,7 +32,7 @@ storiesOf('Navbar', module)
     return (
       <Navbar
         color={select('Color', colors, colors.primary)}
-        fixed={select('Fixed', { top: 'top', bottom: 'bottom' }, 'top')}
+        fixed={select('Fixed', { default: null, top: 'top', bottom: 'bottom' }, null)}
         active={boolean('Active', false)}
         transparent={boolean('Transparent', false)}
       >

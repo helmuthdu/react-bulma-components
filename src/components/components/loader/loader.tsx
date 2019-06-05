@@ -26,6 +26,5 @@ export const Loader: React.FunctionComponent<LoaderProps> = ({
 
 Loader.defaultProps = {
   ...modifiers.defaultProps,
-  overlay: false,
-  renderAs: 'div'
+  overlay: false
 };

@@ -29,6 +29,5 @@ export const Notification: React.FunctionComponent<NotificationProps> = ({
 );
 
 Notification.defaultProps = {
-  ...modifiers.defaultProps,
-  renderAs: 'div'
+  ...modifiers.defaultProps
 };

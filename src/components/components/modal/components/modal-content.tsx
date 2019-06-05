@@ -16,6 +16,5 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
 );
 
 ModalContent.defaultProps = {
-  ...modifiers.defaultProps,
-  renderAs: 'div'
+  ...modifiers.defaultProps
 };

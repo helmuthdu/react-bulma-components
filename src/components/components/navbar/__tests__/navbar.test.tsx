@@ -1,8 +1,7 @@
 import { render } from '@testing-library/react';
 import { JSDOM } from 'jsdom';
 import * as React from 'react';
-import { renderToString } from 'react-dom/server';
-import { getHtmlClasses, Navbar } from '..';
+import { Navbar } from '..';
 import {
   NavbarBrand,
   NavbarBurger,
@@ -42,12 +41,6 @@ describe('Navbar component', () => {
   ])('should render', Component => {
     const { asFragment } = render(<Component />);
     expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render on server side', () => {
-    const html = renderToString(<Navbar fixed="top" />);
-    expect(html).toMatchSnapshot();
-    expect(getHtmlClasses()).toMatchSnapshot('top');
   });
 
   it('should have Navbar classname', () => {

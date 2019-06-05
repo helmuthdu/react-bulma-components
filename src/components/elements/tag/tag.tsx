@@ -3,7 +3,8 @@ import React from 'react';
 import { Colors } from '../../../constants';
 import modifiers, { Modifiers } from '../../../modifiers';
 import { Element } from '../element';
-import { Tags } from './components/tags';
+
+export * from './components';
 
 type TagProps = Partial<Modifiers> & {
   close?: boolean;
@@ -43,8 +44,6 @@ export const Tag: React.FunctionComponent<TagProps> = ({
     {!remove && close && <button onClick={onClick} className="delete is-small" data-testid="tag-delete" />}
   </Element>
 );
-
-(Tag as any).Group = Tags;
 
 Tag.defaultProps = {
   ...modifiers.defaultProps,
