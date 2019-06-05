@@ -15,8 +15,8 @@
     "prepare": "npm run clean:build && npm run build && npm run clean:test",
     "deploy-storybook": "storybook-to-ghpages",
     "build": "WEBPACK_ENV=INCLUDE_CSS BABEL_ENV=production NODE_ENV=production webpack --progress --color --mode=production && webpack --progress --color --mode=production && npm run create:lib",
-    "create:lib": "BABEL_ENV=production NODE_ENV=production babel ./src --out-dir ./lib --copy-files --source-maps",
-    "clean:test": "rm -rf $(find ./lib -name \"__test__\")"
+    "create:lib": "BABEL_ENV=production NODE_ENV=production tsc",
+    "clean:test": "rm -rf $(find ./lib -name \"__tests__\")"
   },
   "storybook-deployer": {
     "gitUsername": "Couds",
@@ -80,8 +80,11 @@
     "@testing-library/react": "^8.0.1",
     "@types/classnames": "^2.2.8",
     "@types/jest": "^24.0.13",
+    "@types/jsdom": "^12.2.3",
     "@types/react": "^16.8.19",
+    "@types/react-dom": "^16.8.4",
     "@types/react-paginate": "^6.2.1",
+    "@types/storybook__addon-actions": "^3.4.2",
     "@types/storybook__addon-knobs": "^5.0.0",
     "@types/storybook__react": "^4.0.1",
     "@typescript-eslint/eslint-plugin": "^1.9.0",

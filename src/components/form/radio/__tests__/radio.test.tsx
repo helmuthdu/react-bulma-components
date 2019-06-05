@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Radio } from '../radio';
 
 describe('Radio component', () => {
-  let onChange;
+  let onChange: jest.Mock;
 
   beforeEach(() => {
     onChange = jest.fn();

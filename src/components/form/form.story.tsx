@@ -5,7 +5,7 @@ import { Icon } from '../elements/icon';
 import { Checkbox, Control, Field, Help, Input, InputFile, Label, Radio, Select, Switch, Textarea } from '../form';
 
 /* eslint-disable react/no-multi-comp */
-const HoC = Component => {
+const HoC = (Component: React.FunctionComponent<any>) => {
   class Controlled extends React.Component {
     static displayName = 'Select';
 
@@ -13,8 +13,9 @@ const HoC = Component => {
       value: ''
     };
 
-    onChange = evt => {
+    onChange = (evt: React.SyntheticEvent) => {
       this.setState({
+        // @ts-ignore
         value: evt.target.value
       });
     };
@@ -27,14 +28,15 @@ const HoC = Component => {
   return Controlled;
 };
 
-const HoCCheckbox = Component => {
+const HoCCheckbox = (Component: React.FunctionComponent<any>) => {
   class Controlled extends React.Component {
     state = {
       checked: false
     };
 
-    onChange = evt => {
+    onChange = (evt: React.SyntheticEvent) => {
       this.setState({
+        // @ts-ignore
         checked: evt.target.checked
       });
     };
@@ -52,8 +54,9 @@ class RadioGroup extends React.Component {
     selected: null
   };
 
-  onChange = evt => {
+  onChange = (evt: React.SyntheticEvent) => {
     this.setState({
+      // @ts-ignore
       selected: evt.target.value
     });
   };
@@ -177,9 +180,11 @@ storiesOf('Form', module)
         termsAccepted: false
       };
 
-      onChange = evt => {
+      onChange = (evt: React.SyntheticEvent) => {
+        // @ts-ignore
         const value = evt.target.type === 'checkbox' ? evt.target.checked : evt.target.value;
         this.setState({
+          // @ts-ignore
           [evt.target.name]: value
         });
       };

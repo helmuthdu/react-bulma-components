@@ -24,7 +24,7 @@ export const Modal: React.FunctionComponent<ModalProps> = (props: ModalProps) =>
 
   portalElement.setAttribute('class', 'modal-container');
 
-  const handleKeydown = e => {
+  const handleKeydown = (e: any) => {
     if (e.keyCode === KEYCODES.ESCAPE && props.show) {
       props.onClose();
     }

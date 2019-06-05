@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Checkbox } from '../checkbox';
 
 describe('Checkbox component', () => {
-  let onChange;
+  let onChange: jest.Mock;
 
   beforeEach(() => {
     onChange = jest.fn();

@@ -22,7 +22,7 @@ describe('Modal component', () => {
 
   it('should open the modal', () => {
     const onClose = jest.fn();
-    const getComponent = show => (
+    const getComponent = (show: boolean) => (
       <Modal show={show} onClose={onClose}>
         <ModalCard>
           <ModalCardHead>

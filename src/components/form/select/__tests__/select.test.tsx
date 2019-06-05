@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Select } from '../select';
 
 describe('Select component', () => {
-  let onChange;
+  let onChange: jest.Mock;
 
   beforeEach(() => {
     onChange = jest.fn();

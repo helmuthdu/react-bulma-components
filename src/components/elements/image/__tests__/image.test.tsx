@@ -30,7 +30,7 @@ describe('Image component', () => {
   });
 
   it('should update src', async () => {
-    const getComponent = url => <Image src={url} />;
+    const getComponent = (url: string) => <Image src={url} />;
     const { getByTestId, rerender } = render(getComponent('http://mydomain.com/image'));
     rerender(getComponent('http://mydomain.com/other'));
     expect(getByTestId('image-img')).toHaveAttribute('src', 'http://mydomain.com/other');

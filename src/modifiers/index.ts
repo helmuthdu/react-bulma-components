@@ -4,7 +4,7 @@ import helpers, { HelpersModifier } from './helpers';
 import responsive, { ResponsiveModifier } from './responsives';
 import typography, { TypographyModifier } from './typography';
 
-const compose = (...fns) => args => fns.reduce((arg, fn) => fn(arg), args);
+const compose = (...fns: any[]) => (args: any) => fns.reduce((arg: any, fn) => fn(arg), args);
 
 export type Modifiers = ColorsModifier &
   HelpersModifier &

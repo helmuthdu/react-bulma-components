@@ -13,7 +13,8 @@ class Wrapper extends React.Component<Partial<Modifiers> & { hoverable?: boolean
   state = {
     selected: ''
   };
-  onChange = selected => {
+
+  onChange = (selected: string) => {
     this.setState({ selected });
   };
 

@@ -37,17 +37,16 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
 
   const [open, setOpen] = useState(false);
   const props = modifiers.clean(allProps);
-  let current = label;
-  let htmlElement;
+  const htmlElement: React.RefObject<HTMLDivElement> = React.createRef();
 
-  const close = (evt?: any) => {
-    if (hoverable || (evt && htmlElement.contains(evt.target))) {
+  const close = (evt?: React.MouseEvent | any) => {
+    if (hoverable || (evt && (htmlElement.current as HTMLDivElement).contains(evt.target))) {
       return;
     }
     setOpen(false);
   };
 
-  const toggle = evt => {
+  const toggle = (evt?: React.MouseEvent) => {
     if (evt) {
       evt.preventDefault();
     }
@@ -57,7 +56,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
     setOpen(!open);
   };
 
-  const select = value => () => {
+  const select = (value: unknown) => () => {
     if (onChange) {
       onChange(value);
     }
@@ -67,6 +66,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
     }
   };
 
+  let current = label;
   const childrenArray = React.Children.map(children, (child: any, i) => {
     if (child.type === DropdownItem && ((i === 0 && !label) || child.props.value === value)) {
       current = child.props.children;
@@ -85,9 +85,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   return (
     <div
       {...props}
-      ref={node => {
-        htmlElement = node;
-      }}
+      ref={htmlElement}
       data-testid="dropdown-container"
       className={cn('dropdown', modifiers.getClassName(allProps), className, {
         'is-active': open,

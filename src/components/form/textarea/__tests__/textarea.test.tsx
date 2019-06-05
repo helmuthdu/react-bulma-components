@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Textarea } from '../textarea';
 
 describe('Textarea component', () => {
-  let onChange;
+  let onChange: jest.Mock;
 
   beforeEach(() => {
     onChange = jest.fn();

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Input } from '../input';
 
 describe('Input component', () => {
-  let onChange;
+  let onChange: jest.Mock;
 
   beforeEach(() => {
     onChange = jest.fn();

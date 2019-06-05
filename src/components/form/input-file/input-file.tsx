@@ -39,7 +39,8 @@ export const InputFile: React.FunctionComponent<InputFileProps> = ({
   ...props
 }: InputFileProps) => {
   const [fileName, setFileName] = useState(null);
-  const handleSelect = event => {
+  const handleSelect = (event: React.SyntheticEvent) => {
+    // @ts-ignore
     const { files } = event.target;
     setFileName(files.length > 0 ? files[0].name : undefined);
     if (onChange) {
