@@ -6,7 +6,7 @@ exports[`Columns component should have columns one column half width and 3 other
     class="columns is-multiline"
   >
     <div
-      class="column is-half"
+      class="column is-6"
     >
       1
     </div>
@@ -35,7 +35,7 @@ exports[`Columns component should have columns one column half width, other narr
     class="columns is-multiline"
   >
     <div
-      class="column is-half"
+      class="column is-6"
     >
       1
     </div>
@@ -80,7 +80,7 @@ exports[`Columns component should render as paragraph 1`] = `
     class="columns is-multiline"
   >
     <p
-      class="column is-half"
+      class="column is-6"
     >
       1
     </p>

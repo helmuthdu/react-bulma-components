@@ -1,33 +1,34 @@
 import cn from 'classnames';
 import React from 'react';
 import { Colors, Sizes } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
 export * from './button-group';
 
-type ButtonProps = Partial<Modifiers> & {
-  color?: Colors;
-  disabled?: boolean;
-  fullwidth?: boolean;
-  inactive?: boolean;
-  inverted?: boolean;
-  link?: boolean;
-  loading?: boolean;
-  onClick?: (...args: any[]) => any;
-  onChange?: (...args: any[]) => any;
-  onMouseEnter?: (...args: any[]) => any;
-  outlined?: boolean;
-  remove?: boolean;
-  renderAs?: ('a' | 'button' | 'span') | ((...args: any[]) => any);
-  reset?: boolean;
-  rounded?: boolean;
-  selected?: boolean;
-  size?: Sizes;
-  state?: 'hover' | 'focus' | 'active' | 'loading';
-  submit?: boolean;
-  text?: boolean;
-  type?: string;
-};
+type ButtonProps = Partial<Omit<React.ComponentProps<'a' | 'button' | 'span'>, 'color' | 'unselectable'>> &
+  ElementModifier & {
+    color?: Colors;
+    disabled?: boolean;
+    fullwidth?: boolean;
+    inactive?: boolean;
+    inverted?: boolean;
+    link?: boolean;
+    loading?: boolean;
+    onClick?: (...args: any[]) => void;
+    onChange?: (...args: any[]) => void;
+    onMouseEnter?: (...args: any[]) => void;
+    outlined?: boolean;
+    remove?: boolean;
+    renderAs?: ('a' | 'button' | 'span') | ((...args: any[]) => any);
+    reset?: boolean;
+    rounded?: boolean;
+    selected?: boolean;
+    size?: 'normal' | Sizes;
+    state?: 'hover' | 'focus' | 'active' | 'loading';
+    submit?: boolean;
+    text?: boolean;
+    type?: string;
+  };
 
 export const Button: React.FunctionComponent<ButtonProps> = ({
   children,

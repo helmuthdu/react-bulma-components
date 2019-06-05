@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
-import { Hero } from '..';
-import { HeroBody, HeroFooter, HeroHeader } from '../components';
+import { Hero, HeroBody, HeroFooter, HeroHeader } from '..';
 
 describe('Hero component', () => {
   // @ts-ignore

@@ -1,24 +1,21 @@
 import cn from 'classnames';
 import React from 'react';
 import { Breakpoints } from '../../constants';
-import modifiers, { Modifiers } from '../../modifiers';
+import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../elements';
+import { Column } from './column';
 
-type ColumnsProps = Partial<Modifiers> & {
-  breakpoint?: Breakpoints;
-  centered?: boolean;
-  gapless?: boolean;
-  multiline?: boolean;
-};
+type ColumnsProps = Partial<Omit<React.ComponentProps<'div'>, 'unselectable'>> &
+  ElementModifier & {
+    breakpoint?: Breakpoints;
+    centered?: boolean;
+    gapless?: boolean;
+    multiline?: boolean;
+  };
 
-export const Columns: React.FunctionComponent<ColumnsProps> = ({
-  className,
-  breakpoint,
-  gapless,
-  multiline,
-  centered,
-  ...props
-}: ColumnsProps) => (
+export const Columns: React.FunctionComponent<ColumnsProps> & {
+  Column: typeof Column;
+} = ({ className, breakpoint, gapless, multiline, centered, ...props }: ColumnsProps) => (
   <Element
     {...props}
     className={cn(className, 'columns', {
@@ -29,6 +26,8 @@ export const Columns: React.FunctionComponent<ColumnsProps> = ({
     })}
   />
 );
+
+Columns.Column = Column;
 
 Columns.defaultProps = {
   ...modifiers.defaultProps,

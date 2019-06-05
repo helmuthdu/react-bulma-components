@@ -1,9 +1,9 @@
 import cn from 'classnames';
 import React from 'react';
-import modifiers, { Modifiers } from '../../../../modifiers';
+import modifiers, { ElementModifier } from '../../../../modifiers';
 import { Element } from '../../../elements';
 
-type MessageBodyProps = Partial<Modifiers>;
+type MessageBodyProps = ElementModifier;
 
 export const MessageBody: React.FunctionComponent<MessageBodyProps> = ({
   children,

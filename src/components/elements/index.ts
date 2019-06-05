@@ -8,4 +8,4 @@ export * from './image';
 export * from './notification';
 export * from './progress';
 export * from './table';
-export * from './tag';
+export * from './tags';

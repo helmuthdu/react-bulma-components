@@ -1,15 +1,16 @@
 import cn from 'classnames';
 import React from 'react';
 import { Colors, Sizes } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../element';
 
-type ProgressProps = Partial<Modifiers> & {
-  color?: Colors;
-  max?: number;
-  size?: Sizes;
-  value?: number;
-};
+type ProgressProps = Partial<Omit<React.ComponentProps<'progress'>, 'color' | 'max' | 'value' | 'unselectable'>> &
+  ElementModifier & {
+    color?: Colors;
+    max?: number;
+    size?: Sizes;
+    value?: number;
+  };
 
 export const Progress: React.FunctionComponent<ProgressProps> = ({
   className,

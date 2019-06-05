@@ -1,9 +1,9 @@
 import cn from 'classnames';
 import * as React from 'react';
-import modifiers, { Modifiers } from '../../../../modifiers';
+import modifiers, { ElementModifier } from '../../../../modifiers';
 import { Element } from '../../../elements';
 
-type NavbarLinkProps = Partial<Modifiers>;
+type NavbarLinkProps = ElementModifier;
 
 export const NavbarLink: React.FunctionComponent<NavbarLinkProps> = ({
   className,

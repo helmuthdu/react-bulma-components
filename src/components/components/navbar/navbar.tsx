@@ -2,26 +2,35 @@ import cn from 'classnames';
 import * as React from 'react';
 import { useEffect } from 'react';
 import { Colors, isServer } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../elements';
 import { ShowContext } from './context';
+import { NavbarBrand } from './navbar-brand';
+import { NavbarBurger } from './navbar-burger';
+import { NavbarContainer } from './navbar-container';
+import { NavbarDivider } from './navbar-divider';
+import { NavbarDropdown } from './navbar-dropdown';
+import { NavbarItem } from './navbar-item';
+import { NavbarLink } from './navbar-link';
+import { NavbarMenu } from './navbar-menu';
 
-type NavbarProps = Partial<Modifiers> & {
+type NavbarProps = ElementModifier & {
   active?: boolean;
   color?: Colors;
   fixed?: null | 'top' | 'bottom';
   transparent?: boolean;
 };
 
-export const Navbar: React.FunctionComponent<NavbarProps> = ({
-  children,
-  className,
-  fixed,
-  transparent,
-  color,
-  active,
-  ...props
-}: NavbarProps) => {
+export const Navbar: React.FunctionComponent<NavbarProps> & {
+  Brand: typeof NavbarBrand;
+  Burger: typeof NavbarBurger;
+  Container: typeof NavbarContainer;
+  Divider: typeof NavbarDivider;
+  Dropdown: typeof NavbarDropdown;
+  Item: typeof NavbarItem;
+  Link: typeof NavbarLink;
+  Menu: typeof NavbarMenu;
+} = ({ children, className, fixed, transparent, color, active, ...props }: NavbarProps) => {
   // @ts-ignore
   useEffect(() => {
     if (isServer) {
@@ -57,6 +66,15 @@ export const Navbar: React.FunctionComponent<NavbarProps> = ({
     </ShowContext.Provider>
   );
 };
+
+Navbar.Brand = NavbarBrand;
+Navbar.Burger = NavbarBurger;
+Navbar.Container = NavbarContainer;
+Navbar.Divider = NavbarDivider;
+Navbar.Dropdown = NavbarDropdown;
+Navbar.Item = NavbarItem;
+Navbar.Link = NavbarLink;
+Navbar.Menu = NavbarMenu;
 
 Navbar.defaultProps = {
   ...modifiers.defaultProps,

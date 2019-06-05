@@ -6,7 +6,7 @@
       "dom.iterable",
       "esnext"
     ],
-    "outDir": "./lib",
+    "outDir": "lib",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -17,7 +17,7 @@
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "declaration": true,
     "noEmit": true,
     "jsx": "preserve"
   },

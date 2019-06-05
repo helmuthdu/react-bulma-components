@@ -1,9 +1,9 @@
 import cn from 'classnames';
 import React from 'react';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../element';
 
-type BoxProps = Partial<Modifiers>;
+type BoxProps = ElementModifier;
 
 export const Box: React.FunctionComponent<BoxProps> = ({ children, className, ...props }: BoxProps) => (
   <Element {...props} className={cn('box', className)}>

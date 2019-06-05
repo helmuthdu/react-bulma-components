@@ -28,7 +28,7 @@ exports[`Menu component should accept a react Element as renderAs prop 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Menu component should concat Menu.List to display as submenus 1`] = `
+exports[`Menu component should concat MenuList to display as submenus 1`] = `
 <DocumentFragment>
   <aside
     class="menu"

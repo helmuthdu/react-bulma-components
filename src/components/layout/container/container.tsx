@@ -1,10 +1,10 @@
 import cn from 'classnames';
 import React from 'react';
 import { Breakpoints } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../elements';
 
-type ContainerProps = Partial<Modifiers> & {
+type ContainerProps = ElementModifier & {
   breakpoint?: Breakpoints;
   fluid?: boolean;
 };

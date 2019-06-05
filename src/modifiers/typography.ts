@@ -1,13 +1,13 @@
 /* eslint-disable no-unused-vars */
 import cn from 'classnames';
 
-export type TypographyModifier = Partial<{
-  textSize: 1 | 2 | 3 | 4 | 5 | 6;
-  textAlignment: 'centered' | 'justified' | 'left' | 'right';
-  textTransform: 'capitalized' | 'lowercase' | 'uppercase';
-  textWeight: 'light' | 'normal' | 'semibold' | 'bold';
-  italic: boolean;
-}>;
+export type TypographyModifier = {
+  textSize?: 1 | 2 | 3 | 4 | 5 | 6;
+  textAlignment?: 'centered' | 'justified' | 'left' | 'right';
+  textTransform?: 'capitalized' | 'lowercase' | 'uppercase';
+  textWeight?: 'light' | 'normal' | 'semibold' | 'bold';
+  italic?: boolean;
+};
 
 export default {
   defaultProps: {

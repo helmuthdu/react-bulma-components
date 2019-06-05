@@ -1,9 +1,9 @@
 import cn from 'classnames';
 import React from 'react';
-import modifiers, { Modifiers } from '../../../../modifiers';
+import modifiers, { ElementModifier } from '../../../../modifiers';
 import { Element } from '../../../elements';
 
-type PanelBlockProps = Partial<Modifiers> & {
+type PanelBlockProps = ElementModifier & {
   active?: boolean;
 };
 

@@ -1,10 +1,10 @@
 import cn from 'classnames';
 import React from 'react';
 import { Sizes } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../elements';
 
-type ControlProps = Partial<Modifiers> & {
+type ControlProps = ElementModifier & {
   fullwidth?: boolean;
   iconLeft?: boolean;
   iconRight?: boolean;

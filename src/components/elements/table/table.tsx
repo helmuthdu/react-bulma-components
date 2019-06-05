@@ -1,14 +1,15 @@
 import cn from 'classnames';
 import React from 'react';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../element';
 
-type TableProps = Partial<Modifiers> & {
-  bordered?: boolean;
-  size?: 'fullwidth' | 'narrow';
-  striped?: boolean;
-  hoverable?: boolean;
-};
+type TableProps = Partial<Omit<React.ComponentProps<'table'>, 'unselectable'>> &
+  ElementModifier & {
+    bordered?: boolean;
+    size?: 'fullwidth' | 'narrow';
+    striped?: boolean;
+    hoverable?: boolean;
+  };
 
 export const Table: React.FunctionComponent<TableProps> = ({
   children,

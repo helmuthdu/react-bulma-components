@@ -1,18 +1,19 @@
 import cn from 'classnames';
 import React from 'react';
 import { Colors, Sizes } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
-type CheckboxProps = Partial<Modifiers> & {
-  checked?: boolean;
-  color?: Colors;
-  disabled?: boolean;
-  indeterminate?: boolean;
-  name?: string;
-  onChange: (...args: any[]) => any;
-  size?: Sizes;
-  value?: string | number;
-};
+type CheckboxProps = Partial<Omit<React.ComponentProps<'input'>, 'unselectable'>> &
+  ElementModifier & {
+    checked?: boolean;
+    color?: Colors;
+    disabled?: boolean;
+    indeterminate?: boolean;
+    name?: string;
+    onChange: (...args: any[]) => any;
+    size?: Sizes;
+    value?: string | number;
+  };
 
 export const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   checked,

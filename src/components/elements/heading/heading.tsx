@@ -1,9 +1,9 @@
 import cn from 'classnames';
 import React from 'react';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../element';
 
-type HeadingProps = Partial<Modifiers> & {
+type HeadingProps = ElementModifier & {
   heading?: boolean;
   size?: 1 | 2 | 3 | 4 | 5 | 6;
   spaced?: boolean;

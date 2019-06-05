@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
-import { Level } from '..';
-import { LevelItem, LevelSide } from '../components';
+import { Level, LevelItem, LevelSide } from '..';
 
 describe('Level component', () => {
   // @ts-ignore

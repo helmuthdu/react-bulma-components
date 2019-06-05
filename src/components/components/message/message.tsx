@@ -1,21 +1,20 @@
 import cn from 'classnames';
 import React from 'react';
 import { Colors, Sizes } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../elements';
+import { MessageBody } from './message-body';
+import { MessageHeader } from './message-header';
 
-type MessageProps = Partial<Modifiers> & {
+type MessageProps = ElementModifier & {
   color?: Colors;
   size?: Sizes;
 };
 
-export const Message: React.FunctionComponent<MessageProps> = ({
-  children,
-  className,
-  color,
-  size,
-  ...props
-}: MessageProps) => (
+export const Message: React.FunctionComponent<MessageProps> & {
+  Body: typeof MessageBody;
+  Header: typeof MessageHeader;
+} = ({ children, className, color, size, ...props }: MessageProps) => (
   <Element
     {...props}
     className={cn('message', className, {
@@ -26,6 +25,9 @@ export const Message: React.FunctionComponent<MessageProps> = ({
     {children}
   </Element>
 );
+
+Message.Body = MessageBody;
+Message.Header = MessageHeader;
 
 Message.defaultProps = {
   ...modifiers.defaultProps,

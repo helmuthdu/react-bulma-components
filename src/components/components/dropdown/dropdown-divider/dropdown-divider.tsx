@@ -1,8 +1,8 @@
 import cn from 'classnames';
 import React from 'react';
-import modifiers, { Modifiers } from '../../../../modifiers';
+import modifiers, { ElementModifier } from '../../../../modifiers';
 
-type DropdownDividerProps = Partial<Modifiers>;
+type DropdownDividerProps = Partial<Omit<React.ComponentProps<'hr'>, 'unselectable'>> & ElementModifier;
 
 export const DropdownDivider: React.FunctionComponent<DropdownDividerProps> = ({
   className,

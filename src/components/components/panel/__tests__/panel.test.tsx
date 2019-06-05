@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
-import { Panel, PanelBlock, PanelHeader, PanelIcon, PanelTabs, PanelTab } from '..';
+import { Panel, PanelBlock, PanelHeader, PanelIcon, PanelTab, PanelTabs } from '..';
 
 describe('Panel component', () => {
   it.each([[Panel], [PanelBlock], [PanelHeader], [PanelIcon], [PanelTabs], [PanelTab]])(

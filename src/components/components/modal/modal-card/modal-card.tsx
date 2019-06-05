@@ -1,11 +1,12 @@
 import cn from 'classnames';
 import React from 'react';
-import modifiers, { Modifiers } from '../../../../modifiers';
+import modifiers, { ElementModifier } from '../../../../modifiers';
 import { Element } from '../../../elements';
 
-type ModalCardProps = Partial<Modifiers> & {
-  onClose?: (...args: any[]) => any;
-};
+type ModalCardProps = Partial<Omit<React.ComponentProps<'div'>, 'unselectable'>> &
+  ElementModifier & {
+    onClose?: (...args: any[]) => any;
+  };
 
 export const ModalCard: React.FunctionComponent<ModalCardProps> = ({
   className,

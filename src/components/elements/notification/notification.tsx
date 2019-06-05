@@ -1,10 +1,10 @@
 import cn from 'classnames';
 import React from 'react';
 import { Colors } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../element';
 
-type NotificationProps = Partial<Modifiers> & {
+type NotificationProps = ElementModifier & {
   color?: Colors;
 };
 

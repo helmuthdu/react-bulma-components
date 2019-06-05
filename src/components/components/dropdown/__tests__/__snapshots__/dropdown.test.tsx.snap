@@ -36,14 +36,12 @@ exports[`Dropdown component should appear above the dropdown button 1`] = `
       >
         <div
           class="dropdown-item"
-          role="presentation"
           title="value"
         >
           Item
         </div>
         <div
           class="dropdown-item"
-          role="presentation"
           title="other"
         >
           Other
@@ -90,14 +88,12 @@ exports[`Dropdown component should be right-aligned when using "right" prop 1`] 
       >
         <div
           class="dropdown-item"
-          role="presentation"
           title="value"
         >
           Item
         </div>
         <div
           class="dropdown-item"
-          role="presentation"
           title="other"
         >
           Other
@@ -144,7 +140,6 @@ exports[`Dropdown component should concat classname in props with classname 1`] 
       >
         <div
           class="dropdown-item is-active"
-          role="presentation"
           title="value"
         >
           Item
@@ -192,7 +187,6 @@ exports[`Dropdown component should have custom inline styles 1`] = `
       >
         <div
           class="dropdown-item is-active"
-          role="presentation"
           title="value"
         >
           Item
@@ -240,7 +234,6 @@ exports[`Dropdown component should have divider 1`] = `
       >
         <div
           class="dropdown-item is-active"
-          role="presentation"
           title="value"
         >
           Item
@@ -250,7 +243,6 @@ exports[`Dropdown component should have divider 1`] = `
         />
         <div
           class="dropdown-item"
-          role="presentation"
           title="other"
         >
           Other
@@ -297,7 +289,6 @@ exports[`Dropdown component should render 1`] = `
       >
         <div
           class="dropdown-item is-active"
-          role="presentation"
           title="value"
         >
           Item
@@ -344,7 +335,6 @@ exports[`Dropdown component should show custom label passed to the label prop 1`
       >
         <div
           class="dropdown-item"
-          role="presentation"
           title="value"
         >
           Item
@@ -391,7 +381,6 @@ exports[`Dropdown component should show the label of the first dropdown item whe
       >
         <div
           class="dropdown-item"
-          role="presentation"
           title="value"
         >
           Item

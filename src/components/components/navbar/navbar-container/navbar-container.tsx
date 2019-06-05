@@ -1,9 +1,9 @@
 import cn from 'classnames';
 import * as React from 'react';
-import modifiers, { Modifiers } from '../../../../modifiers';
+import modifiers, { ElementModifier } from '../../../../modifiers';
 import { Element } from '../../../elements';
 
-type NavbarContainerProps = Partial<Modifiers> & {
+type NavbarContainerProps = ElementModifier & {
   position?: 'start' | 'end';
 };
 

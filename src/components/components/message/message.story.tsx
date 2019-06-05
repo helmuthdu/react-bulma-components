@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { Message, MessageHeader, MessageBody } from '.';
+import { Message, MessageBody, MessageHeader } from '.';
 import { Button } from '../../elements/button';
 
 storiesOf('Message', module)

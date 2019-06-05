@@ -1,21 +1,22 @@
 import cn from 'classnames';
 import React from 'react';
 import { Sizes } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../elements';
 
-type BreadcrumbProps = Partial<Modifiers> & {
-  align?: 'right' | 'center';
-  hrefAttr?: string;
-  items?: {
-    active?: boolean;
-    name?: React.ReactNode;
-    url: string;
-  }[];
-  renderAs?: 'a' | ((...args: any[]) => any);
-  separator?: 'arrow' | 'bullet' | 'dot' | 'succeeds';
-  size?: Sizes;
-};
+type BreadcrumbProps = Partial<Omit<React.ComponentProps<'a'>, 'unselectable'>> &
+  ElementModifier & {
+    align?: 'right' | 'center';
+    hrefAttr?: string;
+    items?: {
+      active?: boolean;
+      name?: React.ReactNode;
+      url: string;
+    }[];
+    renderAs?: 'a' | ((...args: any[]) => any);
+    separator?: 'arrow' | 'bullet' | 'dot' | 'succeeds';
+    size?: Sizes;
+  };
 
 export const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
   className,

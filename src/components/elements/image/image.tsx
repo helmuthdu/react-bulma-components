@@ -1,17 +1,18 @@
 import cn from 'classnames';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { Proportions } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import { Scale } from '../../../constants';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../element';
 
-export type ImageProps = Partial<Modifiers> & {
-  alt?: string;
-  fallback?: string;
-  rounded?: boolean;
-  size?: Proportions;
-  src?: string;
-};
+export type ImageProps = Partial<Omit<React.ComponentProps<'figure'>, 'unselectable'>> &
+  ElementModifier & {
+    alt?: string;
+    fallback?: string;
+    rounded?: boolean;
+    size?: Scale;
+    src?: string;
+  };
 
 export const Image: React.FunctionComponent<ImageProps> = ({
   className,
@@ -37,7 +38,7 @@ export const Image: React.FunctionComponent<ImageProps> = ({
       {...props}
       renderAs="figure"
       className={cn('image', className, {
-        [`is-${size}`]: size
+        [`is-${Number.isInteger(size as any) ? `${size}x${size}` : size}`]: size
       })}
     >
       <img

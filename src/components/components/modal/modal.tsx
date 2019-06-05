@@ -2,15 +2,15 @@ import cn from 'classnames';
 import * as React from 'react';
 import { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { Modifiers } from '../../../modifiers';
-
-export * from './modal-content';
+import { ElementModifier } from '../../../modifiers';
+import { ModalCard } from './modal-card';
+import { ModalContent } from './modal-content';
 
 const KEYCODES = {
   ESCAPE: 27
 };
 
-type ModalProps = Partial<Modifiers> & {
+type ModalProps = ElementModifier & {
   show: boolean;
   onClose: (...args: any[]) => any;
   closeOnEsc?: boolean;
@@ -18,7 +18,10 @@ type ModalProps = Partial<Modifiers> & {
   showClose?: boolean;
 };
 
-export const Modal: React.FunctionComponent<ModalProps> = (props: ModalProps) => {
+export const Modal: React.FunctionComponent<ModalProps> & {
+  Card: typeof ModalCard;
+  Content: typeof ModalContent;
+} = (props: ModalProps) => {
   const { closeOnEsc, closeOnBlur, show, className } = props;
   let { children } = props;
   const portalElement = document.createElement('div');
@@ -87,6 +90,9 @@ export const Modal: React.FunctionComponent<ModalProps> = (props: ModalProps) =>
     portalElement
   );
 };
+
+Modal.Card = ModalCard;
+Modal.Content = ModalContent;
 
 Modal.defaultProps = {
   closeOnEsc: true,

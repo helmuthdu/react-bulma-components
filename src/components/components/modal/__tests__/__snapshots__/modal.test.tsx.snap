@@ -14,37 +14,7 @@ exports[`Modal component should not close the modal on other than ESC key press 
 
 exports[`Modal component should not show close button 1`] = `<DocumentFragment />`;
 
-exports[`Modal component should open the modal 1`] = `
-<div
-  class="modal is-active"
-  data-testid="modal-container"
->
-  <div
-    class="modal-background"
-    data-testid="modal-background"
-    role="presentation"
-  />
-  <div
-    class="modal-card"
-  >
-    <header
-      class="modal-card-head"
-    >
-      <p
-        class="modal-card-title"
-      >
-        Modal Title
-      </p>
-    </header>
-  </div>
-  <button
-    aria-label="close"
-    class="modal-close is-large"
-    data-testid="modal-close-button"
-    type="button"
-  />
-</div>
-`;
+exports[`Modal component should open the modal 1`] = `null`;
 
 exports[`Modal component should render any child type 1`] = `<DocumentFragment />`;
 

@@ -1,34 +1,34 @@
 /* eslint-disable no-unused-vars */
 import cn from 'classnames';
 
-type SizeShape = Partial<{
-  display: Partial<{
-    value: 'block' | 'flex' | 'inline' | 'inline-block' | 'inline-flex';
-    only: boolean;
-  }>;
-  hide: Partial<{
-    value: boolean;
-    only: boolean;
-  }>;
-  textSize: Partial<{
-    value: 1 | 2 | 3 | 4 | 5 | 6;
-  }>;
-  textAlignment: Partial<{
-    value: 'centered' | 'justified' | 'left' | 'right';
-    only: boolean;
-  }>;
-}>;
+type SizeShape = {
+  display?: {
+    value?: 'block' | 'flex' | 'inline' | 'inline-block' | 'inline-flex';
+    only?: boolean;
+  };
+  hide?: {
+    value?: boolean;
+    only?: boolean;
+  };
+  textSize?: {
+    value?: 1 | 2 | 3 | 4 | 5 | 6;
+  };
+  textAlignment?: {
+    value?: 'centered' | 'justified' | 'left' | 'right';
+    only?: boolean;
+  };
+};
 
-export type ResponsiveModifier = Partial<{
-  responsive: Partial<{
-    mobile: SizeShape;
-    tablet: SizeShape;
-    desktop: SizeShape;
-    widescreen: SizeShape;
-    fullhd: SizeShape;
-    touch: SizeShape;
-  }>;
-}>;
+export type ResponsiveModifier = {
+  responsive?: {
+    mobile?: SizeShape;
+    tablet?: SizeShape;
+    desktop?: SizeShape;
+    widescreen?: SizeShape;
+    fullhd?: SizeShape;
+    touch?: SizeShape;
+  };
+};
 
 const getSizeClassFromProp = (sizes: { [key: string]: SizeShape }) =>
   Object.keys(sizes).reduce((classes, size) => {

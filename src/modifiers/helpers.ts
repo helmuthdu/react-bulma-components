@@ -1,18 +1,18 @@
 import cn from 'classnames';
 
-export type HelpersModifier = Partial<{
-  clearfix: boolean;
-  clipped: boolean;
-  hidden: boolean;
-  invisible: boolean;
-  marginless: boolean;
-  overlay: boolean;
-  paddingless: boolean;
-  pull: 'right' | 'left';
-  radiusless: boolean;
-  shadowless: boolean;
-  unselectable: boolean;
-}>;
+export type HelpersModifier = {
+  clearfix?: boolean;
+  clipped?: boolean;
+  hidden?: boolean;
+  invisible?: boolean;
+  marginless?: boolean;
+  overlay?: boolean;
+  paddingless?: boolean;
+  pull?: 'right' | 'left';
+  radiusless?: boolean;
+  shadowless?: boolean;
+  unselectable?: boolean;
+};
 
 export default {
   defaultProps: {

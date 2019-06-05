@@ -39,7 +39,7 @@ describe('Navbar component', () => {
     [NavbarMenu]
     // @ts-ignore
   ])('should render', Component => {
-    const { asFragment } = render(<Component/>);
+    const { asFragment } = render(<Component />);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -48,9 +48,9 @@ describe('Navbar component', () => {
       <Navbar>
         <NavbarBrand>
           <NavbarItem renderAs="a">
-            <img src="/" alt=""/>
+            <img src="/" alt="" />
           </NavbarItem>
-          <NavbarBurger className="trigger-menu"/>
+          <NavbarBurger className="trigger-menu" />
         </NavbarBrand>
         <div>TEST</div>
         <NavbarMenu>
@@ -59,7 +59,7 @@ describe('Navbar component', () => {
               <NavbarLink>Docs</NavbarLink>
               <NavbarDropdown boxed>
                 <NavbarItem>Home</NavbarItem>
-                <NavbarDivider/>
+                <NavbarDivider />
                 <NavbarItem>Home</NavbarItem>
               </NavbarDropdown>
             </NavbarItem>
@@ -72,25 +72,25 @@ describe('Navbar component', () => {
   });
 
   it('should concat Bulma class with classes in props', () => {
-    const { asFragment, unmount } = render(<Navbar className="other-class test"/>);
+    const { asFragment, unmount } = render(<Navbar className="other-class test" />);
     expect(asFragment()).toMatchSnapshot();
     unmount();
   });
 
   it('should render as an html section', () => {
-    const { asFragment, unmount } = render(<Navbar renderAs="section"/>);
+    const { asFragment, unmount } = render(<Navbar renderAs="section" />);
     expect(asFragment()).toMatchSnapshot();
     unmount();
   });
 
   it('should have custom inline styles', () => {
-    const { asFragment, unmount } = render(<Navbar style={{ width: 200, zIndex: 1 }}/>);
+    const { asFragment, unmount } = render(<Navbar style={{ width: 200, zIndex: 1 }} />);
     expect(asFragment()).toMatchSnapshot();
     unmount();
   });
 
   it('should be fixed on top', () => {
-    const { asFragment, unmount } = render(<Navbar fixed="top"/>);
+    const { asFragment, unmount } = render(<Navbar fixed="top" />);
     expect(asFragment()).toMatchSnapshot();
     unmount();
   });

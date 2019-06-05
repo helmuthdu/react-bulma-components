@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import * as React from 'react';
 import colors, { ColorsModifier } from './colors';
 import helpers, { HelpersModifier } from './helpers';
 import responsive, { ResponsiveModifier } from './responsives';
@@ -6,13 +7,13 @@ import typography, { TypographyModifier } from './typography';
 
 const compose = (...fns: any[]) => (args: any) => fns.reduce((arg: any, fn) => fn(arg), args);
 
-export type Modifiers = ColorsModifier &
+export type ElementModifier = ColorsModifier &
   HelpersModifier &
   ResponsiveModifier &
   TypographyModifier & {
     className?: any;
     children?: React.ReactNode;
-    renderAs?: string | ((...args: any | any[]) => any);
+    renderAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
     style?: React.CSSProperties;
   };
 

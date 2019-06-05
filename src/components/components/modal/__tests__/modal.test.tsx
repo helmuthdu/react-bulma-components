@@ -1,15 +1,15 @@
 import { fireEvent, render } from '@testing-library/react';
 import * as React from 'react';
-import { Modal, ModalContent, ModalCard, ModalCardHead, ModalCardTitle } from '..';
+import { Modal, ModalCard, ModalCardHeader, ModalCardTitle, ModalContent } from '..';
 
 describe('Modal component', () => {
   it('should render modal-card-head', () => {
     const onClose = jest.fn();
     const { container, unmount } = render(
       <ModalCard onClose={onClose}>
-        <ModalCardHead onClose={onClose}>
+        <ModalCardHeader onClose={onClose}>
           <ModalCardTitle>Modal Title</ModalCardTitle>
-        </ModalCardHead>
+        </ModalCardHeader>
       </ModalCard>
     );
     fireEvent.click((container as any).querySelector('.delete'));
@@ -22,9 +22,9 @@ describe('Modal component', () => {
     const getComponent = (show: boolean) => (
       <Modal show={show} onClose={onClose}>
         <ModalCard>
-          <ModalCardHead>
+          <ModalCardHeader>
             <ModalCardTitle>Modal Title</ModalCardTitle>
-          </ModalCardHead>
+          </ModalCardHeader>
         </ModalCard>
       </Modal>
     );
@@ -40,9 +40,9 @@ describe('Modal component', () => {
     const { getByTestId, asFragment, unmount } = render(
       <Modal show onClose={onClose}>
         <ModalCard>
-          <ModalCardHead onClose={onClose}>
+          <ModalCardHeader onClose={onClose}>
             <ModalCardTitle>Modal Title</ModalCardTitle>
-          </ModalCardHead>
+          </ModalCardHeader>
         </ModalCard>
       </Modal>
     );
@@ -57,9 +57,9 @@ describe('Modal component', () => {
     const { asFragment, unmount } = render(
       <Modal show onClose={onClose}>
         <ModalCard>
-          <ModalCardHead onClose={onClose}>
+          <ModalCardHeader onClose={onClose}>
             <ModalCardTitle>Modal Title</ModalCardTitle>
-          </ModalCardHead>
+          </ModalCardHeader>
         </ModalCard>
       </Modal>
     );
@@ -75,9 +75,9 @@ describe('Modal component', () => {
     const { asFragment, unmount } = render(
       <Modal closeOnEsc={false} show onClose={onClose}>
         <ModalCard>
-          <ModalCardHead>
+          <ModalCardHeader>
             <ModalCardTitle>Modal Title</ModalCardTitle>
-          </ModalCardHead>
+          </ModalCardHeader>
         </ModalCard>
       </Modal>
     );
@@ -93,9 +93,9 @@ describe('Modal component', () => {
     const { asFragment, unmount } = render(
       <Modal show onClose={onClose}>
         <ModalCard>
-          <ModalCardHead>
+          <ModalCardHeader>
             <ModalCardTitle>Modal Title</ModalCardTitle>
-          </ModalCardHead>
+          </ModalCardHeader>
         </ModalCard>
       </Modal>
     );

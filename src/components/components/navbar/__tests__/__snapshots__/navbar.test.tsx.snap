@@ -4,7 +4,6 @@ exports[`Navbar component should be fixed on top 1`] = `
 <DocumentFragment>
   <nav
     class="navbar is-fixed-top"
-    role="navigation"
   />
 </DocumentFragment>
 `;
@@ -13,7 +12,6 @@ exports[`Navbar component should concat Bulma class with classes in props 1`] = 
 <DocumentFragment>
   <nav
     class="navbar other-class test"
-    role="navigation"
   />
 </DocumentFragment>
 `;
@@ -22,14 +20,12 @@ exports[`Navbar component should have Navbar classname 1`] = `
 <DocumentFragment>
   <nav
     class="navbar"
-    role="navigation"
   >
     <div
       class="navbar-brand"
     >
       <a
         class="navbar-item"
-        href="#"
       >
         <img
           alt=""
@@ -69,7 +65,6 @@ exports[`Navbar component should have Navbar classname 1`] = `
           >
             <a
               class="navbar-item"
-              href="#"
             >
               Home
             </a>
@@ -78,7 +73,6 @@ exports[`Navbar component should have Navbar classname 1`] = `
             />
             <a
               class="navbar-item"
-              href="#"
             >
               Home
             </a>
@@ -94,7 +88,6 @@ exports[`Navbar component should have custom inline styles 1`] = `
 <DocumentFragment>
   <nav
     class="navbar"
-    role="navigation"
     style="width: 200px; z-index: 1;"
   />
 </DocumentFragment>
@@ -104,7 +97,6 @@ exports[`Navbar component should render 1`] = `
 <DocumentFragment>
   <nav
     class="navbar"
-    role="navigation"
   />
 </DocumentFragment>
 `;
@@ -184,11 +176,6 @@ exports[`Navbar component should render as an html section 1`] = `
 <DocumentFragment>
   <section
     class="navbar"
-    role="navigation"
   />
 </DocumentFragment>
 `;
-
-exports[`Navbar component should render on server side 1`] = `"<nav class=\\"navbar is-fixed-top\\" role=\\"navigation\\"></nav>"`;
-
-exports[`Navbar component should render on server side: top 1`] = `""`;

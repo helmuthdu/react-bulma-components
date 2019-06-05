@@ -28,7 +28,7 @@ export type Greyscale =
 
 export type Sizes = 'small' | 'medium' | 'large';
 
-export type Proportions =
+export type Scale =
   | 16
   | 24
   | 32
@@ -36,19 +36,19 @@ export type Proportions =
   | 64
   | 96
   | 128
-  | 'square'
   | '1by1'
-  | '4by3'
-  | '3by2'
-  | '16by9'
-  | '2by1'
-  | '5by4'
-  | '5by3'
-  | '3by1'
-  | '4by5'
-  | '3by4'
-  | '2by3'
-  | '3by5'
-  | '9by16'
   | '1by2'
-  | '1by3';
+  | '1by3'
+  | '2by1'
+  | '2by3'
+  | '3by1'
+  | '3by2'
+  | '3by4'
+  | '3by5'
+  | '4by3'
+  | '4by5'
+  | '5by3'
+  | '5by4'
+  | '9by16'
+  | '16by9'
+  | 'square';

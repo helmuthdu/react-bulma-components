@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
-import { Columns, Column } from '..';
+import { Column, Columns } from '..';
 
 describe('Columns component', () => {
   // @ts-ignore

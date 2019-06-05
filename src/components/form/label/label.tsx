@@ -1,11 +1,12 @@
 import cn from 'classnames';
 import React from 'react';
 import { Sizes } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
-type LabelProps = Partial<Modifiers> & {
-  size?: Sizes;
-};
+type LabelProps = Partial<Omit<React.ComponentProps<'label'>, 'unselectable'>> &
+  ElementModifier & {
+    size?: Sizes;
+  };
 
 export const Label: React.FunctionComponent<LabelProps> = ({ children, className, size, ...allProps }: LabelProps) => {
   const props = modifiers.clean(allProps);

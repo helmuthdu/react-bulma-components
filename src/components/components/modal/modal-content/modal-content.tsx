@@ -1,9 +1,9 @@
 import cn from 'classnames';
 import React from 'react';
-import modifiers, { Modifiers } from '../../../../modifiers';
+import modifiers, { ElementModifier } from '../../../../modifiers';
 import { Element } from '../../../elements';
 
-type ModalContentProps = Partial<Modifiers>;
+type ModalContentProps = ElementModifier;
 
 export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   children,

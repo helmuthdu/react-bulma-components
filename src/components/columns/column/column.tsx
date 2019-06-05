@@ -1,26 +1,48 @@
 import cn from 'classnames';
 import * as React from 'react';
 import { Sizes } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../elements';
 
-type DisplayType = {
-  size?: Sizes | 'three-quarters' | 'two-thirds' | 'half' | 'one-third' | 'one-quarter';
-  offset?: any;
+type ColumnValue =
+  | Sizes
+  | 1
+  | 2
+  | 3
+  | 4
+  | 5
+  | 6
+  | 7
+  | 8
+  | 9
+  | 10
+  | 11
+  | 12
+  | 'three-quarters'
+  | 'two-thirds'
+  | 'half'
+  | 'one-third'
+  | 'one-quarter'
+  | 'one-fifth'
+  | 'two-fifths'
+  | 'three-fifths'
+  | 'four-fifths';
+
+type ColumnSize = {
   narrow?: boolean;
+  offset?: ColumnValue;
+  size?: ColumnValue;
 };
 
-type ColumnProps = Partial<Modifiers> & {
-  size?: Sizes | 'half' | 'one-quarter' | 'one-third' | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-  offset?: any;
-  narrow?: boolean;
-  touch?: DisplayType;
-  mobile?: DisplayType;
-  tablet?: DisplayType;
-  desktop?: DisplayType;
-  widescreen?: DisplayType;
-  fullhd?: DisplayType;
-};
+type ColumnProps = ElementModifier &
+  ColumnSize & {
+    mobile?: ColumnSize;
+    tablet?: ColumnSize;
+    touch?: ColumnSize;
+    desktop?: ColumnSize;
+    widescreen?: ColumnSize;
+    fullhd?: ColumnSize;
+  };
 
 export const Column: React.FunctionComponent<ColumnProps> = ({
   children,

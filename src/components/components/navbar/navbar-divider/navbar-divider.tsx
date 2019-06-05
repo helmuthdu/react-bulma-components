@@ -1,9 +1,9 @@
 import cn from 'classnames';
 import * as React from 'react';
-import modifiers, { Modifiers } from '../../../../modifiers';
+import modifiers, { ElementModifier } from '../../../../modifiers';
 import { Element } from '../../../elements';
 
-type NavbarDividerProps = Partial<Modifiers>;
+type NavbarDividerProps = Partial<Omit<React.ComponentProps<'div'>, 'unselectable'>> & ElementModifier;
 
 export const NavbarDivider: React.FunctionComponent<NavbarDividerProps> = ({
   className,

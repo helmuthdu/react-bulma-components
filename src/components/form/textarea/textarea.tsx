@@ -1,19 +1,20 @@
 import cn from 'classnames';
 import * as React from 'react';
 import { Colors, Sizes } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
-type TextareaProps = Partial<Modifiers> & {
-  color?: Colors;
-  disabled?: boolean;
-  name?: string;
-  onChange: (...args: any[]) => any;
-  placeholder?: string;
-  readOnly?: boolean;
-  rows?: number;
-  size?: Sizes;
-  value?: string | number;
-};
+type TextareaProps = Partial<Omit<React.ComponentProps<'textarea'>, 'color' | 'unselectable'>> &
+  ElementModifier & {
+    color?: Colors;
+    disabled?: boolean;
+    name?: string;
+    onChange: (...args: any[]) => any;
+    placeholder?: string;
+    readOnly?: boolean;
+    rows?: number;
+    size?: Sizes;
+    value?: string | number;
+  };
 
 export const Textarea: React.FunctionComponent<TextareaProps> = ({
   className,

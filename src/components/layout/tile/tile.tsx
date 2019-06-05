@@ -1,10 +1,10 @@
 import cn from 'classnames';
 import React from 'react';
 import { Colors } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../elements';
 
-type TileProps = Partial<Modifiers> & {
+type TileProps = ElementModifier & {
   color?: Colors;
   context?: 'ancestor' | 'parent' | 'child';
   notification?: boolean;

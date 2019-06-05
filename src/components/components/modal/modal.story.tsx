@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import { Modal, ModalCard, ModalContent, ModalCardBody, ModalCardFoot, ModalCardHead, ModalCardTitle } from '.';
+import { Modal, ModalCard, ModalCardBody, ModalCardFooter, ModalCardHeader, ModalCardTitle, ModalContent } from '.';
 import { Button } from '../../elements/button';
 import { Content } from '../../elements/content';
 import { Image } from '../../elements/image';
@@ -72,9 +72,9 @@ storiesOf('Modal', module)
   .add('Modal Card', () => (
     <OpenModal modal={{ closeOnBlur: true }}>
       <ModalCard>
-        <ModalCardHead onClose={() => {}}>
+        <ModalCardHeader onClose={() => {}}>
           <ModalCardTitle>Title</ModalCardTitle>
-        </ModalCardHead>
+        </ModalCardHeader>
         <ModalCardBody>
           <Media>
             <MediaItem renderAs="figure" position="left">
@@ -100,9 +100,9 @@ storiesOf('Modal', module)
             </MediaItem>
           </Media>
         </ModalCardBody>
-        <ModalCardFoot style={{ alignItems: 'center', justifyContent: 'center' }}>
+        <ModalCardFooter style={{ alignItems: 'center', justifyContent: 'center' }}>
           <p>Lorem Ipsum...</p>
-        </ModalCardFoot>
+        </ModalCardFooter>
       </ModalCard>
     </OpenModal>
   ));

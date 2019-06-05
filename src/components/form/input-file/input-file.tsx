@@ -2,24 +2,25 @@ import cn from 'classnames';
 import * as React from 'react';
 import { useState } from 'react';
 import { Colors, Sizes } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../elements';
 
-type InputFileProps = Partial<Modifiers> & {
-  accept?: string;
-  boxed?: boolean;
-  capture?: string;
-  color?: Colors;
-  fullwidth?: boolean;
-  hasName?: boolean;
-  icon?: string | React.ReactNode;
-  label?: string;
-  multiple?: boolean;
-  name?: string;
-  onChange: (...args: any[]) => any;
-  right?: boolean;
-  size?: Sizes;
-};
+type InputFileProps = Partial<Omit<React.ComponentProps<'input'>, 'color' | 'size' | 'unselectable'>> &
+  ElementModifier & {
+    accept?: string;
+    boxed?: boolean;
+    capture?: string;
+    color?: Colors;
+    fullwidth?: boolean;
+    hasName?: boolean;
+    icon?: React.ReactElement<any>;
+    label?: string;
+    multiple?: boolean;
+    name?: string;
+    onChange?: (...args: any[]) => void;
+    right?: boolean;
+    size?: Sizes;
+  };
 
 export const InputFile: React.FunctionComponent<InputFileProps> = ({
   accept,
@@ -40,14 +41,17 @@ export const InputFile: React.FunctionComponent<InputFileProps> = ({
   ...props
 }: InputFileProps) => {
   const [fileName, setFileName] = useState(null);
-  const handleSelect = (event: React.SyntheticEvent) => {
+
+  const handleSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     // @ts-ignore
     const { files } = event.target;
+    // @ts-ignore
     setFileName(files.length > 0 ? files[0].name : undefined);
     if (onChange) {
       onChange(event);
     }
   };
+
   return (
     <Element
       style={style}

@@ -1,10 +1,10 @@
 import cn from 'classnames';
 import * as React from 'react';
-import modifiers, { Modifiers } from '../../../../modifiers';
+import modifiers, { ElementModifier } from '../../../../modifiers';
 import { Element } from '../../../elements';
 import { ShowContext } from '../context';
 
-type NavbarMenuProps = Partial<Modifiers>;
+type NavbarMenuProps = ElementModifier;
 
 export const NavbarMenu: React.FunctionComponent<NavbarMenuProps> = ({
   className,

@@ -147,7 +147,6 @@ exports[`Button component should be an anchor button 1`] = `
 <DocumentFragment>
   <a
     class="button"
-    href="https://github.com/couds/react-bulma-components"
     tabindex="0"
   />
 </DocumentFragment>
@@ -176,9 +175,7 @@ exports[`Button component should render 2`] = `
 
 exports[`Button component should render as a React element link with to prop 1`] = `
 <DocumentFragment>
-  <a
-    href="http://google.com"
-  >
+  <a>
     TEST
   </a>
 </DocumentFragment>

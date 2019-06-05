@@ -1,17 +1,18 @@
 import cn from 'classnames';
 import React from 'react';
 import { Colors, Sizes } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
-type RadioProps = Partial<Modifiers> & {
-  checked?: boolean;
-  color?: Colors;
-  disabled?: boolean;
-  name?: string;
-  onChange: (...args: any[]) => any;
-  size?: Sizes;
-  value?: string | number;
-};
+type RadioProps = Partial<Omit<React.ComponentProps<'input'>, 'unselectable'>> &
+  ElementModifier & {
+    checked?: boolean;
+    color?: Colors;
+    disabled?: boolean;
+    name?: string;
+    onChange: (...args: any[]) => any;
+    size?: Sizes;
+    value?: string | number;
+  };
 
 export const Radio: React.FunctionComponent<RadioProps> = ({
   className,

@@ -19,27 +19,21 @@ exports[`Breadcrumb component should render list of items 1`] = `
       <li
         class=""
       >
-        <a
-          href="/"
-        >
+        <a>
           Home
         </a>
       </li>
       <li
         class=""
       >
-        <a
-          href="/section"
-        >
+        <a>
           Section
         </a>
       </li>
       <li
         class="is-active"
       >
-        <a
-          href="/detail"
-        >
+        <a>
           Details
         </a>
       </li>
@@ -58,27 +52,21 @@ exports[`Breadcrumb component should use inline style and custom size 1`] = `
       <li
         class=""
       >
-        <a
-          href="/"
-        >
+        <a>
           Home
         </a>
       </li>
       <li
         class=""
       >
-        <a
-          href="/section"
-        >
+        <a>
           Section
         </a>
       </li>
       <li
         class="is-active"
       >
-        <a
-          href="/detail"
-        >
+        <a>
           Details
         </a>
       </li>
@@ -96,27 +84,21 @@ exports[`Breadcrumb component should use separator arrow 1`] = `
       <li
         class=""
       >
-        <a
-          href="#1"
-        >
+        <a>
           Storybook
         </a>
       </li>
       <li
         class=""
       >
-        <a
-          href="#2"
-        >
+        <a>
           Breadcrumb
         </a>
       </li>
       <li
         class="is-active"
       >
-        <a
-          href="#3"
-        >
+        <a>
           Breadcrumb Types
         </a>
       </li>
@@ -134,27 +116,21 @@ exports[`Breadcrumb component should use separator bullet 1`] = `
       <li
         class=""
       >
-        <a
-          href="#1"
-        >
+        <a>
           Storybook
         </a>
       </li>
       <li
         class=""
       >
-        <a
-          href="#2"
-        >
+        <a>
           Breadcrumb
         </a>
       </li>
       <li
         class="is-active"
       >
-        <a
-          href="#3"
-        >
+        <a>
           Breadcrumb Types
         </a>
       </li>
@@ -172,27 +148,21 @@ exports[`Breadcrumb component should use separator dot 1`] = `
       <li
         class=""
       >
-        <a
-          href="#1"
-        >
+        <a>
           Storybook
         </a>
       </li>
       <li
         class=""
       >
-        <a
-          href="#2"
-        >
+        <a>
           Breadcrumb
         </a>
       </li>
       <li
         class="is-active"
       >
-        <a
-          href="#3"
-        >
+        <a>
           Breadcrumb Types
         </a>
       </li>
@@ -210,27 +180,21 @@ exports[`Breadcrumb component should use separator succeeds 1`] = `
       <li
         class=""
       >
-        <a
-          href="#1"
-        >
+        <a>
           Storybook
         </a>
       </li>
       <li
         class=""
       >
-        <a
-          href="#2"
-        >
+        <a>
           Breadcrumb
         </a>
       </li>
       <li
         class="is-active"
       >
-        <a
-          href="#3"
-        >
+        <a>
           Breadcrumb Types
         </a>
       </li>

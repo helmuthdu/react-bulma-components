@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { Panel, PanelBlock, PanelHeader, PanelIcon, PanelTabs, PanelTab } from '.';
+import { Panel, PanelBlock, PanelHeader, PanelIcon, PanelTab, PanelTabs } from '.';
 import { Button } from '../../elements/button';
 import { Icon } from '../../elements/icon';
 import { Checkbox, Control, Input } from '../../form';

@@ -5,7 +5,6 @@ exports[`Radio component should be disabled, checked and with value 1`] = `
   <label
     class="b-radio radio"
     data-testid="radio-label"
-    disabled=""
   >
     <input
       checked=""

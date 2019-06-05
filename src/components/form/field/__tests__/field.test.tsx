@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
-import { FieldBody, FieldLabel } from '../components';
-import { Field } from '../index';
+import { Field, FieldBody, FieldLabel } from '..';
 
 describe('Field component', () => {
   // @ts-ignore

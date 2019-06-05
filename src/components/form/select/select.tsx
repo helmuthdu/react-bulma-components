@@ -1,21 +1,22 @@
 import cn from 'classnames';
 import React from 'react';
 import { Colors, Sizes } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
-type SelectProps = Partial<Modifiers> & {
-  color?: Colors;
-  disabled?: boolean;
-  empty?: boolean;
-  loading?: boolean;
-  multiple?: boolean;
-  name?: string;
-  onChange: (...args: any[]) => any;
-  readOnly?: boolean;
-  rounded?: boolean;
-  size?: Sizes;
-  value?: string | number | any[];
-};
+type SelectProps = Partial<Omit<React.ComponentProps<'select'>, 'size' | 'color' | 'unselectable'>> &
+  ElementModifier & {
+    color?: Colors;
+    disabled?: boolean;
+    empty?: boolean;
+    loading?: boolean;
+    multiple?: boolean;
+    name?: string;
+    onChange: (...args: any[]) => any;
+    readOnly?: boolean;
+    rounded?: boolean;
+    size?: Sizes;
+    value?: string | number | any[];
+  };
 
 export const Select: React.FunctionComponent<SelectProps> = ({
   children,

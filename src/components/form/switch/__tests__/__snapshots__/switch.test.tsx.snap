@@ -5,7 +5,6 @@ exports[`Switch component should be disabled 1`] = `
   <label
     class="switch"
     data-testid="switch-label"
-    disabled=""
   >
     <input
       data-testid="switch-input"

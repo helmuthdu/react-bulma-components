@@ -1,21 +1,22 @@
 import cn from 'classnames';
 import React from 'react';
 import { Colors, Sizes } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../elements';
 
-type InputProps = Partial<Modifiers> & {
-  color?: Colors;
-  disabled?: boolean;
-  inactive?: boolean;
-  name?: string;
-  placeholder?: string;
-  onChange: (...args: any[]) => any;
-  readOnly?: boolean;
-  size?: Sizes;
-  type?: 'color' | 'date' | 'datetime-local' | 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'time';
-  value?: string | number;
-};
+type InputProps = Partial<Omit<React.ComponentProps<'input'>, 'color' | 'size' | 'unselectable'>> &
+  ElementModifier & {
+    color?: Colors;
+    disabled?: boolean;
+    inactive?: boolean;
+    name?: string;
+    placeholder?: string;
+    onChange: (...args: any[]) => any;
+    readOnly?: boolean;
+    size?: Sizes;
+    type?: 'text' | 'email' | 'tel' | 'password' | 'number' | 'search' | 'color' | 'date' | 'time' | 'datetime-local';
+    value?: string | number;
+  };
 
 export const Input: React.FunctionComponent<InputProps> = ({
   className,

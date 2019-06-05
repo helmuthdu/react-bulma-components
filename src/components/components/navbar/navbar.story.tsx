@@ -2,9 +2,9 @@
 import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { Navbar, NavbarMenu, NavbarContainer, NavbarItem, NavbarBrand, NavbarBurger } from '.';
-import { Box } from '../../elements/box';
+import { Navbar, NavbarBrand, NavbarBurger, NavbarContainer, NavbarItem, NavbarMenu } from '.';
 import { Colors } from '../../../constants';
+import { Box } from '../../elements/box';
 
 const colors: { [key: string]: Colors } = {
   primary: 'primary',

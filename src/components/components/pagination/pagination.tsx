@@ -2,22 +2,23 @@ import cn from 'classnames';
 import React from 'react';
 import ReactPaginate from 'react-paginate';
 import { Sizes } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../elements';
 
-type PaginationProps = Partial<Modifiers> & {
-  autoHide?: boolean;
-  current?: number;
-  delta?: number;
-  next?: React.ReactNode;
-  onChange?: (...args: any[]) => any;
-  position?: 'centered' | 'right';
-  previous?: React.ReactNode;
-  rounded?: boolean;
-  showPrevNext?: boolean;
-  size?: Sizes;
-  total?: number;
-};
+type PaginationProps = Partial<Omit<React.ComponentProps<'nav'>, 'onChange' | 'unselectable'>> &
+  ElementModifier & {
+    autoHide?: boolean;
+    current?: number;
+    delta?: number;
+    next?: React.ReactNode;
+    onChange?: (...args: any[]) => void;
+    position?: 'centered' | 'right';
+    previous?: React.ReactNode;
+    rounded?: boolean;
+    showPrevNext?: boolean;
+    size?: Sizes;
+    total?: number;
+  };
 
 export const Pagination: React.FunctionComponent<PaginationProps> = ({
   className,
@@ -62,6 +63,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
 );
 Pagination.defaultProps = {
   ...modifiers.defaultProps,
+  renderAs: 'nav',
   current: 0,
   delta: 5,
   next: 'Next',

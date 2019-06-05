@@ -1,13 +1,16 @@
 import cn from 'classnames';
 import React from 'react';
-import modifiers, { Modifiers } from '../../../../modifiers';
+import modifiers, { ElementModifier } from '../../../../modifiers';
 import { Element } from '../../../elements';
+import { PanelTab } from '../panel-tab';
 
-type PanelTabsProps = Partial<Modifiers>;
+type PanelTabsProps = ElementModifier;
 
-export const PanelTabs: React.FunctionComponent<PanelTabsProps> = ({ className, ...props }: PanelTabsProps) => (
-  <Element {...props} className={cn('panel-tabs', className)} />
-);
+export const PanelTabs: React.FunctionComponent<PanelTabsProps> & {
+  Tab: typeof PanelTab;
+} = ({ className, ...props }: PanelTabsProps) => <Element {...props} className={cn('panel-tabs', className)} />;
+
+PanelTabs.Tab = PanelTab;
 
 PanelTabs.defaultProps = {
   ...modifiers.defaultProps

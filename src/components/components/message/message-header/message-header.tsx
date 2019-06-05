@@ -1,9 +1,9 @@
 import cn from 'classnames';
 import React from 'react';
-import modifiers, { Modifiers } from '../../../../modifiers';
+import modifiers, { ElementModifier } from '../../../../modifiers';
 import { Element } from '../../../elements';
 
-type MessageHeaderProps = Partial<Modifiers>;
+type MessageHeaderProps = ElementModifier;
 
 export const MessageHeader: React.FunctionComponent<MessageHeaderProps> = ({
   children,

@@ -1,12 +1,10 @@
 import cn from 'classnames';
 import React from 'react';
 import { Colors, Sizes } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../elements';
 
-export * from './components';
-
-type HeroProps = Partial<Modifiers> & {
+type HeroProps = ElementModifier & {
   color?: Colors;
   gradient?: boolean;
   size?: Sizes | 'fullheight';

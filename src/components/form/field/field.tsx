@@ -1,25 +1,21 @@
 import cn from 'classnames';
 import React from 'react';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../elements';
+import { FieldBody } from './field-body';
+import { FieldLabel } from './field-label';
 
-export * from './components';
-
-type FieldProps = Partial<Modifiers> & {
+type FieldProps = ElementModifier & {
   align?: 'centered' | 'right';
   context?: 'addons' | 'group';
   multiline?: boolean;
   horizontal?: boolean;
 };
 
-export const Field: React.FunctionComponent<FieldProps> = ({
-  className,
-  align,
-  multiline,
-  horizontal,
-  context,
-  ...props
-}: FieldProps) => {
+export const Field: React.FunctionComponent<FieldProps> & {
+  Body: typeof FieldBody;
+  Label: typeof FieldLabel;
+} = ({ className, align, multiline, horizontal, context, ...props }: FieldProps) => {
   let ctx = '';
   if (context === 'addons') {
     ctx = 'has-addons';
@@ -38,6 +34,9 @@ export const Field: React.FunctionComponent<FieldProps> = ({
     />
   );
 };
+
+Field.Body = FieldBody;
+Field.Label = FieldLabel;
 
 Field.defaultProps = {
   ...modifiers.defaultProps,

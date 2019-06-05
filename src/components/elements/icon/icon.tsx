@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import React from 'react';
-import { Colors, Sizes } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import { Colors, Scale, Sizes } from '../../../constants';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
 const iconSizes = {
   mdi: {
@@ -18,14 +18,15 @@ const iconSizes = {
   }
 };
 
-type IconProps = Partial<Modifiers> & {
-  icon?: string;
-  align?: 'left' | 'right';
-  color?: Colors;
-  iconSize?: 'small' | 'medium' | 'large' | 'big';
-  pack?: 'mdi' | 'fas';
-  size?: Sizes;
-};
+type IconProps = Partial<Omit<React.ComponentProps<'span'>, 'color' | 'unselectable'>> &
+  ElementModifier & {
+    icon?: string;
+    align?: 'left' | 'right';
+    color?: Colors;
+    iconSize?: 'small' | 'medium' | 'large' | 'big';
+    pack?: 'mdi' | 'fas';
+    size?: Scale;
+  };
 
 export const Icon: React.FunctionComponent<IconProps> = ({
   icon,

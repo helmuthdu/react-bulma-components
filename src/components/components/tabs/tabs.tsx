@@ -1,27 +1,20 @@
 import cn from 'classnames';
 import React from 'react';
 import { Sizes } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../elements';
+import { Tab } from './tab';
 
-export * from './tab';
-
-type TabsProps = Partial<Modifiers> & {
+type TabsProps = ElementModifier & {
   align?: null | 'centered' | 'right';
   fullwidth?: boolean;
   size?: Sizes;
   type?: 'toggle' | 'boxed' | 'toggle-rounded';
 };
 
-export const Tabs: React.FunctionComponent<TabsProps> = ({
-  children,
-  className,
-  align,
-  size,
-  type,
-  fullwidth,
-  ...props
-}: TabsProps) => (
+export const Tabs: React.FunctionComponent<TabsProps> & {
+  Tab: typeof Tab;
+} = ({ children, className, align, size, type, fullwidth, ...props }: TabsProps) => (
   <Element
     {...props}
     className={cn('tabs', className, {
@@ -35,6 +28,8 @@ export const Tabs: React.FunctionComponent<TabsProps> = ({
     <ul>{children}</ul>
   </Element>
 );
+
+Tabs.Tab = Tab;
 
 Tabs.defaultProps = {
   ...modifiers.defaultProps,

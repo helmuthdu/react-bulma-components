@@ -4,11 +4,13 @@ import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Dropdown, DropdownDivider, DropdownItem } from '.';
 import { Colors } from '../../../constants';
-import { Modifiers } from '../../../modifiers';
+import { ElementModifier } from '../../../modifiers';
 import { Container } from '../../layout/container';
 import { Section } from '../../layout/section';
 
-class Wrapper extends React.Component<Partial<Modifiers> & { hoverable?: boolean; color?: Colors }> {
+type WrapperProps = ElementModifier & { hoverable?: boolean; color?: Colors };
+
+class Wrapper extends React.Component<WrapperProps> {
   state = {
     selected: ''
   };

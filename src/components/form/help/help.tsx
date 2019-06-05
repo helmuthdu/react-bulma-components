@@ -1,12 +1,13 @@
 import cn from 'classnames';
 import React from 'react';
 import { Colors } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../elements';
 
-type HelpProps = Partial<Modifiers> & {
-  color?: Colors;
-};
+type HelpProps = Partial<Omit<React.ComponentProps<'span'>, 'unselectable'>> &
+  ElementModifier & {
+    color?: Colors;
+  };
 
 export const Help: React.FunctionComponent<HelpProps> = ({ className, children, color, ...props }: HelpProps) => (
   <Element
@@ -20,5 +21,6 @@ export const Help: React.FunctionComponent<HelpProps> = ({ className, children, 
 );
 
 Help.defaultProps = {
-  ...modifiers.defaultProps
+  ...modifiers.defaultProps,
+  renderAs: 'span'
 };

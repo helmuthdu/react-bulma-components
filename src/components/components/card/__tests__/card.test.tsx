@@ -4,11 +4,11 @@ import {
   Card,
   CardContent,
   CardFooter,
-  CardImage,
   CardFooterItem,
   CardHeader,
   CardHeaderIcon,
-  CardHeaderTitle
+  CardHeaderTitle,
+  CardImage
 } from '..';
 
 describe('Card component', () => {

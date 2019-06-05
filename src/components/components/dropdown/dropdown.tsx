@@ -2,20 +2,21 @@ import cn from 'classnames';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { Colors } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Button } from '../../elements/button';
 import { Icon } from '../../elements/icon';
 import { DropdownItem } from './dropdown-item';
 
-type DropdownProps = Partial<Modifiers> & {
-  color?: Colors;
-  hoverable?: boolean;
-  label?: React.ReactNode;
-  onChange?: (...args: any[]) => any;
-  right?: boolean;
-  up?: boolean;
-  value?: any;
-};
+type DropdownProps = Partial<Omit<React.ComponentProps<'div'>, 'color' | 'onChange' | 'unselectable'>> &
+  ElementModifier & {
+    color?: Colors;
+    hoverable?: boolean;
+    label?: React.ReactNode;
+    onChange?: (...args: any[]) => void;
+    right?: boolean;
+    up?: boolean;
+    value?: any;
+  };
 
 export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   className,
@@ -57,7 +58,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
     setOpen(!open);
   };
 
-  const select = (value: unknown) => () => {
+  const select = (value: any) => () => {
     if (onChange) {
       onChange(value);
     }

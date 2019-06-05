@@ -81,14 +81,6 @@ describe('Button component', () => {
     expect(onClick).toHaveBeenCalledTimes(0);
   });
 
-  it('should have a call default onClick is no listener is set', () => {
-    const onClick = jest.spyOn((Button as any).defaultProps, 'onClick');
-    const container: any = render(<Button>Action</Button>).container;
-    fireEvent.click(container.firstChild);
-    fireEvent.click(container.firstChild);
-    expect(onClick).toHaveBeenCalledTimes(2);
-    (Button as any).defaultProps.onClick.mockRestore();
-  });
   describe('Button Group component', () => {
     it('should be a default list of buttons', () => {
       const { asFragment } = render(

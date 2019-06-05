@@ -1,12 +1,10 @@
 import cn from 'classnames';
 import React from 'react';
 import { Breakpoints } from '../../../constants';
-import modifiers, { Modifiers } from '../../../modifiers';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../elements';
 
-export * from './components';
-
-type LevelProps = Partial<Modifiers> & {
+type LevelProps = ElementModifier & {
   breakpoint?: Breakpoints;
 };
 
