@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import React from 'react';
-import { Colors, Scale, Sizes } from '../../../constants';
+import { Colors, Scale } from '../../../constants';
 import modifiers, { ElementModifier } from '../../../modifiers';
 
 const iconSizes = {

@@ -1,5 +1,3 @@
-import './form.scss';
-
 export * from './checkbox';
 export * from './control';
 export * from './field';
