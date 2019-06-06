@@ -1,6 +1,5 @@
 import cn from 'classnames';
 import * as React from 'react';
-import { useEffect } from 'react';
 import { Colors, isServer } from '../../../constants';
 import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../elements';
@@ -13,6 +12,8 @@ import { NavbarDropdown } from './navbar-dropdown';
 import { NavbarItem } from './navbar-item';
 import { NavbarLink } from './navbar-link';
 import { NavbarMenu } from './navbar-menu';
+
+const { useEffect } = React;
 
 type NavbarProps = ElementModifier & {
   active?: boolean;

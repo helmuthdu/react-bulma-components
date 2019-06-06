@@ -22,6 +22,7 @@ export const Field: React.FunctionComponent<FieldProps> & {
   } else if (context === 'group') {
     ctx = 'is-grouped';
   }
+
   return (
     <Element
       {...props}

@@ -26,13 +26,13 @@ export const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
   separator,
   size,
   align,
-  ...allProps
+  ...rest
 }: BreadcrumbProps) => {
-  const props = modifiers.clean(allProps);
+  const props = modifiers.clean(rest);
   return (
     <nav
       {...props}
-      className={cn('breadcrumb', className, modifiers.getClassName(allProps), {
+      className={cn('breadcrumb', className, modifiers.getClassName(rest), {
         [`has-${separator}-separator`]: separator,
         [`is-${size}`]: size,
         [`is-${align}`]: align

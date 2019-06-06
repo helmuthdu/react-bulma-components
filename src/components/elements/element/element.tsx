@@ -9,14 +9,10 @@ type ElementProps = ElementModifier & {
   title?: string;
 };
 
-export const Element: React.FunctionComponent<ElementProps> = ({
-  className,
-  renderAs,
-  ...allProps
-}: ElementModifier) => {
+export const Element: React.FunctionComponent<ElementProps> = ({ className, renderAs, ...rest }: ElementModifier) => {
   const RenderAs: any = renderAs;
-  const props = modifiers.clean(allProps);
-  return <RenderAs className={cn(className, modifiers.getClassName(allProps)) || undefined} {...props} />;
+  const props = modifiers.clean(rest);
+  return <RenderAs className={cn(className, modifiers.getClassName(rest)) || undefined} {...props} />;
 };
 
 Element.defaultProps = {

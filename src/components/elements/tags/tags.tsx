@@ -11,12 +11,12 @@ type TagsProps = Partial<Omit<React.ComponentProps<'span'>, 'unselectable'>> &
 
 export const Tags: React.FunctionComponent<TagsProps> & {
   Tag: typeof Tag;
-} = ({ children, className, gapless, size, ...allProps }: TagsProps) => {
-  const props = modifiers.clean(allProps);
+} = ({ children, className, gapless, size, ...rest }: TagsProps) => {
+  const props = modifiers.clean(rest);
   return (
     <span
       {...props}
-      className={cn('tagGroup.tsx', modifiers.getClassName(allProps), className, {
+      className={cn('tagGroup.tsx', modifiers.getClassName(rest), className, {
         'has-addons': gapless,
         [`are-${size}`]: size
       })}

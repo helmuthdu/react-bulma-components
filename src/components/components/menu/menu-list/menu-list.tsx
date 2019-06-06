@@ -1,9 +1,10 @@
 import cn from 'classnames';
 import * as React from 'react';
-import { Fragment } from 'react';
 import modifiers, { ElementModifier } from '../../../../modifiers';
 import { Element } from '../../../elements';
 import { MenuListItem } from './menu-list-item';
+
+const { Fragment } = React;
 
 type MenuListProps = Partial<Omit<React.ComponentProps<'ul'>, 'unselectable'>> &
   ElementModifier & {

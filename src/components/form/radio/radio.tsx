@@ -9,7 +9,7 @@ type RadioProps = Partial<Omit<React.ComponentProps<'input'>, 'unselectable'>> &
     color?: Colors;
     disabled?: boolean;
     name?: string;
-    onChange: (...args: any[]) => any;
+    onChange: (...args: any[]) => void;
     size?: Sizes;
     value?: string | number;
   };
@@ -24,13 +24,13 @@ export const Radio: React.FunctionComponent<RadioProps> = ({
   color,
   size,
   name,
-  ...allProps
+  ...rest
 }: RadioProps) => {
-  const props = modifiers.clean(allProps);
+  const props = modifiers.clean(rest);
   return (
     <label
       data-testid="radio-label"
-      className={cn('b-radio radio', modifiers.getClassName(allProps), className)}
+      className={cn('b-radio radio', modifiers.getClassName(rest), className)}
       style={style}
     >
       <input

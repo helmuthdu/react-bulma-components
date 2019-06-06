@@ -11,7 +11,7 @@ type InputProps = Partial<Omit<React.ComponentProps<'input'>, 'color' | 'size' |
     inactive?: boolean;
     name?: string;
     placeholder?: string;
-    onChange: (...args: any[]) => any;
+    onChange: (...args: any[]) => void;
     readOnly?: boolean;
     size?: Sizes;
     type?: 'text' | 'email' | 'tel' | 'password' | 'number' | 'search' | 'color' | 'date' | 'time' | 'datetime-local';

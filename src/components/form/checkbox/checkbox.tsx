@@ -10,7 +10,7 @@ type CheckboxProps = Partial<Omit<React.ComponentProps<'input'>, 'unselectable'>
     disabled?: boolean;
     indeterminate?: boolean;
     name?: string;
-    onChange: (...args: any[]) => any;
+    onChange: (...args: any[]) => void;
     size?: Sizes;
     value?: string | number;
   };
@@ -26,13 +26,13 @@ export const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   size,
   style,
   value,
-  ...allProps
+  ...rest
 }: CheckboxProps) => {
-  const props = modifiers.clean(allProps);
+  const props = modifiers.clean(rest);
   return (
     <label
       data-testid="checkbox-label"
-      className={cn('b-checkbox checkbox', modifiers.getClassName(allProps), className)}
+      className={cn('b-checkbox checkbox', modifiers.getClassName(rest), className)}
       style={style}
     >
       <input
@@ -56,6 +56,7 @@ export const Checkbox: React.FunctionComponent<CheckboxProps> = ({
     </label>
   );
 };
+
 Checkbox.defaultProps = {
   ...modifiers.defaultProps,
   checked: false,

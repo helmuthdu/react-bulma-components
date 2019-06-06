@@ -1,10 +1,11 @@
 import cn from 'classnames';
 import * as React from 'react';
-import { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { ElementModifier } from '../../../modifiers';
 import { ModalCard } from './modal-card';
 import { ModalContent } from './modal-content';
+
+const { useEffect } = React;
 
 const KEYCODES = {
   ESCAPE: 27

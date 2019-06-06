@@ -37,9 +37,9 @@ export const Icon: React.FunctionComponent<IconProps> = ({
   align,
   children,
   pack,
-  ...allProps
+  ...rest
 }: IconProps) => {
-  const props = modifiers.clean(allProps);
+  const props = modifiers.clean(rest);
   const iconSizeOf = iconSize
     ? (iconSizes as any)[pack as any][iconSize]
     : size
@@ -60,7 +60,7 @@ export const Icon: React.FunctionComponent<IconProps> = ({
   return (
     <span
       {...props}
-      className={cn('icon', modifiers.getClassName(allProps), className, {
+      className={cn('icon', modifiers.getClassName(rest), className, {
         [`is-${size}`]: size,
         [`is-${align}`]: align,
         [`has-text-${color}`]: color

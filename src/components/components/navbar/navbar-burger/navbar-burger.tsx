@@ -12,9 +12,9 @@ type NavbarBurgerProps = Partial<Omit<React.ComponentProps<'div'>, 'unselectable
 export const NavbarBurger: React.FunctionComponent<NavbarBurgerProps> = ({
   style,
   className,
-  ...allProps
+  ...rest
 }: NavbarBurgerProps) => {
-  const props = modifiers.clean(allProps);
+  const props = modifiers.clean(rest);
   return (
     <ShowContext.Consumer>
       {active => (
@@ -22,7 +22,7 @@ export const NavbarBurger: React.FunctionComponent<NavbarBurgerProps> = ({
           role="button"
           tabIndex="0"
           style={{ outline: 'none', ...style }}
-          className={cn('navbar-burger', modifiers.getClassName(allProps), className, {
+          className={cn('navbar-burger', modifiers.getClassName(rest), className, {
             'is-active': active
           })}
           {...props}

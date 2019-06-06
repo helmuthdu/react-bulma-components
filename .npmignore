@@ -2,7 +2,6 @@
 .storybook
 docs
 node_modules
-.babelrc
 .eslint*
 .git*
 README.md

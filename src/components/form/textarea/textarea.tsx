@@ -8,7 +8,7 @@ type TextareaProps = Partial<Omit<React.ComponentProps<'textarea'>, 'color' | 'u
     color?: Colors;
     disabled?: boolean;
     name?: string;
-    onChange: (...args: any[]) => any;
+    onChange: (...args: any[]) => void;
     placeholder?: string;
     readOnly?: boolean;
     rows?: number;
@@ -26,9 +26,9 @@ export const Textarea: React.FunctionComponent<TextareaProps> = ({
   rows,
   size,
   value,
-  ...allProps
+  ...rest
 }: TextareaProps) => {
-  const props = modifiers.clean(allProps);
+  const props = modifiers.clean(rest);
   return (
     <textarea
       {...props}
@@ -38,7 +38,7 @@ export const Textarea: React.FunctionComponent<TextareaProps> = ({
       readOnly={readOnly}
       rows={rows}
       value={value}
-      className={cn('textarea', modifiers.getClassName(allProps), className, {
+      className={cn('textarea', modifiers.getClassName(rest), className, {
         [`is-${color}`]: color,
         [`is-${size}`]: size
       })}

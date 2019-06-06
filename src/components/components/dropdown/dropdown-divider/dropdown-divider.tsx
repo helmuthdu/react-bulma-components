@@ -6,10 +6,10 @@ type DropdownDividerProps = Partial<Omit<React.ComponentProps<'hr'>, 'unselectab
 
 export const DropdownDivider: React.FunctionComponent<DropdownDividerProps> = ({
   className,
-  ...allProps
+  ...rest
 }: DropdownDividerProps) => {
-  const props = modifiers.clean(allProps);
-  return <hr {...props} className={cn('dropdown-divider', modifiers.getClassName(allProps), className)} />;
+  const props = modifiers.clean(rest);
+  return <hr {...props} className={cn('dropdown-divider', modifiers.getClassName(rest), className)} />;
 };
 
 DropdownDivider.defaultProps = {

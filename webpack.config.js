@@ -144,7 +144,8 @@ module.exports = env => {
                     }
                   }
                 }
-              ]
+              ],
+              process.env.NODE_ENV !== 'production' ? require.resolve('babel-plugin-typescript-to-proptypes') : []
             ],
             // This is a feature of `babel-loader` for webpack (not Babel itself).
             // It enables caching results in ./node_modules/.cache/babel-loader/

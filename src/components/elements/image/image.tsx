@@ -1,9 +1,10 @@
 import cn from 'classnames';
 import * as React from 'react';
-import { useEffect, useState } from 'react';
 import { Scale } from '../../../constants';
 import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../element';
+
+const { useEffect, useState } = React;
 
 export type ImageProps = Partial<Omit<React.ComponentProps<'figure'>, 'unselectable'>> &
   ElementModifier & {

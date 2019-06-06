@@ -1,8 +1,9 @@
 import cn from 'classnames';
 import * as React from 'react';
-import { useState } from 'react';
 import { Colors, Sizes } from '../../../constants';
 import modifiers, { ElementModifier } from '../../../modifiers';
+
+const { useState } = React;
 
 type SwitchProps = Partial<Omit<React.ComponentProps<'input'>, 'unselectable'>> &
   ElementModifier & {
@@ -10,7 +11,7 @@ type SwitchProps = Partial<Omit<React.ComponentProps<'input'>, 'unselectable'>> 
     color?: Colors;
     disabled?: boolean;
     name?: string;
-    onChange: (...args: any[]) => any;
+    onChange: (...args: any[]) => void;
     size?: Sizes;
     value?: string | number;
   };
@@ -25,14 +26,14 @@ export const Switch: React.FunctionComponent<SwitchProps> = ({
   color,
   size,
   name,
-  ...allProps
+  ...rest
 }: SwitchProps) => {
-  const props = modifiers.clean(allProps);
+  const props = modifiers.clean(rest);
   const [isMouseDown, setMouseDown] = useState(false);
   return (
     <label
       data-testid="switch-label"
-      className={cn('switch', modifiers.getClassName(allProps), className)}
+      className={cn('switch', modifiers.getClassName(rest), className)}
       onMouseDown={() => setMouseDown(true)}
       onMouseOut={() => setMouseDown(false)}
       onMouseUp={() => setMouseDown(false)}

@@ -11,7 +11,7 @@ type SelectProps = Partial<Omit<React.ComponentProps<'select'>, 'size' | 'color'
     loading?: boolean;
     multiple?: boolean;
     name?: string;
-    onChange: (...args: any[]) => any;
+    onChange: (...args: any[]) => void;
     readOnly?: boolean;
     rounded?: boolean;
     size?: Sizes;
@@ -32,12 +32,12 @@ export const Select: React.FunctionComponent<SelectProps> = ({
   size,
   style,
   value,
-  ...allProps
+  ...rest
 }: SelectProps) => {
-  const props = modifiers.clean(allProps);
+  const props = modifiers.clean(rest);
   return (
     <div
-      className={cn('select', modifiers.getClassName(allProps), className, {
+      className={cn('select', modifiers.getClassName(rest), className, {
         'is-empty': empty,
         'is-loading': loading,
         'is-multiple': multiple,

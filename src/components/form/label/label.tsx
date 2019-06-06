@@ -8,12 +8,12 @@ type LabelProps = Partial<Omit<React.ComponentProps<'label'>, 'unselectable'>> &
     size?: Sizes;
   };
 
-export const Label: React.FunctionComponent<LabelProps> = ({ children, className, size, ...allProps }: LabelProps) => {
-  const props = modifiers.clean(allProps);
+export const Label: React.FunctionComponent<LabelProps> = ({ children, className, size, ...rest }: LabelProps) => {
+  const props = modifiers.clean(rest);
   return (
     <label
       {...props}
-      className={cn('label', modifiers.getClassName(allProps), className, {
+      className={cn('label', modifiers.getClassName(rest), className, {
         [`is-${size}`]: size
       })}
     >

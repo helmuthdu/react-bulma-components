@@ -51,10 +51,10 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   state,
   submit,
   text,
-  ...allProps
+  ...rest
 }: ButtonProps) => {
   let Element: any = inactive ? 'span' : renderAs;
-  const props = modifiers.clean(allProps);
+  const props = modifiers.clean(rest);
   const otherProps: any = {};
 
   if (submit) {
@@ -75,7 +75,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       disabled={disabled}
       onClick={disabled ? undefined : onClick}
       onChange={disabled ? undefined : onChange}
-      className={cn(className, modifiers.getClassName(allProps), {
+      className={cn(className, modifiers.getClassName(rest), {
         'is-fullwidth': fullwidth,
         'is-inverted': inverted,
         'is-loading': loading,

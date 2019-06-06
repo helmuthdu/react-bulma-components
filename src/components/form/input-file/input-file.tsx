@@ -1,9 +1,10 @@
 import cn from 'classnames';
 import * as React from 'react';
-import { useState } from 'react';
 import { Colors, Sizes } from '../../../constants';
 import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../elements';
+
+const { useState } = React;
 
 type InputFileProps = Partial<Omit<React.ComponentProps<'input'>, 'color' | 'size' | 'unselectable'>> &
   ElementModifier & {

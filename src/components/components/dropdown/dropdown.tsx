@@ -1,11 +1,12 @@
 import cn from 'classnames';
 import * as React from 'react';
-import { useEffect, useState } from 'react';
 import { Colors } from '../../../constants';
 import modifiers, { ElementModifier } from '../../../modifiers';
 import { Button } from '../../elements/button';
 import { Icon } from '../../elements/icon';
 import { DropdownItem } from './dropdown-item';
+
+const { useEffect, useState } = React;
 
 type DropdownProps = Partial<Omit<React.ComponentProps<'div'>, 'color' | 'onChange' | 'unselectable'>> &
   ElementModifier & {
@@ -28,7 +29,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   label,
   hoverable,
   onChange,
-  ...allProps
+  ...rest
 }: DropdownProps) => {
   useEffect(() => {
     document.addEventListener('click', close);
@@ -38,7 +39,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   });
 
   const [open, setOpen] = useState(false);
-  const props = modifiers.clean(allProps);
+  const props = modifiers.clean(rest);
   const htmlElement: React.RefObject<HTMLDivElement> = React.createRef();
 
   const close = (evt?: React.MouseEvent | any) => {
@@ -89,7 +90,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
       {...props}
       ref={htmlElement}
       data-testid="dropdown-container"
-      className={cn('dropdown', modifiers.getClassName(allProps), className, {
+      className={cn('dropdown', modifiers.getClassName(rest), className, {
         'is-active': open,
         'is-hoverable': hoverable,
         'is-right': right,
