@@ -1,3 +1,3 @@
-import './footer.sass';
+import './footer.scss';
 
 export * from './footer';

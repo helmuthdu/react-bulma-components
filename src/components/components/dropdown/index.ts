@@ -1,4 +1,4 @@
-import './dropdown.sass';
+import './dropdown.scss';
 
 export * from './dropdown';
 export * from './dropdown-divider';

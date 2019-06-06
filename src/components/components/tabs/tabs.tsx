@@ -15,23 +15,30 @@ type TabsProps = ElementModifier & {
 export const Tabs: React.FunctionComponent<TabsProps> & {
   Tab: typeof Tab;
 } = ({ children, className, align, size, type, fullwidth, ...props }: TabsProps) => (
-  <Element
-    {...props}
-    className={cn('tabs', className, {
-      'is-fullwidth': fullwidth,
-      'is-toggle': type === 'toggle-rounded',
-      [`is-${align}`]: align,
-      [`is-${size}`]: size,
-      [`is-${type}`]: type
+  <div
+    className={cn('b-tabs', {
+      'is-fullwidth': fullwidth
     })}
   >
-    <ul>{children}</ul>
-  </Element>
+    <Element
+      {...props}
+      className={cn('tabs', className, {
+        'is-fullwidth': fullwidth,
+        'is-toggle': type === 'toggle-rounded',
+        [`is-${align}`]: align,
+        [`is-${size}`]: size,
+        [`is-${type}`]: type
+      })}
+    >
+      <ul>{children}</ul>
+    </Element>
+  </div>
 );
 
 Tabs.Tab = Tab;
 
 Tabs.defaultProps = {
   ...modifiers.defaultProps,
+  renderAs: 'nav',
   fullwidth: false
 };

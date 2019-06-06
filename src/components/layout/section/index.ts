@@ -1,3 +1,3 @@
-import './section.sass';
+import './section.scss';
 
 export * from './section';

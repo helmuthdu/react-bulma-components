@@ -1,4 +1,4 @@
-import './hero.sass';
+import './hero.scss';
 
 export * from './hero';
 export * from './hero-body';

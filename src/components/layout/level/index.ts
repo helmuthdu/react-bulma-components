@@ -1,4 +1,4 @@
-import './level.sass';
+import './level.scss';
 
 export * from './level';
 export * from './level-item';

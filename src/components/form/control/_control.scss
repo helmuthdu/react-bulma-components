@@ -1,0 +1,12 @@
+.control {
+  .help.counter {
+    float: right;
+    margin-left: 0.5em;
+  }
+  .icon {
+    &.is-clickable {
+      pointer-events: auto;
+      cursor: pointer;
+    }
+  }
+}

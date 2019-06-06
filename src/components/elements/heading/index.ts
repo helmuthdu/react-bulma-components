@@ -1,3 +1,3 @@
-import './heading.sass';
+import './heading.scss';
 
 export * from './heading';

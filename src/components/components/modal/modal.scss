@@ -1,0 +1,17 @@
+@import '../../../utilities/all';
+@import '~bulma/sass/components/modal';
+
+.modal {
+  .animation-content {
+    margin: 0 20px;
+    .modal-card {
+      margin: 0;
+    }
+    @include mobile {
+      width: 100%;
+    }
+  }
+  .modal-content {
+    width: 100%;
+  }
+}

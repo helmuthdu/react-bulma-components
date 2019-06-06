@@ -6,7 +6,7 @@ import { themes } from '@storybook/theming';
 import * as React from 'react';
 import extraViewports from './extra-viewports.json';
 
-import 'index.sass';
+import 'index.scss';
 
 addParameters({
   options: {

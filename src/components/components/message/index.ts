@@ -1,4 +1,4 @@
-import './message.sass';
+import './message.scss';
 
 export * from './message';
 export * from './message-body';

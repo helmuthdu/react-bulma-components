@@ -1,3 +1,3 @@
-import './pagination.sass';
+import './pagination.scss';
 
 export * from './pagination';

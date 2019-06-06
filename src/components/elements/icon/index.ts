@@ -1,3 +1,3 @@
-import './icon.sass';
+import './icon.scss';
 
 export * from './icon';

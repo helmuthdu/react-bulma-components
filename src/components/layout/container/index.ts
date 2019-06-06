@@ -1,3 +1,3 @@
-import './container.sass';
+import './container.scss';
 
 export * from './container';

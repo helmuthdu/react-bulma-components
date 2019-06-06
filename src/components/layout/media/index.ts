@@ -1,4 +1,4 @@
-import './media.sass';
+import './media.scss';
 
 export * from './media';
 export * from './media-content';

@@ -1,4 +1,4 @@
-import './modal.sass';
+import './modal.scss';
 
 export * from './modal';
 export * from './modal-card';

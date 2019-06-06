@@ -1,0 +1,35 @@
+@import '../../../utilities/all';
+
+.loader {
+  position: relative;
+  &.is-overlay {
+    @include overlay;
+    display: flex;
+    z-index: 999;
+    position: fixed;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    .loader-icon {
+      &:after {
+        top: calc(50% - 2.5em);
+        left: calc(50% - 2.5em);
+        width: 5em;
+        height: 5em;
+        position: absolute;
+        border-width: 0.25em;
+      }
+    }
+  }
+  .loader-background {
+    @include overlay;
+    background: #7f7f7f;
+    background: rgba(255, 255, 255, 0.5);
+  }
+  .loader-icon {
+    &:after {
+      @include loader;
+    }
+  }
+}

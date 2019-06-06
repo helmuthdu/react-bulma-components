@@ -1,4 +1,4 @@
-import './panel.sass';
+import './panel.scss';
 
 export * from './panel';
 export * from './panel-block';

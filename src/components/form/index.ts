@@ -1,4 +1,4 @@
-import './form.sass';
+import './form.scss';
 
 export * from './checkbox';
 export * from './control';

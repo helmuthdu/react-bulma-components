@@ -40,7 +40,7 @@ This configuration its recomended it you answer yes to one of the following ques
 In your main scss/sass file you will need to include the generic css classes bulma use, please ensure you do this on your mail scss file (App.scss fox example) and do not add this inside the `_variables` file (see below)
 
 ```scss
-@import '~react-bulma-components/src/index.sass';
+@import '~react-bulma-components/src/index.scss';
 ```
 
 You can start using the library like this

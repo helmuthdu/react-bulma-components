@@ -1,3 +1,3 @@
-import './progress.sass';
+import './progress.scss';
 
 export * from './progress';

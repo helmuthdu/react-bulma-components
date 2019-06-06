@@ -1,0 +1,11 @@
+@import "../../../utilities/all";
+@import "~bulma/sass/elements/tag";
+
+.tag {
+  .has-ellipsis {
+    max-width: 10em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}

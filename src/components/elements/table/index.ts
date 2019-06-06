@@ -1,3 +1,3 @@
-import './table.sass';
+import './table.scss';
 
 export * from './table';

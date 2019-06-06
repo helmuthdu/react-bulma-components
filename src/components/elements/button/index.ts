@@ -1,3 +1,3 @@
-import './button.sass';
+import './button.scss';
 
 export * from './button';

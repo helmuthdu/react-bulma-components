@@ -1,0 +1,10 @@
+@import "../../../utilities/all";
+@import "~bulma/sass/elements/button";
+
+.delete {
+  @include delete;
+}
+
+.button {
+  box-sizing: border-box;
+}

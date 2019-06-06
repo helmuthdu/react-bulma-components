@@ -1,4 +1,4 @@
-import './card.sass';
+import './card.scss';
 
 export * from './card';
 export * from './card-footer';

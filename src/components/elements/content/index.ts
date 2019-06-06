@@ -1,3 +1,3 @@
-import './content.sass';
+import './content.scss';
 
 export * from './content';

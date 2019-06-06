@@ -1,3 +1,3 @@
-import './image.sass';
+import './image.scss';
 
 export * from './image';
