@@ -5,6 +5,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const path = require('path');
 const fs = require('fs');
+const TsDeclarationWebpackPlugin = require('ts-declaration-webpack-plugin');
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
@@ -100,6 +101,9 @@ module.exports = env => {
       new webpack.LoaderOptionsPlugin({
         minimize: true,
         debug: false
+      }),
+      new TsDeclarationWebpackPlugin({
+        name: 'index.d.ts'
       })
     ].concat(
       process.env.WEBPACK_ENV === 'INCLUDE_CSS'

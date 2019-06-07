@@ -138,6 +138,7 @@
     "storybook-addon-themes": "^5.1.0",
     "style-loader": "^0.23.1",
     "toolbox-loader": "^0.0.3",
+    "ts-declaration-webpack-plugin": "^1.2.0",
     "typescript": "^3.5.1",
     "webpack": "^4.33.0",
     "webpack-bundle-analyzer": "^3.3.2",
