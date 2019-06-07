@@ -6,7 +6,7 @@ import { themes } from '@storybook/theming';
 import * as React from 'react';
 import extraViewports from './extra-viewports.json';
 
-import 'index.scss';
+import '../src/index.scss';
 
 addParameters({
   options: {
@@ -29,7 +29,7 @@ configureViewport({
   },
 });
 
-// automatically import all files ending in *.stories.js
+// automatically import all files ending in *.stories.tsx
 const req = require.context('../src', true, /.story.tsx$/);
 function loadStories() {
   req.keys().forEach(req);

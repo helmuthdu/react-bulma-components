@@ -1,5 +1,8 @@
-@import 'utilities/all';
-@import "~bulma/sass/base/_all.sass";
+@charset "utf-8";
+
+@import 'utilities/_all';
+@import "~bulma/sass/base/_all";
+@import "~bulma-helpers/bulma-helpers";
 
 @import "components/columns/columns";
 @import "components/components/components";
