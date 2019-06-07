@@ -10,6 +10,8 @@ export type HelpersModifier = {
   paddingless?: boolean;
   pull?: 'right' | 'left';
   radiusless?: boolean;
+  relative?: boolean;
+  scrolless?: boolean;
   shadowless?: boolean;
   unselectable?: boolean;
 };
@@ -24,6 +26,8 @@ export default {
     overlay: false,
     paddingless: false,
     radiusless: false,
+    relative: false,
+    scrolless: false,
     shadowless: false,
     unselectable: false
   },
@@ -37,6 +41,8 @@ export default {
       'is-overlay': props.overlay,
       'is-paddingless': props.paddingless,
       'is-radiusless': props.radiusless,
+      'is-relative': props.relative,
+      'is-scrolless': props.scrolless,
       'is-shadowless': props.shadowless,
       'is-unselectable': props.unselectable,
       [`is-pulled-${props.pull}`]: props.pull
@@ -51,6 +57,8 @@ export default {
     paddingless,
     pull,
     radiusless,
+    relative,
+    scrolless,
     shadowless,
     unselectable,
     ...props

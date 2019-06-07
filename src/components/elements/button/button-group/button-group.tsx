@@ -6,7 +6,7 @@ import { Element } from '../../element';
 
 type ButtonGroupProps = ElementModifier & {
   hasAddons?: boolean;
-  position?: null | 'centered' | 'right';
+  position?: 'centered' | 'right';
   size?: Sizes;
 };
 

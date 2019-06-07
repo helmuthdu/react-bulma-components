@@ -11,17 +11,20 @@ export const Section: React.FunctionComponent<SectionProps> = ({
   children,
   className,
   size,
-  ...props
-}: SectionProps) => (
-  <Element
-    {...props}
-    className={cn('section', className, {
-      [`is-${size}`]: size
-    })}
-  >
-    {children}
-  </Element>
-);
+  ...rest
+}: SectionProps) => {
+  const props = modifiers.clean(rest);
+  return (
+    <Element
+      {...props}
+      className={cn('section', className, modifiers.getClassName(rest), {
+        [`is-${size}`]: size
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
 Section.defaultProps = {
   ...modifiers.defaultProps,

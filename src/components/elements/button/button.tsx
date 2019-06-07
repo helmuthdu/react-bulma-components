@@ -23,7 +23,7 @@ type ButtonProps = Partial<Omit<React.ComponentProps<'a' | 'button' | 'span'>, '
     reset?: boolean;
     rounded?: boolean;
     selected?: boolean;
-    size?: 'normal' | Sizes;
+    size?: Sizes | 'normal';
     state?: 'hover' | 'focus' | 'active' | 'loading';
     submit?: boolean;
     text?: boolean;

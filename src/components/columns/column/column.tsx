@@ -60,8 +60,10 @@ export const Column: React.FunctionComponent<ColumnProps> = ({
 }: ColumnProps) => (
   <Element
     {...props}
-    className={cn(className, 'column', {
+    className={cn('column', className, {
+      'is-narrow': narrow,
       [`is-${size}`]: size,
+      [`is-offset-${offset}`]: offset,
       // @ts-ignore
       [`is-${touch.size}-mobile`]: touch.size,
       // @ts-ignore
@@ -86,9 +88,6 @@ export const Column: React.FunctionComponent<ColumnProps> = ({
       [`is-offset-${widescreen.offset}-widescreen`]: widescreen.offset,
       // @ts-ignore
       [`is-offset-${fullhd.offset}-fullhd`]: fullhd.offset,
-      // @ts-ignore
-      [`is-offset-${offset}`]: offset,
-      'is-narrow': narrow,
       // @ts-ignore
       'is-narrow-touch': touch.narrow,
       // @ts-ignore

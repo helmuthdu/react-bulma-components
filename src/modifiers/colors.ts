@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import cn from 'classnames';
 import { Colors, Greyscale } from '../constants';
 

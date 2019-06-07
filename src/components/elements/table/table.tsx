@@ -6,18 +6,20 @@ import { Element } from '../element';
 type TableProps = Partial<Omit<React.ComponentProps<'table'>, 'unselectable'>> &
   ElementModifier & {
     bordered?: boolean;
-    size?: 'fullwidth' | 'narrow';
-    striped?: boolean;
+    fullwidth?: boolean;
     hoverable?: boolean;
+    narrow?: boolean;
+    striped?: boolean;
   };
 
 export const Table: React.FunctionComponent<TableProps> = ({
+  bordered,
   children,
   className,
+  fullwidth,
   hoverable,
-  size,
+  narrow,
   striped,
-  bordered,
   ...props
 }: TableProps) => (
   <Element
@@ -25,9 +27,10 @@ export const Table: React.FunctionComponent<TableProps> = ({
     {...props}
     className={cn('table', className, {
       'is-bordered': bordered,
+      'is-fullwidth': fullwidth,
       'is-hoverable': hoverable,
-      'is-striped': striped,
-      [`is-${size}`]: size
+      'is-narrow': narrow,
+      'is-striped': striped
     })}
   >
     {children}
@@ -36,8 +39,7 @@ export const Table: React.FunctionComponent<TableProps> = ({
 
 Table.defaultProps = {
   ...modifiers.defaultProps,
-  size: 'fullwidth',
-  striped: true,
+  striped: false,
   hoverable: false,
   bordered: false
 };

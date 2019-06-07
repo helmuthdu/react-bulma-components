@@ -2,13 +2,14 @@ import '@mdi/font/css/materialdesignicons.css';
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Icon } from '.';
+import { Container } from '../../layout/container';
 
 storiesOf('Icon', module)
   .add('Default', () => (
-    <div>
-      <Icon icon="star" color="info" />
+    <Container fluid padding="medium">
+      <Icon icon="star" color="info" size="large" />
       <Icon icon="shield-account" />
-    </div>
+    </Container>
   ))
   .add('Custom Icon', () => (
     <div>

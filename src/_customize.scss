@@ -1,0 +1,10 @@
+@import '~bulma/sass/utilities/initial-variables';
+
+// ADD HERE variables you want to override
+$primary: #03a9f4 !default;
+$primary-invert: $white !default;
+
+$link: $primary !default;
+$link-invert: $primary-invert !default;
+$link-visited: $grey !default;
+$link-focus-border: $primary !default;

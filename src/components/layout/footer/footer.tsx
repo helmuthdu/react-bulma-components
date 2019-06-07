@@ -5,11 +5,14 @@ import { Element } from '../../elements';
 
 type FooterProps = ElementModifier;
 
-export const Footer: React.FunctionComponent<FooterProps> = ({ children, className, ...props }: FooterProps) => (
-  <Element {...props} className={cn('footer', className)}>
-    {children}
-  </Element>
-);
+export const Footer: React.FunctionComponent<FooterProps> = ({ children, className, ...rest }: FooterProps) => {
+  const props = modifiers.clean(rest);
+  return (
+    <Element {...props} className={cn('footer', className, modifiers.getClassName(rest))}>
+      {children}
+    </Element>
+  );
+};
 
 Footer.defaultProps = {
   ...modifiers.defaultProps

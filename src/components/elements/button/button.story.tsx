@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import PropTypes from 'prop-types';
 import * as React from 'react';
 import { Button, ButtonGroup } from '.';
-import { Colors } from '../../../constants';
+import { Colors, Sizes } from '../../../constants';
 import { Section } from '../../layout/section';
 import { Box } from '../box';
 
@@ -21,10 +21,17 @@ const colors: { [key: string]: Colors } = {
   link: 'link'
 };
 
-const positions = {
-  default: '',
+const positions: { [key: string]: any } = {
+  default: null,
   centered: 'centered',
   right: 'right'
+};
+
+const size: { [key: string]: Sizes | 'normal' } = {
+  small: 'small',
+  normal: 'normal',
+  medium: 'medium',
+  large: 'large'
 };
 
 storiesOf('Button', module)
@@ -33,18 +40,19 @@ storiesOf('Button', module)
     <Section>
       <Box>Play with the button props using the knobs addon panel at the bottom</Box>
       <Button
-        fullwidth={boolean('Full width', false)}
         color={select('Color', colors, 'primary')}
-        loading={boolean('Loading', false)}
-        outlined={boolean('Outlined', false)}
-        inverted={boolean('Inverted', false)}
         disabled={boolean('Disabled', false)}
-        text={boolean('Text', false)}
-        remove={boolean('Remove', false)}
+        fullwidth={boolean('Full width', false)}
         inactive={boolean('Static', false)}
-        rounded={boolean('Rounded', false)}
+        inverted={boolean('Inverted', false)}
+        loading={boolean('Loading', false)}
         onClick={action('Button Click')}
         onMouseEnter={action('Hover')}
+        outlined={boolean('Outlined', false)}
+        remove={boolean('Remove', false)}
+        rounded={boolean('Rounded', false)}
+        size={select('Size', size, 'normal')}
+        text={boolean('Text', false)}
       >
         Button
       </Button>
@@ -73,7 +81,7 @@ storiesOf('Button', module)
   })
   .add('Button group', () => (
     <Section>
-      <ButtonGroup hasAddons={boolean('hasAddons', false)} position={select('Position', positions, 'top' as any)}>
+      <ButtonGroup hasAddons={boolean('hasAddons', false)} position={select('Position', positions, undefined)}>
         <Button renderAs="span" color="success">
           Save changes
         </Button>

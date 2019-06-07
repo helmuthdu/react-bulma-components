@@ -30,8 +30,19 @@ export const Image: React.FunctionComponent<ImageProps> = ({
     setImage({ src: image.default !== src ? src : image.src, default: src });
   }, [image.default, image.src, src]);
 
+  const getImage = (includeFallback: boolean = false) => {
+    const placeholderImage = `https://dummyimage.com/${
+      Number.isInteger(size as any) ? `${size}x${size}` : `360x${(size as string).replace(/by/, ':')}`
+    }/ccc/969696`;
+    return (includeFallback ? fallback || placeholderImage : false) || (image.src || placeholderImage);
+  };
+
   const handleError = () => {
-    setImage({ ...image, src: fallback as string });
+    console.log();
+    setImage({
+      ...image,
+      src: getImage(true)
+    });
   };
 
   return (
@@ -46,7 +57,7 @@ export const Image: React.FunctionComponent<ImageProps> = ({
         data-testid="image-img"
         alt={alt}
         onError={handleError}
-        src={image.src}
+        src={getImage()}
         className={cn({ 'is-rounded': rounded })}
       />
     </Element>
@@ -56,5 +67,5 @@ export const Image: React.FunctionComponent<ImageProps> = ({
 Image.defaultProps = {
   ...modifiers.defaultProps,
   rounded: false,
-  fallback: 'http//bulma.io/images/placeholders/480x480.png'
+  size: 128
 };

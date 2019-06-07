@@ -10,7 +10,7 @@ export const HeroFooter: React.FunctionComponent<HeroFooterProps> = ({
   className,
   ...props
 }: HeroFooterProps) => (
-  <Element {...props} className={cn(className, 'hero-foot')}>
+  <Element {...props} className={cn('hero-foot', className)}>
     {children}
   </Element>
 );

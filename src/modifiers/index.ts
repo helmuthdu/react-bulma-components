@@ -3,6 +3,7 @@ import * as React from 'react';
 import colors, { ColorsModifier } from './colors';
 import helpers, { HelpersModifier } from './helpers';
 import responsive, { ResponsiveModifier } from './responsives';
+import spacing, { SpacingModifier } from './spacing';
 import typography, { TypographyModifier } from './typography';
 
 const compose = (...fns: any[]) => (args: any) => fns.reduce((arg: any, fn) => fn(arg), args);
@@ -10,6 +11,7 @@ const compose = (...fns: any[]) => (args: any) => fns.reduce((arg: any, fn) => f
 export type ElementModifier = ColorsModifier &
   HelpersModifier &
   ResponsiveModifier &
+  SpacingModifier &
   TypographyModifier & {
     className?: any;
     children?: React.ReactNode;
@@ -19,23 +21,26 @@ export type ElementModifier = ColorsModifier &
 
 export default {
   defaultProps: {
+    ...colors.defaultProps,
     ...helpers.defaultProps,
     ...responsive.defaultProps,
-    ...colors.defaultProps,
+    ...spacing.defaultProps,
     ...typography.defaultProps
   },
   getClassName: (props: any) =>
     cn(
+      colors.getClassName(props),
       helpers.getClassName(props),
       responsive.getClassName(props),
-      colors.getClassName(props),
+      spacing.getClassName(props),
       typography.getClassName(props)
     ),
   clean: (props: any) =>
     compose(
+      colors.clean,
       helpers.clean,
       responsive.clean,
-      colors.clean,
+      spacing.clean,
       typography.clean
     )(props)
 };

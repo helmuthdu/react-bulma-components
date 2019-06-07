@@ -10,7 +10,7 @@ export const MediaContent: React.FunctionComponent<MediaContentProps> = ({
   className,
   ...props
 }: MediaContentProps) => (
-  <Element {...props} className={cn(className, 'content')}>
+  <Element {...props} className={cn('content', className)}>
     {children}
   </Element>
 );

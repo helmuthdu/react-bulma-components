@@ -4,7 +4,7 @@ import modifiers, { ElementModifier } from '../../../../modifiers';
 import { Element } from '../../../elements';
 
 type LevelSideProps = ElementModifier & {
-  align?: string;
+  align?: 'left' | 'right';
 };
 
 export const LevelSide: React.FunctionComponent<LevelSideProps> = ({

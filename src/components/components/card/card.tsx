@@ -14,11 +14,14 @@ export const Card: React.FunctionComponent<CardProps> & {
   Footer: typeof CardFooter;
   Header: typeof CardHeader;
   Image: typeof CardImage;
-} = ({ className, children, ...props }: CardProps) => (
-  <Element className={cn('card', className)} {...props}>
-    {children}
-  </Element>
-);
+} = ({ className, children, ...rest }: CardProps) => {
+  const props = modifiers.clean(rest);
+  return (
+    <Element className={cn('card', className, modifiers.getClassName(rest))} {...props}>
+      {children}
+    </Element>
+  );
+};
 
 Card.Content = CardContent;
 Card.Footer = CardFooter;

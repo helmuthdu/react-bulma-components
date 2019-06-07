@@ -15,11 +15,11 @@ type TileProps = ElementModifier & {
 export const Tile: React.FunctionComponent<TileProps> = ({
   children,
   className,
-  context,
-  vertical,
-  size,
   color,
+  context,
   notification,
+  size,
+  vertical,
   ...props
 }: TileProps) => (
   <Element

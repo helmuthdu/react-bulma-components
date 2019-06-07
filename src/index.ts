@@ -1,4 +1,4 @@
-import './index.scss';
+import './_all.scss';
 
 export * from './components/columns';
 export * from './components/components';

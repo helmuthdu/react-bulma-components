@@ -11,21 +11,26 @@ type ColumnsProps = Partial<Omit<React.ComponentProps<'div'>, 'unselectable'>> &
     centered?: boolean;
     gapless?: boolean;
     multiline?: boolean;
+    vcentered?: boolean;
   };
 
 export const Columns: React.FunctionComponent<ColumnsProps> & {
   Column: typeof Column;
-} = ({ className, breakpoint, gapless, multiline, centered, ...props }: ColumnsProps) => (
-  <Element
-    {...props}
-    className={cn(className, 'columns', {
-      'is-centered': centered,
-      'is-gapless': gapless,
-      'is-multiline': multiline,
-      [`is-${breakpoint}`]: breakpoint
-    })}
-  />
-);
+} = ({ breakpoint, centered, className, gapless, multiline, vcentered, ...rest }: ColumnsProps) => {
+  const props = modifiers.clean(rest);
+  return (
+    <Element
+      {...props}
+      className={cn('columns', className, modifiers.getClassName(rest), {
+        'is-centered': centered,
+        'is-gapless': gapless,
+        'is-multiline': multiline,
+        'is-vcentered': vcentered,
+        [`is-${breakpoint}`]: breakpoint
+      })}
+    />
+  );
+};
 
 Columns.Column = Column;
 

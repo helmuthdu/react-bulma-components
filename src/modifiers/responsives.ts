@@ -49,9 +49,7 @@ const getSizeClassFromProp = (sizes: { [key: string]: SizeShape }) =>
   }, {});
 
 export default {
-  defaultProps: {
-    responsive: undefined
-  },
+  defaultProps: {},
   getClassName: (props: any) =>
     cn({
       ...getSizeClassFromProp(props.responsive || {})

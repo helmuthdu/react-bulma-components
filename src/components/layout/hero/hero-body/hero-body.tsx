@@ -6,7 +6,7 @@ import { Element } from '../../../elements';
 type HeroBodyProps = ElementModifier;
 
 export const HeroBody: React.FunctionComponent<HeroBodyProps> = ({ children, className, ...props }: HeroBodyProps) => (
-  <Element {...props} className={cn(className, 'hero-body')}>
+  <Element {...props} className={cn('hero-body', className)}>
     {children}
   </Element>
 );

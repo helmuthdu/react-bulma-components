@@ -27,10 +27,7 @@ storiesOf('Image', module)
             <td />
             <td style={{ width: 100 }}>{size}</td>
             <td style={{ width: 128 }}>
-              <Image
-                src="https://vignette.wikia.nocookie.net/project-pokemon/images/4/47/Placeholder.png/revision/latest?cb=20170330235552&format=original"
-                size={size}
-              />
+              <Image size={size} />
             </td>
             <td />
           </tr>
@@ -54,10 +51,7 @@ storiesOf('Image', module)
             <td />
             <td style={{ width: 100 }}>{size}</td>
             <td style={{ width: 128 }}>
-              <Image
-                src="https://vignette.wikia.nocookie.net/project-pokemon/images/4/47/Placeholder.png/revision/latest?cb=20170330235552&format=original"
-                size={size}
-              />
+              <Image size={size} />
             </td>
             <td />
           </tr>

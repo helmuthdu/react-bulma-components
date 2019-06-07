@@ -1,14 +1,25 @@
-import { boolean } from '@storybook/addon-knobs';
+import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Box } from '.';
+import { Spacing } from '../../../constants';
 import { Media, MediaItem } from '../../layout/media';
 import { Content } from '../content';
 import { Image } from '../image';
 
+const spacing: { [key: string]: Spacing } = {
+  none: 'none',
+  tiny: 'tiny',
+  small: 'small',
+  medium: 'none',
+  large: 'large',
+  huge: 'huge'
+};
+
 storiesOf('Box', module).add('Default', () => (
   <Box
     paddingless={boolean('paddingless', false)}
+    padding={select('padding', spacing, 'none')}
     responsive={{
       mobile: {
         display: { value: 'block' }

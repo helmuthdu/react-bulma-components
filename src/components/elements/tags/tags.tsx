@@ -16,7 +16,7 @@ export const Tags: React.FunctionComponent<TagsProps> & {
   return (
     <span
       {...props}
-      className={cn('tagGroup.tsx', modifiers.getClassName(rest), className, {
+      className={cn('tag-group', modifiers.getClassName(rest), className, {
         'has-addons': gapless,
         [`are-${size}`]: size
       })}

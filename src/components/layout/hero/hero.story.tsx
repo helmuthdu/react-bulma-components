@@ -7,7 +7,7 @@ import { Section } from '../section';
 
 storiesOf('Hero', module)
   .add('Default with color', () => (
-    <div>
+    <Container>
       <Section>
         <Hero color="primary">
           <HeroBody>
@@ -20,7 +20,6 @@ storiesOf('Hero', module)
           </HeroBody>
         </Hero>
       </Section>
-
       <Section>
         <Hero color="danger">
           <HeroBody>
@@ -45,10 +44,10 @@ storiesOf('Hero', module)
           </HeroBody>
         </Hero>
       </Section>
-    </div>
+    </Container>
   ))
   .add('Gradient (EXPERIMENTAL)', () => (
-    <div>
+    <Container>
       <Section>
         <Hero color="primary" gradient>
           <HeroBody>
@@ -61,7 +60,6 @@ storiesOf('Hero', module)
           </HeroBody>
         </Hero>
       </Section>
-
       <Section>
         <Hero color="danger" gradient>
           <HeroBody>
@@ -86,10 +84,10 @@ storiesOf('Hero', module)
           </HeroBody>
         </Hero>
       </Section>
-    </div>
+    </Container>
   ))
   .add('Differents Sizes', () => (
-    <div>
+    <Container>
       <Hero color="primary" size="medium">
         <HeroBody>Medium</HeroBody>
       </Hero>
@@ -97,18 +95,20 @@ storiesOf('Hero', module)
         <HeroBody>Large</HeroBody>
       </Hero>
       <Hero color="danger" size="fullheight">
-        <HeroBody>FULL HEIGHT</HeroBody>
+        <HeroBody>Full Height</HeroBody>
       </Hero>
-    </div>
+    </Container>
   ))
   .add('Vertical Alignments', () => (
-    <Hero size="fullheight" color="primary">
-      <HeroHeader renderAs="header">
-        <div className="has-background-info">Header</div>
-      </HeroHeader>
-      <HeroBody>Body</HeroBody>
-      <HeroFooter>
-        <div className="has-background-danger">Footer</div>
-      </HeroFooter>
-    </Hero>
+    <Container>
+      <Hero size="fullheight" color="primary">
+        <HeroHeader renderAs="header">
+          <div className="has-background-info">Header</div>
+        </HeroHeader>
+        <HeroBody>Body</HeroBody>
+        <HeroFooter>
+          <div className="has-background-danger">Footer</div>
+        </HeroFooter>
+      </Hero>
+    </Container>
   ));

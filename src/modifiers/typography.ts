@@ -2,10 +2,10 @@
 import cn from 'classnames';
 
 export type TypographyModifier = {
-  textSize?: 1 | 2 | 3 | 4 | 5 | 6;
+  textSize?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
   textAlignment?: 'centered' | 'justified' | 'left' | 'right';
   textTransform?: 'capitalized' | 'lowercase' | 'uppercase';
-  textWeight?: 'light' | 'normal' | 'semibold' | 'bold';
+  textWeight?: 'light' | 'normal' | 'medium' | 'semibold' | 'bold';
   italic?: boolean;
 };
 

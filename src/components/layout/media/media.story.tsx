@@ -37,6 +37,9 @@ storiesOf('Media', module)
               </LevelSide>
             </Level>
           </MediaItem>
+          <MediaItem position="right">
+            <button className="delete" />
+          </MediaItem>
         </Media>
       </Box>
     </Section>

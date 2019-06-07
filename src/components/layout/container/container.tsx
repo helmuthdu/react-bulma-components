@@ -14,18 +14,21 @@ export const Container: React.FunctionComponent<ContainerProps> = ({
   fluid,
   breakpoint,
   className,
-  ...props
-}: ContainerProps) => (
-  <Element
-    {...props}
-    className={cn('container', className, {
-      'is-fluid': fluid,
-      [`is-${breakpoint}`]: breakpoint
-    })}
-  >
-    {children}
-  </Element>
-);
+  ...rest
+}: ContainerProps) => {
+  const props = modifiers.clean(rest);
+  return (
+    <Element
+      {...props}
+      className={cn('container', className, modifiers.getClassName(rest), {
+        'is-fluid': fluid,
+        [`is-${breakpoint}`]: breakpoint
+      })}
+    >
+      {children}
+    </Element>
+  );
+};
 
 Container.defaultProps = {
   ...modifiers.defaultProps,

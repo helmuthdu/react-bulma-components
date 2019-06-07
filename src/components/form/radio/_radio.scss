@@ -10,7 +10,7 @@ $radio-size: 1.25em !default;
     & + .radio {
       margin-left: 0.5em;
     }
-    input[type=radio] {
+    input[type='radio'] {
       position: absolute;
       left: 0;
       opacity: 0;
@@ -27,13 +27,13 @@ $radio-size: 1.25em !default;
         border-radius: 50%;
         border: 2px solid $grey;
         &:before {
-          content: "";
+          content: '';
           display: flex;
           position: absolute;
           left: 50%;
-          margin-left: calc(-#{$radio-size}/2);
+          margin-left: calc(-#{$radio-size}/ 2);
           bottom: 50%;
-          margin-bottom: calc(-#{$radio-size}/2);
+          margin-bottom: calc(-#{$radio-size}/ 2);
           width: $radio-size;
           height: $radio-size;
           transition: transform $speed-slow $easing;
@@ -57,7 +57,7 @@ $radio-size: 1.25em !default;
           }
         }
         &:before {
-          transform: scale(.5);
+          transform: scale(0.5);
         }
       }
     }
@@ -68,7 +68,7 @@ $radio-size: 1.25em !default;
       opacity: 0.5;
     }
     &:hover {
-      input[type=radio] + .check {
+      input[type='radio'] + .check {
         border-color: $radio-active-background-color;
         @each $name, $pair in $colors {
           $color: nth($pair, 1);
@@ -79,10 +79,10 @@ $radio-size: 1.25em !default;
       }
     }
     &:focus {
-      input[type=radio] + .check {
+      input[type='radio'] + .check {
         box-shadow: 0 0 0.5em rgba($grey, 0.8);
       }
-      input[type=radio]:checked + .check {
+      input[type='radio']:checked + .check {
         box-shadow: 0 0 0.5em rgba($radio-active-background-color, 0.8);
         @each $name, $pair in $colors {
           $color: nth($pair, 1);
@@ -95,7 +95,7 @@ $radio-size: 1.25em !default;
     &.is-small {
       @include control-small;
     }
-    &.is-medium{
+    &.is-medium {
       @include control-medium;
     }
     &.is-large {

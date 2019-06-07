@@ -7,7 +7,7 @@ import { Element } from '../../elements';
 type HeroProps = ElementModifier & {
   color?: Colors;
   gradient?: boolean;
-  size?: Sizes | 'fullheight';
+  size?: 'medium' | 'large' | 'fullheight' | 'fullheight-with-navbar';
 };
 
 export const Hero: React.FunctionComponent<HeroProps> = ({
@@ -22,6 +22,7 @@ export const Hero: React.FunctionComponent<HeroProps> = ({
     {...props}
     className={cn('hero', className, {
       'is-bold': gradient,
+      'is-link': size === 'fullheight-with-navbar',
       [`is-${color}`]: color,
       [`is-${size}`]: size
     })}

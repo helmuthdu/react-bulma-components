@@ -1,66 +1,73 @@
 import cn from 'classnames';
 import React from 'react';
-import { Colors, Scale } from '../../../constants';
+import { Colors } from '../../../constants';
 import modifiers, { ElementModifier } from '../../../modifiers';
 
 const iconSizes = {
   mdi: {
-    small: 'mdi-18px',
-    medium: 'mdi-24px',
-    large: 'mdi-36px',
-    big: 'mdi-48px'
+    small: '18px',
+    normal: '24px',
+    medium: '36px',
+    large: '48px'
   },
   fas: {
     small: '',
-    medium: 'fa-lg',
-    large: 'fa-2x',
-    big: 'fa-3x'
+    normal: 'fa-lg',
+    medium: 'fa-2x',
+    large: 'fa-3x'
   }
 };
 
-type IconProps = Partial<Omit<React.ComponentProps<'span'>, 'color' | 'unselectable'>> &
+type IconProps = Partial<Omit<React.ComponentProps<'i'>, 'color' | 'unselectable'>> &
   ElementModifier & {
-    icon?: string;
     align?: 'left' | 'right';
+    border?: boolean;
     color?: Colors;
-    iconSize?: 'small' | 'medium' | 'large' | 'big';
+    icon?: string;
+    inactive?: boolean;
     pack?: 'mdi' | 'fas';
-    size?: Scale;
+    size?: 'small' | 'normal' | 'medium' | 'large';
+    type?: 'light' | 'dark';
+    spinner?: boolean;
   };
 
 export const Icon: React.FunctionComponent<IconProps> = ({
-  icon,
-  iconSize,
-  size,
-  color,
-  className,
   align,
+  border,
   children,
+  className,
+  color,
+  icon,
+  inactive,
   pack,
+  size,
+  spinner,
+  type,
   ...rest
 }: IconProps) => {
   const props = modifiers.clean(rest);
-  const iconSizeOf = iconSize
-    ? (iconSizes as any)[pack as any][iconSize]
-    : size
-    ? (iconSizes as any)[pack as any][size]
-    : undefined;
+  // @ts-ignore
+  const iconSize = iconSizes[pack][size];
   const iconPack =
     pack === 'mdi'
       ? cn('mdi', {
           [`mdi-${icon}`]: icon,
-          [`mdi-${iconSizeOf}`]: iconSizeOf
+          [`mdi-${inactive}`]: inactive,
+          [`mdi-${type}`]: type,
+          [`mdi-${iconSize}`]: iconSize
         })
       : pack === 'fas'
       ? cn('fas', {
+          'fa-border': border,
+          'fa-spinner': spinner,
           [`fa-${icon}`]: icon,
-          [`fa-${iconSizeOf}`]: iconSizeOf
+          [`fa-${iconSize}`]: iconSize
         })
       : '';
   return (
     <span
       {...props}
-      className={cn('icon', modifiers.getClassName(rest), className, {
+      className={cn('icon', className, modifiers.getClassName(rest), {
         [`is-${size}`]: size,
         [`is-${align}`]: align,
         [`has-text-${color}`]: color
@@ -74,5 +81,6 @@ export const Icon: React.FunctionComponent<IconProps> = ({
 Icon.defaultProps = {
   ...modifiers.defaultProps,
   icon: '',
+  size: 'normal',
   pack: 'mdi'
 };

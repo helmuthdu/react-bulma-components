@@ -1,7 +1,6 @@
 const path = require('path');
 const { DefinePlugin } = require('webpack');
 
-
 module.exports = ({ config }) => {
   return {
     ...config,
