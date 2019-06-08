@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import React from 'react';
+import * React from 'react';
 import ReactPaginate from 'react-paginate';
 import { Sizes } from '../../constants';
 import modifiers, { ElementModifier } from '../../modifiers';

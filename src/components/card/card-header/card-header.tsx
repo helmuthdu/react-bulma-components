@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import React from 'react';
+import * React from 'react';
 import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
 import { CardHeaderIcon } from './card-header-icon';
