@@ -5,30 +5,26 @@ import modifiers, { ElementModifier } from '../../../modifiers';
 
 export * from './button-group';
 
-type ButtonProps = Partial<Omit<React.ComponentProps<'a' | 'button' | 'span'>, 'color' | 'unselectable'>> &
-  ElementModifier & {
-    color?: Colors;
-    disabled?: boolean;
-    fullwidth?: boolean;
-    inactive?: boolean;
-    inverted?: boolean;
-    link?: boolean;
-    loading?: boolean;
-    onClick?: (...args: any[]) => void;
-    onChange?: (...args: any[]) => void;
-    onMouseEnter?: (...args: any[]) => void;
-    outlined?: boolean;
-    remove?: boolean;
-    renderAs?: ('a' | 'button' | 'span') | ((...args: any[]) => any);
-    reset?: boolean;
-    rounded?: boolean;
-    selected?: boolean;
-    size?: Sizes | 'normal';
-    state?: 'hover' | 'focus' | 'active' | 'loading';
-    submit?: boolean;
-    text?: boolean;
-    type?: string;
-  };
+type ButtonProps = ElementModifier & {
+  color?: Colors;
+  disabled?: boolean;
+  fullwidth?: boolean;
+  inactive?: boolean;
+  inverted?: boolean;
+  link?: boolean;
+  loading?: boolean;
+  outlined?: boolean;
+  remove?: boolean;
+  renderAs?: ('a' | 'button' | 'span') | ((...args: any[]) => any);
+  reset?: boolean;
+  rounded?: boolean;
+  selected?: boolean;
+  size?: Sizes | 'normal';
+  state?: 'hover' | 'focus' | 'active' | 'loading';
+  submit?: boolean;
+  text?: boolean;
+  type?: string;
+} & Omit<React.ComponentProps<'a' | 'button' | 'span'>, 'color' | 'size' | 'unselectable'>;
 
 export const Button: React.FunctionComponent<ButtonProps> = ({
   children,
@@ -70,8 +66,6 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   return (
     <Element
       tabIndex={disabled ? -1 : 0}
-      {...props}
-      {...otherProps}
       disabled={disabled}
       onClick={disabled ? undefined : onClick}
       onChange={disabled ? undefined : onChange}
@@ -90,6 +84,8 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
         button: !remove,
         delete: remove
       })}
+      {...props}
+      {...otherProps}
     >
       {children}
     </Element>

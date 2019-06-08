@@ -4,16 +4,13 @@ exports[`Checkbox component should render 1`] = `
 <DocumentFragment>
   <label
     class="b-checkbox checkbox"
-    data-testid="checkbox-label"
   >
     <input
-      data-testid="checkbox-input"
       type="checkbox"
       value=""
     />
     <span
       class="check"
-      data-testid="checkbox-check"
     />
     <span
       class="control-label"

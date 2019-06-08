@@ -5,14 +5,13 @@ import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../elements';
 import { Column } from './column';
 
-type ColumnsProps = Partial<Omit<React.ComponentProps<'div'>, 'unselectable'>> &
-  ElementModifier & {
-    breakpoint?: Breakpoints;
-    centered?: boolean;
-    gapless?: boolean;
-    multiline?: boolean;
-    vcentered?: boolean;
-  };
+type ColumnsProps = ElementModifier & {
+  breakpoint?: Breakpoints;
+  centered?: boolean;
+  gapless?: boolean;
+  multiline?: boolean;
+  vcentered?: boolean;
+} & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 
 export const Columns: React.FunctionComponent<ColumnsProps> & {
   Column: typeof Column;
@@ -20,7 +19,6 @@ export const Columns: React.FunctionComponent<ColumnsProps> & {
   const props = modifiers.clean(rest);
   return (
     <Element
-      {...props}
       className={cn('columns', className, modifiers.getClassName(rest), {
         'is-centered': centered,
         'is-gapless': gapless,
@@ -28,6 +26,7 @@ export const Columns: React.FunctionComponent<ColumnsProps> & {
         'is-vcentered': vcentered,
         [`is-${breakpoint}`]: breakpoint
       })}
+      {...props}
     />
   );
 };

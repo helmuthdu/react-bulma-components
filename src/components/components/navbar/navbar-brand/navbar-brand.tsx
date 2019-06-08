@@ -3,14 +3,14 @@ import * as React from 'react';
 import modifiers, { ElementModifier } from '../../../../modifiers';
 import { Element } from '../../../elements';
 
-type NavbarBrandProps = Partial<Omit<React.ComponentProps<'div'>, 'unselectable'>> & ElementModifier;
+type NavbarBrandProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 
 export const NavbarBrand: React.FunctionComponent<NavbarBrandProps> = ({
   className,
   children,
   ...props
 }: NavbarBrandProps) => (
-  <Element {...props} className={cn('navbar-brand', className)}>
+  <Element className={cn('navbar-brand', className)} {...props}>
     {children}
   </Element>
 );

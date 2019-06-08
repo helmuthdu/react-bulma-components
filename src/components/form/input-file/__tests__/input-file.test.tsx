@@ -17,7 +17,12 @@ describe('Input file component', () => {
   it('should call onChange with file data', () => {
     const onChange = jest.fn();
     const { getByTestId, getByText } = render(
-      <InputFile className="input-file" style={{ width: 400 }} onChange={onChange} />
+      <InputFile
+        testId={['file-input', 'file-name']}
+        className="input-file"
+        style={{ width: 400 }}
+        onChange={onChange}
+      />
     );
     fireEvent.change(getByTestId('file-input'), {
       target: {
@@ -35,7 +40,12 @@ describe('Input file component', () => {
   it('should call onChange without file data', () => {
     const onChange = jest.fn();
     const { getByTestId, container } = render(
-      <InputFile className="input-file" style={{ width: 400 }} onChange={onChange} />
+      <InputFile
+        testId={['file-input', 'file-name']}
+        className="input-file"
+        style={{ width: 400 }}
+        onChange={onChange}
+      />
     );
     fireEvent.change(getByTestId('file-input'), {
       target: {

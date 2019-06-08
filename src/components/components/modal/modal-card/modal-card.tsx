@@ -3,10 +3,9 @@ import React from 'react';
 import modifiers, { ElementModifier } from '../../../../modifiers';
 import { Element } from '../../../elements';
 
-type ModalCardProps = Partial<Omit<React.ComponentProps<'div'>, 'unselectable'>> &
-  ElementModifier & {
-    onClose?: (...args: any[]) => any;
-  };
+type ModalCardProps = ElementModifier & {
+  onClose?: (...args: any[]) => any;
+} & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 
 export const ModalCard: React.FunctionComponent<ModalCardProps> = ({
   className,
@@ -14,7 +13,7 @@ export const ModalCard: React.FunctionComponent<ModalCardProps> = ({
   children,
   ...props
 }: ModalCardProps) => (
-  <Element {...props} className={cn('modal-card', className)}>
+  <Element className={cn('modal-card', className)} {...props}>
     {children}
   </Element>
 );

@@ -47,7 +47,7 @@ describe('Tag component', () => {
   it('should trigger onClick event on close button', () => {
     const onClick = jest.fn();
     const { getByTestId } = render(
-      <Tag close onClick={onClick}>
+      <Tag testId="tag-delete" close onClick={onClick}>
         close
       </Tag>
     );
@@ -57,8 +57,8 @@ describe('Tag component', () => {
 
   it('should trigger onClick event on remove button', () => {
     const onClick = jest.fn();
-    const { getByTestId } = render(<Tag remove onClick={onClick} />);
-    fireEvent.click(getByTestId('tag'));
+    const { getByTestId } = render(<Tag remove testId="tag-delete" onClick={onClick} />);
+    fireEvent.click(getByTestId('tag-delete'));
     expect(onClick).toHaveBeenCalled();
   });
 

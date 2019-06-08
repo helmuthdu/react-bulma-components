@@ -7,7 +7,6 @@ exports[`Image component should be 32x32 1`] = `
   >
     <img
       class=""
-      data-testid="image-img"
       src="http://mydomain.com/image"
     />
   </figure>
@@ -21,21 +20,6 @@ exports[`Image component should be rounded 1`] = `
   >
     <img
       class="is-rounded"
-      data-testid="image-img"
-      src="http://mydomain.com/image"
-    />
-  </figure>
-</DocumentFragment>
-`;
-
-exports[`Image component should be square 1`] = `
-<DocumentFragment>
-  <figure
-    class="image is-square"
-  >
-    <img
-      class=""
-      data-testid="image-img"
       src="http://mydomain.com/image"
     />
   </figure>
@@ -49,7 +33,6 @@ exports[`Image component should render 1`] = `
   >
     <img
       class=""
-      data-testid="image-img"
       src="http://mydomain.com/image"
     />
   </figure>

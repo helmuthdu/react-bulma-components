@@ -4,11 +4,9 @@ exports[`Radio component should be disabled, checked and with value 1`] = `
 <DocumentFragment>
   <label
     class="b-radio radio"
-    data-testid="radio-label"
   >
     <input
       checked=""
-      data-testid="radio-input"
       disabled=""
       name="test"
       type="radio"
@@ -16,7 +14,6 @@ exports[`Radio component should be disabled, checked and with value 1`] = `
     />
     <span
       class="check"
-      data-testid="radio-check"
     />
     <span
       class="control-label"
@@ -31,17 +28,14 @@ exports[`Radio component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <label
     class="b-radio radio other-class this-is-a-test"
-    data-testid="radio-label"
   >
     <input
-      data-testid="radio-input"
       name="test"
       type="radio"
       value=""
     />
     <span
       class="check"
-      data-testid="radio-check"
     />
     <span
       class="control-label"
@@ -56,17 +50,14 @@ exports[`Radio component should render 1`] = `
 <DocumentFragment>
   <label
     class="b-radio radio"
-    data-testid="radio-label"
   >
     <input
-      data-testid="radio-input"
       name="test"
       type="radio"
       value=""
     />
     <span
       class="check"
-      data-testid="radio-check"
     />
     <span
       class="control-label"
@@ -84,18 +75,15 @@ exports[`Radio component should use inline styles 1`] = `
 <DocumentFragment>
   <label
     class="b-radio radio"
-    data-testid="radio-label"
     style="height: 250px;"
   >
     <input
-      data-testid="radio-input"
       name="test"
       type="radio"
       value=""
     />
     <span
       class="check"
-      data-testid="radio-check"
     />
     <span
       class="control-label"

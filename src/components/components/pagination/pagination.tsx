@@ -5,20 +5,19 @@ import { Sizes } from '../../../constants';
 import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../elements';
 
-type PaginationProps = Partial<Omit<React.ComponentProps<'nav'>, 'onChange' | 'unselectable'>> &
-  ElementModifier & {
-    autoHide?: boolean;
-    current?: number;
-    delta?: number;
-    next?: React.ReactNode;
-    onChange?: (...args: any[]) => void;
-    position?: 'centered' | 'right';
-    previous?: React.ReactNode;
-    rounded?: boolean;
-    showPrevNext?: boolean;
-    size?: Sizes;
-    total?: number;
-  };
+type PaginationProps = ElementModifier & {
+  autoHide?: boolean;
+  current?: number;
+  delta?: number;
+  next?: React.ReactNode;
+  onChange?: (...args: any[]) => void;
+  position?: 'centered' | 'right';
+  previous?: React.ReactNode;
+  rounded?: boolean;
+  showPrevNext?: boolean;
+  size?: Sizes;
+  total?: number;
+} & Omit<React.ComponentProps<'nav'>, 'onChange' | 'unselectable'>;
 
 export const Pagination: React.FunctionComponent<PaginationProps> = ({
   className,
@@ -35,13 +34,13 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
   ...props
 }: PaginationProps) => (
   <Element
-    {...props}
     className={cn('pagination', className, {
       [`is-rounded`]: rounded,
       [`is-${size}`]: size,
       [`is-${position}`]: position
     })}
     aria-label="pagination"
+    {...props}
   >
     <ReactPaginate
       activeClassName={'active'}

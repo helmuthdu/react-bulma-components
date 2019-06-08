@@ -8,11 +8,6 @@ describe('Image component', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should be square', () => {
-    const { asFragment } = render(<Image size="square" src="http://mydomain.com/image" />);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   it('should be rounded', () => {
     const { asFragment } = render(<Image rounded src="http://mydomain.com/image" />);
     expect(asFragment()).toMatchSnapshot();
@@ -24,13 +19,15 @@ describe('Image component', () => {
   });
 
   it('should have use default image if error encounter', () => {
-    const { getByTestId } = render(<Image src="http://mydomain.com/image" fallback="http://mydomain.com/default" />);
+    const { getByTestId } = render(
+      <Image testId="image-img" src="http://mydomain.com/image" fallbackSrc="http://mydomain.com/default" />
+    );
     fireEvent.error(getByTestId('image-img'));
     expect(getByTestId('image-img')).toHaveAttribute('src', 'http://mydomain.com/default');
   });
 
   it('should update src', async () => {
-    const getComponent = (url: string) => <Image src={url} />;
+    const getComponent = (url: string) => <Image testId="image-img" src={url} />;
     const { getByTestId, rerender } = render(getComponent('http://mydomain.com/image'));
     rerender(getComponent('http://mydomain.com/other'));
     expect(getByTestId('image-img')).toHaveAttribute('src', 'http://mydomain.com/other');

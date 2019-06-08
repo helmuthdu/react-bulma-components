@@ -4,10 +4,7 @@ import modifiers, { ElementModifier } from '../../../../modifiers';
 import { Element } from '../../../elements';
 import { ShowContext } from '../context';
 
-type NavbarBurgerProps = Partial<Omit<React.ComponentProps<'div'>, 'unselectable'>> &
-  ElementModifier & {
-    onClick?: (...args: any[]) => void;
-  };
+type NavbarBurgerProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 
 export const NavbarBurger: React.FunctionComponent<NavbarBurgerProps> = ({
   style,

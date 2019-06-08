@@ -18,18 +18,17 @@ const iconSizes = {
   }
 };
 
-type IconProps = Partial<Omit<React.ComponentProps<'i'>, 'color' | 'unselectable'>> &
-  ElementModifier & {
-    align?: 'left' | 'right';
-    border?: boolean;
-    color?: Colors;
-    icon?: string;
-    inactive?: boolean;
-    pack?: 'mdi' | 'fas';
-    size?: 'small' | 'normal' | 'medium' | 'large';
-    type?: 'light' | 'dark';
-    spinner?: boolean;
-  };
+type IconProps = ElementModifier & {
+  align?: 'left' | 'right';
+  border?: boolean;
+  color?: Colors;
+  icon?: string;
+  inactive?: boolean;
+  pack?: 'mdi' | 'fas';
+  size?: 'small' | 'normal' | 'medium' | 'large';
+  type?: 'light' | 'dark';
+  spinner?: boolean;
+} & Omit<React.ComponentProps<'span'>, 'color' | 'unselectable'>;
 
 export const Icon: React.FunctionComponent<IconProps> = ({
   align,
@@ -66,12 +65,12 @@ export const Icon: React.FunctionComponent<IconProps> = ({
       : '';
   return (
     <span
-      {...props}
       className={cn('icon', className, modifiers.getClassName(rest), {
         [`is-${size}`]: size,
         [`is-${align}`]: align,
         [`has-text-${color}`]: color
       })}
+      {...props}
     >
       {children || <i className={iconPack} />}
     </span>

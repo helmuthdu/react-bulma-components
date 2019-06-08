@@ -4,19 +4,14 @@ import { Colors, Sizes } from '../../../constants';
 import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../elements';
 
-type InputProps = Partial<Omit<React.ComponentProps<'input'>, 'color' | 'size' | 'unselectable'>> &
-  ElementModifier & {
-    color?: Colors;
-    disabled?: boolean;
-    inactive?: boolean;
-    name?: string;
-    placeholder?: string;
-    onChange: (...args: any[]) => void;
-    readOnly?: boolean;
-    size?: Sizes;
-    type?: 'text' | 'email' | 'tel' | 'password' | 'number' | 'search' | 'color' | 'date' | 'time' | 'datetime-local';
-    value?: string | number;
-  };
+type InputProps = ElementModifier & {
+  color?: Colors;
+  inactive?: boolean;
+  readOnly?: boolean;
+  size?: Sizes;
+  type?: 'text' | 'email' | 'tel' | 'password' | 'number' | 'search' | 'color' | 'date' | 'time' | 'datetime-local';
+  value?: string | number;
+} & Omit<React.ComponentProps<'input'>, 'color' | 'size' | 'unselectable' | 'value'>;
 
 export const Input: React.FunctionComponent<InputProps> = ({
   className,
@@ -33,7 +28,6 @@ export const Input: React.FunctionComponent<InputProps> = ({
 }: InputProps) => (
   // @ts-ignore
   <Element
-    {...props}
     disabled={disabled}
     name={name}
     placeholder={placeholder}
@@ -46,6 +40,7 @@ export const Input: React.FunctionComponent<InputProps> = ({
       [`is-${color}`]: color,
       [`is-${size}`]: size
     })}
+    {...props}
   />
 );
 

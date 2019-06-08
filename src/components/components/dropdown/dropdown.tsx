@@ -8,16 +8,15 @@ import { DropdownItem } from './dropdown-item';
 
 const { useEffect, useState } = React;
 
-type DropdownProps = Partial<Omit<React.ComponentProps<'div'>, 'color' | 'onChange' | 'unselectable'>> &
-  ElementModifier & {
-    color?: Colors;
-    hoverable?: boolean;
-    label?: React.ReactNode;
-    onChange?: (...args: any[]) => void;
-    right?: boolean;
-    up?: boolean;
-    value?: any;
-  };
+type DropdownProps = ElementModifier & {
+  color?: Colors;
+  hoverable?: boolean;
+  label?: React.ReactNode;
+  onChange?: (...args: any[]) => void;
+  right?: boolean;
+  up?: boolean;
+  value?: any;
+} & Omit<React.ComponentProps<'div'>, 'color' | 'onChange' | 'unselectable'>;
 
 export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   className,
@@ -29,6 +28,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   label,
   hoverable,
   onChange,
+  testId,
   ...rest
 }: DropdownProps) => {
   useEffect(() => {
@@ -87,23 +87,23 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
 
   return (
     <div
-      {...props}
       ref={htmlElement}
-      data-testid="dropdown-container"
-      className={cn('dropdown', modifiers.getClassName(rest), className, {
+      data-testid={Array.isArray(testId) ? testId[1] : undefined}
+      className={cn('dropdown', className, modifiers.getClassName(rest), {
         'is-active': open,
         'is-hoverable': hoverable,
         'is-right': right,
         'is-up': up
       })}
+      {...props}
     >
-      <div data-testid="dropdown-trigger" role="presentation" onClick={toggle}>
+      <div data-testid={(Array.isArray(testId) ? testId[0] : testId) || undefined} role="presentation" onClick={toggle}>
         <Button color={color}>
           <span>{current}</span>
           <Icon icon="chevron-down" />
         </Button>
       </div>
-      <div className="dropdown-menu" id="dropdown-menu" role="menu">
+      <div data-testid={Array.isArray(testId) ? testId[2] : undefined} className="dropdown-menu" role="menu">
         <div className="dropdown-content">{childrenArray}</div>
       </div>
     </div>

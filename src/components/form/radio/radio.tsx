@@ -3,16 +3,11 @@ import React from 'react';
 import { Colors, Sizes } from '../../../constants';
 import modifiers, { ElementModifier } from '../../../modifiers';
 
-type RadioProps = Partial<Omit<React.ComponentProps<'input'>, 'unselectable'>> &
-  ElementModifier & {
-    checked?: boolean;
-    color?: Colors;
-    disabled?: boolean;
-    name?: string;
-    onChange: (...args: any[]) => void;
-    size?: Sizes;
-    value?: string | number;
-  };
+type RadioProps = ElementModifier & {
+  color?: Colors;
+  size?: Sizes;
+  value?: string | number;
+} & Omit<React.ComponentProps<'input'>, 'color' | 'size' | 'unselectable' | 'value'>;
 
 export const Radio: React.FunctionComponent<RadioProps> = ({
   className,
@@ -24,26 +19,27 @@ export const Radio: React.FunctionComponent<RadioProps> = ({
   color,
   size,
   name,
+  testId,
   ...rest
 }: RadioProps) => {
   const props = modifiers.clean(rest);
   return (
     <label
-      data-testid="radio-label"
+      data-testid={(Array.isArray(testId) ? testId[0] : testId) || undefined}
       className={cn('b-radio radio', modifiers.getClassName(rest), className)}
       style={style}
     >
       <input
-        {...props}
-        data-testid="radio-input"
+        data-testid={Array.isArray(testId) ? testId[2] : undefined}
         name={name}
         type="radio"
         value={value}
         disabled={disabled}
         checked={checked}
+        {...props}
       />
       <span
-        data-testid="radio-check"
+        data-testid={Array.isArray(testId) ? testId[1] : undefined}
         className={cn('check', {
           [`is-${color}`]: color,
           [`is-${size}`]: size

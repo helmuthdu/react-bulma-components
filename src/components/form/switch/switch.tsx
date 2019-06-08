@@ -5,34 +5,30 @@ import modifiers, { ElementModifier } from '../../../modifiers';
 
 const { useState } = React;
 
-type SwitchProps = Partial<Omit<React.ComponentProps<'input'>, 'unselectable'>> &
-  ElementModifier & {
-    checked?: boolean;
-    color?: Colors;
-    disabled?: boolean;
-    name?: string;
-    onChange: (...args: any[]) => void;
-    size?: Sizes;
-    value?: string | number;
-  };
+type SwitchProps = ElementModifier & {
+  color?: Colors;
+  size?: Sizes;
+  value?: string | number;
+} & Omit<React.ComponentProps<'input'>, 'color' | 'size' | 'unselectable' | 'value'>;
 
 export const Switch: React.FunctionComponent<SwitchProps> = ({
-  className,
-  style,
-  disabled,
-  value,
-  children,
   checked,
+  children,
+  className,
   color,
-  size,
+  disabled,
   name,
+  size,
+  style,
+  testId,
+  value,
   ...rest
 }: SwitchProps) => {
   const props = modifiers.clean(rest);
   const [isMouseDown, setMouseDown] = useState(false);
   return (
     <label
-      data-testid="switch-label"
+      data-testid={(Array.isArray(testId) ? testId[0] : testId) || undefined}
       className={cn('switch', modifiers.getClassName(rest), className)}
       onMouseDown={() => setMouseDown(true)}
       onMouseOut={() => setMouseDown(false)}
@@ -40,16 +36,16 @@ export const Switch: React.FunctionComponent<SwitchProps> = ({
       style={style}
     >
       <input
-        {...props}
-        data-testid="switch-input"
+        data-testid={Array.isArray(testId) ? testId[2] : undefined}
         checked={checked}
         disabled={disabled}
         name={name}
         type="checkbox"
         value={value}
+        {...props}
       />
       <span
-        data-testid="switch-check"
+        data-testid={Array.isArray(testId) ? testId[1] : undefined}
         className={cn('check', {
           'is-elastic': isMouseDown && !disabled,
           [`is-${color}`]: color,

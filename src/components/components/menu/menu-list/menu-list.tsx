@@ -6,10 +6,9 @@ import { MenuListItem } from './menu-list-item';
 
 const { Fragment } = React;
 
-type MenuListProps = Partial<Omit<React.ComponentProps<'ul'>, 'unselectable'>> &
-  ElementModifier & {
-    title?: string;
-  };
+type MenuListProps = ElementModifier & {
+  title?: string;
+} & Omit<React.ComponentProps<'ul'>, 'unselectable'>;
 
 export const MenuList: React.FunctionComponent<MenuListProps> & {
   Item: typeof MenuListItem;

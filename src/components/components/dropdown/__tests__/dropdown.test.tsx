@@ -80,7 +80,12 @@ describe('Dropdown component', () => {
 
   it('should open the Dropdown', () => {
     const { getByTestId } = render(
-      <Dropdown value="value" style={{ width: 400 }} onChange={() => {}}>
+      <Dropdown
+        testId={['dropdown-trigger', 'dropdown-container']}
+        value="value"
+        style={{ width: 400 }}
+        onChange={() => {}}
+      >
         <DropdownItem value="value">Item</DropdownItem>
         <DropdownDivider />
         <DropdownItem value="other">Other</DropdownItem>
@@ -94,8 +99,8 @@ describe('Dropdown component', () => {
   it('should select the new value', async () => {
     const onChange = jest.fn();
     const { getByTestId } = render(
-      <Dropdown hoverable value="" style={{ width: 400 }} onChange={onChange}>
-        <DropdownItem data-testid="foo" value="value">
+      <Dropdown testId="dropdown-trigger" hoverable value="" style={{ width: 400 }} onChange={onChange}>
+        <DropdownItem testId="foo" value="value">
           Foo
         </DropdownItem>
       </Dropdown>
@@ -108,8 +113,8 @@ describe('Dropdown component', () => {
   it('should select the new value and close the dropdown', async () => {
     const onChange = jest.fn();
     const { getByTestId } = render(
-      <Dropdown value="" style={{ width: 400 }} onChange={onChange}>
-        <DropdownItem data-testid="foo" value="value">
+      <Dropdown testId={['dropdown-trigger', 'dropdown-container']} value="" style={{ width: 400 }} onChange={onChange}>
+        <DropdownItem testId="foo" value="value">
           Foo
         </DropdownItem>
       </Dropdown>
@@ -140,7 +145,7 @@ describe('Dropdown component', () => {
 
   it('should show custom label when active valued is undefined/empty', () => {
     const { getByTestId } = render(
-      <Dropdown label="test label" value="">
+      <Dropdown testId="dropdown-trigger" label="test label" value="">
         <DropdownItem value="value">Item</DropdownItem>
       </Dropdown>
     );
@@ -149,7 +154,7 @@ describe('Dropdown component', () => {
 
   it('should show the label of the dropdown item when value of it is the active value', () => {
     const { getByTestId } = render(
-      <Dropdown label="test label" value="value">
+      <Dropdown testId="dropdown-trigger" label="test label" value="value">
         <DropdownItem value="value">Bar</DropdownItem>
       </Dropdown>
     );

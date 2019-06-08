@@ -2,48 +2,64 @@
 
 exports[`Tabs component should accept a react Element as renderAs prop 1`] = `
 <DocumentFragment>
-  <li
-    class="tabs"
+  <div
+    class="b-tabs"
   >
-    Custom
-    <ul>
-      This should be a li element
-    </ul>
-  </li>
+    <li
+      class="tabs"
+    >
+      Custom
+      <ul>
+        This should be a li element
+      </ul>
+    </li>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Tabs component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <div
-    class="tabs other-class test"
+    class="b-tabs"
   >
-    <ul />
+    <nav
+      class="tabs other-class test"
+    >
+      <ul />
+    </nav>
   </div>
 </DocumentFragment>
 `;
 
 exports[`Tabs component should have custom inline styles 1`] = `
 <DocumentFragment>
-  <section
-    class="tabs"
-    style="width: 200px; z-index: 1;"
+  <div
+    class="b-tabs"
   >
-    <ul>
-      This should be a section with custom styles
-    </ul>
-  </section>
+    <section
+      class="tabs"
+      style="width: 200px; z-index: 1;"
+    >
+      <ul>
+        This should be a section with custom styles
+      </ul>
+    </section>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Tabs component should render 1`] = `
 <DocumentFragment>
   <div
-    class="tabs"
+    class="b-tabs"
   >
-    <ul>
-      Content
-    </ul>
+    <nav
+      class="tabs"
+    >
+      <ul>
+        Content
+      </ul>
+    </nav>
   </div>
 </DocumentFragment>
 `;
@@ -62,44 +78,52 @@ exports[`Tabs component should render 2`] = `
 
 exports[`Tabs component should render as an html section 1`] = `
 <DocumentFragment>
-  <section
-    class="tabs"
+  <div
+    class="b-tabs"
   >
-    <ul>
-      This should be a section
-    </ul>
-  </section>
+    <section
+      class="tabs"
+    >
+      <ul>
+        This should be a section
+      </ul>
+    </section>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Tabs component should render propertly Inside Tabs 1`] = `
 <DocumentFragment>
   <div
-    class="tabs"
+    class="b-tabs"
   >
-    <ul>
-      <li
-        class=""
-      >
-        <a>
-          Tab 1
-        </a>
-      </li>
-      <li
-        class=""
-      >
-        <a>
-          Tab 2
-        </a>
-      </li>
-      <li
-        class=""
-      >
-        <a>
-          Tab 3
-        </a>
-      </li>
-    </ul>
+    <nav
+      class="tabs"
+    >
+      <ul>
+        <li
+          class=""
+        >
+          <a>
+            Tab 1
+          </a>
+        </li>
+        <li
+          class=""
+        >
+          <a>
+            Tab 2
+          </a>
+        </li>
+        <li
+          class=""
+        >
+          <a>
+            Tab 3
+          </a>
+        </li>
+      </ul>
+    </nav>
   </div>
 </DocumentFragment>
 `;

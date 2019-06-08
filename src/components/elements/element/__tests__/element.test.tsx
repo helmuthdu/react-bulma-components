@@ -2,17 +2,12 @@ import { render } from '@testing-library/react';
 import PropTypes from 'prop-types';
 import * as React from 'react';
 import { Element } from '..';
-import { Colors } from '../../../../constants';
 
 describe('Element component', () => {
   it('should render', () => {
-    const color: Colors = 'white';
     const { asFragment } = render(
-      <Element
-        // @ts-ignore
-        textColor={color}
-        pull="left"
-      >
+      // @ts-ignore
+      <Element pull="left" textColor="white">
         Facebook
       </Element>
     );

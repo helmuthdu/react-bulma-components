@@ -3,18 +3,13 @@ import * as React from 'react';
 import { Colors, Sizes } from '../../../constants';
 import modifiers, { ElementModifier } from '../../../modifiers';
 
-type TextareaProps = Partial<Omit<React.ComponentProps<'textarea'>, 'color' | 'unselectable'>> &
-  ElementModifier & {
-    color?: Colors;
-    disabled?: boolean;
-    name?: string;
-    onChange: (...args: any[]) => void;
-    placeholder?: string;
-    readOnly?: boolean;
-    rows?: number;
-    size?: Sizes;
-    value?: string | number;
-  };
+type TextareaProps = ElementModifier & {
+  color?: Colors;
+  readOnly?: boolean;
+  rows?: number;
+  size?: Sizes;
+  value?: string | number;
+} & Omit<React.ComponentProps<'textarea'>, 'color' | 'size' | 'unselectable'>;
 
 export const Textarea: React.FunctionComponent<TextareaProps> = ({
   className,
@@ -31,7 +26,6 @@ export const Textarea: React.FunctionComponent<TextareaProps> = ({
   const props = modifiers.clean(rest);
   return (
     <textarea
-      {...props}
       disabled={disabled}
       name={name}
       placeholder={placeholder}
@@ -42,6 +36,7 @@ export const Textarea: React.FunctionComponent<TextareaProps> = ({
         [`is-${color}`]: color,
         [`is-${size}`]: size
       })}
+      {...props}
     />
   );
 };

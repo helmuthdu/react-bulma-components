@@ -12,34 +12,35 @@ type TagProps = ElementModifier & {
   remove?: boolean;
   rounded?: boolean;
   size?: 'medium' | 'large';
-};
+} & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 
 export const Tag: React.FunctionComponent<TagProps> = ({
   children,
   className,
-  color,
   close,
-  size,
+  color,
   ellipsis,
-  rounded,
-  remove,
   onClick,
+  remove,
+  rounded,
+  size,
+  testId,
   ...props
 }: TagProps) => (
   // @ts-ignore
   <Element
-    {...props}
+    data-testid={remove ? testId : undefined}
     onClick={() => remove && onClick && onClick()}
-    data-testid="tag"
     className={cn('tag', className, {
       'is-delete': remove,
       'is-rounded': rounded,
       [`is-${color}`]: color,
       [`is-${size}`]: size
     })}
+    {...props}
   >
     {!remove && <span className={cn({ 'has-ellipsis': ellipsis })}>{children}</span>}
-    {!remove && close && <button onClick={onClick} className="delete is-small" data-testid="tag-delete" />}
+    {!remove && close && <button data-testid={testId} onClick={onClick} className="delete is-small" />}
   </Element>
 );
 
@@ -47,8 +48,6 @@ Tag.defaultProps = {
   ...modifiers.defaultProps,
   close: false,
   ellipsis: false,
-  onClick: () => {},
   remove: false,
-  renderAs: 'span',
   rounded: false
 };

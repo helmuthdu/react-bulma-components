@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Radio } from '../radio';
 
 describe('Radio component', () => {
+  const testId = ['radio-label', 'radio-check', 'radio-input'];
   let onChange: jest.Mock;
 
   beforeEach(() => {
@@ -46,12 +47,16 @@ describe('Radio component', () => {
   });
 
   it('should set input checked if checked', () => {
-    const { getByTestId } = render(<Radio onChange={onChange} checked />);
+    const { getByTestId } = render(<Radio testId={testId} onChange={onChange} checked />);
     expect(getByTestId('radio-input')).toHaveAttribute('checked', '');
   });
 
   it('should change value on change event', () => {
-    const { getByTestId } = render(<Radio onChange={onChange}>Text</Radio>);
+    const { getByTestId } = render(
+      <Radio testId={testId} onChange={onChange}>
+        Text
+      </Radio>
+    );
     fireEvent.click(getByTestId('radio-label'));
     expect(onChange).toHaveBeenCalledTimes(1);
   });

@@ -3,14 +3,14 @@ import React from 'react';
 import modifiers, { ElementModifier } from '../../../../../modifiers';
 import { Element } from '../../../../elements';
 
-type ModalCardFootProps = Partial<Omit<React.ComponentProps<'footer'>, 'unselectable'>> & ElementModifier;
+type ModalCardFootProps = ElementModifier & Omit<React.ComponentProps<'footer'>, 'unselectable'>;
 
 export const ModalCardFooter: React.FunctionComponent<ModalCardFootProps> = ({
   children,
   className,
   ...props
 }: ModalCardFootProps) => (
-  <Element {...props} className={cn('modal-card-foot', className)}>
+  <Element className={cn('modal-card-foot', className)} {...props}>
     {children}
   </Element>
 );

@@ -11,7 +11,7 @@ exports[`Element component should accept a react Element as renderAs prop 1`] = 
 exports[`Element component should render 1`] = `
 <DocumentFragment>
   <div
-    class="is-pulled-left has-text-white"
+    class="has-text-white is-pulled-left"
   >
     Facebook
   </div>

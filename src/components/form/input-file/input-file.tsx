@@ -6,22 +6,19 @@ import { Element } from '../../elements';
 
 const { useState } = React;
 
-type InputFileProps = Partial<Omit<React.ComponentProps<'input'>, 'color' | 'size' | 'unselectable'>> &
-  ElementModifier & {
-    accept?: string;
-    boxed?: boolean;
-    capture?: string;
-    color?: Colors;
-    fullwidth?: boolean;
-    hasName?: boolean;
-    icon?: React.ReactElement<any>;
-    label?: string;
-    multiple?: boolean;
-    name?: string;
-    onChange?: (...args: any[]) => void;
-    right?: boolean;
-    size?: Sizes;
-  };
+type InputFileProps = ElementModifier & {
+  accept?: string;
+  boxed?: boolean;
+  capture?: string;
+  color?: Colors;
+  fullwidth?: boolean;
+  hasName?: boolean;
+  icon?: React.ReactElement<any>;
+  label?: string;
+  multiple?: boolean;
+  right?: boolean;
+  size?: Sizes;
+} & Omit<React.ComponentProps<'input'>, 'color' | 'size' | 'unselectable'>;
 
 export const InputFile: React.FunctionComponent<InputFileProps> = ({
   accept,
@@ -39,6 +36,7 @@ export const InputFile: React.FunctionComponent<InputFileProps> = ({
   right,
   size,
   style,
+  testId,
   ...props
 }: InputFileProps) => {
   const [fileName, setFileName] = useState(null);
@@ -56,7 +54,6 @@ export const InputFile: React.FunctionComponent<InputFileProps> = ({
   return (
     <Element
       style={style}
-      {...props}
       className={cn('file', className, {
         'has-name': !hasName,
         'is-boxed': boxed,
@@ -65,13 +62,14 @@ export const InputFile: React.FunctionComponent<InputFileProps> = ({
         [`is-${color}`]: color,
         [`is-${size}`]: size
       })}
+      {...props}
     >
       <label className="file-label">
         <input
+          data-testid={(Array.isArray(testId) ? testId[0] : testId) || undefined}
           accept={accept}
           capture={capture}
           className="file-input"
-          data-testid="file-input"
           multiple={multiple}
           name={name}
           onChange={handleSelect}
@@ -83,7 +81,7 @@ export const InputFile: React.FunctionComponent<InputFileProps> = ({
           <span className="file-label">{label}</span>
         </span>
         {hasName && fileName && (
-          <span data-testid="file-name" className="file-name">
+          <span data-testid={Array.isArray(testId) ? testId[1] : undefined} className="file-name">
             {fileName}
           </span>
         )}

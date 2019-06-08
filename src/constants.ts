@@ -3,7 +3,6 @@ export const isServer = !(typeof window !== 'undefined' && window.document && wi
 export type Breakpoints = null | 'mobile' | 'tablet' | 'desktop' | 'widescreen' | 'fullhd' | 'touch';
 
 export type Colors =
-  | null
   | 'black'
   | 'danger'
   | 'dark'

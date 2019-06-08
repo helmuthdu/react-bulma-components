@@ -3,20 +3,17 @@ import React from 'react';
 import { Colors, Sizes } from '../../../constants';
 import modifiers, { ElementModifier } from '../../../modifiers';
 
-type SelectProps = Partial<Omit<React.ComponentProps<'select'>, 'size' | 'color' | 'unselectable'>> &
-  ElementModifier & {
-    color?: Colors;
-    disabled?: boolean;
-    empty?: boolean;
-    loading?: boolean;
-    multiple?: boolean;
-    name?: string;
-    onChange: (...args: any[]) => void;
-    readOnly?: boolean;
-    rounded?: boolean;
-    size?: Sizes;
-    value?: string | number | any[];
-  };
+type SelectProps = ElementModifier & {
+  color?: Colors;
+  disabled?: boolean;
+  empty?: boolean;
+  loading?: boolean;
+  multiple?: boolean;
+  readOnly?: boolean;
+  rounded?: boolean;
+  size?: Sizes;
+  value?: string | number | any[];
+} & Omit<React.ComponentProps<'select'>, 'size' | 'color' | 'unselectable'>;
 
 export const Select: React.FunctionComponent<SelectProps> = ({
   children,
@@ -47,7 +44,7 @@ export const Select: React.FunctionComponent<SelectProps> = ({
       })}
       style={style}
     >
-      <select {...props} multiple={multiple} value={value} aria-readonly={readOnly} disabled={disabled} name={name}>
+      <select multiple={multiple} value={value} aria-readonly={readOnly} disabled={disabled} name={name} {...props}>
         {children}
       </select>
     </div>

@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Checkbox } from '../checkbox';
 
 describe('Checkbox component', () => {
+  const testId = ['checkbox-label', 'checkbox-check', 'checkbox-input'];
   let onChange: jest.Mock;
 
   beforeEach(() => {
@@ -15,17 +16,21 @@ describe('Checkbox component', () => {
   });
 
   it('should render unchecked', () => {
-    const { getByTestId } = render(<Checkbox onChange={onChange} />);
+    const { getByTestId } = render(<Checkbox testId={testId} onChange={onChange} />);
     expect(getByTestId('checkbox-input')).not.toHaveAttribute('checked', '');
   });
 
   it('should set input checked if checked', () => {
-    const { getByTestId } = render(<Checkbox onChange={onChange} checked />);
+    const { getByTestId } = render(<Checkbox testId={testId} onChange={onChange} checked />);
     expect(getByTestId('checkbox-input')).toHaveAttribute('checked', '');
   });
 
   it('should change value on change event', () => {
-    const { getByTestId } = render(<Checkbox onChange={onChange}>Text</Checkbox>);
+    const { getByTestId } = render(
+      <Checkbox testId={testId} onChange={onChange}>
+        Text
+      </Checkbox>
+    );
     fireEvent.click(getByTestId('checkbox-label'));
     expect(onChange).toHaveBeenCalledTimes(1);
   });

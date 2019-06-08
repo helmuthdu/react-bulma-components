@@ -2,77 +2,71 @@
 
 exports[`Tag component Should use use color 1`] = `
 <DocumentFragment>
-  <span
+  <div
     class="tag is-white"
-    data-testid="tag"
   >
     <span
       class=""
     >
       tag
     </span>
-  </span>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Tag component should be Large 1`] = `
 <DocumentFragment>
-  <span
+  <div
     class="tag is-large"
-    data-testid="tag"
   >
     <span
       class=""
     >
       Tag Large
     </span>
-  </span>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Tag component should be group tags 1`] = `
 <DocumentFragment>
-  <span
-    class="tagGroup.tsx has-addons"
+  <div
+    class="tag-group has-addons"
   >
-    <span
+    <div
       class="tag"
-      data-testid="tag"
     >
       <span
         class=""
       >
         Tag 1
       </span>
-    </span>
-    <span
+    </div>
+    <div
       class="tag is-delete"
-      data-testid="tag"
     />
-  </span>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Tag component should concat classname in props with classname 1`] = `
 <DocumentFragment>
-  <span
+  <div
     class="tag other-class this-is-a-test"
-    data-testid="tag"
   >
     <span
       class=""
     >
       Tag name
     </span>
-  </span>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Tag component should have close button 1`] = `
 <DocumentFragment>
-  <span
+  <div
     class="tag"
-    data-testid="tag"
   >
     <span
       class=""
@@ -81,77 +75,71 @@ exports[`Tag component should have close button 1`] = `
     </span>
     <button
       class="delete is-small"
-      data-testid="tag-delete"
     />
-  </span>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Tag component should have info color 1`] = `
 <DocumentFragment>
-  <span
+  <div
     class="tag is-info"
-    data-testid="tag"
   >
     <span
       class=""
     >
       Tag Large
     </span>
-  </span>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Tag component should have remove button 1`] = `
 <DocumentFragment>
-  <span
+  <div
     class="tag is-delete"
-    data-testid="tag"
   />
 </DocumentFragment>
 `;
 
 exports[`Tag component should render 1`] = `
 <DocumentFragment>
-  <span
+  <div
     class="tag"
-    data-testid="tag"
   >
     <span
       class=""
     />
-  </span>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Tag component should render 2`] = `
 <DocumentFragment>
-  <span
-    class="tagGroup.tsx"
+  <div
+    class="tag-group"
   />
 </DocumentFragment>
 `;
 
 exports[`Tag component should trim content 1`] = `
 <DocumentFragment>
-  <span
+  <div
     class="tag"
-    data-testid="tag"
   >
     <span
       class="has-ellipsis"
     >
       Very large text with some extras
     </span>
-  </span>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Tag component should use inline styles 1`] = `
 <DocumentFragment>
-  <span
+  <div
     class="tag"
-    data-testid="tag"
     style="width: 250px;"
   >
     <span
@@ -159,6 +147,6 @@ exports[`Tag component should use inline styles 1`] = `
     >
       Tag name
     </span>
-  </span>
+  </div>
 </DocumentFragment>
 `;

@@ -23,7 +23,7 @@ export const Modal: React.FunctionComponent<ModalProps> & {
   Card: typeof ModalCard;
   Content: typeof ModalContent;
 } = (props: ModalProps) => {
-  const { closeOnEsc, closeOnBlur, show, className } = props;
+  const { closeOnEsc, closeOnBlur, show, className, testId } = props;
   let { children } = props;
   const portalElement = document.createElement('div');
 
@@ -70,19 +70,22 @@ export const Modal: React.FunctionComponent<ModalProps> & {
     });
   }
   return ReactDOM.createPortal(
-    <div data-testid="modal-container" className={cn('modal', className, { 'is-active': show })}>
+    <div
+      data-testid={Array.isArray(testId) ? testId[0] : undefined}
+      className={cn('modal', className, { 'is-active': show })}
+    >
       <div
+        data-testid={Array.isArray(testId) ? testId[2] : undefined}
         className="modal-background"
-        data-testid="modal-background"
         onClick={closeOnBlur ? props.onClose : () => {}}
         role="presentation"
       />
       {children}
       {showClose && (
         <button
+          data-testid={Array.isArray(testId) ? testId[1] : undefined}
           aria-label="close"
           className="modal-close is-large"
-          data-testid="modal-close-button"
           onClick={props.onClose}
           type="button"
         />

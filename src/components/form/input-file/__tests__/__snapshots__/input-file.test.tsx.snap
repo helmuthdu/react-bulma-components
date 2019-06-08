@@ -12,7 +12,6 @@ exports[`Input file component should pass file attributes 1`] = `
         accept="image/*"
         capture="source"
         class="file-input"
-        data-testid="file-input"
         multiple=""
         type="file"
         value=""
@@ -41,7 +40,6 @@ exports[`Input file component should render 1`] = `
     >
       <input
         class="file-input"
-        data-testid="file-input"
         type="file"
         value=""
       />

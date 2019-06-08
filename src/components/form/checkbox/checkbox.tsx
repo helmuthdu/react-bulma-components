@@ -3,17 +3,12 @@ import React from 'react';
 import { Colors, Sizes } from '../../../constants';
 import modifiers, { ElementModifier } from '../../../modifiers';
 
-type CheckboxProps = Partial<Omit<React.ComponentProps<'input'>, 'unselectable'>> &
-  ElementModifier & {
-    checked?: boolean;
-    color?: Colors;
-    disabled?: boolean;
-    indeterminate?: boolean;
-    name?: string;
-    onChange: (...args: any[]) => void;
-    size?: Sizes;
-    value?: string | number;
-  };
+type CheckboxProps = ElementModifier & {
+  color?: Colors;
+  indeterminate?: boolean;
+  size?: Sizes;
+  value?: string | number;
+} & Omit<React.ComponentProps<'input'>, 'color' | 'size' | 'unselectable' | 'value'>;
 
 export const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   checked,
@@ -26,27 +21,28 @@ export const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   size,
   style,
   value,
+  testId,
   ...rest
 }: CheckboxProps) => {
   const props = modifiers.clean(rest);
   return (
     <label
-      data-testid="checkbox-label"
+      data-testid={(Array.isArray(testId) ? testId[0] : testId) || undefined}
       className={cn('b-checkbox checkbox', modifiers.getClassName(rest), className)}
       style={style}
     >
       <input
-        {...props}
-        data-testid="checkbox-input"
+        data-testid={Array.isArray(testId) ? testId[2] : undefined}
         checked={checked}
         disabled={disabled}
         indeterminate={indeterminate}
         name={name}
         type="checkbox"
         value={value}
+        {...props}
       />
       <span
-        data-testid="checkbox-check"
+        data-testid={Array.isArray(testId) ? testId[1] : undefined}
         className={cn('check', {
           [`is-${color}`]: color,
           [`is-${size}`]: size

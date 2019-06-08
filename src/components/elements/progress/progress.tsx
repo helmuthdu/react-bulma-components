@@ -4,13 +4,12 @@ import { Colors, Sizes } from '../../../constants';
 import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../element';
 
-type ProgressProps = Partial<Omit<React.ComponentProps<'progress'>, 'color' | 'max' | 'value' | 'unselectable'>> &
-  ElementModifier & {
-    color?: Colors;
-    max?: number;
-    size?: Sizes;
-    value?: number;
-  };
+type ProgressProps = ElementModifier & {
+  color?: Colors;
+  max?: number;
+  size?: Sizes;
+  value?: number;
+} & Omit<React.ComponentProps<'progress'>, 'color' | 'max' | 'value' | 'unselectable'>;
 
 export const Progress: React.FunctionComponent<ProgressProps> = ({
   className,
@@ -20,15 +19,16 @@ export const Progress: React.FunctionComponent<ProgressProps> = ({
   size,
   ...props
 }: ProgressProps) => (
+  // @ts-ignore
   <Element
     renderAs="progress"
-    {...props}
     max={max}
     value={value}
     className={cn('progress', className, {
       [`is-${color}`]: color,
       [`is-${size}`]: size
     })}
+    {...props}
   />
 );
 

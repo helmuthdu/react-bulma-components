@@ -4,19 +4,18 @@ import { Sizes } from '../../../constants';
 import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../elements';
 
-type BreadcrumbProps = Partial<Omit<React.ComponentProps<'a'>, 'unselectable'>> &
-  ElementModifier & {
-    align?: 'right' | 'center';
-    hrefAttr?: string;
-    items?: {
-      active?: boolean;
-      name?: React.ReactNode;
-      url: string;
-    }[];
-    renderAs?: 'a' | ((...args: any[]) => any);
-    separator?: 'arrow' | 'bullet' | 'dot' | 'succeeds';
-    size?: Sizes;
-  };
+type BreadcrumbProps = ElementModifier & {
+  align?: 'right' | 'center';
+  hrefAttr?: string;
+  items?: {
+    active?: boolean;
+    name?: React.ReactNode;
+    url: string;
+  }[];
+  renderAs?: 'a' | ((...args: any[]) => any);
+  separator?: 'arrow' | 'bullet' | 'dot' | 'succeeds';
+  size?: Sizes;
+} & Omit<React.ComponentProps<'a'>, 'unselectable'>;
 
 export const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
   className,
@@ -31,12 +30,12 @@ export const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
   const props = modifiers.clean(rest);
   return (
     <nav
-      {...props}
       className={cn('breadcrumb', className, modifiers.getClassName(rest), {
         [`has-${separator}-separator`]: separator,
         [`is-${size}`]: size,
         [`is-${align}`]: align
       })}
+      {...props}
     >
       <ul>
         {items &&

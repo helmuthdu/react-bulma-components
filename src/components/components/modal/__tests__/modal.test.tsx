@@ -3,6 +3,8 @@ import * as React from 'react';
 import { Modal, ModalCard, ModalCardHeader, ModalCardTitle, ModalContent } from '..';
 
 describe('Modal component', () => {
+  const testId = ['modal-container', 'modal-card-close-button', 'modal-background'];
+
   it('should render modal-card-head', () => {
     const onClose = jest.fn();
     const { container, unmount } = render(
@@ -29,9 +31,9 @@ describe('Modal component', () => {
       </Modal>
     );
     const { rerender, unmount } = render(getComponent(false));
-    expect(window.document.querySelector('div.Modalis-active')).toBeNull();
+    expect(window.document.querySelector('div.modal is-active')).toBeNull();
     rerender(getComponent(true));
-    expect(window.document.querySelector('div.Modalis-active')).toMatchSnapshot();
+    expect(window.document.querySelector('div.modal is-active')).toMatchSnapshot();
     unmount();
   });
 
@@ -40,7 +42,7 @@ describe('Modal component', () => {
     const { getByTestId, asFragment, unmount } = render(
       <Modal show onClose={onClose}>
         <ModalCard>
-          <ModalCardHeader onClose={onClose}>
+          <ModalCardHeader testId={testId[1]} onClose={onClose}>
             <ModalCardTitle>Modal Title</ModalCardTitle>
           </ModalCardHeader>
         </ModalCard>
@@ -99,7 +101,6 @@ describe('Modal component', () => {
         </ModalCard>
       </Modal>
     );
-
     expect(asFragment()).toMatchSnapshot();
     const event = new KeyboardEvent('keydown', { keyCode: 23 } as any);
     document.dispatchEvent(event);
@@ -122,7 +123,7 @@ describe('Modal component', () => {
   it('should close the modal if clicked on background', () => {
     const onClose = jest.fn();
     const { getByTestId, asFragment, unmount } = render(
-      <Modal show onClose={onClose} closeOnBlur>
+      <Modal testId={testId} show onClose={onClose} closeOnBlur>
         <ModalContent>Content</ModalContent>
       </Modal>
     );
@@ -135,7 +136,7 @@ describe('Modal component', () => {
   it('should not close the modal if clicked on background', () => {
     const onClose = jest.fn();
     const { getByTestId, asFragment, unmount } = render(
-      <Modal show onClose={onClose} closeOnBlur={false}>
+      <Modal testId={testId} show onClose={onClose} closeOnBlur={false}>
         <ModalContent>Content</ModalContent>
       </Modal>
     );
