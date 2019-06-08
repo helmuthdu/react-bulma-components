@@ -5,6 +5,7 @@ import * as React from 'react';
 import { Navbar, NavbarBrand, NavbarBurger, NavbarContainer, NavbarItem, NavbarMenu } from '.';
 import { Colors } from '../../constants';
 import { Box } from '../../elements/box';
+import { Container } from '../../layout/container';
 
 const colors: { [key: string]: Colors } = {
   primary: 'primary',
@@ -31,30 +32,32 @@ storiesOf('Navbar', module)
   .add('Default', () => {
     return (
       <Navbar
-        color={select('Color', colors, colors.primary)}
+        color={select('Color', colors, colors.info)}
         fixed={select('Fixed', { default: null, top: 'top', bottom: 'bottom' }, null)}
         active={boolean('Active', false)}
         transparent={boolean('Transparent', false)}
       >
-        <NavbarBrand>
-          <NavbarItem renderAs="a">
-            <img
-              src="https://bulma.io/images/bulma-logo.png"
-              alt="Bulma: a modern CSS framework based on Flexbox"
-              width="112"
-              height="28"
-            />
-          </NavbarItem>
-          <NavbarBurger />
-        </NavbarBrand>
-        <NavbarMenu>
-          <NavbarContainer>
-            <NavbarItem>Second</NavbarItem>
-          </NavbarContainer>
-          <NavbarContainer position="end">
-            <NavbarItem>At the end</NavbarItem>
-          </NavbarContainer>
-        </NavbarMenu>
+        <Container>
+          <NavbarBrand>
+            <NavbarItem>
+              <img
+                src="https://bulma.io/images/bulma-logo.png"
+                alt="Bulma: a modern CSS framework based on Flexbox"
+                width="112"
+                height="28"
+              />
+            </NavbarItem>
+            <NavbarBurger />
+          </NavbarBrand>
+          <NavbarMenu>
+            <NavbarContainer>
+              <NavbarItem>Second</NavbarItem>
+            </NavbarContainer>
+            <NavbarContainer position="end">
+              <NavbarItem>At the end</NavbarItem>
+            </NavbarContainer>
+          </NavbarMenu>
+        </Container>
       </Navbar>
     );
   });

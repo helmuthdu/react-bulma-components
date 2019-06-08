@@ -8,7 +8,7 @@ type NavbarItemProps = ElementModifier & {
   dropdown?: boolean;
   dropdownUp?: boolean;
   hoverable?: boolean;
-};
+} & Omit<React.ComponentProps<'a'>, 'unselectable'>;
 
 export const NavbarItem: React.FunctionComponent<NavbarItemProps> = ({
   className,
@@ -20,22 +20,16 @@ export const NavbarItem: React.FunctionComponent<NavbarItemProps> = ({
   renderAs,
   ...props
 }: NavbarItemProps) => {
-  let as = renderAs;
-
-  if (dropdown && renderAs === 'a') {
-    as = 'span';
-  }
-
   return (
     <Element
-      {...props}
-      renderAs={as}
+      renderAs={dropdown && renderAs === 'a' ? 'span' : renderAs}
       className={cn('navbar-item', className, {
         'has-dropdown': dropdown,
         'has-dropdown-up': dropdownUp,
         'is-active': active,
         'is-hoverable': hoverable
       })}
+      {...props}
     >
       {children}
     </Element>

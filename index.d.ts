@@ -340,7 +340,7 @@ export declare type NavbarItemProps = ElementModifier & {
 	dropdown?: boolean;
 	dropdownUp?: boolean;
 	hoverable?: boolean;
-};
+} & Omit<React.ComponentProps<'a'>, 'unselectable'>;
 export declare const NavbarItem: React.FunctionComponent<NavbarItemProps>;
 export declare type NavbarLinkProps = ElementModifier;
 export declare const NavbarLink: React.FunctionComponent<NavbarLinkProps>;
@@ -351,7 +351,7 @@ export declare type NavbarProps = ElementModifier & {
 	color?: Colors;
 	fixed?: null | 'top' | 'bottom';
 	transparent?: boolean;
-};
+} & Omit<React.ComponentProps<'nav'>, 'color' | 'unselectable'>;
 export declare const Navbar: React.FunctionComponent<NavbarProps> & {
 	Brand: typeof NavbarBrand;
 	Burger: typeof NavbarBurger;

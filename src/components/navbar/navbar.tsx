@@ -20,7 +20,7 @@ type NavbarProps = ElementModifier & {
   color?: Colors;
   fixed?: null | 'top' | 'bottom';
   transparent?: boolean;
-};
+} & Omit<React.ComponentProps<'nav'>, 'color' | 'unselectable'>;
 
 export const Navbar: React.FunctionComponent<NavbarProps> & {
   Brand: typeof NavbarBrand;
@@ -55,12 +55,12 @@ export const Navbar: React.FunctionComponent<NavbarProps> & {
     // @ts-ignore
     <ShowContext.Provider value={active}>
       <Element
-        {...props}
         className={cn('navbar', modifiers.getClassName(props), className, {
           'is-transparent': transparent,
           [`is-fixed-${fixed}`]: fixed,
           [`is-${color}`]: color
         })}
+        {...props}
       >
         {children}
       </Element>
