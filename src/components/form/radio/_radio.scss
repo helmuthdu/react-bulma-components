@@ -1,7 +1,7 @@
 $radio-active-background-color: $primary !default;
 $radio-size: 1.25em !default;
 
-.b-radio {
+.radio-container {
   &.radio {
     outline: none;
     display: inline-flex;

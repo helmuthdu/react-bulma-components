@@ -3,7 +3,7 @@
 exports[`Radio component should be disabled, checked and with value 1`] = `
 <DocumentFragment>
   <label
-    class="b-radio radio"
+    class="radio-container radio"
   >
     <input
       checked=""
@@ -27,7 +27,7 @@ exports[`Radio component should be disabled, checked and with value 1`] = `
 exports[`Radio component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <label
-    class="b-radio radio other-class this-is-a-test"
+    class="radio-container radio other-class this-is-a-test"
   >
     <input
       name="test"
@@ -49,7 +49,7 @@ exports[`Radio component should concat classname in props with classname 1`] = `
 exports[`Radio component should render 1`] = `
 <DocumentFragment>
   <label
-    class="b-radio radio"
+    class="radio-container radio"
   >
     <input
       name="test"
@@ -74,7 +74,7 @@ exports[`Radio component should render 1`] = `
 exports[`Radio component should use inline styles 1`] = `
 <DocumentFragment>
   <label
-    class="b-radio radio"
+    class="radio-container radio"
     style="height: 250px;"
   >
     <input

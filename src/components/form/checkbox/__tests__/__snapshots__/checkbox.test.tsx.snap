@@ -3,7 +3,7 @@
 exports[`Checkbox component should render 1`] = `
 <DocumentFragment>
   <label
-    class="b-checkbox checkbox"
+    class="checkbox-container checkbox"
   >
     <input
       type="checkbox"

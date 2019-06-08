@@ -3,7 +3,7 @@
 exports[`Tabs component should accept a react Element as renderAs prop 1`] = `
 <DocumentFragment>
   <div
-    class="b-tabs"
+    class="tabs-container"
   >
     <li
       class="tabs"
@@ -20,7 +20,7 @@ exports[`Tabs component should accept a react Element as renderAs prop 1`] = `
 exports[`Tabs component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <div
-    class="b-tabs"
+    class="tabs-container"
   >
     <nav
       class="tabs other-class test"
@@ -34,7 +34,7 @@ exports[`Tabs component should concat classname in props with classname 1`] = `
 exports[`Tabs component should have custom inline styles 1`] = `
 <DocumentFragment>
   <div
-    class="b-tabs"
+    class="tabs-container"
   >
     <section
       class="tabs"
@@ -51,7 +51,7 @@ exports[`Tabs component should have custom inline styles 1`] = `
 exports[`Tabs component should render 1`] = `
 <DocumentFragment>
   <div
-    class="b-tabs"
+    class="tabs-container"
   >
     <nav
       class="tabs"
@@ -79,7 +79,7 @@ exports[`Tabs component should render 2`] = `
 exports[`Tabs component should render as an html section 1`] = `
 <DocumentFragment>
   <div
-    class="b-tabs"
+    class="tabs-container"
   >
     <section
       class="tabs"
@@ -95,7 +95,7 @@ exports[`Tabs component should render as an html section 1`] = `
 exports[`Tabs component should render propertly Inside Tabs 1`] = `
 <DocumentFragment>
   <div
-    class="b-tabs"
+    class="tabs-container"
   >
     <nav
       class="tabs"

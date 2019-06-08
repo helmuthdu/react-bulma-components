@@ -1,7 +1,7 @@
 $checkbox-active-background-color: $primary !default;
 $checkbox-checkmark-color: $primary-invert !default;
 
-.b-checkbox {
+.checkbox-container {
   &.checkbox {
     outline: none;
     display: inline-flex;

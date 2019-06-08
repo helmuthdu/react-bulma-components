@@ -2,41 +2,65 @@
 
 exports[`Table component should concat classname in props with classname 1`] = `
 <DocumentFragment>
-  <table
-    class="table other-class this-is-a-test"
+  <div
+    class="table-container"
   >
-    <tbody>
-      <tr>
-        <td>
-          Default
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <div
+      class="table-wrapper"
+    >
+      <table
+        class="table other-class this-is-a-test"
+      >
+        <tbody>
+          <tr>
+            <td>
+              Default
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Table component should render 1`] = `
 <DocumentFragment>
-  <table
-    class="table"
-  />
+  <div
+    class="table-container"
+  >
+    <div
+      class="table-wrapper"
+    >
+      <table
+        class="table"
+      />
+    </div>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Table component should use inline styles 1`] = `
 <DocumentFragment>
-  <table
-    class="table"
-    style="height: 250px;"
+  <div
+    class="table-container"
   >
-    <tbody>
-      <tr>
-        <td>
-          Default
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <div
+      class="table-wrapper"
+    >
+      <table
+        class="table"
+        style="height: 250px;"
+      >
+        <tbody>
+          <tr>
+            <td>
+              Default
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </DocumentFragment>
 `;

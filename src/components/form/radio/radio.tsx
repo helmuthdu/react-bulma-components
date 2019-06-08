@@ -26,7 +26,7 @@ export const Radio: React.FunctionComponent<RadioProps> = ({
   return (
     <label
       data-testid={(Array.isArray(testId) ? testId[0] : testId) || undefined}
-      className={cn('b-radio radio', modifiers.getClassName(rest), className)}
+      className={cn('radio-container radio', modifiers.getClassName(rest), className)}
       style={style}
     >
       <input

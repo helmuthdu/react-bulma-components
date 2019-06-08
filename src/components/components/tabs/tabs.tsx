@@ -16,7 +16,7 @@ export const Tabs: React.FunctionComponent<TabsProps> & {
   Tab: typeof Tab;
 } = ({ children, className, align, size, type, fullwidth, ...props }: TabsProps) => (
   <div
-    className={cn('b-tabs', {
+    className={cn('tabs-container', {
       'is-fullwidth': fullwidth
     })}
   >

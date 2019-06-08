@@ -28,7 +28,7 @@ export const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   return (
     <label
       data-testid={(Array.isArray(testId) ? testId[0] : testId) || undefined}
-      className={cn('b-checkbox checkbox', modifiers.getClassName(rest), className)}
+      className={cn('checkbox-container checkbox', modifiers.getClassName(rest), className)}
       style={style}
     >
       <input
