@@ -1,6 +1,6 @@
 module.exports = {
   setupFiles: ['react-app-polyfill/jsdom'],
-  setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
+  setupFilesAfterEnv: ['@testing-library/react/cleanup-after-each', 'jest-dom/extend-expect'],
   testMatch: ['<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}', '<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}'],
   testEnvironment: 'jest-environment-jsdom-fourteen',
   coverageDirectory: '<rootDir>/.coverage',
