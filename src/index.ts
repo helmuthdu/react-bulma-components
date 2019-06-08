@@ -1,7 +1,7 @@
 import './_all.scss';
 
-export * from './components/columns';
-export * from './components/components';
-export * from './components/elements';
-export * from './components/form';
-export * from './components/layout';
+export * from './columns';
+export * from './components';
+export * from './elements';
+export * from './form';
+export * from './layout';

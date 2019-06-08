@@ -214,6 +214,7 @@ export declare type TableProps = ElementModifier & {
 	bordered?: boolean;
 	fullwidth?: boolean;
 	hoverable?: boolean;
+	loading?: boolean;
 	narrow?: boolean;
 	striped?: boolean;
 } & Omit<React.ComponentProps<'table'>, 'unselectable'>;
@@ -510,43 +511,53 @@ export declare const Textarea: React.FunctionComponent<TextareaProps>;
 export declare type ContainerProps = ElementModifier & {
 	breakpoint?: Breakpoints;
 	fluid?: boolean;
-};
+} & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 export declare const Container: React.FunctionComponent<ContainerProps>;
-export declare type FooterProps = ElementModifier;
+export declare type FooterProps = ElementModifier & Omit<React.ComponentProps<'footer'>, 'unselectable'>;
 export declare const Footer: React.FunctionComponent<FooterProps>;
-export declare type HeroProps = ElementModifier & {
-	color?: Colors;
-	gradient?: boolean;
-	size?: 'medium' | 'large' | 'fullheight' | 'fullheight-with-navbar';
-};
-export declare const Hero: React.FunctionComponent<HeroProps>;
 export declare type HeroBodyProps = ElementModifier;
 export declare const HeroBody: React.FunctionComponent<HeroBodyProps>;
 export declare type HeroFooterProps = ElementModifier;
 export declare const HeroFooter: React.FunctionComponent<HeroFooterProps>;
 export declare type HeroHeadProps = ElementModifier;
 export declare const HeroHeader: React.FunctionComponent<HeroHeadProps>;
-export declare type LevelProps = ElementModifier & {
-	breakpoint?: Breakpoints;
+export declare type HeroProps = ElementModifier & {
+	color?: Colors;
+	gradient?: boolean;
+	size?: 'medium' | 'large' | 'fullheight' | 'fullheight-with-navbar';
+} & Omit<React.ComponentProps<'section'>, 'color' | 'size' | 'unselectable'>;
+export declare const Hero: React.FunctionComponent<HeroProps> & {
+	Body: typeof HeroBody;
+	Footer: typeof HeroFooter;
+	Header: typeof HeroHeader;
 };
-export declare const Level: React.FunctionComponent<LevelProps>;
-export declare type LevelItemProps = ElementModifier;
+export declare type LevelItemProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 export declare const LevelItem: React.FunctionComponent<LevelItemProps>;
 export declare type LevelSideProps = ElementModifier & {
 	align?: 'left' | 'right';
-};
+} & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 export declare const LevelSide: React.FunctionComponent<LevelSideProps>;
-export declare type MediaProps = ElementModifier;
-export declare const Media: React.FunctionComponent<MediaProps>;
-export declare type MediaContentProps = ElementModifier;
+export declare type LevelProps = ElementModifier & {
+	breakpoint?: Breakpoints;
+} & Omit<React.ComponentProps<'div'>, 'unselectable'>;
+export declare const Level: React.FunctionComponent<LevelProps> & {
+	Item: typeof LevelItem;
+	Side: typeof LevelSide;
+};
+export declare type MediaContentProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 export declare const MediaContent: React.FunctionComponent<MediaContentProps>;
 export declare type MediaItemProps = ElementModifier & {
 	position?: 'center' | 'right' | 'left';
-};
+} & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 export declare const MediaItem: React.FunctionComponent<MediaItemProps>;
+export declare type MediaProps = ElementModifier & Omit<React.ComponentProps<'article'>, 'unselectable'>;
+export declare const Media: React.FunctionComponent<MediaProps> & {
+	Content: typeof MediaContent;
+	Item: typeof MediaItem;
+};
 export declare type SectionProps = ElementModifier & {
 	size?: 'medium' | 'large';
-};
+} & Omit<React.ComponentProps<'section'>, 'unselectable'>;
 export declare const Section: React.FunctionComponent<SectionProps>;
 export declare type TileProps = ElementModifier & {
 	color?: Colors;
@@ -554,5 +565,5 @@ export declare type TileProps = ElementModifier & {
 	notification?: boolean;
 	size?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 	vertical?: boolean;
-};
+} & Omit<React.ComponentProps<'div'>, 'color' | 'size' | 'unselectable'>;
 export declare const Tile: React.FunctionComponent<TileProps>;
