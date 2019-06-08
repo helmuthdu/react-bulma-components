@@ -31,20 +31,20 @@ describe('Message component', () => {
   });
 
   it('should render as an html section', () => {
-    const { asFragment } = render(<Message renderAs="section">This should be a section</Message>);
+    const { asFragment } = render(<Message as="section">This should be a section</Message>);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should have custom inline styles', () => {
     const { asFragment } = render(
-      <Message renderAs="section" style={{ width: 200, zIndex: 1 }}>
+      <Message as="section" style={{ width: 200, zIndex: 1 }}>
         This should be a section with custom styles
       </Message>
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should accept a react Element as renderAs prop', () => {
+  it('should render component with different tag', () => {
     const Custom = (props: any) => (
       <p {...props}>
         Custom
@@ -53,7 +53,7 @@ describe('Message component', () => {
     );
     Custom.propTypes = { children: PropTypes.node.isRequired };
 
-    const { asFragment } = render(<Message renderAs={Custom}>This should be a p element</Message>);
+    const { asFragment } = render(<Message as={Custom}>This should be a p element</Message>);
     expect(asFragment()).toMatchSnapshot();
   });
 });

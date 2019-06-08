@@ -15,7 +15,7 @@ export type ElementModifier = ColorsModifier &
   TypographyModifier & {
     className?: any;
     children?: React.ReactNode;
-    renderAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
+    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
     style?: React.CSSProperties;
     testId?: string | string[];
   };

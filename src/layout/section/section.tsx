@@ -28,5 +28,5 @@ export const Section: React.FunctionComponent<SectionProps> = ({
 
 Section.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'section'
+  as: 'section'
 };

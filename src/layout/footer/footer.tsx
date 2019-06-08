@@ -16,5 +16,5 @@ export const Footer: React.FunctionComponent<FooterProps> = ({ children, classNa
 
 Footer.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'footer'
+  as: 'footer'
 };

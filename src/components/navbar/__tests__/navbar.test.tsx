@@ -47,7 +47,7 @@ describe('Navbar component', () => {
     const { asFragment, unmount } = render(
       <Navbar>
         <NavbarBrand>
-          <NavbarItem renderAs="a">
+          <NavbarItem as="a">
             <img src="/" alt="" />
           </NavbarItem>
           <NavbarBurger className="trigger-menu" />
@@ -78,7 +78,7 @@ describe('Navbar component', () => {
   });
 
   it('should render as an html section', () => {
-    const { asFragment, unmount } = render(<Navbar renderAs="section" />);
+    const { asFragment, unmount } = render(<Navbar as="section" />);
     expect(asFragment()).toMatchSnapshot();
     unmount();
   });

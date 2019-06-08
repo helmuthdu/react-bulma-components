@@ -14,5 +14,5 @@ Menu.List = MenuList;
 
 Menu.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'aside'
+  as: 'aside'
 };

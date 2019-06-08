@@ -17,5 +17,5 @@ export const NavbarLink: React.FunctionComponent<NavbarLinkProps> = ({
 
 NavbarLink.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'span'
+  as: 'span'
 };

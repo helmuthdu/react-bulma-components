@@ -14,12 +14,12 @@ describe('Loader component', () => {
   });
 
   it('should render as an html section', () => {
-    const { asFragment } = render(<Loader renderAs="section" />);
+    const { asFragment } = render(<Loader as="section" />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should have custom inline styles', () => {
-    const { asFragment } = render(<Loader renderAs="section" style={{ width: 200, zIndex: 1 }} />);
+    const { asFragment } = render(<Loader as="section" style={{ width: 200, zIndex: 1 }} />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

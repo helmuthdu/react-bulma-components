@@ -15,20 +15,20 @@ describe('Tabs component', () => {
   });
 
   it('should render as an html section', () => {
-    const { asFragment } = render(<Tabs renderAs="section">This should be a section</Tabs>);
+    const { asFragment } = render(<Tabs as="section">This should be a section</Tabs>);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should have custom inline styles', () => {
     const { asFragment } = render(
-      <Tabs renderAs="section" style={{ width: 200, zIndex: 1 }}>
+      <Tabs as="section" style={{ width: 200, zIndex: 1 }}>
         This should be a section with custom styles
       </Tabs>
     );
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should accept a react Element as renderAs prop', () => {
+  it('should render component with different tag', () => {
     // eslint-disable-next-line react/prop-types
     const Custom = ({ children, ...props }: any) => (
       <li {...props}>
@@ -36,7 +36,7 @@ describe('Tabs component', () => {
         {children}
       </li>
     );
-    const { asFragment } = render(<Tabs renderAs={Custom}>This should be a li element</Tabs>);
+    const { asFragment } = render(<Tabs as={Custom}>This should be a li element</Tabs>);
     expect(asFragment()).toMatchSnapshot();
   });
 

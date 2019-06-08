@@ -39,7 +39,7 @@ export const Heading: React.FunctionComponent<HeadingProps> = ({
 Heading.defaultProps = {
   ...modifiers.defaultProps,
   heading: false,
-  renderAs: 'h1',
+  as: 'h1',
   spaced: false,
   subtitle: false
 };

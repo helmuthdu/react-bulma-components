@@ -27,11 +27,11 @@ describe('Hero component', () => {
   it('should render Hero with hero head, body and footer', () => {
     const { asFragment } = render(
       <Hero size="fullheight" color="primary">
-        <HeroHeader renderAs="header">
+        <HeroHeader as="header">
           <div className="has-background-info">Header</div>
         </HeroHeader>
         <HeroBody>Body</HeroBody>
-        <HeroFooter renderAs="footer">
+        <HeroFooter as="footer">
           <div className="has-background-danger">Footer</div>
         </HeroFooter>
       </Hero>

@@ -21,5 +21,5 @@ export const Tab: React.FunctionComponent<TabProps> = ({ children, className, st
 Tab.defaultProps = {
   ...modifiers.defaultProps,
   active: false,
-  renderAs: 'a'
+  as: 'a'
 };

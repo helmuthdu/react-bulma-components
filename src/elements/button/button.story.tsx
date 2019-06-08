@@ -73,7 +73,7 @@ storiesOf('Button', module)
 
     return (
       <Section>
-        <Button color="info" renderAs={CustomComponent}>
+        <Button color="info" as={CustomComponent}>
           Button rendered using another React Component with props
         </Button>
       </Section>
@@ -82,13 +82,13 @@ storiesOf('Button', module)
   .add('Button group', () => (
     <Section>
       <ButtonGroup hasAddons={boolean('hasAddons', false)} position={select('Position', positions, undefined)}>
-        <Button renderAs="span" color="success">
+        <Button as="span" color="success">
           Save changes
         </Button>
-        <Button renderAs="span" color="info">
+        <Button as="span" color="info">
           Save and continue
         </Button>
-        <Button renderAs="span" color="danger">
+        <Button as="span" color="danger">
           Cancel
         </Button>
       </ButtonGroup>

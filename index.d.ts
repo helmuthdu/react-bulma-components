@@ -76,7 +76,7 @@ export declare type TypographyModifier = {
 export declare type ElementModifier = ColorsModifier & HelpersModifier & ResponsiveModifier & SpacingModifier & TypographyModifier & {
 	className?: any;
 	children?: React.ReactNode;
-	renderAs?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
+	as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
 	style?: React.CSSProperties;
 	testId?: string | string[];
 };
@@ -113,7 +113,7 @@ export declare type BreadcrumbProps = ElementModifier & {
 		name?: React.ReactNode;
 		url: string;
 	}[];
-	renderAs?: 'a' | ((...args: any[]) => any);
+	as?: 'a' | ((...args: any[]) => any);
 	separator?: 'arrow' | 'bullet' | 'dot' | 'succeeds';
 	size?: Sizes;
 } & Omit<React.ComponentProps<'a'>, 'unselectable'>;
@@ -153,7 +153,7 @@ export declare type ButtonProps = ElementModifier & {
 	loading?: boolean;
 	outlined?: boolean;
 	remove?: boolean;
-	renderAs?: ('a' | 'button' | 'span') | ((...args: any[]) => any);
+	as?: ('a' | 'button' | 'span') | ((...args: any[]) => any);
 	reset?: boolean;
 	rounded?: boolean;
 	selected?: boolean;

@@ -13,5 +13,5 @@ export const PanelIcon: React.FunctionComponent<PanelIconProps> = ({ className, 
 
 PanelIcon.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'span'
+  as: 'span'
 };

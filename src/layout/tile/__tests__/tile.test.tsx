@@ -28,7 +28,7 @@ describe('Tile component', () => {
 
   it('should render as Section', () => {
     const { asFragment } = render(
-      <Tile renderAs="section">
+      <Tile as="section">
         <p>Default</p>
       </Tile>
     );

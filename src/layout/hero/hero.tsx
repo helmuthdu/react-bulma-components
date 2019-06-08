@@ -38,5 +38,5 @@ Hero.Header = HeroHeader;
 Hero.defaultProps = {
   ...modifiers.defaultProps,
   gradient: false,
-  renderAs: 'section'
+  as: 'section'
 };

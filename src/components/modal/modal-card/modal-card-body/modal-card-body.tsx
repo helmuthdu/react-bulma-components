@@ -17,5 +17,5 @@ export const ModalCardBody: React.FunctionComponent<ModalCardBodyProps> = ({
 
 ModalCardBody.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'section'
+  as: 'section'
 };

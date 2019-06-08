@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Menu component should accept a react Element as renderAs prop 1`] = `
+exports[`Menu component should render component with different tag 1`] = `
 <DocumentFragment>
   <aside
     class="menu"

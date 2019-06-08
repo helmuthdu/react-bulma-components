@@ -31,5 +31,5 @@ Message.Header = MessageHeader;
 
 Message.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'article'
+  as: 'article'
 };

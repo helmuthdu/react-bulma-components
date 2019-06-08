@@ -39,6 +39,6 @@ Tabs.Tab = Tab;
 
 Tabs.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'nav',
+  as: 'nav',
   fullwidth: false
 };

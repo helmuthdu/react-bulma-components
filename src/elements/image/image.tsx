@@ -42,7 +42,7 @@ export const Image: React.FunctionComponent<ImageProps> = ({
 
   return (
     <Element
-      renderAs="figure"
+      as="figure"
       className={cn('image', className, {
         [`is-${Number.isInteger(size as any) ? `${size}x${size}` : size}`]: size
       })}

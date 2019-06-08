@@ -102,7 +102,7 @@ storiesOf('Hero', module)
   .add('Vertical Alignments', () => (
     <Container>
       <Hero size="fullheight" color="primary">
-        <HeroHeader renderAs="header">
+        <HeroHeader as="header">
           <div className="has-background-info">Header</div>
         </HeroHeader>
         <HeroBody>Body</HeroBody>

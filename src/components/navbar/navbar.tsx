@@ -80,6 +80,6 @@ Navbar.Menu = NavbarMenu;
 Navbar.defaultProps = {
   ...modifiers.defaultProps,
   active: false,
-  renderAs: 'nav',
+  as: 'nav',
   transparent: false
 };

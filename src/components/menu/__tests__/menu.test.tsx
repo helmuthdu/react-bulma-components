@@ -42,7 +42,7 @@ describe('Menu component', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should accept a react Element as renderAs prop', () => {
+  it('should render component with different tag', () => {
     const Custom = (props: any) => (
       <span {...props}>
         Custom
@@ -55,8 +55,8 @@ describe('Menu component', () => {
     const { asFragment } = render(
       <Menu>
         <MenuList title="General">
-          <MenuListItem renderAs={Custom}>Dashboard</MenuListItem>
-          <MenuListItem renderAs={Custom}>Customer</MenuListItem>
+          <MenuListItem as={Custom}>Dashboard</MenuListItem>
+          <MenuListItem as={Custom}>Customer</MenuListItem>
         </MenuList>
       </Menu>
     );

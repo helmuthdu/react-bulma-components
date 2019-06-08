@@ -4,13 +4,12 @@ import modifiers, { ElementModifier } from '../../modifiers';
 
 type ElementProps = ElementModifier;
 
-export const Element: React.FunctionComponent<ElementProps> = ({ className, renderAs, ...rest }: ElementProps) => {
-  const RenderAs: any = renderAs;
-  const props = modifiers.clean(rest);
-  return <RenderAs className={cn(className, modifiers.getClassName(rest)) || undefined} {...props} />;
-};
+export const Element: React.FunctionComponent<ElementProps> = ({ className, as: Component, ...rest }: ElementProps) => (
+  // @ts-ignore
+  <Component className={cn(className, modifiers.getClassName(rest)) || undefined} {...modifiers.clean(rest)} />
+);
 
 Element.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'div'
+  as: 'div'
 };

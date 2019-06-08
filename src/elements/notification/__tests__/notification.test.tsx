@@ -37,7 +37,7 @@ describe('Notification component', () => {
 
   it('should render as Section', () => {
     const { asFragment } = render(
-      <Notification renderAs="section">
+      <Notification as="section">
         <p>Default</p>
       </Notification>
     );

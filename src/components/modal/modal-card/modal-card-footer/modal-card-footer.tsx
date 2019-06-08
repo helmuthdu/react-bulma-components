@@ -17,5 +17,5 @@ export const ModalCardFooter: React.FunctionComponent<ModalCardFootProps> = ({
 
 ModalCardFooter.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'footer'
+  as: 'footer'
 };

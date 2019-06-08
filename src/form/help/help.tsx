@@ -21,5 +21,5 @@ export const Help: React.FunctionComponent<HelpProps> = ({ className, children, 
 
 Help.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'span'
+  as: 'span'
 };

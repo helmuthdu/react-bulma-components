@@ -62,7 +62,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
 );
 Pagination.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'nav',
+  as: 'nav',
   current: 0,
   delta: 5,
   next: 'Next',

@@ -23,13 +23,13 @@ describe('Columns component', () => {
 
   it('should render as paragraph', () => {
     const { asFragment } = render(
-      <Columns renderAs="div">
-        <Column renderAs="p" size={6}>
+      <Columns as="div">
+        <Column as="p" size={6}>
           1
         </Column>
-        <Column renderAs="p">2</Column>
-        <Column renderAs="p">3</Column>
-        <Column renderAs="p">4</Column>
+        <Column as="p">2</Column>
+        <Column as="p">3</Column>
+        <Column as="p">4</Column>
       </Columns>
     );
     expect(asFragment()).toMatchSnapshot();

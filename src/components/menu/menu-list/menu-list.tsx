@@ -15,7 +15,7 @@ export const MenuList: React.FunctionComponent<MenuListProps> & {
 } = ({ className, title, ...props }: MenuListProps) => (
   <Fragment>
     {title && <p className="menu-label">{title}</p>}
-    <Element renderAs="ul" className={cn('menu-list', className)} {...props} />
+    <Element as="ul" className={cn('menu-list', className)} {...props} />
   </Fragment>
 );
 

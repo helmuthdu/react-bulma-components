@@ -21,7 +21,7 @@ export const Progress: React.FunctionComponent<ProgressProps> = ({
 }: ProgressProps) => (
   // @ts-ignore
   <Element
-    renderAs="progress"
+    as="progress"
     max={max}
     value={value}
     className={cn('progress', className, {

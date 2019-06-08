@@ -7,7 +7,7 @@ import { Hero, HeroBody, HeroFooter, HeroHeader } from '../hero';
 
 storiesOf('Footer', module).add('Default', () => (
   <Hero size="fullheight">
-    <HeroHeader renderAs="header" />
+    <HeroHeader as="header" />
     <HeroBody />
     <HeroFooter>
       <Footer>

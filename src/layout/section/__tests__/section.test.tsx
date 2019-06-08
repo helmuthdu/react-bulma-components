@@ -37,7 +37,7 @@ describe('Section component', () => {
 
   it('should render as nav element', () => {
     const { asFragment } = render(
-      <Section renderAs="nav">
+      <Section as="nav">
         <p>Default</p>
       </Section>
     );

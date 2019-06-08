@@ -28,7 +28,7 @@ describe('Control component', () => {
 
   it('should render as a html section element', () => {
     const { asFragment } = render(
-      <Control renderAs="section">
+      <Control as="section">
         <p>Default</p>
       </Control>
     );

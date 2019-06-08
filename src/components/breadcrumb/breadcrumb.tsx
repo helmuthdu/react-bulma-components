@@ -12,7 +12,7 @@ type BreadcrumbProps = ElementModifier & {
     name?: React.ReactNode;
     url: string;
   }[];
-  renderAs?: 'a' | ((...args: any[]) => any);
+  as?: 'a' | ((...args: any[]) => any);
   separator?: 'arrow' | 'bullet' | 'dot' | 'succeeds';
   size?: Sizes;
 } & Omit<React.ComponentProps<'a'>, 'unselectable'>;
@@ -20,7 +20,7 @@ type BreadcrumbProps = ElementModifier & {
 export const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
   className,
   items,
-  renderAs,
+  as,
   hrefAttr,
   separator,
   size,
@@ -47,7 +47,7 @@ export const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
                   'is-active': item.active
                 })}
               >
-                <Element renderAs={renderAs}>{item.name}</Element>
+                <Element as={as}>{item.name}</Element>
               </li>
             );
           })}
@@ -59,5 +59,5 @@ Breadcrumb.defaultProps = {
   ...modifiers.defaultProps,
   hrefAttr: 'href',
   items: [],
-  renderAs: 'a'
+  as: 'a'
 };

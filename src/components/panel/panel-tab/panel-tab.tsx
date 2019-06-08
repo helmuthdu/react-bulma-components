@@ -23,5 +23,5 @@ export const PanelTab: React.FunctionComponent<PanelTabsTabProps> = ({
 PanelTab.defaultProps = {
   ...modifiers.defaultProps,
   active: false,
-  renderAs: 'a'
+  as: 'a'
 };

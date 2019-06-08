@@ -17,12 +17,12 @@ export const NavbarItem: React.FunctionComponent<NavbarItemProps> = ({
   dropdown,
   dropdownUp,
   hoverable,
-  renderAs,
+  as,
   ...props
 }: NavbarItemProps) => {
   return (
     <Element
-      renderAs={dropdown && renderAs === 'a' ? 'span' : renderAs}
+      as={dropdown && as === 'a' ? 'span' : as}
       className={cn('navbar-item', className, {
         'has-dropdown': dropdown,
         'has-dropdown-up': dropdownUp,
@@ -42,5 +42,5 @@ NavbarItem.defaultProps = {
   dropdown: false,
   dropdownUp: false,
   hoverable: false,
-  renderAs: 'a'
+  as: 'a'
 };

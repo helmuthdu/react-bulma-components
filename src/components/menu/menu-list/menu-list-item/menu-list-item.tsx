@@ -43,5 +43,5 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
 MenuListItem.defaultProps = {
   ...modifiers.defaultProps,
   active: false,
-  renderAs: 'a'
+  as: 'a'
 };

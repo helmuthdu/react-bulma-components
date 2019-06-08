@@ -17,5 +17,5 @@ export const ModalCardTitle: React.FunctionComponent<ModalCardTitleProps> = ({
 
 ModalCardTitle.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'span'
+  as: 'span'
 };

@@ -21,5 +21,5 @@ Media.Item = MediaItem;
 
 Media.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'article'
+  as: 'article'
 };

@@ -14,7 +14,7 @@ describe('Element component', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should accept a react Element as renderAs prop', () => {
+  it('should render component with different tag', () => {
     const Custom = (props: any) => (
       <p {...props}>
         Custom
@@ -24,7 +24,7 @@ describe('Element component', () => {
 
     Custom.propTypes = { children: PropTypes.node.isRequired };
 
-    const { asFragment } = render(<Element renderAs={Custom}>This should be a p element</Element>);
+    const { asFragment } = render(<Element as={Custom}>This should be a p element</Element>);
     expect(asFragment()).toMatchSnapshot();
   });
 });

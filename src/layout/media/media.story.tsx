@@ -16,7 +16,7 @@ storiesOf('Media', module)
     <Section>
       <Box>
         <Media>
-          <MediaItem renderAs="figure" position="left">
+          <MediaItem as="figure" position="left">
             <Image size={64} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
           </MediaItem>
           <MediaItem>
@@ -51,7 +51,7 @@ storiesOf('Media', module)
           <MediaItem>
             <p>Lorem Ipsum</p>
           </MediaItem>
-          <MediaItem renderAs="figure" position="right">
+          <MediaItem as="figure" position="right">
             <img style={style} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
           </MediaItem>
         </Media>
@@ -61,7 +61,7 @@ storiesOf('Media', module)
   .add('Nested', () => (
     <Section>
       <Box>
-        <Media renderAs="article">
+        <Media as="article">
           <MediaItem position="left">
             <Image src="http://bulma.io/images/placeholders/128x128.png" size={64} />
           </MediaItem>
@@ -132,18 +132,18 @@ storiesOf('Media', module)
             </Media>
           </MediaItem>
         </Media>
-        <Media renderAs="article">
+        <Media as="article">
           <MediaItem position="left">
             <Image src="http://bulma.io/images/placeholders/128x128.png" size={64} />
           </MediaItem>
           <MediaItem position="center">
             <Field>
-              <Control renderAs="p">
+              <Control as="p">
                 <Textarea placeholder="Add a comment..." onChange={() => {}} />
               </Control>
             </Field>
             <Field>
-              <Control renderAs="p">
+              <Control as="p">
                 <Button>Post comment</Button>
               </Control>
             </Field>

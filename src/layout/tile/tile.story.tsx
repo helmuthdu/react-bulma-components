@@ -13,17 +13,17 @@ storiesOf('Tile', module).add('Default', () => (
         <Tile size={8} vertical>
           <Tile>
             <Tile context="parent" vertical>
-              <Tile renderAs="article" context="child" notification color="primary">
+              <Tile as="article" context="child" notification color="primary">
                 <Heading>Vertical...</Heading>
                 <Heading subtitle>Top tile</Heading>
               </Tile>
-              <Tile renderAs="article" context="child" notification color="warning">
+              <Tile as="article" context="child" notification color="warning">
                 <Heading>Tiles...</Heading>
                 <Heading subtitle>Bottom Tile...</Heading>
               </Tile>
             </Tile>
             <Tile context="parent">
-              <Tile renderAs="article" context="child" notification color="info">
+              <Tile as="article" context="child" notification color="info">
                 <Heading>Middle Tile...</Heading>
                 <Heading subtitle>With image Tile...</Heading>
                 <Image size="4by3" src="http://bulma.io/images/placeholders/640x480.png" />
@@ -31,7 +31,7 @@ storiesOf('Tile', module).add('Default', () => (
             </Tile>
           </Tile>
           <Tile context="parent">
-            <Tile renderAs="article" context="child" notification color="danger">
+            <Tile as="article" context="child" notification color="danger">
               <Heading>Wide tile</Heading>
               <Heading subtitle>Aligned with the right tile</Heading>
               <div className="content" />
@@ -39,7 +39,7 @@ storiesOf('Tile', module).add('Default', () => (
           </Tile>
         </Tile>
         <Tile context="parent">
-          <Tile renderAs="article" context="child" notification color="success">
+          <Tile as="article" context="child" notification color="success">
             <div className="content">
               <Heading>Tall tile</Heading>
               <Heading subtitle>With even more content</Heading>

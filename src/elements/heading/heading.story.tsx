@@ -19,19 +19,19 @@ storiesOf('Heading', module).add('Default', () => (
     </Box>
     <Box>
       <Heading size={2}>Title</Heading>
-      <Heading subtitle size={4} renderAs="h2">
+      <Heading subtitle size={4} as="h2">
         Subtitle
       </Heading>
     </Box>
     <Box>
       <Heading size={3}>Title</Heading>
-      <Heading subtitle size={5} renderAs="h2">
+      <Heading subtitle size={5} as="h2">
         Subtitle
       </Heading>
     </Box>
     <Box>
       <Heading size={4}>Title</Heading>
-      <Heading subtitle size={6} renderAs="h2">
+      <Heading subtitle size={6} as="h2">
         Subtitle
       </Heading>
     </Box>

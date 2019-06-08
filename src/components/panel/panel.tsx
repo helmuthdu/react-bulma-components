@@ -23,5 +23,5 @@ Panel.Tabs = PanelTabs;
 
 Panel.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'nav'
+  as: 'nav'
 };

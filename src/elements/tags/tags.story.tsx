@@ -33,7 +33,7 @@ storiesOf('Tag', module)
       </Tags>
       <Tags gapless>
         <Tag color="danger">Delete</Tag>
-        <Tag remove color="warning" renderAs="a" />
+        <Tag remove color="warning" as="a" />
       </Tags>
     </div>
   ))

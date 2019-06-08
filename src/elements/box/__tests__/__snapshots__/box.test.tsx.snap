@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Box component should accept a react Element as renderAs prop 1`] = `
+exports[`Box component should render component with different tag 1`] = `
 <DocumentFragment>
   <p
     class="box"

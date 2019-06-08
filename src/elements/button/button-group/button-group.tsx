@@ -16,12 +16,12 @@ export const ButtonGroup: React.FunctionComponent<ButtonGroupProps> = ({
   hasAddons,
   position,
   size,
-  renderAs,
+  as,
   ...props
 }: ButtonGroupProps) => (
   <Element
     {...props}
-    renderAs={renderAs}
+    as={as}
     className={cn('buttons', className, {
       'has-addons': hasAddons,
       [`are-${size}`]: size,

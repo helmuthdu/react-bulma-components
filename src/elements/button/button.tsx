@@ -15,7 +15,7 @@ type ButtonProps = ElementModifier & {
   loading?: boolean;
   outlined?: boolean;
   remove?: boolean;
-  renderAs?: ('a' | 'button' | 'span') | ((...args: any[]) => any);
+  as?: ('a' | 'button' | 'span') | ((...args: any[]) => any);
   reset?: boolean;
   rounded?: boolean;
   selected?: boolean;
@@ -39,7 +39,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   onChange,
   outlined,
   remove,
-  renderAs,
+  as,
   reset,
   rounded,
   selected,
@@ -49,7 +49,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   text,
   ...rest
 }: ButtonProps) => {
-  let Element: any = inactive ? 'span' : renderAs;
+  let Element: any = inactive ? 'span' : as;
   const props = modifiers.clean(rest);
   const otherProps: any = {};
 
@@ -100,7 +100,7 @@ Button.defaultProps = {
   loading: false,
   outlined: false,
   remove: false,
-  renderAs: 'button',
+  as: 'button',
   reset: false,
   rounded: false,
   selected: false,

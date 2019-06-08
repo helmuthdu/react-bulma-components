@@ -20,7 +20,7 @@ describe('Heading component', () => {
 
   it('should be a subtitle with size rendered as P', () => {
     const { asFragment } = render(
-      <Heading size={3} subtitle renderAs="p">
+      <Heading size={3} subtitle as="p">
         Subtitle
       </Heading>
     );
@@ -29,7 +29,7 @@ describe('Heading component', () => {
 
   it('should not be spaced because is subtitle', () => {
     const { asFragment } = render(
-      <Heading spaced subtitle renderAs="p">
+      <Heading spaced subtitle as="p">
         Subtitle
       </Heading>
     );
@@ -38,7 +38,7 @@ describe('Heading component', () => {
 
   it('should be spaced', () => {
     const { asFragment } = render(
-      <Heading spaced renderAs="p">
+      <Heading spaced as="p">
         Subtitle
       </Heading>
     );

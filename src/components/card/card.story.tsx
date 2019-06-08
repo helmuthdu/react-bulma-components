@@ -13,7 +13,7 @@ storiesOf('Card', module)
       <CardImage size="4by3" src="http://bulma.io/images/placeholders/1280x960.png" />
       <CardContent>
         <Media>
-          <MediaItem renderAs="figure" position="left">
+          <MediaItem as="figure" position="left">
             <Image size={64} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
           </MediaItem>
           <MediaItem>
@@ -39,7 +39,7 @@ storiesOf('Card', module)
       </CardHeader>
       <CardContent>
         <Media>
-          <MediaItem renderAs="figure" position="left">
+          <MediaItem as="figure" position="left">
             <Image size={64} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
           </MediaItem>
           <MediaItem>
@@ -57,9 +57,9 @@ storiesOf('Card', module)
         </Content>
       </CardContent>
       <CardFooter>
-        <CardFooterItem renderAs="a">Yes</CardFooterItem>
-        <CardFooterItem renderAs="a">No</CardFooterItem>
-        <CardFooterItem renderAs="a">Maybe</CardFooterItem>
+        <CardFooterItem as="a">Yes</CardFooterItem>
+        <CardFooterItem as="a">No</CardFooterItem>
+        <CardFooterItem as="a">Maybe</CardFooterItem>
       </CardFooter>
     </Card>
   ));

@@ -22,5 +22,5 @@ export const ModalCardHeader: React.FunctionComponent<ModalCardHeadProps> = ({
 
 ModalCardHeader.defaultProps = {
   ...modifiers.defaultProps,
-  renderAs: 'header'
+  as: 'header'
 };

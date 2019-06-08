@@ -30,7 +30,7 @@ export const Table: React.FunctionComponent<TableProps> = ({
   >
     <div className="table-wrapper">
       <Element
-        renderAs="table"
+        as="table"
         className={cn('table', className, {
           'is-bordered': bordered,
           'is-fullwidth': fullwidth,

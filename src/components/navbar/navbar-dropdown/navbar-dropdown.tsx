@@ -29,6 +29,6 @@ export const NavbarDropdown: React.FunctionComponent<NavbarDropdownProps> = ({
 NavbarDropdown.defaultProps = {
   ...modifiers.defaultProps,
   boxed: false,
-  renderAs: 'span',
+  as: 'span',
   right: false
 };

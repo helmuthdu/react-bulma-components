@@ -19,7 +19,7 @@ describe('Button component', () => {
   });
 
   it('should be an anchor button', () => {
-    const { asFragment } = render(<Button renderAs="a" />);
+    const { asFragment } = render(<Button as="a" />);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -39,13 +39,13 @@ describe('Button component', () => {
   });
 
   it('should render as a html button', () => {
-    const { asFragment } = render(<Button renderAs="button" color="danger" />);
+    const { asFragment } = render(<Button as="button" color="danger" />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render as a React element link with to prop', () => {
     const { asFragment } = render(
-      <Button renderAs={Link} color="danger">
+      <Button as={Link} color="danger">
         TEST
       </Button>
     );

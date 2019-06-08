@@ -25,13 +25,13 @@ describe('Panel component', () => {
           <PanelTab>sources</PanelTab>
           <PanelTab>forks</PanelTab>
         </PanelTabs>
-        <PanelBlock renderAs="a" active>
+        <PanelBlock as="a" active>
           <PanelIcon>
             <i className="fa fa-bars" />
           </PanelIcon>
           bulma
         </PanelBlock>
-        <PanelBlock renderAs="label" className="panel-block">
+        <PanelBlock as="label" className="panel-block">
           <input type="checkbox" />
           remember me
         </PanelBlock>
