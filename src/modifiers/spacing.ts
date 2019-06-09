@@ -7,11 +7,15 @@ export type SpacingModifier = {
   paddingLeft?: Spacing;
   paddingBottom?: Spacing;
   paddingRight?: Spacing;
+  paddingHorizontal?: Spacing;
+  paddingVertical?: Spacing;
   margin?: Spacing;
   marginTop?: Spacing;
   marginLeft?: Spacing;
   marginBottom?: Spacing;
   marginRight?: Spacing;
+  marginHorizontal?: Spacing;
+  marginVertical?: Spacing;
 };
 
 export default {
@@ -23,11 +27,15 @@ export default {
       [`has-padding-left-${props.paddingLeft}`]: props.paddingLeft,
       [`has-padding-bottom-${props.paddingBottom}`]: props.paddingBottom,
       [`has-padding-right-${props.paddingRight}`]: props.paddingRight,
+      [`has-padding-horizontal-${props.paddingBottom}`]: props.paddingBottom,
+      [`has-padding-vertical-${props.paddingRight}`]: props.paddingRight,
       [`has-margin-${props.margin}`]: props.margin,
       [`has-margin-top-${props.marginTop}`]: props.marginTop,
       [`has-margin-left-${props.marginLeft}`]: props.marginLeft,
       [`has-margin-bottom-${props.marginBottom}`]: props.marginBottom,
-      [`has-margin-right-${props.marginRight}`]: props.marginRight
+      [`has-margin-right-${props.marginRight}`]: props.marginRight,
+      [`has-margin-horizontal-${props.marginBottom}`]: props.marginBottom,
+      [`has-margin-vertical-${props.marginRight}`]: props.marginRight
     }),
   clean: ({
     padding,
