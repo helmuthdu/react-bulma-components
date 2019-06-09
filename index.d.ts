@@ -6,7 +6,7 @@ export declare type Breakpoints = null | 'mobile' | 'tablet' | 'desktop' | 'wide
 export declare type Colors = 'black' | 'danger' | 'dark' | 'info' | 'light' | 'link' | 'primary' | 'success' | 'warning' | 'white';
 export declare type Greyscale = 'black-bis' | 'black-ter' | 'grey' | 'grey-dark' | 'grey-darker' | 'grey-light' | 'grey-lighter' | 'white-bis' | 'white-ter';
 export declare type Sizes = 'small' | 'medium' | 'large';
-export declare type Spacing = 'none' | 'tiny' | 'small' | 'medium' | 'large' | 'huge' | 'horizontal' | 'vertical';
+export declare type Spacing = 'none' | 'tiny' | 'small' | 'medium' | 'large' | 'huge';
 export declare type Scale = 16 | 24 | 32 | 48 | 64 | 96 | 128 | '1by1' | '1by2' | '1by3' | '2by1' | '2by3' | '3by1' | '3by2' | '3by4' | '3by5' | '4by3' | '4by5' | '5by3' | '5by4' | '9by16' | '16by9';
 export declare type ColorsModifier = {
 	backgroundColor?: Colors & Greyscale;
@@ -60,11 +60,15 @@ export declare type SpacingModifier = {
 	paddingLeft?: Spacing;
 	paddingBottom?: Spacing;
 	paddingRight?: Spacing;
+	paddingHorizontal?: Spacing;
+	paddingVertical?: Spacing;
 	margin?: Spacing;
 	marginTop?: Spacing;
 	marginLeft?: Spacing;
 	marginBottom?: Spacing;
 	marginRight?: Spacing;
+	marginHorizontal?: Spacing;
+	marginVertical?: Spacing;
 };
 export declare type TypographyModifier = {
 	textSize?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
@@ -93,7 +97,7 @@ export declare type ColumnProps = ElementModifier & ColumnSize & {
 	desktop?: ColumnSize;
 	widescreen?: ColumnSize;
 	fullhd?: ColumnSize;
-};
+} & Omit<React.ComponentProps<'div'>, 'size' | 'unselectable'>;
 export declare const Column: React.FunctionComponent<ColumnProps>;
 export declare type ColumnsProps = ElementModifier & {
 	breakpoint?: Breakpoints;
