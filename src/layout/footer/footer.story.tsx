@@ -3,13 +3,13 @@ import * as React from 'react';
 import { Footer } from '.';
 import { Content } from '../../elements/content';
 import { Container } from '../container';
-import { Hero, HeroBody, HeroFooter, HeroHeader } from '../hero';
+import { Hero, HeroBody, HeroFoot, HeroHead } from '../hero';
 
 storiesOf('Footer', module).add('Default', () => (
   <Hero size="fullheight">
-    <HeroHeader as="header" />
+    <HeroHead as="header" />
     <HeroBody />
-    <HeroFooter>
+    <HeroFoot>
       <Footer>
         <Container>
           <Content style={{ textAlign: 'center' }}>
@@ -21,6 +21,6 @@ storiesOf('Footer', module).add('Default', () => (
           </Content>
         </Container>
       </Footer>
-    </HeroFooter>
+    </HeroFoot>
   </Hero>
 ));

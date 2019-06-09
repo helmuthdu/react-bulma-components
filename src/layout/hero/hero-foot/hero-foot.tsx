@@ -3,18 +3,18 @@ import * as React from 'react';
 import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
 
-type HeroFooterProps = ElementModifier;
+type HeroFooterProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 
-export const HeroFooter: React.FunctionComponent<HeroFooterProps> = ({
+export const HeroFoot: React.FunctionComponent<HeroFooterProps> = ({
   children,
   className,
   ...props
 }: HeroFooterProps) => (
-  <Element {...props} className={cn('hero-foot', className)}>
+  <Element className={cn('hero-foot', className)} {...props}>
     {children}
   </Element>
 );
 
-HeroFooter.defaultProps = {
+HeroFoot.defaultProps = {
   ...modifiers.defaultProps
 };

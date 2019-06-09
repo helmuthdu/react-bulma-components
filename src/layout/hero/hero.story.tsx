@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { Hero, HeroBody, HeroFooter, HeroHeader } from '.';
+import { Hero, HeroBody, HeroFoot, HeroHead } from '.';
 import { Heading } from '../../elements/heading';
 import { Container } from '../container';
 import { Section } from '../section';
@@ -102,13 +102,13 @@ storiesOf('Hero', module)
   .add('Vertical Alignments', () => (
     <Container>
       <Hero size="fullheight" color="primary">
-        <HeroHeader as="header">
+        <HeroHead as="header">
           <div className="has-background-info">Header</div>
-        </HeroHeader>
+        </HeroHead>
         <HeroBody>Body</HeroBody>
-        <HeroFooter>
+        <HeroFoot>
           <div className="has-background-danger">Footer</div>
-        </HeroFooter>
+        </HeroFoot>
       </Hero>
     </Container>
   ));

@@ -378,26 +378,26 @@ export declare type PaginationProps = ElementModifier & {
 export declare const Pagination: React.FunctionComponent<PaginationProps>;
 export declare type PanelBlockProps = ElementModifier & {
 	active?: boolean;
-};
+} & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 export declare const PanelBlock: React.FunctionComponent<PanelBlockProps>;
-export declare type PanelHeaderProps = ElementModifier;
-export declare const PanelHeader: React.FunctionComponent<PanelHeaderProps>;
+export declare type PanelHeaderProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'unselectable'>;
+export declare const PanelHeading: React.FunctionComponent<PanelHeaderProps>;
 export declare type PanelIconProps = ElementModifier & {
 	icon?: string;
-};
+} & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 export declare const PanelIcon: React.FunctionComponent<PanelIconProps>;
 export declare type PanelTabsTabProps = ElementModifier & {
 	active?: boolean;
-};
+} & Omit<React.ComponentProps<'a'>, 'unselectable'>;
 export declare const PanelTab: React.FunctionComponent<PanelTabsTabProps>;
-export declare type PanelTabsProps = ElementModifier;
+export declare type PanelTabsProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 export declare const PanelTabs: React.FunctionComponent<PanelTabsProps> & {
 	Tab: typeof PanelTab;
 };
 export declare type PanelProps = ElementModifier;
 export declare const Panel: React.FunctionComponent<PanelProps> & {
 	Block: typeof PanelBlock;
-	Header: typeof PanelHeader;
+	PanelHeading: typeof PanelHeading;
 	Icon: typeof PanelIcon;
 	Tabs: typeof PanelTabs;
 };
@@ -515,12 +515,12 @@ export declare type ContainerProps = ElementModifier & {
 export declare const Container: React.FunctionComponent<ContainerProps>;
 export declare type FooterProps = ElementModifier & Omit<React.ComponentProps<'footer'>, 'unselectable'>;
 export declare const Footer: React.FunctionComponent<FooterProps>;
-export declare type HeroBodyProps = ElementModifier;
+export declare type HeroBodyProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 export declare const HeroBody: React.FunctionComponent<HeroBodyProps>;
-export declare type HeroFooterProps = ElementModifier;
-export declare const HeroFooter: React.FunctionComponent<HeroFooterProps>;
-export declare type HeroHeadProps = ElementModifier;
-export declare const HeroHeader: React.FunctionComponent<HeroHeadProps>;
+export declare type HeroFooterProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'unselectable'>;
+export declare const HeroFoot: React.FunctionComponent<HeroFooterProps>;
+export declare type HeroHeadProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'unselectable'>;
+export declare const HeroHead: React.FunctionComponent<HeroHeadProps>;
 export declare type HeroProps = ElementModifier & {
 	color?: Colors;
 	gradient?: boolean;
@@ -528,8 +528,8 @@ export declare type HeroProps = ElementModifier & {
 } & Omit<React.ComponentProps<'section'>, 'color' | 'size' | 'unselectable'>;
 export declare const Hero: React.FunctionComponent<HeroProps> & {
 	Body: typeof HeroBody;
-	Footer: typeof HeroFooter;
-	Header: typeof HeroHeader;
+	Foot: typeof HeroFoot;
+	Header: typeof HeroHead;
 };
 export declare type LevelItemProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 export declare const LevelItem: React.FunctionComponent<LevelItemProps>;

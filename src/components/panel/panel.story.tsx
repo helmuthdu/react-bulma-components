@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { Panel, PanelBlock, PanelHeader, PanelIcon, PanelTab, PanelTabs } from '.';
+import { Panel, PanelBlock, PanelHeading, PanelIcon, PanelTab, PanelTabs } from '.';
 import { Button } from '../../elements/button';
 import { Icon } from '../../elements/icon';
 import { Checkbox, Control, Input } from '../../form';
@@ -9,7 +9,7 @@ storiesOf('Panel', module)
   .addDecorator(story => <div style={{ margin: 10 }}>{story()}</div>)
   .add('Default', () => (
     <Panel>
-      <PanelHeader>repositories</PanelHeader>
+      <PanelHeading>repositories</PanelHeading>
       <PanelBlock>
         <Control>
           <Input size="small" type="text" placeholder="search" onChange={() => {}} />
