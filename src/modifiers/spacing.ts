@@ -43,11 +43,15 @@ export default {
     paddingLeft,
     paddingBottom,
     paddingRight,
+    paddingHorizontal,
+    paddingVertical,
     margin,
     marginTop,
     marginLeft,
     marginBottom,
     marginRight,
+    marginHorizontal,
+    marginVertical,
     ...props
   }: SpacingModifier) => props
 };

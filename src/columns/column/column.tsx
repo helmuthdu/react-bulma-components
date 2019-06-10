@@ -61,7 +61,6 @@ export const Column: React.FunctionComponent<ColumnProps> = ({
   const props = modifiers.clean(rest);
   return (
     <Element
-      {...props}
       className={cn('column', className, modifiers.getClassName(rest), {
         'is-narrow': narrow,
         [`is-${size}`]: size,
@@ -103,6 +102,7 @@ export const Column: React.FunctionComponent<ColumnProps> = ({
         // @ts-ignore
         'is-narrow-fullhd': fullhd.narrow
       })}
+      {...props}
     >
       {children}
     </Element>
