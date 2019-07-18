@@ -7,7 +7,7 @@ import { Button } from '../../elements/button';
 import { Heading } from '../../elements/heading';
 import { Control, Field, Input } from '../../form';
 import { Container } from '../container';
-import { Hero, HeroHeader } from '../hero';
+import { Hero, HeroHead } from '../hero';
 import { Section } from '../section';
 
 const style: React.CSSProperties = { textAlign: 'center' };
@@ -15,9 +15,9 @@ const style: React.CSSProperties = { textAlign: 'center' };
 storiesOf('Level', module)
   .addDecorator(story => (
     <Hero size="fullheight">
-      <HeroHeader as="header">
+      <HeroHead as="header">
         <Container>{story()}</Container>
-      </HeroHeader>
+      </HeroHead>
     </Hero>
   ))
   .add('Default', () => (

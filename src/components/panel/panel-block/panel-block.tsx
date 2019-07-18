@@ -5,7 +5,7 @@ import { Element } from '../../../elements';
 
 type PanelBlockProps = ElementModifier & {
   active?: boolean;
-};
+} & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 
 export const PanelBlock: React.FunctionComponent<PanelBlockProps> = ({
   className,

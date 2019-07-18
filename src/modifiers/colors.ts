@@ -2,8 +2,8 @@ import cn from 'classnames';
 import { Colors, Greyscale } from '../constants';
 
 export type ColorsModifier = {
-  backgroundColor?: Colors & Greyscale;
-  textColor?: Colors & Greyscale;
+  backgroundColor?: Colors | Greyscale;
+  textColor?: Colors | Greyscale;
 };
 
 export default {

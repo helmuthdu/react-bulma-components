@@ -4,8 +4,8 @@ import { Colors } from '../../constants';
 import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
 import { HeroBody } from './hero-body';
-import { HeroFooter } from './hero-footer';
-import { HeroHeader } from './hero-header';
+import { HeroFoot } from './hero-foot';
+import { HeroHead } from './hero-head';
 
 type HeroProps = ElementModifier & {
   color?: Colors;
@@ -15,8 +15,8 @@ type HeroProps = ElementModifier & {
 
 export const Hero: React.FunctionComponent<HeroProps> & {
   Body: typeof HeroBody;
-  Footer: typeof HeroFooter;
-  Header: typeof HeroHeader;
+  Foot: typeof HeroFoot;
+  Header: typeof HeroHead;
 } = ({ children, className, color, gradient, size, ...props }: HeroProps) => (
   <Element
     className={cn('hero', className, {
@@ -32,8 +32,8 @@ export const Hero: React.FunctionComponent<HeroProps> & {
 );
 
 Hero.Body = HeroBody;
-Hero.Footer = HeroFooter;
-Hero.Header = HeroHeader;
+Hero.Foot = HeroFoot;
+Hero.Header = HeroHead;
 
 Hero.defaultProps = {
   ...modifiers.defaultProps,

@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
-import { Panel, PanelBlock, PanelHeader, PanelIcon, PanelTab, PanelTabs } from '..';
+import { Panel, PanelBlock, PanelHeading, PanelIcon, PanelTab, PanelTabs } from '..';
 
 describe('Panel component', () => {
-  it.each([[Panel], [PanelBlock], [PanelHeader], [PanelIcon], [PanelTabs], [PanelTab]])(
+  it.each([[Panel], [PanelBlock], [PanelHeading], [PanelIcon], [PanelTabs], [PanelTab]])(
     'should render',
     // @ts-ignore
     Component => {
@@ -14,7 +14,7 @@ describe('Panel component', () => {
   it('should render with all', () => {
     const { asFragment } = render(
       <Panel>
-        <PanelHeader>repositories</PanelHeader>
+        <PanelHeading>repositories</PanelHeading>
         <PanelBlock>
           <div>Control</div>
         </PanelBlock>

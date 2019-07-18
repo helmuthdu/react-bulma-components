@@ -4,6 +4,9 @@
   @include delete;
 }
 
-.button {
-  box-sizing: border-box;
+.button.is-large {
+  padding: calc(1em - 1px) calc(2.5em - 1px);
+  font-size: 1rem;
+  height: 3.25em;
+  line-height: 1.4;
 }

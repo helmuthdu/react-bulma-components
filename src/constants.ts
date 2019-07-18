@@ -27,7 +27,7 @@ export type Greyscale =
 
 export type Sizes = 'small' | 'medium' | 'large';
 
-export type Spacing = 'none' | 'tiny' | 'small' | 'medium' | 'large' | 'huge' | 'horizontal' | 'vertical';
+export type Spacing = 'none' | 'tiny' | 'small' | 'medium' | 'large' | 'huge';
 
 export type Scale =
   | 16
