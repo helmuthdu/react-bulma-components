@@ -31,7 +31,7 @@ exports[`Tag component should be Large 1`] = `
 exports[`Tag component should be group tags 1`] = `
 <DocumentFragment>
   <div
-    class="tag-group has-addons"
+    class="tags has-addons"
   >
     <div
       class="tag"
@@ -117,7 +117,7 @@ exports[`Tag component should render 1`] = `
 exports[`Tag component should render 2`] = `
 <DocumentFragment>
   <div
-    class="tag-group"
+    class="tags"
   />
 </DocumentFragment>
 `;

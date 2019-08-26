@@ -14,7 +14,7 @@ export const Tags: React.FunctionComponent<TagsProps> & {
   const props = modifiers.clean(rest);
   return (
     <div
-      className={cn('tag-group', modifiers.getClassName(rest), className, {
+      className={cn('tags', modifiers.getClassName(rest), className, {
         'has-addons': gapless,
         [`are-${size}`]: size
       })}
