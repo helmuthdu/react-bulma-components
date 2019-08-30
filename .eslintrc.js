@@ -7,11 +7,10 @@ module.exports = {
   extends: [
     'react-app',
     'plugin:jest/recommended',
-    'plugin:react/recommended',
     'plugin:prettier/recommended',
     'prettier/react'
   ],
-  plugins: ['jest', 'react', 'prettier', 'react-hooks'],
+  plugins: ['jest', 'prettier'],
   rules: {
     'react/display-name': 0,
     'prettier/prettier': 'error',
