@@ -5,7 +5,7 @@ import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
 
 type ControlProps = ElementModifier & {
-  fullwidth?: boolean;
+  expanded?: boolean;
   iconLeft?: boolean;
   iconRight?: boolean;
   loading?: boolean;
@@ -15,7 +15,7 @@ type ControlProps = ElementModifier & {
 export const Control: React.FunctionComponent<ControlProps> = ({
   children,
   className,
-  fullwidth,
+  expanded,
   iconLeft,
   iconRight,
   loading,
@@ -27,7 +27,7 @@ export const Control: React.FunctionComponent<ControlProps> = ({
     className={cn('control', className, {
       'has-icons-left': iconLeft,
       'has-icons-right': iconRight,
-      'is-expanded': fullwidth,
+      'is-expanded': expanded,
       'is-loading': loading,
       [`is-${size}`]: size
     })}
@@ -38,7 +38,7 @@ export const Control: React.FunctionComponent<ControlProps> = ({
 
 Control.defaultProps = {
   ...modifiers.defaultProps,
-  fullwidth: false,
+  expanded: false,
   iconLeft: false,
   iconRight: false,
   loading: false

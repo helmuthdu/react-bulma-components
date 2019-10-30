@@ -74,7 +74,6 @@ export const InputFile: React.FunctionComponent<InputFileProps> = ({
           name={name}
           onChange={handleSelect}
           type="file"
-          value=""
         />
         <span className="file-cta">
           {icon && <span className="file-icon">{icon}</span>}

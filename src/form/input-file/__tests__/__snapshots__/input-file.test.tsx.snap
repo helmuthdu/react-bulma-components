@@ -14,7 +14,6 @@ exports[`Input file component should pass file attributes 1`] = `
         class="file-input"
         multiple=""
         type="file"
-        value=""
       />
       <span
         class="file-cta"
@@ -41,7 +40,6 @@ exports[`Input file component should render 1`] = `
       <input
         class="file-input"
         type="file"
-        value=""
       />
       <span
         class="file-cta"

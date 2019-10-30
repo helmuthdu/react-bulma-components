@@ -160,10 +160,14 @@ storiesOf('Form', module)
 
       <Field context="group">
         <Control>
-          <Button type="primary">Submit</Button>
+          <Button type="primary" link>
+            Submit
+          </Button>
         </Control>
         <Control>
-          <Button color="link">Cancel</Button>
+          <Button color="light" link>
+            Cancel
+          </Button>
         </Control>
       </Field>
     </div>

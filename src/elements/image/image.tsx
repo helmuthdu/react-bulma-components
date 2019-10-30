@@ -7,17 +7,19 @@ import { Element } from '../element';
 export type ImageProps = ElementModifier & {
   alt?: string;
   fallbackSrc?: string;
+  fullWidth?: boolean;
   rounded?: boolean;
   size?: Scale;
   src?: string;
 } & Omit<React.ComponentProps<'figure'>, 'unselectable'>;
 
 export const Image: React.FunctionComponent<ImageProps> = ({
-  className,
   alt,
-  size,
+  className,
   fallbackSrc,
+  fullWidth,
   rounded,
+  size,
   src,
   testId,
   ...props
@@ -44,6 +46,7 @@ export const Image: React.FunctionComponent<ImageProps> = ({
     <Element
       as="figure"
       className={cn('image', className, {
+        'is-fullwidth': fullWidth,
         [`is-${Number.isInteger(size as any) ? `${size}x${size}` : size}`]: size
       })}
       {...props}
@@ -62,5 +65,6 @@ export const Image: React.FunctionComponent<ImageProps> = ({
 
 Image.defaultProps = {
   ...modifiers.defaultProps,
+  fullWidth: false,
   rounded: false
 };
