@@ -1,8 +1,8 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Colors, Sizes } from '../../constants';
-import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
+import modifiers, { ElementModifier } from '../../modifiers';
 
 const { useState } = React;
 
@@ -54,7 +54,7 @@ export const InputFile: React.FunctionComponent<InputFileProps> = ({
   return (
     <Element
       style={style}
-      className={cn('file', className, {
+      className={clsx('file', className, {
         'has-name': !hasName,
         'is-boxed': boxed,
         'is-fullwidth': fullwidth,

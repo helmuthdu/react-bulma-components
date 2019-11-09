@@ -1,14 +1,14 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../../modifiers';
 import { Element } from '../../../../elements';
+import modifiers, { ElementModifier } from '../../../../modifiers';
 
 type CardHeaderTitleProps = ElementModifier;
 
 export const CardHeaderTitle: React.FunctionComponent<CardHeaderTitleProps> = ({
   className,
   ...props
-}: CardHeaderTitleProps) => <Element {...props} className={cn('card-header-title', className)} />;
+}: CardHeaderTitleProps) => <Element {...props} className={clsx('card-header-title', className)} />;
 
 CardHeaderTitle.defaultProps = {
   ...modifiers.defaultProps

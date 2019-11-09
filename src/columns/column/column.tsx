@@ -1,8 +1,8 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Sizes } from '../../constants';
-import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
+import modifiers, { ElementModifier } from '../../modifiers';
 
 type ColumnValue =
   | Sizes
@@ -61,7 +61,7 @@ export const Column: React.FunctionComponent<ColumnProps> = ({
   const props = modifiers.clean(rest);
   return (
     <Element
-      className={cn('column', className, modifiers.getClassName(rest), {
+      className={clsx('column', className, modifiers.getClassName(rest), {
         'is-narrow': narrow,
         [`is-${size}`]: size,
         [`is-offset-${offset}`]: offset,

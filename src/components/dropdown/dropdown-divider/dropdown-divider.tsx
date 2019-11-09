@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import modifiers, { ElementModifier } from '../../../modifiers';
 
@@ -9,7 +9,7 @@ export const DropdownDivider: React.FunctionComponent<DropdownDividerProps> = ({
   ...rest
 }: DropdownDividerProps) => {
   const props = modifiers.clean(rest);
-  return <hr className={cn('dropdown-divider', modifiers.getClassName(rest), className)} {...props} />;
+  return <hr className={clsx('dropdown-divider', modifiers.getClassName(rest), className)} {...props} />;
 };
 
 DropdownDivider.defaultProps = {

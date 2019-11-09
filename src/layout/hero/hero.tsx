@@ -1,8 +1,8 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Colors } from '../../constants';
-import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
+import modifiers, { ElementModifier } from '../../modifiers';
 import { HeroBody } from './hero-body';
 import { HeroFoot } from './hero-foot';
 import { HeroHead } from './hero-head';
@@ -19,7 +19,7 @@ export const Hero: React.FunctionComponent<HeroProps> & {
   Header: typeof HeroHead;
 } = ({ children, className, color, gradient, size, ...props }: HeroProps) => (
   <Element
-    className={cn('hero', className, {
+    className={clsx('hero', className, {
       'is-bold': gradient,
       'is-link': size === 'fullheight-with-navbar',
       [`is-${color}`]: color,

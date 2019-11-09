@@ -1,9 +1,9 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { PureComponent } from 'react';
+import { Checkbox, Control, Field, Help, Input, InputFile, Label, Radio, Select, Switch, Textarea } from '.';
 import { Button } from '../elements/button';
 import { Icon } from '../elements/icon';
-import { Checkbox, Control, Field, Help, Input, InputFile, Label, Radio, Select, Switch, Textarea } from '.';
 
 /* eslint-disable react/no-multi-comp */
 const HoC = (Component: React.FunctionComponent<any>) => {

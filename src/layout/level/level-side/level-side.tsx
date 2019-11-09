@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
 type LevelSideProps = ElementModifier & {
   align?: 'left' | 'right';
@@ -14,7 +14,7 @@ export const LevelSide: React.FunctionComponent<LevelSideProps> = ({
   ...props
 }: LevelSideProps) => (
   <Element
-    className={cn(className, {
+    className={clsx(className, {
       [`level-${align}`]: align
     })}
     {...props}

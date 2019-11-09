@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Colors, Sizes } from '../../constants';
 import modifiers, { ElementModifier } from '../../modifiers';
@@ -34,7 +34,7 @@ export const Select: React.FunctionComponent<SelectProps> = ({
   const props = modifiers.clean(rest);
   return (
     <div
-      className={cn('select', modifiers.getClassName(rest), className, {
+      className={clsx('select', modifiers.getClassName(rest), className, {
         'is-empty': empty,
         'is-loading': loading,
         'is-multiple': multiple,

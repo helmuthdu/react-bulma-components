@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import { Colors, Greyscale } from '../constants';
 
 export type ColorsModifier = {
@@ -9,7 +9,7 @@ export type ColorsModifier = {
 export default {
   defaultProps: {},
   getClassName: (props: any) =>
-    cn({
+    clsx({
       [`has-background-${props.backgroundColor}`]: props.backgroundColor,
       [`has-text-${props.textColor}`]: props.textColor
     }),

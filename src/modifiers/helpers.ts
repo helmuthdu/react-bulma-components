@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 
 export type HelpersModifier = {
   clearfix?: boolean;
@@ -32,7 +32,7 @@ export default {
     unselectable: false
   },
   getClassName: (props: any) =>
-    cn({
+    clsx({
       'is-clearfix': props.clearfix,
       'is-clipped': props.clipped,
       'is-hidden': props.hidden,

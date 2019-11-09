@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Colors, Sizes } from '../../constants';
 import modifiers, { ElementModifier } from '../../modifiers';
@@ -32,7 +32,7 @@ export const Textarea: React.FunctionComponent<TextareaProps> = ({
       readOnly={readOnly}
       rows={rows}
       value={value}
-      className={cn('textarea', modifiers.getClassName(rest), className, {
+      className={clsx('textarea', modifiers.getClassName(rest), className, {
         [`is-${color}`]: color,
         [`is-${size}`]: size
       })}

@@ -1,8 +1,8 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Sizes } from '../../constants';
-import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
+import modifiers, { ElementModifier } from '../../modifiers';
 
 type ControlProps = ElementModifier & {
   expanded?: boolean;
@@ -24,7 +24,7 @@ export const Control: React.FunctionComponent<ControlProps> = ({
 }: ControlProps) => (
   <Element
     {...props}
-    className={cn('control', className, {
+    className={clsx('control', className, {
       'has-icons-left': iconLeft,
       'has-icons-right': iconRight,
       'is-expanded': expanded,

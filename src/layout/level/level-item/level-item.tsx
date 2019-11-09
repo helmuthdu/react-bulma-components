@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
 type LevelItemProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 
@@ -10,7 +10,7 @@ export const LevelItem: React.FunctionComponent<LevelItemProps> = ({
   className,
   ...props
 }: LevelItemProps) => (
-  <Element className={cn('level-item', className)} {...props}>
+  <Element className={clsx('level-item', className)} {...props}>
     {children}
   </Element>
 );

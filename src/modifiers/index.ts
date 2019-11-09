@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import colors, { ColorsModifier } from './colors';
 import helpers, { HelpersModifier } from './helpers';
@@ -29,19 +29,12 @@ export default {
     ...typography.defaultProps
   },
   getClassName: (props: any) =>
-    cn(
+    clsx(
       colors.getClassName(props),
       helpers.getClassName(props),
       responsive.getClassName(props),
       spacing.getClassName(props),
       typography.getClassName(props)
     ),
-  clean: (props: any) =>
-    compose(
-      colors.clean,
-      helpers.clean,
-      responsive.clean,
-      spacing.clean,
-      typography.clean
-    )(props)
+  clean: (props: any) => compose(colors.clean, helpers.clean, responsive.clean, spacing.clean, typography.clean)(props)
 };

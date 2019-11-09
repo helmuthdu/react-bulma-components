@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Colors } from '../../constants';
 import modifiers, { ElementModifier } from '../../modifiers';
@@ -49,14 +49,14 @@ export const Icon: React.FunctionComponent<IconProps> = ({
   const iconSize = iconSizes[pack][size];
   const iconPack =
     pack === 'mdi'
-      ? cn('mdi', {
+      ? clsx('mdi', {
           [`mdi-${icon}`]: icon,
           [`mdi-${inactive}`]: inactive,
           [`mdi-${type}`]: type,
           [`mdi-${iconSize}`]: iconSize
         })
       : pack === 'fas'
-      ? cn('fas', {
+      ? clsx('fas', {
           'fa-border': border,
           'fa-spinner': spinner,
           [`fa-${icon}`]: icon,
@@ -65,7 +65,7 @@ export const Icon: React.FunctionComponent<IconProps> = ({
       : '';
   return (
     <span
-      className={cn('icon', className, modifiers.getClassName(rest), {
+      className={clsx('icon', className, modifiers.getClassName(rest), {
         [`is-${size}`]: size,
         [`is-${align}`]: align,
         [`has-text-${color}`]: color

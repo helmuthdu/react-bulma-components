@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
 type MessageHeaderProps = ElementModifier;
 
@@ -10,7 +10,7 @@ export const MessageHeader: React.FunctionComponent<MessageHeaderProps> = ({
   className,
   ...props
 }: MessageHeaderProps) => (
-  <Element {...props} className={cn('message-header', className)}>
+  <Element {...props} className={clsx('message-header', className)}>
     {children}
   </Element>
 );

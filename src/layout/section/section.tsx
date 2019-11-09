@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
+import modifiers, { ElementModifier } from '../../modifiers';
 
 type SectionProps = ElementModifier & {
   size?: 'medium' | 'large';
@@ -16,7 +16,7 @@ export const Section: React.FunctionComponent<SectionProps> = ({
   const props = modifiers.clean(rest);
   return (
     <Element
-      className={cn('section', className, modifiers.getClassName(rest), {
+      className={clsx('section', className, modifiers.getClassName(rest), {
         [`is-${size}`]: size
       })}
       {...props}

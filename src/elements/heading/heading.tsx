@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../element';
@@ -23,7 +23,7 @@ export const Heading: React.FunctionComponent<HeadingProps> = ({
 }: HeadingProps) => (
   <Element
     {...props}
-    className={cn(className, {
+    className={clsx(className, {
       title: !subtitle && !heading,
       subtitle,
       heading,

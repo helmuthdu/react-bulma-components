@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../element';
@@ -10,7 +10,7 @@ export const Box: React.FunctionComponent<BoxProps> = ({ children, paddingless, 
   return (
     <Element
       {...props}
-      className={cn('box', className, modifiers.getClassName(rest), {
+      className={clsx('box', className, modifiers.getClassName(rest), {
         'is-paddingless': paddingless
       })}
     >

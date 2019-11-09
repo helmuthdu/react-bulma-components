@@ -1,8 +1,8 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Colors } from '../../constants';
-import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
+import modifiers, { ElementModifier } from '../../modifiers';
 import { ShowContext } from './context';
 import { NavbarBrand } from './navbar-brand';
 import { NavbarBurger } from './navbar-burger';
@@ -34,7 +34,7 @@ export const Navbar: React.FunctionComponent<NavbarProps> & {
     // @ts-ignore
     <ShowContext.Provider value={active}>
       <Element
-        className={cn('navbar', modifiers.getClassName(props), className, {
+        className={clsx('navbar', modifiers.getClassName(props), className, {
           'is-transparent': transparent,
           [`is-fixed-${fixed}`]: fixed,
           [`is-${color}`]: color

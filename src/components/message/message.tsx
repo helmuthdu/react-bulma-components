@@ -1,8 +1,8 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Colors, Sizes } from '../../constants';
-import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
+import modifiers, { ElementModifier } from '../../modifiers';
 import { MessageBody } from './message-body';
 import { MessageHeader } from './message-header';
 
@@ -17,7 +17,7 @@ export const Message: React.FunctionComponent<MessageProps> & {
 } = ({ children, className, color, size, ...props }: MessageProps) => (
   <Element
     {...props}
-    className={cn('message', className, {
+    className={clsx('message', className, {
       [`is-${color}`]: color,
       [`is-${size}`]: size
     })}

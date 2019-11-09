@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Colors, Sizes } from '../../constants';
 import modifiers, { ElementModifier } from '../../modifiers';
@@ -26,7 +26,7 @@ export const Radio: React.FunctionComponent<RadioProps> = ({
   return (
     <label
       data-testid={(Array.isArray(testId) ? testId[0] : testId) || undefined}
-      className={cn('radio-container radio', modifiers.getClassName(rest), className)}
+      className={clsx('radio-container radio', modifiers.getClassName(rest), className)}
       style={style}
     >
       <input
@@ -40,7 +40,7 @@ export const Radio: React.FunctionComponent<RadioProps> = ({
       />
       <span
         data-testid={Array.isArray(testId) ? testId[1] : undefined}
-        className={cn('check', {
+        className={clsx('check', {
           [`is-${color}`]: color,
           [`is-${size}`]: size
         })}

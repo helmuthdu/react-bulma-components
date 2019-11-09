@@ -1,8 +1,8 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Colors } from '../../constants';
-import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
+import modifiers, { ElementModifier } from '../../modifiers';
 
 type HelpProps = ElementModifier & {
   color?: Colors;
@@ -10,7 +10,7 @@ type HelpProps = ElementModifier & {
 
 export const Help: React.FunctionComponent<HelpProps> = ({ className, children, color, ...props }: HelpProps) => (
   <Element
-    className={cn('help', className, {
+    className={clsx('help', className, {
       [`is-${color}`]: color
     })}
     {...props}

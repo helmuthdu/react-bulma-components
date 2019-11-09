@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Sizes } from '../../constants';
 import modifiers, { ElementModifier } from '../../modifiers';
@@ -11,7 +11,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({ children, className
   const props = modifiers.clean(rest);
   return (
     <label
-      className={cn('label', modifiers.getClassName(rest), className, {
+      className={clsx('label', modifiers.getClassName(rest), className, {
         [`is-${size}`]: size
       })}
       {...props}

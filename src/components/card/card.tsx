@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
+import modifiers, { ElementModifier } from '../../modifiers';
 import { CardFooter } from './card-footer';
 import { CardHeader } from './card-header';
 import { CardContent } from './cart-content';
@@ -17,7 +17,7 @@ export const Card: React.FunctionComponent<CardProps> & {
 } = ({ className, children, ...rest }: CardProps) => {
   const props = modifiers.clean(rest);
   return (
-    <Element className={cn('card', className, modifiers.getClassName(rest))} {...props}>
+    <Element className={clsx('card', className, modifiers.getClassName(rest))} {...props}>
       {children}
     </Element>
   );

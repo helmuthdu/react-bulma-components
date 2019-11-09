@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
 type PanelBlockProps = ElementModifier & {
   active?: boolean;
@@ -14,7 +14,7 @@ export const PanelBlock: React.FunctionComponent<PanelBlockProps> = ({
 }: PanelBlockProps) => (
   <Element
     {...props}
-    className={cn('panel-block', className, {
+    className={clsx('panel-block', className, {
       'is-active': active
     })}
   />

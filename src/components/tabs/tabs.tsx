@@ -1,8 +1,8 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Sizes } from '../../constants';
-import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
+import modifiers, { ElementModifier } from '../../modifiers';
 import { Tab } from './tab';
 
 type TabsProps = ElementModifier & {
@@ -16,13 +16,13 @@ export const Tabs: React.FunctionComponent<TabsProps> & {
   Tab: typeof Tab;
 } = ({ children, className, align, size, type, fullwidth, ...props }: TabsProps) => (
   <div
-    className={cn('tabs-container', {
+    className={clsx('tabs-container', {
       'is-fullwidth': fullwidth
     })}
   >
     <Element
       {...props}
-      className={cn('tabs', className, {
+      className={clsx('tabs', className, {
         'is-fullwidth': fullwidth,
         'is-toggle': type === 'toggle-rounded',
         [`is-${align}`]: align,

@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Colors, Sizes } from '../../constants';
 import modifiers, { ElementModifier } from '../../modifiers';
@@ -70,7 +70,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       disabled={disabled}
       onClick={disabled ? undefined : onClick}
       onChange={disabled ? undefined : onChange}
-      className={cn(className, modifiers.getClassName(rest), {
+      className={clsx(className, modifiers.getClassName(rest), {
         'is-fullwidth': fullwidth,
         'is-inverted': inverted,
         'is-loading': loading,

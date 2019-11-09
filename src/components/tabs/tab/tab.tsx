@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
 type TabProps = ElementModifier & {
   active?: boolean;
@@ -10,7 +10,7 @@ type TabProps = ElementModifier & {
 export const Tab: React.FunctionComponent<TabProps> = ({ children, className, style, active, ...props }: TabProps) => (
   <li
     style={style}
-    className={cn(className, {
+    className={clsx(className, {
       'is-active': active
     })}
   >

@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
+import modifiers, { ElementModifier } from '../../modifiers';
 import { FieldBody } from './field-body';
 import { FieldLabel } from './field-label';
 
@@ -26,7 +26,7 @@ export const Field: React.FunctionComponent<FieldProps> & {
   return (
     <Element
       {...props}
-      className={cn('field', className, {
+      className={clsx('field', className, {
         [`${ctx}`]: ctx,
         [`${ctx}-${align}`]: ctx && align,
         [`${ctx}-multiline`]: ctx === 'is-grouped' && multiline,

@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
 type MediaItemProps = ElementModifier & {
   position?: 'center' | 'right' | 'left';
@@ -18,7 +18,7 @@ export const MediaItem: React.FunctionComponent<MediaItemProps> = ({
   return (
     <Element
       {...props}
-      className={cn(className, {
+      className={clsx(className, {
         [`media-${pos}`]: pos
       })}
     >

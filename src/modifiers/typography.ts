@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import cn from 'classnames';
+import clsx from 'clsx';
 
 export type TypographyModifier = {
   textSize?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
@@ -14,7 +14,7 @@ export default {
     italic: false
   },
   getClassName: (props: any) =>
-    cn({
+    clsx({
       [`has-text-${props.textAlignment}`]: props.textAlignment,
       [`has-text-weight-${props.textWeight}`]: props.textWeight,
       [`is-${props.textTransform}`]: props.textTransform,

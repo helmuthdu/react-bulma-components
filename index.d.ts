@@ -198,6 +198,7 @@ export declare const Icon: React.FunctionComponent<IconProps>;
 export declare type ImageProps = ElementModifier & {
 	alt?: string;
 	fallbackSrc?: string;
+	fullWidth?: boolean;
 	rounded?: boolean;
 	size?: Scale;
 	src?: string;
@@ -209,10 +210,8 @@ export declare type NotificationProps = ElementModifier & {
 export declare const Notification: React.FunctionComponent<NotificationProps>;
 export declare type ProgressProps = ElementModifier & {
 	color?: Colors;
-	max?: number;
 	size?: Sizes;
-	value?: number;
-} & Omit<React.ComponentProps<'progress'>, 'color' | 'max' | 'value' | 'unselectable'>;
+} & Omit<React.ComponentProps<'progress'>, 'color' | 'unselectable'>;
 export declare const Progress: React.FunctionComponent<ProgressProps>;
 export declare type TableProps = ElementModifier & {
 	bordered?: boolean;
@@ -426,7 +425,7 @@ export declare type CheckboxProps = ElementModifier & {
 } & Omit<React.ComponentProps<'input'>, 'color' | 'size' | 'unselectable' | 'value'>;
 export declare const Checkbox: React.FunctionComponent<CheckboxProps>;
 export declare type ControlProps = ElementModifier & {
-	fullwidth?: boolean;
+	expanded?: boolean;
 	iconLeft?: boolean;
 	iconRight?: boolean;
 	loading?: boolean;

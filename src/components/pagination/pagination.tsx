@@ -1,9 +1,9 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import ReactPaginate from 'react-paginate';
 import { Sizes } from '../../constants';
-import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
+import modifiers, { ElementModifier } from '../../modifiers';
 
 type PaginationProps = ElementModifier & {
   autoHide?: boolean;
@@ -34,7 +34,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
   ...props
 }: PaginationProps) => (
   <Element
-    className={cn('pagination', className, {
+    className={clsx('pagination', className, {
       [`is-rounded`]: rounded,
       [`is-${size}`]: size,
       [`is-${position}`]: position

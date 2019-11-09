@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
 type MediaContentProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 
@@ -10,7 +10,7 @@ export const MediaContent: React.FunctionComponent<MediaContentProps> = ({
   className,
   ...props
 }: MediaContentProps) => (
-  <Element className={cn('content', className)} {...props}>
+  <Element className={clsx('content', className)} {...props}>
     {children}
   </Element>
 );

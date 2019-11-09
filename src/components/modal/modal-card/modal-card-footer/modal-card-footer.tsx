@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../../modifiers';
 import { Element } from '../../../../elements';
+import modifiers, { ElementModifier } from '../../../../modifiers';
 
 type ModalCardFootProps = ElementModifier & Omit<React.ComponentProps<'footer'>, 'unselectable'>;
 
@@ -10,7 +10,7 @@ export const ModalCardFooter: React.FunctionComponent<ModalCardFootProps> = ({
   className,
   ...props
 }: ModalCardFootProps) => (
-  <Element className={cn('modal-card-foot', className)} {...props}>
+  <Element className={clsx('modal-card-foot', className)} {...props}>
     {children}
   </Element>
 );

@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Sizes } from '../../constants';
 import modifiers, { ElementModifier } from '../../modifiers';
@@ -20,7 +20,7 @@ export const Content: React.FunctionComponent<ContentProps> = ({
   return (
     <Element
       {...props}
-      className={cn('content', className, modifiers.getClassName(rest), {
+      className={clsx('content', className, modifiers.getClassName(rest), {
         [`is-${size}`]: size,
         [`is-${type}`]: type
       })}

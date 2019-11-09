@@ -1,8 +1,8 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Colors } from '../../constants';
-import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
+import modifiers, { ElementModifier } from '../../modifiers';
 
 type TileProps = ElementModifier & {
   color?: Colors;
@@ -23,7 +23,7 @@ export const Tile: React.FunctionComponent<TileProps> = ({
   ...props
 }: TileProps) => (
   <Element
-    className={cn('tile', className, {
+    className={clsx('tile', className, {
       notification,
       'is-vertical': vertical,
       [`is-${color}`]: color,

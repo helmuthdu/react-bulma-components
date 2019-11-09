@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
 type HeroFooterProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 
@@ -10,7 +10,7 @@ export const HeroFoot: React.FunctionComponent<HeroFooterProps> = ({
   className,
   ...props
 }: HeroFooterProps) => (
-  <Element className={cn('hero-foot', className)} {...props}>
+  <Element className={clsx('hero-foot', className)} {...props}>
     {children}
   </Element>
 );

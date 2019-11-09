@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { ShowContext } from '../context';
 
 type NavbarMenuProps = ElementModifier;
@@ -15,7 +15,7 @@ export const NavbarMenu: React.FunctionComponent<NavbarMenuProps> = ({
     {active => (
       <Element
         {...props}
-        className={cn('navbar-menu', className, {
+        className={clsx('navbar-menu', className, {
           'is-active': active
         })}
       >

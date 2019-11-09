@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../../modifiers';
 import { Element } from '../../../../elements';
+import modifiers, { ElementModifier } from '../../../../modifiers';
 
 type ModalCardTitleProps = ElementModifier & Omit<React.ComponentProps<'span'>, 'unselectable'>;
 
@@ -10,7 +10,7 @@ export const ModalCardTitle: React.FunctionComponent<ModalCardTitleProps> = ({
   className,
   ...props
 }: ModalCardTitleProps) => (
-  <Element className={cn('modal-card-title', className)} {...props}>
+  <Element className={clsx('modal-card-title', className)} {...props}>
     {children}
   </Element>
 );

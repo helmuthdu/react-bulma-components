@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../../modifiers';
 import { Element } from '../../../../elements';
+import modifiers, { ElementModifier } from '../../../../modifiers';
 import { MenuList } from '../menu-list';
 
 type MenuListItemProps = ElementModifier & {
@@ -24,7 +24,7 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
     const child: any = React.Children.only(children);
     return (
       <li>
-        <Element className={cn(className, { 'is-active': active })} {...props}>
+        <Element className={clsx(className, { 'is-active': active })} {...props}>
           {child.props.title}
         </Element>
         {React.cloneElement(child, { title: null })}
@@ -33,7 +33,7 @@ export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
   }
   return (
     <li>
-      <Element className={cn(className, { 'is-active': active })} {...props}>
+      <Element className={clsx(className, { 'is-active': active })} {...props}>
         {children}
       </Element>
     </li>

@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import modifiers, { ElementModifier } from '../../modifiers';
 import { Tag } from './tag';
@@ -14,7 +14,7 @@ export const Tags: React.FunctionComponent<TagsProps> & {
   const props = modifiers.clean(rest);
   return (
     <div
-      className={cn('tags', modifiers.getClassName(rest), className, {
+      className={clsx('tags', modifiers.getClassName(rest), className, {
         'has-addons': gapless,
         [`are-${size}`]: size
       })}

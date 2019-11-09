@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { MenuListItem } from './menu-list-item';
 
 const { Fragment } = React;
@@ -15,7 +15,7 @@ export const MenuList: React.FunctionComponent<MenuListProps> & {
 } = ({ className, title, ...props }: MenuListProps) => (
   <Fragment>
     {title && <p className="menu-label">{title}</p>}
-    <Element as="ul" className={cn('menu-list', className)} {...props} />
+    <Element as="ul" className={clsx('menu-list', className)} {...props} />
   </Fragment>
 );
 

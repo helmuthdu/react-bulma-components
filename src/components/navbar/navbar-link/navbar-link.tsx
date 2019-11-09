@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
 type NavbarLinkProps = ElementModifier;
 
@@ -10,7 +10,7 @@ export const NavbarLink: React.FunctionComponent<NavbarLinkProps> = ({
   children,
   ...props
 }: NavbarLinkProps) => (
-  <Element {...props} className={cn('navbar-link', className)}>
+  <Element {...props} className={clsx('navbar-link', className)}>
     {children}
   </Element>
 );

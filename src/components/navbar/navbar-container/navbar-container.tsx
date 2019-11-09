@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
 type NavbarContainerProps = ElementModifier & {
   position?: 'start' | 'end';
@@ -15,7 +15,7 @@ export const NavbarContainer: React.FunctionComponent<NavbarContainerProps> = ({
 }: NavbarContainerProps) => (
   <Element
     {...props}
-    className={cn(
+    className={clsx(
       {
         [`navbar-${position}`]: position
       },

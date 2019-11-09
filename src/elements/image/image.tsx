@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Scale } from '../../constants';
 import modifiers, { ElementModifier } from '../../modifiers';
@@ -34,7 +34,7 @@ export const Image: React.FunctionComponent<ImageProps> = ({
           : `360x${(size as string).replace(/by/, ':')}`
         : '640x360'
     }/ccc/969696`;
-    return (includeFallback ? fallbackSrc || placeholderImage : false) || (src || placeholderImage);
+    return (includeFallback ? fallbackSrc || placeholderImage : false) || src || placeholderImage;
   };
 
   const handleError = () => {
@@ -45,7 +45,7 @@ export const Image: React.FunctionComponent<ImageProps> = ({
   return (
     <Element
       as="figure"
-      className={cn('image', className, {
+      className={clsx('image', className, {
         'is-fullwidth': fullWidth,
         [`is-${Number.isInteger(size as any) ? `${size}x${size}` : size}`]: size
       })}
@@ -57,7 +57,7 @@ export const Image: React.FunctionComponent<ImageProps> = ({
         alt={alt}
         onError={handleError}
         src={getImage()}
-        className={cn({ 'is-rounded': rounded })}
+        className={clsx({ 'is-rounded': rounded })}
       />
     </Element>
   );

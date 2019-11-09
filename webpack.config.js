@@ -5,7 +5,6 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const path = require('path');
 const fs = require('fs');
-const TsDeclarationWebpackPlugin = require('ts-declaration-webpack-plugin');
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
@@ -13,63 +12,24 @@ module.exports = env => {
   process.env.BABEL_ENV = 'production';
   process.env.NODE_ENV = 'production';
 
-  const options =
-    process.env.WEBPACK_ENV === 'INCLUDE_CSS'
-      ? {
-          output: 'full/index',
-          rules: [
-            {
-              test: /\.s?[ca]ss$/,
-              loader: 'style-loader!css-loader!sass-loader'
-            }
-          ]
-        }
-      : {
-          output: 'dist/index',
-          rules: [
-            {
-              test: /\.s?[ca]ss$/,
-              use: [
-                MiniCssExtractPlugin.loader,
-                {
-                  loader: 'css-loader',
-                  options: {
-                    // If you are having trouble with urls not resolving add this setting.
-                    // See https://github.com/webpack-contrib/css-loader#url
-                    sourceMap: true
-                  }
-                },
-                {
-                  loader: 'resolve-url-loader'
-                },
-                {
-                  loader: 'sass-loader',
-                  options: {
-                    sourceMap: true
-                  }
-                }
-              ]
-            }
-          ]
-        };
-
   return {
     devtool: 'source-map',
     entry: './src/index.ts',
     output: {
       path: path.join(__dirname),
-      filename: `${options.output}.js`,
-      sourceMapFilename: `${options.output}.js.map`,
+      filename: 'dist/index.js',
+      sourceMapFilename: 'dist/index.js.map',
       umdNamedDefine: true,
       libraryTarget: 'umd',
       library: 'react-bulma-components',
-      globalObject: process.env.WEBPACK_ENV === 'INCLUDE_CSS' ? 'window' : 'this'
+      globalObject: 'this'
     },
     watchOptions: {
       poll: 250,
       ignored: /node_modules/
     },
     optimization: {
+      minimize: false,
       splitChunks: {
         cacheGroups: {
           styles: {
@@ -97,9 +57,6 @@ module.exports = env => {
       new webpack.LoaderOptionsPlugin({
         minimize: true,
         debug: false
-      }),
-      new TsDeclarationWebpackPlugin({
-        name: 'index.d.ts'
       })
     ].concat(
       process.env.WEBPACK_ENV === 'INCLUDE_CSS'
@@ -180,7 +137,24 @@ module.exports = env => {
           test: /\.(jpg|png|gif)$/,
           loader: 'file-loader?name=images/[name].[ext]'
         },
-        ...options.rules
+        {
+          test: /\.s?[ca]ss$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader'
+            },
+            {
+              loader: 'resolve-url-loader'
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true
+              }
+            }
+          ]
+        }
       ]
     },
     resolve: {

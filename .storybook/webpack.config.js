@@ -10,10 +10,16 @@ module.exports = ({ config }) => {
       rules: [
         {
           test: /\.(ts|tsx)$/,
-          loader: require.resolve('babel-loader'),
-          options: {
-            presets: [['react-app', { flow: false, typescript: true }]]
-          }
+          include: path.resolve(__dirname, '../src'),
+          use: [
+            {
+              loader: require.resolve('babel-loader'),
+              options: {
+                presets: [['react-app', { flow: false, typescript: true }]]
+              }
+            },
+            require.resolve('react-docgen-typescript-loader')
+          ]
         },
         {
           test: /\.s[ca]ss$/,

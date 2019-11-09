@@ -1,8 +1,8 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Breakpoints } from '../../constants';
-import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
+import modifiers, { ElementModifier } from '../../modifiers';
 
 type ContainerProps = ElementModifier & {
   breakpoint?: Breakpoints;
@@ -19,7 +19,7 @@ export const Container: React.FunctionComponent<ContainerProps> = ({
   const props = modifiers.clean(rest);
   return (
     <Element
-      className={cn('container', className, modifiers.getClassName(rest), {
+      className={clsx('container', className, modifiers.getClassName(rest), {
         'is-fluid': fluid,
         [`is-${breakpoint}`]: breakpoint
       })}

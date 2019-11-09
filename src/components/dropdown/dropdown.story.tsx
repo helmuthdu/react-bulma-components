@@ -4,9 +4,9 @@ import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Dropdown, DropdownDivider, DropdownItem } from '.';
 import { Colors } from '../../constants';
-import { ElementModifier } from '../../modifiers';
 import { Container } from '../../layout/container';
 import { Section } from '../../layout/section';
+import { ElementModifier } from '../../modifiers';
 
 type WrapperProps = ElementModifier & { hoverable?: boolean; color?: Colors };
 

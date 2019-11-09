@@ -1,8 +1,8 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Breakpoints } from '../../constants';
-import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
+import modifiers, { ElementModifier } from '../../modifiers';
 import { LevelItem } from './level-item';
 import { LevelSide } from './level-side';
 
@@ -15,7 +15,7 @@ export const Level: React.FunctionComponent<LevelProps> & {
   Side: typeof LevelSide;
 } = ({ children, className, breakpoint, ...props }: LevelProps) => (
   <Element
-    className={cn('level', className, {
+    className={clsx('level', className, {
       [`is-${breakpoint}`]: breakpoint
     })}
     {...props}

@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 import { ElementModifier } from '../../modifiers';
@@ -72,7 +72,7 @@ export const Modal: React.FunctionComponent<ModalProps> & {
   return ReactDOM.createPortal(
     <div
       data-testid={Array.isArray(testId) ? testId[0] : undefined}
-      className={cn('modal', className, { 'is-active': show })}
+      className={clsx('modal', className, { 'is-active': show })}
     >
       <div
         data-testid={Array.isArray(testId) ? testId[2] : undefined}

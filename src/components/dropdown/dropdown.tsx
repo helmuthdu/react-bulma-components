@@ -1,9 +1,9 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Colors } from '../../constants';
-import modifiers, { ElementModifier } from '../../modifiers';
 import { Button } from '../../elements/button';
 import { Icon } from '../../elements/icon';
+import modifiers, { ElementModifier } from '../../modifiers';
 import { DropdownItem } from './dropdown-item';
 
 const { useEffect, useState } = React;
@@ -87,9 +87,9 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
 
   return (
     <div
-      ref={htmlElement}
       data-testid={Array.isArray(testId) ? testId[1] : undefined}
-      className={cn('dropdown', className, modifiers.getClassName(rest), {
+      ref={htmlElement}
+      className={clsx('dropdown', className, modifiers.getClassName(rest), {
         'is-active': open,
         'is-hoverable': hoverable,
         'is-right': right,

@@ -1,8 +1,8 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Breakpoints } from '../constants';
-import modifiers, { ElementModifier } from '../modifiers';
 import { Element } from '../elements';
+import modifiers, { ElementModifier } from '../modifiers';
 import { Column } from './column';
 
 type ColumnsProps = ElementModifier & {
@@ -19,7 +19,7 @@ export const Columns: React.FunctionComponent<ColumnsProps> & {
   const props = modifiers.clean(rest);
   return (
     <Element
-      className={cn('columns', className, modifiers.getClassName(rest), {
+      className={clsx('columns', className, modifiers.getClassName(rest), {
         'is-centered': centered,
         'is-gapless': gapless,
         'is-multiline': multiline,

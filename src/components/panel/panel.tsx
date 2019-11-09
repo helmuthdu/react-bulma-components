@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
+import modifiers, { ElementModifier } from '../../modifiers';
 import { PanelBlock } from './panel-block';
 import { PanelHeading } from './panel-heading';
 import { PanelIcon } from './panel-icon';
@@ -14,7 +14,7 @@ export const Panel: React.FunctionComponent<PanelProps> & {
   PanelHeading: typeof PanelHeading;
   Icon: typeof PanelIcon;
   Tabs: typeof PanelTabs;
-} = ({ className, ...props }: PanelProps) => <Element {...props} className={cn('panel', className)} />;
+} = ({ className, ...props }: PanelProps) => <Element {...props} className={clsx('panel', className)} />;
 
 Panel.Block = PanelBlock;
 Panel.PanelHeading = PanelHeading;

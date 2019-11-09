@@ -1,8 +1,8 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Sizes } from '../../../constants';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
 type FieldLabelProps = ElementModifier & {
   size?: 'normal' | Sizes;
@@ -16,7 +16,7 @@ export const FieldLabel: React.FunctionComponent<FieldLabelProps> = ({
 }: FieldLabelProps) => (
   <Element
     {...props}
-    className={cn('field-label', className, {
+    className={clsx('field-label', className, {
       [`is-${size}`]: size
     })}
   >

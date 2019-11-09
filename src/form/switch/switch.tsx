@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Colors, Sizes } from '../../constants';
 import modifiers, { ElementModifier } from '../../modifiers';
@@ -29,7 +29,7 @@ export const Switch: React.FunctionComponent<SwitchProps> = ({
   return (
     <label
       data-testid={(Array.isArray(testId) ? testId[0] : testId) || undefined}
-      className={cn('switch', modifiers.getClassName(rest), className)}
+      className={clsx('switch', modifiers.getClassName(rest), className)}
       onMouseDown={() => setMouseDown(true)}
       onMouseOut={() => setMouseDown(false)}
       onMouseUp={() => setMouseDown(false)}
@@ -46,7 +46,7 @@ export const Switch: React.FunctionComponent<SwitchProps> = ({
       />
       <span
         data-testid={Array.isArray(testId) ? testId[1] : undefined}
-        className={cn('check', {
+        className={clsx('check', {
           'is-elastic': isMouseDown && !disabled,
           [`is-${color}`]: color,
           [`is-${size}`]: size

@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Colors } from '../../constants';
 import modifiers, { ElementModifier } from '../../modifiers';
@@ -16,7 +16,7 @@ export const Notification: React.FunctionComponent<NotificationProps> = ({
 }: NotificationProps) => (
   <Element
     {...props}
-    className={cn(
+    className={clsx(
       'notification',
       {
         [`is-${color}`]: color

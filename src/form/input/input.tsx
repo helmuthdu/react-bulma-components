@@ -1,8 +1,8 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Colors, Sizes } from '../../constants';
-import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
+import modifiers, { ElementModifier } from '../../modifiers';
 
 type InputProps = ElementModifier & {
   color?: Colors;
@@ -35,7 +35,7 @@ export const Input: React.FunctionComponent<InputProps> = ({
     as="input"
     type={type}
     value={value}
-    className={cn('input', className, {
+    className={clsx('input', className, {
       'is-static': inactive,
       [`is-${color}`]: color,
       [`is-${size}`]: size

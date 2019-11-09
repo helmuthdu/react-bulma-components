@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
+import modifiers, { ElementModifier } from '../../modifiers';
 import { MediaContent } from './media-content';
 import { MediaItem } from './media-item';
 
@@ -11,7 +11,7 @@ export const Media: React.FunctionComponent<MediaProps> & {
   Content: typeof MediaContent;
   Item: typeof MediaItem;
 } = ({ children, className, ...props }: MediaProps) => (
-  <Element className={cn('media', className)} {...props}>
+  <Element className={clsx('media', className)} {...props}>
     {children}
   </Element>
 );

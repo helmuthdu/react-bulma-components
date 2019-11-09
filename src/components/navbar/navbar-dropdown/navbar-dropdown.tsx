@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
 type NavbarDropdownProps = ElementModifier & {
   boxed?: boolean;
@@ -17,7 +17,7 @@ export const NavbarDropdown: React.FunctionComponent<NavbarDropdownProps> = ({
 }: NavbarDropdownProps) => (
   <Element
     {...props}
-    className={cn('navbar-dropdown', className, {
+    className={clsx('navbar-dropdown', className, {
       'is-boxed': boxed,
       'is-right': right
     })}

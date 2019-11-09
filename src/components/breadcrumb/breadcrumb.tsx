@@ -1,8 +1,8 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Sizes } from '../../constants';
-import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
+import modifiers, { ElementModifier } from '../../modifiers';
 
 type BreadcrumbProps = ElementModifier & {
   align?: 'right' | 'center';
@@ -30,7 +30,7 @@ export const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
   const props = modifiers.clean(rest);
   return (
     <nav
-      className={cn('breadcrumb', className, modifiers.getClassName(rest), {
+      className={clsx('breadcrumb', className, modifiers.getClassName(rest), {
         [`has-${separator}-separator`]: separator,
         [`is-${size}`]: size,
         [`is-${align}`]: align
@@ -43,7 +43,7 @@ export const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
             return (
               <li
                 key={item.url}
-                className={cn({
+                className={clsx({
                   'is-active': item.active
                 })}
               >

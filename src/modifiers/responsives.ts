@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import cn from 'classnames';
+import clsx from 'clsx';
 
 type SizeShape = {
   display?: {
@@ -51,7 +51,7 @@ const getSizeClassFromProp = (sizes: { [key: string]: SizeShape }) =>
 export default {
   defaultProps: {},
   getClassName: (props: any) =>
-    cn({
+    clsx({
       ...getSizeClassFromProp(props.responsive || {})
     }),
   clean: ({ responsive, ...props }: ResponsiveModifier) => props

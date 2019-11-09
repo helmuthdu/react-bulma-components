@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
 type NavbarBrandProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 
@@ -10,7 +10,7 @@ export const NavbarBrand: React.FunctionComponent<NavbarBrandProps> = ({
   children,
   ...props
 }: NavbarBrandProps) => (
-  <Element className={cn('navbar-brand', className)} {...props}>
+  <Element className={clsx('navbar-brand', className)} {...props}>
     {children}
   </Element>
 );

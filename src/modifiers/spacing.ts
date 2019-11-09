@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import { Spacing } from '../constants';
 
 export type SpacingModifier = {
@@ -21,7 +21,7 @@ export type SpacingModifier = {
 export default {
   defaultProps: {},
   getClassName: (props: any) =>
-    cn({
+    clsx({
       [`has-padding-${props.padding}`]: props.padding,
       [`has-padding-top-${props.paddingTop}`]: props.paddingTop,
       [`has-padding-left-${props.paddingLeft}`]: props.paddingLeft,

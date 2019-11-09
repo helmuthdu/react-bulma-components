@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
 type ModalCardProps = ElementModifier & {
   onClose?: (...args: any[]) => any;
@@ -13,7 +13,7 @@ export const ModalCard: React.FunctionComponent<ModalCardProps> = ({
   children,
   ...props
 }: ModalCardProps) => (
-  <Element className={cn('modal-card', className)} {...props}>
+  <Element className={clsx('modal-card', className)} {...props}>
     {children}
   </Element>
 );

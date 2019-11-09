@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
 type FieldBodyProps = ElementModifier;
 
@@ -10,7 +10,7 @@ export const FieldBody: React.FunctionComponent<FieldBodyProps> = ({
   className,
   ...props
 }: FieldBodyProps) => (
-  <Element {...props} className={cn('field-body', className)}>
+  <Element {...props} className={clsx('field-body', className)}>
     {children}
   </Element>
 );

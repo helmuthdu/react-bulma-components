@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../../modifiers';
 import { Button, Element } from '../../../../elements';
+import modifiers, { ElementModifier } from '../../../../modifiers';
 
 type ModalCardHeadProps = ElementModifier & {
   onClose?: () => void;
@@ -14,7 +14,7 @@ export const ModalCardHeader: React.FunctionComponent<ModalCardHeadProps> = ({
   testId,
   ...props
 }: ModalCardHeadProps) => (
-  <Element className={cn('modal-card-head', className)} {...props}>
+  <Element className={clsx('modal-card-head', className)} {...props}>
     {children}
     {onClose && <Button data-testid={testId} remove onClick={onClose} />}
   </Element>

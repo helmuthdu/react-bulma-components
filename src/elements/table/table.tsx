@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../element';
@@ -24,14 +24,14 @@ export const Table: React.FunctionComponent<TableProps> = ({
   ...props
 }: TableProps) => (
   <div
-    className={cn('table-container', {
+    className={clsx('table-container', {
       'is-loading': loading
     })}
   >
     <div className="table-wrapper">
       <Element
         as="table"
-        className={cn('table', className, {
+        className={clsx('table', className, {
           'is-bordered': bordered,
           'is-fullwidth': fullwidth,
           'is-hoverable': hoverable,

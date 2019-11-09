@@ -17,8 +17,7 @@ declare const global: any;
 
 describe('Navbar component', () => {
   beforeEach(() => {
-    // eslint-disable-next-line
-    window = new JSDOM('<!doctype html><html><body><div id="app-root"></div></body></html>').window;
+    const window = new JSDOM('<!doctype html><html><body><div id="app-root"></div></body></html>').window;
 
     global.window = window;
     global.document = window.document;

@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 import { ShowContext } from '../context';
 
 type NavbarBurgerProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'unselectable'>;
@@ -19,7 +19,7 @@ export const NavbarBurger: React.FunctionComponent<NavbarBurgerProps> = ({
           role="button"
           tabIndex="0"
           style={{ outline: 'none', ...style }}
-          className={cn('navbar-burger', modifiers.getClassName(rest), className, {
+          className={clsx('navbar-burger', modifiers.getClassName(rest), className, {
             'is-active': active
           })}
           {...props}

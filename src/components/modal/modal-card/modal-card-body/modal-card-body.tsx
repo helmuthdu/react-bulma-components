@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../../modifiers';
 import { Element } from '../../../../elements';
+import modifiers, { ElementModifier } from '../../../../modifiers';
 
 type ModalCardBodyProps = ElementModifier;
 
@@ -10,7 +10,7 @@ export const ModalCardBody: React.FunctionComponent<ModalCardBodyProps> = ({
   className,
   ...props
 }: ModalCardBodyProps) => (
-  <Element {...props} className={cn('modal-card-body', className)}>
+  <Element {...props} className={clsx('modal-card-body', className)}>
     {children}
   </Element>
 );

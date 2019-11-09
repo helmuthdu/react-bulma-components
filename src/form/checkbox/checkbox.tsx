@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Colors, Sizes } from '../../constants';
 import modifiers, { ElementModifier } from '../../modifiers';
@@ -28,7 +28,7 @@ export const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   return (
     <label
       data-testid={(Array.isArray(testId) ? testId[0] : testId) || undefined}
-      className={cn('checkbox-container checkbox', modifiers.getClassName(rest), className)}
+      className={clsx('checkbox-container checkbox', modifiers.getClassName(rest), className)}
       style={style}
     >
       <input
@@ -43,7 +43,7 @@ export const Checkbox: React.FunctionComponent<CheckboxProps> = ({
       />
       <span
         data-testid={Array.isArray(testId) ? testId[1] : undefined}
-        className={cn('check', {
+        className={clsx('check', {
           [`is-${color}`]: color,
           [`is-${size}`]: size
         })}

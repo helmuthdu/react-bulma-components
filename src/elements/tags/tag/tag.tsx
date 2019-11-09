@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Colors } from '../../../constants';
 import modifiers, { ElementModifier } from '../../../modifiers';
@@ -31,7 +31,7 @@ export const Tag: React.FunctionComponent<TagProps> = ({
   <Element
     data-testid={remove ? testId : undefined}
     onClick={() => remove && onClick && onClick()}
-    className={cn('tag', className, {
+    className={clsx('tag', className, {
       'is-delete': remove,
       'is-rounded': rounded,
       [`is-${color}`]: color,
@@ -39,7 +39,7 @@ export const Tag: React.FunctionComponent<TagProps> = ({
     })}
     {...props}
   >
-    {!remove && <span className={cn({ 'has-ellipsis': ellipsis })}>{children}</span>}
+    {!remove && <span className={clsx({ 'has-ellipsis': ellipsis })}>{children}</span>}
     {!remove && close && <button data-testid={testId} onClick={onClick} className="delete is-small" />}
   </Element>
 );

@@ -1,12 +1,12 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
 type PanelHeaderProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'unselectable'>;
 
 export const PanelHeading: React.FunctionComponent<PanelHeaderProps> = ({ className, ...props }: PanelHeaderProps) => (
-  <Element className={cn('panel-heading', className)} {...props} />
+  <Element className={clsx('panel-heading', className)} {...props} />
 );
 
 PanelHeading.defaultProps = {

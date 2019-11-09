@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
 type NavbarItemProps = ElementModifier & {
   active?: boolean;
@@ -23,7 +23,7 @@ export const NavbarItem: React.FunctionComponent<NavbarItemProps> = ({
   return (
     <Element
       as={dropdown && as === 'a' ? 'span' : as}
-      className={cn('navbar-item', className, {
+      className={clsx('navbar-item', className, {
         'has-dropdown': dropdown,
         'has-dropdown-up': dropdownUp,
         'is-active': active,

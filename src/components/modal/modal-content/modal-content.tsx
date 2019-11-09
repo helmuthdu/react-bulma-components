@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
 type ModalContentProps = ElementModifier;
 
@@ -10,7 +10,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   className,
   ...props
 }: ModalContentProps) => (
-  <Element {...props} className={cn('modal-content', className)}>
+  <Element {...props} className={clsx('modal-content', className)}>
     {children}
   </Element>
 );

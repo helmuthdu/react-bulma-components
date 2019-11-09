@@ -1,4 +1,4 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
 import { Colors, Sizes } from '../../constants';
 import modifiers, { ElementModifier } from '../../modifiers';
@@ -6,25 +6,18 @@ import { Element } from '../element';
 
 type ProgressProps = ElementModifier & {
   color?: Colors;
-  max?: number;
   size?: Sizes;
-  value?: number;
-} & Omit<React.ComponentProps<'progress'>, 'color' | 'max' | 'value' | 'unselectable'>;
+} & Omit<React.ComponentProps<'progress'>, 'color' | 'unselectable'>;
 
 export const Progress: React.FunctionComponent<ProgressProps> = ({
   className,
-  value,
-  max,
   color,
   size,
   ...props
 }: ProgressProps) => (
-  // @ts-ignore
   <Element
     as="progress"
-    max={max}
-    value={value}
-    className={cn('progress', className, {
+    className={clsx('progress', className, {
       [`is-${color}`]: color,
       [`is-${size}`]: size
     })}

@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../../elements';
+import modifiers, { ElementModifier } from '../../modifiers';
 
 type LoaderProps = ElementModifier & {
   onClick?: (...args: any[]) => any;
@@ -15,7 +15,7 @@ export const Loader: React.FunctionComponent<LoaderProps> = ({
 }: LoaderProps) => (
   <Element
     {...props}
-    className={cn('loader', className, {
+    className={clsx('loader', className, {
       'is-overlay': overlay
     })}
   >

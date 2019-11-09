@@ -1,7 +1,7 @@
-import cn from 'classnames';
+import clsx from 'clsx';
 import * as React from 'react';
-import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
 type PanelTabsTabProps = ElementModifier & {
   active?: boolean;
@@ -13,7 +13,7 @@ export const PanelTab: React.FunctionComponent<PanelTabsTabProps> = ({
   ...props
 }: PanelTabsTabProps) => (
   <Element
-    className={cn(className, {
+    className={clsx(className, {
       'is-active': active
     })}
     {...props}
