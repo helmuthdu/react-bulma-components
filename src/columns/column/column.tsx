@@ -21,6 +21,7 @@ type ColumnValue =
   | 'three-quarters'
   | 'two-thirds'
   | 'half'
+  | 'full'
   | 'one-third'
   | 'one-quarter'
   | 'one-fifth'
