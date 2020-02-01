@@ -8,6 +8,7 @@ type InputProps = ElementModifier & {
   color?: Colors;
   inactive?: boolean;
   readOnly?: boolean;
+  rounded?: boolean;
   size?: Sizes;
   type?: 'text' | 'email' | 'tel' | 'password' | 'number' | 'search' | 'color' | 'date' | 'time' | 'datetime-local';
   value?: string | number;
@@ -21,6 +22,7 @@ export const Input: React.FunctionComponent<InputProps> = ({
   name,
   placeholder,
   readOnly,
+  rounded,
   size,
   type,
   value,
@@ -37,6 +39,7 @@ export const Input: React.FunctionComponent<InputProps> = ({
     value={value}
     className={clsx('input', className, {
       'is-static': inactive,
+      'is-rounded': rounded,
       [`is-${color}`]: color,
       [`is-${size}`]: size
     })}
