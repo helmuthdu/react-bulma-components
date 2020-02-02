@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Section } from '.';
-import { Heading } from '../../elements/heading';
+import { Title } from '../../elements/title';
 import { Container } from '../container';
 
 storiesOf('Section', module)
@@ -9,38 +9,38 @@ storiesOf('Section', module)
     <div>
       <Section>
         <Container>
-          <Heading>Section</Heading>
-          <Heading subtitle>
+          <Title>Section</Title>
+          <Title subtitle>
             A simple container to divide your page into <strong>sections</strong>, like the one you are currently
             reading
-          </Heading>
+          </Title>
         </Container>
       </Section>
       <Section>
         <Container>
-          <Heading>Section</Heading>
-          <Heading subtitle>
+          <Title>Section</Title>
+          <Title subtitle>
             A simple container to divide your page into <strong>sections</strong>, like the one you are currently
             reading
-          </Heading>
+          </Title>
         </Container>
       </Section>
       <Section>
         <Container>
-          <Heading>Section</Heading>
-          <Heading subtitle>
+          <Title>Section</Title>
+          <Title subtitle>
             A simple container to divide your page into <strong>sections</strong>, like the one you are currently
             reading
-          </Heading>
+          </Title>
         </Container>
       </Section>
       <Section>
         <Container>
-          <Heading>Section</Heading>
-          <Heading subtitle>
+          <Title>Section</Title>
+          <Title subtitle>
             A simple container to divide your page into <strong>sections</strong>, like the one you are currently
             reading
-          </Heading>
+          </Title>
         </Container>
       </Section>
     </div>
@@ -49,29 +49,29 @@ storiesOf('Section', module)
     <div>
       <Section size="medium">
         <Container>
-          <Heading>Section</Heading>
-          <Heading subtitle>
+          <Title>Section</Title>
+          <Title subtitle>
             A simple container to divide your page into <strong>sections</strong>, like the one you are currently
             reading
-          </Heading>
+          </Title>
         </Container>
       </Section>
       <Section size="medium">
         <Container>
-          <Heading>Section</Heading>
-          <Heading subtitle>
+          <Title>Section</Title>
+          <Title subtitle>
             A simple container to divide your page into <strong>sections</strong>, like the one you are currently
             reading
-          </Heading>
+          </Title>
         </Container>
       </Section>
       <Section size="medium">
         <Container>
-          <Heading>Section</Heading>
-          <Heading subtitle>
+          <Title>Section</Title>
+          <Title subtitle>
             A simple container to divide your page into <strong>sections</strong>, like the one you are currently
             reading
-          </Heading>
+          </Title>
         </Container>
       </Section>
     </div>
@@ -80,29 +80,29 @@ storiesOf('Section', module)
     <div>
       <Section size="large">
         <Container>
-          <Heading>Section</Heading>
-          <Heading subtitle>
+          <Title>Section</Title>
+          <Title subtitle>
             A simple container to divide your page into <strong>sections</strong>, like the one you are currently
             reading
-          </Heading>
+          </Title>
         </Container>
       </Section>
       <Section size="large">
         <Container>
-          <Heading>Section</Heading>
-          <Heading subtitle>
+          <Title>Section</Title>
+          <Title subtitle>
             A simple container to divide your page into <strong>sections</strong>, like the one you are currently
             reading
-          </Heading>
+          </Title>
         </Container>
       </Section>
       <Section size="large">
         <Container>
-          <Heading>Section</Heading>
-          <Heading subtitle>
+          <Title>Section</Title>
+          <Title subtitle>
             A simple container to divide your page into <strong>sections</strong>, like the one you are currently
             reading
-          </Heading>
+          </Title>
         </Container>
       </Section>
     </div>

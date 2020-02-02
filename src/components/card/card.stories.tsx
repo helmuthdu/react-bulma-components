@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Card, CardContent, CardFooter, CardFooterItem, CardHeader, CardHeaderTitle, CardImage } from '.';
 import { Content } from '../../elements/content';
-import { Heading } from '../../elements/heading';
+import { Title } from '../../elements/title';
 import { Image } from '../../elements/image';
 import { Media, MediaItem } from '../../layout/media';
 
@@ -17,10 +17,10 @@ storiesOf('Card', module)
             <Image size={64} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
           </MediaItem>
           <MediaItem>
-            <Heading size={4}>John Smith</Heading>
-            <Heading subtitle size={6}>
+            <Title size={4}>John Smith</Title>
+            <Title subtitle size={6}>
               @johnsmith
-            </Heading>
+            </Title>
           </MediaItem>
         </Media>
         <Content>
@@ -43,10 +43,10 @@ storiesOf('Card', module)
             <Image size={64} alt="64x64" src="http://bulma.io/images/placeholders/128x128.png" />
           </MediaItem>
           <MediaItem>
-            <Heading size={4}>John Smith</Heading>
-            <Heading subtitle size={6}>
+            <Title size={4}>John Smith</Title>
+            <Title subtitle size={6}>
               @johnsmith
-            </Heading>
+            </Title>
           </MediaItem>
         </Media>
         <Content>

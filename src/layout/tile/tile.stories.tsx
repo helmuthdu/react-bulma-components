@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Tile } from '.';
 import { Box } from '../../elements/box';
-import { Heading } from '../../elements/heading';
+import { Title } from '../../elements/title';
 import { Image } from '../../elements/image';
 import { Section } from '../section';
 
@@ -14,26 +14,26 @@ storiesOf('Tile', module).add('Default', () => (
           <Tile>
             <Tile context="parent" vertical>
               <Tile as="article" context="child" notification color="primary">
-                <Heading>Vertical...</Heading>
-                <Heading subtitle>Top tile</Heading>
+                <Title>Vertical...</Title>
+                <Title subtitle>Top tile</Title>
               </Tile>
               <Tile as="article" context="child" notification color="warning">
-                <Heading>Tiles...</Heading>
-                <Heading subtitle>Bottom Tile...</Heading>
+                <Title>Tiles...</Title>
+                <Title subtitle>Bottom Tile...</Title>
               </Tile>
             </Tile>
             <Tile context="parent">
               <Tile as="article" context="child" notification color="info">
-                <Heading>Middle Tile...</Heading>
-                <Heading subtitle>With image Tile...</Heading>
+                <Title>Middle Tile...</Title>
+                <Title subtitle>With image Tile...</Title>
                 <Image size="4by3" src="http://bulma.io/images/placeholders/640x480.png" />
               </Tile>
             </Tile>
           </Tile>
           <Tile context="parent">
             <Tile as="article" context="child" notification color="danger">
-              <Heading>Wide tile</Heading>
-              <Heading subtitle>Aligned with the right tile</Heading>
+              <Title>Wide tile</Title>
+              <Title subtitle>Aligned with the right tile</Title>
               <div className="content" />
             </Tile>
           </Tile>
@@ -41,8 +41,8 @@ storiesOf('Tile', module).add('Default', () => (
         <Tile context="parent">
           <Tile as="article" context="child" notification color="success">
             <div className="content">
-              <Heading>Tall tile</Heading>
-              <Heading subtitle>With even more content</Heading>
+              <Title>Tall tile</Title>
+              <Title subtitle>With even more content</Title>
               <div className="content" />
             </div>
           </Tile>

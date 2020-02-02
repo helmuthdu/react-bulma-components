@@ -3,30 +3,29 @@ import * as React from 'react';
 import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../element';
 
-type HeadingProps = ElementModifier & {
-  heading?: boolean;
+type TitleProps = ElementModifier & {
+  title?: boolean;
   size?: 1 | 2 | 3 | 4 | 5 | 6;
   spaced?: boolean;
   subtitle?: boolean;
   weight?: 'light' | 'normal' | 'semibold' | 'bold';
 };
 
-export const Heading: React.FunctionComponent<HeadingProps> = ({
+export const Title: React.FunctionComponent<TitleProps> = ({
   children,
   className,
   size,
   subtitle,
   weight,
   spaced,
-  heading,
+  title,
   ...props
-}: HeadingProps) => (
+}: TitleProps) => (
   <Element
     {...props}
     className={clsx(className, {
-      title: !subtitle && !heading,
-      subtitle,
-      heading,
+      subtitle: subtitle && !title,
+      title: title && !subtitle,
       'is-spaced': spaced && !subtitle,
       [`has-text-weight-${weight}`]: weight,
       [`is-${size}`]: size
@@ -36,9 +35,9 @@ export const Heading: React.FunctionComponent<HeadingProps> = ({
   </Element>
 );
 
-Heading.defaultProps = {
+Title.defaultProps = {
   ...modifiers.defaultProps,
-  heading: false,
+  title: true,
   as: 'h1',
   spaced: false,
   subtitle: false

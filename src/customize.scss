@@ -1,6 +1,8 @@
 @import '~bulma/sass/utilities/initial-variables';
 
 // ADD HERE variables you want to override
+$body-overflow-y: auto;
+
 $primary: #03a9f4 !default;
 $primary-invert: $white !default;
 

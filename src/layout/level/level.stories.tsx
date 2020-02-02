@@ -4,7 +4,7 @@ import { Level, LevelItem, LevelSide } from '.';
 import { Breakpoints } from '../../constants';
 import { Box } from '../../elements/box';
 import { Button } from '../../elements/button';
-import { Heading } from '../../elements/heading';
+import { Title } from '../../elements/title';
 import { Control, Field, Input } from '../../form';
 import { Container } from '../container';
 import { Hero, HeroHead } from '../hero';
@@ -26,9 +26,9 @@ storiesOf('Level', module)
         <Level as="nav">
           <LevelSide align="left">
             <LevelItem>
-              <Heading size={5} subtitle>
+              <Title size={5} subtitle>
                 <strong>123</strong> posts
-              </Heading>
+              </Title>
             </LevelItem>
             <LevelItem>
               <Field context="addons">
@@ -71,34 +71,34 @@ storiesOf('Level', module)
         <Level as="nav">
           <LevelItem style={style}>
             <div>
-              <Heading as="p" heading>
+              <Title as="p" title>
                 Tweets
-              </Heading>
-              <Heading as="p">3,210</Heading>
+              </Title>
+              <Title as="p">3,210</Title>
             </div>
           </LevelItem>
           <LevelItem style={style}>
             <div>
-              <Heading as="p" heading>
+              <Title as="p" title>
                 Following
-              </Heading>
-              <Heading as="p">210</Heading>
+              </Title>
+              <Title as="p">210</Title>
             </div>
           </LevelItem>
           <LevelItem style={style}>
             <div>
-              <Heading as="p" heading>
+              <Title as="p" title>
                 Followers
-              </Heading>
-              <Heading as="p">321</Heading>
+              </Title>
+              <Title as="p">321</Title>
             </div>
           </LevelItem>
           <LevelItem style={style}>
             <div>
-              <Heading as="p" heading>
+              <Title as="p" title>
                 Likes
-              </Heading>
-              <Heading as="p">321K</Heading>
+              </Title>
+              <Title as="p">321K</Title>
             </div>
           </LevelItem>
         </Level>
@@ -106,41 +106,42 @@ storiesOf('Level', module)
     </Section>
   ))
   .add('With breakpoint', () =>
+    // @ts-ignore
     (['mobile'] as Breakpoints[]).map((breakpoint, index) => (
       <Section key={index}>
-        <Heading>{breakpoint || 'Without breakpoint'}</Heading>
+        <Title>{breakpoint || 'Without breakpoint'}</Title>
         <Box>
           <Level as="nav" breakpoint={breakpoint}>
             <LevelItem style={style}>
               <div>
-                <Heading as="p" heading>
+                <Title as="p" title>
                   Tweets
-                </Heading>
-                <Heading as="p">3,210</Heading>
+                </Title>
+                <Title as="p">3,210</Title>
               </div>
             </LevelItem>
             <LevelItem style={style}>
               <div>
-                <Heading as="p" heading>
+                <Title as="p" title>
                   Following
-                </Heading>
-                <Heading as="p">210</Heading>
+                </Title>
+                <Title as="p">210</Title>
               </div>
             </LevelItem>
             <LevelItem style={style}>
               <div>
-                <Heading as="p" heading>
+                <Title as="p" title>
                   Followers
-                </Heading>
-                <Heading as="p">321</Heading>
+                </Title>
+                <Title as="p">321</Title>
               </div>
             </LevelItem>
             <LevelItem style={style}>
               <div>
-                <Heading as="p" heading>
+                <Title as="p" title>
                   Likes
-                </Heading>
-                <Heading as="p">321K</Heading>
+                </Title>
+                <Title as="p">321K</Title>
               </div>
             </LevelItem>
           </Level>

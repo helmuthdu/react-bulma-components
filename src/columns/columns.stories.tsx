@@ -3,7 +3,7 @@ import * as React from 'react';
 import { CSSProperties } from 'react';
 import { Column, Columns } from '.';
 import { Box } from '../elements/box';
-import { Heading } from '../elements/heading';
+import { Title } from '../elements/title';
 import { Container } from '../layout/container';
 import CONSTANTS from './constants';
 
@@ -525,14 +525,14 @@ storiesOf('Columns', module)
       <Columns>
         <Column narrow>
           <Box style={{ width: 200 }}>
-            <Heading size={5}>Narrow column</Heading>
-            <Heading subtitle>This column is only 200px wide.</Heading>
+            <Title size={5}>Narrow column</Title>
+            <Title subtitle>This column is only 200px wide.</Title>
           </Box>
         </Column>
         <Column>
           <Box>
-            <Heading size={5}>Flexible column</Heading>
-            <Heading subtitle>This column will take up the remaining space available.</Heading>
+            <Title size={5}>Flexible column</Title>
+            <Title subtitle>This column will take up the remaining space available.</Title>
           </Box>
         </Column>
       </Columns>
@@ -541,7 +541,7 @@ storiesOf('Columns', module)
   .add('Responsive', () => (
     <Container fluid padding="medium">
       <Box>
-        <Heading size={5}>Mobile</Heading>
+        <Title size={5}>Mobile</Title>
         <Columns breakpoint="mobile">
           <Column>
             <div className="has-background-grey-lighter" style={style}>
@@ -566,7 +566,7 @@ storiesOf('Columns', module)
         </Columns>
       </Box>
       <Box>
-        <Heading size={5}>Tablet</Heading>
+        <Title size={5}>Tablet</Title>
         <Columns breakpoint="tablet">
           <Column>
             <div className="has-background-grey-lighter" style={style}>
@@ -591,7 +591,7 @@ storiesOf('Columns', module)
         </Columns>
       </Box>
       <Box>
-        <Heading size={5}>Desktop</Heading>
+        <Title size={5}>Desktop</Title>
         <Columns breakpoint="desktop">
           <Column>
             <div className="has-background-grey-lighter" style={style}>

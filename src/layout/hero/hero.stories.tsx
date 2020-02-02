@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Hero, HeroBody, HeroFoot, HeroHead } from '.';
-import { Heading } from '../../elements/heading';
+import { Title } from '../../elements/title';
 import { Container } from '../container';
 import { Section } from '../section';
 
@@ -12,10 +12,10 @@ storiesOf('Hero', module)
         <Hero color="primary">
           <HeroBody>
             <Container>
-              <Heading>Hero title Primary</Heading>
-              <Heading subtitle size={3}>
+              <Title>Hero title Primary</Title>
+              <Title subtitle size={3}>
                 Subtitle
-              </Heading>
+              </Title>
             </Container>
           </HeroBody>
         </Hero>
@@ -24,10 +24,10 @@ storiesOf('Hero', module)
         <Hero color="danger">
           <HeroBody>
             <Container>
-              <Heading>Hero title Danger</Heading>
-              <Heading subtitle size={3}>
+              <Title>Hero title Danger</Title>
+              <Title subtitle size={3}>
                 Subtitle
-              </Heading>
+              </Title>
             </Container>
           </HeroBody>
         </Hero>
@@ -36,10 +36,10 @@ storiesOf('Hero', module)
         <Hero color="info">
           <HeroBody>
             <Container>
-              <Heading>Hero title Info</Heading>
-              <Heading subtitle size={3}>
+              <Title>Hero title Info</Title>
+              <Title subtitle size={3}>
                 Subtitle
-              </Heading>
+              </Title>
             </Container>
           </HeroBody>
         </Hero>
@@ -52,10 +52,10 @@ storiesOf('Hero', module)
         <Hero color="primary" gradient>
           <HeroBody>
             <Container>
-              <Heading>Hero title Primary</Heading>
-              <Heading subtitle size={3}>
+              <Title>Hero title Primary</Title>
+              <Title subtitle size={3}>
                 Subtitle
-              </Heading>
+              </Title>
             </Container>
           </HeroBody>
         </Hero>
@@ -64,10 +64,10 @@ storiesOf('Hero', module)
         <Hero color="danger" gradient>
           <HeroBody>
             <Container>
-              <Heading>Hero title Danger</Heading>
-              <Heading subtitle size={3}>
+              <Title>Hero title Danger</Title>
+              <Title subtitle size={3}>
                 Subtitle
-              </Heading>
+              </Title>
             </Container>
           </HeroBody>
         </Hero>
@@ -76,10 +76,10 @@ storiesOf('Hero', module)
         <Hero color="info" gradient>
           <HeroBody>
             <Container>
-              <Heading>Hero title Info</Heading>
-              <Heading subtitle size={3}>
+              <Title>Hero title Info</Title>
+              <Title subtitle size={3}>
                 Subtitle
-              </Heading>
+              </Title>
             </Container>
           </HeroBody>
         </Hero>
