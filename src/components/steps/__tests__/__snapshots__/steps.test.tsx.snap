@@ -5,7 +5,45 @@ exports[`Steps component should render 1`] = `
   <ul
     class="steps"
   >
-    content
+    <li
+      class="step-item"
+    >
+      <div
+        class="step-marker"
+      >
+        1
+      </div>
+    </li>
+    <li
+      class="step-item"
+    >
+      <div
+        class="step-marker"
+      >
+        2
+      </div>
+      <div
+        class="step-details"
+      >
+        <div
+          class="step-title"
+        >
+          Step 2
+        </div>
+        <p>
+          This is the second step. You get here once you have completed the first step.
+        </p>
+      </div>
+    </li>
+    <li
+      class="step-item"
+    >
+      <div
+        class="step-marker"
+      >
+        3
+      </div>
+    </li>
   </ul>
 </DocumentFragment>
 `;

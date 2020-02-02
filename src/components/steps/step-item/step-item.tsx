@@ -9,7 +9,7 @@ type StepsItemProps = React.PropsWithChildren<{
   color?: Colors;
   status?: 'completed' | 'active';
 }>;
-export const StepsItem: React.FunctionComponent<StepsItemProps> = ({
+export const StepItem: React.FunctionComponent<StepsItemProps> = ({
   children,
   className,
   color,
@@ -18,7 +18,7 @@ export const StepsItem: React.FunctionComponent<StepsItemProps> = ({
 }: StepsItemProps) => (
   <Element
     {...props}
-    className={clsx('steps-item', className, {
+    className={clsx('step-item', className, {
       [`is-${color}`]: color,
       [`is-${status}`]: status
     })}>
@@ -26,6 +26,6 @@ export const StepsItem: React.FunctionComponent<StepsItemProps> = ({
   </Element>
 );
 
-StepsItem.defaultProps = {
+StepItem.defaultProps = {
   as: 'li'
 };

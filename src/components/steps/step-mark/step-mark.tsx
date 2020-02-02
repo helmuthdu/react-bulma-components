@@ -6,14 +6,14 @@ type StepsMarkProps = React.PropsWithChildren<{
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
   className?: string;
 }>;
-export const StepsMark: React.FunctionComponent<StepsMarkProps> = ({
+export const StepMark: React.FunctionComponent<StepsMarkProps> = ({
   className,
   children,
   ...props
 }: StepsMarkProps) => (
-  <Element {...props} className={clsx('steps-marker', className)}>
+  <Element {...props} className={clsx('step-marker', className)}>
     {children}
   </Element>
 );
 
-StepsMark.defaultProps = {};
+StepMark.defaultProps = {};
