@@ -4,24 +4,29 @@ import { Colors } from '../../../constants';
 import { Element } from '../../../elements/element';
 
 type StepsItemProps = React.PropsWithChildren<{
+  active?: boolean;
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
   className?: string;
   color?: Colors;
-  status?: 'completed' | 'active';
+  completed?: boolean;
 }>;
+
 export const StepItem: React.FunctionComponent<StepsItemProps> = ({
+  active,
   children,
   className,
   color,
-  status,
+  completed,
   ...props
 }: StepsItemProps) => (
   <Element
     {...props}
     className={clsx('step-item', className, {
-      [`is-${color}`]: color,
-      [`is-${status}`]: status
-    })}>
+      'is-active': active,
+      'is-completed': completed,
+      [`is-${color}`]: color
+    })}
+  >
     {children}
   </Element>
 );

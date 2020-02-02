@@ -5,6 +5,7 @@ import { Element } from '../../../elements/element';
 type StepsDetailProps = React.PropsWithChildren<{
   className?: string;
 }>;
+
 export const StepDetails: React.FunctionComponent<StepsDetailProps> = ({
   className,
   children,

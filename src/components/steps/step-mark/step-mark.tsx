@@ -6,6 +6,7 @@ type StepsMarkProps = React.PropsWithChildren<{
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
   className?: string;
 }>;
+
 export const StepMark: React.FunctionComponent<StepsMarkProps> = ({
   className,
   children,
