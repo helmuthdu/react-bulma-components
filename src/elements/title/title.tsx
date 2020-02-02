@@ -24,7 +24,7 @@ export const Title: React.FunctionComponent<TitleProps> = ({
   <Element
     {...props}
     className={clsx(className, {
-      subtitle: subtitle && !title,
+      subtitle: subtitle,
       title: title && !subtitle,
       'is-spaced': spaced && !subtitle,
       [`has-text-weight-${weight}`]: weight,

@@ -8,4 +8,5 @@ export * from './notification';
 export * from './progress';
 export * from './table';
 export * from './tags';
+export * from './text';
 export * from './title';

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text component should concat classname in props with classname 1`] = `
+<DocumentFragment>
+  <p
+    class="other-class this-is-a-test"
+  />
+</DocumentFragment>
+`;
+
+exports[`Text component should have size 3 and rendered as span 1`] = `
+<DocumentFragment>
+  <span
+    class="is-size-3"
+  >
+    Subtitle
+  </span>
+</DocumentFragment>
+`;
+
+exports[`Text component should render 1`] = `
+<DocumentFragment>
+  <p />
+</DocumentFragment>
+`;
+
+exports[`Text component should use inline styles 1`] = `
+<DocumentFragment>
+  <p
+    style="height: 250px;"
+  />
+</DocumentFragment>
+`;

@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import * as React from 'react';
 import { Title } from '..';
 
-describe('Heading component', () => {
+describe('Title component', () => {
   it('should render', () => {
     const { asFragment } = render(<Title />);
     expect(asFragment()).toMatchSnapshot();
