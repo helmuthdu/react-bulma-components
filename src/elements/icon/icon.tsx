@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { Colors } from '../../constants';
+import { Colors, Greyscale } from '../../constants';
 import modifiers, { ElementModifier } from '../../modifiers';
 
 const iconSizes = {
@@ -21,7 +21,7 @@ const iconSizes = {
 type IconProps = ElementModifier & {
   align?: 'left' | 'right';
   border?: boolean;
-  color?: Colors;
+  color?: Colors | Greyscale;
   icon?: string;
   inactive?: boolean;
   pack?: 'mdi' | 'fas';
