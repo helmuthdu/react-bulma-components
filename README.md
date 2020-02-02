@@ -2,8 +2,6 @@
 
 [![Build Status](https://travis-ci.org/helmuthdu/react-bulma-components.svg?branch=master)](https://travis-ci.org/helmuthdu/react-bulma-components)
 [![Coverage Status](https://coveralls.io/repos/github/helmuthdu/react-bulma-components/badge.svg?branch=master)](https://coveralls.io/github/helmuthdu/react-bulma-components?branch=master)
-[![Release Version](https://img.shields.io/github/release/helmuthdu/react-bulma-components.svg)](https://github.com/helmuthdu/react-bulma-components)
-[![Npm Downloads](https://img.shields.io/npm/dm/react-bulma-components.svg)](https://www.npmjs.com/package/react-bulma-components)
 
 React components for [Bulma](http://bulma.io/) (v0.8.0) UI compatible with most used React Frameworks ([Gatsby](https://www.gatsbyjs.org/), [CRA](https://github.com/facebook/create-react-app), [Next.js](https://nextjs.org/))
 
