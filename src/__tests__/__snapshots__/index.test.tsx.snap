@@ -28,7 +28,6 @@ Object {
   "FieldBody": [Function],
   "FieldLabel": [Function],
   "Footer": [Function],
-  "Heading": [Function],
   "Help": [Function],
   "Hero": [Function],
   "HeroBody": [Function],
@@ -88,5 +87,6 @@ Object {
   "Tags": [Function],
   "Textarea": [Function],
   "Tile": [Function],
+  "Title": [Function],
 }
 `;

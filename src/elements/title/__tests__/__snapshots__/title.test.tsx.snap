@@ -3,7 +3,7 @@
 exports[`Heading component should be a subtitle with size rendered as P 1`] = `
 <DocumentFragment>
   <p
-    class="subtitle is-3"
+    class="is-3"
   >
     Subtitle
   </p>
@@ -13,7 +13,7 @@ exports[`Heading component should be a subtitle with size rendered as P 1`] = `
 exports[`Heading component should be spaced 1`] = `
 <DocumentFragment>
   <p
-    class="is-spaced"
+    class="title is-spaced"
   >
     Subtitle
   </p>
@@ -23,16 +23,14 @@ exports[`Heading component should be spaced 1`] = `
 exports[`Heading component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <h1
-    class="other-class this-is-a-test"
+    class="other-class this-is-a-test title"
   />
 </DocumentFragment>
 `;
 
 exports[`Heading component should not be spaced because is subtitle 1`] = `
 <DocumentFragment>
-  <p
-    class="subtitle"
-  >
+  <p>
     Subtitle
   </p>
 </DocumentFragment>
@@ -40,13 +38,16 @@ exports[`Heading component should not be spaced because is subtitle 1`] = `
 
 exports[`Heading component should render 1`] = `
 <DocumentFragment>
-  <h1 />
+  <h1
+    class="title"
+  />
 </DocumentFragment>
 `;
 
 exports[`Heading component should use inline styles 1`] = `
 <DocumentFragment>
   <h1
+    class="title"
     style="height: 250px;"
   />
 </DocumentFragment>
