@@ -19,9 +19,9 @@ type InputFileProps = ElementModifier & {
   right?: boolean;
   size?: Sizes;
   inputProps?: {
-    accept?: string,
-    capture?: string,
-    multiple?: boolean,
+    accept?: string;
+    capture?: string;
+    multiple?: boolean;
   };
 } & Omit<React.ComponentProps<'input'>, 'color' | 'size' | 'unselectable'>;
 
