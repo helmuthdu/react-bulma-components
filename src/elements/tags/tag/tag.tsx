@@ -8,6 +8,7 @@ type TagProps = ElementModifier & {
   close?: boolean;
   color?: Colors;
   ellipsis?: boolean;
+  light?: boolean;
   onClick?: (...args: any[]) => any;
   remove?: boolean;
   rounded?: boolean;
@@ -20,6 +21,7 @@ export const Tag: React.FunctionComponent<TagProps> = ({
   close,
   color,
   ellipsis,
+  light,
   onClick,
   remove,
   rounded,
@@ -33,6 +35,7 @@ export const Tag: React.FunctionComponent<TagProps> = ({
     onClick={() => remove && onClick && onClick()}
     className={clsx('tag', className, {
       'is-delete': remove,
+      'is-light': light,
       'is-rounded': rounded,
       [`is-${color}`]: color,
       [`is-${size}`]: size

@@ -84,7 +84,7 @@ export declare type ElementModifier = ColorsModifier & HelpersModifier & Respons
 	style?: React.CSSProperties;
 	testId?: string | string[];
 };
-export declare type ColumnValue = Sizes | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 'three-quarters' | 'two-thirds' | 'half' | 'one-third' | 'one-quarter' | 'one-fifth' | 'two-fifths' | 'three-fifths' | 'four-fifths';
+export declare type ColumnValue = Sizes | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 'three-quarters' | 'two-thirds' | 'half' | 'one-third' | 'one-quarter' | 'one-fifth' | 'two-fifths' | 'three-fifths' | 'four-fifths' | 'full';
 export declare type ColumnSize = {
 	narrow?: boolean;
 	offset?: ColumnValue;
@@ -175,18 +175,18 @@ export declare type ContentProps = ElementModifier & {
 export declare const Content: React.FunctionComponent<ContentProps>;
 export declare type ElementProps = ElementModifier;
 export declare const Element: React.FunctionComponent<ElementProps>;
-export declare type HeadingProps = ElementModifier & {
-	heading?: boolean;
+export declare type TitleProps = ElementModifier & {
 	size?: 1 | 2 | 3 | 4 | 5 | 6;
 	spaced?: boolean;
 	subtitle?: boolean;
+	title?: boolean;
 	weight?: 'light' | 'normal' | 'semibold' | 'bold';
 };
-export declare const Heading: React.FunctionComponent<HeadingProps>;
+export declare const Title: React.FunctionComponent<TitleProps>;
 export declare type IconProps = ElementModifier & {
 	align?: 'left' | 'right';
 	border?: boolean;
-	color?: Colors;
+	color?: Colors | Greyscale;
 	icon?: string;
 	inactive?: boolean;
 	pack?: 'mdi' | 'fas';
@@ -226,6 +226,7 @@ export declare type TagProps = ElementModifier & {
 	close?: boolean;
 	color?: Colors;
 	ellipsis?: boolean;
+	light?: boolean;
 	onClick?: (...args: any[]) => any;
 	remove?: boolean;
 	rounded?: boolean;
