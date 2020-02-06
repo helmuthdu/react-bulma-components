@@ -4,25 +4,21 @@ import { Element } from '../../../elements';
 import modifiers, { ElementModifier } from '../../../modifiers';
 import { ShowContext } from '../context';
 
-type NavbarBurgerProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'unselectable'>;
+type NavbarBurgerProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'ref' | 'unselectable'>;
 
-export const NavbarBurger: React.FunctionComponent<NavbarBurgerProps> = ({
-  style,
-  className,
-  ...rest
-}: NavbarBurgerProps) => {
-  const props = modifiers.clean(rest);
-  return (
+export const NavbarBurger = React.forwardRef<HTMLButtonElement, NavbarBurgerProps>(
+  ({ style, className, ...props }, ref) => (
     <ShowContext.Consumer>
       {active => (
         <Element
+          ref={ref}
           role="button"
           tabIndex="0"
           style={{ outline: 'none', ...style }}
-          className={clsx('navbar-burger', modifiers.getClassName(rest), className, {
+          className={clsx('navbar-burger', modifiers.getClassName(props), className, {
             'is-active': active
           })}
-          {...props}
+          {...modifiers.clean(props)}
         >
           <span />
           <span />
@@ -30,8 +26,8 @@ export const NavbarBurger: React.FunctionComponent<NavbarBurgerProps> = ({
         </Element>
       )}
     </ShowContext.Consumer>
-  );
-};
+  )
+);
 
 NavbarBurger.defaultProps = {
   ...modifiers.defaultProps,

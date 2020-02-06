@@ -5,14 +5,12 @@ import modifiers, { ElementModifier } from '../../../modifiers';
 
 type ModalContentProps = ElementModifier;
 
-export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
-  children,
-  className,
-  ...props
-}: ModalContentProps) => (
-  <Element {...props} className={clsx('modal-content', className)}>
-    {children}
-  </Element>
+export const ModalContent = React.forwardRef<HTMLDivElement, ModalContentProps>(
+  ({ children, className, ...props }, ref) => (
+    <Element ref={ref} {...props} className={clsx('modal-content', className)}>
+      {children}
+    </Element>
+  )
 );
 
 ModalContent.defaultProps = {

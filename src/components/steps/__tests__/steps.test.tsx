@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 import * as React from 'react';
 import { StepDetails } from '../step-details';
-import { StepTitle } from '../step-title';
-import { Steps } from '../steps';
 import { StepItem } from '../step-item';
 import { StepMark } from '../step-mark';
+import { StepTitle } from '../step-title';
+import { Steps } from '../steps';
 
 describe('Steps component', () => {
   it('should render', () => {

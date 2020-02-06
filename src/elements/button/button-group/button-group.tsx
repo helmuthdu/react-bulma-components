@@ -10,26 +10,21 @@ type ButtonGroupProps = ElementModifier & {
   size?: Sizes;
 };
 
-export const ButtonGroup: React.FunctionComponent<ButtonGroupProps> = ({
-  children,
-  className,
-  hasAddons,
-  position,
-  size,
-  as,
-  ...props
-}: ButtonGroupProps) => (
-  <Element
-    {...props}
-    as={as}
-    className={clsx('buttons', className, {
-      'has-addons': hasAddons,
-      [`are-${size}`]: size,
-      [`is-${position}`]: position
-    })}
-  >
-    {children}
-  </Element>
+export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
+  ({ children, className, hasAddons, position, size, as, ...props }, ref) => (
+    <Element
+      ref={ref}
+      as={as}
+      className={clsx('buttons', className, {
+        'has-addons': hasAddons,
+        [`are-${size}`]: size,
+        [`is-${position}`]: position
+      })}
+      {...props}
+    >
+      {children}
+    </Element>
+  )
 );
 
 ButtonGroup.defaultProps = {

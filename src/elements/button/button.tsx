@@ -24,75 +24,80 @@ type ButtonProps = ElementModifier & {
   submit?: boolean;
   text?: boolean;
   type?: string;
-} & Omit<React.ComponentProps<'a' | 'button' | 'span'>, 'color' | 'size' | 'unselectable'>;
+} & Omit<React.ComponentProps<'a' | 'button' | 'span'>, 'ref' | 'color' | 'size' | 'unselectable'>;
 
-export const Button: React.FunctionComponent<ButtonProps> = ({
-  children,
-  className,
-  color,
-  disabled,
-  fullwidth,
-  inactive,
-  inverted,
-  link,
-  loading,
-  onClick,
-  onChange,
-  outlined,
-  remove,
-  as,
-  reset,
-  rounded,
-  selected,
-  size,
-  state,
-  submit,
-  text,
-  ...rest
-}: ButtonProps) => {
-  let Element: any = inactive ? 'span' : as;
-  const props = modifiers.clean(rest);
-  const otherProps: any = {};
+export const Button = React.forwardRef<HTMLAnchorElement | HTMLButtonElement | HTMLSpanElement, ButtonProps>(
+  (
+    {
+      children,
+      className,
+      color,
+      disabled,
+      fullwidth,
+      inactive,
+      inverted,
+      link,
+      loading,
+      onClick,
+      onChange,
+      outlined,
+      remove,
+      as,
+      reset,
+      rounded,
+      selected,
+      size,
+      state,
+      submit,
+      text,
+      ...props
+    },
+    ref
+  ) => {
+    let Element: any = inactive ? 'span' : as;
+    const otherProps: any = {};
 
-  if (submit) {
-    Element = 'button';
-    otherProps.type = 'submit';
+    if (submit) {
+      Element = 'button';
+      otherProps.type = 'submit';
+    }
+
+    if (reset) {
+      Element = 'button';
+      otherProps.type = 'reset';
+    }
+
+    return (
+      <Element
+        ref={ref}
+        tabIndex={disabled ? -1 : 0}
+        disabled={disabled}
+        onClick={disabled ? undefined : onClick}
+        onChange={disabled ? undefined : onChange}
+        className={clsx(className, modifiers.getClassName(props), {
+          'is-fullwidth': fullwidth,
+          'is-inverted': inverted,
+          'is-loading': loading,
+          'is-outlined': outlined,
+          'is-rounded': rounded,
+          'is-selected': selected,
+          'is-static': inactive,
+          'is-text': text,
+          'is-link': link,
+          [`is-${color}`]: color,
+          [`is-${size}`]: size,
+          [`is-${state}`]: state,
+          button: !remove,
+          delete: remove
+        })}
+        {...modifiers.clean(props)}
+        {...otherProps}
+      >
+        {children}
+      </Element>
+    );
   }
-
-  if (reset) {
-    Element = 'button';
-    otherProps.type = 'reset';
-  }
-
-  return (
-    <Element
-      tabIndex={disabled ? -1 : 0}
-      disabled={disabled}
-      onClick={disabled ? undefined : onClick}
-      onChange={disabled ? undefined : onChange}
-      className={clsx(className, modifiers.getClassName(rest), {
-        'is-fullwidth': fullwidth,
-        'is-inverted': inverted,
-        'is-loading': loading,
-        'is-outlined': outlined,
-        'is-rounded': rounded,
-        'is-selected': selected,
-        'is-static': inactive,
-        'is-text': text,
-        'is-link': link,
-        [`is-${color}`]: color,
-        [`is-${size}`]: size,
-        [`is-${state}`]: state,
-        button: !remove,
-        delete: remove
-      })}
-      {...props}
-      {...otherProps}
-    >
-      {children}
-    </Element>
-  );
-};
+);
 
 Button.defaultProps = {
   ...modifiers.defaultProps,

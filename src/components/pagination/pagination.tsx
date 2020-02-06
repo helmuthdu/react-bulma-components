@@ -17,49 +17,43 @@ type PaginationProps = ElementModifier & {
   showPrevNext?: boolean;
   size?: Sizes;
   total?: number;
-} & Omit<React.ComponentProps<'nav'>, 'onChange' | 'unselectable'>;
+} & Omit<React.ComponentProps<'nav'>, 'ref' | 'size' | 'onChange' | 'unselectable'>;
 
-export const Pagination: React.FunctionComponent<PaginationProps> = ({
-  className,
-  current,
-  delta,
-  next,
-  onChange,
-  position,
-  previous,
-  rounded,
-  showPrevNext,
-  size,
-  total,
-  ...props
-}: PaginationProps) => (
-  <Element
-    className={clsx('pagination', className, {
-      [`is-rounded`]: rounded,
-      [`is-${size}`]: size,
-      [`is-${position}`]: position
-    })}
-    aria-label="pagination"
-    {...props}
-  >
-    <ReactPaginate
-      activeClassName={'active'}
-      activeLinkClassName={'is-current'}
-      breakLinkClassName={'pagination-ellipsis'}
-      containerClassName={'pagination-list'}
-      forcePage={current}
-      marginPagesDisplayed={2}
-      nextLabel={showPrevNext && next}
-      nextLinkClassName={showPrevNext ? 'pagination-next' : ''}
-      onPageChange={onChange}
-      pageCount={total as number}
-      pageLinkClassName={'pagination-link'}
-      pageRangeDisplayed={delta as number}
-      previousLabel={showPrevNext && previous}
-      previousLinkClassName={showPrevNext ? 'pagination-previous' : ''}
-    />
-  </Element>
+export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
+  (
+    { className, current, delta, next, onChange, position, previous, rounded, showPrevNext, size, total, ...props },
+    ref
+  ) => (
+    <Element
+      ref={ref}
+      className={clsx('pagination', className, {
+        [`is-rounded`]: rounded,
+        [`is-${size}`]: size,
+        [`is-${position}`]: position
+      })}
+      aria-label="pagination"
+      {...props}
+    >
+      <ReactPaginate
+        activeClassName={'active'}
+        activeLinkClassName={'is-current'}
+        breakLinkClassName={'pagination-ellipsis'}
+        containerClassName={'pagination-list'}
+        forcePage={current}
+        marginPagesDisplayed={2}
+        nextLabel={showPrevNext && next}
+        nextLinkClassName={showPrevNext ? 'pagination-next' : ''}
+        onPageChange={onChange}
+        pageCount={total as number}
+        pageLinkClassName={'pagination-link'}
+        pageRangeDisplayed={delta as number}
+        previousLabel={showPrevNext && previous}
+        previousLinkClassName={showPrevNext ? 'pagination-previous' : ''}
+      />
+    </Element>
+  )
 );
+
 Pagination.defaultProps = {
   ...modifiers.defaultProps,
   as: 'nav',

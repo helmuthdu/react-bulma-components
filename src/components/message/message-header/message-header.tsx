@@ -5,14 +5,12 @@ import modifiers, { ElementModifier } from '../../../modifiers';
 
 type MessageHeaderProps = ElementModifier;
 
-export const MessageHeader: React.FunctionComponent<MessageHeaderProps> = ({
-  children,
-  className,
-  ...props
-}: MessageHeaderProps) => (
-  <Element {...props} className={clsx('message-header', className)}>
-    {children}
-  </Element>
+export const MessageHeader = React.forwardRef<HTMLDivElement, MessageHeaderProps>(
+  ({ children, className, ...props }, ref) => (
+    <Element ref={ref} {...props} className={clsx('message-header', className)}>
+      {children}
+    </Element>
+  )
 );
 
 MessageHeader.defaultProps = {

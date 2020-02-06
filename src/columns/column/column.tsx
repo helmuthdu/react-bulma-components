@@ -43,26 +43,16 @@ type ColumnProps = ElementModifier &
     desktop?: ColumnSize;
     widescreen?: ColumnSize;
     fullhd?: ColumnSize;
-  } & Omit<React.ComponentProps<'div'>, 'size' | 'unselectable'>;
+  } & Omit<React.ComponentProps<'div'>, 'ref' | 'size' | 'unselectable'>;
 
-export const Column: React.FunctionComponent<ColumnProps> = ({
-  children,
-  className,
-  desktop,
-  fullhd,
-  mobile,
-  narrow,
-  offset,
-  size,
-  tablet,
-  touch,
-  widescreen,
-  ...rest
-}: ColumnProps) => {
-  const props = modifiers.clean(rest);
-  return (
+export const Column = React.forwardRef<HTMLDivElement, ColumnProps>(
+  (
+    { children, className, desktop, fullhd, mobile, narrow, offset, size, tablet, touch, widescreen, ...props },
+    ref
+  ) => (
     <Element
-      className={clsx('column', className, modifiers.getClassName(rest), {
+      ref={ref}
+      className={clsx('column', className, modifiers.getClassName(props), {
         'is-narrow': narrow,
         [`is-${size}`]: size,
         [`is-offset-${offset}`]: offset,
@@ -103,12 +93,12 @@ export const Column: React.FunctionComponent<ColumnProps> = ({
         // @ts-ignore
         'is-narrow-fullhd': fullhd.narrow
       })}
-      {...props}
+      {...modifiers.clean(props)}
     >
       {children}
     </Element>
-  );
-};
+  )
+);
 
 Column.defaultProps = {
   ...modifiers.defaultProps,

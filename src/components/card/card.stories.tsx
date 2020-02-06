@@ -2,8 +2,8 @@ import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Card, CardContent, CardFooter, CardFooterItem, CardHeader, CardHeaderTitle, CardImage } from '.';
 import { Content } from '../../elements/content';
-import { Title } from '../../elements/title';
 import { Image } from '../../elements/image';
+import { Title } from '../../elements/title';
 import { Media, MediaItem } from '../../layout/media';
 
 storiesOf('Card', module)

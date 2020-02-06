@@ -5,14 +5,12 @@ import modifiers, { ElementModifier } from '../../../modifiers';
 
 type NavbarLinkProps = ElementModifier;
 
-export const NavbarLink: React.FunctionComponent<NavbarLinkProps> = ({
-  className,
-  children,
-  ...props
-}: NavbarLinkProps) => (
-  <Element {...props} className={clsx('navbar-link', className)}>
-    {children}
-  </Element>
+export const NavbarLink = React.forwardRef<HTMLSpanElement, NavbarLinkProps>(
+  ({ className, children, ...props }, ref) => (
+    <Element ref={ref} {...props} className={clsx('navbar-link', className)}>
+      {children}
+    </Element>
+  )
 );
 
 NavbarLink.defaultProps = {

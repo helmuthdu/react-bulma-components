@@ -8,20 +8,18 @@ type FieldLabelProps = ElementModifier & {
   size?: 'normal' | Sizes;
 };
 
-export const FieldLabel: React.FunctionComponent<FieldLabelProps> = ({
-  children,
-  className,
-  size,
-  ...props
-}: FieldLabelProps) => (
-  <Element
-    {...props}
-    className={clsx('field-label', className, {
-      [`is-${size}`]: size
-    })}
-  >
-    {children}
-  </Element>
+export const FieldLabel = React.forwardRef<HTMLElement, FieldLabelProps>(
+  ({ children, className, size = 'normal', ...props }, ref) => (
+    <Element
+      ref={ref}
+      {...props}
+      className={clsx('field-label', className, {
+        [`is-${size}`]: size
+      })}
+    >
+      {children}
+    </Element>
+  )
 );
 
 FieldLabel.defaultProps = {

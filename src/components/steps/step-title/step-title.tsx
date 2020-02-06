@@ -6,14 +6,8 @@ type StepsTitleProps = React.PropsWithChildren<{
   className?: string;
 }>;
 
-export const StepTitle: React.FunctionComponent<StepsTitleProps> = ({
-  className,
-  children,
-  ...props
-}: StepsTitleProps) => (
-  <Element {...props} className={clsx('step-title', className)}>
+export const StepTitle = React.forwardRef<HTMLDivElement, StepsTitleProps>(({ className, children, ...props }, ref) => (
+  <Element ref={ref} {...props} className={clsx('step-title', className)}>
     {children}
   </Element>
-);
-
-StepTitle.defaultProps = {};
+));

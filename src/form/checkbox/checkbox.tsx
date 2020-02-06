@@ -8,41 +8,22 @@ type CheckboxProps = ElementModifier & {
   indeterminate?: boolean;
   size?: Sizes;
   value?: string | number;
-} & Omit<React.ComponentProps<'input'>, 'color' | 'size' | 'unselectable' | 'value'>;
+} & Omit<React.ComponentProps<'input'>, 'ref' | 'color' | 'size' | 'unselectable' | 'value'>;
 
-export const Checkbox: React.FunctionComponent<CheckboxProps> = ({
-  checked,
-  children,
-  className,
-  color,
-  disabled,
-  indeterminate,
-  name,
-  size,
-  style,
-  value,
-  testId,
-  ...rest
-}: CheckboxProps) => {
-  const props = modifiers.clean(rest);
-  return (
-    <label
-      data-testid={(Array.isArray(testId) ? testId[0] : testId) || undefined}
-      className={clsx('checkbox-container checkbox', modifiers.getClassName(rest), className)}
-      style={style}
-    >
+export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
+  ({ checked, children, className, color, disabled, indeterminate, name, size, style, value, ...props }, ref) => (
+    <label className={clsx('checkbox-container checkbox', modifiers.getClassName(props), className)} style={style}>
       <input
-        data-testid={Array.isArray(testId) ? testId[2] : undefined}
+        ref={ref}
         checked={checked}
         disabled={disabled}
         indeterminate={indeterminate}
         name={name}
         type="checkbox"
         value={value}
-        {...props}
+        {...modifiers.clean(props)}
       />
       <span
-        data-testid={Array.isArray(testId) ? testId[1] : undefined}
         className={clsx('check', {
           [`is-${color}`]: color,
           [`is-${size}`]: size
@@ -50,8 +31,8 @@ export const Checkbox: React.FunctionComponent<CheckboxProps> = ({
       />
       <span className="control-label">{children}</span>
     </label>
-  );
-};
+  )
+);
 
 Checkbox.defaultProps = {
   ...modifiers.defaultProps,

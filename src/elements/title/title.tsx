@@ -11,28 +11,22 @@ type TitleProps = ElementModifier & {
   weight?: 'light' | 'normal' | 'semibold' | 'bold';
 };
 
-export const Title: React.FunctionComponent<TitleProps> = ({
-  children,
-  className,
-  size,
-  subtitle,
-  weight,
-  spaced,
-  title,
-  ...props
-}: TitleProps) => (
-  <Element
-    {...props}
-    className={clsx(className, {
-      subtitle: subtitle,
-      title: title && !subtitle,
-      'is-spaced': spaced && !subtitle,
-      [`has-text-weight-${weight}`]: weight,
-      [`is-${size}`]: size
-    })}
-  >
-    {children}
-  </Element>
+export const Title = React.forwardRef<HTMLParagraphElement, TitleProps>(
+  ({ children, className, size, subtitle, weight, spaced, title, ...props }, ref) => (
+    <Element
+      ref={ref}
+      className={clsx(className, {
+        subtitle: subtitle,
+        title: title && !subtitle,
+        'is-spaced': spaced && !subtitle,
+        [`has-text-weight-${weight}`]: weight,
+        [`is-${size}`]: size
+      })}
+      {...props}
+    >
+      {children}
+    </Element>
+  )
 );
 
 Title.defaultProps = {

@@ -9,6 +9,7 @@
     opacity: 0;
   }
 }
+
 .fadeOut {
   animation-name: fadeOut;
 }
@@ -22,6 +23,7 @@
     transform: translate3d(0, 100%, 0);
   }
 }
+
 .fadeOutDown {
   animation-name: fadeOutDown;
 }
@@ -35,6 +37,7 @@
     transform: translate3d(0, -100%, 0);
   }
 }
+
 .fadeOutUp {
   animation-name: fadeOutUp;
 }
@@ -48,6 +51,7 @@
     opacity: 1;
   }
 }
+
 .fadeIn {
   animation-name: fadeIn;
 }
@@ -62,6 +66,7 @@
     transform: none;
   }
 }
+
 .fadeInDown {
   animation-name: fadeInDown;
 }
@@ -76,6 +81,7 @@
     transform: none;
   }
 }
+
 .fadeInUp {
   animation-name: fadeInUp;
 }
@@ -89,6 +95,7 @@
 .fade-leave-active {
   transition: opacity $speed-slow $easing;
 }
+
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
@@ -98,14 +105,17 @@
 .zoom-in-enter-active,
 .zoom-in-leave-active {
   transition: opacity $speed-slow $easing;
+
   .animation-content,
   .animation-content {
     transition: transform $speed-slow $easing;
   }
 }
+
 .zoom-in-enter,
 .zoom-in-leave-active {
   opacity: 0;
+
   .animation-content,
   .animation-content {
     transform: scale(0.95);
@@ -116,14 +126,17 @@
 .zoom-out-enter-active,
 .zoom-out-leave-active {
   transition: opacity $speed-slow $easing;
+
   .animation-content,
   .animation-content {
     transition: transform $speed-slow $easing;
   }
 }
+
 .zoom-out-enter,
 .zoom-out-leave-active {
   opacity: 0;
+
   .animation-content,
   .animation-content {
     transform: scale(1.05);
@@ -137,12 +150,14 @@
 .slide-prev-leave-active {
   transition: transform $speed-slower cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
+
 .slide-prev-leave-to,
 .slide-next-enter {
   transform: translate3d(-100%, 0, 0);
   position: absolute;
   width: 100%;
 }
+
 .slide-prev-enter,
 .slide-next-leave-to {
   transform: translate3d(100%, 0, 0);

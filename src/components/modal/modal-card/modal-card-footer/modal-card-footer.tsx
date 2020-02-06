@@ -3,16 +3,14 @@ import * as React from 'react';
 import { Element } from '../../../../elements';
 import modifiers, { ElementModifier } from '../../../../modifiers';
 
-type ModalCardFootProps = ElementModifier & Omit<React.ComponentProps<'footer'>, 'unselectable'>;
+type ModalCardFootProps = ElementModifier & Omit<React.ComponentProps<'footer'>, 'ref' | 'unselectable'>;
 
-export const ModalCardFooter: React.FunctionComponent<ModalCardFootProps> = ({
-  children,
-  className,
-  ...props
-}: ModalCardFootProps) => (
-  <Element className={clsx('modal-card-foot', className)} {...props}>
-    {children}
-  </Element>
+export const ModalCardFooter = React.forwardRef<HTMLDivElement, ModalCardFootProps>(
+  ({ children, className, ...props }, ref) => (
+    <Element ref={ref} className={clsx('modal-card-foot', className)} {...props}>
+      {children}
+    </Element>
+  )
 );
 
 ModalCardFooter.defaultProps = {

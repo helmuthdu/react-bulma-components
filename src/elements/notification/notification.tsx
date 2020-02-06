@@ -8,24 +8,18 @@ type NotificationProps = ElementModifier & {
   color?: Colors;
 };
 
-export const Notification: React.FunctionComponent<NotificationProps> = ({
-  children,
-  className,
-  color,
-  ...props
-}: NotificationProps) => (
-  <Element
-    {...props}
-    className={clsx(
-      'notification',
-      {
+export const Notification = React.forwardRef<HTMLDivElement, NotificationProps>(
+  ({ children, className, color, ...props }, ref) => (
+    <Element
+      ref={ref}
+      className={clsx('notification', className, {
         [`is-${color}`]: color
-      },
-      className
-    )}
-  >
-    {children}
-  </Element>
+      })}
+      {...props}
+    >
+      {children}
+    </Element>
+  )
 );
 
 Notification.defaultProps = {

@@ -5,22 +5,20 @@ import modifiers, { ElementModifier } from '../../../modifiers';
 
 type LevelSideProps = ElementModifier & {
   align?: 'left' | 'right';
-} & Omit<React.ComponentProps<'div'>, 'unselectable'>;
+} & Omit<React.ComponentProps<'div'>, 'ref' | 'unselectable'>;
 
-export const LevelSide: React.FunctionComponent<LevelSideProps> = ({
-  children,
-  className,
-  align,
-  ...props
-}: LevelSideProps) => (
-  <Element
-    className={clsx(className, {
-      [`level-${align}`]: align
-    })}
-    {...props}
-  >
-    {children}
-  </Element>
+export const LevelSide = React.forwardRef<HTMLDivElement, LevelSideProps>(
+  ({ children, className, align, ...props }, ref) => (
+    <Element
+      ref={ref}
+      className={clsx(className, {
+        [`level-${align}`]: align
+      })}
+      {...props}
+    >
+      {children}
+    </Element>
+  )
 );
 
 LevelSide.defaultProps = {

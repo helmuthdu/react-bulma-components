@@ -7,22 +7,20 @@ import { Element } from '../element';
 type ProgressProps = ElementModifier & {
   color?: Colors;
   size?: Sizes;
-} & Omit<React.ComponentProps<'progress'>, 'color' | 'unselectable'>;
+} & Omit<React.ComponentProps<'progress'>, 'ref' | 'color' | 'unselectable'>;
 
-export const Progress: React.FunctionComponent<ProgressProps> = ({
-  className,
-  color,
-  size,
-  ...props
-}: ProgressProps) => (
-  <Element
-    as="progress"
-    className={clsx('progress', className, {
-      [`is-${color}`]: color,
-      [`is-${size}`]: size
-    })}
-    {...props}
-  />
+export const Progress = React.forwardRef<HTMLProgressElement, ProgressProps>(
+  ({ className, color, size, ...props }, ref) => (
+    <Element
+      ref={ref}
+      as="progress"
+      className={clsx('progress', className, {
+        [`is-${color}`]: color,
+        [`is-${size}`]: size
+      })}
+      {...props}
+    />
+  )
 );
 
 Progress.defaultProps = {

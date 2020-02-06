@@ -5,21 +5,19 @@ import modifiers, { ElementModifier } from '../../modifiers';
 
 type LabelProps = ElementModifier & {
   size?: Sizes;
-} & Omit<React.ComponentProps<'label'>, 'size' | 'unselectable'>;
+} & Omit<React.ComponentProps<'label'>, 'ref' | 'size' | 'unselectable'>;
 
-export const Label: React.FunctionComponent<LabelProps> = ({ children, className, size, ...rest }: LabelProps) => {
-  const props = modifiers.clean(rest);
-  return (
-    <label
-      className={clsx('label', modifiers.getClassName(rest), className, {
-        [`is-${size}`]: size
-      })}
-      {...props}
-    >
-      {children}
-    </label>
-  );
-};
+export const Label = React.forwardRef<HTMLLabelElement, LabelProps>(({ children, className, size, ...props }, ref) => (
+  <label
+    ref={ref}
+    className={clsx('label', modifiers.getClassName(props), className, {
+      [`is-${size}`]: size
+    })}
+    {...modifiers.clean(props)}
+  >
+    {children}
+  </label>
+));
 
 Label.defaultProps = {
   ...modifiers.defaultProps

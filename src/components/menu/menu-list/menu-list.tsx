@@ -2,24 +2,19 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { Element } from '../../../elements';
 import modifiers, { ElementModifier } from '../../../modifiers';
-import { MenuListItem } from './menu-list-item';
 
 const { Fragment } = React;
 
 type MenuListProps = ElementModifier & {
   title?: string;
-} & Omit<React.ComponentProps<'ul'>, 'unselectable'>;
+} & Omit<React.ComponentProps<'ul'>, 'ref' | 'unselectable'>;
 
-export const MenuList: React.FunctionComponent<MenuListProps> & {
-  Item: typeof MenuListItem;
-} = ({ className, title, ...props }: MenuListProps) => (
+export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(({ className, title, ...props }, ref) => (
   <Fragment>
     {title && <p className="menu-label">{title}</p>}
-    <Element as="ul" className={clsx('menu-list', className)} {...props} />
+    <Element ref={ref} as="ul" className={clsx('menu-list', className)} {...props} />
   </Fragment>
-);
-
-MenuList.Item = MenuList;
+));
 
 MenuList.defaultProps = {
   ...modifiers.defaultProps

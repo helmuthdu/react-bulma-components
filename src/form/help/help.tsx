@@ -6,10 +6,11 @@ import modifiers, { ElementModifier } from '../../modifiers';
 
 type HelpProps = ElementModifier & {
   color?: Colors;
-} & Omit<React.ComponentProps<'span'>, 'color' | 'unselectable'>;
+} & Omit<React.ComponentProps<'span'>, 'ref' | 'color' | 'unselectable'>;
 
-export const Help: React.FunctionComponent<HelpProps> = ({ className, children, color, ...props }: HelpProps) => (
+export const Help = React.forwardRef<HTMLSpanElement, HelpProps>(({ className, children, color, ...props }, ref) => (
   <Element
+    ref={ref}
     className={clsx('help', className, {
       [`is-${color}`]: color
     })}
@@ -17,7 +18,7 @@ export const Help: React.FunctionComponent<HelpProps> = ({ className, children, 
   >
     {children}
   </Element>
-);
+));
 
 Help.defaultProps = {
   ...modifiers.defaultProps,

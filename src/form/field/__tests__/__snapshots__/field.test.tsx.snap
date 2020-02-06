@@ -49,7 +49,7 @@ exports[`Field component should render 1`] = `
 exports[`Field component should render 2`] = `
 <DocumentFragment>
   <div
-    class="field-label"
+    class="field-label is-normal"
   />
 </DocumentFragment>
 `;

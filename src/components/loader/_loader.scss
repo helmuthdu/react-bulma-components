@@ -1,33 +1,61 @@
+$loading-background-legacy: #7f7f7f !default;
+$loading-background: rgba(255, 255, 255, 0.5) !default;
+$loading-background-inverted: rgba(0, 0, 0, 0.6) !default;
+$loading-icon-size: 3em !default;
+$loading-full-page-icon-size: 5em !default;
+
 .loader {
-  position: relative;
-  &.is-overlay {
-    @include overlay;
-    display: flex;
+  @include overlay;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 600ms, visibility 600ms;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.is-fullscreen {
     z-index: 999;
     position: fixed;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-    .loader-icon {
+
+    .loading-icon {
       &:after {
-        top: calc(50% - 2.5em);
-        left: calc(50% - 2.5em);
-        width: 5em;
-        height: 5em;
-        position: absolute;
-        border-width: 0.25em;
+        top: calc(50% - #{$loading-full-page-icon-size / 2});
+        left: calc(50% - #{$loading-full-page-icon-size / 2});
+        width: $loading-full-page-icon-size;
+        height: $loading-full-page-icon-size;
       }
     }
   }
+
   .loader-background {
     @include overlay;
-    background: #7f7f7f;
-    background: rgba(255, 255, 255, 0.5);
+    animation-duration: 0.5s;
+    transition: background-color 0.5s linear;
+    background: $loading-background-legacy;
+    background: $loading-background;
+
+    &.is-inverted {
+      background-color: $loading-background-inverted;
+    }
   }
+
   .loader-icon {
+    position: relative;
+
     &:after {
       @include loader;
+      position: absolute;
+      top: calc(50% - #{$loading-icon-size / 2});
+      left: calc(50% - #{$loading-icon-size / 2});
+      width: $loading-icon-size;
+      height: $loading-icon-size;
+      border-width: 0.25em;
     }
   }
 }

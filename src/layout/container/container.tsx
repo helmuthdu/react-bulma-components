@@ -7,28 +7,22 @@ import modifiers, { ElementModifier } from '../../modifiers';
 type ContainerProps = ElementModifier & {
   breakpoint?: Breakpoints;
   fluid?: boolean;
-} & Omit<React.ComponentProps<'div'>, 'unselectable'>;
+} & Omit<React.ComponentProps<'div'>, 'ref' | 'unselectable'>;
 
-export const Container: React.FunctionComponent<ContainerProps> = ({
-  children,
-  fluid,
-  breakpoint,
-  className,
-  ...rest
-}: ContainerProps) => {
-  const props = modifiers.clean(rest);
-  return (
+export const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
+  ({ children, fluid, breakpoint, className, ...props }, ref) => (
     <Element
-      className={clsx('container', className, modifiers.getClassName(rest), {
+      ref={ref}
+      className={clsx('container', className, modifiers.getClassName(props), {
         'is-fluid': fluid,
         [`is-${breakpoint}`]: breakpoint
       })}
-      {...props}
+      {...modifiers.clean(props)}
     >
       {children}
     </Element>
-  );
-};
+  )
+);
 
 Container.defaultProps = {
   ...modifiers.defaultProps,

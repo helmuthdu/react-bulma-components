@@ -10,40 +10,33 @@ type TableProps = ElementModifier & {
   loading?: boolean;
   narrow?: boolean;
   striped?: boolean;
-} & Omit<React.ComponentProps<'table'>, 'unselectable'>;
+} & Omit<React.ComponentProps<'table'>, 'ref' | 'unselectable'>;
 
-export const Table: React.FunctionComponent<TableProps> = ({
-  bordered,
-  children,
-  className,
-  fullwidth,
-  hoverable,
-  loading,
-  narrow,
-  striped,
-  ...props
-}: TableProps) => (
-  <div
-    className={clsx('table-container', {
-      'is-loading': loading
-    })}
-  >
-    <div className="table-wrapper">
-      <Element
-        as="table"
-        className={clsx('table', className, {
-          'is-bordered': bordered,
-          'is-fullwidth': fullwidth,
-          'is-hoverable': hoverable,
-          'is-narrow': narrow,
-          'is-striped': striped
-        })}
-        {...props}
-      >
-        {children}
-      </Element>
+export const Table = React.forwardRef<HTMLTableElement, TableProps>(
+  ({ bordered, children, className, fullwidth, hoverable, loading, narrow, striped, ...props }, ref) => (
+    <div
+      className={clsx('table-container', {
+        'is-loading': loading
+      })}
+    >
+      <div className="table-wrapper">
+        <Element
+          ref={ref}
+          as="table"
+          className={clsx('table', className, {
+            'is-bordered': bordered,
+            'is-fullwidth': fullwidth,
+            'is-hoverable': hoverable,
+            'is-narrow': narrow,
+            'is-striped': striped
+          })}
+          {...props}
+        >
+          {children}
+        </Element>
+      </div>
     </div>
-  </div>
+  )
 );
 
 Table.defaultProps = {

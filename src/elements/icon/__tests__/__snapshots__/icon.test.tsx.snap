@@ -11,15 +11,3 @@ exports[`Icon component should concat classname in props with classname 1`] = `
   </span>
 </DocumentFragment>
 `;
-
-exports[`Icon component should render 1`] = `
-<DocumentFragment>
-  <span
-    class="icon is-normal"
-  >
-    <i
-      class="mdi mdi-bars mdi-24px"
-    />
-  </span>
-</DocumentFragment>
-`;

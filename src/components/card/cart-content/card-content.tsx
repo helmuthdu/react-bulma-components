@@ -5,9 +5,9 @@ import modifiers, { ElementModifier } from '../../../modifiers';
 
 type CardContentProps = ElementModifier;
 
-export const CardContent: React.FunctionComponent<CardContentProps> = ({ className, ...props }: CardContentProps) => (
-  <Element {...props} className={clsx('card-content', className)} />
-);
+export const CardContent = React.forwardRef<HTMLDivElement, CardContentProps>(({ className, ...props }, ref) => (
+  <Element ref={ref} {...props} className={clsx('card-content', className)} />
+));
 
 CardContent.defaultProps = {
   ...modifiers.defaultProps

@@ -7,15 +7,18 @@ type TabProps = ElementModifier & {
   active?: boolean;
 };
 
-export const Tab: React.FunctionComponent<TabProps> = ({ children, className, style, active, ...props }: TabProps) => (
-  <li
-    style={style}
-    className={clsx(className, {
-      'is-active': active
-    })}
-  >
-    <Element {...props}>{children}</Element>
-  </li>
+export const Tab = React.forwardRef<HTMLLIElement, TabProps>(
+  ({ children, className, style, active, ...props }, ref) => (
+    <li
+      ref={ref}
+      style={style}
+      className={clsx(className, {
+        'is-active': active
+      })}
+    >
+      <Element {...props}>{children}</Element>
+    </li>
+  )
 );
 
 Tab.defaultProps = {

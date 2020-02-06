@@ -12,28 +12,22 @@ type ControlProps = ElementModifier & {
   size?: Sizes;
 };
 
-export const Control: React.FunctionComponent<ControlProps> = ({
-  children,
-  className,
-  expanded,
-  iconLeft,
-  iconRight,
-  loading,
-  size,
-  ...props
-}: ControlProps) => (
-  <Element
-    {...props}
-    className={clsx('control', className, {
-      'has-icons-left': iconLeft,
-      'has-icons-right': iconRight,
-      'is-expanded': expanded,
-      'is-loading': loading,
-      [`is-${size}`]: size
-    })}
-  >
-    {children}
-  </Element>
+export const Control = React.forwardRef<HTMLElement, ControlProps>(
+  ({ children, className, expanded, iconLeft, iconRight, loading, size, ...props }, ref) => (
+    <Element
+      ref={ref}
+      {...props}
+      className={clsx('control', className, {
+        'has-icons-left': iconLeft,
+        'has-icons-right': iconRight,
+        'is-expanded': expanded,
+        'is-loading': loading,
+        [`is-${size}`]: size
+      })}
+    >
+      {children}
+    </Element>
+  )
 );
 
 Control.defaultProps = {

@@ -5,14 +5,12 @@ import modifiers, { ElementModifier } from '../../../modifiers';
 
 type MessageBodyProps = ElementModifier;
 
-export const MessageBody: React.FunctionComponent<MessageBodyProps> = ({
-  children,
-  className,
-  ...props
-}: MessageBodyProps) => (
-  <Element {...props} className={clsx('message-body', className)}>
-    {children}
-  </Element>
+export const MessageBody = React.forwardRef<HTMLDivElement, MessageBodyProps>(
+  ({ children, className, ...props }, ref) => (
+    <Element ref={ref} {...props} className={clsx('message-body', className)}>
+      {children}
+    </Element>
+  )
 );
 
 MessageBody.defaultProps = {

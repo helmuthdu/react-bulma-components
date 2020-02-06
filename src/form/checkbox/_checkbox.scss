@@ -7,15 +7,18 @@ $checkbox-checkmark-color: $primary-invert !default;
     display: inline-flex;
     align-items: center;
     @include unselectable;
+
     & + .checkbox {
       margin-left: 0.5em;
     }
+
     input[type='checkbox'] {
       position: absolute;
       left: 0;
       opacity: 0;
       outline: none;
       z-index: -1;
+
       + .check {
         width: 1.25em;
         height: 1.25em;
@@ -24,6 +27,7 @@ $checkbox-checkmark-color: $primary-invert !default;
         border: 2px solid $grey;
         transition: background $speed-slow $easing;
       }
+
       &:checked + .check {
         background: $checkbox-active-background-color url(checkmark($checkbox-checkmark-color)) no-repeat center center;
         border-color: $checkbox-active-background-color;
@@ -36,6 +40,7 @@ $checkbox-checkmark-color: $primary-invert !default;
           }
         }
       }
+
       &:indeterminate + .check {
         background: $checkbox-active-background-color url(indeterminate($checkbox-checkmark-color)) no-repeat center
           center;
@@ -49,10 +54,12 @@ $checkbox-checkmark-color: $primary-invert !default;
           }
         }
       }
+
       &:focus {
         + .check {
           box-shadow: 0 0 0.5em rgba($grey, 0.8);
         }
+
         &:checked + .check {
           box-shadow: 0 0 0.5em rgba($checkbox-active-background-color, 0.8);
           @each $name, $pair in $colors {
@@ -64,12 +71,15 @@ $checkbox-checkmark-color: $primary-invert !default;
         }
       }
     }
+
     .control-label {
       padding-left: 0.5em;
     }
+
     &[disabled] {
       opacity: 0.5;
     }
+
     &:hover {
       input[type='checkbox'] + .check {
         border-color: $checkbox-active-background-color;
@@ -81,12 +91,15 @@ $checkbox-checkmark-color: $primary-invert !default;
         }
       }
     }
+
     &.is-small {
       @include control-small;
     }
+
     &.is-medium {
       @include control-medium;
     }
+
     &.is-large {
       @include control-large;
     }

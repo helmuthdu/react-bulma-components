@@ -3,7 +3,6 @@ import * as React from 'react';
 import { Sizes } from '../../constants';
 import { Element } from '../../elements';
 import modifiers, { ElementModifier } from '../../modifiers';
-import { Tab } from './tab';
 
 type TabsProps = ElementModifier & {
   align?: null | 'centered' | 'right';
@@ -12,30 +11,29 @@ type TabsProps = ElementModifier & {
   type?: 'toggle' | 'boxed' | 'toggle-rounded';
 };
 
-export const Tabs: React.FunctionComponent<TabsProps> & {
-  Tab: typeof Tab;
-} = ({ children, className, align, size, type, fullwidth, ...props }: TabsProps) => (
-  <div
-    className={clsx('tabs-container', {
-      'is-fullwidth': fullwidth
-    })}
-  >
-    <Element
-      {...props}
-      className={clsx('tabs', className, {
-        'is-fullwidth': fullwidth,
-        'is-toggle': type === 'toggle-rounded',
-        [`is-${align}`]: align,
-        [`is-${size}`]: size,
-        [`is-${type}`]: type
+export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
+  ({ children, className, align, size, type, fullwidth, ...props }, ref) => (
+    <div
+      className={clsx('tabs-container', {
+        'is-fullwidth': fullwidth
       })}
     >
-      <ul>{children}</ul>
-    </Element>
-  </div>
+      <Element
+        ref={ref}
+        {...props}
+        className={clsx('tabs', className, {
+          'is-fullwidth': fullwidth,
+          'is-toggle': type === 'toggle-rounded',
+          [`is-${align}`]: align,
+          [`is-${size}`]: size,
+          [`is-${type}`]: type
+        })}
+      >
+        <ul>{children}</ul>
+      </Element>
+    </div>
+  )
 );
-
-Tabs.Tab = Tab;
 
 Tabs.defaultProps = {
   ...modifiers.defaultProps,

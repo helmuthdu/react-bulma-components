@@ -1,40 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Loader component should concat classname in props with classname 1`] = `
-<DocumentFragment>
-  <div
-    class="loader other-class test"
-  >
-    <div
-      class="loader-background"
-    />
-    <div
-      class="loader-icon"
-    />
-  </div>
-</DocumentFragment>
-`;
-
 exports[`Loader component should have custom inline styles 1`] = `
 <DocumentFragment>
   <section
     class="loader"
     style="width: 200px; z-index: 1;"
-  >
-    <div
-      class="loader-background"
-    />
-    <div
-      class="loader-icon"
-    />
-  </section>
-</DocumentFragment>
-`;
-
-exports[`Loader component should render as an html section 1`] = `
-<DocumentFragment>
-  <section
-    class="loader"
   >
     <div
       class="loader-background"

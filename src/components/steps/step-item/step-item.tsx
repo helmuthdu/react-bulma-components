@@ -11,24 +11,20 @@ type StepsItemProps = React.PropsWithChildren<{
   completed?: boolean;
 }>;
 
-export const StepItem: React.FunctionComponent<StepsItemProps> = ({
-  active,
-  children,
-  className,
-  color,
-  completed,
-  ...props
-}: StepsItemProps) => (
-  <Element
-    {...props}
-    className={clsx('step-item', className, {
-      'is-active': active,
-      'is-completed': completed,
-      [`is-${color}`]: color
-    })}
-  >
-    {children}
-  </Element>
+export const StepItem = React.forwardRef<HTMLLIElement, StepsItemProps>(
+  ({ active, children, className, color, completed, ...props }, ref) => (
+    <Element
+      ref={ref}
+      {...props}
+      className={clsx('step-item', className, {
+        'is-active': active,
+        'is-completed': completed,
+        [`is-${color}`]: color
+      })}
+    >
+      {children}
+    </Element>
+  )
 );
 
 StepItem.defaultProps = {

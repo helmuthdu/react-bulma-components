@@ -3,6 +3,7 @@
 .icon {
   @include unselectable;
   cursor: inherit;
+
   svg {
     background-color: transparent;
     fill: currentColor;

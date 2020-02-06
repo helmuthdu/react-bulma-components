@@ -7,23 +7,21 @@ type NavbarContainerProps = ElementModifier & {
   position?: 'start' | 'end';
 };
 
-export const NavbarContainer: React.FunctionComponent<NavbarContainerProps> = ({
-  className,
-  children,
-  position,
-  ...props
-}: NavbarContainerProps) => (
-  <Element
-    {...props}
-    className={clsx(
-      {
-        [`navbar-${position}`]: position
-      },
-      className
-    )}
-  >
-    {children}
-  </Element>
+export const NavbarContainer = React.forwardRef<HTMLDivElement, NavbarContainerProps>(
+  ({ className, children, position, ...props }, ref) => (
+    <Element
+      ref={ref}
+      {...props}
+      className={clsx(
+        {
+          [`navbar-${position}`]: position
+        },
+        className
+      )}
+    >
+      {children}
+    </Element>
+  )
 );
 
 NavbarContainer.defaultProps = {

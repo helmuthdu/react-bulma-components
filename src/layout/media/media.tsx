@@ -2,22 +2,14 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { Element } from '../../elements';
 import modifiers, { ElementModifier } from '../../modifiers';
-import { MediaContent } from './media-content';
-import { MediaItem } from './media-item';
 
-type MediaProps = ElementModifier & Omit<React.ComponentProps<'article'>, 'unselectable'>;
+type MediaProps = ElementModifier & Omit<React.ComponentProps<'article'>, 'ref' | 'unselectable'>;
 
-export const Media: React.FunctionComponent<MediaProps> & {
-  Content: typeof MediaContent;
-  Item: typeof MediaItem;
-} = ({ children, className, ...props }: MediaProps) => (
-  <Element className={clsx('media', className)} {...props}>
+export const Media = React.forwardRef<HTMLDivElement, MediaProps>(({ children, className, ...props }, ref) => (
+  <Element ref={ref} className={clsx('media', className)} {...props}>
     {children}
   </Element>
-);
-
-Media.Content = MediaContent;
-Media.Item = MediaItem;
+));
 
 Media.defaultProps = {
   ...modifiers.defaultProps,

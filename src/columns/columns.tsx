@@ -3,7 +3,6 @@ import * as React from 'react';
 import { Breakpoints } from '../constants';
 import { Element } from '../elements';
 import modifiers, { ElementModifier } from '../modifiers';
-import { Column } from './column';
 
 type ColumnsProps = ElementModifier & {
   breakpoint?: Breakpoints;
@@ -11,27 +10,23 @@ type ColumnsProps = ElementModifier & {
   gapless?: boolean;
   multiline?: boolean;
   vcentered?: boolean;
-} & Omit<React.ComponentProps<'div'>, 'unselectable'>;
+} & Omit<React.ComponentProps<'div'>, 'ref' | 'unselectable'>;
 
-export const Columns: React.FunctionComponent<ColumnsProps> & {
-  Column: typeof Column;
-} = ({ breakpoint, centered, className, gapless, multiline, vcentered, ...rest }: ColumnsProps) => {
-  const props = modifiers.clean(rest);
-  return (
+export const Columns = React.forwardRef<HTMLDivElement, ColumnsProps>(
+  ({ breakpoint, centered, className, gapless, multiline, vcentered, ...props }, ref) => (
     <Element
-      className={clsx('columns', className, modifiers.getClassName(rest), {
+      ref={ref}
+      className={clsx('columns', className, modifiers.getClassName(props), {
         'is-centered': centered,
         'is-gapless': gapless,
         'is-multiline': multiline,
         'is-vcentered': vcentered,
         [`is-${breakpoint}`]: breakpoint
       })}
-      {...props}
+      {...modifiers.clean(props)}
     />
-  );
-};
-
-Columns.Column = Column;
+  )
+);
 
 Columns.defaultProps = {
   ...modifiers.defaultProps,

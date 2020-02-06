@@ -68,10 +68,10 @@ describe('Menu component', () => {
       <Menu>
         <MenuList title="General">
           <MenuListItem>
-            <p>Custom children 1</p>
+            <h1>Custom children 1</h1>
           </MenuListItem>
           <MenuListItem>
-            <a>Custom children 2</a>
+            <span>Custom children 2</span>
           </MenuListItem>
         </MenuList>
       </Menu>

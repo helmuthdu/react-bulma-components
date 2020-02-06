@@ -79,50 +79,48 @@ describe('Dropdown component', () => {
   });
 
   it('should open the Dropdown', () => {
-    const { getByTestId } = render(
-      <Dropdown
-        testId={['dropdown-trigger', 'dropdown-container']}
-        value="value"
-        style={{ width: 400 }}
-        onChange={() => {}}
-      >
+    const { container } = render(
+      <Dropdown value="value" style={{ width: 400 }} onChange={() => {}}>
         <DropdownItem value="value">Item</DropdownItem>
         <DropdownDivider />
         <DropdownItem value="other">Other</DropdownItem>
       </Dropdown>
     );
-    expect(getByTestId('dropdown-container')).not.toHaveClass('is-active');
-    fireEvent.click(getByTestId('dropdown-trigger'));
-    expect(getByTestId('dropdown-container')).toHaveClass('is-active');
+    const dropdown = container.querySelector('.dropdown') as HTMLDivElement;
+    const button = dropdown.querySelector('button') as HTMLButtonElement;
+    expect(dropdown).not.toHaveClass('is-active');
+    fireEvent.click(button);
+    expect(dropdown).toHaveClass('is-active');
   });
 
   it('should select the new value', async () => {
     const onChange = jest.fn();
-    const { getByTestId } = render(
-      <Dropdown testId="dropdown-trigger" hoverable value="" style={{ width: 400 }} onChange={onChange}>
-        <DropdownItem testId="foo" value="value">
-          Foo
-        </DropdownItem>
+    const { container } = render(
+      <Dropdown hoverable value="" style={{ width: 400 }} onChange={onChange}>
+        <DropdownItem value="value">Foo</DropdownItem>
       </Dropdown>
     );
-    fireEvent.mouseOver(getByTestId('dropdown-trigger'));
-    fireEvent.click(getByTestId('foo'));
+    const dropdownItem = container.querySelector('.dropdown-item') as HTMLDivElement;
+    const button = container.querySelector('button') as HTMLButtonElement;
+    fireEvent.mouseOver(button);
+    fireEvent.click(dropdownItem);
     expect(onChange).toHaveBeenCalledWith('value');
   });
 
   it('should select the new value and close the dropdown', async () => {
     const onChange = jest.fn();
-    const { getByTestId } = render(
-      <Dropdown testId={['dropdown-trigger', 'dropdown-container']} value="" style={{ width: 400 }} onChange={onChange}>
-        <DropdownItem testId="foo" value="value">
-          Foo
-        </DropdownItem>
+    const { container } = render(
+      <Dropdown value="" style={{ width: 400 }} onChange={onChange}>
+        <DropdownItem value="value">Foo</DropdownItem>
       </Dropdown>
     );
-    fireEvent.click(getByTestId('dropdown-trigger'));
-    fireEvent.click(getByTestId('foo'));
+    const dropdown = container.querySelector('.dropdown') as HTMLDivElement;
+    const dropdownItem = container.querySelector('.dropdown-item') as HTMLDivElement;
+    const button = container.querySelector('button') as HTMLButtonElement;
+    fireEvent.click(button);
+    fireEvent.click(dropdownItem);
     expect(onChange).toHaveBeenCalledWith('value');
-    expect(getByTestId('dropdown-container')).not.toHaveClass('is-active');
+    expect(dropdown).not.toHaveClass('is-active');
   });
 
   it('should show custom label passed to the label prop', () => {
@@ -144,20 +142,22 @@ describe('Dropdown component', () => {
   });
 
   it('should show custom label when active valued is undefined/empty', () => {
-    const { getByTestId } = render(
-      <Dropdown testId="dropdown-trigger" label="test label" value="">
+    const { container } = render(
+      <Dropdown label="test label" value="">
         <DropdownItem value="value">Item</DropdownItem>
       </Dropdown>
     );
-    expect(getByTestId('dropdown-trigger')).toHaveTextContent('test label');
+    const button = container.querySelector('button') as HTMLButtonElement;
+    expect(button).toHaveTextContent('test label');
   });
 
   it('should show the label of the dropdown item when value of it is the active value', () => {
-    const { getByTestId } = render(
-      <Dropdown testId="dropdown-trigger" label="test label" value="value">
+    const { container } = render(
+      <Dropdown label="test label" value="value">
         <DropdownItem value="value">Bar</DropdownItem>
       </Dropdown>
     );
-    expect(getByTestId('dropdown-trigger')).toHaveTextContent('Bar');
+    const button = container.querySelector('button') as HTMLButtonElement;
+    expect(button).toHaveTextContent('Bar');
   });
 });

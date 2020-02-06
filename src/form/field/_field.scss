@@ -2,15 +2,18 @@
   &.is-grouped {
     .field {
       flex-shrink: 0;
+
       &:not(:last-child) {
         margin-right: 0.75rem;
       }
+
       &.is-expanded {
         flex-grow: 1;
         flex-shrink: 1;
       }
     }
   }
+
   // Nested control addons (for Autocomplete and Datepicker)
   &.has-addons .control {
     &:first-child .control {
@@ -21,6 +24,7 @@
         border-top-left-radius: $input-radius;
       }
     }
+
     &:last-child .control {
       .button,
       .input,
@@ -29,6 +33,7 @@
         border-top-right-radius: $input-radius;
       }
     }
+
     .control {
       .button,
       .input,

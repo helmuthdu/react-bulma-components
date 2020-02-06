@@ -17,7 +17,6 @@ export type ElementModifier = ColorsModifier &
     children?: React.ReactNode;
     as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
     style?: React.CSSProperties;
-    testId?: string | string[];
   };
 
 export default {

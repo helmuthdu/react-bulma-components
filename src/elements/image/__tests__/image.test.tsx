@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, wait } from '@testing-library/react';
 import * as React from 'react';
 import { Image } from '..';
 
@@ -18,18 +18,20 @@ describe('Image component', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should have use default image if error encounter', () => {
-    const { getByTestId } = render(
-      <Image testId="image-img" src="http://mydomain.com/image" fallbackSrc="http://mydomain.com/default" />
-    );
-    fireEvent.error(getByTestId('image-img'));
-    expect(getByTestId('image-img')).toHaveAttribute('src', 'http://mydomain.com/default');
+  it('should have use default image if error encounter', async () => {
+    const { container } = render(<Image src="http://mydomain.com/image" fallbackSrc="http://mydomain.com/default" />);
+    const image = container.querySelector('img') as HTMLImageElement;
+    fireEvent.error(image);
+
+    await wait();
+    expect(image).toHaveAttribute('src', 'http://mydomain.com/default');
   });
 
   it('should update src', async () => {
-    const getComponent = (url: string) => <Image testId="image-img" src={url} />;
-    const { getByTestId, rerender } = render(getComponent('http://mydomain.com/image'));
+    const getComponent = (url: string) => <Image src={url} />;
+    const { container, rerender } = render(getComponent('http://mydomain.com/image'));
     rerender(getComponent('http://mydomain.com/other'));
-    expect(getByTestId('image-img')).toHaveAttribute('src', 'http://mydomain.com/other');
+    const image = container.querySelector('img') as HTMLImageElement;
+    expect(image).toHaveAttribute('src', 'http://mydomain.com/other');
   });
 });

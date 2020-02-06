@@ -7,14 +7,8 @@ type StepsMarkProps = React.PropsWithChildren<{
   className?: string;
 }>;
 
-export const StepMark: React.FunctionComponent<StepsMarkProps> = ({
-  className,
-  children,
-  ...props
-}: StepsMarkProps) => (
-  <Element {...props} className={clsx('step-marker', className)}>
+export const StepMark = React.forwardRef<HTMLDivElement, StepsMarkProps>(({ className, children, ...props }, ref) => (
+  <Element ref={ref} {...props} className={clsx('step-marker', className)}>
     {children}
   </Element>
-);
-
-StepMark.defaultProps = {};
+));

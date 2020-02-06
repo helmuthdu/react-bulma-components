@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
-import { Steps, StepItem, StepMark } from '.';
+import { StepItem, StepMark, Steps } from '.';
 import { StepDetails } from './step-details';
 import { StepTitle } from './step-title';
 

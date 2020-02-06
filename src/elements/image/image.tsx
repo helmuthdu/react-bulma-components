@@ -11,57 +11,44 @@ export type ImageProps = ElementModifier & {
   rounded?: boolean;
   size?: Scale;
   src?: string;
-} & Omit<React.ComponentProps<'figure'>, 'unselectable'>;
+} & Omit<React.ComponentProps<'figure'>, 'ref' | 'size' | 'unselectable'>;
 
-export const Image: React.FunctionComponent<ImageProps> = ({
-  alt,
-  className,
-  fallbackSrc,
-  fullWidth,
-  rounded,
-  size,
-  src,
-  testId,
-  ...props
-}: ImageProps) => {
-  const ref: React.RefObject<HTMLImageElement> = React.createRef();
+export const Image = React.forwardRef<HTMLImageElement, ImageProps>(
+  ({ alt, className, fallbackSrc, fullWidth, rounded, size, src, ...props }, ref) => {
+    if (!ref) {
+      ref = React.createRef<HTMLImageElement>();
+    }
 
-  const getImage = (includeFallback: boolean = false) => {
-    const placeholderImage = `https://dummyimage.com/${
-      size
-        ? Number.isInteger(size as any)
-          ? `${size}x${size}`
-          : `360x${(size as string).replace(/by/, ':')}`
-        : '640x360'
-    }/ccc/969696`;
-    return (includeFallback ? fallbackSrc || placeholderImage : false) || src || placeholderImage;
-  };
+    const getImage = (includeFallback: boolean = false) => {
+      const placeholderImage = `https://dummyimage.com/${
+        size
+          ? Number.isInteger(size as any)
+            ? `${size}x${size}`
+            : `360x${(size as string).replace(/by/, ':')}`
+          : '640x360'
+      }/ccc/969696`;
+      return (includeFallback ? fallbackSrc || placeholderImage : false) || src || placeholderImage;
+    };
 
-  const handleError = () => {
-    // @ts-ignore
-    ref.current.src = getImage(true);
-  };
+    const handleError = () => {
+      // @ts-ignore
+      ref.current.src = getImage(true);
+    };
 
-  return (
-    <Element
-      as="figure"
-      className={clsx('image', className, {
-        'is-fullwidth': fullWidth,
-        [`is-${Number.isInteger(size as any) ? `${size}x${size}` : size}`]: size
-      })}
-      {...props}
-    >
-      <img
-        ref={ref}
-        data-testid={testId}
-        alt={alt}
-        onError={handleError}
-        src={getImage()}
-        className={clsx({ 'is-rounded': rounded })}
-      />
-    </Element>
-  );
-};
+    return (
+      <Element
+        as="figure"
+        className={clsx('image', className, {
+          'is-fullwidth': fullWidth,
+          [`is-${Number.isInteger(size as any) ? `${size}x${size}` : size}`]: size
+        })}
+        {...props}
+      >
+        <img ref={ref} alt={alt} onError={handleError} src={getImage()} className={clsx({ 'is-rounded': rounded })} />
+      </Element>
+    );
+  }
+);
 
 Image.defaultProps = {
   ...modifiers.defaultProps,

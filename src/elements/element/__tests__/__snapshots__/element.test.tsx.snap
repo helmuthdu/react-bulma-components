@@ -1,13 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Element component should render component with different tag 1`] = `
-<DocumentFragment>
-  <p>
-    CustomThis should be a p element
-  </p>
-</DocumentFragment>
-`;
-
 exports[`Element component should render 1`] = `
 <DocumentFragment>
   <div
@@ -15,5 +7,13 @@ exports[`Element component should render 1`] = `
   >
     Facebook
   </div>
+</DocumentFragment>
+`;
+
+exports[`Element component should render component with different tag 1`] = `
+<DocumentFragment>
+  <p>
+    CustomThis should be a p element
+  </p>
 </DocumentFragment>
 `;

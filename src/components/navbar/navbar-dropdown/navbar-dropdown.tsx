@@ -8,22 +8,19 @@ type NavbarDropdownProps = ElementModifier & {
   right?: boolean;
 };
 
-export const NavbarDropdown: React.FunctionComponent<NavbarDropdownProps> = ({
-  className,
-  boxed,
-  right,
-  children,
-  ...props
-}: NavbarDropdownProps) => (
-  <Element
-    {...props}
-    className={clsx('navbar-dropdown', className, {
-      'is-boxed': boxed,
-      'is-right': right
-    })}
-  >
-    {children}
-  </Element>
+export const NavbarDropdown = React.forwardRef<HTMLSpanElement, NavbarDropdownProps>(
+  ({ className, boxed, right, children, ...props }, ref) => (
+    <Element
+      ref={ref}
+      {...props}
+      className={clsx('navbar-dropdown', className, {
+        'is-boxed': boxed,
+        'is-right': right
+      })}
+    >
+      {children}
+    </Element>
+  )
 );
 
 NavbarDropdown.defaultProps = {

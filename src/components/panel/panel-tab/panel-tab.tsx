@@ -5,19 +5,18 @@ import modifiers, { ElementModifier } from '../../../modifiers';
 
 type PanelTabsTabProps = ElementModifier & {
   active?: boolean;
-} & Omit<React.ComponentProps<'a'>, 'unselectable'>;
+} & Omit<React.ComponentProps<'a'>, 'ref' | 'unselectable'>;
 
-export const PanelTab: React.FunctionComponent<PanelTabsTabProps> = ({
-  className,
-  active,
-  ...props
-}: PanelTabsTabProps) => (
-  <Element
-    className={clsx(className, {
-      'is-active': active
-    })}
-    {...props}
-  />
+export const PanelTab = React.forwardRef<HTMLAnchorElement, PanelTabsTabProps>(
+  ({ className, active, ...props }, ref) => (
+    <Element
+      ref={ref}
+      className={clsx(className, {
+        'is-active': active
+      })}
+      {...props}
+    />
+  )
 );
 
 PanelTab.defaultProps = {

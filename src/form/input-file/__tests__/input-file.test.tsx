@@ -16,15 +16,10 @@ describe('Input file component', () => {
 
   it('should call onChange with file data', () => {
     const onChange = jest.fn();
-    const { getByTestId, getByText } = render(
-      <InputFile
-        testId={['file-input', 'file-name']}
-        className="input-file"
-        style={{ width: 400 }}
-        onChange={onChange}
-      />
+    const { container, getByText } = render(
+      <InputFile className="input-file" style={{ width: 400 }} onChange={onChange} />
     );
-    fireEvent.change(getByTestId('file-input'), {
+    fireEvent.change(container.querySelector('input') as HTMLInputElement, {
       target: {
         files: [
           {
@@ -39,20 +34,13 @@ describe('Input file component', () => {
 
   it('should call onChange without file data', () => {
     const onChange = jest.fn();
-    const { getByTestId, container } = render(
-      <InputFile
-        testId={['file-input', 'file-name']}
-        className="input-file"
-        style={{ width: 400 }}
-        onChange={onChange}
-      />
-    );
-    fireEvent.change(getByTestId('file-input'), {
+    const { container } = render(<InputFile className="input-file" style={{ width: 400 }} onChange={onChange} />);
+    fireEvent.change(container.querySelector('input') as HTMLInputElement, {
       target: {
         files: []
       }
     });
-    expect(container.querySelector('[data-testid="file-name"]')).toBeNull();
+    expect(container.querySelector('.file-name')).toBeNull();
     expect(onChange).toHaveBeenCalled();
   });
 

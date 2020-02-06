@@ -1,38 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Input component should be disabled with placeholder and value 1`] = `
-<DocumentFragment>
-  <input
-    class="input"
-    disabled=""
-    placeholder="hello tests"
-    type="text"
-    value="TEST"
-  />
-</DocumentFragment>
-`;
-
-exports[`Input component should be large and readOnly 1`] = `
-<DocumentFragment>
-  <input
-    class="input is-large"
-    readonly=""
-    type="text"
-    value=""
-  />
-</DocumentFragment>
-`;
-
-exports[`Input component should be type email and a with success colors 1`] = `
-<DocumentFragment>
-  <input
-    class="input is-success"
-    type="email"
-    value=""
-  />
-</DocumentFragment>
-`;
-
 exports[`Input component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <input

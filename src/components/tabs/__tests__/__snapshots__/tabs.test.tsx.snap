@@ -1,22 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tabs component should render component with different tag 1`] = `
-<DocumentFragment>
-  <div
-    class="tabs-container"
-  >
-    <li
-      class="tabs"
-    >
-      Custom
-      <ul>
-        This should be a li element
-      </ul>
-    </li>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`Tabs component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <div
@@ -88,6 +71,23 @@ exports[`Tabs component should render as an html section 1`] = `
         This should be a section
       </ul>
     </section>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Tabs component should render component with different tag 1`] = `
+<DocumentFragment>
+  <div
+    class="tabs-container"
+  >
+    <li
+      class="tabs"
+    >
+      Custom
+      <ul>
+        This should be a li element
+      </ul>
+    </li>
   </div>
 </DocumentFragment>
 `;

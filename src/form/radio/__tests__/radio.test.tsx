@@ -3,7 +3,6 @@ import * as React from 'react';
 import { Radio } from '../radio';
 
 describe('Radio component', () => {
-  const testId = ['radio-label', 'radio-check', 'radio-input'];
   let onChange: jest.Mock;
 
   beforeEach(() => {
@@ -20,12 +19,19 @@ describe('Radio component', () => {
   });
 
   it('should concat classname in props with classname', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <Radio onChange={onChange} name="test" className="other-class this-is-a-test">
         Default
       </Radio>
     );
-    expect(asFragment()).toMatchSnapshot();
+    const label = container.querySelector('label') as HTMLLabelElement;
+    expect(label).toHaveClass('other-class', 'this-is-a-test');
+  });
+
+  it('should render unchecked', () => {
+    const { container } = render(<Radio onChange={onChange} />);
+    const input = container.querySelector('input') as HTMLInputElement;
+    expect(input.checked).toEqual(false);
   });
 
   it('should use inline styles', () => {
@@ -38,26 +44,21 @@ describe('Radio component', () => {
   });
 
   it('should be disabled, checked and with value', () => {
-    const { asFragment } = render(
+    const { container } = render(
       <Radio name="test" value="TEST" onChange={onChange} checked disabled>
         Default
       </Radio>
     );
-    expect(asFragment()).toMatchSnapshot();
+    const input = container.querySelector('input') as HTMLInputElement;
+    expect(input.value).toEqual('TEST');
+    expect(input.disabled).toEqual(true);
+    expect(input.checked).toEqual(true);
   });
 
-  it('should set input checked if checked', () => {
-    const { getByTestId } = render(<Radio testId={testId} onChange={onChange} checked />);
-    expect(getByTestId('radio-input')).toHaveAttribute('checked', '');
-  });
-
-  it('should change value on change event', () => {
-    const { getByTestId } = render(
-      <Radio testId={testId} onChange={onChange}>
-        Text
-      </Radio>
-    );
-    fireEvent.click(getByTestId('radio-label'));
+  it('should change value on change event', async () => {
+    const { container } = render(<Radio onChange={onChange}>Text</Radio>);
+    const label = container.querySelector('label') as HTMLLabelElement;
+    fireEvent.click(label);
     expect(onChange).toHaveBeenCalledTimes(1);
   });
 });

@@ -5,14 +5,12 @@ import modifiers, { ElementModifier } from '../../../../modifiers';
 
 type ModalCardBodyProps = ElementModifier;
 
-export const ModalCardBody: React.FunctionComponent<ModalCardBodyProps> = ({
-  children,
-  className,
-  ...props
-}: ModalCardBodyProps) => (
-  <Element {...props} className={clsx('modal-card-body', className)}>
-    {children}
-  </Element>
+export const ModalCardBody = React.forwardRef<HTMLDivElement, ModalCardBodyProps>(
+  ({ children, className, ...props }, ref) => (
+    <Element ref={ref} {...props} className={clsx('modal-card-body', className)}>
+      {children}
+    </Element>
+  )
 );
 
 ModalCardBody.defaultProps = {

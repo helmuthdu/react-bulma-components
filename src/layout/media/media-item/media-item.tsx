@@ -5,27 +5,25 @@ import modifiers, { ElementModifier } from '../../../modifiers';
 
 type MediaItemProps = ElementModifier & {
   position?: 'center' | 'right' | 'left';
-} & Omit<React.ComponentProps<'div'>, 'unselectable'>;
+} & Omit<React.ComponentProps<'div'>, 'ref' | 'unselectable'>;
 
-export const MediaItem: React.FunctionComponent<MediaItemProps> = ({
-  children,
-  className,
-  position,
-  ...props
-}: MediaItemProps) => {
-  const pos = position === 'center' ? 'content' : position;
+export const MediaItem = React.forwardRef<HTMLDivElement, MediaItemProps>(
+  ({ children, className, position, ...props }, ref) => {
+    const pos = position === 'center' ? 'content' : position;
 
-  return (
-    <Element
-      {...props}
-      className={clsx(className, {
-        [`media-${pos}`]: pos
-      })}
-    >
-      {children}
-    </Element>
-  );
-};
+    return (
+      <Element
+        ref={ref}
+        className={clsx(className, {
+          [`media-${pos}`]: pos
+        })}
+        {...props}
+      >
+        {children}
+      </Element>
+    );
+  }
+);
 
 MediaItem.defaultProps = {
   ...modifiers.defaultProps,

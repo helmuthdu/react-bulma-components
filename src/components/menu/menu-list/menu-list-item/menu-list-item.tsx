@@ -8,37 +8,34 @@ type MenuListItemProps = ElementModifier & {
   active?: boolean;
 };
 
-export const MenuListItem: React.FunctionComponent<MenuListItemProps> = ({
-  children,
-  active,
-  className,
-  ...props
-}: MenuListItemProps) => {
-  if (
-    children &&
-    typeof children !== 'string' &&
-    React.Children.toArray(children).length === 1 &&
-    // @ts-ignore
-    React.Children.only(children).type === MenuList
-  ) {
-    const child: any = React.Children.only(children);
+export const MenuListItem = React.forwardRef<HTMLLIElement, MenuListItemProps>(
+  ({ children, active, className, ...props }, ref) => {
+    if (
+      children &&
+      typeof children !== 'string' &&
+      React.Children.toArray(children).length === 1 &&
+      // @ts-ignore
+      React.Children.only(children).type === MenuList
+    ) {
+      const child: any = React.Children.only(children);
+      return (
+        <li>
+          <Element ref={ref} className={clsx(className, { 'is-active': active })} {...props}>
+            {child.props.title}
+          </Element>
+          {React.cloneElement(child, { title: null })}
+        </li>
+      );
+    }
     return (
       <li>
-        <Element className={clsx(className, { 'is-active': active })} {...props}>
-          {child.props.title}
+        <Element ref={ref} className={clsx(className, { 'is-active': active })} {...props}>
+          {children}
         </Element>
-        {React.cloneElement(child, { title: null })}
       </li>
     );
   }
-  return (
-    <li>
-      <Element className={clsx(className, { 'is-active': active })} {...props}>
-        {children}
-      </Element>
-    </li>
-  );
-};
+);
 
 MenuListItem.defaultProps = {
   ...modifiers.defaultProps,

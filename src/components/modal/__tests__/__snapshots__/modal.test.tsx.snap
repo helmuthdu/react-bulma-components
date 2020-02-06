@@ -1,17 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal component should call close the modal on ESC key press 1`] = `<DocumentFragment />`;
-
-exports[`Modal component should close the modal 1`] = `<DocumentFragment />`;
-
-exports[`Modal component should close the modal if clicked on background 1`] = `<DocumentFragment />`;
-
-exports[`Modal component should not close the modal if clicked on background 1`] = `<DocumentFragment />`;
-
-exports[`Modal component should not close the modal on ESC key press 1`] = `<DocumentFragment />`;
-
-exports[`Modal component should not close the modal on other than ESC key press 1`] = `<DocumentFragment />`;
-
 exports[`Modal component should not show close button 1`] = `<DocumentFragment />`;
 
 exports[`Modal component should open the modal 1`] = `null`;

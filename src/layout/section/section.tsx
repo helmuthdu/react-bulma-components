@@ -5,26 +5,21 @@ import modifiers, { ElementModifier } from '../../modifiers';
 
 type SectionProps = ElementModifier & {
   size?: 'medium' | 'large';
-} & Omit<React.ComponentProps<'section'>, 'unselectable'>;
+} & Omit<React.ComponentProps<'section'>, 'ref' | 'size' | 'unselectable'>;
 
-export const Section: React.FunctionComponent<SectionProps> = ({
-  children,
-  className,
-  size,
-  ...rest
-}: SectionProps) => {
-  const props = modifiers.clean(rest);
-  return (
+export const Section = React.forwardRef<HTMLDivElement, SectionProps>(
+  ({ children, className, size, ...props }, ref) => (
     <Element
-      className={clsx('section', className, modifiers.getClassName(rest), {
+      ref={ref}
+      className={clsx('section', className, modifiers.getClassName(props), {
         [`is-${size}`]: size
       })}
-      {...props}
+      {...modifiers.clean(props)}
     >
       {children}
     </Element>
-  );
-};
+  )
+);
 
 Section.defaultProps = {
   ...modifiers.defaultProps,

@@ -5,17 +5,14 @@ import modifiers, { ElementModifier } from '../../../modifiers';
 
 type ModalCardProps = ElementModifier & {
   onClose?: (...args: any[]) => any;
-} & Omit<React.ComponentProps<'div'>, 'unselectable'>;
+} & Omit<React.ComponentProps<'div'>, 'ref' | 'onClose' | 'unselectable'>;
 
-export const ModalCard: React.FunctionComponent<ModalCardProps> = ({
-  className,
-  onClose,
-  children,
-  ...props
-}: ModalCardProps) => (
-  <Element className={clsx('modal-card', className)} {...props}>
-    {children}
-  </Element>
+export const ModalCard = React.forwardRef<HTMLDivElement, ModalCardProps>(
+  ({ className, onClose, children, ...props }, ref) => (
+    <Element ref={ref} className={clsx('modal-card', className)} {...props}>
+      {children}
+    </Element>
+  )
 );
 
 ModalCard.defaultProps = {

@@ -5,15 +5,11 @@ import modifiers, { ElementModifier } from '../../../modifiers';
 
 type FieldBodyProps = ElementModifier;
 
-export const FieldBody: React.FunctionComponent<FieldBodyProps> = ({
-  children,
-  className,
-  ...props
-}: FieldBodyProps) => (
-  <Element {...props} className={clsx('field-body', className)}>
+export const FieldBody = React.forwardRef<HTMLElement, FieldBodyProps>(({ children, className, ...props }, ref) => (
+  <Element ref={ref} {...props} className={clsx('field-body', className)}>
     {children}
   </Element>
-);
+));
 
 FieldBody.defaultProps = {
   ...modifiers.defaultProps

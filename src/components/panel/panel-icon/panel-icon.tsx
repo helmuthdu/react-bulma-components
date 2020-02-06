@@ -5,11 +5,11 @@ import modifiers, { ElementModifier } from '../../../modifiers';
 
 type PanelIconProps = ElementModifier & {
   icon?: string;
-} & Omit<React.ComponentProps<'div'>, 'unselectable'>;
+} & Omit<React.ComponentProps<'div'>, 'ref' | 'unselectable'>;
 
-export const PanelIcon: React.FunctionComponent<PanelIconProps> = ({ className, ...props }: PanelIconProps) => (
-  <Element className={clsx('panel-icon', className)} {...props} />
-);
+export const PanelIcon = React.forwardRef<HTMLSpanElement, PanelIconProps>(({ className, ...props }, ref) => (
+  <Element ref={ref} className={clsx('panel-icon', className)} {...props} />
+));
 
 PanelIcon.defaultProps = {
   ...modifiers.defaultProps,

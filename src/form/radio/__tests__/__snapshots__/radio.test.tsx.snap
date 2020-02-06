@@ -1,51 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Radio component should be disabled, checked and with value 1`] = `
-<DocumentFragment>
-  <label
-    class="radio-container radio"
-  >
-    <input
-      checked=""
-      disabled=""
-      name="test"
-      type="radio"
-      value="TEST"
-    />
-    <span
-      class="check"
-    />
-    <span
-      class="control-label"
-    >
-      Default
-    </span>
-  </label>
-</DocumentFragment>
-`;
-
-exports[`Radio component should concat classname in props with classname 1`] = `
-<DocumentFragment>
-  <label
-    class="radio-container radio other-class this-is-a-test"
-  >
-    <input
-      name="test"
-      type="radio"
-      value=""
-    />
-    <span
-      class="check"
-    />
-    <span
-      class="control-label"
-    >
-      Default
-    </span>
-  </label>
-</DocumentFragment>
-`;
-
 exports[`Radio component should render 1`] = `
 <DocumentFragment>
   <label

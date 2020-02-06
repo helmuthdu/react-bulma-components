@@ -5,9 +5,13 @@ import modifiers, { ElementModifier } from '../../modifiers';
 
 type ElementProps = ElementModifier & React.ComponentProps<JSXElementConstructor<any>>;
 
-export const Element: React.FunctionComponent<ElementProps> = ({ className, as: Component, ...rest }: ElementProps) => (
-  <Component className={clsx(className, modifiers.getClassName(rest)) || undefined} {...modifiers.clean(rest)} />
-);
+export const Element = React.forwardRef<HTMLElement, ElementProps>(({ className, as: Component, ...props }, ref) => (
+  <Component
+    ref={ref}
+    className={clsx(className, modifiers.getClassName(props)) || undefined}
+    {...modifiers.clean(props)}
+  />
+));
 
 Element.defaultProps = {
   ...modifiers.defaultProps,

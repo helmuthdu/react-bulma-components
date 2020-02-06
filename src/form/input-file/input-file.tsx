@@ -23,76 +23,76 @@ type InputFileProps = ElementModifier & {
     capture?: string;
     multiple?: boolean;
   };
-} & Omit<React.ComponentProps<'input'>, 'color' | 'size' | 'unselectable'>;
+} & Omit<React.ComponentProps<'input'>, 'ref' | 'color' | 'size' | 'unselectable'>;
 
-export const InputFile: React.FunctionComponent<InputFileProps> = ({
-  accept,
-  boxed,
-  capture,
-  className,
-  color,
-  fullwidth,
-  hasName,
-  icon,
-  label,
-  multiple,
-  name,
-  onChange,
-  right,
-  size,
-  style,
-  testId,
-  ...props
-}: InputFileProps) => {
-  const [fileName, setFileName] = useState(null);
+export const InputFile = React.forwardRef<HTMLInputElement, InputFileProps>(
+  (
+    {
+      accept,
+      boxed,
+      capture,
+      className,
+      color,
+      fullwidth,
+      hasName,
+      icon,
+      label,
+      multiple,
+      name,
+      onChange,
+      right,
+      size,
+      style,
+      ...props
+    },
+    ref
+  ) => {
+    const [fileName, setFileName] = useState(null);
 
-  const handleSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // @ts-ignore
-    const { files } = event.target;
-    // @ts-ignore
-    setFileName(files.length > 0 ? files[0].name : undefined);
-    if (onChange) {
-      onChange(event);
-    }
-  };
+    const handleSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+      // @ts-ignore
+      const { files } = event.target;
+      // @ts-ignore
+      setFileName(files.length > 0 ? files[0].name : undefined);
+      if (onChange) {
+        onChange(event);
+      }
+    };
 
-  return (
-    <Element
-      style={style}
-      className={clsx('file', className, {
-        'has-name': !hasName,
-        'is-boxed': boxed,
-        'is-fullwidth': fullwidth,
-        'is-right': right,
-        [`is-${color}`]: color,
-        [`is-${size}`]: size
-      })}
-      {...props}
-    >
-      <label className="file-label">
-        <input
-          data-testid={(Array.isArray(testId) ? testId[0] : testId) || undefined}
-          accept={accept}
-          capture={capture}
-          className="file-input"
-          multiple={multiple}
-          name={name}
-          onChange={handleSelect}
-          type="file"
-        />
-        <span className="file-cta">
-          {icon && <span className="file-icon">{icon}</span>}
-          <span className="file-label">{label}</span>
-        </span>
-        {hasName && fileName && (
-          <span data-testid={Array.isArray(testId) ? testId[1] : undefined} className="file-name">
-            {fileName}
+    return (
+      <Element
+        style={style}
+        className={clsx('file', className, {
+          'has-name': !hasName,
+          'is-boxed': boxed,
+          'is-fullwidth': fullwidth,
+          'is-right': right,
+          [`is-${color}`]: color,
+          [`is-${size}`]: size
+        })}
+        {...props}
+      >
+        <label className="file-label">
+          <input
+            ref={ref}
+            accept={accept}
+            capture={capture}
+            className="file-input"
+            multiple={multiple}
+            name={name}
+            onChange={handleSelect}
+            type="file"
+          />
+          <span className="file-cta">
+            {icon && <span className="file-icon">{icon}</span>}
+            <span className="file-label">{label}</span>
           </span>
-        )}
-      </label>
-    </Element>
-  );
-};
+          {hasName && fileName && <span className="file-name">{fileName}</span>}
+        </label>
+      </Element>
+    );
+  }
+);
 
 InputFile.defaultProps = {
   ...modifiers.defaultProps,

@@ -1,31 +1,27 @@
 import clsx from 'clsx';
 import * as React from 'react';
 import modifiers, { ElementModifier } from '../../modifiers';
-import { Tag } from './tag';
+import { Element } from '../element';
 
 type TagsProps = ElementModifier & {
   gapless?: boolean;
   size?: 'medium' | 'large';
-} & Omit<React.ComponentProps<'div'>, 'size' | 'unselectable'>;
+} & Omit<React.ComponentProps<'div'>, 'ref' | 'size' | 'unselectable'>;
 
-export const Tags: React.FunctionComponent<TagsProps> & {
-  Tag: typeof Tag;
-} = ({ children, className, gapless, size, ...rest }: TagsProps) => {
-  const props = modifiers.clean(rest);
-  return (
-    <div
-      className={clsx('tags', modifiers.getClassName(rest), className, {
+export const Tags = React.forwardRef<HTMLDivElement, TagsProps>(
+  ({ children, className, gapless, size, ...props }, ref) => (
+    <Element
+      ref={ref}
+      className={clsx('tags', modifiers.getClassName(props), className, {
         'has-addons': gapless,
         [`are-${size}`]: size
       })}
-      {...props}
+      {...modifiers.clean(props)}
     >
       {children}
-    </div>
-  );
-};
-
-Tags.Tag = Tag;
+    </Element>
+  )
+);
 
 Tags.defaultProps = {
   ...modifiers.defaultProps,

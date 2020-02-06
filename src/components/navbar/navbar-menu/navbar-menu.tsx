@@ -6,23 +6,22 @@ import { ShowContext } from '../context';
 
 type NavbarMenuProps = ElementModifier;
 
-export const NavbarMenu: React.FunctionComponent<NavbarMenuProps> = ({
-  className,
-  children,
-  ...props
-}: NavbarMenuProps) => (
-  <ShowContext.Consumer>
-    {active => (
-      <Element
-        {...props}
-        className={clsx('navbar-menu', className, {
-          'is-active': active
-        })}
-      >
-        {children}
-      </Element>
-    )}
-  </ShowContext.Consumer>
+export const NavbarMenu = React.forwardRef<HTMLDivElement, NavbarMenuProps>(
+  ({ className, children, ...props }, ref) => (
+    <ShowContext.Consumer>
+      {active => (
+        <Element
+          ref={ref}
+          {...props}
+          className={clsx('navbar-menu', className, {
+            'is-active': active
+          })}
+        >
+          {children}
+        </Element>
+      )}
+    </ShowContext.Consumer>
+  )
 );
 
 NavbarMenu.defaultProps = {

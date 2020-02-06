@@ -2,8 +2,8 @@ import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Tile } from '.';
 import { Box } from '../../elements/box';
-import { Title } from '../../elements/title';
 import { Image } from '../../elements/image';
+import { Title } from '../../elements/title';
 import { Section } from '../section';
 
 storiesOf('Tile', module).add('Default', () => (

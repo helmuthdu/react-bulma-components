@@ -15,46 +15,36 @@ type BreadcrumbProps = ElementModifier & {
   as?: 'a' | ((...args: any[]) => any);
   separator?: 'arrow' | 'bullet' | 'dot' | 'succeeds';
   size?: Sizes;
-} & Omit<React.ComponentProps<'a'>, 'unselectable'>;
+} & Omit<React.ComponentProps<'a'>, 'ref' | 'unselectable'>;
 
-export const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
-  className,
-  items,
-  as,
-  hrefAttr,
-  separator,
-  size,
-  align,
-  ...rest
-}: BreadcrumbProps) => {
-  const props = modifiers.clean(rest);
-  return (
+export const Breadcrumb = React.forwardRef<HTMLDivElement, BreadcrumbProps>(
+  ({ className, items, as, hrefAttr, separator, size, align, ...props }, ref) => (
     <nav
-      className={clsx('breadcrumb', className, modifiers.getClassName(rest), {
+      ref={ref}
+      className={clsx('breadcrumb', className, modifiers.getClassName(props), {
         [`has-${separator}-separator`]: separator,
         [`is-${size}`]: size,
         [`is-${align}`]: align
       })}
-      {...props}
+      {...modifiers.clean(props)}
     >
       <ul>
         {items &&
-          items.map((item: any) => {
-            return (
-              <li
-                key={item.url}
-                className={clsx({
-                  'is-active': item.active
-                })}
-              >
-                <Element as={as}>{item.name}</Element>
-              </li>
-            );
-          })}
+          items.map((item: any) => (
+            <li
+              key={item.url}
+              className={clsx({
+                'is-active': item.active
+              })}
+            >
+              <Element as={as}>{item.name}</Element>
+            </li>
+          ))}
       </ul>
     </nav>
-  );
-};
+  )
+);
+
 Breadcrumb.defaultProps = {
   ...modifiers.defaultProps,
   hrefAttr: 'href',

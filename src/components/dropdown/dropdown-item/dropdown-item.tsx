@@ -8,30 +8,26 @@ type DropdownItemProps = ElementModifier & {
   active?: boolean;
   onClick?: (...args: any[]) => void;
   value: any;
-} & Omit<React.ComponentProps<'a'>, 'unselectable'>;
+} & Omit<React.ComponentProps<'a'>, 'ref' | 'unselectable'>;
 
-export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
-  active,
-  as = 'a',
-  children,
-  value,
-  testId,
-  ...props
-}: DropdownItemProps) => (
-  <Element
-    data-testid={testId}
-    as={as}
-    className={clsx('dropdown-item', {
-      'is-active': active
-    })}
-    {...props}
-  >
-    {children}
-  </Element>
+export const DropdownItem = React.forwardRef<HTMLAnchorElement, DropdownItemProps>(
+  ({ active, as, children, value, ...props }, ref) => (
+    <Element
+      ref={ref}
+      as={as}
+      className={clsx('dropdown-item', {
+        'is-active': active
+      })}
+      {...props}
+    >
+      {children}
+    </Element>
+  )
 );
 
 DropdownItem.defaultProps = {
   ...modifiers.defaultProps,
   active: false,
+  as: 'a',
   onClick: () => {}
 };

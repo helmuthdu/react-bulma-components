@@ -8,33 +8,26 @@ type NavbarItemProps = ElementModifier & {
   dropdown?: boolean;
   dropdownUp?: boolean;
   hoverable?: boolean;
-} & Omit<React.ComponentProps<'a'>, 'unselectable'>;
+} & Omit<React.ComponentProps<'a'>, 'ref' | 'unselectable'>;
 
-export const NavbarItem: React.FunctionComponent<NavbarItemProps> = ({
-  className,
-  active,
-  children,
-  dropdown,
-  dropdownUp,
-  hoverable,
-  as,
-  ...props
-}: NavbarItemProps) => {
-  return (
-    <Element
-      as={dropdown && as === 'a' ? 'span' : as}
-      className={clsx('navbar-item', className, {
-        'has-dropdown': dropdown,
-        'has-dropdown-up': dropdownUp,
-        'is-active': active,
-        'is-hoverable': hoverable
-      })}
-      {...props}
-    >
-      {children}
-    </Element>
-  );
-};
+export const NavbarItem = React.forwardRef<HTMLAnchorElement, NavbarItemProps>(
+  ({ className, active, children, dropdown, dropdownUp, hoverable, as, ...props }, ref) => {
+    return (
+      <Element
+        as={dropdown && as === 'a' ? 'span' : as}
+        className={clsx('navbar-item', className, {
+          'has-dropdown': dropdown,
+          'has-dropdown-up': dropdownUp,
+          'is-active': active,
+          'is-hoverable': hoverable
+        })}
+        {...props}
+      >
+        {children}
+      </Element>
+    );
+  }
+);
 
 NavbarItem.defaultProps = {
   ...modifiers.defaultProps,

@@ -4,6 +4,7 @@
   .tabs {
     margin-bottom: 0;
     flex-shrink: 0;
+
     li {
       &.is-disabled {
         pointer-events: none;
@@ -12,23 +13,28 @@
       }
     }
   }
+
   .tab-content {
     position: relative;
     overflow: visible;
     display: flex;
     flex-direction: column;
     padding: 1rem;
+
     .tab-item {
       flex-shrink: 0;
       flex-basis: auto;
     }
+
     &.is-transitioning {
       overflow: hidden;
     }
   }
+
   &:not(:last-child) {
     margin-bottom: 1.5rem;
   }
+
   &.is-fullwidth {
     width: 100%;
   }

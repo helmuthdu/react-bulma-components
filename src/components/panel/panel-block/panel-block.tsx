@@ -5,20 +5,17 @@ import modifiers, { ElementModifier } from '../../../modifiers';
 
 type PanelBlockProps = ElementModifier & {
   active?: boolean;
-} & Omit<React.ComponentProps<'div'>, 'unselectable'>;
+} & Omit<React.ComponentProps<'div'>, 'ref' | 'unselectable'>;
 
-export const PanelBlock: React.FunctionComponent<PanelBlockProps> = ({
-  className,
-  active,
-  ...props
-}: PanelBlockProps) => (
+export const PanelBlock = React.forwardRef<HTMLDivElement, PanelBlockProps>(({ className, active, ...props }, ref) => (
   <Element
+    ref={ref}
     {...props}
     className={clsx('panel-block', className, {
       'is-active': active
     })}
   />
-);
+));
 
 PanelBlock.defaultProps = {
   ...modifiers.defaultProps,
