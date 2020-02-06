@@ -6,12 +6,14 @@ import modifiers, { ElementModifier } from '../../modifiers';
 type FieldProps = ElementModifier & {
   align?: 'centered' | 'right';
   context?: 'addons' | 'group';
+  floatingLabel?: boolean;
+  floatingInLabel?: boolean;
   multiline?: boolean;
   horizontal?: boolean;
 };
 
 export const Field = React.forwardRef<HTMLElement, FieldProps>(
-  ({ className, align, multiline, horizontal, context, ...props }, ref) => {
+  ({ className, align, floatingLabel, floatingInLabel, multiline, horizontal, context, ...props }, ref) => {
     let ctx = '';
 
     if (context === 'addons') {
@@ -28,6 +30,8 @@ export const Field = React.forwardRef<HTMLElement, FieldProps>(
           [`${ctx}`]: ctx,
           [`${ctx}-${align}`]: ctx && align,
           [`${ctx}-multiline`]: ctx === 'is-grouped' && multiline,
+          'is-floating-label': floatingLabel,
+          'is-floating-in-label': floatingLabel,
           'is-horizontal': horizontal
         })}
       />

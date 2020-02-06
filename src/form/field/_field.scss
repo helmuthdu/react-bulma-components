@@ -1,3 +1,11 @@
+/*
+This project is based on
+"buefy" (https://github.com/buefy/buefy) by
+MIT (https://github.com/buefy/buefy/blob/master/LICENSE)
+*/
+
+$floating-in-height: 3.25em !default;
+
 .field {
   &.is-grouped {
     .field {
@@ -39,6 +47,93 @@
       .input,
       .select select {
         border-radius: 0;
+      }
+    }
+  }
+
+  &.is-floating-label {
+    position: relative;
+
+    .label {
+      position: absolute;
+      top: -0.775em;
+      left: 1em;
+      font-size: calc(#{$size-normal} * 3 / 4);
+      background-color: transparent;
+      padding-left: 0.125em;
+      padding-right: 0.125em;
+      z-index: 5;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0.775em;
+        left: 0;
+        right: 0;
+        height: 0.375em;
+        background-color: $input-background-color;
+        z-index: -1;
+      }
+
+      &.is-small {
+        font-size: calc(#{$size-small} * 3 / 4);
+      }
+
+      &.is-medium {
+        font-size: calc(#{$size-medium} * 3 / 4);
+      }
+
+      &.is-large {
+        font-size: calc(#{$size-large} * 3 / 4);
+      }
+    }
+
+    .input,
+    .textarea,
+    .select select {
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+
+  &.is-floating-in-label {
+    position: relative;
+
+    .label {
+      position: absolute;
+      top: 0.25em;
+      left: 1em;
+      font-size: calc(#{$size-normal} * 3 / 4);
+      background-color: transparent;
+      z-index: 5;
+
+      &.is-small {
+        font-size: calc(#{$size-small} * 3 / 4);
+      }
+
+      &.is-medium {
+        font-size: calc(#{$size-medium} * 3 / 4);
+      }
+
+      &.is-large {
+        font-size: calc(#{$size-large} * 3 / 4);
+      }
+    }
+
+    .control.is-loading::after {
+      margin-top: calc(#{$floating-in-height} / 2 - (#{$size-large} * 3 / 4) / 2);
+    }
+
+    &.has-addons,
+    &.is-grouped {
+      .control {
+        .button,
+        .input,
+        .select select {
+          height: $floating-in-height;
+        }
       }
     }
   }

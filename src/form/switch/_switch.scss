@@ -1,14 +1,23 @@
-$switch-width-number: 2.75;
-$switch-width: $switch-width-number * 1em;
-$switch-padding: 0.2em;
+/*
+This project is based on
+"buefy" (https://github.com/buefy/buefy) by
+MIT (https://github.com/buefy/buefy/blob/master/LICENSE)
+*/
+
+$switch-width-number: 2.75 !default;
+$switch-width: $switch-width-number * 1em !default;
+$switch-padding: 0.2em !default;
 
 $switch-active-background-color: $primary !default;
 
+$radius: 1em;
+
 .switch {
+  @extend %unselectable;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  @include unselectable;
+  position: relative;
 
   & + .switch {
     margin-left: 0.5em;
@@ -29,13 +38,13 @@ $switch-active-background-color: $primary !default;
       height: #{$switch-width / 2 + $switch-padding};
       padding: $switch-padding;
       background: $grey-light;
-      border-radius: 1em;
+      border-radius: $radius;
       transition: background $speed-slow $easing;
 
       &:before {
         content: '';
         display: block;
-        border-radius: 1em;
+        border-radius: $radius;
         width: #{($switch-width - $switch-padding * 2) / 2};
         height: #{($switch-width - $switch-padding * 2) / 2};
         background: $background;
@@ -102,6 +111,68 @@ $switch-active-background-color: $primary !default;
         $color: nth($pair, 1);
         &.is-#{$name} {
           background: rgba($color, 0.9);
+        }
+      }
+    }
+  }
+
+  &.is-rounded {
+    input[type='checkbox'] {
+      + .check {
+        border-radius: $radius-rounded;
+
+        &:before {
+          border-radius: $radius-rounded;
+        }
+      }
+    }
+  }
+
+  &.is-outlined {
+    input[type='checkbox'] {
+      + .check {
+        background: transparent;
+        border: 0.1rem solid $grey-light;
+
+        &:before {
+          background: $grey-light;
+        }
+      }
+
+      &:checked + .check {
+        border-color: $switch-active-background-color;
+        @each $name, $pair in $colors {
+          $color: nth($pair, 1);
+          &.is-#{$name} {
+            background: transparent;
+            border-color: $color;
+
+            &:before {
+              background: $color;
+            }
+          }
+        }
+
+        &:before {
+          background: $switch-active-background-color;
+        }
+      }
+    }
+
+    &:hover {
+      input[type='checkbox'] + .check {
+        background: transparent;
+        border-color: rgba($grey-light, 0.9);
+      }
+
+      input[type='checkbox']:checked + .check {
+        background: transparent;
+        border-color: rgba($switch-active-background-color, 0.9);
+        @each $name, $pair in $colors {
+          $color: nth($pair, 1);
+          &.is-#{$name} {
+            border-color: rgba($color, 0.9);
+          }
         }
       }
     }

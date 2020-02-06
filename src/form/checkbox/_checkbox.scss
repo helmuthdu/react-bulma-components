@@ -1,12 +1,23 @@
+/*
+This project is based on
+"buefy" (https://github.com/buefy/buefy) by
+MIT (https://github.com/buefy/buefy/blob/master/LICENSE)
+*/
+
 $checkbox-active-background-color: $primary !default;
+$checkbox-background-color: transparent !default;
+$checkbox-border-color: $grey !default;
+$checkbox-border-radius: $radius !default;
+$checkbox-border-width: 2px !default;
 $checkbox-checkmark-color: $primary-invert !default;
+$checkbox-size: 1.25em !default;
 
 .checkbox-container {
   &.checkbox {
+    @extend %unselectable;
     outline: none;
     display: inline-flex;
     align-items: center;
-    @include unselectable;
 
     & + .checkbox {
       margin-left: 0.5em;
@@ -20,12 +31,13 @@ $checkbox-checkmark-color: $primary-invert !default;
       z-index: -1;
 
       + .check {
-        width: 1.25em;
-        height: 1.25em;
+        width: $checkbox-size;
+        height: $checkbox-size;
         flex-shrink: 0;
-        border-radius: $radius;
-        border: 2px solid $grey;
+        border-radius: $checkbox-border-radius;
+        border: $checkbox-border-width solid $checkbox-border-color;
         transition: background $speed-slow $easing;
+        background: $checkbox-background-color;
       }
 
       &:checked + .check {
@@ -76,12 +88,16 @@ $checkbox-checkmark-color: $primary-invert !default;
       padding-left: 0.5em;
     }
 
+    &.button {
+      display: flex;
+    }
+
     &[disabled] {
       opacity: 0.5;
     }
 
     &:hover {
-      input[type='checkbox'] + .check {
+      input[type='checkbox']:not(:disabled) + .check {
         border-color: $checkbox-active-background-color;
         @each $name, $pair in $colors {
           $color: nth($pair, 1);
