@@ -1,3 +1,4 @@
+import { select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Panel, PanelBlock, PanelHeading, PanelIcon, PanelTab, PanelTabs } from '.';
@@ -8,7 +9,24 @@ import { Checkbox, Control, Input } from '../../form';
 storiesOf('Panel', module)
   .addDecorator(story => <div style={{ margin: 10 }}>{story()}</div>)
   .add('Default', () => (
-    <Panel>
+    <Panel
+      color={select(
+        'color',
+        {
+          black: 'black',
+          danger: 'danger',
+          dark: 'dark',
+          info: 'info',
+          light: 'light',
+          link: 'link',
+          primary: 'primary',
+          success: 'success',
+          warning: 'warning',
+          white: 'white'
+        },
+        'primary'
+      )}
+    >
       <PanelHeading>repositories</PanelHeading>
       <PanelBlock>
         <Control>
