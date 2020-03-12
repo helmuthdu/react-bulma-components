@@ -2,7 +2,6 @@ import clsx from 'clsx';
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 import { ElementModifier } from '../../modifiers';
-import { ModalCard } from './modal-card';
 
 const { useEffect } = React;
 
