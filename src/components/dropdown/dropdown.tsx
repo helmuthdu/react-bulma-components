@@ -10,9 +10,10 @@ import { DropdownItem } from './dropdown-item';
 const { useEffect, useState } = React;
 
 type DropdownProps = ElementModifier & {
-  color?: Colors;
+  color?: Exclude<Colors, 'light'>;
   hoverable?: boolean;
   label?: React.ReactNode;
+  light?: boolean;
   onChange?: (...args: any[]) => void;
   right?: boolean;
   up?: boolean;
@@ -20,7 +21,7 @@ type DropdownProps = ElementModifier & {
 } & Omit<React.ComponentProps<'div'>, 'ref' | 'color' | 'onChange' | 'unselectable'>;
 
 export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
-  ({ className, children, value, color, right, up, label, hoverable, onChange, ...props }, ref) => {
+  ({ className, children, value, color, light, right, up, label, hoverable, onChange, ...props }, ref) => {
     useEffect(() => {
       document.addEventListener('click', close);
       return () => {
@@ -89,7 +90,7 @@ export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
         {...modifiers.clean(props)}
       >
         <div role="presentation" onClick={toggle}>
-          <Button color={color}>
+          <Button color={color} light={light}>
             <span>{current}</span>
             <Icon icon="chevron-down" />
           </Button>

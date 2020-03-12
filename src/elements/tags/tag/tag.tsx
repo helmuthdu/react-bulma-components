@@ -6,7 +6,7 @@ import { Element } from '../../element';
 
 type TagProps = ElementModifier & {
   close?: boolean;
-  color?: Colors;
+  color?: Exclude<Colors, 'light'>;
   ellipsis?: boolean;
   light?: boolean;
   onClick?: (...args: any[]) => any;

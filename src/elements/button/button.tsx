@@ -6,16 +6,17 @@ import modifiers, { ElementModifier } from '../../modifiers';
 export * from './button-group';
 
 type ButtonProps = ElementModifier & {
-  color?: Colors;
+  as?: ('a' | 'button' | 'span') | ((...args: any[]) => any);
+  color?: Exclude<Colors, 'light'>;
   disabled?: boolean;
   fullwidth?: boolean;
   inactive?: boolean;
   inverted?: boolean;
+  light?: boolean;
   link?: boolean;
   loading?: boolean;
   outlined?: boolean;
   remove?: boolean;
-  as?: ('a' | 'button' | 'span') | ((...args: any[]) => any);
   reset?: boolean;
   rounded?: boolean;
   selected?: boolean;
@@ -29,6 +30,7 @@ type ButtonProps = ElementModifier & {
 export const Button = React.forwardRef<HTMLAnchorElement | HTMLButtonElement | HTMLSpanElement, ButtonProps>(
   (
     {
+      as,
       children,
       className,
       color,
@@ -36,13 +38,13 @@ export const Button = React.forwardRef<HTMLAnchorElement | HTMLButtonElement | H
       fullwidth,
       inactive,
       inverted,
+      light,
       link,
       loading,
-      onClick,
       onChange,
+      onClick,
       outlined,
       remove,
-      as,
       reset,
       rounded,
       selected,
@@ -77,13 +79,14 @@ export const Button = React.forwardRef<HTMLAnchorElement | HTMLButtonElement | H
         className={clsx(className, modifiers.getClassName(props), {
           'is-fullwidth': fullwidth,
           'is-inverted': inverted,
+          'is-light': light,
+          'is-link': link,
           'is-loading': loading,
           'is-outlined': outlined,
           'is-rounded': rounded,
           'is-selected': selected,
           'is-static': inactive,
           'is-text': text,
-          'is-link': link,
           [`is-${color}`]: color,
           [`is-${size}`]: size,
           [`is-${state}`]: state,
