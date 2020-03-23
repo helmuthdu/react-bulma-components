@@ -49,10 +49,7 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>((props, ref) =
 
   let isCard;
   try {
-    isCard =
-      (React as any).Children.only(children)
-        .type.toString()
-        .indexOf('ModalCard') !== -1;
+    isCard = (React as any).Children.only(children).type.toString().indexOf('ModalCard') !== -1;
   } catch (e) {
     isCard = false;
   }
