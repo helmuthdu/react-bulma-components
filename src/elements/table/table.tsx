@@ -10,10 +10,11 @@ type TableProps = ElementModifier & {
   loading?: boolean;
   narrow?: boolean;
   striped?: boolean;
+  vcentered?: boolean;
 } & Omit<React.ComponentProps<'table'>, 'ref' | 'unselectable'>;
 
 export const Table = React.forwardRef<HTMLTableElement, TableProps>(
-  ({ bordered, children, className, fullwidth, hoverable, loading, narrow, striped, ...props }, ref) => (
+  ({ bordered, children, className, fullwidth, hoverable, loading, narrow, striped, vcentered, ...props }, ref) => (
     <div
       className={clsx('table-container', {
         'is-loading': loading
@@ -28,7 +29,8 @@ export const Table = React.forwardRef<HTMLTableElement, TableProps>(
             'is-fullwidth': fullwidth,
             'is-hoverable': hoverable,
             'is-narrow': narrow,
-            'is-striped': striped
+            'is-striped': striped,
+            'is-vcentered': vcentered
           })}
           {...props}
         >

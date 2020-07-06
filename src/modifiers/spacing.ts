@@ -20,22 +20,22 @@ export type SpacingModifier = {
 
 export default {
   defaultProps: {},
-  getClassName: (props: any) =>
+  getClassName: (props: SpacingModifier) =>
     clsx({
-      [`has-padding-${props.padding}`]: props.padding,
-      [`has-padding-top-${props.paddingTop}`]: props.paddingTop,
-      [`has-padding-left-${props.paddingLeft}`]: props.paddingLeft,
-      [`has-padding-bottom-${props.paddingBottom}`]: props.paddingBottom,
-      [`has-padding-right-${props.paddingRight}`]: props.paddingRight,
-      [`has-padding-horizontal-${props.paddingHorizontal}`]: props.paddingHorizontal,
-      [`has-padding-vertical-${props.paddingVertical}`]: props.paddingVertical,
-      [`has-margin-${props.margin}`]: props.margin,
-      [`has-margin-top-${props.marginTop}`]: props.marginTop,
-      [`has-margin-left-${props.marginLeft}`]: props.marginLeft,
-      [`has-margin-bottom-${props.marginBottom}`]: props.marginBottom,
-      [`has-margin-right-${props.marginRight}`]: props.marginRight,
-      [`has-margin-horizontal-${props.marginHorizontal}`]: props.marginHorizontal,
-      [`has-margin-vertical-${props.marginVertical}`]: props.marginVertical
+      [`p-${props.padding}`]: props.padding,
+      [`pt-${props.paddingTop}`]: props.paddingTop,
+      [`pl-${props.paddingLeft}`]: props.paddingLeft,
+      [`pb-${props.paddingBottom}`]: props.paddingBottom,
+      [`pr-${props.paddingRight}`]: props.paddingRight,
+      [`px-${props.paddingHorizontal}`]: props.paddingHorizontal,
+      [`py-${props.paddingVertical}`]: props.paddingVertical,
+      [`m-${props.margin}`]: props.margin,
+      [`mt-${props.marginTop}`]: props.marginTop,
+      [`ml-${props.marginLeft}`]: props.marginLeft,
+      [`mb-${props.marginBottom}`]: props.marginBottom,
+      [`mr-${props.marginRight}`]: props.marginRight,
+      [`mx-${props.marginHorizontal}`]: props.marginHorizontal,
+      [`my-${props.marginVertical}`]: props.marginVertical
     }),
   clean: ({
     padding,

@@ -31,7 +31,7 @@ export default {
     shadowless: false,
     unselectable: false
   },
-  getClassName: (props: any) =>
+  getClassName: (props: HelpersModifier) =>
     clsx({
       'is-clearfix': props.clearfix,
       'is-clipped': props.clipped,
