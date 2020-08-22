@@ -2,8 +2,11 @@
 
 @import 'customize';
 
-@import 'utilities/_all';
+@import '~bulma/sass/utilities/_all';
+@import '~bulma/sass/helpers/_all';
 @import '~bulma/sass/base/_all';
+
+@import 'utilities/_all';
 
 @import 'columns/columns';
 @import 'components/components';

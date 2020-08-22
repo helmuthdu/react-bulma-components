@@ -5,6 +5,8 @@
 
 React components for [Bulma](http://bulma.io/) (v0.8.0) UI compatible with most used React Frameworks ([Gatsby](https://www.gatsbyjs.org/), [CRA](https://github.com/facebook/create-react-app), [Next.js](https://nextjs.org/))
 
+Based on the work from [clouds](https://github.com/helmuthdu/react-bulma-components/)
+
 ### To Use
 
 Currently there are two ways to use this library depending of your needs and configuration:
