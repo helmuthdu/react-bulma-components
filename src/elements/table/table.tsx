@@ -18,8 +18,7 @@ export const Table = React.forwardRef<HTMLTableElement, TableProps>(
     <div
       className={clsx('table-container', {
         'is-loading': loading
-      })}
-    >
+      })}>
       <div className="table-wrapper">
         <Element
           ref={ref}
@@ -32,8 +31,7 @@ export const Table = React.forwardRef<HTMLTableElement, TableProps>(
             'is-striped': striped,
             'is-vcentered': vcentered
           })}
-          {...props}
-        >
+          {...props}>
           {children}
         </Element>
       </div>

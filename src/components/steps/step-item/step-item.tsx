@@ -20,8 +20,7 @@ export const StepItem = React.forwardRef<HTMLLIElement, StepsItemProps>(
         'is-active': active,
         'is-completed': completed,
         [`is-${color}`]: color
-      })}
-    >
+      })}>
       {children}
     </Element>
   )

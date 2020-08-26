@@ -16,8 +16,7 @@ export const NavbarDropdown = React.forwardRef<HTMLSpanElement, NavbarDropdownPr
       className={clsx('navbar-dropdown', className, {
         'is-boxed': boxed,
         'is-right': right
-      })}
-    >
+      })}>
       {children}
     </Element>
   )

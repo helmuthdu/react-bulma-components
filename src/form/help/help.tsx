@@ -14,8 +14,7 @@ export const Help = React.forwardRef<HTMLSpanElement, HelpProps>(({ className, c
     className={clsx('help', className, {
       [`is-${color}`]: color
     })}
-    {...props}
-  >
+    {...props}>
     {children}
   </Element>
 ));

@@ -31,8 +31,7 @@ storiesOf('Element', module).add('Default', () => (
           value: 'inline-block'
         }
       }
-    }}
-  >
+    }}>
     Custom Element to use Bulma helper
   </Element>
 ));

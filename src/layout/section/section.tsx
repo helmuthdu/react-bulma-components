@@ -14,8 +14,7 @@ export const Section = React.forwardRef<HTMLDivElement, SectionProps>(
       className={clsx('section', className, modifiers.getClassName(props), {
         [`is-${size}`]: size
       })}
-      {...modifiers.clean(props)}
-    >
+      {...modifiers.clean(props)}>
       {children}
     </Element>
   )

@@ -23,8 +23,7 @@ export const Control = React.forwardRef<HTMLElement, ControlProps>(
         'is-expanded': expanded,
         'is-loading': loading,
         [`is-${size}`]: size
-      })}
-    >
+      })}>
       {children}
     </Element>
   )

@@ -26,8 +26,7 @@ export const Breadcrumb = React.forwardRef<HTMLDivElement, BreadcrumbProps>(
         [`is-${size}`]: size,
         [`is-${align}`]: align
       })}
-      {...modifiers.clean(props)}
-    >
+      {...modifiers.clean(props)}>
       <ul>
         {items &&
           items.map((item: any) => (
@@ -35,8 +34,7 @@ export const Breadcrumb = React.forwardRef<HTMLDivElement, BreadcrumbProps>(
               key={item.url}
               className={clsx({
                 'is-active': item.active
-              })}
-            >
+              })}>
               <Element as={as}>{item.name}</Element>
             </li>
           ))}

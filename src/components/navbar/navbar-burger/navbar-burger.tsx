@@ -18,8 +18,7 @@ export const NavbarBurger = React.forwardRef<HTMLButtonElement, NavbarBurgerProp
           className={clsx('navbar-burger', modifiers.getClassName(props), className, {
             'is-active': active
           })}
-          {...modifiers.clean(props)}
-        >
+          {...modifiers.clean(props)}>
           <span />
           <span />
           <span />

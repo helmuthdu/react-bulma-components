@@ -25,8 +25,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
         onMouseDown={() => setMouseDown(true)}
         onMouseOut={() => setMouseDown(false)}
         onMouseUp={() => setMouseDown(false)}
-        style={style}
-      >
+        style={style}>
         <input
           ref={ref}
           checked={checked}

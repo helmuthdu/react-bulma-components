@@ -14,8 +14,7 @@ export const Tab = React.forwardRef<HTMLLIElement, TabProps>(
       style={style}
       className={clsx(className, {
         'is-active': active
-      })}
-    >
+      })}>
       <Element {...props}>{children}</Element>
     </li>
   )

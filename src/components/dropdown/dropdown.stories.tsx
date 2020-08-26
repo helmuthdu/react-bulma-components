@@ -26,8 +26,7 @@ class Wrapper extends React.Component<WrapperProps> {
         value={this.state.selected}
         onChange={this.onChange}
         color="info"
-        label={text('label', '')}
-      >
+        label={text('label', '')}>
         <DropdownItem value="item">Dropdown item</DropdownItem>
         <DropdownItem value="other">Other Dropdown item</DropdownItem>
         <DropdownItem value="active">Active Dropdown item</DropdownItem>
@@ -68,8 +67,7 @@ storiesOf('Dropdown', module)
             right={boolean('right (will replace "align" prop)', false)}
             value="item"
             up={boolean('up', false)}
-            label={text('label', '')}
-          >
+            label={text('label', '')}>
             <DropdownItem value="item">Dropdown item</DropdownItem>
             <DropdownItem value="other">Other Dropdown item</DropdownItem>
             <DropdownItem value="active">Active Dropdown item</DropdownItem>

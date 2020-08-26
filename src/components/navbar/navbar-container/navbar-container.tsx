@@ -17,8 +17,7 @@ export const NavbarContainer = React.forwardRef<HTMLDivElement, NavbarContainerP
           [`navbar-${position}`]: position
         },
         className
-      )}
-    >
+      )}>
       {children}
     </Element>
   )

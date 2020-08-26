@@ -23,8 +23,7 @@ export const Tile = React.forwardRef<HTMLDivElement, TileProps>(
         [`is-${context}`]: context,
         [`is-${size}`]: size
       })}
-      {...props}
-    >
+      {...props}>
       {children}
     </Element>
   )

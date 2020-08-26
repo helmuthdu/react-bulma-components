@@ -15,8 +15,7 @@ export const FieldLabel = React.forwardRef<HTMLElement, FieldLabelProps>(
       {...props}
       className={clsx('field-label', className, {
         [`is-${size}`]: size
-      })}
-    >
+      })}>
       {children}
     </Element>
   )

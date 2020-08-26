@@ -20,8 +20,7 @@ export const ButtonGroup = React.forwardRef<HTMLDivElement, ButtonGroupProps>(
         [`are-${size}`]: size,
         [`is-${position}`]: position
       })}
-      {...props}
-    >
+      {...props}>
       {children}
     </Element>
   )

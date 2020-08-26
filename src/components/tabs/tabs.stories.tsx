@@ -9,8 +9,7 @@ storiesOf('Tabs', module)
     <Tabs
       type={select('Tab type', { boxed: 'boxed', toggle: 'toggle', 'toggle-rounded': 'toggle-rounded' }, 'boxed')}
       fullwidth={boolean('Full width', false)}
-      align={select('Align', { default: null, centered: 'centered', right: 'right' }, 'right')}
-    >
+      align={select('Align', { default: null, centered: 'centered', right: 'right' }, 'right')}>
       <Tab active>Test</Tab>
       <Tab>Test</Tab>
       <Tab>Test</Tab>

@@ -87,8 +87,7 @@ export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
           'is-right': right,
           'is-up': up
         })}
-        {...modifiers.clean(props)}
-      >
+        {...modifiers.clean(props)}>
         <div role="presentation" onClick={toggle}>
           <Button color={color} light={light}>
             <span>{current}</span>

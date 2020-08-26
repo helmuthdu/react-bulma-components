@@ -22,8 +22,7 @@ export const Title = React.forwardRef<HTMLParagraphElement, TitleProps>(
         [`has-text-weight-${weight}`]: weight,
         [`is-${size}`]: size
       })}
-      {...props}
-    >
+      {...props}>
       {children}
     </Element>
   )

@@ -19,8 +19,7 @@ export const Notification = React.forwardRef<HTMLDivElement, NotificationProps>(
         'is-light': light,
         [`is-${color}`]: color
       })}
-      {...props}
-    >
+      {...props}>
       {children}
     </Element>
   )

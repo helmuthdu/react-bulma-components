@@ -25,8 +25,7 @@ storiesOf('Panel', module)
           white: 'white'
         },
         'primary'
-      )}
-    >
+      )}>
       <PanelHeading>repositories</PanelHeading>
       <PanelBlock>
         <Control>

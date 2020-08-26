@@ -58,8 +58,7 @@ export const Icon = React.forwardRef<HTMLSpanElement, IconProps>(
           [`is-${align}`]: align,
           [`has-text-${color}`]: color
         })}
-        {...modifiers.clean(props)}
-      >
+        {...modifiers.clean(props)}>
         {children || <i className={iconPack} />}
       </span>
     );

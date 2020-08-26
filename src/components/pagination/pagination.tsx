@@ -32,8 +32,7 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
         [`is-${position}`]: position
       })}
       aria-label="pagination"
-      {...props}
-    >
+      {...props}>
       <ReactPaginate
         activeClassName={'active'}
         activeLinkClassName={'is-current'}

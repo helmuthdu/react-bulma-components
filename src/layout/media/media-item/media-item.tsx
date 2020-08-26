@@ -17,8 +17,7 @@ export const MediaItem = React.forwardRef<HTMLDivElement, MediaItemProps>(
         className={clsx(className, {
           [`media-${pos}`]: pos
         })}
-        {...props}
-      >
+        {...props}>
         {children}
       </Element>
     );

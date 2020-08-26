@@ -6,7 +6,7 @@ import { Container } from '../../layout/container';
 
 storiesOf('Icon', module)
   .add('Default', () => (
-    <Container fluid padding="medium">
+    <Container fluid padding="6">
       <Icon icon="star" color="info" size="large" />
       <Icon icon="shield-account" />
     </Container>

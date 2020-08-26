@@ -15,8 +15,7 @@ export const NavbarMenu = React.forwardRef<HTMLDivElement, NavbarMenuProps>(
           {...props}
           className={clsx('navbar-menu', className, {
             'is-active': active
-          })}
-        >
+          })}>
           {children}
         </Element>
       )}

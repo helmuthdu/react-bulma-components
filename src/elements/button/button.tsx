@@ -94,8 +94,7 @@ export const Button = React.forwardRef<HTMLAnchorElement | HTMLButtonElement | H
           delete: remove
         })}
         {...modifiers.clean(props)}
-        {...otherProps}
-      >
+        {...otherProps}>
         {children}
       </Element>
     );

@@ -53,8 +53,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
           [`is-${color}`]: color,
           [`is-${size}`]: size
         })}
-        style={style}
-      >
+        style={style}>
         <select
           ref={ref}
           aria-readonly={readOnly}
@@ -66,8 +65,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             setValue(evt.target.value);
             if (onChange) onChange(evt);
           }}
-          {...modifiers.clean(props)}
-        >
+          {...modifiers.clean(props)}>
           {children}
         </select>
       </div>

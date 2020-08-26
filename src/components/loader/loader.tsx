@@ -18,8 +18,7 @@ export const Loader = React.forwardRef<HTMLDivElement, LoaderProps>(
       className={clsx('loader', className, {
         'is-active': active,
         'is-fullscreen': fullscreen
-      })}
-    >
+      })}>
       <div
         className={clsx('loader-background', {
           'is-inverted': inverted

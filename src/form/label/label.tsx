@@ -13,8 +13,7 @@ export const Label = React.forwardRef<HTMLLabelElement, LabelProps>(({ children,
     className={clsx('label', modifiers.getClassName(props), className, {
       [`is-${size}`]: size
     })}
-    {...modifiers.clean(props)}
-  >
+    {...modifiers.clean(props)}>
     {children}
   </label>
 ));

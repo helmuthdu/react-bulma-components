@@ -17,8 +17,7 @@ export const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
         'is-fluid': fluid,
         [`is-${breakpoint}`]: breakpoint
       })}
-      {...modifiers.clean(props)}
-    >
+      {...modifiers.clean(props)}>
       {children}
     </Element>
   )

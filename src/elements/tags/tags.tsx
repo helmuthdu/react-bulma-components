@@ -16,8 +16,7 @@ export const Tags = React.forwardRef<HTMLDivElement, TagsProps>(
         'has-addons': gapless,
         [`are-${size}`]: size
       })}
-      {...modifiers.clean(props)}
-    >
+      {...modifiers.clean(props)}>
       {children}
     </Element>
   )

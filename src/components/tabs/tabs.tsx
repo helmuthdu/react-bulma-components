@@ -16,8 +16,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
     <div
       className={clsx('tabs-container', {
         'is-fullwidth': fullwidth
-      })}
-    >
+      })}>
       <Element
         ref={ref}
         {...props}
@@ -27,8 +26,7 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
           [`is-${align}`]: align,
           [`is-${size}`]: size,
           [`is-${type}`]: type
-        })}
-      >
+        })}>
         <ul>{children}</ul>
       </Element>
     </div>

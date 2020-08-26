@@ -14,8 +14,7 @@ export const LevelSide = React.forwardRef<HTMLDivElement, LevelSideProps>(
       className={clsx(className, {
         [`level-${align}`]: align
       })}
-      {...props}
-    >
+      {...props}>
       {children}
     </Element>
   )

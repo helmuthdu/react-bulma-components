@@ -93,8 +93,7 @@ export const Column = React.forwardRef<HTMLDivElement, ColumnProps>(
         // @ts-ignore
         'is-narrow-fullhd': fullhd.narrow
       })}
-      {...modifiers.clean(props)}
-    >
+      {...modifiers.clean(props)}>
       {children}
     </Element>
   )

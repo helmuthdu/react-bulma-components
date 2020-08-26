@@ -25,7 +25,7 @@ storiesOf('Navbar', module)
     <div>
       {story()}
       <Box style={{ margin: '15px auto', maxWidth: '75vw' }}>
-        Check the Know tab to see the behavior of this component
+        Check the Knows tab to see the behavior of this component
       </Box>
     </div>
   ))
@@ -35,8 +35,7 @@ storiesOf('Navbar', module)
         color={select('Color', colors, colors.info)}
         fixed={select('Fixed', { default: null, top: 'top', bottom: 'bottom' }, null)}
         active={boolean('Active', false)}
-        transparent={boolean('Transparent', false)}
-      >
+        transparent={boolean('Transparent', false)}>
         <Container>
           <NavbarBrand>
             <NavbarItem>

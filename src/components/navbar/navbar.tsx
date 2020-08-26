@@ -24,8 +24,7 @@ export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
             [`is-fixed-${fixed}`]: fixed,
             [`is-${color}`]: color
           })}
-          {...props}
-        >
+          {...props}>
           {children}
         </Element>
       </ShowContext.Provider>

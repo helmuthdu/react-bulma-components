@@ -40,7 +40,7 @@ storiesOf('Button', module)
     <Section>
       <Box>Play with the button props using the knobs addon panel at the bottom</Box>
       <Button
-        color={select('Color', colors, 'primary')}
+        color={select('Color', colors as any, 'primary')}
         disabled={boolean('Disabled', false)}
         fullwidth={boolean('Full width', false)}
         inactive={boolean('Static', false)}
@@ -52,8 +52,7 @@ storiesOf('Button', module)
         remove={boolean('Remove', false)}
         rounded={boolean('Rounded', false)}
         size={select('Size', size, 'normal')}
-        text={boolean('Text', false)}
-      >
+        text={boolean('Text', false)}>
         Button
       </Button>
     </Section>

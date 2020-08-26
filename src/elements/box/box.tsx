@@ -11,8 +11,7 @@ export const Box = React.forwardRef<HTMLDivElement, BoxProps>(({ children, paddi
     {...modifiers.clean(props)}
     className={clsx('box', className, modifiers.getClassName(props), {
       'is-paddingless': paddingless
-    })}
-  >
+    })}>
     {children}
   </Element>
 ));

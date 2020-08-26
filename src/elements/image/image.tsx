@@ -42,8 +42,7 @@ export const Image = React.forwardRef<HTMLImageElement, ImageProps>(
           'is-fullwidth': fullWidth,
           [`is-${Number.isInteger(size as any) ? `${size}x${size}` : size}`]: size
         })}
-        {...props}
-      >
+        {...props}>
         <img ref={ref} alt={alt} onError={handleError} src={getImage()} className={clsx({ 'is-rounded': rounded })} />
       </Element>
     );

@@ -15,8 +15,7 @@ export const Level = React.forwardRef<HTMLDivElement, LevelProps>(
       className={clsx('level', className, {
         [`is-${breakpoint}`]: breakpoint
       })}
-      {...props}
-    >
+      {...props}>
       {children}
     </Element>
   )

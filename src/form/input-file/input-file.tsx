@@ -70,8 +70,7 @@ export const InputFile = React.forwardRef<HTMLInputElement, InputFileProps>(
           [`is-${color}`]: color,
           [`is-${size}`]: size
         })}
-        {...props}
-      >
+        {...props}>
         <label className="file-label">
           <input
             ref={ref}

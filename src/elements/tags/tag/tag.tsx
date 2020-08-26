@@ -27,8 +27,7 @@ export const Tag = React.forwardRef<HTMLDivElement, TagProps>(
         [`is-${color}`]: color,
         [`is-${size}`]: size
       })}
-      {...props}
-    >
+      {...props}>
       {!remove && <span className={clsx({ 'has-ellipsis': ellipsis })}>{children}</span>}
       {!remove && close && <button onClick={onClick} className="delete is-small" />}
     </Element>

@@ -17,8 +17,7 @@ export const Content = React.forwardRef<HTMLDivElement, ContentProps>(
         [`is-${size}`]: size,
         [`is-${type}`]: type
       })}
-      {...modifiers.clean(props)}
-    >
+      {...modifiers.clean(props)}>
       {children}
     </Element>
   )

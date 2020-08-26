@@ -20,8 +20,7 @@ export const Hero = React.forwardRef<HTMLDivElement, HeroProps>(
         [`is-${color}`]: color,
         [`is-${size}`]: size
       })}
-      {...props}
-    >
+      {...props}>
       {children}
     </Element>
   )

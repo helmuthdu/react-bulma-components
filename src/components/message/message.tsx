@@ -21,8 +21,7 @@ export const Message = React.forwardRef<HTMLDivElement, MessageProps>(
         'is-light': light,
         [`is-${color}`]: color,
         [`is-${size}`]: size
-      })}
-    >
+      })}>
       {children}
     </Element>
   )
