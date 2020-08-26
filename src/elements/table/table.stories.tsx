@@ -4,7 +4,7 @@ import { Table } from '.';
 import { Container } from '../../layout/container';
 
 storiesOf('Table', module).add('Default', () => (
-  <Container fluid padding="medium">
+  <Container fluid padding="6">
     <Table>
       <thead>
         <tr>
@@ -93,8 +93,7 @@ storiesOf('Table', module).add('Default', () => (
             Qualification for the{' '}
             <a
               href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage"
-              title="2016–17 UEFA Champions League"
-            >
+              title="2016–17 UEFA Champions League">
               Champions League group stage
             </a>
           </td>
@@ -118,8 +117,7 @@ storiesOf('Table', module).add('Default', () => (
             Qualification for the{' '}
             <a
               href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage"
-              title="2016–17 UEFA Champions League"
-            >
+              title="2016–17 UEFA Champions League">
               Champions League group stage
             </a>
           </td>
@@ -143,8 +141,7 @@ storiesOf('Table', module).add('Default', () => (
             Qualification for the{' '}
             <a
               href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage"
-              title="2016–17 UEFA Champions League"
-            >
+              title="2016–17 UEFA Champions League">
               Champions League group stage
             </a>
           </td>
@@ -168,8 +165,7 @@ storiesOf('Table', module).add('Default', () => (
             Qualification for the{' '}
             <a
               href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Play-off_round"
-              title="2016–17 UEFA Champions League"
-            >
+              title="2016–17 UEFA Champions League">
               Champions League play-off round
             </a>
           </td>
@@ -193,8 +189,7 @@ storiesOf('Table', module).add('Default', () => (
             Qualification for the{' '}
             <a
               href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Europa_League#Group_stage"
-              title="2016–17 UEFA Europa League"
-            >
+              title="2016–17 UEFA Europa League">
               Europa League group stage
             </a>
           </td>
@@ -218,8 +213,7 @@ storiesOf('Table', module).add('Default', () => (
             Qualification for the{' '}
             <a
               href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Europa_League#Group_stage"
-              title="2016–17 UEFA Europa League"
-            >
+              title="2016–17 UEFA Europa League">
               Europa League group stage
             </a>
           </td>
@@ -243,8 +237,7 @@ storiesOf('Table', module).add('Default', () => (
             Qualification for the{' '}
             <a
               href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Europa_League#Third_qualifying_round"
-              title="2016–17 UEFA Europa League"
-            >
+              title="2016–17 UEFA Europa League">
               Europa League third qualifying round
             </a>
           </td>
