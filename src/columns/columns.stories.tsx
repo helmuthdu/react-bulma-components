@@ -16,7 +16,7 @@ const style: CSSProperties = {
 
 storiesOf('Columns', module)
   .add('Basic', () => (
-    <Container fluid padding="medium">
+    <Container fluid padding="6">
       <Columns>
         <Column>
           <div className="has-background-grey-lighter" style={style}>
@@ -42,7 +42,7 @@ storiesOf('Columns', module)
     </Container>
   ))
   .add('Sizes by name', () => (
-    <Container fluid padding="medium">
+    <Container fluid padding="6">
       {Object.keys(CONSTANTS.SIZES).map((size: string) => (
         <Columns key={size}>
           <Column size={(CONSTANTS.SIZES as any)[size]}>
@@ -60,7 +60,7 @@ storiesOf('Columns', module)
     </Container>
   ))
   .add('Sizes by 12 Columns', () => (
-    <Container fluid padding="medium">
+    <Container fluid padding="6">
       <Columns>
         <Column size={1}>
           <div className="has-background-primary" style={style}>
@@ -489,7 +489,7 @@ storiesOf('Columns', module)
     </Container>
   ))
   .add('With Offset', () => (
-    <Container fluid padding="medium">
+    <Container fluid padding="6">
       <Columns>
         <Column size="half" offset="one-quarter">
           <div className="has-background-grey-lighter" style={style}>
@@ -521,7 +521,7 @@ storiesOf('Columns', module)
     </Container>
   ))
   .add('Narrow', () => (
-    <Container fluid padding="medium">
+    <Container fluid padding="6">
       <Columns>
         <Column narrow>
           <Box style={{ width: 200 }}>
@@ -539,7 +539,7 @@ storiesOf('Columns', module)
     </Container>
   ))
   .add('Responsive', () => (
-    <Container fluid padding="medium">
+    <Container fluid padding="6">
       <Box>
         <Title size={5}>Mobile</Title>
         <Columns breakpoint="mobile">
@@ -618,7 +618,7 @@ storiesOf('Columns', module)
     </Container>
   ))
   .add('Different column size per breakpoint', () => (
-    <Container fluid padding="medium">
+    <Container fluid padding="6">
       <Columns breakpoint="mobile">
         <Column
           mobile={{
@@ -635,8 +635,7 @@ storiesOf('Columns', module)
           }}
           fullhd={{
             size: 'one-quarter'
-          }}
-        >
+          }}>
           <div className="has-background-grey-lighter" style={style}>
             is-three-quarters-mobile
             <br />
@@ -659,7 +658,7 @@ storiesOf('Columns', module)
     </Container>
   ))
   .add('Nested', () => (
-    <Container fluid padding="medium">
+    <Container fluid padding="6">
       <Columns>
         <Column size="half">
           <div className="has-background-grey-lighter" style={style}>
@@ -704,7 +703,7 @@ storiesOf('Columns', module)
     </Container>
   ))
   .add('gapless columns', () => (
-    <Container fluid padding="medium">
+    <Container fluid padding="6">
       <Columns gapless>
         <Column>
           <div className="has-background-grey-lighter" style={style}>
