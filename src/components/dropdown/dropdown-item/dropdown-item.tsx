@@ -11,15 +11,14 @@ type DropdownItemProps = ElementModifier & {
 } & Omit<React.ComponentProps<'a'>, 'ref' | 'unselectable'>;
 
 export const DropdownItem = React.forwardRef<HTMLAnchorElement, DropdownItemProps>(
-  ({ active, as, children, value, ...props }, ref) => (
+  ({ active, as, children, className, value, ...props }, ref) => (
     <Element
       ref={ref}
       as={as}
-      className={clsx('dropdown-item', {
+      className={clsx('dropdown-item', className, {
         'is-active': active
       })}
-      {...props}
-    >
+      {...props}>
       {children}
     </Element>
   )
