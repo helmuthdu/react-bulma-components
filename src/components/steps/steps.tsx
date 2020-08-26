@@ -11,11 +11,11 @@ type StepsProps = React.PropsWithChildren<{
 
 export const Steps = React.forwardRef<HTMLUListElement, StepsProps>(({ className, children, size, ...props }, ref) => (
   <Element
+    ref={ref}
     {...props}
     className={clsx('steps', className, {
       [`is-${size}`]: size
-    })}
-  >
+    })}>
     {children}
   </Element>
 ));

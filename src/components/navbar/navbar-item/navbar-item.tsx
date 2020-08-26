@@ -14,6 +14,7 @@ export const NavbarItem = React.forwardRef<HTMLAnchorElement, NavbarItemProps>(
   ({ className, active, children, dropdown, dropdownUp, hoverable, as, ...props }, ref) => {
     return (
       <Element
+        ref={ref}
         as={dropdown && as === 'a' ? 'span' : as}
         className={clsx('navbar-item', className, {
           'has-dropdown': dropdown,
@@ -21,8 +22,7 @@ export const NavbarItem = React.forwardRef<HTMLAnchorElement, NavbarItemProps>(
           'is-active': active,
           'is-hoverable': hoverable
         })}
-        {...props}
-      >
+        {...props}>
         {children}
       </Element>
     );
