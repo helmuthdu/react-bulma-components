@@ -1,9 +1,8 @@
-import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Table } from '.';
 import { Container } from '../../layout/container';
 
-storiesOf('Table', module).add('Default', () => (
+export const Default = () => (
   <Container fluid padding="6">
     <Table>
       <thead>
@@ -296,4 +295,9 @@ storiesOf('Table', module).add('Default', () => (
       </tbody>
     </Table>
   </Container>
-));
+);
+
+export default {
+  title: 'Table',
+  component: Table
+};

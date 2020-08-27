@@ -1,9 +1,8 @@
 import { boolean } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Element } from '.';
 
-storiesOf('Element', module).add('Default', () => (
+export const Default = () => (
   <Element
     paddingless={boolean('paddingless', false)}
     responsive={{
@@ -34,4 +33,9 @@ storiesOf('Element', module).add('Default', () => (
     }}>
     Custom Element to use Bulma helper
   </Element>
-));
+);
+
+export default {
+  title: 'Element',
+  component: Element
+};

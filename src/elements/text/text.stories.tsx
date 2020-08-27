@@ -1,9 +1,8 @@
-import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Text } from '.';
 import { Box } from '../box';
 
-storiesOf('Title', module).add('Default', () => (
+export const Default = () => (
   <div>
     <Box>
       <Text>Text</Text>
@@ -11,4 +10,9 @@ storiesOf('Title', module).add('Default', () => (
       <Text textWeight="bold">Text bold</Text>
     </Box>
   </div>
-));
+);
+
+export default {
+  title: 'Text',
+  component: Text
+};

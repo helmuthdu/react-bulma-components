@@ -1,8 +1,7 @@
-import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Menu, MenuList, MenuListItem } from '.';
 
-storiesOf('Menu', module).add('Default', () => (
+export const Default = () => (
   <Menu>
     <MenuList title="General">
       <MenuListItem>Dashboard</MenuListItem>
@@ -27,4 +26,12 @@ storiesOf('Menu', module).add('Default', () => (
       <MenuListItem>Balance</MenuListItem>
     </MenuList>
   </Menu>
-));
+);
+
+export default {
+  title: 'Menu',
+  component: Menu,
+  subcomponents: {
+    MenuListItem
+  }
+};

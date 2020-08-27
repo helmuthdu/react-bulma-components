@@ -1,11 +1,10 @@
-import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Footer } from '.';
 import { Content } from '../../elements/content';
 import { Container } from '../container';
 import { Hero, HeroBody, HeroFoot, HeroHead } from '../hero';
 
-storiesOf('Footer', module).add('Default', () => (
+export const Default = () => (
   <Hero size="fullheight">
     <HeroHead as="header" />
     <HeroBody />
@@ -23,4 +22,9 @@ storiesOf('Footer', module).add('Default', () => (
       </Footer>
     </HeroFoot>
   </Hero>
-));
+);
+
+export default {
+  title: 'Footer',
+  component: Footer
+};

@@ -1,10 +1,9 @@
-import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { StepItem, StepMark, Steps } from '.';
 import { StepDetails } from './step-details';
 import { StepTitle } from './step-title';
 
-storiesOf('Steps', module).add('Default', () => (
+export const Default = () => (
   <Steps>
     <StepItem>
       <StepMark>1</StepMark>
@@ -20,4 +19,15 @@ storiesOf('Steps', module).add('Default', () => (
       <StepMark>3</StepMark>
     </StepItem>
   </Steps>
-));
+);
+
+export default {
+  title: 'Steps',
+  component: Steps,
+  subcomponents: {
+    StepItem,
+    StepMark,
+    StepDetails,
+    StepTitle
+  }
+};

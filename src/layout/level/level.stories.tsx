@@ -1,4 +1,3 @@
-import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Level, LevelItem, LevelSide } from '.';
 import { Breakpoints } from '../../constants';
@@ -12,63 +11,100 @@ import { Section } from '../section';
 
 const style: React.CSSProperties = { textAlign: 'center' };
 
-storiesOf('Level', module)
-  .addDecorator(story => (
-    <Hero size="fullheight">
-      <HeroHead as="header">
-        <Container>{story()}</Container>
-      </HeroHead>
-    </Hero>
-  ))
-  .add('Default', () => (
-    <Section>
-      <Box>
-        <Level as="nav">
-          <LevelSide align="left">
-            <LevelItem>
-              <Title size={5} subtitle>
-                <strong>123</strong> posts
-              </Title>
-            </LevelItem>
-            <LevelItem>
-              <Field context="addons">
-                <Control>
-                  <Input placeholder="Find a post" onChange={() => {}} />
-                </Control>
-                <Control>
-                  <Button as="button">Search</Button>
-                </Control>
-              </Field>
-            </LevelItem>
-          </LevelSide>
+export const Default = () => (
+  <Section>
+    <Box>
+      <Level as="nav">
+        <LevelSide align="left">
+          <LevelItem>
+            <Title size={5} subtitle>
+              <strong>123</strong> posts
+            </Title>
+          </LevelItem>
+          <LevelItem>
+            <Field context="addons">
+              <Control>
+                <Input placeholder="Find a post" onChange={() => {}} />
+              </Control>
+              <Control>
+                <Button as="button">Search</Button>
+              </Control>
+            </Field>
+          </LevelItem>
+        </LevelSide>
 
-          <LevelSide align="right">
-            <LevelItem>
-              <strong>All</strong>
-            </LevelItem>
-            <LevelItem>
-              <a>Published</a>
-            </LevelItem>
-            <LevelItem>
-              <a>Drafts</a>
-            </LevelItem>
-            <LevelItem>
-              <a>Deleted</a>
-            </LevelItem>
-            <LevelItem>
-              <Button as="a" color="success">
-                New
-              </Button>
-            </LevelItem>
-          </LevelSide>
-        </Level>
-      </Box>
-    </Section>
-  ))
-  .add('Items Centered', () => (
-    <Section>
+        <LevelSide align="right">
+          <LevelItem>
+            <strong>All</strong>
+          </LevelItem>
+          <LevelItem>
+            <a>Published</a>
+          </LevelItem>
+          <LevelItem>
+            <a>Drafts</a>
+          </LevelItem>
+          <LevelItem>
+            <a>Deleted</a>
+          </LevelItem>
+          <LevelItem>
+            <Button as="a" color="success">
+              New
+            </Button>
+          </LevelItem>
+        </LevelSide>
+      </Level>
+    </Box>
+  </Section>
+);
+
+export const ItemsCentered = () => (
+  <Section>
+    <Box>
+      <Level as="nav">
+        <LevelItem style={style}>
+          <div>
+            <Title as="p" title>
+              Tweets
+            </Title>
+            <Title as="p">3,210</Title>
+          </div>
+        </LevelItem>
+        <LevelItem style={style}>
+          <div>
+            <Title as="p" title>
+              Following
+            </Title>
+            <Title as="p">210</Title>
+          </div>
+        </LevelItem>
+        <LevelItem style={style}>
+          <div>
+            <Title as="p" title>
+              Followers
+            </Title>
+            <Title as="p">321</Title>
+          </div>
+        </LevelItem>
+        <LevelItem style={style}>
+          <div>
+            <Title as="p" title>
+              Likes
+            </Title>
+            <Title as="p">321K</Title>
+          </div>
+        </LevelItem>
+      </Level>
+    </Box>
+  </Section>
+);
+
+export const WithBreakpoint = () =>
+  // @ts-ignore
+  (['mobile'] as Breakpoints[]).map((breakpoint, index) => (
+    <Section key={index}>
+      <Title>{breakpoint || 'Without breakpoint'}</Title>
       <Box>
-        <Level as="nav">
+        <Level as="nav" breakpoint={breakpoint}>
           <LevelItem style={style}>
             <div>
               <Title as="p" title>
@@ -104,48 +140,24 @@ storiesOf('Level', module)
         </Level>
       </Box>
     </Section>
-  ))
-  .add('With breakpoint', () =>
-    // @ts-ignore
-    (['mobile'] as Breakpoints[]).map((breakpoint, index) => (
-      <Section key={index}>
-        <Title>{breakpoint || 'Without breakpoint'}</Title>
-        <Box>
-          <Level as="nav" breakpoint={breakpoint}>
-            <LevelItem style={style}>
-              <div>
-                <Title as="p" title>
-                  Tweets
-                </Title>
-                <Title as="p">3,210</Title>
-              </div>
-            </LevelItem>
-            <LevelItem style={style}>
-              <div>
-                <Title as="p" title>
-                  Following
-                </Title>
-                <Title as="p">210</Title>
-              </div>
-            </LevelItem>
-            <LevelItem style={style}>
-              <div>
-                <Title as="p" title>
-                  Followers
-                </Title>
-                <Title as="p">321</Title>
-              </div>
-            </LevelItem>
-            <LevelItem style={style}>
-              <div>
-                <Title as="p" title>
-                  Likes
-                </Title>
-                <Title as="p">321K</Title>
-              </div>
-            </LevelItem>
-          </Level>
-        </Box>
-      </Section>
-    ))
-  );
+  ));
+
+export default {
+  title: 'Level',
+  component: Level,
+  subcomponents: {
+    LevelItem,
+    LevelSide
+  },
+  decorators: [
+    (Story: any) => (
+      <Hero size="fullheight">
+        <HeroHead as="header">
+          <Container>
+            <Story />
+          </Container>
+        </HeroHead>
+      </Hero>
+    )
+  ]
+};

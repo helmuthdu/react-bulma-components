@@ -1,10 +1,9 @@
-import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Container } from '.';
 import { Title } from '../../elements/title';
 import { Section } from '../section';
 
-storiesOf('Container', module).add('Default', () => (
+export const Default = () => (
   <div>
     <Section>
       <Container>
@@ -39,4 +38,9 @@ storiesOf('Container', module).add('Default', () => (
       </Container>
     </Section>
   </div>
-));
+);
+
+export default {
+  title: 'Container',
+  component: Container
+};

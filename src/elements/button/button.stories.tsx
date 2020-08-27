@@ -1,6 +1,5 @@
 import { action } from '@storybook/addon-actions';
 import { boolean, select } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
 import PropTypes from 'prop-types';
 import * as React from 'react';
 import { Button, ButtonGroup } from '.';
@@ -34,62 +33,77 @@ const size: { [key: string]: Sizes | 'normal' } = {
   large: 'large'
 };
 
-storiesOf('Button', module)
-  .addDecorator(story => <div className="button-display">{story()}</div>)
-  .add('Default', () => (
+export const Default = () => (
+  <Section>
+    <Box>Play with the button props using the knobs addon panel at the bottom</Box>
+    <Button
+      color={select('Color', colors as any, 'primary')}
+      disabled={boolean('Disabled', false)}
+      fullwidth={boolean('Full width', false)}
+      inactive={boolean('Static', false)}
+      inverted={boolean('Inverted', false)}
+      loading={boolean('Loading', false)}
+      onClick={action('Button Click')}
+      onMouseEnter={action('Hover')}
+      outlined={boolean('Outlined', false)}
+      remove={boolean('Remove', false)}
+      rounded={boolean('Rounded', false)}
+      size={select('Size', size, 'normal')}
+      text={boolean('Text', false)}>
+      Button
+    </Button>
+  </Section>
+);
+
+export const CustomElement = () => {
+  const CustomComponent = ({ customProp, children, className }: any) => (
+    <a className={className} href={customProp}>
+      {children}
+    </a>
+  );
+
+  CustomComponent.propTypes = {
+    customProp: PropTypes.string.isRequired,
+    className: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired
+  };
+
+  return (
     <Section>
-      <Box>Play with the button props using the knobs addon panel at the bottom</Box>
-      <Button
-        color={select('Color', colors as any, 'primary')}
-        disabled={boolean('Disabled', false)}
-        fullwidth={boolean('Full width', false)}
-        inactive={boolean('Static', false)}
-        inverted={boolean('Inverted', false)}
-        loading={boolean('Loading', false)}
-        onClick={action('Button Click')}
-        onMouseEnter={action('Hover')}
-        outlined={boolean('Outlined', false)}
-        remove={boolean('Remove', false)}
-        rounded={boolean('Rounded', false)}
-        size={select('Size', size, 'normal')}
-        text={boolean('Text', false)}>
-        Button
+      <Button color="info" as={CustomComponent}>
+        Button rendered using another React Component with props
       </Button>
     </Section>
-  ))
-  .add('As another React element', () => {
-    const CustomComponent = ({ customProp, children, className }: any) => (
-      <a className={className} href={customProp}>
-        {children}
-      </a>
-    );
+  );
+};
 
-    CustomComponent.propTypes = {
-      customProp: PropTypes.string.isRequired,
-      className: PropTypes.string.isRequired,
-      children: PropTypes.node.isRequired
-    };
+export const ButtonWithGroup = () => (
+  <Section>
+    <ButtonGroup hasAddons={boolean('hasAddons', false)} position={select('Position', positions, undefined)}>
+      <Button as="span" color="success">
+        Save changes
+      </Button>
+      <Button as="span" color="info">
+        Save and continue
+      </Button>
+      <Button as="span" color="danger">
+        Cancel
+      </Button>
+    </ButtonGroup>
+  </Section>
+);
 
-    return (
-      <Section>
-        <Button color="info" as={CustomComponent}>
-          Button rendered using another React Component with props
-        </Button>
-      </Section>
-    );
-  })
-  .add('Button group', () => (
-    <Section>
-      <ButtonGroup hasAddons={boolean('hasAddons', false)} position={select('Position', positions, undefined)}>
-        <Button as="span" color="success">
-          Save changes
-        </Button>
-        <Button as="span" color="info">
-          Save and continue
-        </Button>
-        <Button as="span" color="danger">
-          Cancel
-        </Button>
-      </ButtonGroup>
-    </Section>
-  ));
+export default {
+  title: 'Button',
+  component: Button,
+  subcomponents: {
+    ButtonGroup
+  },
+  decorators: [
+    (Story: any) => (
+      <div className="button-display">
+        <Story />
+      </div>
+    )
+  ]
+};

@@ -1,4 +1,3 @@
-import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Tile } from '.';
 import { Box } from '../../elements/box';
@@ -6,7 +5,7 @@ import { Image } from '../../elements/image';
 import { Title } from '../../elements/title';
 import { Section } from '../section';
 
-storiesOf('Tile', module).add('Default', () => (
+export const Default = () => (
   <Section>
     <Box>
       <Tile context="ancestor">
@@ -50,4 +49,9 @@ storiesOf('Tile', module).add('Default', () => (
       </Tile>
     </Box>
   </Section>
-));
+);
+
+export default {
+  title: 'Tile',
+  component: Tile
+};

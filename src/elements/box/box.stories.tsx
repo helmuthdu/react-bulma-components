@@ -1,5 +1,4 @@
 import { boolean, select } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Box } from '.';
 import { Spacing } from '../../constants';
@@ -17,7 +16,7 @@ const spacing: { [key: string]: Spacing } = {
   6: '6'
 };
 
-storiesOf('Box', module).add('Default', () => (
+export const Default = () => (
   <Box
     paddingless={boolean('paddingless', false)}
     padding={select('padding', spacing, '0')}
@@ -60,4 +59,9 @@ storiesOf('Box', module).add('Default', () => (
       </MediaItem>
     </Media>
   </Box>
-));
+);
+
+export default {
+  title: 'Box',
+  component: Box
+};

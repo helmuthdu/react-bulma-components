@@ -1,6 +1,4 @@
-/* eslint-disable react/no-multi-comp, react/prop-types */
 import { boolean, select } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Navbar, NavbarBrand, NavbarBurger, NavbarContainer, NavbarItem, NavbarMenu } from '.';
 import { Colors } from '../../constants';
@@ -20,43 +18,56 @@ const colors: { [key: string]: Colors } = {
   link: 'link'
 };
 
-storiesOf('Navbar', module)
-  .addDecorator(story => (
-    <div>
-      {story()}
-      <Box style={{ margin: '15px auto', maxWidth: '75vw' }}>
-        Check the Knows tab to see the behavior of this component
-      </Box>
-    </div>
-  ))
-  .add('Default', () => {
-    return (
-      <Navbar
-        color={select('Color', colors, colors.info)}
-        fixed={select('Fixed', { default: null, top: 'top', bottom: 'bottom' }, null)}
-        active={boolean('Active', false)}
-        transparent={boolean('Transparent', false)}>
-        <Container>
-          <NavbarBrand>
-            <NavbarItem>
-              <img
-                src="https://bulma.io/images/bulma-logo.png"
-                alt="Bulma: a modern CSS framework based on Flexbox"
-                width="112"
-                height="28"
-              />
-            </NavbarItem>
-            <NavbarBurger />
-          </NavbarBrand>
-          <NavbarMenu>
-            <NavbarContainer>
-              <NavbarItem>Second</NavbarItem>
-            </NavbarContainer>
-            <NavbarContainer position="end">
-              <NavbarItem>At the end</NavbarItem>
-            </NavbarContainer>
-          </NavbarMenu>
-        </Container>
-      </Navbar>
-    );
-  });
+export const Default = () => {
+  return (
+    <Navbar
+      color={select('Color', colors, colors.info)}
+      fixed={select('Fixed', { default: null, top: 'top', bottom: 'bottom' }, null)}
+      active={boolean('Active', false)}
+      transparent={boolean('Transparent', false)}>
+      <Container>
+        <NavbarBrand>
+          <NavbarItem>
+            <img
+              src="https://bulma.io/images/bulma-logo.png"
+              alt="Bulma: a modern CSS framework based on Flexbox"
+              width="112"
+              height="28"
+            />
+          </NavbarItem>
+          <NavbarBurger />
+        </NavbarBrand>
+        <NavbarMenu>
+          <NavbarContainer>
+            <NavbarItem>Second</NavbarItem>
+          </NavbarContainer>
+          <NavbarContainer position="end">
+            <NavbarItem>At the end</NavbarItem>
+          </NavbarContainer>
+        </NavbarMenu>
+      </Container>
+    </Navbar>
+  );
+};
+
+export default {
+  title: 'Navbar',
+  component: Navbar,
+  subcomponents: {
+    NavbarBrand,
+    NavbarBurger,
+    NavbarContainer,
+    NavbarItem,
+    NavbarMenu
+  },
+  decorators: [
+    (Story: any) => (
+      <div>
+        <Story />
+        <Box style={{ margin: '15px auto', maxWidth: '75vw' }}>
+          Check the Knows tab to see the behavior of this component
+        </Box>
+      </div>
+    )
+  ]
+};

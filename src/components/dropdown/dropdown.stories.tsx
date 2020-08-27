@@ -1,6 +1,4 @@
 import { action } from '@storybook/addon-actions';
-import { boolean, text } from '@storybook/addon-knobs';
-import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Dropdown, DropdownDivider, DropdownItem } from '.';
 import { Colors } from '../../constants';
@@ -21,12 +19,7 @@ class Wrapper extends React.Component<WrapperProps> {
 
   render() {
     return (
-      <Dropdown
-        {...this.props}
-        value={this.state.selected}
-        onChange={this.onChange}
-        color="info"
-        label={text('label', '')}>
+      <Dropdown {...this.props} value={this.state.selected} onChange={this.onChange} color="info">
         <DropdownItem value="item">Dropdown item</DropdownItem>
         <DropdownItem value="other">Other Dropdown item</DropdownItem>
         <DropdownItem value="active">Active Dropdown item</DropdownItem>
@@ -38,46 +31,60 @@ class Wrapper extends React.Component<WrapperProps> {
   }
 }
 
-storiesOf('Dropdown', module)
-  .add('Default', () => (
-    <Dropdown onChange={action('select')} label={text('label', '')}>
-      <DropdownItem value="item">Dropdown item</DropdownItem>
-      <DropdownItem value="other">Other Dropdown item</DropdownItem>
-      <DropdownItem value="active">Active Dropdown item</DropdownItem>
-      <DropdownItem value="other 2">Other Dropdown item</DropdownItem>
-      <DropdownDivider />
-      <DropdownItem value="divider">With divider</DropdownItem>
-    </Dropdown>
-  ))
-  .add('Hoverable', () => (
-    <Dropdown hoverable value="item" label={text('label', '')}>
-      <DropdownItem value="item">Dropdown item</DropdownItem>
-      <DropdownItem value="other">Other Dropdown item</DropdownItem>
-      <DropdownItem value="active">Active Dropdown item</DropdownItem>
-      <DropdownItem value="other 2">Other Dropdown item</DropdownItem>
-      <DropdownDivider />
-      <DropdownItem value="divider">With divider</DropdownItem>
-    </Dropdown>
-  ))
-  .add('Alignment', () => (
-    <div>
-      <Container>
-        <Section size="large">
-          <Dropdown
-            right={boolean('right (will replace "align" prop)', false)}
-            value="item"
-            up={boolean('up', false)}
-            label={text('label', '')}>
-            <DropdownItem value="item">Dropdown item</DropdownItem>
-            <DropdownItem value="other">Other Dropdown item</DropdownItem>
-            <DropdownItem value="active">Active Dropdown item</DropdownItem>
-            <DropdownItem value="other 2">Other Dropdown item</DropdownItem>
-            <DropdownDivider />
-            <DropdownItem value="divider">With divider</DropdownItem>
-          </Dropdown>
-        </Section>
-      </Container>
-    </div>
-  ))
-  .add('Controlled component', () => <Wrapper />)
-  .add('Controlled component Hoverable', () => <Wrapper hoverable color="dark" />);
+export const Default = (args: any) => (
+  <Dropdown onChange={action('select')} {...args}>
+    <DropdownItem value="item">Dropdown item</DropdownItem>
+    <DropdownItem value="other">Other Dropdown item</DropdownItem>
+    <DropdownItem value="active">Active Dropdown item</DropdownItem>
+    <DropdownItem value="other 2">Other Dropdown item</DropdownItem>
+    <DropdownDivider />
+    <DropdownItem value="divider">With divider</DropdownItem>
+  </Dropdown>
+);
+
+export const Hoverable = (args: any) => (
+  <Dropdown hoverable {...args}>
+    <DropdownItem value="item">Dropdown item</DropdownItem>
+    <DropdownItem value="other">Other Dropdown item</DropdownItem>
+    <DropdownItem value="active">Active Dropdown item</DropdownItem>
+    <DropdownItem value="other 2">Other Dropdown item</DropdownItem>
+    <DropdownDivider />
+    <DropdownItem value="divider">With divider</DropdownItem>
+  </Dropdown>
+);
+
+export const Alignment = (args: any) => (
+  <div>
+    <Container>
+      <Section size="large">
+        <Dropdown {...args}>
+          <DropdownItem value="item">Dropdown item</DropdownItem>
+          <DropdownItem value="other">Other Dropdown item</DropdownItem>
+          <DropdownItem value="active">Active Dropdown item</DropdownItem>
+          <DropdownItem value="other 2">Other Dropdown item</DropdownItem>
+          <DropdownDivider />
+          <DropdownItem value="divider">With divider</DropdownItem>
+        </Dropdown>
+      </Section>
+    </Container>
+  </div>
+);
+
+export const ControlledComponent = (args: any) => <Wrapper {...args} />;
+
+export const ControlledComponentHoverable = (args: any) => <Wrapper hoverable color="dark" {...args} />;
+
+export default {
+  title: 'Dropdown',
+  component: Dropdown,
+  subcomponents: {
+    DropdownDivider,
+    DropdownItem
+  },
+  args: {
+    label: '',
+    value: 'item',
+    up: false,
+    right: false
+  }
+};

@@ -1,10 +1,9 @@
-import { storiesOf } from '@storybook/react';
 import * as React from 'react';
 import { Notification } from '.';
 import { Section } from '../../layout/section';
 import { Button } from '../button';
 
-storiesOf('Notification', module).add('Default', () => (
+export const Default = () => (
   <Section>
     <Notification>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>,
@@ -25,4 +24,9 @@ storiesOf('Notification', module).add('Default', () => (
       <Button remove />
     </Notification>
   </Section>
-));
+);
+
+export default {
+  title: 'Notification',
+  component: Notification
+};
