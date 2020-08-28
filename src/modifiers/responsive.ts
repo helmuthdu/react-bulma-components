@@ -1,47 +1,44 @@
 /* eslint-disable no-unused-vars */
 import clsx from 'clsx';
-import { Breakpoints, Spacing } from '../constants';
+import { Breakpoints, Display, Gap, Spacing, TextAlignment } from '../constants';
 
 type BreakpointSize = {
-  display?: {
-    value?: 'block' | 'flex' | 'inline' | 'inline-block' | 'inline-flex';
-    only?: boolean;
-  };
-  hidden?: {
-    value?: boolean;
-    only?: boolean;
-  };
-  textSize?: Spacing;
-  textAlignment?: {
-    value?: 'centered' | 'justified' | 'left' | 'right';
-    only?: boolean;
-  };
+  display?: Display | { only: Display };
+  gap?: Gap;
+  hidden?: boolean | { only: boolean };
+  textSize?: Spacing | { only: Spacing };
+  textAlignment?: TextAlignment;
 };
 
 export type BreakpointsSize = { [key in Breakpoints]?: BreakpointSize };
 
-export type ResponsiveModifier = {
-  responsive?: BreakpointsSize;
-};
+export type ResponsiveModifier = BreakpointsSize;
 
-const getSizeClassFromProp = (sizes: BreakpointsSize) =>
-  Object.entries(sizes).reduce(
-    // @ts-ignore
-    (classes, [brk, { display = {}, hidden = {}, textAlignment = {}, textSize }]) => ({
-      ...classes,
-      [`has-text-${textAlignment.value}-${brk}${textAlignment.only ? '-only' : ''}`]: textAlignment.value,
-      [`is-${display.value}-${brk}${display.only ? '-only' : ''}`]: display.value,
-      [`is-hidden-${brk}${hidden.only ? '-only' : ''}`]: hidden.value,
-      [`is-size-${textSize}-${brk}`]: textSize >= 0
-    }),
-    {}
-  );
+const getValue = (val: any) => val?.only ?? val;
+const getOnly = (val: any) => (val?.only ? '-only' : '');
+
+const getSizeClassFromProp = (sizes: BreakpointsSize = {}) =>
+  Object.entries(sizes)
+    .filter(([key, values]) => values)
+    .reduce(
+      // @ts-ignore
+      (classes, [breakpoint, { display, gap, hidden, textAlignment, textSize }]) => ({
+        ...classes,
+        'is-variable': gap !== undefined,
+        [`is-${gap}-${breakpoint}`]: gap !== undefined,
+        [`has-text-${getValue(textAlignment)}-${breakpoint}${getOnly(textAlignment)}`]: textAlignment,
+        [`is-${getValue(display)}-${breakpoint}${getOnly(display)}`]: display,
+        [`is-hidden-${breakpoint}${getOnly(hidden)}`]: hidden,
+        [`is-size-${textSize}-${breakpoint}`]: textSize !== undefined
+      }),
+      {}
+    );
 
 export default {
   defaultProps: {},
-  getClassName: (props: any) =>
+  getClassName: ({ mobile, tablet, desktop, widescreen, fullhd, touch }: ResponsiveModifier) =>
     clsx({
-      ...getSizeClassFromProp(props.responsive || {})
+      ...getSizeClassFromProp({ mobile, tablet, desktop, widescreen, fullhd, touch })
     }),
-  clean: ({ responsive, ...props }: ResponsiveModifier) => props
+  clean: ({ mobile, tablet, desktop, widescreen, fullhd, touch, ...props }: ResponsiveModifier) => props
 };

@@ -1,12 +1,14 @@
 import clsx from 'clsx';
+import { Display } from '../constants';
 
 export type HelpersModifier = {
   clearfix?: boolean;
   clipped?: boolean;
+  display?: Display;
   hidden?: boolean;
   invisible?: boolean;
   overlay?: boolean;
-  pull?: 'right' | 'left';
+  pulled?: 'right' | 'left';
   radiusless?: boolean;
   relative?: boolean;
   scrolless?: boolean;
@@ -39,15 +41,17 @@ export default {
       'is-scrolless': props.scrolless,
       'is-shadowless': props.shadowless,
       'is-unselectable': props.unselectable,
-      [`is-pulled-${props.pull}`]: props.pull
+      [`is-${props.display}`]: props.display,
+      [`is-pulled-${props.pulled}`]: props.pulled
     }),
   clean: ({
     clearfix,
     clipped,
+    display,
     hidden,
     invisible,
     overlay,
-    pull,
+    pulled,
     radiusless,
     relative,
     scrolless,

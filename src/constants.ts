@@ -1,5 +1,9 @@
 export const isServer = !(typeof window !== 'undefined' && window.document && window.document.createElement);
 
+export type Display = 'block' | 'flex' | 'inline' | 'inline-block' | 'inline-flex';
+
+export type TextAlignment = 'centered' | 'justified' | 'left' | 'right';
+
 export type Breakpoints = 'mobile' | 'tablet' | 'desktop' | 'widescreen' | 'fullhd' | 'touch';
 
 export type Colors =
@@ -29,7 +33,7 @@ export type Sizes = 'small' | 'medium' | 'large';
 
 export type Spacing = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
-export type Gap = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+export type Gap = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
 export type Scale =
   | 16

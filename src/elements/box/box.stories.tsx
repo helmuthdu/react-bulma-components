@@ -19,26 +19,19 @@ const spacing: { [key: number]: Spacing } = {
 export const Default = () => (
   <Box
     padding={select('padding', spacing, 0)}
-    responsive={{
-      mobile: {
-        display: { value: 'block' }
-      },
-      tablet: {
-        display: { value: 'flex' },
-        hidden: {
-          value: true,
-          only: true
-        }
-      },
-      desktop: {
-        display: { value: 'inline-flex', only: true }
-      },
-      widescreen: {
-        display: { value: 'inline-block' },
-        hidden: {
-          value: true
-        }
-      }
+    mobile={{
+      display: 'block'
+    }}
+    tablet={{
+      display: 'flex',
+      hidden: { only: true }
+    }}
+    desktop={{
+      display: { only: 'inline-flex' }
+    }}
+    widescreen={{
+      display: 'inline-block',
+      hidden: true
     }}>
     <Media>
       <MediaItem as="figure" position="left">

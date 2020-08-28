@@ -8,7 +8,7 @@ type ColumnsProps = ElementModifier & {
   breakpoint?: Breakpoints;
   centered?: boolean;
   gapless?: boolean;
-  gap?: Gap | { [key in Breakpoints]?: Gap };
+  gap?: Gap;
   multiline?: boolean;
   vcentered?: boolean;
 } & Omit<React.ComponentProps<'div'>, 'ref' | 'unselectable'>;
@@ -21,13 +21,10 @@ export const Columns = React.forwardRef<HTMLDivElement, ColumnsProps>(
         'is-centered': centered,
         'is-gapless': gapless,
         'is-multiline': multiline,
-        'is-variable': gap,
+        'is-variable': gap !== undefined,
         'is-vcentered': vcentered,
         [`is-${breakpoint}`]: breakpoint,
-        [`is-${gap}`]: typeof gap === 'number' ? gap : false,
-        ...(typeof gap === 'object'
-          ? Object.entries(gap).reduce((acc, [brk, val]) => ({ ...acc, [`is-${val}-${brk}`]: val }), {})
-          : {})
+        [`is-${gap}`]: gap !== undefined
       })}
       {...modifiers.clean(props)}
     />

@@ -3,7 +3,8 @@
 exports[`Element component should render 1`] = `
 <DocumentFragment>
   <div
-    class="has-text-white is-pulled-left"
+    class="has-text-white"
+    pull="left"
   >
     Facebook
   </div>
