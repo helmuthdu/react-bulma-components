@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import * as React from 'react';
 import colors, { ColorsModifier } from './colors';
 import helpers, { HelpersModifier } from './helpers';
-import responsive, { ResponsiveModifier } from './responsives';
+import responsive, { ResponsiveModifier } from './responsive';
 import spacing, { SpacingModifier } from './spacing';
 import typography, { TypographyModifier } from './typography';
 

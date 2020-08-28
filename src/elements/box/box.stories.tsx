@@ -25,7 +25,7 @@ export const Default = () => (
       },
       tablet: {
         display: { value: 'flex' },
-        hide: {
+        hidden: {
           value: true,
           only: true
         }
@@ -35,7 +35,7 @@ export const Default = () => (
       },
       widescreen: {
         display: { value: 'inline-block' },
-        hide: {
+        hidden: {
           value: true
         }
       }
