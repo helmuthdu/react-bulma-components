@@ -1,6 +1,6 @@
 export const isServer = !(typeof window !== 'undefined' && window.document && window.document.createElement);
 
-export type Breakpoints = null | 'mobile' | 'tablet' | 'desktop' | 'widescreen' | 'fullhd' | 'touch';
+export type Breakpoints = 'mobile' | 'tablet' | 'desktop' | 'widescreen' | 'fullhd' | 'touch';
 
 export type Colors =
   | 'black'
@@ -27,7 +27,7 @@ export type Greyscale =
 
 export type Sizes = 'small' | 'medium' | 'large';
 
-export type Spacing = 0 | 1 | 2 | 3 | 4 | 5 | 6 | '0' | '1' | '2' | '3' | '4' | '5' | '6';
+export type Spacing = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
 export type Scale =
   | 16

@@ -1,4 +1,4 @@
-import { boolean, select } from '@storybook/addon-knobs';
+import { select } from '@storybook/addon-knobs';
 import * as React from 'react';
 import { Box } from '.';
 import { Spacing } from '../../constants';
@@ -6,20 +6,19 @@ import { Media, MediaItem } from '../../layout/media';
 import { Content } from '../content';
 import { Image } from '../image';
 
-const spacing: { [key: string]: Spacing } = {
-  0: '0',
-  1: '1',
-  2: '2',
-  3: '3',
-  4: '4',
-  5: '5',
-  6: '6'
+const spacing: { [key: number]: Spacing } = {
+  0: 0,
+  1: 1,
+  2: 2,
+  3: 3,
+  4: 4,
+  5: 5,
+  6: 6
 };
 
 export const Default = () => (
   <Box
-    paddingless={boolean('paddingless', false)}
-    padding={select('padding', spacing, '0')}
+    padding={select('padding', spacing, 0)}
     responsive={{
       mobile: {
         display: { value: 'block' }

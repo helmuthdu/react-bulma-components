@@ -1,11 +1,10 @@
 import modifiers from '..';
 
 describe('Helper proptypes', () => {
-  it('should have paddingless and clearfix classes', () => {
+  it('should have clearfix classes', () => {
     expect(
       modifiers.getClassName({
-        clearfix: true,
-        paddingless: true
+        clearfix: true
       })
     ).toMatchSnapshot();
   });

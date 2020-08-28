@@ -3,7 +3,7 @@ import { Table } from '.';
 import { Container } from '../../layout/container';
 
 export const Default = () => (
-  <Container fluid padding="6">
+  <Container fluid padding={6}>
     <Table>
       <thead>
         <tr>

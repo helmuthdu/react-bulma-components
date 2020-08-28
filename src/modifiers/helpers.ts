@@ -5,9 +5,7 @@ export type HelpersModifier = {
   clipped?: boolean;
   hidden?: boolean;
   invisible?: boolean;
-  marginless?: boolean;
   overlay?: boolean;
-  paddingless?: boolean;
   pull?: 'right' | 'left';
   radiusless?: boolean;
   relative?: boolean;
@@ -22,9 +20,7 @@ export default {
     clipped: false,
     hidden: false,
     invisible: false,
-    marginless: false,
     overlay: false,
-    paddingless: false,
     radiusless: false,
     relative: false,
     scrolless: false,
@@ -37,9 +33,7 @@ export default {
       'is-clipped': props.clipped,
       'is-hidden': props.hidden,
       'is-invisible': props.invisible,
-      'is-marginless': props.marginless,
       'is-overlay': props.overlay,
-      'is-paddingless': props.paddingless,
       'is-radiusless': props.radiusless,
       'is-relative': props.relative,
       'is-scrolless': props.scrolless,
@@ -52,9 +46,7 @@ export default {
     clipped,
     hidden,
     invisible,
-    marginless,
     overlay,
-    paddingless,
     pull,
     radiusless,
     relative,

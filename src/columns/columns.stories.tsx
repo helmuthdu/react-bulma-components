@@ -19,7 +19,7 @@ export default {
 };
 
 export const Basic = () => (
-  <Container fluid padding="6">
+  <Container fluid padding={6}>
     <Columns>
       <Column>
         <div className="has-background-grey-lighter" style={style}>
@@ -46,7 +46,7 @@ export const Basic = () => (
 );
 
 export const SizesByName = () => (
-  <Container fluid padding="6">
+  <Container fluid padding={6}>
     {Object.keys(CONSTANTS.SIZES).map((size: string) => (
       <Columns key={size}>
         <Column size={(CONSTANTS.SIZES as any)[size]}>
@@ -65,7 +65,7 @@ export const SizesByName = () => (
 );
 
 export const SizesBy12Columns = () => (
-  <Container fluid padding="6">
+  <Container fluid padding={6}>
     <Columns>
       <Column size={1}>
         <div className="has-background-primary" style={style}>
@@ -484,7 +484,7 @@ export const SizesBy12Columns = () => (
 );
 
 export const WithOffset = () => (
-  <Container fluid padding="6">
+  <Container fluid padding={6}>
     <Columns>
       <Column size="half" offset="one-quarter">
         <div className="has-background-grey-lighter" style={style}>
@@ -515,7 +515,7 @@ export const WithOffset = () => (
 );
 
 export const Narrow = () => (
-  <Container fluid padding="6">
+  <Container fluid padding={6}>
     <Columns>
       <Column narrow>
         <Box style={{ width: 200 }}>
@@ -534,7 +534,7 @@ export const Narrow = () => (
 );
 
 export const Responsive = () => (
-  <Container fluid padding="6">
+  <Container fluid padding={6}>
     <Box>
       <Title size={5}>Mobile</Title>
       <Columns breakpoint="mobile">
@@ -614,7 +614,7 @@ export const Responsive = () => (
 );
 
 export const DifferentColumnSizePerBreakpoint = () => (
-  <Container fluid padding="6">
+  <Container fluid padding={6}>
     <Columns breakpoint="mobile">
       <Column
         mobile={{
@@ -655,7 +655,7 @@ export const DifferentColumnSizePerBreakpoint = () => (
 );
 
 export const Nested = () => (
-  <Container fluid padding="6">
+  <Container fluid padding={6}>
     <Columns>
       <Column size="half">
         <div className="has-background-grey-lighter" style={style}>
@@ -701,7 +701,7 @@ export const Nested = () => (
 );
 
 export const GaplessColumns = () => (
-  <Container fluid padding="6">
+  <Container fluid padding={6}>
     <Columns gapless>
       <Column>
         <div className="has-background-grey-lighter" style={style}>

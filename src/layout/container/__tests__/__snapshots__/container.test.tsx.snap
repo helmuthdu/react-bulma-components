@@ -3,7 +3,7 @@
 exports[`Container component should have helper classnames 1`] = `
 <DocumentFragment>
   <div
-    class="container is-paddingless"
+    class="container"
   >
     <div
       class="has-background-success"

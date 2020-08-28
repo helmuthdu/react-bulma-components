@@ -5,13 +5,8 @@ import { Element } from '../element';
 
 type BoxProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'ref' | 'unselectable'>;
 
-export const Box = React.forwardRef<HTMLDivElement, BoxProps>(({ children, paddingless, className, ...props }, ref) => (
-  <Element
-    ref={ref}
-    {...modifiers.clean(props)}
-    className={clsx('box', className, modifiers.getClassName(props), {
-      'is-paddingless': paddingless
-    })}>
+export const Box = React.forwardRef<HTMLDivElement, BoxProps>(({ children, className, ...props }, ref) => (
+  <Element ref={ref} {...modifiers.clean(props)} className={clsx('box', className, modifiers.getClassName(props))}>
     {children}
   </Element>
 ));

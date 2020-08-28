@@ -10,7 +10,7 @@ describe('Container component', () => {
 
   it('should have helper classnames', () => {
     const { asFragment } = render(
-      <Container paddingless>
+      <Container>
         <div className="has-background-success">
           <p>Default</p>
           <p>Container</p>
