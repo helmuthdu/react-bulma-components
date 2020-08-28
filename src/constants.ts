@@ -29,6 +29,8 @@ export type Sizes = 'small' | 'medium' | 'large';
 
 export type Spacing = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
+export type Gap = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+
 export type Scale =
   | 16
   | 24
