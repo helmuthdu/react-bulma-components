@@ -1,4 +1,4 @@
-import { fireEvent, render, wait } from '@testing-library/react';
+import { fireEvent, render, waitFor } from '@testing-library/react';
 import * as React from 'react';
 import { Image } from '..';
 
@@ -23,8 +23,9 @@ describe('Image component', () => {
     const image = container.querySelector('img') as HTMLImageElement;
     fireEvent.error(image);
 
-    await wait();
-    expect(image).toHaveAttribute('src', 'http://mydomain.com/default');
+    await waitFor(() => {
+      expect(image).toHaveAttribute('src', 'http://mydomain.com/default');
+    });
   });
 
   it('should update src', async () => {
