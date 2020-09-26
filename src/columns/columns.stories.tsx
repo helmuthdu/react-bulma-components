@@ -15,7 +15,8 @@ const style: CSSProperties = {
 
 export default {
   title: 'Columns',
-  component: Columns
+  component: Columns,
+  subcomponents: [Column]
 };
 
 export const Basic = () => (
