@@ -1,10 +1,20 @@
-const plugins = [];
+module.exports = function (api) {
+  api.cache(true);
 
-if (process.env.NODE_ENV !== 'production') {
-}
+  const presets = [
+    [
+      '@babel/preset-env',
+      {
+        targets: {
+          esmodules: true
+        }
+      }
+    ],
+    '@babel/typescript',
+    '@babel/preset-react'
+  ];
 
-module.exports = {
-  // Required
-  presets: ['react-app'],
-  plugins
+  return {
+    presets
+  };
 };

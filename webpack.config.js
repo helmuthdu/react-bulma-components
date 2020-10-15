@@ -4,14 +4,9 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const path = require('path');
-const fs = require('fs');
-const appDirectory = fs.realpathSync(process.cwd());
-const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
+const resolveApp = relativePath => path.resolve(__dirname, relativePath);
 
 module.exports = env => {
-  process.env.BABEL_ENV = 'production';
-  process.env.NODE_ENV = 'production';
-
   return {
     devtool: 'source-map',
     entry: './src/index.ts',
@@ -48,7 +43,6 @@ module.exports = env => {
         reportFilename: 'reports/report.html',
         openAnalyzer: false
       }),
-      new webpack.NoEmitOnErrorsPlugin(),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production')
       }),
@@ -57,16 +51,11 @@ module.exports = env => {
       new webpack.LoaderOptionsPlugin({
         minimize: true,
         debug: false
+      }),
+      new MiniCssExtractPlugin({
+        filename: 'dist/react-bulma-components.min.css'
       })
-    ].concat(
-      process.env.WEBPACK_ENV === 'INCLUDE_CSS'
-        ? []
-        : [
-            new MiniCssExtractPlugin({
-              filename: 'dist/react-bulma-components.min.css'
-            })
-          ]
-    ),
+    ],
     module: {
       rules: [
         // First, run the linter.
@@ -76,84 +65,36 @@ module.exports = env => {
           enforce: 'pre',
           use: [
             {
+              loader: require.resolve('eslint-loader'),
               options: {
                 formatter: require.resolve('react-dev-utils/eslintFormatter'),
                 eslintPath: require.resolve('eslint')
-              },
-              loader: require.resolve('eslint-loader')
+              }
             }
           ],
           include: resolveApp('src')
         },
         {
-          test: /\.(js|mjs|jsx|ts|tsx)$/,
-          include: resolveApp('src'),
-          loader: require.resolve('babel-loader'),
-          options: {
-            customize: require.resolve('babel-preset-react-app/webpack-overrides'),
-            plugins: [
-              [
-                require.resolve('babel-plugin-named-asset-import'),
-                {
-                  loaderMap: {
-                    svg: {
-                      ReactComponent: '@svgr/webpack?-svgo,+ref![path]'
-                    }
-                  }
-                }
-              ]
-            ],
-            // This is a feature of `babel-loader` for webpack (not Babel itself).
-            // It enables caching results in ./node_modules/.cache/babel-loader/
-            // directory for faster rebuilds.
-            cacheDirectory: true,
-            cacheCompression: true,
-            compact: true
-          }
+          test: /\.(js|jsx|ts|tsx)$/,
+          use: ['babel-loader'],
+          exclude: /node_modules/
         },
         {
-          test: /\.(js|mjs)$/,
-          exclude: /@babel(?:\/|\\{1,2})runtime/,
-          loader: require.resolve('babel-loader'),
-          options: {
-            babelrc: false,
-            configFile: false,
-            compact: false,
-            presets: [[require.resolve('babel-preset-react-app/dependencies'), { helpers: true }]],
-            cacheDirectory: true,
-            cacheCompression: true,
-            sourceMaps: false
-          }
-        },
-        {
-          test: /\.json/, // Only .json files
-          loader: 'json-loader' // Run both loaders
+          test: /\.json$/,
+          use: 'json-loader'
         },
         {
           test: /\.(eot|svg|ttf|woff|woff2)(\?.*)?$/,
-          loader: 'file-loader?name=fonts/[name].[ext]'
+          use: 'file-loader?name=fonts/[name].[ext]'
         },
         {
           test: /\.(jpg|png|gif)$/,
-          loader: 'file-loader?name=images/[name].[ext]'
+          use: 'file-loader?name=images/[name].[ext]'
         },
         {
           test: /\.s?[ca]ss$/,
-          use: [
-            MiniCssExtractPlugin.loader,
-            {
-              loader: 'css-loader'
-            },
-            {
-              loader: 'resolve-url-loader'
-            },
-            {
-              loader: 'sass-loader',
-              options: {
-                sourceMap: true
-              }
-            }
-          ]
+          include: resolveApp('src'),
+          use: [MiniCssExtractPlugin.loader, 'css-loader', 'resolve-url-loader', 'sass-loader']
         }
       ]
     },
