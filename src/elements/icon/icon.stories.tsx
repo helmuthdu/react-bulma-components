@@ -18,7 +18,9 @@ export const CustomIcons = () => (
   </div>
 );
 
-export default {
+const story = {
   title: 'Icon',
   component: Icon
 };
+
+export default story;

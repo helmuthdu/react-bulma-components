@@ -2,7 +2,7 @@ import { boolean } from '@storybook/addon-knobs';
 import * as React from 'react';
 import { Image } from '.';
 import { Table } from '../table';
-import CONSTANTS from './constants';
+import * as CONSTANTS from './constants';
 
 export const Default = () => (
   <div style={{ width: 320 }}>
@@ -60,7 +60,9 @@ export const ResponsiveImagesWithRatio = () => (
   </Table>
 );
 
-export default {
+const story = {
   title: 'Image',
   component: Image
 };
+
+export default story;

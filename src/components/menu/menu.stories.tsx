@@ -28,10 +28,12 @@ export const Default = () => (
   </Menu>
 );
 
-export default {
+const story = {
   title: 'Menu',
   component: Menu,
   subcomponents: {
     MenuListItem
   }
 };
+
+export default story;

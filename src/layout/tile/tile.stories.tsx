@@ -51,7 +51,9 @@ export const Default = () => (
   </Section>
 );
 
-export default {
+const story = {
   title: 'Tile',
   component: Tile
 };
+
+export default story;

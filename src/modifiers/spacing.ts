@@ -18,7 +18,7 @@ export type SpacingModifier = {
   marginVertical?: Spacing;
 };
 
-export default {
+const modifier = {
   defaultProps: {},
   getClassName: (props: SpacingModifier) =>
     clsx({
@@ -55,3 +55,5 @@ export default {
     ...props
   }: SpacingModifier) => props
 };
+
+export default modifier;

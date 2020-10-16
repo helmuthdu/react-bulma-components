@@ -19,7 +19,9 @@ export const Indeterminate = () => (
   </div>
 );
 
-export default {
+const story = {
   title: 'Progress',
   component: Progress
 };
+
+export default story;

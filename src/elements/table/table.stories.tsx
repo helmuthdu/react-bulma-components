@@ -297,7 +297,9 @@ export const Default = () => (
   </Container>
 );
 
-export default {
+const story = {
   title: 'Table',
   component: Table
 };
+
+export default story;

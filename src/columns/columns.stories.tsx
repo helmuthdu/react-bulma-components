@@ -4,19 +4,13 @@ import { Column, Columns } from '.';
 import { Box } from '../elements/box';
 import { Title } from '../elements/title';
 import { Container } from '../layout/container';
-import CONSTANTS from './constants';
+import * as CONSTANTS from './constants';
 
 const style: CSSProperties = {
   borderRadius: '3px',
   padding: '1rem 0',
   position: 'relative',
   textAlign: 'center'
-};
-
-export default {
-  title: 'Columns',
-  component: Columns,
-  subcomponents: [Column]
 };
 
 export const Basic = () => (
@@ -735,3 +729,11 @@ export const VerticalAlignment = () => (
     </Column>
   </Columns>
 );
+
+const story = {
+  title: 'Columns',
+  component: Columns,
+  subcomponents: [Column]
+};
+
+export default story;

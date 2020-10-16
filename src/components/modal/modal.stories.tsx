@@ -108,7 +108,7 @@ export const ModalCardWindow = () => (
   </OpenModal>
 );
 
-export default {
+const story = {
   title: 'Modal',
   component: Modal,
   subcomponents: {
@@ -120,3 +120,5 @@ export default {
     ModalContent
   }
 };
+
+export default story;

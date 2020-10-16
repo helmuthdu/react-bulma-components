@@ -34,7 +34,7 @@ const getSizeClassFromProp = (sizes: BreakpointsSize = {}) =>
       {}
     );
 
-export default {
+const modifier = {
   defaultProps: {},
   getClassName: ({ mobile, tablet, desktop, widescreen, fullhd, touch }: ResponsiveModifier) =>
     clsx({
@@ -42,3 +42,5 @@ export default {
     }),
   clean: ({ mobile, tablet, desktop, widescreen, fullhd, touch, ...props }: ResponsiveModifier) => props
 };
+
+export default modifier;

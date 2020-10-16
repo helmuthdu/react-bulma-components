@@ -142,7 +142,7 @@ export const WithBreakpoint = () =>
     </Section>
   ));
 
-export default {
+const story = {
   title: 'Level',
   component: Level,
   subcomponents: {
@@ -161,3 +161,5 @@ export default {
     )
   ]
 };
+
+export default story;

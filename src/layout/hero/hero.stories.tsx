@@ -114,7 +114,7 @@ export const VerticalAlignments = () => (
   </Container>
 );
 
-export default {
+const story = {
   title: 'Hero',
   component: Hero,
   subcomponents: {
@@ -123,3 +123,5 @@ export default {
     HeroHead
   }
 };
+
+export default story;

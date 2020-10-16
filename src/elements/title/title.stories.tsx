@@ -37,7 +37,9 @@ export const Default = () => (
   </div>
 );
 
-export default {
+const story = {
   title: 'Title',
   component: Title
 };
+
+export default story;

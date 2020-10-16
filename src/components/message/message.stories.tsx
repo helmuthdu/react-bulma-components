@@ -49,7 +49,7 @@ export const Color = () => (
   </React.Fragment>
 );
 
-export default {
+const story = {
   title: 'Message',
   component: Message,
   subcomponents: {
@@ -57,3 +57,5 @@ export default {
     MessageBody
   }
 };
+
+export default story;

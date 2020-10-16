@@ -50,7 +50,7 @@ export const Default = () => {
   );
 };
 
-export default {
+const story = {
   title: 'Navbar',
   component: Navbar,
   subcomponents: {
@@ -71,3 +71,5 @@ export default {
     )
   ]
 };
+
+export default story;

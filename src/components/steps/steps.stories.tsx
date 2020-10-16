@@ -21,7 +21,7 @@ export const Default = () => (
   </Steps>
 );
 
-export default {
+const story = {
   title: 'Steps',
   component: Steps,
   subcomponents: {
@@ -31,3 +31,5 @@ export default {
     StepTitle
   }
 };
+
+export default story;

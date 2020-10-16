@@ -14,7 +14,7 @@ export const Default = () => (
   </Tabs>
 );
 
-export default {
+const story = {
   title: 'Tabs',
   component: Tabs,
   subcomponents: {
@@ -28,3 +28,5 @@ export default {
     )
   ]
 };
+
+export default story;

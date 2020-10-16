@@ -260,7 +260,7 @@ export const MultipleInputs = () => {
   return <MultiInputHandler />;
 };
 
-export default {
+const story = {
   title: 'Form',
   subcomponents: {
     Checkbox,
@@ -283,3 +283,5 @@ export default {
     )
   ]
 };
+
+export default story;

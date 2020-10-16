@@ -16,7 +16,7 @@ export type HelpersModifier = {
   unselectable?: boolean;
 };
 
-export default {
+const modifier = {
   defaultProps: {
     clearfix: false,
     clipped: false,
@@ -60,3 +60,5 @@ export default {
     ...props
   }: HelpersModifier) => props
 };
+
+export default modifier;

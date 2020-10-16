@@ -153,10 +153,12 @@ export const Nested = () => (
   </Section>
 );
 
-export default {
+const story = {
   title: 'Media',
   component: Media,
   subcomponents: {
     MediaItem
   }
 };
+
+export default story;

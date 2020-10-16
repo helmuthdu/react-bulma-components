@@ -7,7 +7,9 @@ export const Default = (args: any) => (
   </div>
 );
 
-export default {
+const story = {
   title: 'Loader',
   component: Loader
 };
+
+export default story;

@@ -62,7 +62,7 @@ export const WithFooterActions = () => (
   </Card>
 );
 
-export default {
+const story = {
   title: 'Card',
   component: Card,
   subcomponents: {
@@ -81,3 +81,5 @@ export default {
     )
   ]
 };
+
+export default story;

@@ -98,7 +98,9 @@ export const Large = () => (
   </div>
 );
 
-export default {
+const story = {
   title: 'Section',
   component: Section
 };
+
+export default story;

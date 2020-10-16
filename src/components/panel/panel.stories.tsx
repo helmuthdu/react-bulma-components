@@ -72,7 +72,7 @@ export const Default = () => (
   </Panel>
 );
 
-export default {
+const story = {
   title: 'Panel',
   component: Panel,
   subcomponents: {
@@ -90,3 +90,5 @@ export default {
     )
   ]
 };
+
+export default story;

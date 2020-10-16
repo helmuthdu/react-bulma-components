@@ -26,7 +26,9 @@ export const Default = () => (
   </Section>
 );
 
-export default {
+const story = {
   title: 'Notification',
   component: Notification
 };
+
+export default story;

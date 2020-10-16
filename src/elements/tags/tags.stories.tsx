@@ -69,7 +69,7 @@ export const RoundedAndRemoveTag = () => (
   </Tags>
 );
 
-export default {
+const story = {
   title: 'Tag',
   component: Tag,
   subcomponents: {
@@ -83,3 +83,5 @@ export default {
     )
   ]
 };
+
+export default story;

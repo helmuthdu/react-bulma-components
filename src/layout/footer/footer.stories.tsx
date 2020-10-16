@@ -24,7 +24,9 @@ export const Default = () => (
   </Hero>
 );
 
-export default {
+const story = {
   title: 'Footer',
   component: Footer
 };
+
+export default story;

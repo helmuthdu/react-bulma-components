@@ -19,7 +19,7 @@ export type ElementModifier = ColorsModifier &
     style?: React.CSSProperties;
   };
 
-export default {
+const modifiers = {
   defaultProps: {
     ...colors.defaultProps,
     ...helpers.defaultProps,
@@ -37,3 +37,5 @@ export default {
     ),
   clean: (props: any) => compose(colors.clean, helpers.clean, responsive.clean, spacing.clean, typography.clean)(props)
 };
+
+export default modifiers;

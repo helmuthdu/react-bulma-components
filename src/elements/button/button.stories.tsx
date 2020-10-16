@@ -93,7 +93,7 @@ export const ButtonWithGroup = () => (
   </Section>
 );
 
-export default {
+const story = {
   title: 'Button',
   component: Button,
   subcomponents: {
@@ -107,3 +107,5 @@ export default {
     )
   ]
 };
+
+export default story;

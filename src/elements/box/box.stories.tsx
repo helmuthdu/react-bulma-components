@@ -53,7 +53,9 @@ export const Default = () => (
   </Box>
 );
 
-export default {
+const story = {
   title: 'Box',
   component: Box
 };
+
+export default story;

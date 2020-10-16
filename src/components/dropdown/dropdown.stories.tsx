@@ -74,7 +74,7 @@ export const ControlledComponent = (args: any) => <Wrapper {...args} />;
 
 export const ControlledComponentHoverable = (args: any) => <Wrapper hoverable color="dark" {...args} />;
 
-export default {
+const story = {
   title: 'Dropdown',
   component: Dropdown,
   subcomponents: {
@@ -88,3 +88,5 @@ export default {
     right: false
   }
 };
+
+export default story;

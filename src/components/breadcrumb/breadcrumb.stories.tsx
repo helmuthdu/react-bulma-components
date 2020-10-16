@@ -83,7 +83,9 @@ export const CustomElement = () => {
   );
 };
 
-export default {
+const story = {
   title: 'Breadcrumb',
   component: Breadcrumb
 };
+
+export default story;

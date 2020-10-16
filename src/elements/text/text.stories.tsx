@@ -12,7 +12,9 @@ export const Default = () => (
   </div>
 );
 
-export default {
+const story = {
   title: 'Text',
   component: Text
 };
+
+export default story;

@@ -5,7 +5,7 @@ export const Default = () => <Pagination showPrevNext current={3} total={5} />;
 
 export const WithoutButtons = () => <Pagination current={3} total={5} />;
 
-export default {
+const story = {
   title: 'Pagination',
   component: Pagination,
   decorators: [
@@ -16,3 +16,5 @@ export default {
     )
   ]
 };
+
+export default story;

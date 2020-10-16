@@ -12,7 +12,7 @@ export type TypographyModifier = {
   italic?: boolean;
 };
 
-export default {
+const modifier = {
   defaultProps: {
     italic: false
   },
@@ -26,3 +26,5 @@ export default {
     }),
   clean: ({ textWeight, textTransform, italic, textSize, textAlignment, ...props }: TypographyModifier) => props
 };
+
+export default modifier;

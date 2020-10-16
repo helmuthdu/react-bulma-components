@@ -6,7 +6,7 @@ export type ColorsModifier = {
   textColor?: Colors | Greyscale;
 };
 
-export default {
+const modifier = {
   defaultProps: {},
   getClassName: (props: any) =>
     clsx({
@@ -15,3 +15,5 @@ export default {
     }),
   clean: ({ textColor, backgroundColor, ...props }: ColorsModifier) => props
 };
+
+export default modifier;

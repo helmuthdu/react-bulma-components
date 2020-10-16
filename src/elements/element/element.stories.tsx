@@ -3,7 +3,9 @@ import { Element } from '.';
 
 export const Default = () => <Element as="a">Custom Element to use Bulma helper</Element>;
 
-export default {
+const story = {
   title: 'Element',
   component: Element
 };
+
+export default story;

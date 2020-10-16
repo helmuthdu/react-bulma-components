@@ -271,7 +271,9 @@ export const SmallSize = () => (
   </Content>
 );
 
-export default {
+const story = {
   title: 'Content',
   component: Content
 };
+
+export default story;
