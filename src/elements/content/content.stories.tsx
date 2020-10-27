@@ -7,7 +7,7 @@ export const Default = () => (
     <p>
       Lorem ipsum
       <sup>
-        <a>[1]</a>
+        <a href="/">[1]</a>
       </sup>{' '}
       dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius
       lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel,
@@ -142,7 +142,7 @@ export const SmallSize = () => (
     <p>
       Lorem ipsum
       <sup>
-        <a>[1]</a>
+        <a href="/">[1]</a>
       </sup>{' '}
       dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius
       lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel,

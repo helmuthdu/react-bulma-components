@@ -21,8 +21,8 @@ export const Default = () => (
         </MediaItem>
       </Media>
       <Content>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-        <a href="#1">#css</a> <a href="#2">#responsive</a>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a href="/">@bulmaio</a>.
+        <a href="/">#css</a> <a href="/">#responsive</a>
         <br />
         <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
       </Content>
@@ -48,8 +48,8 @@ export const WithFooterActions = () => (
         </MediaItem>
       </Media>
       <Content>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-        <a href="#1">#css</a> <a href="#2">#responsive</a>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a href="/">@bulmaio</a>.
+        <a href="/">#css</a> <a href="/">#responsive</a>
         <br />
         <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
       </Content>

@@ -4,12 +4,7 @@ module.exports = {
   env: {
     'jest/globals': true
   },
-  extends: [
-    'react-app',
-    'plugin:jest/recommended',
-    'plugin:prettier/recommended',
-    'prettier/react'
-  ],
+  extends: ['react-app', 'plugin:jest/recommended', 'plugin:prettier/recommended', 'prettier/react'],
   plugins: ['jest', 'prettier'],
   rules: {
     'react/display-name': 0,

@@ -38,13 +38,13 @@ export const Default = () => (
             <strong>All</strong>
           </LevelItem>
           <LevelItem>
-            <a>Published</a>
+            <a href="/">Published</a>
           </LevelItem>
           <LevelItem>
-            <a>Drafts</a>
+            <a href="/">Drafts</a>
           </LevelItem>
           <LevelItem>
-            <a>Deleted</a>
+            <a href="/">Deleted</a>
           </LevelItem>
           <LevelItem>
             <Button as="a" color="success">

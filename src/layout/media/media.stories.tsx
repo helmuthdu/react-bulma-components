@@ -74,7 +74,7 @@ export const Nested = () => (
               non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus turpis.
               <br />
               <small>
-                <a>Like</a> · <a>Reply</a> · 3 hrs
+                <a href="/">Like</a> · <a href="/">Reply</a> · 3 hrs
               </small>
             </p>
           </Content>
@@ -93,7 +93,7 @@ export const Nested = () => (
                   feugiat.
                   <br />
                   <small>
-                    <a>Like</a> · <a>Reply</a> · 2 hrs
+                    <a href="/">Like</a> · <a href="/">Reply</a> · 2 hrs
                   </small>
                 </p>
               </Content>
@@ -124,7 +124,7 @@ export const Nested = () => (
                   ultrices posuere cubilia Curae; Phasellus lacinia non nisl id feugiat.
                   <br />
                   <small>
-                    <a>Like</a> · <a>Reply</a> · 2 hrs
+                    <a href="/">Like</a> · <a href="/">Reply</a> · 2 hrs
                   </small>
                 </p>
               </Content>
