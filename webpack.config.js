@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const path = require('path');
 const resolveApp = relativePath => path.resolve(__dirname, relativePath);
@@ -37,6 +38,7 @@ module.exports = env => {
       }
     },
     plugins: [
+      new ESLintPlugin(),
       new ProgressBarPlugin(),
       new BundleAnalyzerPlugin({
         analyzerMode: 'static',
