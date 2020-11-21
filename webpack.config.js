@@ -60,22 +60,6 @@ module.exports = env => {
     ],
     module: {
       rules: [
-        // First, run the linter.
-        // It's important to do this before Babel processes the JS.
-        {
-          test: /\.(js|mjs|jsx|ts|tsx)$/,
-          enforce: 'pre',
-          use: [
-            {
-              loader: require.resolve('eslint-loader'),
-              options: {
-                formatter: require.resolve('react-dev-utils/eslintFormatter'),
-                eslintPath: require.resolve('eslint')
-              }
-            }
-          ],
-          include: resolveApp('src')
-        },
         {
           test: /\.(js|jsx|ts|tsx)$/,
           use: ['babel-loader'],
