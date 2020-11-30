@@ -21,19 +21,19 @@ const getOnly = (val: DisplayWithOnly | HiddenWithOnly | SpacingWithOnly | any) 
 const getSizeClassFromProp = (sizes: BreakpointsSize) =>
   sizes
     ? Object.entries(sizes)
-      .filter(([, values]) => values)
-      .reduce(
-        (classes, [breakpoint, { display, gap, hidden, textAlignment, textSize }]: [string, BreakpointSize]) => ({
-          ...classes,
-          'is-variable': gap !== undefined,
-          [`is-${gap}-${breakpoint}`]: gap !== undefined,
-          [`has-text-${getValue(textAlignment)}-${breakpoint}${getOnly(textAlignment)}`]: textAlignment,
-          [`is-${getValue(display)}-${breakpoint}${getOnly(display)}`]: display,
-          [`is-hidden-${breakpoint}${getOnly(hidden)}`]: hidden,
-          [`is-size-${textSize}-${breakpoint}`]: textSize !== undefined
-        }),
-        {}
-      )
+        .filter(([, values]) => values)
+        .reduce(
+          (classes, [breakpoint, { display, gap, hidden, textAlignment, textSize }]: [string, BreakpointSize]) => ({
+            ...classes,
+            'is-variable': gap !== undefined,
+            [`is-${gap}-${breakpoint}`]: gap !== undefined,
+            [`has-text-${getValue(textAlignment)}-${breakpoint}${getOnly(textAlignment)}`]: textAlignment,
+            [`is-${getValue(display)}-${breakpoint}${getOnly(display)}`]: display,
+            [`is-hidden-${breakpoint}${getOnly(hidden)}`]: hidden,
+            [`is-size-${textSize}-${breakpoint}`]: textSize !== undefined
+          }),
+          {}
+        )
     : {};
 
 const modifier = {
