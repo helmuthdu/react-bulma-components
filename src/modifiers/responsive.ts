@@ -13,28 +13,27 @@ type BreakpointSize = {
   textAlignment?: TextAlignment;
 };
 
-export type BreakpointsSize = { [key in Breakpoints]?: BreakpointSize };
+export type BreakpointsSize = Record<Breakpoints, BreakpointSize>;
+export type ResponsiveModifier = { [key in Breakpoints]?: BreakpointSize };
 
-export type ResponsiveModifier = BreakpointsSize;
-
-const getValue = (val: any | DisplayWithOnly | HiddenWithOnly | SpacingWithOnly) => val?.only ?? val;
-const getOnly = (val: any | DisplayWithOnly | HiddenWithOnly | SpacingWithOnly) => (val?.only ? '-only' : '');
-const getSizeClassFromProp = (sizes?: BreakpointsSize) =>
+const getValue = (val: DisplayWithOnly | HiddenWithOnly | SpacingWithOnly | any) => val?.only ?? val;
+const getOnly = (val: DisplayWithOnly | HiddenWithOnly | SpacingWithOnly | any) => (val?.only ? '-only' : '');
+const getSizeClassFromProp = (sizes: BreakpointsSize) =>
   sizes
     ? Object.entries(sizes)
-        .filter(([, values]) => values)
-        .reduce(
-          (classes, [breakpoint, { display, gap, hidden, textAlignment, textSize }]: [string, any]) => ({
-            ...classes,
-            'is-variable': gap !== undefined,
-            [`is-${gap}-${breakpoint}`]: gap !== undefined,
-            [`has-text-${getValue(textAlignment)}-${breakpoint}${getOnly(textAlignment)}`]: textAlignment,
-            [`is-${getValue(display)}-${breakpoint}${getOnly(display)}`]: display,
-            [`is-hidden-${breakpoint}${getOnly(hidden)}`]: hidden,
-            [`is-size-${textSize}-${breakpoint}`]: textSize !== undefined
-          }),
-          {}
-        )
+      .filter(([, values]) => values)
+      .reduce(
+        (classes, [breakpoint, { display, gap, hidden, textAlignment, textSize }]: [string, BreakpointSize]) => ({
+          ...classes,
+          'is-variable': gap !== undefined,
+          [`is-${gap}-${breakpoint}`]: gap !== undefined,
+          [`has-text-${getValue(textAlignment)}-${breakpoint}${getOnly(textAlignment)}`]: textAlignment,
+          [`is-${getValue(display)}-${breakpoint}${getOnly(display)}`]: display,
+          [`is-hidden-${breakpoint}${getOnly(hidden)}`]: hidden,
+          [`is-size-${textSize}-${breakpoint}`]: textSize !== undefined
+        }),
+        {}
+      )
     : {};
 
 const modifier = {

@@ -1,5 +1,3 @@
-export const isServer = !(typeof window !== 'undefined' && window.document && window.document.createElement);
-
 export type Display = 'block' | 'flex' | 'inline' | 'inline-block' | 'inline-flex';
 
 export type TextAlignment = 'centered' | 'justified' | 'left' | 'right';

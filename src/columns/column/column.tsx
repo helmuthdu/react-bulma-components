@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { Sizes } from '../../constants';
+import { Breakpoints, Sizes } from '../../constants';
 import { Element } from '../../elements';
 import modifiers, { ElementModifier } from '../../modifiers';
 
@@ -36,14 +36,9 @@ type ColumnSize = {
 };
 
 type ColumnProps = ElementModifier &
-  ColumnSize & {
-    mobile?: ColumnSize;
-    tablet?: ColumnSize;
-    touch?: ColumnSize;
-    desktop?: ColumnSize;
-    widescreen?: ColumnSize;
-    fullhd?: ColumnSize;
-  } & Omit<React.ComponentProps<'div'>, 'ref' | 'size' | 'unselectable'>;
+  ColumnSize &
+  { [key in Breakpoints]?: ColumnSize } &
+  Omit<React.ComponentProps<'div'>, 'ref' | 'size' | 'unselectable'>;
 
 export const Column = React.forwardRef<HTMLDivElement, ColumnProps>(
   (
