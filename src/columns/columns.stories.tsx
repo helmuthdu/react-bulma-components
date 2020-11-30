@@ -733,7 +733,9 @@ export const VerticalAlignment = () => (
 const story = {
   title: 'Columns',
   component: Columns,
-  subcomponents: [Column]
+  subcomponents: {
+    Column
+  }
 };
 
 export default story;

@@ -14,13 +14,13 @@ export const Hero = React.forwardRef<HTMLDivElement, HeroProps>(
   ({ children, className, color, gradient, size, ...props }, ref) => (
     <Element
       ref={ref}
-      className={clsx('hero', className, {
+      className={clsx('hero', className, modifiers.getClassName(props), {
         'is-bold': gradient,
         'is-link': size === 'fullheight-with-navbar',
         [`is-${color}`]: color,
         [`is-${size}`]: size
       })}
-      {...props}>
+      {...modifiers.clean(props)}>
       {children}
     </Element>
   )

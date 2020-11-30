@@ -99,7 +99,6 @@ export const ItemsCentered = () => (
 );
 
 export const WithBreakpoint = () =>
-  // @ts-ignore
   (['mobile'] as Breakpoints[]).map((breakpoint, index) => (
     <Section key={index}>
       <Title>{breakpoint || 'Without breakpoint'}</Title>

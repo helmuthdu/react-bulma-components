@@ -3,7 +3,7 @@
 exports[`Columns component should have columns one column half width and 3 other as default 1`] = `
 <DocumentFragment>
   <div
-    class="columns is-multiline"
+    class="columns"
   >
     <div
       class="column is-6"
@@ -32,7 +32,7 @@ exports[`Columns component should have columns one column half width and 3 other
 exports[`Columns component should have columns one column half width, other narrow and 2 other as default 1`] = `
 <DocumentFragment>
   <div
-    class="columns is-multiline"
+    class="columns"
   >
     <div
       class="column is-6"
@@ -61,7 +61,7 @@ exports[`Columns component should have columns one column half width, other narr
 exports[`Columns component should render 1`] = `
 <DocumentFragment>
   <div
-    class="columns is-multiline"
+    class="columns"
   />
 </DocumentFragment>
 `;
@@ -77,7 +77,7 @@ exports[`Columns component should render 2`] = `
 exports[`Columns component should render as paragraph 1`] = `
 <DocumentFragment>
   <div
-    class="columns is-multiline"
+    class="columns"
   >
     <p
       class="column is-6"

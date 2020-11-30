@@ -47,7 +47,20 @@ type ColumnProps = ElementModifier &
 
 export const Column = React.forwardRef<HTMLDivElement, ColumnProps>(
   (
-    { children, className, desktop, fullhd, mobile, narrow, offset, size, tablet, touch, widescreen, ...props },
+    {
+      children,
+      className,
+      desktop = {},
+      fullhd = {},
+      mobile = {},
+      narrow = {},
+      offset,
+      size,
+      tablet = {},
+      touch = {},
+      widescreen = {},
+      ...props
+    },
     ref
   ) => (
     <Element
@@ -56,41 +69,23 @@ export const Column = React.forwardRef<HTMLDivElement, ColumnProps>(
         'is-narrow': narrow,
         [`is-${size}`]: size,
         [`is-offset-${offset}`]: offset,
-        // @ts-ignore
         [`is-${touch.size}-mobile`]: touch.size,
-        // @ts-ignore
         [`is-${mobile.size}-mobile`]: mobile.size,
-        // @ts-ignore
         [`is-${tablet.size}-tablet`]: tablet.size,
-        // @ts-ignore
         [`is-${desktop.size}-desktop`]: desktop.size,
-        // @ts-ignore
         [`is-${widescreen.size}-widescreen`]: widescreen.size,
-        // @ts-ignore
         [`is-${fullhd.size}-fullhd`]: fullhd.size,
-        // @ts-ignore
         [`is-offset-${touch.offset}-mobile`]: touch.offset,
-        // @ts-ignore
         [`is-offset-${mobile.offset}-mobile`]: mobile.offset,
-        // @ts-ignore
         [`is-offset-${tablet.offset}-tablet`]: tablet.offset,
-        // @ts-ignore
         [`is-offset-${desktop.offset}-desktop`]: desktop.offset,
-        // @ts-ignore
         [`is-offset-${widescreen.offset}-widescreen`]: widescreen.offset,
-        // @ts-ignore
         [`is-offset-${fullhd.offset}-fullhd`]: fullhd.offset,
-        // @ts-ignore
         'is-narrow-touch': touch.narrow,
-        // @ts-ignore
         'is-narrow-mobile': mobile.narrow,
-        // @ts-ignore
         'is-narrow-tablet': tablet.narrow,
-        // @ts-ignore
         'is-narrow-desktop': desktop.narrow,
-        // @ts-ignore
         'is-narrow-widescreen': widescreen.narrow,
-        // @ts-ignore
         'is-narrow-fullhd': fullhd.narrow
       })}
       {...modifiers.clean(props)}>
@@ -109,3 +104,5 @@ Column.defaultProps = {
   widescreen: {},
   fullhd: {}
 };
+
+Column.displayName = 'Column';

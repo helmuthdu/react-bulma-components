@@ -14,7 +14,7 @@ type ColumnsProps = ElementModifier & {
 } & Omit<React.ComponentProps<'div'>, 'ref' | 'unselectable'>;
 
 export const Columns = React.forwardRef<HTMLDivElement, ColumnsProps>(
-  ({ breakpoint, centered, className, gap, gapless, multiline, vcentered, ...props }, ref) => (
+  ({ children, breakpoint, centered, className, gap, gapless, multiline, vcentered, ...props }, ref) => (
     <Element
       ref={ref}
       className={clsx('columns', className, modifiers.getClassName(props), {
@@ -26,8 +26,9 @@ export const Columns = React.forwardRef<HTMLDivElement, ColumnsProps>(
         [`is-${breakpoint}`]: breakpoint,
         [`is-${gap}`]: gap !== undefined
       })}
-      {...modifiers.clean(props)}
-    />
+      {...modifiers.clean(props)}>
+      {children}
+    </Element>
   )
 );
 
@@ -35,5 +36,7 @@ Columns.defaultProps = {
   ...modifiers.defaultProps,
   centered: false,
   gapless: false,
-  multiline: true
+  multiline: false
 };
+
+Columns.displayName = 'Columns';

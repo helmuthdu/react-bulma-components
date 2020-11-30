@@ -15,8 +15,7 @@ const HoC = (Component: React.FunctionComponent<any>) => {
 
     onChange = (evt: React.SyntheticEvent) => {
       this.setState({
-        // @ts-ignore
-        value: evt.target.value
+        value: (evt.target as any).value
       });
     };
 
@@ -36,8 +35,7 @@ const HoCCheckbox = (Component: React.FunctionComponent<any>) => {
 
     onChange = (evt: React.SyntheticEvent) => {
       this.setState({
-        // @ts-ignore
-        checked: evt.target.checked
+        value: (evt.target as any).value
       });
     };
 
@@ -56,8 +54,7 @@ class RadioGroup extends React.Component {
 
   onChange = (evt: React.SyntheticEvent) => {
     this.setState({
-      // @ts-ignore
-      selected: evt.target.value
+      value: (evt.target as any).value
     });
   };
 
@@ -85,14 +82,14 @@ export const Default = () => (
     <Field>
       <Label>Name</Label>
       <Control>
-        <Input placeholder="Text input" onChange={() => {}} />
+        <Input placeholder="Text input" onChange={() => null} />
       </Control>
     </Field>
 
     <Field>
       <Label>Username</Label>
       <Control>
-        <Input color="success" type="text" placeholder="Text input" value="bulma" onChange={() => {}} />
+        <Input color="success" type="text" placeholder="Text input" value="bulma" onChange={() => null} />
       </Control>
       <Help color="success">This username is available</Help>
     </Field>
@@ -100,14 +97,14 @@ export const Default = () => (
     <Field>
       <Label>Email</Label>
       <Control>
-        <Input color="danger" type="email" placeholder="Email input" value="hello@" onChange={() => {}} />
+        <Input color="danger" type="email" placeholder="Email input" value="hello@" onChange={() => null} />
       </Control>
       <Help color="danger">This email is invalid</Help>
     </Field>
     <Field>
       <Label>With Icons</Label>
       <Control iconLeft iconRight>
-        <Input color="success" type="email" placeholder="I have icons" onChange={() => {}} />
+        <Input color="success" type="email" placeholder="I have icons" onChange={() => null} />
         <Icon align="left" icon="bars" />
         <Icon align="right" icon="bars" />
       </Control>
@@ -126,14 +123,14 @@ export const Default = () => (
     <Field>
       <Label>Message</Label>
       <Control>
-        <Textarea placeholder="Textarea" onChange={() => {}} />
+        <Textarea placeholder="Textarea" onChange={() => null} />
       </Control>
     </Field>
 
     <Field>
       <Label>File</Label>
       <Control>
-        <InputFile icon={<Icon icon="upload" />} onChange={() => {}} />
+        <InputFile icon={<Icon icon="upload" />} onChange={() => null} />
       </Control>
     </Field>
 
@@ -184,11 +181,10 @@ export const MultipleInputs = () => {
     };
 
     onChange = (evt: React.SyntheticEvent) => {
-      // @ts-ignore
-      const value = evt.target.type === 'checkbox' ? evt.target.checked : evt.target.value;
+      const target = evt.target as any;
+      const value = target.type === 'checkbox' ? target.checked : target.value;
       this.setState({
-        // @ts-ignore
-        [evt.target.name]: value
+        [target.name]: value
       });
     };
 
