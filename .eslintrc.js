@@ -1,26 +1,33 @@
-const path = require('path');
-
 module.exports = {
   env: {
-    'jest/globals': true
+    'jest/globals': true,
+    'cypress/globals': true
   },
-  extends: ['react-app', 'plugin:jest/recommended', 'plugin:prettier/recommended', 'prettier/react'],
-  plugins: ['jest', 'prettier'],
+  globals: {
+    React: 'writable'
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:cypress/recommended',
+    'plugin:prettier/recommended',
+    'prettier/@typescript-eslint',
+    'prettier/react'
+  ],
+  plugins: ['prettier', 'jest', 'cypress', 'testing-library'],
   rules: {
-    'react/display-name': 0,
+    '@typescript-eslint/explicit-function-return-type': 0,
+    '@typescript-eslint/prefer-interface': 0,
+    'react/react-in-jsx-scope': 'off',
     'prettier/prettier': 'error',
-    'react-hooks/rules-of-hooks': 'error',
     'no-console': 'off'
   },
   overrides: [
     {
-      files: ['**/__tests__/**'],
-      settings: {
-        'import/resolver': {
-          jest: {
-            jestConfigFile: path.join(__dirname, './jest.config.js')
-          }
-        }
+      files: ['**/*.tsx'],
+      rules: {
+        'react/prop-types': 'off'
       }
     }
   ]
