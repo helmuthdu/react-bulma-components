@@ -10,7 +10,7 @@ describe('Input file component', () => {
   });
 
   it('should render', () => {
-    const { asFragment } = render(<InputFile onChange={() => {}} />);
+    const { asFragment } = render(<InputFile onChange={() => void 0} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
@@ -50,7 +50,7 @@ describe('Input file component', () => {
       capture: 'source',
       multiple: true
     };
-    const { asFragment } = render(<InputFile onChange={() => {}} {...props} />);
+    const { asFragment } = render(<InputFile onChange={() => void 0} {...props} />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

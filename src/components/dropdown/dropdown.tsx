@@ -9,16 +9,17 @@ import { DropdownItem } from './dropdown-item';
 
 const { useEffect, useState } = React;
 
-type DropdownProps = ElementModifier & {
-  color?: Exclude<Colors, 'light'>;
-  hoverable?: boolean;
-  label?: React.ReactNode;
-  light?: boolean;
-  onChange?: (...args: any[]) => void;
-  right?: boolean;
-  up?: boolean;
-  value?: any;
-} & Omit<React.ComponentProps<'div'>, 'ref' | 'color' | 'onChange' | 'unselectable'>;
+type DropdownProps = Omit<React.ComponentPropsWithRef<'div'>, 'onChange' | 'unselectable'> &
+  ElementModifier & {
+    color?: Exclude<Colors, 'light'>;
+    hoverable?: boolean;
+    label?: React.ReactNode;
+    light?: boolean;
+    onChange?: (...args: any[]) => void;
+    right?: boolean;
+    up?: boolean;
+    value?: any;
+  };
 
 export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
   ({ className, children, value, color, light, right, up, label, hoverable, onChange, ...props }, ref) => {
@@ -81,12 +82,17 @@ export const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
     return (
       <div
         ref={ref}
-        className={clsx('dropdown', className, modifiers.getClassName(props), {
-          'is-active': open,
-          'is-hoverable': hoverable,
-          'is-right': right,
-          'is-up': up
-        })}
+        className={clsx(
+          'dropdown',
+          {
+            'is-active': open,
+            'is-hoverable': hoverable,
+            'is-right': right,
+            'is-up': up
+          },
+          modifiers.getClassName(props),
+          className
+        )}
         {...modifiers.clean(props)}>
         <div role="presentation" onClick={toggle}>
           <Button color={color} light={light}>
@@ -106,6 +112,7 @@ Dropdown.defaultProps = {
   ...modifiers.defaultProps,
   children: [],
   label: '',
-  onChange: () => {},
   value: null
 };
+
+Dropdown.displayName = 'Dropdown';

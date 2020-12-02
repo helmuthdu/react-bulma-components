@@ -3,14 +3,10 @@ import * as React from 'react';
 import { Panel, PanelBlock, PanelHeading, PanelIcon, PanelTab, PanelTabs } from '..';
 
 describe('Panel component', () => {
-  it.each([[Panel], [PanelBlock], [PanelHeading], [PanelIcon], [PanelTabs], [PanelTab]])(
-    'should render',
-    // @ts-ignore
-    Component => {
-      const { asFragment } = render(<Component />);
-      expect(asFragment()).toMatchSnapshot();
-    }
-  );
+  it.each([[Panel], [PanelBlock], [PanelHeading], [PanelIcon], [PanelTabs], [PanelTab]])('should render', Component => {
+    const { asFragment } = render(<Component />);
+    expect(asFragment()).toMatchSnapshot();
+  });
   it('should render with all', () => {
     const { asFragment } = render(
       <Panel>

@@ -6,7 +6,7 @@ describe('Modal component', () => {
   it('should render modal-card-head', () => {
     const onClose = jest.fn();
     const { container, unmount } = render(
-      <ModalCard onClose={onClose}>
+      <ModalCard>
         <ModalCardHeader onClose={onClose}>
           <ModalCardTitle>Modal Title</ModalCardTitle>
         </ModalCardHeader>

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Element } from '../../../elements';
 import modifiers, { ElementModifier } from '../../../modifiers';
 
-type MediaContentProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'ref' | 'unselectable'>;
+type MediaContentProps = Omit<React.ComponentPropsWithRef<'div'>, 'unselectable'> & ElementModifier;
 
 export const MediaContent = React.forwardRef<HTMLDivElement, MediaContentProps>(
   ({ children, className, ...props }, ref) => (
@@ -16,3 +16,5 @@ export const MediaContent = React.forwardRef<HTMLDivElement, MediaContentProps>(
 MediaContent.defaultProps = {
   ...modifiers.defaultProps
 };
+
+MediaContent.displayName = 'MediaContent';

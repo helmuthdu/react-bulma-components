@@ -5,19 +5,20 @@ import { Sizes } from '../../constants';
 import { Element } from '../../elements';
 import modifiers, { ElementModifier } from '../../modifiers';
 
-type PaginationProps = ElementModifier & {
-  autoHide?: boolean;
-  current?: number;
-  delta?: number;
-  next?: React.ReactNode;
-  onChange?: (...args: any[]) => void;
-  position?: 'centered' | 'right';
-  previous?: React.ReactNode;
-  rounded?: boolean;
-  showPrevNext?: boolean;
-  size?: Sizes;
-  total?: number;
-} & Omit<React.ComponentProps<'nav'>, 'ref' | 'size' | 'onChange' | 'unselectable'>;
+type PaginationProps = Omit<React.ComponentPropsWithRef<'nav'>, 'unselectable'> &
+  ElementModifier & {
+    autoHide?: boolean;
+    current?: number;
+    delta?: number;
+    next?: React.ReactNode;
+    onChange?: (...args: any[]) => void;
+    position?: 'centered' | 'right';
+    previous?: React.ReactNode;
+    rounded?: boolean;
+    showPrevNext?: boolean;
+    size?: Sizes;
+    total?: number;
+  };
 
 export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
   (
@@ -26,11 +27,15 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
   ) => (
     <Element
       ref={ref}
-      className={clsx('pagination', className, {
-        [`is-rounded`]: rounded,
-        [`is-${size}`]: size,
-        [`is-${position}`]: position
-      })}
+      className={clsx(
+        'pagination',
+        {
+          [`is-rounded`]: rounded,
+          [`is-${size}`]: size,
+          [`is-${position}`]: position
+        },
+        className
+      )}
       aria-label="pagination"
       {...props}>
       <ReactPaginate
@@ -59,9 +64,11 @@ Pagination.defaultProps = {
   current: 0,
   delta: 5,
   next: 'Next',
-  onChange: () => {},
+  onChange: () => void 0,
   previous: 'Previous',
   rounded: false,
   showPrevNext: false,
   total: 1
 };
+
+Pagination.displayName = 'Pagination';

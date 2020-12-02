@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Element } from '../../../elements';
 import modifiers, { ElementModifier } from '../../../modifiers';
 
-type HeroFooterProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'ref' | 'unselectable'>;
+type HeroFooterProps = Omit<React.ComponentPropsWithRef<'div'>, 'unselectable'> & ElementModifier;
 
 export const HeroFoot = React.forwardRef<HTMLDivElement, HeroFooterProps>(({ children, className, ...props }, ref) => (
   <Element ref={ref} className={clsx('hero-foot', className)} {...props}>
@@ -14,3 +14,5 @@ export const HeroFoot = React.forwardRef<HTMLDivElement, HeroFooterProps>(({ chi
 HeroFoot.defaultProps = {
   ...modifiers.defaultProps
 };
+
+HeroFoot.displayName = 'HeroFoot';

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Element } from '../../../../elements';
 import modifiers, { ElementModifier } from '../../../../modifiers';
 
-type ModalCardFootProps = ElementModifier & Omit<React.ComponentProps<'footer'>, 'ref' | 'unselectable'>;
+type ModalCardFootProps = Omit<React.ComponentPropsWithRef<'footer'>, 'unselectable'> & ElementModifier;
 
 export const ModalCardFooter = React.forwardRef<HTMLDivElement, ModalCardFootProps>(
   ({ children, className, ...props }, ref) => (
@@ -17,3 +17,5 @@ ModalCardFooter.defaultProps = {
   ...modifiers.defaultProps,
   as: 'footer'
 };
+
+ModalCardFooter.displayName = 'ModalCardFooter';

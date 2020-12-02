@@ -1,32 +1,37 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { Colors } from '../../../constants';
+import { Colors, Sizes } from '../../../constants';
 import modifiers, { ElementModifier } from '../../../modifiers';
 import { Element } from '../../element';
 
-type TagProps = ElementModifier & {
-  close?: boolean;
-  color?: Exclude<Colors, 'light'>;
-  ellipsis?: boolean;
-  light?: boolean;
-  onClick?: (...args: any[]) => any;
-  remove?: boolean;
-  rounded?: boolean;
-  size?: 'medium' | 'large';
-} & Omit<React.ComponentProps<'div'>, 'ref' | 'size' | 'unselectable'>;
+type TagProps = Omit<React.ComponentPropsWithRef<'div'>, 'unselectable'> &
+  ElementModifier & {
+    close?: boolean;
+    color?: Exclude<Colors, 'light'>;
+    ellipsis?: boolean;
+    light?: boolean;
+    onClick?: (...args: any[]) => any;
+    remove?: boolean;
+    rounded?: boolean;
+    size?: Exclude<Sizes, 'small'>;
+  };
 
 export const Tag = React.forwardRef<HTMLDivElement, TagProps>(
   ({ children, className, close, color, ellipsis, light, onClick, remove, rounded, size, ...props }, ref) => (
     <Element
       ref={ref}
       onClick={() => remove && onClick && onClick()}
-      className={clsx('tag', className, {
-        'is-delete': remove,
-        'is-light': light,
-        'is-rounded': rounded,
-        [`is-${color}`]: color,
-        [`is-${size}`]: size
-      })}
+      className={clsx(
+        'tag',
+        {
+          'is-delete': remove,
+          'is-light': light,
+          'is-rounded': rounded,
+          [`is-${color}`]: color,
+          [`is-${size}`]: size
+        },
+        className
+      )}
       {...props}>
       {!remove && <span className={clsx({ 'has-ellipsis': ellipsis })}>{children}</span>}
       {!remove && close && <button onClick={onClick} className="delete is-small" />}
@@ -41,3 +46,5 @@ Tag.defaultProps = {
   remove: false,
   rounded: false
 };
+
+Tag.displayName = 'Tag';

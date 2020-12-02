@@ -3,7 +3,6 @@ import * as React from 'react';
 import { Hero, HeroBody, HeroFoot, HeroHead } from '..';
 
 describe('Hero component', () => {
-  // @ts-ignore
   it.each([[Hero], [HeroHead], [HeroBody], [HeroFoot]])('should render', Component => {
     const { asFragment } = render(<Component />);
     expect(asFragment()).toMatchSnapshot();

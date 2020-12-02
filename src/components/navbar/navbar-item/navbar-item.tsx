@@ -3,12 +3,13 @@ import * as React from 'react';
 import { Element } from '../../../elements';
 import modifiers, { ElementModifier } from '../../../modifiers';
 
-type NavbarItemProps = ElementModifier & {
-  active?: boolean;
-  dropdown?: boolean;
-  dropdownUp?: boolean;
-  hoverable?: boolean;
-} & Omit<React.ComponentProps<'a'>, 'ref' | 'unselectable'>;
+type NavbarItemProps = Omit<React.ComponentPropsWithRef<'a'>, 'unselectable'> &
+  ElementModifier & {
+    active?: boolean;
+    dropdown?: boolean;
+    dropdownUp?: boolean;
+    hoverable?: boolean;
+  };
 
 export const NavbarItem = React.forwardRef<HTMLAnchorElement, NavbarItemProps>(
   ({ className, active, children, dropdown, dropdownUp, hoverable, as, ...props }, ref) => {
@@ -16,12 +17,16 @@ export const NavbarItem = React.forwardRef<HTMLAnchorElement, NavbarItemProps>(
       <Element
         ref={ref}
         as={dropdown && as === 'a' ? 'span' : as}
-        className={clsx('navbar-item', className, {
-          'has-dropdown': dropdown,
-          'has-dropdown-up': dropdownUp,
-          'is-active': active,
-          'is-hoverable': hoverable
-        })}
+        className={clsx(
+          'navbar-item',
+          {
+            'has-dropdown': dropdown,
+            'has-dropdown-up': dropdownUp,
+            'is-active': active,
+            'is-hoverable': hoverable
+          },
+          className
+        )}
         {...props}>
         {children}
       </Element>
@@ -37,3 +42,5 @@ NavbarItem.defaultProps = {
   hoverable: false,
   as: 'a'
 };
+
+NavbarItem.displayName = 'NavbarItem';

@@ -3,12 +3,18 @@ import * as React from 'react';
 import { Element } from '../../../../elements';
 import modifiers, { ElementModifier } from '../../../../modifiers';
 
-type CardHeaderTitleProps = ElementModifier;
+type CardHeaderTitleProps = Omit<React.ComponentPropsWithRef<'p'>, 'unselectable'> &
+  ElementModifier & { centered?: boolean };
 
-export const CardHeaderTitle = React.forwardRef<HTMLDivElement, CardHeaderTitleProps>(
-  ({ className, ...props }, ref) => <Element ref={ref} {...props} className={clsx('card-header-title', className)} />
+export const CardHeaderTitle = React.forwardRef<HTMLParagraphElement, CardHeaderTitleProps>(
+  ({ centered, className, ...props }, ref) => (
+    <Element ref={ref} className={clsx('card-header-title', { 'is-centered': centered }, className)} {...props} />
+  )
 );
 
 CardHeaderTitle.defaultProps = {
-  ...modifiers.defaultProps
+  ...modifiers.defaultProps,
+  as: 'p'
 };
+
+CardHeaderTitle.displayName = 'CardHeaderTitle';

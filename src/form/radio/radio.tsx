@@ -3,11 +3,12 @@ import * as React from 'react';
 import { Colors, Sizes } from '../../constants';
 import modifiers, { ElementModifier } from '../../modifiers';
 
-type RadioProps = ElementModifier & {
-  color?: Colors;
-  size?: Sizes;
-  value?: string | number;
-} & Omit<React.ComponentProps<'input'>, 'ref' | 'color' | 'size' | 'unselectable' | 'value'>;
+type RadioProps = Omit<React.ComponentPropsWithRef<'input'>, 'size' | 'unselectable' | 'value'> &
+  ElementModifier & {
+    color?: Colors;
+    size?: Sizes;
+    value?: string | number;
+  };
 
 export const Radio = React.forwardRef<HTMLSelectElement, RadioProps>(
   ({ checked, children, className, color, disabled, name, size, style, value, ...props }, ref) => (
@@ -36,3 +37,5 @@ Radio.defaultProps = {
   ...modifiers.defaultProps,
   checked: false
 };
+
+Radio.displayName = 'Radio';

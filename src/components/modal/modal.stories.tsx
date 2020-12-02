@@ -73,7 +73,7 @@ export const CloseOnClickOutside = () => (
 export const ModalCardWindow = () => (
   <OpenModal modal={{ closeOnBlur: true }}>
     <ModalCard>
-      <ModalCardHeader onClose={() => {}}>
+      <ModalCardHeader onClose={() => void 0}>
         <ModalCardTitle>Title</ModalCardTitle>
       </ModalCardHeader>
       <ModalCardBody>

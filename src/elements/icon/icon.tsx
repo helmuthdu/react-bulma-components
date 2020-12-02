@@ -18,22 +18,24 @@ const iconSizes = {
   }
 };
 
-type IconProps = ElementModifier & {
-  align?: 'left' | 'right';
-  border?: boolean;
-  color?: Colors | Greyscale;
-  icon?: string;
-  inactive?: boolean;
-  pack?: 'mdi' | 'fas';
-  size?: 'small' | 'normal' | 'medium' | 'large';
-  type?: 'light' | 'dark';
-  spinner?: boolean;
-} & Omit<React.ComponentProps<'span'>, 'ref' | 'color' | 'size' | 'unselectable'>;
+type IconPack = 'mdi' | 'fas';
+type IconSize = 'small' | 'normal' | 'medium' | 'large';
+type IconProps = Omit<React.ComponentPropsWithRef<'span'>, 'unselectable'> &
+  ElementModifier & {
+    align?: 'left' | 'right';
+    border?: boolean;
+    color?: Colors | Greyscale;
+    icon?: string;
+    inactive?: boolean;
+    pack?: IconPack;
+    size?: IconSize;
+    type?: 'light' | 'dark';
+    spinner?: boolean;
+  };
 
 export const Icon = React.forwardRef<HTMLSpanElement, IconProps>(
   ({ align, border, children, className, color, icon, inactive, pack, size, spinner, type, ...props }, ref) => {
-    // @ts-ignore
-    const iconSize = iconSizes[pack][size];
+    const iconSize = iconSizes[pack as IconPack][size as IconSize];
     const iconPack =
       pack === 'mdi'
         ? clsx('mdi', {
@@ -53,11 +55,16 @@ export const Icon = React.forwardRef<HTMLSpanElement, IconProps>(
     return (
       <span
         ref={ref}
-        className={clsx('icon', className, modifiers.getClassName(props), {
-          [`is-${size}`]: size,
-          [`is-${align}`]: align,
-          [`has-text-${color}`]: color
-        })}
+        className={clsx(
+          'icon',
+          {
+            [`is-${size}`]: size,
+            [`is-${align}`]: align,
+            [`has-text-${color}`]: color
+          },
+          modifiers.getClassName(props),
+          className
+        )}
         {...modifiers.clean(props)}>
         {children || <i className={iconPack} />}
       </span>
@@ -70,3 +77,5 @@ Icon.defaultProps = {
   size: 'normal',
   pack: 'mdi'
 };
+
+Icon.displayName = 'Icon';

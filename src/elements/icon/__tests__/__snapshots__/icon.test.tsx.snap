@@ -3,7 +3,7 @@
 exports[`Icon component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <span
-    class="icon other-class is-normal"
+    class="icon is-normal other-class"
   >
     <i
       class="mdi mdi-bars mdi-24px"

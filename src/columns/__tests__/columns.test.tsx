@@ -3,7 +3,6 @@ import * as React from 'react';
 import { Column, Columns } from '..';
 
 describe('Columns component', () => {
-  // @ts-ignore
   it.each([[Columns], [Column]])('should render', Component => {
     const { asFragment } = render(<Component />);
     expect(asFragment()).toMatchSnapshot();

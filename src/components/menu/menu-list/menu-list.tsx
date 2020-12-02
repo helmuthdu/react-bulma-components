@@ -5,9 +5,10 @@ import modifiers, { ElementModifier } from '../../../modifiers';
 
 const { Fragment } = React;
 
-type MenuListProps = ElementModifier & {
-  title?: string;
-} & Omit<React.ComponentProps<'ul'>, 'ref' | 'unselectable'>;
+type MenuListProps = Omit<React.ComponentPropsWithRef<'ul'>, 'unselectable'> &
+  ElementModifier & {
+    title?: string;
+  };
 
 export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(({ className, title, ...props }, ref) => (
   <Fragment>
@@ -19,3 +20,5 @@ export const MenuList = React.forwardRef<HTMLUListElement, MenuListProps>(({ cla
 MenuList.defaultProps = {
   ...modifiers.defaultProps
 };
+
+MenuList.displayName = 'MenuList';

@@ -5,22 +5,22 @@ exports[`Card component Should render card-header 1`] = `
   <div
     class="card"
   >
-    <div
+    <header
       class="card-header"
     >
-      <div
+      <p
         class="card-header-title"
       >
         Title
-      </div>
-      <div
+      </p>
+      <a
         class="card-header-icon"
       >
         <i
           class="icon"
         />
-      </div>
-    </div>
+      </a>
+    </header>
   </div>
 </DocumentFragment>
 `;
@@ -43,7 +43,7 @@ exports[`Card component should render 2`] = `
 
 exports[`Card component should render 3`] = `
 <DocumentFragment>
-  <div
+  <footer
     class="card-footer"
   />
 </DocumentFragment>
@@ -51,7 +51,7 @@ exports[`Card component should render 3`] = `
 
 exports[`Card component should render 4`] = `
 <DocumentFragment>
-  <div
+  <header
     class="card-header"
   />
 </DocumentFragment>
@@ -62,20 +62,20 @@ exports[`Card component should render card-footer 1`] = `
   <div
     class="card"
   >
-    <div
+    <footer
       class="card-footer"
     >
-      <div
+      <a
         class="card-footer-item"
       >
         Yes
-      </div>
-      <div
+      </a>
+      <a
         class="card-footer-item"
       >
         No
-      </div>
-    </div>
+      </a>
+    </footer>
   </div>
 </DocumentFragment>
 `;

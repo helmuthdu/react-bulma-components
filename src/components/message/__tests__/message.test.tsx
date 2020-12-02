@@ -4,7 +4,6 @@ import * as React from 'react';
 import { Message, MessageBody, MessageHeader } from '..';
 
 describe('Message component', () => {
-  // @ts-ignore
   it.each([[Message], [MessageHeader], [MessageBody]])('should render', Component => {
     const { asFragment } = render(<Component>Content</Component>);
     expect(asFragment()).toMatchSnapshot();

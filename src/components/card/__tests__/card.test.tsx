@@ -12,7 +12,6 @@ import {
 } from '..';
 
 describe('Card component', () => {
-  // @ts-ignore
   it.each([[Card], [CardContent], [CardFooter], [CardHeader]])('should render', Component => {
     const { asFragment } = render(<Component />);
     expect(asFragment()).toMatchSnapshot();

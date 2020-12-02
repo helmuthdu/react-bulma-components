@@ -4,17 +4,18 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { Colors, Sizes } from '../../constants';
 import modifiers, { ElementModifier } from '../../modifiers';
 
-type SelectProps = ElementModifier & {
-  color?: Colors;
-  disabled?: boolean;
-  empty?: boolean;
-  loading?: boolean;
-  multiple?: boolean;
-  readOnly?: boolean;
-  rounded?: boolean;
-  size?: Sizes;
-  value?: string | number | any[];
-} & Omit<React.ComponentProps<'select'>, 'ref' | 'size' | 'color' | 'unselectable'>;
+type SelectProps = Omit<React.ComponentPropsWithRef<'select'>, 'size' | 'unselectable'> &
+  ElementModifier & {
+    color?: Colors;
+    disabled?: boolean;
+    empty?: boolean;
+    loading?: boolean;
+    multiple?: boolean;
+    readOnly?: boolean;
+    rounded?: boolean;
+    size?: Sizes;
+    value?: string | number | any[];
+  };
 
 export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
   (
@@ -45,14 +46,19 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
 
     return (
       <div
-        className={clsx('select', modifiers.getClassName(props), className, {
-          'is-empty': empty,
-          'is-loading': loading,
-          'is-multiple': multiple,
-          'is-rounded': rounded,
-          [`is-${color}`]: color,
-          [`is-${size}`]: size
-        })}
+        className={clsx(
+          'select',
+          {
+            'is-empty': empty,
+            'is-loading': loading,
+            'is-multiple': multiple,
+            'is-rounded': rounded,
+            [`is-${color}`]: color,
+            [`is-${size}`]: size
+          },
+          modifiers.getClassName(props),
+          className
+        )}
         style={style}>
         <select
           ref={ref}
@@ -81,3 +87,5 @@ Select.defaultProps = {
   rounded: false,
   value: ''
 };
+
+Select.displayName = 'Select';

@@ -4,12 +4,13 @@ import { Sizes } from '../../constants';
 import { Element } from '../../elements';
 import modifiers, { ElementModifier } from '../../modifiers';
 
-type TabsProps = ElementModifier & {
-  align?: null | 'centered' | 'right';
-  fullwidth?: boolean;
-  size?: Sizes;
-  type?: 'toggle' | 'boxed' | 'toggle-rounded';
-};
+type TabsProps = Omit<React.ComponentPropsWithRef<'div'>, 'unselectable'> &
+  ElementModifier & {
+    align?: 'centered' | 'right';
+    fullwidth?: boolean;
+    size?: Sizes;
+    type?: 'toggle' | 'boxed' | 'toggle-rounded';
+  };
 
 export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
   ({ children, className, align, size, type, fullwidth, ...props }, ref) => (
@@ -19,14 +20,18 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
       })}>
       <Element
         ref={ref}
-        {...props}
-        className={clsx('tabs', className, {
-          'is-fullwidth': fullwidth,
-          'is-toggle': type === 'toggle-rounded',
-          [`is-${align}`]: align,
-          [`is-${size}`]: size,
-          [`is-${type}`]: type
-        })}>
+        className={clsx(
+          'tabs',
+          {
+            'is-fullwidth': fullwidth,
+            'is-toggle': type === 'toggle-rounded',
+            [`is-${align}`]: align,
+            [`is-${size}`]: size,
+            [`is-${type}`]: type
+          },
+          className
+        )}
+        {...props}>
         <ul>{children}</ul>
       </Element>
     </div>
@@ -38,3 +43,5 @@ Tabs.defaultProps = {
   as: 'nav',
   fullwidth: false
 };
+
+Tabs.displayName = 'Tabs';

@@ -5,23 +5,29 @@ import modifiers, { ElementModifier } from '../../modifiers';
 
 const { useState } = React;
 
-type SwitchProps = ElementModifier & {
-  color?: Colors;
-  size?: Sizes;
-  rounded?: boolean;
-  outlined?: boolean;
-  value?: string | number;
-} & Omit<React.ComponentProps<'input'>, 'ref' | 'color' | 'size' | 'unselectable' | 'value'>;
+type SwitchProps = Omit<React.ComponentPropsWithRef<'input'>, 'size' | 'unselectable' | 'value'> &
+  ElementModifier & {
+    color?: Colors;
+    size?: Sizes;
+    rounded?: boolean;
+    outlined?: boolean;
+    value?: string | number;
+  };
 
 export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
   ({ checked, children, className, color, disabled, name, outlined, rounded, size, style, value, ...props }, ref) => {
     const [isMouseDown, setMouseDown] = useState(false);
     return (
       <label
-        className={clsx('switch', modifiers.getClassName(props), className, {
-          'is-rounded': rounded,
-          'is-outlined': outlined
-        })}
+        className={clsx(
+          'switch',
+          {
+            'is-rounded': rounded,
+            'is-outlined': outlined
+          },
+          modifiers.getClassName(props),
+          className
+        )}
         onMouseDown={() => setMouseDown(true)}
         onMouseOut={() => setMouseDown(false)}
         onMouseUp={() => setMouseDown(false)}
@@ -52,3 +58,5 @@ Switch.defaultProps = {
   ...modifiers.defaultProps,
   checked: false
 };
+
+Switch.displayName = 'Switch';

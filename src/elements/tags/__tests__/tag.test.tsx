@@ -3,7 +3,6 @@ import * as React from 'react';
 import { Tag, Tags } from '..';
 
 describe('Tag component', () => {
-  // @ts-ignore
   it.each([[Tag], [Tags]])('should render', Component => {
     const { asFragment } = render(<Component />);
     expect(asFragment()).toMatchSnapshot();

@@ -4,10 +4,11 @@ import { Colors, Sizes } from '../../constants';
 import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../element';
 
-type ProgressProps = ElementModifier & {
-  color?: Colors;
-  size?: Sizes;
-} & Omit<React.ComponentProps<'progress'>, 'ref' | 'color' | 'unselectable'>;
+type ProgressProps = Omit<React.ComponentPropsWithRef<'progress'>, 'unselectable'> &
+  ElementModifier & {
+    color?: Colors;
+    size?: Sizes;
+  };
 
 export const Progress = React.forwardRef<HTMLProgressElement, ProgressProps>(
   ({ className, color, size, ...props }, ref) => (
@@ -27,3 +28,5 @@ Progress.defaultProps = {
   ...modifiers.defaultProps,
   max: 100
 };
+
+Progress.displayName = 'Progress';

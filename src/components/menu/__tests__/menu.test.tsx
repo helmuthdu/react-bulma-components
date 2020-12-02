@@ -4,7 +4,6 @@ import * as React from 'react';
 import { Menu, MenuList, MenuListItem } from '..';
 
 describe('Menu component', () => {
-  // @ts-ignore
   it.each([[Menu], [MenuList], [MenuListItem]])('should render', Component => {
     const { asFragment } = render(<Component>Content</Component>);
     expect(asFragment()).toMatchSnapshot();

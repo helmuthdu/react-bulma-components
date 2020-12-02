@@ -4,18 +4,18 @@ import { Element } from '../../../../elements';
 import modifiers, { ElementModifier } from '../../../../modifiers';
 import { MenuList } from '../menu-list';
 
-type MenuListItemProps = ElementModifier & {
-  active?: boolean;
-};
+type MenuListItemProps = Omit<React.ComponentPropsWithRef<'a'>, 'unselectable'> &
+  ElementModifier & {
+    active?: boolean;
+  };
 
-export const MenuListItem = React.forwardRef<HTMLLIElement, MenuListItemProps>(
+export const MenuListItem = React.forwardRef<HTMLAnchorElement, MenuListItemProps>(
   ({ children, active, className, ...props }, ref) => {
     if (
       children &&
       typeof children !== 'string' &&
       React.Children.toArray(children).length === 1 &&
-      // @ts-ignore
-      React.Children.only(children).type === MenuList
+      (React.Children.only(children) as any).type === MenuList
     ) {
       const child: any = React.Children.only(children);
       return (
@@ -42,3 +42,5 @@ MenuListItem.defaultProps = {
   active: false,
   as: 'a'
 };
+
+MenuListItem.displayName = 'MenuListItem';

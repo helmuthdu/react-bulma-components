@@ -3,17 +3,22 @@ import * as React from 'react';
 import { Element } from '../../../elements';
 import modifiers, { ElementModifier } from '../../../modifiers';
 
-type PanelBlockProps = ElementModifier & {
-  active?: boolean;
-} & Omit<React.ComponentProps<'div'>, 'ref' | 'unselectable'>;
+type PanelBlockProps = Omit<React.ComponentPropsWithRef<'div'>, 'unselectable'> &
+  ElementModifier & {
+    active?: boolean;
+  };
 
 export const PanelBlock = React.forwardRef<HTMLDivElement, PanelBlockProps>(({ className, active, ...props }, ref) => (
   <Element
     ref={ref}
+    className={clsx(
+      'panel-block',
+      {
+        'is-active': active
+      },
+      className
+    )}
     {...props}
-    className={clsx('panel-block', className, {
-      'is-active': active
-    })}
   />
 ));
 
@@ -21,3 +26,5 @@ PanelBlock.defaultProps = {
   ...modifiers.defaultProps,
   active: false
 };
+
+PanelBlock.displayName = 'PanelBlock';

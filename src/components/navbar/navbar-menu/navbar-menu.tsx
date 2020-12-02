@@ -4,7 +4,7 @@ import { Element } from '../../../elements';
 import modifiers, { ElementModifier } from '../../../modifiers';
 import { ShowContext } from '../context';
 
-type NavbarMenuProps = ElementModifier;
+type NavbarMenuProps = Omit<React.ComponentPropsWithRef<'div'>, 'unselectable'> & ElementModifier;
 
 export const NavbarMenu = React.forwardRef<HTMLDivElement, NavbarMenuProps>(
   ({ className, children, ...props }, ref) => (
@@ -12,10 +12,14 @@ export const NavbarMenu = React.forwardRef<HTMLDivElement, NavbarMenuProps>(
       {active => (
         <Element
           ref={ref}
-          {...props}
-          className={clsx('navbar-menu', className, {
-            'is-active': active
-          })}>
+          className={clsx(
+            'navbar-menu',
+            {
+              'is-active': active
+            },
+            className
+          )}
+          {...props}>
           {children}
         </Element>
       )}
@@ -26,3 +30,5 @@ export const NavbarMenu = React.forwardRef<HTMLDivElement, NavbarMenuProps>(
 NavbarMenu.defaultProps = {
   ...modifiers.defaultProps
 };
+
+NavbarMenu.displayName = 'NavbarMenu';

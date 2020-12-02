@@ -2,24 +2,28 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { Sizes } from '../../constants';
 import { Element } from '../../elements';
+import modifiers, { ElementModifier } from '../../modifiers';
 
-type StepsProps = React.PropsWithChildren<{
-  as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
-  size?: Sizes;
-  className?: string;
-}>;
+type StepsProps = Omit<React.ComponentPropsWithRef<'ul'>, 'unselectable'> & ElementModifier & { size?: Sizes };
 
 export const Steps = React.forwardRef<HTMLUListElement, StepsProps>(({ className, children, size, ...props }, ref) => (
   <Element
     ref={ref}
-    {...props}
-    className={clsx('steps', className, {
-      [`is-${size}`]: size
-    })}>
+    className={clsx(
+      'steps',
+      {
+        [`is-${size}`]: size
+      },
+      className
+    )}
+    {...props}>
     {children}
   </Element>
 ));
 
 Steps.defaultProps = {
+  ...modifiers.defaultProps,
   as: 'ul'
 };
+
+Steps.displayName = 'Steps';

@@ -26,7 +26,7 @@ export const Default = () => (
     <PanelHeading>repositories</PanelHeading>
     <PanelBlock>
       <Control>
-        <Input size="small" type="text" placeholder="search" onChange={() => {}} />
+        <Input size="small" type="text" placeholder="search" onChange={() => void 0} />
       </Control>
     </PanelBlock>
     <PanelTabs className="panel-tabs">
@@ -61,7 +61,7 @@ export const Default = () => (
       mojs
     </PanelBlock>
     <PanelBlock as="label" className="panel-block">
-      <Checkbox onChange={() => {}} />
+      <Checkbox onChange={() => void 0} />
       remember me
     </PanelBlock>
     <PanelBlock>

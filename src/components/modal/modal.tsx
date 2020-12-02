@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import { ElementModifier } from '../../modifiers';
+import modifiers, { ElementModifier } from '../../modifiers';
 
 const { useEffect } = React;
 
@@ -9,13 +9,14 @@ const KEYCODES = {
   ESCAPE: 27
 };
 
-type ModalProps = ElementModifier & {
-  show: boolean;
-  onClose: (...args: any[]) => any;
-  closeOnEsc?: boolean;
-  closeOnBlur?: boolean;
-  showClose?: boolean;
-};
+type ModalProps = Omit<React.ComponentPropsWithRef<'div'>, 'unselectable'> &
+  ElementModifier & {
+    show: boolean;
+    onClose: (...args: any[]) => any;
+    closeOnEsc?: boolean;
+    closeOnBlur?: boolean;
+    showClose?: boolean;
+  };
 
 export const Modal = React.forwardRef<HTMLDivElement, ModalProps>((props, ref) => {
   const { closeOnEsc, closeOnBlur, show, className } = props;
@@ -62,8 +63,11 @@ export const Modal = React.forwardRef<HTMLDivElement, ModalProps>((props, ref) =
     });
   }
   return ReactDOM.createPortal(
-    <div ref={ref} className={clsx('modal', className, { 'is-active': show })}>
-      <div className="modal-background" onClick={closeOnBlur ? props.onClose : () => {}} role="presentation" />
+    <div
+      ref={ref}
+      className={clsx('modal', { 'is-active': show }, modifiers.getClassName(props), className)}
+      {...modifiers.clean(props)}>
+      <div className="modal-background" onClick={closeOnBlur ? props.onClose : () => void 0} role="presentation" />
       {children}
       {showClose && (
         <button aria-label="close" className="modal-close is-large" onClick={props.onClose} type="button" />
@@ -78,3 +82,5 @@ Modal.defaultProps = {
   showClose: true,
   closeOnBlur: false
 };
+
+Modal.displayName = 'Modal';

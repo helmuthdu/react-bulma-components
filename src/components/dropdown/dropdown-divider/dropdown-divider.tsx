@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import * as React from 'react';
 import modifiers, { ElementModifier } from '../../../modifiers';
 
-type DropdownDividerProps = ElementModifier & Omit<React.ComponentProps<'hr'>, 'ref' | 'unselectable'>;
+type DropdownDividerProps = Omit<React.ComponentPropsWithRef<'hr'>, 'unselectable'> & ElementModifier;
 
 export const DropdownDivider = React.forwardRef<HTMLHRElement, DropdownDividerProps>(({ className, ...props }, ref) => {
   return (
@@ -17,3 +17,5 @@ export const DropdownDivider = React.forwardRef<HTMLHRElement, DropdownDividerPr
 DropdownDivider.defaultProps = {
   ...modifiers.defaultProps
 };
+
+DropdownDivider.displayName = 'DropdownDivider';

@@ -24,7 +24,7 @@ export const Default = () => (
           <LevelItem>
             <Field context="addons">
               <Control>
-                <Input placeholder="Find a post" onChange={() => {}} />
+                <Input placeholder="Find a post" onChange={() => void 0} />
               </Control>
               <Control>
                 <Button as="button">Search</Button>

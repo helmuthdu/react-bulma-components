@@ -36,7 +36,6 @@ describe('Navbar component', () => {
     [NavbarItem],
     [NavbarLink],
     [NavbarMenu]
-    // @ts-ignore
   ])('should render', Component => {
     const { asFragment } = render(<Component />);
     expect(asFragment()).toMatchSnapshot();

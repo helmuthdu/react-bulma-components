@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Element } from '../../../elements';
 import modifiers, { ElementModifier } from '../../../modifiers';
 
-type NavbarDividerProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'ref' | 'unselectable'>;
+type NavbarDividerProps = Omit<React.ComponentPropsWithRef<'div'>, 'unselectable'> & ElementModifier;
 
 export const NavbarDivider = React.forwardRef<HTMLHRElement, NavbarDividerProps>(({ className, ...props }, ref) => (
   <Element ref={ref} className={clsx('navbar-divider', className)} {...props} />
@@ -12,3 +12,5 @@ export const NavbarDivider = React.forwardRef<HTMLHRElement, NavbarDividerProps>
 NavbarDivider.defaultProps = {
   ...modifiers.defaultProps
 };
+
+NavbarDivider.displayName = 'NavbarDivider';

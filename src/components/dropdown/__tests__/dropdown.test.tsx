@@ -12,7 +12,7 @@ describe('Dropdown component', () => {
 
   it('should render', () => {
     const { asFragment } = render(
-      <Dropdown value="value" onChange={() => {}}>
+      <Dropdown value="value" onChange={() => void 0}>
         <DropdownItem value="value">Item</DropdownItem>
       </Dropdown>
     );
@@ -22,7 +22,7 @@ describe('Dropdown component', () => {
   it('should add listener do document on mount', () => {
     global.window.document.addEventListener = jest.fn();
     render(
-      <Dropdown value="value" onChange={() => {}}>
+      <Dropdown value="value" onChange={() => void 0}>
         <DropdownItem value="value">Item</DropdownItem>
       </Dropdown>
     );
@@ -31,7 +31,7 @@ describe('Dropdown component', () => {
 
   it('should concat classname in props with classname', () => {
     const { asFragment } = render(
-      <Dropdown value="value" className="other-class" onChange={() => {}}>
+      <Dropdown value="value" className="other-class" onChange={() => void 0}>
         <DropdownItem value="value">Item</DropdownItem>
       </Dropdown>
     );
@@ -40,7 +40,7 @@ describe('Dropdown component', () => {
 
   it('should have custom inline styles', () => {
     const { asFragment } = render(
-      <Dropdown value="value" style={{ width: 400 }} onChange={() => {}}>
+      <Dropdown value="value" style={{ width: 400 }} onChange={() => void 0}>
         <DropdownItem value="value">Item</DropdownItem>
       </Dropdown>
     );
@@ -49,7 +49,7 @@ describe('Dropdown component', () => {
 
   it('should have divider', () => {
     const { asFragment } = render(
-      <Dropdown value="value" style={{ width: 400 }} onChange={() => {}}>
+      <Dropdown value="value" style={{ width: 400 }} onChange={() => void 0}>
         <DropdownItem value="value">Item</DropdownItem>
         <DropdownDivider />
         <DropdownItem value="other">Other</DropdownItem>
@@ -80,7 +80,7 @@ describe('Dropdown component', () => {
 
   it('should open the Dropdown', () => {
     const { container } = render(
-      <Dropdown value="value" style={{ width: 400 }} onChange={() => {}}>
+      <Dropdown value="value" style={{ width: 400 }} onChange={() => void 0}>
         <DropdownItem value="value">Item</DropdownItem>
         <DropdownDivider />
         <DropdownItem value="other">Other</DropdownItem>

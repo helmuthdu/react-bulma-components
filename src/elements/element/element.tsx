@@ -17,3 +17,5 @@ Element.defaultProps = {
   ...modifiers.defaultProps,
   as: 'div'
 };
+
+Element.displayName = 'Element';

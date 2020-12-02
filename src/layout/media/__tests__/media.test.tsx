@@ -3,7 +3,6 @@ import * as React from 'react';
 import { Media, MediaContent, MediaItem } from '..';
 
 describe('Media component', () => {
-  // @ts-ignore
   it.each([[Media], [MediaContent], [MediaItem]])('should render', Component => {
     const { asFragment } = render(<Component />);
     expect(asFragment()).toMatchSnapshot();

@@ -3,12 +3,13 @@ import * as React from 'react';
 import { Colors, Sizes } from '../../constants';
 import modifiers, { ElementModifier } from '../../modifiers';
 
-type CheckboxProps = ElementModifier & {
-  color?: Colors;
-  indeterminate?: boolean;
-  size?: Sizes;
-  value?: string | number;
-} & Omit<React.ComponentProps<'input'>, 'ref' | 'color' | 'size' | 'unselectable' | 'value'>;
+type CheckboxProps = Omit<React.ComponentPropsWithRef<'input'>, 'size' | 'unselectable' | 'value'> &
+  ElementModifier & {
+    color?: Colors;
+    indeterminate?: boolean;
+    size?: Sizes;
+    value?: string | number;
+  };
 
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
   ({ checked, children, className, color, disabled, indeterminate, name, size, style, value, ...props }, ref) => (
@@ -39,3 +40,5 @@ Checkbox.defaultProps = {
   checked: false,
   indeterminate: false
 };
+
+Checkbox.displayName = 'Checkbox';

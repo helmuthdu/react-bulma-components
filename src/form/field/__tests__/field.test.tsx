@@ -3,7 +3,6 @@ import * as React from 'react';
 import { Field, FieldBody, FieldLabel } from '..';
 
 describe('Field component', () => {
-  // @ts-ignore
   it.each([[Field], [FieldLabel], [FieldBody]])('should render', Component => {
     const { asFragment } = render(<Component />);
     expect(asFragment()).toMatchSnapshot();

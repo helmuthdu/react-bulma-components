@@ -10,7 +10,7 @@ type TextareaProps = ElementModifier & {
   rows?: number;
   size?: Sizes;
   value?: string | number;
-} & Omit<React.ComponentProps<'textarea'>, 'ref' | 'color' | 'size' | 'unselectable'>;
+} & Omit<React.ComponentPropsWithRef<'textarea'>, 'unselectable'>;
 
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   (
@@ -46,3 +46,5 @@ Textarea.defaultProps = {
   ...modifiers.defaultProps,
   rows: 4
 };
+
+Textarea.displayName = 'Textarea';

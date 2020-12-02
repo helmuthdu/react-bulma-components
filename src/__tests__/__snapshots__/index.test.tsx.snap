@@ -17,6 +17,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Box",
     "render": [Function],
   },
   "Breadcrumb": Object {
@@ -37,6 +38,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Breadcrumb",
     "render": [Function],
   },
   "Button": Object {
@@ -66,6 +68,7 @@ Object {
       "text": false,
       "unselectable": false,
     },
+    "displayName": "Button",
     "render": [Function],
   },
   "ButtonGroup": Object {
@@ -84,6 +87,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "ButtonGroup",
     "render": [Function],
   },
   "Card": Object {
@@ -101,6 +105,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Card",
     "render": [Function],
   },
   "CardContent": Object {
@@ -118,11 +123,13 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "CardContent",
     "render": [Function],
   },
   "CardFooter": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
+      "as": "footer",
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -135,11 +142,13 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "CardFooter",
     "render": [Function],
   },
   "CardFooterItem": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
+      "as": "a",
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -152,11 +161,13 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "CardFooterItem",
     "render": [Function],
   },
   "CardHeader": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
+      "as": "header",
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -169,11 +180,13 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "CardHeader",
     "render": [Function],
   },
   "CardHeaderIcon": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
+      "as": "a",
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -186,11 +199,13 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "CardHeaderIcon",
     "render": [Function],
   },
   "CardHeaderTitle": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
+      "as": "p",
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -203,6 +218,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "CardHeaderTitle",
     "render": [Function],
   },
   "CardImage": Object {
@@ -222,6 +238,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "CardImage",
     "render": [Function],
   },
   "Checkbox": Object {
@@ -241,6 +258,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Checkbox",
     "render": [Function],
   },
   "Column": Object {
@@ -248,22 +266,16 @@ Object {
     "defaultProps": Object {
       "clearfix": false,
       "clipped": false,
-      "desktop": Object {},
-      "fullhd": Object {},
       "hidden": false,
       "invisible": false,
       "italic": false,
-      "mobile": Object {},
       "narrow": false,
       "overlay": false,
       "radiusless": false,
       "relative": false,
       "scrolless": false,
       "shadowless": false,
-      "tablet": Object {},
-      "touch": Object {},
       "unselectable": false,
-      "widescreen": Object {},
     },
     "displayName": "Column",
     "render": [Function],
@@ -305,6 +317,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Container",
     "render": [Function],
   },
   "Content": Object {
@@ -322,6 +335,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Content",
     "render": [Function],
   },
   "Control": Object {
@@ -343,6 +357,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Control",
     "render": [Function],
   },
   "Dropdown": Object {
@@ -355,7 +370,6 @@ Object {
       "invisible": false,
       "italic": false,
       "label": "",
-      "onChange": [Function],
       "overlay": false,
       "radiusless": false,
       "relative": false,
@@ -364,6 +378,7 @@ Object {
       "unselectable": false,
       "value": null,
     },
+    "displayName": "Dropdown",
     "render": [Function],
   },
   "DropdownDivider": Object {
@@ -381,6 +396,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "DropdownDivider",
     "render": [Function],
   },
   "DropdownItem": Object {
@@ -393,7 +409,6 @@ Object {
       "hidden": false,
       "invisible": false,
       "italic": false,
-      "onClick": [Function],
       "overlay": false,
       "radiusless": false,
       "relative": false,
@@ -401,6 +416,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "DropdownItem",
     "render": [Function],
   },
   "Element": Object {
@@ -419,6 +435,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Element",
     "render": [Function],
   },
   "Field": Object {
@@ -438,6 +455,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Field",
     "render": [Function],
   },
   "FieldBody": Object {
@@ -455,6 +473,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "FieldBody",
     "render": [Function],
   },
   "FieldLabel": Object {
@@ -472,6 +491,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "FieldLabel",
     "render": [Function],
   },
   "Footer": Object {
@@ -490,6 +510,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Footer",
     "render": [Function],
   },
   "Help": Object {
@@ -508,6 +529,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Help",
     "render": [Function],
   },
   "Hero": Object {
@@ -527,6 +549,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Hero",
     "render": [Function],
   },
   "HeroBody": Object {
@@ -544,6 +567,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "HeroBody",
     "render": [Function],
   },
   "HeroFoot": Object {
@@ -561,6 +585,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "HeroFoot",
     "render": [Function],
   },
   "HeroHead": Object {
@@ -578,6 +603,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "HeroHead",
     "render": [Function],
   },
   "Icon": Object {
@@ -597,6 +623,7 @@ Object {
       "size": "normal",
       "unselectable": false,
     },
+    "displayName": "Icon",
     "render": [Function],
   },
   "Image": Object {
@@ -616,6 +643,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Image",
     "render": [Function],
   },
   "Input": Object {
@@ -635,6 +663,7 @@ Object {
       "unselectable": false,
       "value": "",
     },
+    "displayName": "Input",
     "render": [Function],
   },
   "InputFile": Object {
@@ -657,6 +686,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "InputFile",
     "render": [Function],
   },
   "Label": Object {
@@ -674,6 +704,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Label",
     "render": [Function],
   },
   "Level": Object {
@@ -691,6 +722,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Level",
     "render": [Function],
   },
   "LevelItem": Object {
@@ -708,6 +740,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "LevelItem",
     "render": [Function],
   },
   "LevelSide": Object {
@@ -726,6 +759,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "LevelSide",
     "render": [Function],
   },
   "Loader": Object {
@@ -743,6 +777,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Loader",
     "render": [Function],
   },
   "Media": Object {
@@ -761,6 +796,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Media",
     "render": [Function],
   },
   "MediaContent": Object {
@@ -778,6 +814,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "MediaContent",
     "render": [Function],
   },
   "MediaItem": Object {
@@ -796,6 +833,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "MediaItem",
     "render": [Function],
   },
   "Menu": Object {
@@ -814,6 +852,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Menu",
     "render": [Function],
   },
   "MenuList": Object {
@@ -831,6 +870,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "MenuList",
     "render": [Function],
   },
   "MenuListItem": Object {
@@ -850,6 +890,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "MenuListItem",
     "render": [Function],
   },
   "Message": Object {
@@ -868,6 +909,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Message",
     "render": [Function],
   },
   "MessageBody": Object {
@@ -885,11 +927,13 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "MessageBody",
     "render": [Function],
   },
   "MessageHeader": Object {
     "$$typeof": Symbol(react.forward_ref),
     "defaultProps": Object {
+      "as": "header",
       "clearfix": false,
       "clipped": false,
       "hidden": false,
@@ -902,6 +946,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "MessageHeader",
     "render": [Function],
   },
   "Modal": Object {
@@ -911,6 +956,7 @@ Object {
       "closeOnEsc": true,
       "showClose": true,
     },
+    "displayName": "Modal",
     "render": [Function],
   },
   "ModalCard": Object {
@@ -928,6 +974,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "ModalCard",
     "render": [Function],
   },
   "ModalCardBody": Object {
@@ -946,6 +993,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "ModalCardBody",
     "render": [Function],
   },
   "ModalCardFooter": Object {
@@ -964,6 +1012,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "ModalCardFooter",
     "render": [Function],
   },
   "ModalCardHeader": Object {
@@ -982,6 +1031,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "ModalCardHeader",
     "render": [Function],
   },
   "ModalCardTitle": Object {
@@ -1000,6 +1050,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "ModalCardTitle",
     "render": [Function],
   },
   "ModalContent": Object {
@@ -1017,6 +1068,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "ModalContent",
     "render": [Function],
   },
   "Navbar": Object {
@@ -1037,6 +1089,7 @@ Object {
       "transparent": false,
       "unselectable": false,
     },
+    "displayName": "Navbar",
     "render": [Function],
   },
   "NavbarBrand": Object {
@@ -1054,6 +1107,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "NavbarBrand",
     "render": [Function],
   },
   "NavbarBurger": Object {
@@ -1064,7 +1118,6 @@ Object {
       "hidden": false,
       "invisible": false,
       "italic": false,
-      "onClick": [Function],
       "overlay": false,
       "radiusless": false,
       "relative": false,
@@ -1072,6 +1125,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "NavbarBurger",
     "render": [Function],
   },
   "NavbarContainer": Object {
@@ -1090,6 +1144,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "NavbarContainer",
     "render": [Function],
   },
   "NavbarDivider": Object {
@@ -1107,6 +1162,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "NavbarDivider",
     "render": [Function],
   },
   "NavbarDropdown": Object {
@@ -1127,6 +1183,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "NavbarDropdown",
     "render": [Function],
   },
   "NavbarItem": Object {
@@ -1149,6 +1206,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "NavbarItem",
     "render": [Function],
   },
   "NavbarLink": Object {
@@ -1167,6 +1225,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "NavbarLink",
     "render": [Function],
   },
   "NavbarMenu": Object {
@@ -1184,6 +1243,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "NavbarMenu",
     "render": [Function],
   },
   "Notification": Object {
@@ -1201,6 +1261,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Notification",
     "render": [Function],
   },
   "Pagination": Object {
@@ -1227,6 +1288,7 @@ Object {
       "total": 1,
       "unselectable": false,
     },
+    "displayName": "Pagination",
     "render": [Function],
   },
   "Panel": Object {
@@ -1245,6 +1307,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Panel",
     "render": [Function],
   },
   "PanelBlock": Object {
@@ -1263,6 +1326,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "PanelBlock",
     "render": [Function],
   },
   "PanelHeading": Object {
@@ -1280,6 +1344,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "PanelHeading",
     "render": [Function],
   },
   "PanelIcon": Object {
@@ -1298,6 +1363,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "PanelIcon",
     "render": [Function],
   },
   "PanelTab": Object {
@@ -1317,6 +1383,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "PanelTab",
     "render": [Function],
   },
   "PanelTabs": Object {
@@ -1334,6 +1401,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "PanelTabs",
     "render": [Function],
   },
   "Progress": Object {
@@ -1352,6 +1420,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Progress",
     "render": [Function],
   },
   "Radio": Object {
@@ -1370,6 +1439,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Radio",
     "render": [Function],
   },
   "Section": Object {
@@ -1388,6 +1458,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Section",
     "render": [Function],
   },
   "Select": Object {
@@ -1410,6 +1481,7 @@ Object {
       "unselectable": false,
       "value": "",
     },
+    "displayName": "Select",
     "render": [Function],
   },
   "Switch": Object {
@@ -1428,6 +1500,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Switch",
     "render": [Function],
   },
   "Tab": Object {
@@ -1447,6 +1520,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Tab",
     "render": [Function],
   },
   "Table": Object {
@@ -1467,6 +1541,7 @@ Object {
       "striped": false,
       "unselectable": false,
     },
+    "displayName": "Table",
     "render": [Function],
   },
   "Tabs": Object {
@@ -1486,6 +1561,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Tabs",
     "render": [Function],
   },
   "Tag": Object {
@@ -1507,6 +1583,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Tag",
     "render": [Function],
   },
   "Tags": Object {
@@ -1525,6 +1602,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Tags",
     "render": [Function],
   },
   "Text": Object {
@@ -1543,6 +1621,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Text",
     "render": [Function],
   },
   "Textarea": Object {
@@ -1561,6 +1640,7 @@ Object {
       "shadowless": false,
       "unselectable": false,
     },
+    "displayName": "Textarea",
     "render": [Function],
   },
   "Tile": Object {
@@ -1580,6 +1660,7 @@ Object {
       "unselectable": false,
       "vertical": false,
     },
+    "displayName": "Tile",
     "render": [Function],
   },
   "Title": Object {
@@ -1601,6 +1682,7 @@ Object {
       "title": true,
       "unselectable": false,
     },
+    "displayName": "Title",
     "render": [Function],
   },
 }

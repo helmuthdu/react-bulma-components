@@ -3,12 +3,15 @@ import * as React from 'react';
 import { Element } from '../../../../elements';
 import modifiers, { ElementModifier } from '../../../../modifiers';
 
-type CardHeaderIconProps = ElementModifier;
+type CardHeaderIconProps = Omit<React.ComponentPropsWithRef<'a'>, 'unselectable'> & ElementModifier;
 
-export const CardHeaderIcon = React.forwardRef<HTMLDivElement, CardHeaderIconProps>(({ className, ...props }, ref) => (
-  <Element ref={ref} {...props} className={clsx('card-header-icon', className)} />
-));
+export const CardHeaderIcon = React.forwardRef<HTMLAnchorElement, CardHeaderIconProps>(
+  ({ className, ...props }, ref) => <Element ref={ref} className={clsx('card-header-icon', className)} {...props} />
+);
 
 CardHeaderIcon.defaultProps = {
-  ...modifiers.defaultProps
+  ...modifiers.defaultProps,
+  as: 'a'
 };
+
+CardHeaderIcon.displayName = 'CardHeaderIcon';

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Element } from '../../../../elements';
 import modifiers, { ElementModifier } from '../../../../modifiers';
 
-type ModalCardTitleProps = ElementModifier & Omit<React.ComponentProps<'span'>, 'ref' | 'unselectable'>;
+type ModalCardTitleProps = Omit<React.ComponentPropsWithRef<'span'>, 'unselectable'> & ElementModifier;
 
 export const ModalCardTitle = React.forwardRef<HTMLSpanElement, ModalCardTitleProps>(
   ({ children, className, ...props }, ref) => (
@@ -17,3 +17,5 @@ ModalCardTitle.defaultProps = {
   ...modifiers.defaultProps,
   as: 'span'
 };
+
+ModalCardTitle.displayName = 'ModalCardTitle';

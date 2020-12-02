@@ -35,10 +35,10 @@ type ColumnSize = {
   size?: ColumnValue;
 };
 
-type ColumnProps = ElementModifier &
+type ColumnProps = Omit<React.ComponentPropsWithRef<'div'>, 'unselectable'> &
+  ElementModifier &
   ColumnSize &
-  { [key in Breakpoints]?: ColumnSize } &
-  Omit<React.ComponentProps<'div'>, 'ref' | 'size' | 'unselectable'>;
+  { [key in Breakpoints]?: ColumnSize };
 
 export const Column = React.forwardRef<HTMLDivElement, ColumnProps>(
   (
@@ -60,30 +60,34 @@ export const Column = React.forwardRef<HTMLDivElement, ColumnProps>(
   ) => (
     <Element
       ref={ref}
-      className={clsx('column', className, modifiers.getClassName(props), {
-        'is-narrow': narrow,
-        [`is-${size}`]: size,
-        [`is-offset-${offset}`]: offset,
-        [`is-${touch.size}-mobile`]: touch.size,
-        [`is-${mobile.size}-mobile`]: mobile.size,
-        [`is-${tablet.size}-tablet`]: tablet.size,
-        [`is-${desktop.size}-desktop`]: desktop.size,
-        [`is-${widescreen.size}-widescreen`]: widescreen.size,
-        [`is-${fullhd.size}-fullhd`]: fullhd.size,
-        [`is-offset-${touch.offset}-mobile`]: touch.offset,
-        [`is-offset-${mobile.offset}-mobile`]: mobile.offset,
-        [`is-offset-${tablet.offset}-tablet`]: tablet.offset,
-        [`is-offset-${desktop.offset}-desktop`]: desktop.offset,
-        [`is-offset-${widescreen.offset}-widescreen`]: widescreen.offset,
-        [`is-offset-${fullhd.offset}-fullhd`]: fullhd.offset,
-        'is-narrow-touch': touch.narrow,
-        'is-narrow-mobile': mobile.narrow,
-        'is-narrow-tablet': tablet.narrow,
-        'is-narrow-desktop': desktop.narrow,
-        'is-narrow-widescreen': widescreen.narrow,
-        'is-narrow-fullhd': fullhd.narrow
-      })}
-      {...modifiers.clean(props)}>
+      className={clsx(
+        'column',
+        {
+          'is-narrow': narrow,
+          [`is-${size}`]: size,
+          [`is-offset-${offset}`]: offset,
+          [`is-${touch.size}-mobile`]: touch.size,
+          [`is-${mobile.size}-mobile`]: mobile.size,
+          [`is-${tablet.size}-tablet`]: tablet.size,
+          [`is-${desktop.size}-desktop`]: desktop.size,
+          [`is-${widescreen.size}-widescreen`]: widescreen.size,
+          [`is-${fullhd.size}-fullhd`]: fullhd.size,
+          [`is-offset-${touch.offset}-mobile`]: touch.offset,
+          [`is-offset-${mobile.offset}-mobile`]: mobile.offset,
+          [`is-offset-${tablet.offset}-tablet`]: tablet.offset,
+          [`is-offset-${desktop.offset}-desktop`]: desktop.offset,
+          [`is-offset-${widescreen.offset}-widescreen`]: widescreen.offset,
+          [`is-offset-${fullhd.offset}-fullhd`]: fullhd.offset,
+          'is-narrow-touch': touch.narrow,
+          'is-narrow-mobile': mobile.narrow,
+          'is-narrow-tablet': tablet.narrow,
+          'is-narrow-desktop': desktop.narrow,
+          'is-narrow-widescreen': widescreen.narrow,
+          'is-narrow-fullhd': fullhd.narrow
+        },
+        className
+      )}
+      {...props}>
       {children}
     </Element>
   )
@@ -91,13 +95,7 @@ export const Column = React.forwardRef<HTMLDivElement, ColumnProps>(
 
 Column.defaultProps = {
   ...modifiers.defaultProps,
-  narrow: false,
-  mobile: {},
-  touch: {},
-  tablet: {},
-  desktop: {},
-  widescreen: {},
-  fullhd: {}
+  narrow: false
 };
 
 Column.displayName = 'Column';

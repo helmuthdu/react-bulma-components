@@ -139,7 +139,7 @@ export const Nested = () => (
         <MediaItem position="center">
           <Field>
             <Control as="p">
-              <Textarea placeholder="Add a comment..." onChange={() => {}} />
+              <Textarea placeholder="Add a comment..." onChange={() => void 0} />
             </Control>
           </Field>
           <Field>

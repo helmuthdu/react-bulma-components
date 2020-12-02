@@ -4,14 +4,15 @@ import { Scale } from '../../constants';
 import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../element';
 
-export type ImageProps = ElementModifier & {
-  alt?: string;
-  fallbackSrc?: string;
-  fullWidth?: boolean;
-  rounded?: boolean;
-  size?: Scale;
-  src?: string;
-} & Omit<React.ComponentProps<'figure'>, 'ref' | 'size' | 'unselectable'>;
+export type ImageProps = Omit<React.ComponentPropsWithRef<'figure'>, 'unselectable'> &
+  ElementModifier & {
+    alt?: string;
+    fallbackSrc?: string;
+    fullWidth?: boolean;
+    rounded?: boolean;
+    size?: Scale;
+    src?: string;
+  };
 
 export const Image = React.forwardRef<HTMLImageElement, ImageProps>(
   ({ alt, className, fallbackSrc, fullWidth, rounded, size, src, ...props }, ref) => {
@@ -19,29 +20,28 @@ export const Image = React.forwardRef<HTMLImageElement, ImageProps>(
       ref = React.createRef<HTMLImageElement>();
     }
 
-    const getImage = (includeFallback: boolean = false) => {
+    const getImage = (includeFallback?: boolean) => {
       const placeholderImage = `https://dummyimage.com/${
-        size
-          ? Number.isInteger(size as any)
-            ? `${size}x${size}`
-            : `360x${(size as string).replace(/by/, ':')}`
-          : '640x360'
+        size ? (Number.isInteger(size) ? `${size}x${size}` : `360x${(size as string).replace(/by/, ':')}`) : '640x360'
       }/ccc/969696`;
       return (includeFallback ? fallbackSrc || placeholderImage : false) || src || placeholderImage;
     };
 
     const handleError = () => {
-      // @ts-ignore
-      ref.current.src = getImage(true);
+      (ref as React.RefObject<any>).current.src = getImage(true);
     };
 
     return (
       <Element
         as="figure"
-        className={clsx('image', className, {
-          'is-fullwidth': fullWidth,
-          [`is-${Number.isInteger(size as any) ? `${size}x${size}` : size}`]: size
-        })}
+        className={clsx(
+          'image',
+          {
+            'is-fullwidth': fullWidth,
+            [`is-${Number.isInteger(size) ? `${size}x${size}` : size}`]: size
+          },
+          className
+        )}
         {...props}>
         <img ref={ref} alt={alt} onError={handleError} src={getImage()} className={clsx({ 'is-rounded': rounded })} />
       </Element>
@@ -54,3 +54,5 @@ Image.defaultProps = {
   fullWidth: false,
   rounded: false
 };
+
+Image.displayName = 'Image';

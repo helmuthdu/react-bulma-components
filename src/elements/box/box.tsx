@@ -3,10 +3,10 @@ import * as React from 'react';
 import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../element';
 
-type BoxProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'ref' | 'unselectable'>;
+type BoxProps = Omit<React.ComponentPropsWithRef<'div'>, 'unselectable'> & ElementModifier;
 
 export const Box = React.forwardRef<HTMLDivElement, BoxProps>(({ children, className, ...props }, ref) => (
-  <Element ref={ref} {...modifiers.clean(props)} className={clsx('box', className, modifiers.getClassName(props))}>
+  <Element ref={ref} className={clsx('box', className)} {...props}>
     {children}
   </Element>
 ));
@@ -14,3 +14,5 @@ export const Box = React.forwardRef<HTMLDivElement, BoxProps>(({ children, class
 Box.defaultProps = {
   ...modifiers.defaultProps
 };
+
+Box.displayName = 'Box';

@@ -5,21 +5,21 @@ import { Element } from '../../elements';
 import modifiers, { ElementModifier } from '../../modifiers';
 import { ShowContext } from './context';
 
-type NavbarProps = ElementModifier & {
-  active?: boolean;
-  color?: Colors;
-  fixed?: null | 'top' | 'bottom';
-  transparent?: boolean;
-} & Omit<React.ComponentProps<'nav'>, 'ref' | 'color' | 'unselectable'>;
+type NavbarProps = Omit<React.ComponentPropsWithRef<'nav'>, 'unselectable'> &
+  ElementModifier & {
+    active?: boolean;
+    color?: Colors;
+    fixed?: null | 'top' | 'bottom';
+    transparent?: boolean;
+  };
 
 export const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
   ({ children, className, fixed, transparent, color, active, ...props }, ref) => {
     return (
-      // @ts-ignore
-      <ShowContext.Provider value={active}>
+      <ShowContext.Provider value={active as boolean}>
         <Element
           ref={ref}
-          className={clsx('navbar', modifiers.getClassName(props), className, {
+          className={clsx('navbar', className, {
             'is-transparent': transparent,
             [`is-fixed-${fixed}`]: fixed,
             [`is-${color}`]: color
@@ -38,3 +38,5 @@ Navbar.defaultProps = {
   as: 'nav',
   transparent: false
 };
+
+Navbar.displayName = 'Navbar';

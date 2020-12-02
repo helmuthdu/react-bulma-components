@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Element } from '../../../elements';
 import modifiers, { ElementModifier } from '../../../modifiers';
 
-type HeroBodyProps = ElementModifier & Omit<React.ComponentProps<'div'>, 'ref' | 'unselectable'>;
+type HeroBodyProps = Omit<React.ComponentPropsWithRef<'div'>, 'unselectable'> & ElementModifier;
 
 export const HeroBody = React.forwardRef<HTMLDivElement, HeroBodyProps>(({ children, className, ...props }, ref) => (
   <Element className={clsx('hero-body', className)} {...props}>
@@ -14,3 +14,5 @@ export const HeroBody = React.forwardRef<HTMLDivElement, HeroBodyProps>(({ child
 HeroBody.defaultProps = {
   ...modifiers.defaultProps
 };
+
+HeroBody.displayName = 'HeroBody';

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Element } from '../../../elements';
 import modifiers, { ElementModifier } from '../../../modifiers';
 
-type FieldBodyProps = ElementModifier;
+type FieldBodyProps = Omit<React.ComponentPropsWithRef<'div'>, 'unselectable'> & ElementModifier;
 
 export const FieldBody = React.forwardRef<HTMLElement, FieldBodyProps>(({ children, className, ...props }, ref) => (
   <Element ref={ref} {...props} className={clsx('field-body', className)}>
@@ -14,3 +14,5 @@ export const FieldBody = React.forwardRef<HTMLElement, FieldBodyProps>(({ childr
 FieldBody.defaultProps = {
   ...modifiers.defaultProps
 };
+
+FieldBody.displayName = 'FieldBody';

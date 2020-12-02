@@ -3,7 +3,6 @@ import * as React from 'react';
 import { Level, LevelItem, LevelSide } from '..';
 
 describe('Level component', () => {
-  // @ts-ignore
   it.each([[Level], [LevelSide], [LevelItem]])('should render', Component => {
     const { asFragment } = render(<Component />);
     expect(asFragment()).toMatchSnapshot();

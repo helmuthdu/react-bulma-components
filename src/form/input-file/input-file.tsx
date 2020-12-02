@@ -6,24 +6,25 @@ import modifiers, { ElementModifier } from '../../modifiers';
 
 const { useState } = React;
 
-type InputFileProps = ElementModifier & {
-  accept?: string;
-  boxed?: boolean;
-  capture?: string;
-  color?: Colors;
-  fullwidth?: boolean;
-  hasName?: boolean;
-  icon?: React.ReactElement<any>;
-  label?: string;
-  multiple?: boolean;
-  right?: boolean;
-  size?: Sizes;
-  inputProps?: {
+type InputFileProps = Omit<React.ComponentPropsWithRef<'input'>, 'size' | 'unselectable'> &
+  ElementModifier & {
     accept?: string;
+    boxed?: boolean;
     capture?: string;
+    color?: Colors;
+    fullwidth?: boolean;
+    hasName?: boolean;
+    icon?: React.ReactNode;
+    label?: string;
     multiple?: boolean;
+    right?: boolean;
+    size?: Sizes;
+    inputProps?: {
+      accept?: string;
+      capture?: string;
+      multiple?: boolean;
+    };
   };
-} & Omit<React.ComponentProps<'input'>, 'ref' | 'color' | 'size' | 'unselectable'>;
 
 export const InputFile = React.forwardRef<HTMLInputElement, InputFileProps>(
   (
@@ -47,13 +48,11 @@ export const InputFile = React.forwardRef<HTMLInputElement, InputFileProps>(
     },
     ref
   ) => {
-    const [fileName, setFileName] = useState(null);
+    const [fileName, setFileName] = useState(undefined);
 
     const handleSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
-      // @ts-ignore
-      const { files } = event.target;
-      // @ts-ignore
-      setFileName(files.length > 0 ? files[0].name : undefined);
+      const { files }: any = event.target;
+      setFileName(files?.length > 0 ? files[0]?.name : undefined);
       if (onChange) {
         onChange(event);
       }
@@ -62,14 +61,18 @@ export const InputFile = React.forwardRef<HTMLInputElement, InputFileProps>(
     return (
       <Element
         style={style}
-        className={clsx('file', className, {
-          'has-name': !hasName,
-          'is-boxed': boxed,
-          'is-fullwidth': fullwidth,
-          'is-right': right,
-          [`is-${color}`]: color,
-          [`is-${size}`]: size
-        })}
+        className={clsx(
+          'file',
+          {
+            'has-name': !hasName,
+            'is-boxed': boxed,
+            'is-fullwidth': fullwidth,
+            'is-right': right,
+            [`is-${color}`]: color,
+            [`is-${size}`]: size
+          },
+          className
+        )}
         {...props}>
         <label className="file-label">
           <input
@@ -101,3 +104,5 @@ InputFile.defaultProps = {
   boxed: false,
   label: 'Choose a file...'
 };
+
+InputFile.displayName = 'InputFile';

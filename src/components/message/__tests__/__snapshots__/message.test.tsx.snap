@@ -1,25 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Message component should render component with different tag 1`] = `
-<DocumentFragment>
-  <p
-    class="message"
-  >
-    CustomThis should be a p element
-  </p>
-</DocumentFragment>
-`;
-
 exports[`Message component should concat classname in props with classname 1`] = `
 <DocumentFragment>
   <article
     class="message other-class"
   >
-    <div
+    <header
       class="message-header"
     >
       Lorem Ipsum
-    </div>
+    </header>
     <div
       class="message-body"
     >
@@ -52,11 +42,11 @@ exports[`Message component should render 1`] = `
 
 exports[`Message component should render 2`] = `
 <DocumentFragment>
-  <div
+  <header
     class="message-header"
   >
     Content
-  </div>
+  </header>
 </DocumentFragment>
 `;
 
@@ -80,16 +70,26 @@ exports[`Message component should render as an html section 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Message component should render component with different tag 1`] = `
+<DocumentFragment>
+  <p
+    class="message"
+  >
+    CustomThis should be a p element
+  </p>
+</DocumentFragment>
+`;
+
 exports[`Message component should render with all 1`] = `
 <DocumentFragment>
   <article
     class="message"
   >
-    <div
+    <header
       class="message-header"
     >
       Lorem Ipsum
-    </div>
+    </header>
     <div
       class="message-body"
     >

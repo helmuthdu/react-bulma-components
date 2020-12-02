@@ -12,7 +12,6 @@ Link.propTypes = {
 };
 
 describe('Button component', () => {
-  // @ts-ignore
   it.each([[Button], [ButtonGroup]])('should render', Component => {
     const { asFragment } = render(<Component>Content</Component>);
     expect(asFragment()).toMatchSnapshot();

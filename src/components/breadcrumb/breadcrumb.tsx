@@ -4,28 +4,33 @@ import { Sizes } from '../../constants';
 import { Element } from '../../elements';
 import modifiers, { ElementModifier } from '../../modifiers';
 
-type BreadcrumbProps = ElementModifier & {
-  align?: 'right' | 'center';
-  hrefAttr?: string;
-  items?: {
-    active?: boolean;
-    name?: React.ReactNode;
-    url: string;
-  }[];
-  as?: 'a' | ((...args: any[]) => any);
-  separator?: 'arrow' | 'bullet' | 'dot' | 'succeeds';
-  size?: Sizes;
-} & Omit<React.ComponentProps<'a'>, 'ref' | 'unselectable'>;
+type BreadcrumbProps = Omit<React.ComponentPropsWithRef<'a'>, 'unselectable'> &
+  ElementModifier & {
+    align?: 'right' | 'center';
+    hrefAttr?: string;
+    items?: {
+      active?: boolean;
+      name?: React.ReactNode;
+      url: string;
+    }[];
+    separator?: 'arrow' | 'bullet' | 'dot' | 'succeeds';
+    size?: Sizes;
+  };
 
-export const Breadcrumb = React.forwardRef<HTMLDivElement, BreadcrumbProps>(
+export const Breadcrumb = React.forwardRef<HTMLAnchorElement, BreadcrumbProps>(
   ({ className, items, as, hrefAttr, separator, size, align, ...props }, ref) => (
     <nav
       ref={ref}
-      className={clsx('breadcrumb', className, modifiers.getClassName(props), {
-        [`has-${separator}-separator`]: separator,
-        [`is-${size}`]: size,
-        [`is-${align}`]: align
-      })}
+      className={clsx(
+        'breadcrumb',
+        {
+          [`has-${separator}-separator`]: separator,
+          [`is-${size}`]: size,
+          [`is-${align}`]: align
+        },
+        modifiers.getClassName(props),
+        className
+      )}
       {...modifiers.clean(props)}>
       <ul>
         {items &&
@@ -49,3 +54,5 @@ Breadcrumb.defaultProps = {
   items: [],
   as: 'a'
 };
+
+Breadcrumb.displayName = 'Breadcrumb';

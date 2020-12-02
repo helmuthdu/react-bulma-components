@@ -6,7 +6,6 @@ import { Element } from '..';
 describe('Element component', () => {
   it('should render', () => {
     const { asFragment } = render(
-      // @ts-ignore
       <Element pull="left" textColor="white">
         Facebook
       </Element>

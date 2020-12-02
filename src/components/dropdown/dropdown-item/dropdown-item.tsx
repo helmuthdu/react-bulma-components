@@ -3,21 +3,23 @@ import * as React from 'react';
 import { Element } from '../../../elements';
 import modifiers, { ElementModifier } from '../../../modifiers';
 
-type DropdownItemProps = ElementModifier & {
-  as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
-  active?: boolean;
-  onClick?: (...args: any[]) => void;
-  value: any;
-} & Omit<React.ComponentProps<'a'>, 'ref' | 'unselectable'>;
+type DropdownItemProps = Omit<React.ComponentPropsWithRef<'a'>, 'unselectable'> &
+  ElementModifier & {
+    active?: boolean;
+    value: any;
+  };
 
 export const DropdownItem = React.forwardRef<HTMLAnchorElement, DropdownItemProps>(
-  ({ active, as, children, className, value, ...props }, ref) => (
+  ({ active, children, className, value, ...props }, ref) => (
     <Element
       ref={ref}
-      as={as}
-      className={clsx('dropdown-item', className, {
-        'is-active': active
-      })}
+      className={clsx(
+        'dropdown-item',
+        {
+          'is-active': active
+        },
+        className
+      )}
       {...props}>
       {children}
     </Element>
@@ -27,6 +29,7 @@ export const DropdownItem = React.forwardRef<HTMLAnchorElement, DropdownItemProp
 DropdownItem.defaultProps = {
   ...modifiers.defaultProps,
   active: false,
-  as: 'a',
-  onClick: () => {}
+  as: 'a'
 };
+
+DropdownItem.displayName = 'DropdownItem';

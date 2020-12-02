@@ -1,14 +1,18 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { Element } from '../../../elements/element';
+import { Element } from '../../../elements';
+import modifiers, { ElementModifier } from '../../../modifiers';
 
-type StepsMarkProps = React.PropsWithChildren<{
-  as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
-  className?: string;
-}>;
+type StepsMarkProps = Omit<React.ComponentPropsWithRef<'div'>, 'unselectable'> & ElementModifier;
 
 export const StepMark = React.forwardRef<HTMLDivElement, StepsMarkProps>(({ className, children, ...props }, ref) => (
-  <Element ref={ref} {...props} className={clsx('step-marker', className)}>
+  <Element ref={ref} className={clsx('step-marker', className)} {...props}>
     {children}
   </Element>
 ));
+
+StepMark.defaultProps = {
+  ...modifiers.defaultProps
+};
+
+StepMark.displayName = 'StepMark';

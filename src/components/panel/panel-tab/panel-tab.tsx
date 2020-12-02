@@ -3,17 +3,21 @@ import * as React from 'react';
 import { Element } from '../../../elements';
 import modifiers, { ElementModifier } from '../../../modifiers';
 
-type PanelTabsTabProps = ElementModifier & {
-  active?: boolean;
-} & Omit<React.ComponentProps<'a'>, 'ref' | 'unselectable'>;
+type PanelTabsTabProps = Omit<React.ComponentPropsWithRef<'a'>, 'unselectable'> &
+  ElementModifier & {
+    active?: boolean;
+  };
 
 export const PanelTab = React.forwardRef<HTMLAnchorElement, PanelTabsTabProps>(
-  ({ className, active, ...props }, ref) => (
+  ({ active, className, ...props }, ref) => (
     <Element
       ref={ref}
-      className={clsx(className, {
-        'is-active': active
-      })}
+      className={clsx(
+        {
+          'is-active': active
+        },
+        className
+      )}
       {...props}
     />
   )
@@ -24,3 +28,5 @@ PanelTab.defaultProps = {
   active: false,
   as: 'a'
 };
+
+PanelTab.displayName = 'PanelTab';

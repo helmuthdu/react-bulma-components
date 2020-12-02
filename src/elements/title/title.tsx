@@ -3,15 +3,16 @@ import * as React from 'react';
 import modifiers, { ElementModifier } from '../../modifiers';
 import { Element } from '../element';
 
-type TitleProps = ElementModifier & {
-  title?: boolean;
-  size?: 1 | 2 | 3 | 4 | 5 | 6;
-  spaced?: boolean;
-  subtitle?: boolean;
-  weight?: 'light' | 'normal' | 'semibold' | 'bold';
-};
+type TitleProps = Omit<React.ComponentPropsWithRef<'h1'>, 'title' | 'unselectable'> &
+  ElementModifier & {
+    title?: boolean;
+    size?: 1 | 2 | 3 | 4 | 5 | 6;
+    spaced?: boolean;
+    subtitle?: boolean;
+    weight?: 'light' | 'normal' | 'semibold' | 'bold';
+  };
 
-export const Title = React.forwardRef<HTMLParagraphElement, TitleProps>(
+export const Title = React.forwardRef<HTMLHeadingElement, TitleProps>(
   ({ children, className, size, subtitle, weight, spaced, title, ...props }, ref) => (
     <Element
       ref={ref}
@@ -35,3 +36,5 @@ Title.defaultProps = {
   spaced: false,
   subtitle: false
 };
+
+Title.displayName = 'Title';

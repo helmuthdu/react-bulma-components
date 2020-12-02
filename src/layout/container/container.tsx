@@ -4,20 +4,25 @@ import { Breakpoints } from '../../constants';
 import { Element } from '../../elements';
 import modifiers, { ElementModifier } from '../../modifiers';
 
-type ContainerProps = ElementModifier & {
-  breakpoint?: Breakpoints;
-  fluid?: boolean;
-} & Omit<React.ComponentProps<'div'>, 'ref' | 'unselectable'>;
+type ContainerProps = Omit<React.ComponentPropsWithRef<'div'>, 'unselectable'> &
+  ElementModifier & {
+    breakpoint?: Breakpoints;
+    fluid?: boolean;
+  };
 
 export const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
   ({ children, fluid, breakpoint, className, ...props }, ref) => (
     <Element
       ref={ref}
-      className={clsx('container', className, modifiers.getClassName(props), {
-        'is-fluid': fluid,
-        [`is-${breakpoint}`]: breakpoint
-      })}
-      {...modifiers.clean(props)}>
+      className={clsx(
+        'container',
+        {
+          'is-fluid': fluid,
+          [`is-${breakpoint}`]: breakpoint
+        },
+        className
+      )}
+      {...props}>
       {children}
     </Element>
   )
@@ -27,3 +32,5 @@ Container.defaultProps = {
   ...modifiers.defaultProps,
   fluid: false
 };
+
+Container.displayName = 'Container';
