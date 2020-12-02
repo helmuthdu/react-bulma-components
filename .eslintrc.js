@@ -1,5 +1,7 @@
 module.exports = {
+  parser: '@typescript-eslint/parser',
   env: {
+    node: true,
     'jest/globals': true,
     'cypress/globals': true
   },
@@ -8,14 +10,14 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:cypress/recommended',
+    'plugin:react/recommended',
     'plugin:prettier/recommended',
     'prettier/@typescript-eslint',
     'prettier/react'
   ],
-  plugins: ['prettier', 'jest', 'cypress', 'testing-library'],
+  plugins: ['@typescript-eslint', 'prettier', 'jest', 'cypress', 'testing-library'],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/prefer-interface': 0,
@@ -30,5 +32,10 @@ module.exports = {
         'react/prop-types': 'off'
       }
     }
-  ]
+  ],
+  settings: {
+    react: {
+      version: 'detect'
+    }
+  }
 };
