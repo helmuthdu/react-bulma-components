@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
@@ -7,7 +9,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const path = require('path');
 const resolveApp = relativePath => path.resolve(__dirname, relativePath);
 
-module.exports = env => {
+module.exports = () => {
   return {
     devtool: 'source-map',
     entry: './src/index.ts',
@@ -86,7 +88,10 @@ module.exports = env => {
     },
     resolve: {
       modules: ['node_modules', resolveApp('src')],
-      extensions: ['.js', '.jsx', '.mjs', '.ts', '.tsx', '.json']
+      extensions: ['.js', '.jsx', '.mjs', '.ts', '.tsx', '.json'],
+      alias: {
+        '@': path.resolve(__dirname, 'src')
+      }
     },
     externals: {
       react: 'commonjs react',
