@@ -20,22 +20,37 @@ export type SpacingModifier = {
 
 const modifier = {
   defaultProps: {},
-  getClassName: (props: SpacingModifier) =>
+  getClassName: ({
+    margin,
+    marginBottom,
+    marginHorizontal,
+    marginLeft,
+    marginRight,
+    marginTop,
+    marginVertical,
+    padding,
+    paddingBottom,
+    paddingHorizontal,
+    paddingLeft,
+    paddingRight,
+    paddingTop,
+    paddingVertical
+  }: SpacingModifier): string =>
     clsx({
-      [`p-${props.padding}`]: props.padding,
-      [`pt-${props.paddingTop}`]: props.paddingTop,
-      [`pl-${props.paddingLeft}`]: props.paddingLeft,
-      [`pb-${props.paddingBottom}`]: props.paddingBottom,
-      [`pr-${props.paddingRight}`]: props.paddingRight,
-      [`px-${props.paddingHorizontal}`]: props.paddingHorizontal,
-      [`py-${props.paddingVertical}`]: props.paddingVertical,
-      [`m-${props.margin}`]: props.margin,
-      [`mt-${props.marginTop}`]: props.marginTop,
-      [`ml-${props.marginLeft}`]: props.marginLeft,
-      [`mb-${props.marginBottom}`]: props.marginBottom,
-      [`mr-${props.marginRight}`]: props.marginRight,
-      [`mx-${props.marginHorizontal}`]: props.marginHorizontal,
-      [`my-${props.marginVertical}`]: props.marginVertical
+      [`p-${padding}`]: padding,
+      [`pt-${paddingTop}`]: paddingTop,
+      [`pl-${paddingLeft}`]: paddingLeft,
+      [`pb-${paddingBottom}`]: paddingBottom,
+      [`pr-${paddingRight}`]: paddingRight,
+      [`px-${paddingHorizontal}`]: paddingHorizontal,
+      [`py-${paddingVertical}`]: paddingVertical,
+      [`m-${margin}`]: margin,
+      [`mt-${marginTop}`]: marginTop,
+      [`ml-${marginLeft}`]: marginLeft,
+      [`mb-${marginBottom}`]: marginBottom,
+      [`mr-${marginRight}`]: marginRight,
+      [`mx-${marginHorizontal}`]: marginHorizontal,
+      [`my-${marginVertical}`]: marginVertical
     }),
   clean: ({
     padding,

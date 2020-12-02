@@ -29,20 +29,33 @@ const modifier = {
     shadowless: false,
     unselectable: false
   },
-  getClassName: (props: HelpersModifier) =>
+  getClassName: ({
+    clearfix,
+    clipped,
+    display,
+    hidden,
+    invisible,
+    overlay,
+    pulled,
+    radiusless,
+    relative,
+    scrolless,
+    shadowless,
+    unselectable
+  }: HelpersModifier) =>
     clsx({
-      'is-clearfix': props.clearfix,
-      'is-clipped': props.clipped,
-      'is-hidden': props.hidden,
-      'is-invisible': props.invisible,
-      'is-overlay': props.overlay,
-      'is-radiusless': props.radiusless,
-      'is-relative': props.relative,
-      'is-scrolless': props.scrolless,
-      'is-shadowless': props.shadowless,
-      'is-unselectable': props.unselectable,
-      [`is-${props.display}`]: props.display,
-      [`is-pulled-${props.pulled}`]: props.pulled
+      'is-clearfix': clearfix,
+      'is-clipped': clipped,
+      'is-hidden': hidden,
+      'is-invisible': invisible,
+      'is-overlay': overlay,
+      'is-radiusless': radiusless,
+      'is-relative': relative,
+      'is-scrolless': scrolless,
+      'is-shadowless': shadowless,
+      'is-unselectable': unselectable,
+      [`is-${display}`]: display,
+      [`is-pulled-${pulled}`]: pulled
     }),
   clean: ({
     clearfix,

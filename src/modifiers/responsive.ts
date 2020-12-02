@@ -38,7 +38,8 @@ const getSizeClassFromProp = (sizes: BreakpointsSize) =>
 
 const modifier = {
   defaultProps: {},
-  getClassName: (breakpointsSize: BreakpointsSize) => clsx({ ...getSizeClassFromProp(breakpointsSize) }),
+  getClassName: (breakpointsSize: ResponsiveModifier) =>
+    clsx({ ...getSizeClassFromProp(breakpointsSize as BreakpointsSize) }),
   clean: ({ mobile, tablet, desktop, widescreen, fullhd, touch, ...props }: ResponsiveModifier) => props
 };
 

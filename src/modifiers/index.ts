@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import clsx from 'clsx';
 import * as React from 'react';
 import colors, { ColorsModifier } from './colors';
@@ -8,16 +9,19 @@ import typography, { TypographyModifier } from './typography';
 
 const compose = (...fns: any[]) => (args: any) => fns.reduce((arg: any, fn) => fn(arg), args);
 
-export type ElementModifier = ColorsModifier &
+type StandardModifier = {
+  className?: string;
+  children?: React.ReactNode;
+  as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
+  style?: React.CSSProperties;
+};
+
+export type ElementModifier = StandardModifier &
+  ColorsModifier &
   HelpersModifier &
   ResponsiveModifier &
   SpacingModifier &
-  TypographyModifier & {
-    className?: any;
-    children?: React.ReactNode;
-    as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
-    style?: React.CSSProperties;
-  };
+  TypographyModifier;
 
 const modifiers = {
   defaultProps: {
@@ -27,7 +31,7 @@ const modifiers = {
     ...spacing.defaultProps,
     ...typography.defaultProps
   },
-  getClassName: (props: any) =>
+  getClassName: (props: ElementModifier) =>
     clsx(
       colors.getClassName(props),
       helpers.getClassName(props),
@@ -35,7 +39,8 @@ const modifiers = {
       spacing.getClassName(props),
       typography.getClassName(props)
     ),
-  clean: (props: any) => compose(colors.clean, helpers.clean, responsive.clean, spacing.clean, typography.clean)(props)
+  clean: (props: ElementModifier) =>
+    compose(colors.clean, helpers.clean, responsive.clean, spacing.clean, typography.clean)(props)
 };
 
 export default modifiers;

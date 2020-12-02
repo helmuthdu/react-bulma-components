@@ -8,10 +8,10 @@ export type ColorsModifier = {
 
 const modifier = {
   defaultProps: {},
-  getClassName: (props: any) =>
+  getClassName: ({ backgroundColor, textColor }: ColorsModifier) =>
     clsx({
-      [`has-background-${props.backgroundColor}`]: props.backgroundColor,
-      [`has-text-${props.textColor}`]: props.textColor
+      [`has-background-${backgroundColor}`]: backgroundColor,
+      [`has-text-${textColor}`]: textColor
     }),
   clean: ({ textColor, backgroundColor, ...props }: ColorsModifier) => props
 };
