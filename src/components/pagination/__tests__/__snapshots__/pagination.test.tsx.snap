@@ -16,6 +16,7 @@ exports[`Pagination component Next button should be disabled 1`] = `
           aria-disabled="false"
           aria-label="Previous page"
           class=""
+          rel="prev"
           role="button"
           tabindex="0"
         />
@@ -57,6 +58,7 @@ exports[`Pagination component Next button should be disabled 1`] = `
           aria-disabled="false"
           aria-label="Next page"
           class=""
+          rel="next"
           role="button"
           tabindex="0"
         />
@@ -82,6 +84,7 @@ exports[`Pagination component should have 3 pages and page 1 active 1`] = `
           aria-disabled="false"
           aria-label="Previous page"
           class=""
+          rel="prev"
           role="button"
           tabindex="0"
         />
@@ -126,6 +129,7 @@ exports[`Pagination component should have 3 pages and page 1 active 1`] = `
           aria-disabled="false"
           aria-label="Next page"
           class=""
+          rel="next"
           role="button"
           tabindex="0"
         />
@@ -151,6 +155,7 @@ exports[`Pagination component should have 5 pages, page 5 active and display pag
           aria-disabled="false"
           aria-label="Previous page"
           class=""
+          rel="prev"
           role="button"
           tabindex="0"
         />
@@ -212,6 +217,7 @@ exports[`Pagination component should have 5 pages, page 5 active and display pag
           aria-disabled="false"
           aria-label="Next page"
           class=""
+          rel="next"
           role="button"
           tabindex="0"
         />
@@ -237,6 +243,7 @@ exports[`Pagination component should not display Previous/Next buttons 1`] = `
           aria-disabled="false"
           aria-label="Previous page"
           class=""
+          rel="prev"
           role="button"
           tabindex="0"
         />
@@ -301,6 +308,7 @@ exports[`Pagination component should not display Previous/Next buttons 1`] = `
           aria-disabled="false"
           aria-label="Next page"
           class=""
+          rel="next"
           role="button"
           tabindex="0"
         />
@@ -326,6 +334,7 @@ exports[`Pagination component should not display page numbers 1`] = `
           aria-disabled="false"
           aria-label="Previous page"
           class="pagination-previous"
+          rel="prev"
           role="button"
           tabindex="0"
         >
@@ -390,6 +399,7 @@ exports[`Pagination component should not display page numbers 1`] = `
           aria-disabled="false"
           aria-label="Next page"
           class="pagination-next"
+          rel="next"
           role="button"
           tabindex="0"
         >
@@ -417,6 +427,7 @@ exports[`Pagination component should not render if current page is greater than 
           aria-disabled="false"
           aria-label="Previous page"
           class=""
+          rel="prev"
           role="button"
           tabindex="0"
         />
@@ -448,6 +459,7 @@ exports[`Pagination component should not render if current page is greater than 
           aria-disabled="false"
           aria-label="Next page"
           class=""
+          rel="next"
           role="button"
           tabindex="0"
         />
@@ -473,6 +485,7 @@ exports[`Pagination component should not render if total pages equals 1 1`] = `
           aria-disabled="false"
           aria-label="Previous page"
           class=""
+          rel="prev"
           role="button"
           tabindex="0"
         />
@@ -494,6 +507,7 @@ exports[`Pagination component should not render if total pages equals 1 1`] = `
           aria-disabled="false"
           aria-label="Next page"
           class=""
+          rel="next"
           role="button"
           tabindex="0"
         />
