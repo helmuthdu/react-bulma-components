@@ -29,12 +29,13 @@ type IconProps = Omit<React.ComponentPropsWithRef<'span'>, 'unselectable'> &
     inactive?: boolean;
     pack?: IconPack;
     size?: IconSize;
+    text?: string;
     type?: 'light' | 'dark';
     spinner?: boolean;
   };
 
 export const Icon = React.forwardRef<HTMLSpanElement, IconProps>(
-  ({ align, border, children, className, color, icon, inactive, pack, size, spinner, type, ...props }, ref) => {
+  ({ align, border, children, className, color, icon, inactive, pack, size, spinner, text, type, ...props }, ref) => {
     const iconSize = iconSizes[pack as IconPack][size as IconSize];
     const iconPack =
       pack === 'mdi'
@@ -52,7 +53,7 @@ export const Icon = React.forwardRef<HTMLSpanElement, IconProps>(
             [`fa-${iconSize}`]: iconSize
           })
         : '';
-    return (
+    const iconComponent = (
       <span
         ref={ref}
         className={clsx(
@@ -68,6 +69,14 @@ export const Icon = React.forwardRef<HTMLSpanElement, IconProps>(
         {...modifiers.clean(props)}>
         {children || <i className={iconPack} />}
       </span>
+    );
+    return text ? (
+      <span className="icon-text">
+        {iconComponent}
+        <span>{text}</span>
+      </span>
+    ) : (
+      iconComponent
     );
   }
 );
