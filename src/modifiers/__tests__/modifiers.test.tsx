@@ -24,18 +24,13 @@ describe('Helper proptypes', () => {
   it('should have responsive modifier flex-tablet-only and block-widescreen', () => {
     expect(
       modifiers.getClassName({
-        responsive: {
-          tablet: {
-            display: {
-              value: 'flex',
-              only: true
-            }
-          },
-          widescreen: {
-            display: {
-              value: 'block'
-            }
+        tablet: {
+          display: {
+            only: 'flex'
           }
+        },
+        widescreen: {
+          display: 'block'
         }
       })
     ).toMatchSnapshot();
@@ -44,18 +39,11 @@ describe('Helper proptypes', () => {
   it('should have hidden modifier tablet-only and widescreen', () => {
     expect(
       modifiers.getClassName({
-        responsive: {
-          tablet: {
-            hide: {
-              value: true,
-              only: true
-            }
-          },
-          widescreen: {
-            hide: {
-              value: true
-            }
-          }
+        tablet: {
+          hidden: { only: true }
+        },
+        widescreen: {
+          hidden: true
         }
       })
     ).toMatchSnapshot();
@@ -64,18 +52,11 @@ describe('Helper proptypes', () => {
   it('should have alignment responsive modifiers', () => {
     expect(
       modifiers.getClassName({
-        responsive: {
-          tablet: {
-            textAlignment: {
-              value: 'centered',
-              only: true
-            }
-          },
-          widescreen: {
-            textAlignment: {
-              value: 'left'
-            }
-          }
+        tablet: {
+          textAlignment: 'centered'
+        },
+        widescreen: {
+          textAlignment: 'left'
         }
       })
     ).toMatchSnapshot();
