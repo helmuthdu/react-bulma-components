@@ -14,10 +14,9 @@ module.exports = {
     'plugin:cypress/recommended',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
     'prettier'
   ],
-  plugins: ['@typescript-eslint', 'prettier', 'jest', 'cypress', 'testing-library'],
+  plugins: ['@typescript-eslint', 'jest', 'cypress', 'testing-library', 'prettier'],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/prefer-interface': 0,
